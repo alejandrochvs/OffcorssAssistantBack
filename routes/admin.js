@@ -15,7 +15,6 @@ router.post('/edit', function (req, res) {
         editable.pop();
         for (var i = 0; i < editable.length; i++) {
             editable[i] = editable[i].split(' = ');
-            var indexToSearch = editable[i].indexOf(query);
             if (query == editable[i][0]) {
                 found = true;
                 editable[i][1] = change;
@@ -35,6 +34,42 @@ router.post('/edit', function (req, res) {
             }
             else {
                 res.send('String not found.');
+            }
+        });
+    });
+});
+router.post('/colors', function (req, res) {
+    var editable;
+    var query = req.body.string;
+    var change = req.body.change;
+    var found = false;
+    fs.readFile('./public/scss/modules/_variables.scss', 'UTF-8', function (err, data) {
+        if (err) {
+            return console.log(err);
+        }
+        editable = data.split(';');
+        editable.pop();
+        for (var i = 0; i < editable.length; i++) {
+            editable[i] = editable[i].split(': ');
+            if (query == editable[i][0]) {
+                found = true;
+                editable[i][1] = change;
+            }
+        }
+        for (var i = 0; i < editable.length; i++) {
+            editable[i] = editable[i].join(': ');
+        }
+        editable = editable.join(';');
+        editable = editable + ';'
+        fs.writeFile('./public/scss/modules/_variables.scss', editable, function (err) {
+            if (err) {
+                return err;
+            }
+            if (found) {
+                res.send('Color succesfully changed.');
+            }
+            else {
+                res.send('Color not found.');
             }
         });
     });
