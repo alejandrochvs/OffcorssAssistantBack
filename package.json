@@ -4,11 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "author": "alejandrochvs",
   "license": "ISC",
   "dependencies": {
-    "jsdom": "^11.0.0"
+    "body-parser": "^1.17.2",
+    "crypto": "0.0.3",
+    "express": "^4.15.3",
+    "fs": "0.0.1-security",
+    "jsdom": "^11.0.0",
+    "mongoose": "^4.10.6",
+    "path": "^0.12.7"
   }
 }
