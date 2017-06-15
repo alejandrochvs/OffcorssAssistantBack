@@ -6,20 +6,23 @@ var crypto = require('crypto')
     , password = '2ba8f2b30e434b431e46e008d8f0';
 
 function encrypt(text) {
-    var cipher = crypto.createCipher(algorithm, password)
-    var crypted = cipher.update(text, 'utf8', 'hex')
+    var cipher = crypto.createCipher(algorithm, password);
+    var crypted = cipher.update(text, 'utf8', 'hex');
     crypted += cipher.final('hex');
     return crypted;
 }
 
 function decrypt(text) {
-    var decipher = crypto.createDecipher(algorithm, password)
-    var dec = decipher.update(text, 'hex', 'utf8')
+    var decipher = crypto.createDecipher(algorithm, password);
+    var dec = decipher.update(text, 'hex', 'utf8');
     dec += decipher.final('utf8');
     return dec;
 }
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var mongoURL = process.env.MONGOLAB_URI ||
+    process.env.MONGOHQ_URL ||
+    'mongodb://localhost/assistant';
 var userSchema = new Schema({
     username: {
         type: String
@@ -73,7 +76,7 @@ userSchema.methods.greet = function () {
 var users = mongoose.model('users', userSchema);
 router.use('/register', function (req, res) {
     mongoose.Promise = global.Promise;
-    mongoose.connect('mongodb://localhost/assistant');
+    mongoose.connect(mongoURL);
     var db = mongoose.connection;
     db.on('error', console.error.bind(console, 'connection error:'));
     db.once('open', function () {
@@ -102,7 +105,7 @@ router.use('/register', function (req, res) {
 });
 router.use('/login', function (req, res) {
     mongoose.Promise = global.Promise;
-    mongoose.connect('mongodb://localhost/assistant');
+    mongoose.connect(mongoURL);
     var db = mongoose.connection;
     db.on('error', console.error.bind(console, 'connection error:'));
     db.once('open', function () {
