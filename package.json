@@ -1,0 +1,14 @@
+{
+  "name": "offcorss-assistant",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "alejandrochvs",
+  "license": "ISC",
+  "dependencies": {
+    "jsdom": "^11.0.0"
+  }
+}

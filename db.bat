@@ -1,0 +1,1 @@
+cd C:\mongodb\bin && mongod
