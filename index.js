@@ -2,7 +2,6 @@ var fs = require('fs');
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var path = require('path');
 var main = require('./routes/main');
 var usersRoute = require('./routes/users');
 var adminRoute = require('./routes/admin');
