@@ -11,7 +11,12 @@ var urlEncodedParser = bodyParser.urlencoded({
     extended: false
 });
 var port = process.env.PORT || 80;
-app.use('/', express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));
+app.set('views', __dirname + '/public');
+app.set('view engine','ejs');
+app.get('/',function(req,res){
+	res.render('index.html');
+});
 app.use('/db/users', urlEncodedParser, usersRoute);
 app.use('/admin',urlEncodedParser,adminRoute);
 app.listen(port, function () {
