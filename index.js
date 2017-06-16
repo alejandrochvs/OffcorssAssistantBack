@@ -11,10 +11,18 @@ var urlEncodedParser = bodyParser.urlencoded({
     extended: false
 });
 var port = process.env.PORT || 80;
+<<<<<<< HEAD
 app.set(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 app.get('/', function (req, res) {
     res.render('index', {});
+=======
+app.use(express.static(__dirname + '/public'));
+app.set('views', __dirname + '/public');
+app.set('view engine','ejs');
+app.get('/',function(req,res){
+	res.render('index.html');
+>>>>>>> 6090423f03125043f4ce1f2ac19d3307336b8cf0
 });
 app.use('/db/users', urlEncodedParser, usersRoute);
 app.use('/admin', urlEncodedParser, adminRoute);
