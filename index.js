@@ -11,7 +11,7 @@ var parser = bodyParser.json();
 var urlEncodedParser = bodyParser.urlencoded({
     extended: false
 });
-var port = process.env.PORT || 9000;
+var port = process.env.PORT || 80;
 app.use('/', urlEncodedParser, express.static(path.join(__dirname, 'public')));
 app.use('/db/users', urlEncodedParser, usersRoute);
 app.use('/admin',urlEncodedParser,adminRoute);
