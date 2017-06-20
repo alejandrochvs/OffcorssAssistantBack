@@ -1746,6 +1746,19 @@ html {
               background: #e70095; }
             html body .content .screen .container .result.girl .img .image {
               background-image: url("../IMG/Name/girl.png"); }
+          html body .content .screen .container .login {
+            margin-top: 10vh;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 5px;
+            padding: 3%; }
+            html body .content .screen .container .login input {
+              margin-bottom: 2.5vh; }
+            html body .content .screen .container .login .loginBtn {
+              margin-top: 2.5vh;
+              background: #fd0;
+              transition: all .2s ease; }
+              html body .content .screen .container .login .loginBtn:hover {
+                background: #e6c700; }
     html body .footer {
       background: white;
       margin: 0;

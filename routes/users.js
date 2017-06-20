@@ -118,7 +118,7 @@ router.use('/login', function (req, res) {
                 if (query.password == decrypt(docs.password) || query.password == docs.password) {
                     var response = {
                         token: docs.password,
-                        username: encrypt(docs.username)
+                        username: docs.username
                     };
                     res.send(response);
                 }else{
