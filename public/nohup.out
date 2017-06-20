@@ -1,0 +1,28 @@
+>>> Sass is watching for changes. Press Ctrl-C to stop.
+      error No such file or directory @ rb_sysopen - $
+      write css/main.css
+      write css/main.css.map
+[Listen warning]:
+  Listen will be polling for changes. Learn more at https://github.com/guard/listen#polling-fallback.
+>>> Change detected to: scss/modules/_variables.scss
+WARNING on line 2 of $:
+This selector doesn't have any properties and will not be rendered.
+      error $ (Line 4: Invalid property: "Backtrace:" (no value).)
+      write css/main.css
+      write css/main.css.map
+>>> Change detected to: $
+      error $ (Line 39: Inconsistent indentation: 2 spaces were used for indentation, but the rest of the document was indented using 8 spaces.)
+>>> Sass is watching for changes. Press Ctrl-C to stop.
+      write css/main.css
+      write css/main.css.map
+[Listen warning]:
+  Listen will be polling for changes. Learn more at https://github.com/guard/listen#polling-fallback.
+>>> Change detected to: scss/modules/_variables.scss
+      write css/main.css
+      write css/main.css.map
+>>> Change detected to: scss/modules/_variables.scss
+      write css/main.css
+      write css/main.css.map
+>>> Change detected to: scss/modules/_variables.scss
+      write css/main.css
+      write css/main.css.map
