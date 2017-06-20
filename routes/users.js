@@ -1,9 +1,9 @@
 var express = require('express');
 var app = express();
 var router = express.Router();
-var crypto = require('crypto')
-    , algorithm = 'aes-256-ctr'
-    , password = '2ba8f2b30e434b431e46e008d8f0';
+var crypto = require('crypto'),
+    algorithm = 'aes-256-ctr',
+    password = '2ba8f2b30e434b431e46e008d8f0';
 
 function encrypt(text) {
     var cipher = crypto.createCipher(algorithm, password);
@@ -25,48 +25,48 @@ var mongoURL = process.env.MONGOLAB_URI ||
     'mongodb://localhost/assistant';
 var userSchema = new Schema({
     username: {
-        type: String
-        , unique: true
-    }
-    , mail: {
-        type: String
-        , required: true
-    }
-    , password: {
-        type: String
-        , required: true
-    }
-    , name: {
-        type: String
-        , required: true
-    }
-    , last_name: {
-        type: String
-        , required: true
-    }
-    , access_level: {
-        type: String
-        , required: true
-    }
-    , gender: {
-        type: String
-        , required: true
-    }
-    , birthday: {
-        type: Date
-        , required: true
-    }
-    , last_connection: {
-        type: Date
-        , required: true
-    }
-    , last_ip: {
-        type: String
-        , required: true
-    }
-    , current_page: {
-        type: String
-        , required: true
+        type: String,
+        unique: true
+    },
+    mail: {
+        type: String,
+        required: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
+    name: {
+        type: String,
+        required: true
+    },
+    last_name: {
+        type: String,
+        required: true
+    },
+    access_level: {
+        type: String,
+        required: true
+    },
+    gender: {
+        type: String,
+        required: true
+    },
+    birthday: {
+        type: Date,
+        required: true
+    },
+    last_connection: {
+        type: Date,
+        required: true
+    },
+    last_ip: {
+        type: String,
+        required: true
+    },
+    current_page: {
+        type: String,
+        required: true
     }
 });
 userSchema.methods.greet = function () {
@@ -114,15 +114,18 @@ router.use('/login', function (req, res) {
             username: query.username
         }, function (err, docs) {
             if (err) throw err;
-            if (query.password == decrypt(docs.password)) {
-                var response = {
-                    token: docs.password
-                    , username: encrypt(docs.username)
-                };
-                res.send(response);
-            }
-            else {
-                res.send('Incorrect');
+            if (docs != null) {
+                if (query.password == decrypt(docs.password)) {
+                    var response = {
+                        token: docs.password,
+                        username: encrypt(docs.username)
+                    };
+                    res.send(response);
+                }else{
+                    res.send('Incorrect password.');
+                }
+            } else {
+                res.send('User not found.');
             }
             mongoose.connection.close();
         })
