@@ -1,0 +1,505 @@
+@import 'modules/variables';
+html {
+    overflow-x: hidden;
+    #editing {
+        text-align: center;
+        height: 50%;
+        top: 25%;
+    }
+    body {
+        user-select: none;
+        font-family: $Roboto;
+        background: white;
+        height: 100vh;
+        overflow: hidden;
+        .ui {
+            bottom: 1vh;
+            transition: all 0.4s ease;
+            height: 0;
+            padding: 0;
+            z-index: 100;
+            line-height: 0;
+            overflow: hidden;
+            .ui-section {
+                transition: all 0.2s ease;
+                font-size: 20px;
+                background: #333;
+                color: white;
+                border-right: solid $yellow 2px;
+                padding: 0;
+                height: $ui-height;
+                z-index: 1;
+                .ui-option {
+                    transition: all 0.2s ease;
+                    text-align: center;
+                    cursor: pointer;
+                    background: #333;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    height: $ui-height;
+                    &:hover {
+                        i,
+                        h6 {
+                            color: $yellow;
+                        }
+                    }
+                    i,
+                    h6 {
+                        transition: all 0.2s ease;
+                        margin: 0;
+                        line-height: $ui-height;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                    &.active {
+                        background: $yellow;
+                        color: black;
+                        transition: all .2s ease;
+                        border-right: solid 0px transparent;
+                        h6 {
+                            transition: all .2s ease;
+                        }
+                        &:hover {
+                            h6 {
+                                color: white;
+                            }
+                        }
+                    }
+                }
+                &:nth-child(1) {
+                    .ui-option {
+                        &:nth-child(1) {
+                            border-right: solid 1px whitesmoke;
+                        }
+                    }
+                }
+                .ui-hidden {
+                    max-height: 0;
+                    position: absolute;
+                    background: #333;
+                    top: 5.8vh;
+                    padding: 0;
+                    overflow: hidden;
+                    transition: all .5s ease;
+                    z-index: 0;
+                    border-bottom-left-radius: 2px;
+                    border-bottom-right-radius: 2px;
+                    ul {
+                        top: 1px;
+                        position: relative;
+                        padding: 0;
+                        margin-bottom: 0;
+                        li {
+                            list-style-type: none;
+                            text-align: center;
+                            background: transparent;
+                            transition: all .3s ease;
+                            &:hover {
+                                background: lighten(#333, 5%);
+                            }
+                        }
+                        &.user-settings {
+                            li {
+                                height: 5vh;
+                                cursor: pointer;
+                                h5 {
+                                    margin: 0;
+                                    height: 100%;
+                                    line-height: 5vh;
+                                }
+                            }
+                        }
+                        &.section-divs {
+                            li {
+                                height: 5vh;
+                                cursor: pointer;
+                                h5 {
+                                    text-transform: capitalize;
+                                    margin: 0;
+                                    height: 100%;
+                                    line-height: 5vh;
+                                }
+                            }
+                        }
+                        &.colors {
+                            li {
+                                height: 5vh;
+                                line-height: 5vh;
+                                cursor: pointer;
+                                h5 {
+                                    margin: 0;
+                                    height: 5vh;
+                                    line-height: 5vh;
+                                }
+                                .color {
+                                    height: 100%;
+                                    width: 3%;
+                                    position: relative;
+                                    background: transparent;
+                                    transition: all .3s ease;
+                                    bottom: 100%;
+                                    z-index: 4;
+                                    overflow: hidden;
+                                    h5 {
+                                        transition: all .2s ease;
+                                        width: 100%;
+                                        color: transparent;
+                                    }
+                                }
+                                .color-edit {
+                                    height: 100%;
+                                    width: 0;
+                                    position: relative;
+                                    background: transparent;
+                                    transition: all .3s ease;
+                                    bottom: 200%;
+                                    left: 0;
+                                    z-index: 4;
+                                    overflow: hidden;
+                                    i {
+                                        transition: all .2s ease;
+                                        width: 100%;
+                                        color: transparent;
+                                    }
+                                }
+                                &:nth-child(1) {
+                                    .color {
+                                        background: $boy;
+                                        h5 {
+                                            color: $boy;
+                                        }
+                                    }
+                                }
+                                &:nth-child(2) {
+                                    .color {
+                                        background: $girl;
+                                        h5 {
+                                            color: $girl;
+                                        }
+                                    }
+                                }
+                                &:nth-child(3) {
+                                    .color {
+                                        background: $bBoy;
+                                        h5 {
+                                            color: $bBoy;
+                                        }
+                                    }
+                                }
+                                &:nth-child(4) {
+                                    .color {
+                                        background: $bGirl;
+                                        h5 {
+                                            color: $bGirl;
+                                        }
+                                    }
+                                }
+                                &:nth-child(5) {
+                                    .color {
+                                        background: $nBoy;
+                                        h5 {
+                                            color: $nBoy;
+                                        }
+                                    }
+                                }
+                                &:nth-child(6) {
+                                    .color {
+                                        background: $nGirl;
+                                        h5 {
+                                            color: $nGirl;
+                                        }
+                                    }
+                                }
+                                &:hover {
+                                    .color {
+                                        width: 80%;
+                                        opacity: 1;
+                                        h5 {
+                                            color: white;
+                                        }
+                                    }
+                                    .color-edit {
+                                        left: 80%;
+                                    width: 20%;
+                                        opacity: 1;
+                                        i{
+                                            color: white;
+                                        }
+                                }
+                                }
+                            }
+                        }
+                    }
+                    &.active {
+                        max-height: 70vh;
+                        background: #333;
+                    }
+                }
+            }
+        }
+        .header {
+            margin: 0;
+            background: white;
+            text-align: center;
+            z-index: 1;
+            -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
+            -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
+            padding: 0;
+            border-bottom: solid 4px transparent;
+            transition: all 0.3s ease;
+            .head {
+                margin: 0;
+                height: 10vh;
+                line-height: 10vh;
+                padding: 0;
+                &.title {
+                    .cont {
+                        font-size: 18px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                }
+                .cont {
+                    z-index: 1;
+                    transition: all 0.3s ease;
+                    &.back {
+                        top: 1vh;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        i {
+                            cursor: pointer;
+                            color: $yellow;
+                            font-size: 28px;
+                        }
+                        span {
+                            cursor: pointer;
+                            font-size: 12px;
+                            position: relative;
+                            bottom: 4px;
+                            transition: all 0.3s ease;
+                            &:hover {
+                                color: $yellow;
+                            }
+                        }
+                    }
+                    a {
+                        i {
+                            font-size: 28px;
+                            top: 5px;
+                            position: relative;
+                            color: $yellow;
+                            transition: all 0.3s ease;
+                            &:hover {
+                                color: darken($yellow, 5%);
+                            }
+                        }
+                    }
+                }
+                &.transparent {
+                    cursor: default;
+                    user-select: none;
+                    .cont.back {
+                        display: none;
+                        animation: fade 0.3s ease;
+                        color: transparent;
+                        cursor: default;
+                        i {
+                            color: transparent;
+                            animation: fade 0.3s ease;
+                            cursor: default;
+                        }
+                        span {
+                            cursor: default;
+                            &:hover {
+                                color: transparent;
+                            }
+                        }
+                    }
+                }
+            }
+            &.boy {
+                border-bottom-color: $boy;
+            }
+            &.girl {
+                border-bottom-color: $girl;
+            }
+            &.bBoy {
+                border-bottom-color: $bBoy;
+            }
+            &.bGirl {
+                border-bottom-color: $bGirl;
+            }
+            &.nBoy {
+                border-bottom-color: $nBoy;
+            }
+            &.nGirl {
+                border-bottom-color: $nGirl;
+            }
+        }
+        .content {
+            margin: 0;
+            height: 80vh;
+            background: white;
+            z-index: 0;
+            background-image: url('../IMG/background.jpg');
+            padding: 0;
+            .screen {
+                width: 100vw;
+                position: absolute;
+                transition: all 0.7s ease;
+                height: 100%;
+                &.prev {
+                    right: 100vw;
+                    height: 100%;
+                    .container {
+                        padding: 0;
+                        height: 100%;
+                    }
+                }
+                &.current {
+                    height: 100%;
+                    right: 0;
+                    .container {
+                        height: 100%;
+                        padding: 0;
+                    }
+                }
+                &.next {
+                    right: -100vw;
+                    height: 100%;
+                    .container {
+                        height: 100%;
+                        padding: 0;
+                    }
+                }
+                .container {
+                    padding: 0;
+                    @import 'modules/gender'; //1
+                    @import 'modules/name'; //2
+                    @import 'modules/age'; //3
+                    //4
+                    @import 'modules/size'; //4.1
+                    @import 'modules/sizePrimi'; //4.2
+                    @import 'modules/occasion'; //5
+                    @import 'modules/weather'; //6
+                    @import 'modules/looks'; //7
+                    @import 'modules/color'; //8
+                    @import 'modules/personality'; //9
+                    @import 'modules/result'; //10
+                }
+            }
+        }
+        .footer {
+            background: white;
+            margin: 0;
+            height: 10vh;
+            padding: 1.5vh 0;
+            z-index: 1;
+            -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
+            -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
+            .loader {
+                -webkit-box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, 0.3);
+                -moz-box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, 0.3);
+                box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, 0.3);
+                padding: 0;
+                position: absolute;
+                top: -1vh;
+                height: 1vh;
+                z-index: 1;
+                background: white;
+                .progress {
+                    height: 100%;
+                    transition: all 0.3s ease;
+                    width: 0%;
+                    background: white;
+                    -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0);
+                    -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0);
+                    box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0);
+                    border-radius: 0;
+                    z-index: 1;
+                }
+                &.active {
+                    transition: all 0.3s ease;
+                    -webkit-box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, 0.3);
+                    -moz-box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, 0.3);
+                    box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, 0.3);
+                    background: whitesmoke;
+                    .progress {
+                        background: transparent;
+                        width: 10%;
+                    }
+                    &.girl {
+                        .progress {
+                            background: $girl;
+                        }
+                    }
+                    &.boy {
+                        .progress {
+                            background: $boy;
+                        }
+                    }
+                    &.bGirl {
+                        .progress {
+                            background: $bGirl;
+                        }
+                    }
+                    &.bBoy {
+                        .progress {
+                            background: $bBoy;
+                        }
+                    }
+                    &.nGirl {
+                        .progress {
+                            background: $nGirl;
+                        }
+                    }
+                    &.nBoy {
+                        .progress {
+                            background: $nBoy;
+                        }
+                    }
+                }
+            }
+            .brand {
+                margin: auto;
+                background-image: url('../IMG/Logo-01.png');
+                height: 100%;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+        &.admin {
+            height: 100 + $ui-height;
+            .ui {
+                overflow: visible;
+                bottom: 0;
+                height: $ui-height;
+                line-height: $ui-height;
+            }
+        }
+        &.edit {
+            .text-editable {
+                border: dashed 1px orangered;
+            }
+            .colors {
+                .color-wrap {
+                    &:hover {
+                        .select {
+                            border-top-width: 3vh;
+                            background: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@import 'modules/keyframes';

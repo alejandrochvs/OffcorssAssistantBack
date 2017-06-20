@@ -1,0 +1,491 @@
+$loaderColor: black;
+$width: 50;
+$height: 60;
+$duration: 0.25;
+.loaderWrap {
+    left: unquote(($width*-1) + $width*0.25 + 'px');
+    height: unquote(($height*2) + 'px');
+//    span.loader {
+//        padding: 0;
+//        display: block;
+//        position: absolute;
+//        transition: all .2s ease;
+//        background: $loaderColor;
+//        &:nth-child(1) {
+//            animation: loadO1 unquote($duration + 's'), loadO1 unquote($duration + 's'), loadF1 unquote($duration + 's'), loadF1 unquote($duration + 's'), loadF1 unquote($duration + 's'), loadF1 unquote($duration + 's'), loadC1 unquote($duration + 's'), loadC1 unquote($duration + 's'), loadO1 unquote($duration + 's'), loadO1 unquote($duration + 's'), loadR1 unquote($duration + 's'), loadR1 unquote($duration + 's'), loadS1 unquote($duration + 's'), loadS1 unquote($duration + 's'), loadS1 unquote($duration + 's'), loadS1 unquote($duration + 's');
+//            -webkit-animation: loadO1 unquote($duration + 's'), loadO1 unquote($duration + 's'), loadF1 unquote($duration + 's'), loadF1 unquote($duration + 's'), loadF1 unquote($duration + 's'), loadF1 unquote($duration + 's'), loadC1 unquote($duration + 's'), loadC1 unquote($duration + 's'), loadO1 unquote($duration + 's'), loadO1 unquote($duration + 's'), loadR1 unquote($duration + 's'), loadR1 unquote($duration + 's'), loadS1 unquote($duration + 's'), loadS1 unquote($duration + 's'), loadS1 unquote($duration + 's'), loadS1 unquote($duration + 's');
+//            -webkit-animation-delay: unquote($duration * 1 + 's'), unquote($duration * 2 + 's'), unquote($duration * 3 + 's'), unquote($duration * 4 + 's'), unquote($duration * 5 + 's'), unquote($duration * 6 + 's'), unquote($duration * 7 + 's'), unquote($duration * 8 + 's'), unquote($duration * 9 + 's'), unquote($duration * 10 + 's'), unquote($duration * 11 + 's'), unquote($duration * 12 + 's'), unquote($duration * 13 + 's'), unquote($duration * 14 + 's'), unquote($duration * 15 + 's'), unquote($duration * 16 + 's');
+//            animation-direction: normal, reverse, normal, reverse, normal, reverse, normal, reverse, normal, reverse, normal, reverse, normal, reverse, normal, reverse;
+//            animation-iteration-count: 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1;
+//        }
+//        &:nth-child(2) {
+//            animation: loadO2 unquote($duration + 's'), loadO2 unquote($duration + 's'), loadF2 unquote($duration + 's'), loadF2 unquote($duration + 's'), loadF2 unquote($duration + 's'), loadF2 unquote($duration + 's'), loadC2 unquote($duration + 's'), loadC2 unquote($duration + 's'), loadO2 unquote($duration + 's'), loadO2 unquote($duration + 's'), loadR2 unquote($duration + 's'), loadR2 unquote($duration + 's'), loadS2 unquote($duration + 's'), loadS2 unquote($duration + 's'), loadS2 unquote($duration + 's'), loadS2 unquote($duration + 's');
+//            -webkit-animation: loadO2 unquote($duration + 's'), loadO2 unquote($duration + 's'), loadF2 unquote($duration + 's'), loadF2 unquote($duration + 's'), loadF2 unquote($duration + 's'), loadF2 unquote($duration + 's'), loadC2 unquote($duration + 's'), loadC2 unquote($duration + 's'), loadO2 unquote($duration + 's'), loadO2 unquote($duration + 's'), loadR2 unquote($duration + 's'), loadR2 unquote($duration + 's'), loadS2 unquote($duration + 's'), loadS2 unquote($duration + 's'), loadS2 unquote($duration + 's'), loadS2 unquote($duration + 's');
+//            -webkit-animation-delay: unquote($duration * 1 + 's'), unquote($duration * 2 + 's'), unquote($duration * 3 + 's'), unquote($duration * 4 + 's'), unquote($duration * 5 + 's'), unquote($duration * 6 + 's'), unquote($duration * 7 + 's'), unquote($duration * 8 + 's'), unquote($duration * 9 + 's'), unquote($duration * 10 + 's'), unquote($duration * 11 + 's'), unquote($duration * 12 + 's'), unquote($duration * 13 + 's'), unquote($duration * 14 + 's'), unquote($duration * 15 + 's'), unquote($duration * 16 + 's');
+//            animation-direction: normal, reverse, normal, reverse, normal, reverse, normal, reverse, normal, reverse, normal, reverse, normal, reverse, normal, reverse;
+//            animation-iteration-count: 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1;
+//        }
+//        &:nth-child(3) {
+//            animation: loadO3 unquote($duration + 's'), loadO3 unquote($duration + 's'), loadF3 unquote($duration + 's'), loadF3 unquote($duration + 's'), loadF3 unquote($duration + 's'), loadF3 unquote($duration + 's'), loadC3 unquote($duration + 's'), loadC3 unquote($duration + 's'), loadO3 unquote($duration + 's'), loadO3 unquote($duration + 's'), loadR3 unquote($duration + 's'), loadR3 unquote($duration + 's'), loadS3 unquote($duration + 's'), loadS3 unquote($duration + 's'), loadS3 unquote($duration + 's'), loadS3 unquote($duration + 's');
+//            -webkit-animation: loadO3 unquote($duration + 's'), loadO3 unquote($duration + 's'), loadF3 unquote($duration + 's'), loadF3 unquote($duration + 's'), loadF3 unquote($duration + 's'), loadF3 unquote($duration + 's'), loadC3 unquote($duration + 's'), loadC3 unquote($duration + 's'), loadO3 unquote($duration + 's'), loadO3 unquote($duration + 's'), loadR3 unquote($duration + 's'), loadR3 unquote($duration + 's'), loadS3 unquote($duration + 's'), loadS3 unquote($duration + 's'), loadS3 unquote($duration + 's'), loadS3 unquote($duration + 's');
+//            -webkit-animation-delay: unquote($duration * 1 + 's'), unquote($duration * 2 + 's'), unquote($duration * 3 + 's'), unquote($duration * 4 + 's'), unquote($duration * 5 + 's'), unquote($duration * 6 + 's'), unquote($duration * 7 + 's'), unquote($duration * 8 + 's'), unquote($duration * 9 + 's'), unquote($duration * 10 + 's'), unquote($duration * 11 + 's'), unquote($duration * 12 + 's'), unquote($duration * 13 + 's'), unquote($duration * 14 + 's'), unquote($duration * 15 + 's'), unquote($duration * 16 + 's');
+//            animation-direction: normal, reverse, normal, reverse, normal, reverse, normal, reverse, normal, reverse, normal, reverse, normal, reverse, normal, reverse;
+//            animation-iteration-count: 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1;
+//        }
+//        &:nth-child(4) {
+//            animation: loadO4 unquote($duration + 's'), loadO4 unquote($duration + 's'), loadF4 unquote($duration + 's'), loadF4 unquote($duration + 's'), loadF4 unquote($duration + 's'), loadF4 unquote($duration + 's'), loadC4 unquote($duration + 's'), loadC4 unquote($duration + 's'), loadO4 unquote($duration + 's'), loadO4 unquote($duration + 's'), loadR4 unquote($duration + 's'), loadR4 unquote($duration + 's'), loadS4 unquote($duration + 's'), loadS4 unquote($duration + 's'), loadS4 unquote($duration + 's'), loadS4 unquote($duration + 's');
+//            -webkit-animation: loadO4 unquote($duration + 's'), loadO4 unquote($duration + 's'), loadF4 unquote($duration + 's'), loadF4 unquote($duration + 's'), loadF4 unquote($duration + 's'), loadF4 unquote($duration + 's'), loadC4 unquote($duration + 's'), loadC4 unquote($duration + 's'), loadO4 unquote($duration + 's'), loadO4 unquote($duration + 's'), loadR4 unquote($duration + 's'), loadR4 unquote($duration + 's'), loadS4 unquote($duration + 's'), loadS4 unquote($duration + 's'), loadS4 unquote($duration + 's'), loadS4 unquote($duration + 's');
+//            -webkit-animation-delay: unquote($duration * 1 + 's'), unquote($duration * 2 + 's'), unquote($duration * 3 + 's'), unquote($duration * 4 + 's'), unquote($duration * 5 + 's'), unquote($duration * 6 + 's'), unquote($duration * 7 + 's'), unquote($duration * 8 + 's'), unquote($duration * 9 + 's'), unquote($duration * 10 + 's'), unquote($duration * 11 + 's'), unquote($duration * 12 + 's'), unquote($duration * 13 + 's'), unquote($duration * 14 + 's'), unquote($duration * 15 + 's'), unquote($duration * 16 + 's');
+//            animation-direction: normal, reverse, normal, reverse, normal, reverse, normal, reverse, normal, reverse, normal, reverse, normal, reverse, normal, reverse;
+//            animation-iteration-count: 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1;
+//        }
+//        &:nth-child(5) {
+//            animation: loadO5 unquote($duration + 's'), loadO5 unquote($duration + 's'), loadF5 unquote($duration + 's'), loadF5 unquote($duration + 's'), loadF5 unquote($duration + 's'), loadF5 unquote($duration + 's'), loadC5 unquote($duration + 's'), loadC5 unquote($duration + 's'), loadO5 unquote($duration + 's'), loadO5 unquote($duration + 's'), loadR5 unquote($duration + 's'), loadR5 unquote($duration + 's'), loadS5 unquote($duration + 's'), loadS5 unquote($duration + 's'), loadS5 unquote($duration + 's'), loadS5 unquote($duration + 's');
+//            -webkit-animation: loadO5 unquote($duration + 's'), loadO5 unquote($duration + 's'), loadF5 unquote($duration + 's'), loadF5 unquote($duration + 's'), loadF5 unquote($duration + 's'), loadF5 unquote($duration + 's'), loadC5 unquote($duration + 's'), loadC5 unquote($duration + 's'), loadO5 unquote($duration + 's'), loadO5 unquote($duration + 's'), loadR5 unquote($duration + 's'), loadR5 unquote($duration + 's'), loadS5 unquote($duration + 's'), loadS5 unquote($duration + 's'), loadS5 unquote($duration + 's'), loadS5 unquote($duration + 's');
+//            -webkit-animation-delay: unquote($duration * 1 + 's'), unquote($duration * 2 + 's'), unquote($duration * 3 + 's'), unquote($duration * 4 + 's'), unquote($duration * 5 + 's'), unquote($duration * 6 + 's'), unquote($duration * 7 + 's'), unquote($duration * 8 + 's'), unquote($duration * 9 + 's'), unquote($duration * 10 + 's'), unquote($duration * 11 + 's'), unquote($duration * 12 + 's'), unquote($duration * 13 + 's'), unquote($duration * 14 + 's'), unquote($duration * 15 + 's'), unquote($duration * 16 + 's');
+//            animation-direction: normal, reverse, normal, reverse, normal, reverse, normal, reverse, normal, reverse, normal, reverse, normal, reverse, normal, reverse;
+//            animation-iteration-count: 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1;
+//        }
+//    }
+}
+//O
+@keyframes loadO1 {
+    0% {
+        height: unquote($height*0 + 'px');
+        width: unquote($width/5 + 'px');
+        top: unquote($height*0 + 'px');
+        ;
+    }
+    50% {
+        height: unquote($height + 'px');
+        width: unquote($width/5 + 'px');
+        top: unquote($height*0 + 'px');
+        ;
+    }
+    100% {
+        height: unquote($height + 'px');
+        ;
+        width: unquote($width/5 + 'px');
+        top: unquote($height*0 + 'px');
+        ;
+    }
+}
+@keyframes loadO2 {
+    0% {
+        height: unquote($height/6 + 'px');
+        width: unquote($width*0 + 'px');
+        ;
+        top: unquote($height + 'px');
+        ;
+    }
+    50% {
+        height: unquote($height/6 + 'px');
+        width: unquote($width*0 + 'px');
+        top: unquote($height + 'px');
+    }
+    100% {
+        height: unquote($height/6 + 'px');
+        width: unquote($width + 'px');
+        top: unquote($height + 'px');
+    }
+}
+@keyframes loadO3 {
+    0% {
+        height: unquote($height/6 + 'px');
+        width: unquote($width*0 + 'px');
+        top: unquote($height*0 + 'px');
+    }
+    5% {
+        height: unquote($height/6 + 'px');
+        width: unquote($width*0 + 'px');
+        top: unquote($height*0 + 'px');
+    }
+    50% {
+        height: unquote($height/6 + 'px');
+        width: unquote($width + 'px');
+        top: unquote($height*0 + 'px');
+    }
+    100% {
+        height: unquote($height/6 + 'px');
+        width: unquote($width + 'px');
+        top: unquote($height*0 + 'px');
+    }
+}
+@keyframes loadO4 {
+    0% {
+        height: unquote($height*0 + 'px');
+        width: unquote($width/5 + 'px');
+        top: unquote($height*0 + 'px');
+        left: unquote($width + 'px');
+    }
+    50% {
+        height: unquote($height*0 + 'px');
+        width: unquote($width/5 + 'px');
+        top: unquote($height*0 + 'px');
+        left: unquote($width + $width/10 + 'px');
+    }
+    100% {
+        height: unquote($height + 'px');
+        width: unquote($width/5 + 'px');
+        top: unquote($height*0 + 'px');
+        left: unquote($width + $width/10 + 'px');
+    }
+}
+@keyframes loadO5 {
+    0% {
+        height: unquote($height*0 + 'px');
+        width: unquote($width*0 + 'px');
+        top: unquote($height*0 + 'px');
+        left: unquote($width*0 + 'px');
+    }
+    100% {
+        height: unquote($height*0 + 'px');
+        width: unquote($width*0 + 'px');
+        top: unquote($height*0 + 'px');
+        left: unquote($width*0 + 'px');
+    }
+}
+
+//F
+@keyframes loadF1 {
+    0% {
+        height: unquote($height*0 + 'px');
+        width: unquote($width/5 + 'px');
+        top: unquote($height*0 + 'px');
+    }
+    100% {
+        height: unquote($height + 'px');
+        width: unquote($width/5 + 'px');
+        top: unquote($height*0 + 'px');
+    }
+}
+@keyframes loadF2 {
+    15% {
+        height: unquote($height/6 + 'px');
+        width: unquote($width*0 + 'px');
+        top: unquote($height*0 + 'px');
+    }
+    100% {
+        height: unquote($height/6 + 'px');
+        width: unquote($width + 'px');
+        top: unquote($height*0 + 'px');
+    }
+}
+@keyframes loadF3 {
+    30% {
+        height: unquote($height/6 + 'px');
+        width: unquote($width*0 + 'px');
+        top: unquote($height/2.6 + 'px');
+    }
+    100% {
+        height: unquote($height/6 + 'px');
+        width: unquote($width - $width/20 + 'px');
+        top: unquote($height/2.6 + 'px');
+    }
+}
+@keyframes loadF4 {
+    0% {
+        height: unquote($height*0 + 'px');
+        width: unquote($width*0 + 'px');
+        top: unquote($height*0 + 'px');
+    }
+    100% {
+        height: unquote($height*0 + 'px');
+        width: unquote($width*0 + 'px');
+        top: unquote($height*0 + 'px');
+    }
+}
+@keyframes loadF5 {
+    0% {
+        height: unquote($height*0 + 'px');
+        width: unquote($width*0 + 'px');
+        top: unquote($height*0 + 'px');
+    }
+    100% {
+        height: unquote($height*0 + 'px');
+        width: unquote($width*0 + 'px');
+        top: unquote($height*0 + 'px');
+    }
+}
+
+//C
+@keyframes loadC1 {
+    0% {
+        height: unquote($height/6 + 'px');
+        width: unquote($width*0 + 'px');
+        top: unquote($height*0 + 'px');
+    }
+    100% {
+        height: unquote($height/6 + 'px');
+        width: unquote($width + 'px');
+        top: unquote($height*0 + 'px');
+    }
+}
+@keyframes loadC2 {
+    0% {
+        height: unquote($height*0 + 'px');
+        width: unquote($width/5 + 'px');
+        top: unquote($height*0 + 'px');
+    }
+    50% {
+        height: unquote($height + 'px');
+        width: unquote($width/5 + 'px');
+        top: unquote($height*0 + 'px');
+    }
+    100% {
+        height: unquote($height + 'px');
+        width: unquote($width/5 + 'px');
+        top: unquote($height*0 + 'px');
+    }
+}
+@keyframes loadC3 {
+    50% {
+        height: unquote($height/6 + 'px');
+        width: unquote($width*0 + 'px');
+        top: unquote($height + 'px');
+    }
+    100% {
+        height: unquote($height/6 + 'px');
+        width: unquote($width + 'px');
+        top: unquote($height + 'px');
+    }
+}
+@keyframes loadC4 {
+    0% {
+        height: unquote($height*0 + 'px');
+        width: unquote($width*0 + 'px');
+        top: unquote($height*0 + 'px');
+    }
+    100% {
+        height: unquote($height*0 + 'px');
+        width: unquote($width*0 + 'px');
+        top: unquote($height*0 + 'px');
+    }
+}
+@keyframes loadC5 {
+    0% {
+        height: unquote($height*0 + 'px');
+        width: unquote($width*0 + 'px');
+        top: unquote($height*0 + 'px');
+    }
+    100% {
+        height: unquote($height*0 + 'px');
+        width: unquote($width*0 + 'px');
+        top: unquote($height*0 + 'px');
+    }
+}
+
+//R
+@keyframes loadR1 {
+    0% {
+        height: unquote($height/6 + 'px');
+        width: unquote($width*0 + 'px');
+        top: unquote($height*0 + 'px');
+    }
+    100% {
+        height: unquote($height/6 + 'px');
+        width: unquote($width + 'px');
+        top: unquote($height*0 + 'px');
+    }
+}
+@keyframes loadR2 {
+    0% {
+        height: unquote($height*0 + 'px');
+        width: unquote($width/5 + 'px');
+        top: unquote($height*0 + 'px');
+    }
+    50% {
+        height: unquote($height + 'px');
+        width: unquote($width/5 + 'px');
+        top: unquote($height*0 + 'px');
+    }
+    100% {
+        height: unquote($height + 'px');
+        width: unquote($width/5 + 'px');
+        top: unquote($height*0 + 'px');
+    }
+}
+@keyframes loadR3 {
+    50% {
+        height: unquote($height/6 + 'px');
+        width: unquote($width*0 + 'px');
+        top: unquote($height/2 + 'px');
+    }
+    100% {
+        height: unquote($height/6 + 'px');
+        width: unquote($width + 'px');
+        top: unquote($height/2 + 'px');
+    }
+}
+@keyframes loadR4 {
+    0% {
+        height: unquote($height*0 + 'px');
+        width: unquote($width*0 + 'px');
+        top: unquote($height*0 + 'px');
+        left: unquote($width + 'px');
+    }
+    50% {
+        width: unquote($width/5 + 'px');
+        height: unquote($height*0 + 'px');
+        top: unquote($height*0 + 'px');
+        left: unquote($width + 'px');
+    }
+    100% {
+        height: unquote($height/2 + 'px');
+        width: unquote($width/5 + 'px');
+        top: unquote($height*0 + 'px');
+        left: unquote($width + 'px');
+    }
+}
+
+@keyframes loadR5 {
+    0% {
+        height: unquote($height*0 + 'px');
+        width: unquote($width/5 + 'px');
+        top: unquote($height/2 + 'px');
+        left: unquote($width/4 + 'px');
+        transform: rotate(-45deg);
+    }
+    70% {
+        transform-origin: top;
+        height: unquote($height*0 + 'px');
+        width: unquote($width/5 + 'px');
+        top: 35px;
+        left: 15px;
+        transform: rotate(-45deg);
+    }
+    100% {
+        transform-origin: top;
+        height: unquote($height/1.5 + 'px');
+        width: unquote($width/5 + 'px');
+        top: 35px;
+        left: 15px;
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes loadS1 {
+    0% {
+        height: unquote($height/6 + 'px');
+        width: unquote($width*0 + 'px');
+        top: unquote($height*0 + 'px');
+        left: unquote($width + 'px');
+    }
+    20% {
+        height: unquote($height/6 + 'px');
+        width: unquote($width*0 + 'px');
+        top: unquote($height*0 + 'px');
+        left: unquote($width + 'px');
+    }
+    40% {
+        height: unquote($height/6 + 'px');
+        width: unquote($width + 'px');
+        top: unquote($height*0 + 'px');
+        left: unquote($width*0 + 'px');
+    }
+    100% {
+        height: unquote($height/6 + 'px');
+        width: unquote($width + 'px');
+        top: unquote($height*0 + 'px');
+        left: unquote($width*0 + 'px');
+        transform-origin: right;
+    }
+}
+@keyframes loadS2 {
+    0% {
+        height: unquote($height*0 + 'px');
+        width: unquote($width/5 + 'px');
+        top: unquote($height*0 + 'px');
+        left: unquote($width*0 + 'px');
+    }
+    20% {
+        height: unquote($height*0 + 'px');
+        width: unquote($width/5 + 'px');
+        top: unquote($height*0 + 'px');
+        left: unquote($width*0 + 'px');
+    }
+    40% {
+        height: unquote($height/2 + 'px');
+        width: unquote($width/5 + 'px');
+        top: unquote($height*0 + 'px');
+        left: unquote($width*0 + 'px');
+    }
+    100% {
+        height: unquote($height/2 + 'px');
+        width: unquote($width/5 + 'px');
+        top: unquote($height*0 + 'px');
+        left: unquote($width*0 + 'px');
+    }
+}
+@keyframes loadS3 {
+    0% {
+        height: unquote($height/6 + 'px');
+        width: unquote($width*0 + 'px');
+        top: unquote($height/2 + 'px');
+        left: unquote($width*0 + 'px');
+    }
+    40% {
+        height: unquote($height/6 + 'px');
+        width: unquote($width*0 + 'px');
+        top: unquote($height/2 + 'px');
+        left: unquote($width*0 + 'px');
+    }
+    60% {
+        height: unquote($height/6 + 'px');
+        width: unquote($width + 'px');
+        top: unquote($height/2 + 'px');
+        left: unquote($width*0 + 'px');
+    }
+    100% {
+        height: unquote($height/6 + 'px');
+        width: unquote($width + 'px');
+        top: unquote($height/2 + 'px');
+        left: unquote($width*0 + 'px');
+    }
+}
+@keyframes loadS4 {
+    0% {
+        height: unquote($height*0 + 'px');
+        width: unquote($width/5 + 'px');
+        top: unquote($height/2 + 'px');
+        left: unquote($width + 'px');
+    }
+    60% {
+        height: unquote($height*0 + 'px');
+        width: unquote($width/5 + 'px');
+        top: unquote($height/2 + 'px');
+        left: unquote($width + 'px');
+    }
+    80% {
+        height: unquote($height/2 + 'px');
+        width: unquote($width/5 + 'px');
+        top: unquote($height/2 + 'px');
+        left: unquote($width + 'px');
+    }
+    100% {
+        height: unquote($height/2 + 'px');
+        width: unquote($width/5 + 'px');
+        top: unquote($height/2 + 'px');
+        left: unquote($width + 'px');
+    }
+}
+@keyframes loadS5 {
+    0% {
+        height: unquote($height/6 + 'px');
+        width: unquote($width*0 + 'px');
+        top: unquote($height + 'px');
+        left: unquote($width + 'px');
+    }
+    80% {
+        height: unquote($height/6 + 'px');
+        width: unquote($width*0 + 'px');
+        top: unquote($height + 'px');
+        left: unquote($width + 'px');
+    }
+    100% {
+        height: unquote($height/6 + 'px');
+        width: unquote($width + 'px');
+        top: unquote($height + 'px');
+        left: unquote($width*0 + 'px');
+    }
+}

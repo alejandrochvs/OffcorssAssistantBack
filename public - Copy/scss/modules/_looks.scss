@@ -1,0 +1,309 @@
+.looks {
+    height: 100%;
+    z-index: 1;
+    padding: 5vh 0;
+    .selection-wrap {
+        text-align: center;
+        .title {
+            margin-bottom: 1vh;
+            .text {
+                transition: all 0.3s ease;
+                background: white;
+                border-bottom: solid 3px $yellow;
+                padding: 2%;
+            }
+        }
+    }
+    .looksWrap {
+        .background {
+            padding: 1%;
+            .cont {
+                cursor: pointer;
+                transition: all 0.3s ease;
+                padding: 0;
+                background: transparent;
+                background-image: url(../../IMG/smokks.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+                overflow: hidden;
+                $occasionColor: $yellow;
+                $opacity: 0.8;
+                transition: all 0.3s ease;
+                .img {
+                    transition: all 0.3s ease;
+                    height: 30vh;
+                }
+                .title {
+                    transition: all 0.3s ease;
+                    padding: 0;
+                    background: rgba($occasionColor, $opacity);
+                    padding: 4%;
+                    height: 8vh;
+                    text-align: center;
+                    .fa {
+                        transition: all 0.3s ease;
+                        line-height: 8vh;
+                        color: white;
+                    }
+                }
+            }
+            &:nth-child(1) {
+                .cont {
+                    background-image: url(../IMG/looks/abc.jpg);
+                }
+            }
+            &:nth-child(2) {
+                .cont {
+                    background-image: url(../IMG/looks/basicos.jpg);
+                }
+            }
+            &:nth-child(3) {
+                .cont {
+                    background-image: url(../IMG/looks/moda.jpg);
+                }
+            }
+            &:nth-child(4) {
+                .cont {
+                    background-image: url(../IMG/looks/playa.jpg);
+                }
+            }
+            &:hover,
+            &.active {
+                .cont {
+                    .img {
+                        height: 0;
+                    }
+                    .title {
+                        height: 38vh;
+                        transform: scale(1.5);
+                        .fa {
+                            line-height: 30vh;
+                            font-size: 60px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .continueLooks {
+        text-align: center;
+        margin-top: 3vh;
+        h3 {
+            height: 10vh;
+            margin: 0;
+            line-height: 10vh;
+            background: $yellow;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+    }
+    &.boy {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $boy;
+                }
+            }
+        }
+        .looksWrap {
+            .background {
+                .cont {
+                    $occasionColor: $boy;
+                    $opacity: 0.8;
+                    .title {
+                        background: rgba($occasionColor, $opacity);
+                    }
+                }
+            }
+        }
+        .continueLooks {
+            h3 {
+                background-color: $boy;
+            }
+        }
+    }
+    &.girl {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $girl;
+                }
+            }
+        }
+        .looksWrap {
+            .background {
+                .cont {
+                    $occasionColor: $girl;
+                    $opacity: 0.8;
+                    border: solid 5px rgba($occasionColor, $opacity);
+                    .title {
+                        background: rgba($occasionColor, $opacity);
+                    }
+                }
+            }
+        }
+        .continueLooks {
+            h3 {
+                background-color: $girl;
+            }
+        }
+    }
+    &.bBoy {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $bBoy;
+                }
+            }
+        }
+        .looksWrap {
+            .background {
+                .cont {
+                    $occasionColor: $bBoy;
+                    $opacity: 0.8;
+                    .title {
+                        background: rgba($occasionColor, $opacity);
+                    }
+                }
+            }
+        }
+        .continueLooks {
+            h3 {
+                background-color: $bBoy;
+            }
+        }
+    }
+    &.bGirl {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $bGirl;
+                }
+            }
+        }
+        .looksWrap {
+            .background {
+                .cont {
+                    $occasionColor: $bGirl;
+                    $opacity: 0.8;
+                    .title {
+                        background: rgba($occasionColor, $opacity);
+                    }
+                }
+            }
+        }
+        .continueLooks {
+            h3 {
+                background-color: $bGirl;
+            }
+        }
+    }
+    &.nBoy {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $nBoy;
+                }
+            }
+        }
+        .looksWrap {
+            .background {
+                .cont {
+                    $occasionColor: $nBoy;
+                    $opacity: 0.8;
+                    .title {
+                        background: rgba($occasionColor, $opacity);
+                    }
+                }
+            }
+        }
+        .continueLooks {
+            h3 {
+                background-color: $nBoy;
+            }
+        }
+    }
+    &.nGirl {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $nGirl;
+                }
+            }
+        }
+        .looksWrap {
+            .background {
+                .cont {
+                    $occasionColor: $nGirl;
+                    $opacity: 0.8;
+                    .title {
+                        background: rgba($occasionColor, $opacity);
+                    }
+                }
+            }
+        }
+        .continueLooks {
+            h3 {
+                background-color: $nGirl;
+            }
+        }
+    }
+    .continueLooks.transparent {
+        z-index: -1;
+        h3 {
+            color: transparent;
+            cursor: default;
+            background: transparent;
+            z-index: -1;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .looks {
+        .looksWrap {
+            .background {
+                height: 20vh;
+                margin-bottom: 2vh;
+                .cont {
+                    .img {
+                        height: 15vh;
+                        transition: all .3s ease;
+                    }
+                    .title {
+                        height: 5vh;
+                        transition: all .3s ease;
+                        .fa {
+                            line-height: 4vh;
+                            transition: all .3s ease;
+                        }
+                    }
+                }
+                &:hover,
+                &.active {
+                    .cont {
+                        .img {
+                            height: 0vh;
+                        }
+                        .title {
+                            height: 20vh;
+                            transform: scale(1.1);
+                            .fa {
+                                line-height: 15vh;
+                                font-size: 60px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .continueLooks {
+            position: absolute;
+            bottom: 3vh;
+        }
+    }
+}

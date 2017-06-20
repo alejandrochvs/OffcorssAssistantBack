@@ -1,0 +1,78 @@
+@import './loader';
+.result {
+    padding: 5vh 0;
+    .selection-wrap {
+        text-align: center;
+        .title {
+            margin-bottom: 5vh;
+            .text {
+                transition: all 0.3s ease;
+                background: white;
+                border-bottom: solid 3px $yellow;
+                padding: 2%;
+            }
+        }
+        .nameInput {
+            input {
+                border: none;
+                border-bottom: solid 1px black;
+                background-color: transparent;
+            }
+        }
+        .continue {
+            div {
+                transition: all 0.3s ease;
+                background: $yellow;
+                color: white;
+            }
+        }
+    }
+    .img {
+        height: 60vh;
+        .image {
+            height: 100%;
+            background-position: center;
+            background-origin: content-box;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+    &.boy{
+        .selection-wrap{
+            .title{
+                .text{
+                    border-bottom-color: $boy;
+                }
+            }
+            .continue{
+                div{
+                    background: $boy;
+                }
+            }
+        }
+        .img{
+            .image{
+                background-image: url('../IMG/Name/boy.png');
+            }
+        }
+    }
+    &.girl{
+        .selection-wrap{
+            .title{
+                .text{
+                    border-bottom-color: $girl;
+                }
+            }
+            .continue{
+                div{
+                    background: $girl;
+                }
+            }
+        }
+        .img{
+            .image{
+                background-image: url('../IMG/Name/girl.png');
+            }
+        }
+    }
+}

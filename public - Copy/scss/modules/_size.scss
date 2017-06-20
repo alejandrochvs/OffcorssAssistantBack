@@ -1,0 +1,278 @@
+.size {
+    padding: 5vh 0;
+    height: 100%;
+    .selection-wrap {
+        height: 100%;
+        text-align: center;
+        .title {
+            margin-bottom: 5vh;
+            .text {
+                transition: all 0.3s ease;
+                background: white;
+                border-bottom: solid 3px $yellow;
+                padding: 2%;
+            }
+        }
+        .padWrap {
+            .image {
+                height: 20vh;
+                div {
+                    transition: all 0.3s ease;
+                    height: 100%;
+                    color: $yellow;
+                    font-size: 15vh
+                }
+            }
+            .padSize {
+                height: 30vh;
+                padding: 0;
+                border: solid 2px $yellow;
+                transition: all 0.3s ease;
+                overflow: hidden;
+                .row {
+                    z-index: 1;
+                    transition: all 0.3s ease;
+                    height: 10vh;
+                    margin: 0;
+                    padding: 1vh 2vw;
+                    top: 0;
+                    .box {
+                        cursor: pointer;
+                        padding: 0;
+                        font-size: 18px;
+                        line-height: 7vh;
+                        border: solid 1px transparent;
+                        transition: all 0.3s ease;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        &:hover {
+                            border-color: $yellow;
+                        }
+                        &.active {
+                            background: $yellow;
+                            color: white;
+                        }
+                    }
+                }
+            }
+            .nav {
+                display: none;
+                z-index: 2;
+                position: absolute;
+                right: 2vw;
+                bottom: 1vh;
+                width: 2vw;
+                height: 10vh;
+                .sel {
+                    cursor: pointer;
+                    .fa {
+                        width: 100%;
+                        height: 5vh;
+                        transition: all 0.3s ease;
+                        color: inherit;
+                    }
+                    &:hover {
+                        .fa {
+                            color: $yellow;
+                        }
+                    }
+                }
+                &.active {
+                    display: inherit;
+                }
+            }
+        }
+    }
+    &.boy {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $boy;
+                }
+            }
+            .padWrap {
+                .image {
+                    div {
+                        color: $boy;
+                    }
+                }
+                .padSize {
+                    border-color: $boy;
+                    .row {
+                        .box {
+                            &:hover {
+                                border-color: $boy;
+                            }
+                            &.active {
+                                background: $boy;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+                .nav {
+                    .sel {
+                        &:hover {
+                            .fa {
+                                color: $boy;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.girl {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $girl;
+                }
+            }
+            .padWrap {
+                .image {
+                    div {
+                        color: $girl;
+                    }
+                }
+                .padSize {
+                    border-color: $girl;
+                    .row {
+                        .box {
+                            &:hover {
+                                border-color: $girl;
+                            }
+                            &.active {
+                                background: $girl;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+                .nav {
+                    .sel {
+                        &:hover {
+                            .fa {
+                                color: $girl;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.bBoy {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $bBoy;
+                }
+            }
+            .padWrap {
+                .image {
+                    div {
+                        color: $bBoy;
+                    }
+                }
+                .padSize {
+                    border-color: $bBoy;
+                    .row {
+                        .box {
+                            &:hover {
+                                border-color: $bBoy;
+                            }
+                            &.active {
+                                background: $bBoy;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+                .nav {
+                    .sel {
+                        &:hover {
+                            .fa {
+                                color: $bBoy;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.bGirl {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $bGirl;
+                }
+            }
+            .padWrap {
+                .image {
+                    div {
+                        color: $bGirl;
+                    }
+                }
+                .padSize {
+                    border-color: $bGirl;
+                    .row {
+                        .box {
+                            &:hover {
+                                border-color: $bGirl;
+                            }
+                            &.active {
+                                background: $bGirl;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+                .nav {
+                    .sel {
+                        &:hover {
+                            .fa {
+                                color: $bGirl;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .size {
+        padding: 0;
+        .selection-wrap {
+            .title {
+                margin-bottom: 0;
+            }
+            .padWrap {
+
+                .image {
+                    height: 10vh;
+                    div {
+                        font-size: 9vh;
+                    }
+                }
+                .padSize {
+                    padding: 1vh 2vw;
+                    height: 10vh;
+                    .row {
+                        padding: 0;
+                        .box{
+                            border: solid 1px lightgray;
+                        }
+                    }
+                }
+                .nav {
+                    right: 0;
+                    height: 50%;
+                    bottom: 0;
+                }
+            }
+        }
+    }
+}

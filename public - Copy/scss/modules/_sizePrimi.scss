@@ -1,0 +1,165 @@
+.sizePrimi {
+    padding: 5vh 0;
+    .selection-wrap {
+        text-align: center;
+        .title {
+            margin-bottom: 5vh;
+            .text {
+                transition: all 0.3s ease;
+                background: white;
+                border-bottom: solid 3px $yellow;
+                padding: 2%;
+            }
+        }
+        .padWrap {
+            .image {
+                height: 20vh;
+                div {
+                    transition: all 0.3s ease;
+                    height: 100%;
+                    color: $yellow;
+                    font-size: 15vh
+                }
+            }
+            .padSizePrimi {
+                height: 30vh;
+                padding: 0;
+                border: solid 2px $yellow;
+                transition: all 0.3s ease;
+                overflow: hidden;
+                .row {
+                    z-index: 1;
+                    transition: all 0.3s ease;
+                    height: 10vh;
+                    margin: 0;
+                    padding: 1vh 2vw;
+                    top: 0;
+                    .box {
+                        cursor: pointer;
+                        padding: 0;
+                        font-size: 18px;
+                        line-height: 7vh;
+                        border: solid 1px transparent;
+                        transition: all 0.3s ease;
+                        &:hover {
+                            border-color: $yellow;
+                        }
+                        &.active {
+                            background: $yellow;
+                            color: white;
+                        }
+                    }
+                }
+            }
+            .nav {
+                display: none;
+                z-index: 2;
+                position: absolute;
+                right: -2vw;
+                bottom: 1vh;
+                width: 2vw;
+                height: 10vh;
+                .sel {
+                    cursor: pointer;
+                    .fa {
+                        width: 100%;
+                        height: 5vh;
+                        transition: all 0.3s ease;
+                        color: inherit;
+                    }
+                    &:hover {
+                        .fa {
+                            color: $yellow;
+                        }
+                    }
+                }
+                &.active {
+                    display: inherit;
+                }
+            }
+            @media (max-width: 767px){
+                .nav{
+                    right: 0;
+                }
+            }
+        }
+    }
+    &.nBoy {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $nBoy;
+                }
+            }
+            .padWrap {
+                .image {
+                    div {
+                        color: $nBoy;
+                    }
+                }
+                .padSizePrimi {
+                    border-color: $nBoy;
+                    .row {
+                        .box {
+                            &:hover {
+                                border-color: $nBoy;
+                            }
+                            &.active {
+                                background: $nBoy;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+                .nav {
+                    .sel {
+                        &:hover {
+                            .fa {
+                                color: $nBoy;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.nGirl {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $nGirl;
+                }
+            }
+            .padWrap {
+                .image {
+                    div {
+                        color: $nGirl;
+                    }
+                }
+                .padSizePrimi {
+                    border-color: $nGirl;
+                    .row {
+                        .box {
+                            &:hover {
+                                border-color: $nGirl;
+                            }
+                            &.active {
+                                background: $nGirl;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+                .nav {
+                    .sel {
+                        &:hover {
+                            .fa {
+                                color: $nGirl;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

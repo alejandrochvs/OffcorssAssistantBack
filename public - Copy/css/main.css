@@ -1,0 +1,1827 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i");
+html {
+  overflow-x: hidden; }
+  html #editing {
+    text-align: center;
+    height: 50%;
+    top: 25%; }
+  html body {
+    user-select: none;
+    font-family: "Roboto", sans-serif;
+    background: white;
+    height: 100vh;
+    overflow: hidden; }
+    html body .ui {
+      bottom: 1vh;
+      transition: all 0.4s ease;
+      height: 0;
+      padding: 0;
+      z-index: 100;
+      line-height: 0;
+      overflow: hidden; }
+      html body .ui .ui-section {
+        transition: all 0.2s ease;
+        font-size: 20px;
+        background: #333;
+        color: white;
+        border-right: solid #fd0 2px;
+        padding: 0;
+        height: 6vh;
+        z-index: 1; }
+        html body .ui .ui-section .ui-option {
+          transition: all 0.2s ease;
+          text-align: center;
+          cursor: pointer;
+          background: #333;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          height: 6vh; }
+          html body .ui .ui-section .ui-option:hover i,
+          html body .ui .ui-section .ui-option:hover h6 {
+            color: #fd0; }
+          html body .ui .ui-section .ui-option i,
+          html body .ui .ui-section .ui-option h6 {
+            transition: all 0.2s ease;
+            margin: 0;
+            line-height: 6vh;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap; }
+          html body .ui .ui-section .ui-option.active {
+            background: #fd0;
+            color: black;
+            transition: all .2s ease;
+            border-right: solid 0px transparent; }
+            html body .ui .ui-section .ui-option.active h6 {
+              transition: all .2s ease; }
+            html body .ui .ui-section .ui-option.active:hover h6 {
+              color: white; }
+        html body .ui .ui-section:nth-child(1) .ui-option:nth-child(1) {
+          border-right: solid 1px whitesmoke; }
+        html body .ui .ui-section .ui-hidden {
+          max-height: 0;
+          position: absolute;
+          background: #333;
+          top: 5.8vh;
+          padding: 0;
+          overflow: hidden;
+          transition: all .5s ease;
+          z-index: 0;
+          border-bottom-left-radius: 2px;
+          border-bottom-right-radius: 2px; }
+          html body .ui .ui-section .ui-hidden ul {
+            top: 1px;
+            position: relative;
+            padding: 0;
+            margin-bottom: 0; }
+            html body .ui .ui-section .ui-hidden ul li {
+              list-style-type: none;
+              text-align: center;
+              background: transparent;
+              transition: all .3s ease; }
+              html body .ui .ui-section .ui-hidden ul li:hover {
+                background: #404040; }
+            html body .ui .ui-section .ui-hidden ul.user-settings li {
+              height: 5vh;
+              cursor: pointer; }
+              html body .ui .ui-section .ui-hidden ul.user-settings li h5 {
+                margin: 0;
+                height: 100%;
+                line-height: 5vh; }
+            html body .ui .ui-section .ui-hidden ul.section-divs li {
+              height: 5vh;
+              cursor: pointer; }
+              html body .ui .ui-section .ui-hidden ul.section-divs li h5 {
+                text-transform: capitalize;
+                margin: 0;
+                height: 100%;
+                line-height: 5vh; }
+            html body .ui .ui-section .ui-hidden ul.colors li {
+              height: 5vh;
+              line-height: 5vh;
+              cursor: pointer; }
+              html body .ui .ui-section .ui-hidden ul.colors li h5 {
+                margin: 0;
+                height: 5vh;
+                line-height: 5vh; }
+              html body .ui .ui-section .ui-hidden ul.colors li .color {
+                height: 100%;
+                width: 3%;
+                position: relative;
+                background: transparent;
+                transition: all .3s ease;
+                bottom: 100%;
+                z-index: 4;
+                overflow: hidden; }
+                html body .ui .ui-section .ui-hidden ul.colors li .color h5 {
+                  transition: all .2s ease;
+                  width: 100%;
+                  color: transparent; }
+              html body .ui .ui-section .ui-hidden ul.colors li .color-edit {
+                height: 100%;
+                width: 0;
+                position: relative;
+                background: transparent;
+                transition: all .3s ease;
+                bottom: 200%;
+                left: 0;
+                z-index: 4;
+                overflow: hidden; }
+                html body .ui .ui-section .ui-hidden ul.colors li .color-edit i {
+                  transition: all .2s ease;
+                  width: 100%;
+                  color: transparent; }
+              html body .ui .ui-section .ui-hidden ul.colors li:nth-child(1) .color {
+                background: #fd4605; }
+                html body .ui .ui-section .ui-hidden ul.colors li:nth-child(1) .color h5 {
+                  color: #fd4605; }
+              html body .ui .ui-section .ui-hidden ul.colors li:nth-child(2) .color {
+                background: #e70095; }
+                html body .ui .ui-section .ui-hidden ul.colors li:nth-child(2) .color h5 {
+                  color: #e70095; }
+              html body .ui .ui-section .ui-hidden ul.colors li:nth-child(3) .color {
+                background: #82bc00; }
+                html body .ui .ui-section .ui-hidden ul.colors li:nth-child(3) .color h5 {
+                  color: #82bc00; }
+              html body .ui .ui-section .ui-hidden ul.colors li:nth-child(4) .color {
+                background: #9794d2; }
+                html body .ui .ui-section .ui-hidden ul.colors li:nth-child(4) .color h5 {
+                  color: #9794d2; }
+              html body .ui .ui-section .ui-hidden ul.colors li:nth-child(5) .color {
+                background: #3e8ede; }
+                html body .ui .ui-section .ui-hidden ul.colors li:nth-child(5) .color h5 {
+                  color: #3e8ede; }
+              html body .ui .ui-section .ui-hidden ul.colors li:nth-child(6) .color {
+                background: #ee9bac; }
+                html body .ui .ui-section .ui-hidden ul.colors li:nth-child(6) .color h5 {
+                  color: #ee9bac; }
+              html body .ui .ui-section .ui-hidden ul.colors li:hover .color {
+                width: 80%;
+                opacity: 1; }
+                html body .ui .ui-section .ui-hidden ul.colors li:hover .color h5 {
+                  color: white; }
+              html body .ui .ui-section .ui-hidden ul.colors li:hover .color-edit {
+                left: 80%;
+                width: 20%;
+                opacity: 1; }
+                html body .ui .ui-section .ui-hidden ul.colors li:hover .color-edit i {
+                  color: white; }
+          html body .ui .ui-section .ui-hidden.active {
+            max-height: 70vh;
+            background: #333; }
+    html body .header {
+      margin: 0;
+      background: white;
+      text-align: center;
+      z-index: 1;
+      -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
+      box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
+      padding: 0;
+      border-bottom: solid 4px transparent;
+      transition: all 0.3s ease; }
+      html body .header .head {
+        margin: 0;
+        height: 10vh;
+        line-height: 10vh;
+        padding: 0; }
+        html body .header .head.title .cont {
+          font-size: 18px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap; }
+        html body .header .head .cont {
+          z-index: 1;
+          transition: all 0.3s ease; }
+          html body .header .head .cont.back {
+            top: 1vh;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap; }
+            html body .header .head .cont.back i {
+              cursor: pointer;
+              color: #fd0;
+              font-size: 28px; }
+            html body .header .head .cont.back span {
+              cursor: pointer;
+              font-size: 12px;
+              position: relative;
+              bottom: 4px;
+              transition: all 0.3s ease; }
+              html body .header .head .cont.back span:hover {
+                color: #fd0; }
+          html body .header .head .cont a i {
+            font-size: 28px;
+            top: 5px;
+            position: relative;
+            color: #fd0;
+            transition: all 0.3s ease; }
+            html body .header .head .cont a i:hover {
+              color: #e6c700; }
+        html body .header .head.transparent {
+          cursor: default;
+          user-select: none; }
+          html body .header .head.transparent .cont.back {
+            display: none;
+            animation: fade 0.3s ease;
+            color: transparent;
+            cursor: default; }
+            html body .header .head.transparent .cont.back i {
+              color: transparent;
+              animation: fade 0.3s ease;
+              cursor: default; }
+            html body .header .head.transparent .cont.back span {
+              cursor: default; }
+              html body .header .head.transparent .cont.back span:hover {
+                color: transparent; }
+      html body .header.boy {
+        border-bottom-color: #fd4605; }
+      html body .header.girl {
+        border-bottom-color: #e70095; }
+      html body .header.bBoy {
+        border-bottom-color: #82bc00; }
+      html body .header.bGirl {
+        border-bottom-color: #9794d2; }
+      html body .header.nBoy {
+        border-bottom-color: #3e8ede; }
+      html body .header.nGirl {
+        border-bottom-color: #ee9bac; }
+    html body .content {
+      margin: 0;
+      height: 80vh;
+      background: white;
+      z-index: 0;
+      background-image: url("../IMG/background.jpg");
+      padding: 0; }
+      html body .content .screen {
+        width: 100vw;
+        position: absolute;
+        transition: all 0.7s ease;
+        height: 100%; }
+        html body .content .screen.prev {
+          right: 100vw;
+          height: 100%; }
+          html body .content .screen.prev .container {
+            padding: 0;
+            height: 100%; }
+        html body .content .screen.current {
+          height: 100%;
+          right: 0; }
+          html body .content .screen.current .container {
+            height: 100%;
+            padding: 0; }
+        html body .content .screen.next {
+          right: -100vw;
+          height: 100%; }
+          html body .content .screen.next .container {
+            height: 100%;
+            padding: 0; }
+        html body .content .screen .container {
+          padding: 0; }
+          html body .content .screen .container .gender {
+            padding: 5vh 0;
+            height: 100%; }
+            html body .content .screen .container .gender .selection-wrap {
+              text-align: center;
+              height: 50%; }
+              html body .content .screen .container .gender .selection-wrap .title {
+                margin-bottom: 5vh; }
+                html body .content .screen .container .gender .selection-wrap .title .text {
+                  background: white;
+                  border-bottom: solid 3px #fd0;
+                  padding: 2%;
+                  transition: all 0.3s ease; }
+              html body .content .screen .container .gender .selection-wrap .selections .background .text {
+                background: white;
+                padding: 4%;
+                border-bottom: solid 3px transparent;
+                transition: all 0.3s ease;
+                cursor: pointer; }
+                html body .content .screen .container .gender .selection-wrap .selections .background .text.boySel:hover {
+                  border-bottom: solid 3px #fd4605; }
+                html body .content .screen .container .gender .selection-wrap .selections .background .text.girlSel:hover {
+                  border-bottom: solid 3px #e70095; }
+            html body .content .screen .container .gender .img {
+              height: 60vh; }
+              html body .content .screen .container .gender .img .image {
+                background-image: url(../IMG/Gender/both.png);
+                height: 100%;
+                background-position: center;
+                background-origin: content-box;
+                background-size: contain;
+                background-repeat: no-repeat; }
+            html body .content .screen .container .gender.boy .selection-wrap .title .text {
+              border-bottom-color: #fd4605; }
+            html body .content .screen .container .gender.boy .selection-wrap .selections .background .boySel {
+              border-bottom-color: #fd4605; }
+            html body .content .screen .container .gender.boy .img .image {
+              background-image: url(../IMG/Gender/boy.png); }
+            html body .content .screen .container .gender.girl .selection-wrap .title .text {
+              border-bottom-color: #e70095; }
+            html body .content .screen .container .gender.girl .selection-wrap .selections .background .girlSel {
+              border-bottom-color: #e70095; }
+            html body .content .screen .container .gender.girl .img .image {
+              background-image: url(../IMG/Gender/girl.png); }
+          html body .content .screen .container .name {
+            padding: 5vh 0; }
+            html body .content .screen .container .name .selection-wrap {
+              text-align: center; }
+              html body .content .screen .container .name .selection-wrap .title {
+                margin-bottom: 5vh; }
+                html body .content .screen .container .name .selection-wrap .title .text {
+                  transition: all 0.3s ease;
+                  background: white;
+                  border-bottom: solid 3px #fd0;
+                  padding: 2%; }
+              html body .content .screen .container .name .selection-wrap .nameInput input {
+                outline: none;
+                color: black;
+                border: none;
+                background-color: transparent; }
+                html body .content .screen .container .name .selection-wrap .nameInput input::placeholder {
+                  color: lightgray; }
+                html body .content .screen .container .name .selection-wrap .nameInput input:focus {
+                  outline: none; }
+              html body .content .screen .container .name .selection-wrap .continue {
+                display: none;
+                cursor: pointer;
+                margin-top: 5vh; }
+                html body .content .screen .container .name .selection-wrap .continue div {
+                  transition: all 0.3s ease;
+                  background: #fd0;
+                  color: white; }
+                  html body .content .screen .container .name .selection-wrap .continue div h3 {
+                    margin: 0;
+                    padding: 3%; }
+            html body .content .screen .container .name .img {
+              height: 60vh; }
+              html body .content .screen .container .name .img .image {
+                height: 100%;
+                background-position: center;
+                background-origin: content-box;
+                background-size: contain;
+                background-repeat: no-repeat; }
+            html body .content .screen .container .name.boy .selection-wrap .title .text {
+              border-bottom-color: #fd4605; }
+            html body .content .screen .container .name.boy .selection-wrap .continue div {
+              background: #fd4605; }
+            html body .content .screen .container .name.boy .img .image {
+              background-image: url("../IMG/Name/boy.png"); }
+            html body .content .screen .container .name.girl .selection-wrap .title .text {
+              border-bottom-color: #e70095; }
+            html body .content .screen .container .name.girl .selection-wrap .continue div {
+              background: #e70095; }
+            html body .content .screen .container .name.girl .img .image {
+              background-image: url("../IMG/Name/girl.png"); }
+            html body .content .screen .container .name.bBoy .selection-wrap .title .text {
+              border-bottom-color: #82bc00; }
+            html body .content .screen .container .name.bBoy .selection-wrap .continue div {
+              background: #82bc00; }
+            html body .content .screen .container .name.bBoy .img .image {
+              background-image: url("../IMG/Name/bBoy.png"); }
+            html body .content .screen .container .name.bGirl .selection-wrap .title .text {
+              border-bottom-color: #9794d2; }
+            html body .content .screen .container .name.bGirl .selection-wrap .continue div {
+              background: #9794d2; }
+            html body .content .screen .container .name.bGirl .img .image {
+              background-image: url("../IMG/Name/bGirl.png"); }
+            html body .content .screen .container .name.nBoy .selection-wrap .title .text {
+              border-bottom-color: #3e8ede; }
+            html body .content .screen .container .name.nBoy .selection-wrap .continue div {
+              background: #3e8ede; }
+            html body .content .screen .container .name.nBoy .img .image {
+              background-image: url("../IMG/Name/nBoy.png"); }
+            html body .content .screen .container .name.nGirl .selection-wrap .title .text {
+              border-bottom-color: #ee9bac; }
+            html body .content .screen .container .name.nGirl .selection-wrap .continue div {
+              background: #ee9bac; }
+            html body .content .screen .container .name.nGirl .img .image {
+              background-image: url("../IMG/Name/nGirl.png"); }
+          html body .content .screen .container .age {
+            padding: 5vh 0; }
+            html body .content .screen .container .age .selection-wrap {
+              text-align: center; }
+              html body .content .screen .container .age .selection-wrap .title {
+                margin-bottom: 5vh; }
+                html body .content .screen .container .age .selection-wrap .title .text {
+                  transition: all 0.3s ease;
+                  background: white;
+                  border-bottom: solid 3px #fd0;
+                  padding: 2%; }
+              html body .content .screen .container .age .selection-wrap .pad {
+                padding: 1%;
+                border: solid 2px #fd0;
+                transition: all 0.3s ease; }
+                html body .content .screen .container .age .selection-wrap .pad .row {
+                  padding: 0;
+                  margin: 0; }
+                  html body .content .screen .container .age .selection-wrap .pad .row .number {
+                    cursor: pointer;
+                    padding: 1%;
+                    border: solid 2px transparent;
+                    transition: all 0.3s ease; }
+                    html body .content .screen .container .age .selection-wrap .pad .row .number:hover {
+                      border: solid 2px #fd0; }
+                    html body .content .screen .container .age .selection-wrap .pad .row .number.selected {
+                      background: #fd0;
+                      color: white; }
+            html body .content .screen .container .age .img {
+              height: 60vh; }
+              html body .content .screen .container .age .img .image {
+                height: 100%;
+                background-position: center;
+                background-origin: content-box;
+                background-size: contain;
+                background-repeat: no-repeat; }
+            html body .content .screen .container .age.boy .selection-wrap .title .text {
+              border-bottom-color: #fd4605; }
+            html body .content .screen .container .age.boy .selection-wrap .pad {
+              border-color: #fd4605; }
+              html body .content .screen .container .age.boy .selection-wrap .pad .row .number:hover {
+                border-color: #fd4605; }
+              html body .content .screen .container .age.boy .selection-wrap .pad .row .number.selected {
+                background: #fd4605;
+                color: white; }
+            html body .content .screen .container .age.boy .img .image {
+              background-image: url("../IMG/Age/boy.png"); }
+            html body .content .screen .container .age.girl .selection-wrap .title .text {
+              border-bottom-color: #e70095; }
+            html body .content .screen .container .age.girl .selection-wrap .pad {
+              border-color: #e70095; }
+              html body .content .screen .container .age.girl .selection-wrap .pad .row .number:hover {
+                border-color: #e70095; }
+              html body .content .screen .container .age.girl .selection-wrap .pad .row .number.selected {
+                background: #e70095;
+                color: white; }
+            html body .content .screen .container .age.girl .img .image {
+              background-image: url("../IMG/Age/girl.png"); }
+            html body .content .screen .container .age.bBoy .selection-wrap .title .text {
+              border-bottom-color: #82bc00; }
+            html body .content .screen .container .age.bBoy .selection-wrap .pad {
+              border-color: #82bc00; }
+              html body .content .screen .container .age.bBoy .selection-wrap .pad .row .number:hover {
+                border-color: #82bc00; }
+              html body .content .screen .container .age.bBoy .selection-wrap .pad .row .number.selected {
+                background: #82bc00;
+                color: white; }
+            html body .content .screen .container .age.bBoy .img .image {
+              background-image: url("../IMG/Age/bBoy.png"); }
+            html body .content .screen .container .age.bGirl .selection-wrap .title .text {
+              border-bottom-color: #9794d2; }
+            html body .content .screen .container .age.bGirl .selection-wrap .pad {
+              border-color: #9794d2; }
+              html body .content .screen .container .age.bGirl .selection-wrap .pad .row .number:hover {
+                border-color: #9794d2; }
+              html body .content .screen .container .age.bGirl .selection-wrap .pad .row .number.selected {
+                background: #9794d2;
+                color: white; }
+            html body .content .screen .container .age.bGirl .img .image {
+              background-image: url("../IMG/Age/bGirl.png"); }
+            html body .content .screen .container .age.nBoy .selection-wrap .title .text {
+              border-bottom-color: #3e8ede; }
+            html body .content .screen .container .age.nBoy .selection-wrap .pad {
+              border-color: #3e8ede; }
+              html body .content .screen .container .age.nBoy .selection-wrap .pad .row .number:hover {
+                border-color: #3e8ede; }
+              html body .content .screen .container .age.nBoy .selection-wrap .pad .row .number.selected {
+                background: #3e8ede;
+                color: white; }
+            html body .content .screen .container .age.nBoy .img .image {
+              background-image: url("../IMG/Age/nBoy.png"); }
+            html body .content .screen .container .age.nGirl .selection-wrap .title .text {
+              border-bottom-color: #ee9bac; }
+            html body .content .screen .container .age.nGirl .selection-wrap .pad {
+              border-color: #ee9bac; }
+              html body .content .screen .container .age.nGirl .selection-wrap .pad .row .number:hover {
+                border-color: #ee9bac; }
+              html body .content .screen .container .age.nGirl .selection-wrap .pad .row .number.selected {
+                background: #ee9bac;
+                color: white; }
+            html body .content .screen .container .age.nGirl .img .image {
+              background-image: url("../IMG/Age/nGirl.png"); }
+          html body .content .screen .container .size {
+            padding: 5vh 0;
+            height: 100%; }
+            html body .content .screen .container .size .selection-wrap {
+              height: 100%;
+              text-align: center; }
+              html body .content .screen .container .size .selection-wrap .title {
+                margin-bottom: 5vh; }
+                html body .content .screen .container .size .selection-wrap .title .text {
+                  transition: all 0.3s ease;
+                  background: white;
+                  border-bottom: solid 3px #fd0;
+                  padding: 2%; }
+              html body .content .screen .container .size .selection-wrap .padWrap .image {
+                height: 20vh; }
+                html body .content .screen .container .size .selection-wrap .padWrap .image div {
+                  transition: all 0.3s ease;
+                  height: 100%;
+                  color: #fd0;
+                  font-size: 15vh; }
+              html body .content .screen .container .size .selection-wrap .padWrap .padSize {
+                height: 30vh;
+                padding: 0;
+                border: solid 2px #fd0;
+                transition: all 0.3s ease;
+                overflow: hidden; }
+                html body .content .screen .container .size .selection-wrap .padWrap .padSize .row {
+                  z-index: 1;
+                  transition: all 0.3s ease;
+                  height: 10vh;
+                  margin: 0;
+                  padding: 1vh 2vw;
+                  top: 0; }
+                  html body .content .screen .container .size .selection-wrap .padWrap .padSize .row .box {
+                    cursor: pointer;
+                    padding: 0;
+                    font-size: 18px;
+                    line-height: 7vh;
+                    border: solid 1px transparent;
+                    transition: all 0.3s ease;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden; }
+                    html body .content .screen .container .size .selection-wrap .padWrap .padSize .row .box:hover {
+                      border-color: #fd0; }
+                    html body .content .screen .container .size .selection-wrap .padWrap .padSize .row .box.active {
+                      background: #fd0;
+                      color: white; }
+              html body .content .screen .container .size .selection-wrap .padWrap .nav {
+                display: none;
+                z-index: 2;
+                position: absolute;
+                right: 2vw;
+                bottom: 1vh;
+                width: 2vw;
+                height: 10vh; }
+                html body .content .screen .container .size .selection-wrap .padWrap .nav .sel {
+                  cursor: pointer; }
+                  html body .content .screen .container .size .selection-wrap .padWrap .nav .sel .fa {
+                    width: 100%;
+                    height: 5vh;
+                    transition: all 0.3s ease;
+                    color: inherit; }
+                  html body .content .screen .container .size .selection-wrap .padWrap .nav .sel:hover .fa {
+                    color: #fd0; }
+                html body .content .screen .container .size .selection-wrap .padWrap .nav.active {
+                  display: inherit; }
+            html body .content .screen .container .size.boy .selection-wrap .title .text {
+              border-bottom-color: #fd4605; }
+            html body .content .screen .container .size.boy .selection-wrap .padWrap .image div {
+              color: #fd4605; }
+            html body .content .screen .container .size.boy .selection-wrap .padWrap .padSize {
+              border-color: #fd4605; }
+              html body .content .screen .container .size.boy .selection-wrap .padWrap .padSize .row .box:hover {
+                border-color: #fd4605; }
+              html body .content .screen .container .size.boy .selection-wrap .padWrap .padSize .row .box.active {
+                background: #fd4605;
+                color: white; }
+            html body .content .screen .container .size.boy .selection-wrap .padWrap .nav .sel:hover .fa {
+              color: #fd4605; }
+            html body .content .screen .container .size.girl .selection-wrap .title .text {
+              border-bottom-color: #e70095; }
+            html body .content .screen .container .size.girl .selection-wrap .padWrap .image div {
+              color: #e70095; }
+            html body .content .screen .container .size.girl .selection-wrap .padWrap .padSize {
+              border-color: #e70095; }
+              html body .content .screen .container .size.girl .selection-wrap .padWrap .padSize .row .box:hover {
+                border-color: #e70095; }
+              html body .content .screen .container .size.girl .selection-wrap .padWrap .padSize .row .box.active {
+                background: #e70095;
+                color: white; }
+            html body .content .screen .container .size.girl .selection-wrap .padWrap .nav .sel:hover .fa {
+              color: #e70095; }
+            html body .content .screen .container .size.bBoy .selection-wrap .title .text {
+              border-bottom-color: #82bc00; }
+            html body .content .screen .container .size.bBoy .selection-wrap .padWrap .image div {
+              color: #82bc00; }
+            html body .content .screen .container .size.bBoy .selection-wrap .padWrap .padSize {
+              border-color: #82bc00; }
+              html body .content .screen .container .size.bBoy .selection-wrap .padWrap .padSize .row .box:hover {
+                border-color: #82bc00; }
+              html body .content .screen .container .size.bBoy .selection-wrap .padWrap .padSize .row .box.active {
+                background: #82bc00;
+                color: white; }
+            html body .content .screen .container .size.bBoy .selection-wrap .padWrap .nav .sel:hover .fa {
+              color: #82bc00; }
+            html body .content .screen .container .size.bGirl .selection-wrap .title .text {
+              border-bottom-color: #9794d2; }
+            html body .content .screen .container .size.bGirl .selection-wrap .padWrap .image div {
+              color: #9794d2; }
+            html body .content .screen .container .size.bGirl .selection-wrap .padWrap .padSize {
+              border-color: #9794d2; }
+              html body .content .screen .container .size.bGirl .selection-wrap .padWrap .padSize .row .box:hover {
+                border-color: #9794d2; }
+              html body .content .screen .container .size.bGirl .selection-wrap .padWrap .padSize .row .box.active {
+                background: #9794d2;
+                color: white; }
+            html body .content .screen .container .size.bGirl .selection-wrap .padWrap .nav .sel:hover .fa {
+              color: #9794d2; }
+          @media (max-width: 767px) {
+            html body .content .screen .container .size {
+              padding: 0; }
+              html body .content .screen .container .size .selection-wrap .title {
+                margin-bottom: 0; }
+              html body .content .screen .container .size .selection-wrap .padWrap .image {
+                height: 10vh; }
+                html body .content .screen .container .size .selection-wrap .padWrap .image div {
+                  font-size: 9vh; }
+              html body .content .screen .container .size .selection-wrap .padWrap .padSize {
+                padding: 1vh 2vw;
+                height: 10vh; }
+                html body .content .screen .container .size .selection-wrap .padWrap .padSize .row {
+                  padding: 0; }
+                  html body .content .screen .container .size .selection-wrap .padWrap .padSize .row .box {
+                    border: solid 1px lightgray; }
+              html body .content .screen .container .size .selection-wrap .padWrap .nav {
+                right: 0;
+                height: 50%;
+                bottom: 0; } }
+          html body .content .screen .container .sizePrimi {
+            padding: 5vh 0; }
+            html body .content .screen .container .sizePrimi .selection-wrap {
+              text-align: center; }
+              html body .content .screen .container .sizePrimi .selection-wrap .title {
+                margin-bottom: 5vh; }
+                html body .content .screen .container .sizePrimi .selection-wrap .title .text {
+                  transition: all 0.3s ease;
+                  background: white;
+                  border-bottom: solid 3px #fd0;
+                  padding: 2%; }
+              html body .content .screen .container .sizePrimi .selection-wrap .padWrap .image {
+                height: 20vh; }
+                html body .content .screen .container .sizePrimi .selection-wrap .padWrap .image div {
+                  transition: all 0.3s ease;
+                  height: 100%;
+                  color: #fd0;
+                  font-size: 15vh; }
+              html body .content .screen .container .sizePrimi .selection-wrap .padWrap .padSizePrimi {
+                height: 30vh;
+                padding: 0;
+                border: solid 2px #fd0;
+                transition: all 0.3s ease;
+                overflow: hidden; }
+                html body .content .screen .container .sizePrimi .selection-wrap .padWrap .padSizePrimi .row {
+                  z-index: 1;
+                  transition: all 0.3s ease;
+                  height: 10vh;
+                  margin: 0;
+                  padding: 1vh 2vw;
+                  top: 0; }
+                  html body .content .screen .container .sizePrimi .selection-wrap .padWrap .padSizePrimi .row .box {
+                    cursor: pointer;
+                    padding: 0;
+                    font-size: 18px;
+                    line-height: 7vh;
+                    border: solid 1px transparent;
+                    transition: all 0.3s ease; }
+                    html body .content .screen .container .sizePrimi .selection-wrap .padWrap .padSizePrimi .row .box:hover {
+                      border-color: #fd0; }
+                    html body .content .screen .container .sizePrimi .selection-wrap .padWrap .padSizePrimi .row .box.active {
+                      background: #fd0;
+                      color: white; }
+              html body .content .screen .container .sizePrimi .selection-wrap .padWrap .nav {
+                display: none;
+                z-index: 2;
+                position: absolute;
+                right: -2vw;
+                bottom: 1vh;
+                width: 2vw;
+                height: 10vh; }
+                html body .content .screen .container .sizePrimi .selection-wrap .padWrap .nav .sel {
+                  cursor: pointer; }
+                  html body .content .screen .container .sizePrimi .selection-wrap .padWrap .nav .sel .fa {
+                    width: 100%;
+                    height: 5vh;
+                    transition: all 0.3s ease;
+                    color: inherit; }
+                  html body .content .screen .container .sizePrimi .selection-wrap .padWrap .nav .sel:hover .fa {
+                    color: #fd0; }
+                html body .content .screen .container .sizePrimi .selection-wrap .padWrap .nav.active {
+                  display: inherit; }
+              @media (max-width: 767px) {
+                html body .content .screen .container .sizePrimi .selection-wrap .padWrap .nav {
+                  right: 0; } }
+            html body .content .screen .container .sizePrimi.nBoy .selection-wrap .title .text {
+              border-bottom-color: #3e8ede; }
+            html body .content .screen .container .sizePrimi.nBoy .selection-wrap .padWrap .image div {
+              color: #3e8ede; }
+            html body .content .screen .container .sizePrimi.nBoy .selection-wrap .padWrap .padSizePrimi {
+              border-color: #3e8ede; }
+              html body .content .screen .container .sizePrimi.nBoy .selection-wrap .padWrap .padSizePrimi .row .box:hover {
+                border-color: #3e8ede; }
+              html body .content .screen .container .sizePrimi.nBoy .selection-wrap .padWrap .padSizePrimi .row .box.active {
+                background: #3e8ede;
+                color: white; }
+            html body .content .screen .container .sizePrimi.nBoy .selection-wrap .padWrap .nav .sel:hover .fa {
+              color: #3e8ede; }
+            html body .content .screen .container .sizePrimi.nGirl .selection-wrap .title .text {
+              border-bottom-color: #ee9bac; }
+            html body .content .screen .container .sizePrimi.nGirl .selection-wrap .padWrap .image div {
+              color: #ee9bac; }
+            html body .content .screen .container .sizePrimi.nGirl .selection-wrap .padWrap .padSizePrimi {
+              border-color: #ee9bac; }
+              html body .content .screen .container .sizePrimi.nGirl .selection-wrap .padWrap .padSizePrimi .row .box:hover {
+                border-color: #ee9bac; }
+              html body .content .screen .container .sizePrimi.nGirl .selection-wrap .padWrap .padSizePrimi .row .box.active {
+                background: #ee9bac;
+                color: white; }
+            html body .content .screen .container .sizePrimi.nGirl .selection-wrap .padWrap .nav .sel:hover .fa {
+              color: #ee9bac; }
+          html body .content .screen .container .occasion {
+            padding: 5vh 0; }
+            html body .content .screen .container .occasion .selection-wrap {
+              text-align: center; }
+              html body .content .screen .container .occasion .selection-wrap .title {
+                margin-bottom: 5vh; }
+                html body .content .screen .container .occasion .selection-wrap .title .text {
+                  transition: all 0.3s ease;
+                  background: white;
+                  border-bottom: solid 3px #fd0;
+                  padding: 2%; }
+            html body .content .screen .container .occasion .occasions .background {
+              transition: all .3s ease;
+              padding: 1%; }
+              html body .content .screen .container .occasion .occasions .background .cont {
+                cursor: pointer;
+                transition: all 0.3s ease;
+                padding: 0;
+                background: #fd0;
+                background-image: url(../../IMG/smokks.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+                overflow: hidden;
+                transition: all 0.3s ease; }
+                html body .content .screen .container .occasion .occasions .background .cont .img {
+                  transition: all 0.3s ease;
+                  height: 30vh; }
+                html body .content .screen .container .occasion .occasions .background .cont .title {
+                  transition: all 0.3s ease;
+                  padding: 0;
+                  background: rgba(255, 221, 0, 0.8);
+                  padding: 4%;
+                  height: 8vh; }
+                  html body .content .screen .container .occasion .occasions .background .cont .title h3 {
+                    line-height: 8vh;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    text-align: center;
+                    margin: 0;
+                    color: white; }
+                html body .content .screen .container .occasion .occasions .background .cont:hover, html body .content .screen .container .occasion .occasions .background .cont.active {
+                  transform: scale(1); }
+                  html body .content .screen .container .occasion .occasions .background .cont:hover .img, html body .content .screen .container .occasion .occasions .background .cont.active .img {
+                    height: 0vh; }
+                  html body .content .screen .container .occasion .occasions .background .cont:hover .title, html body .content .screen .container .occasion .occasions .background .cont.active .title {
+                    height: 35vh;
+                    transform: scale(1.4); }
+                    html body .content .screen .container .occasion .occasions .background .cont:hover .title h3, html body .content .screen .container .occasion .occasions .background .cont.active .title h3 {
+                      line-height: 35vh; }
+              html body .content .screen .container .occasion .occasions .background:nth-child(1) .cont {
+                background-image: url(../IMG/looks/abc.jpg); }
+              html body .content .screen .container .occasion .occasions .background:nth-child(2) .cont {
+                background-image: url(../IMG/looks/basicos.jpg); }
+              html body .content .screen .container .occasion .occasions .background:nth-child(3) .cont {
+                background-image: url(../IMG/looks/moda.jpg); }
+              html body .content .screen .container .occasion .occasions .background:nth-child(4) .cont {
+                background-image: url(../IMG/looks/playa.jpg); }
+              html body .content .screen .container .occasion .occasions .background:nth-child(5) .cont {
+                background-image: url(../IMG/looks/special-occasion.jpg); }
+              html body .content .screen .container .occasion .occasions .background:nth-child(6) .cont {
+                background-image: url(../IMG/looks/sport.jpg); }
+            html body .content .screen .container .occasion .occasionsBtn {
+              border-radius: 2px;
+              background: #fd0;
+              transition: all .3s ease;
+              color: white;
+              padding: 1%;
+              cursor: pointer;
+              height: 5vh;
+              line-height: 5vh;
+              padding: 0; }
+              html body .content .screen .container .occasion .occasionsBtn:hover {
+                background: #e6c700; }
+              html body .content .screen .container .occasion .occasionsBtn.disabled {
+                height: 0vh;
+                overflow: hidden;
+                background: #ffeb66;
+                cursor: default;
+                background: transparent !important; }
+                html body .content .screen .container .occasion .occasionsBtn.disabled:hover {
+                  background: #ffe433; }
+            html body .content .screen .container .occasion.boy .selection-wrap .title .text {
+              border-bottom-color: #fd4605; }
+            html body .content .screen .container .occasion.boy .occasions .background .cont .title {
+              background: rgba(253, 70, 5, 0.8); }
+            html body .content .screen .container .occasion.boy .occasionsBtn {
+              background: #fd4605; }
+              html body .content .screen .container .occasion.boy .occasionsBtn:hover {
+                background: #e73e02; }
+              html body .content .screen .container .occasion.boy .occasionsBtn.disabled {
+                background: #fe916a;
+                cursor: default; }
+                html body .content .screen .container .occasion.boy .occasionsBtn.disabled:hover {
+                  background: #fe916a; }
+            html body .content .screen .container .occasion.girl .selection-wrap .title .text {
+              border-bottom-color: #e70095; }
+            html body .content .screen .container .occasion.girl .occasions .background .cont .title {
+              background: rgba(231, 0, 149, 0.8); }
+            html body .content .screen .container .occasion.girl .occasionsBtn {
+              background: #e70095; }
+              html body .content .screen .container .occasion.girl .occasionsBtn:hover {
+                background: #ce0085; }
+              html body .content .screen .container .occasion.girl .occasionsBtn.disabled {
+                background: #ff4ec0;
+                cursor: default; }
+                html body .content .screen .container .occasion.girl .occasionsBtn.disabled:hover {
+                  background: #ff4ec0; }
+            html body .content .screen .container .occasion.bBoy .selection-wrap .title .text {
+              border-bottom-color: #82bc00; }
+            html body .content .screen .container .occasion.bBoy .occasions .background .cont .title {
+              background: rgba(130, 188, 0, 0.8); }
+            html body .content .screen .container .occasion.bBoy .occasionsBtn {
+              background: #82bc00; }
+              html body .content .screen .container .occasion.bBoy .occasionsBtn:hover {
+                background: #70a300; }
+              html body .content .screen .container .occasion.bBoy .occasionsBtn.disabled {
+                background: #bbff23;
+                cursor: default; }
+                html body .content .screen .container .occasion.bBoy .occasionsBtn.disabled:hover {
+                  background: #bbff23; }
+            html body .content .screen .container .occasion.bGirl .selection-wrap .title .text {
+              border-bottom-color: #9794d2; }
+            html body .content .screen .container .occasion.bGirl .occasions .background .cont .title {
+              background: rgba(151, 148, 210, 0.8); }
+            html body .content .screen .container .occasion.bGirl .occasionsBtn {
+              background: #9794d2; }
+              html body .content .screen .container .occasion.bGirl .occasionsBtn:hover {
+                background: #8682ca; }
+              html body .content .screen .container .occasion.bGirl .occasionsBtn.disabled {
+                background: #dddcf0;
+                cursor: default; }
+                html body .content .screen .container .occasion.bGirl .occasionsBtn.disabled:hover {
+                  background: #dddcf0; }
+            html body .content .screen .container .occasion.nBoy .selection-wrap .title .text {
+              border-bottom-color: #3e8ede; }
+            html body .content .screen .container .occasion.nBoy .occasions .background .cont .title {
+              background: rgba(62, 142, 222, 0.8); }
+            html body .content .screen .container .occasion.nBoy .occasionsBtn {
+              background: #3e8ede; }
+              html body .content .screen .container .occasion.nBoy .occasionsBtn:hover {
+                background: #2881da; }
+              html body .content .screen .container .occasion.nBoy .occasionsBtn.disabled {
+                background: #95c1ed;
+                cursor: default; }
+                html body .content .screen .container .occasion.nBoy .occasionsBtn.disabled:hover {
+                  background: #95c1ed; }
+            html body .content .screen .container .occasion.nGirl .selection-wrap .title .text {
+              border-bottom-color: #ee9bac; }
+            html body .content .screen .container .occasion.nGirl .occasions .background .cont .title {
+              background: rgba(238, 155, 172, 0.8); }
+            html body .content .screen .container .occasion.nGirl .occasionsBtn {
+              background: #ee9bac; }
+              html body .content .screen .container .occasion.nGirl .occasionsBtn:hover {
+                background: #ea859a; }
+              html body .content .screen .container .occasion.nGirl .occasionsBtn.disabled {
+                background: #fdf2f4;
+                cursor: default; }
+                html body .content .screen .container .occasion.nGirl .occasionsBtn.disabled:hover {
+                  background: #fdf2f4; }
+          @media (max-width: 767px) {
+            html body .content .screen .container .occasion .occasions .background .cont .img {
+              height: 20vh;
+              transition: all .3s ease; }
+            html body .content .screen .container .occasion .occasions .background .cont .title {
+              padding: 0;
+              height: 5vh;
+              transition: all .3s ease; }
+              html body .content .screen .container .occasion .occasions .background .cont .title h3 {
+                transition: all .3s ease;
+                line-height: 5vh;
+                font-size: 18px; }
+            html body .content .screen .container .occasion .occasions .background .cont:hover {
+              transform: scale(1); }
+              html body .content .screen .container .occasion .occasions .background .cont:hover .img {
+                height: 20vh; }
+              html body .content .screen .container .occasion .occasions .background .cont:hover .title {
+                height: 5vh;
+                transform: scale(1); }
+                html body .content .screen .container .occasion .occasions .background .cont:hover .title h3 {
+                  line-height: 5vh;
+                  font-size: 18px; } }
+          @media (min-height: 768px) and (orientation: portrait) {
+            html body .content .screen .container .occasion .occasions .background .cont .img {
+              height: 20vh; }
+            html body .content .screen .container .occasion .occasions .background .cont .title {
+              height: 5vh; }
+              html body .content .screen .container .occasion .occasions .background .cont .title h3 {
+                line-height: 4vh; } }
+          @media (max-height 767px) and (orientation: landscape) {
+            html body .content .screen .container .occasion .selection-wrap .title {
+              margin-bottom: 1vh; }
+            html body .content .screen .container .occasion .occasions .background .cont {
+              background-position: bottom; }
+              html body .content .screen .container .occasion .occasions .background .cont .img {
+                height: 16vh; }
+              html body .content .screen .container .occasion .occasions .background .cont .title {
+                height: 6vh; }
+                html body .content .screen .container .occasion .occasions .background .cont .title h3 {
+                  line-height: 3vh; }
+              html body .content .screen .container .occasion .occasions .background .cont:hover {
+                transform: scale(1); }
+                html body .content .screen .container .occasion .occasions .background .cont:hover .title {
+                  height: 21.9vh;
+                  transform: scale(1); }
+                  html body .content .screen .container .occasion .occasions .background .cont:hover .title h3 {
+                    transform: scale(1);
+                    line-height: 19vh; } }
+          html body .content .screen .container .weather {
+            padding: 5vh 0; }
+            html body .content .screen .container .weather .selection-wrap {
+              text-align: center; }
+              html body .content .screen .container .weather .selection-wrap .title {
+                margin-bottom: 5vh; }
+                html body .content .screen .container .weather .selection-wrap .title .text {
+                  transition: all 0.3s ease;
+                  background: white;
+                  border-bottom: solid 3px #fd0;
+                  padding: 2%; }
+            html body .content .screen .container .weather .weathers .background {
+              transition: all 0.3s ease;
+              padding: 1%; }
+              html body .content .screen .container .weather .weathers .background .cont {
+                cursor: pointer;
+                transition: all 0.3s ease;
+                padding: 0;
+                background: #fd0;
+                background-image: url(../../IMG/smokks.png);
+                background-position: center top;
+                background-size: contain;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+                overflow: hidden;
+                border: solid 5px rgba(255, 221, 0, 0.8);
+                border-bottom: none;
+                padding: 0;
+                background-repeat: repeat; }
+                html body .content .screen .container .weather .weathers .background .cont .img {
+                  height: 40vh; }
+                  html body .content .screen .container .weather .weathers .background .cont .img img {
+                    padding: 0;
+                    margin-top: 2vh; }
+                html body .content .screen .container .weather .weathers .background .cont .title {
+                  transition: all 0.3s ease;
+                  padding: 0;
+                  background: rgba(255, 221, 0, 0.8);
+                  padding: 4%; }
+                  html body .content .screen .container .weather .weathers .background .cont .title h3 {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    text-align: center;
+                    margin: 0;
+                    color: white; }
+              html body .content .screen .container .weather .weathers .background:nth-child(1) .cont {
+                background-image: url(../../IMG/weather/Snow.jp);
+                background-color: #1E90FF;
+                border: solid 5px rgba(30, 144, 255, 0.9); }
+                html body .content .screen .container .weather .weathers .background:nth-child(1) .cont .title {
+                  background: rgba(30, 144, 255, 0.9); }
+              html body .content .screen .container .weather .weathers .background:nth-child(2) .cont {
+                background-image: url(../../IMG/weather/Grass.pn);
+                background-color: #A9A9A9;
+                border: solid 5px rgba(169, 169, 169, 0.9); }
+                html body .content .screen .container .weather .weathers .background:nth-child(2) .cont .title {
+                  background: rgba(169, 169, 169, 0.9); }
+              html body .content .screen .container .weather .weathers .background:nth-child(3) .cont {
+                background-image: url(../../IMG/weather/Desert.jp);
+                background-color: #FDB201;
+                border: solid 5px rgba(253, 178, 1, 0.9); }
+                html body .content .screen .container .weather .weathers .background:nth-child(3) .cont .title {
+                  background: rgba(253, 178, 1, 0.9); }
+              html body .content .screen .container .weather .weathers .background:hover {
+                transform: scale(1.05); }
+            html body .content .screen .container .weather.boy .selection-wrap .title .text {
+              border-bottom-color: #fd4605; }
+            html body .content .screen .container .weather.girl .selection-wrap .title .text {
+              border-bottom-color: #e70095; }
+            html body .content .screen .container .weather.bBoy .selection-wrap .title .text {
+              border-bottom-color: #82bc00; }
+            html body .content .screen .container .weather.bGirl .selection-wrap .title .text {
+              border-bottom-color: #9794d2; }
+            html body .content .screen .container .weather.nBoy .selection-wrap .title .text {
+              border-bottom-color: #3e8ede; }
+            html body .content .screen .container .weather.nGirl .selection-wrap .title .text {
+              border-bottom-color: #ee9bac; }
+          html body .content .screen .container .looks {
+            height: 100%;
+            z-index: 1;
+            padding: 5vh 0; }
+            html body .content .screen .container .looks .selection-wrap {
+              text-align: center; }
+              html body .content .screen .container .looks .selection-wrap .title {
+                margin-bottom: 1vh; }
+                html body .content .screen .container .looks .selection-wrap .title .text {
+                  transition: all 0.3s ease;
+                  background: white;
+                  border-bottom: solid 3px #fd0;
+                  padding: 2%; }
+            html body .content .screen .container .looks .looksWrap .background {
+              padding: 1%; }
+              html body .content .screen .container .looks .looksWrap .background .cont {
+                cursor: pointer;
+                transition: all 0.3s ease;
+                padding: 0;
+                background: transparent;
+                background-image: url(../../IMG/smokks.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+                overflow: hidden;
+                transition: all 0.3s ease; }
+                html body .content .screen .container .looks .looksWrap .background .cont .img {
+                  transition: all 0.3s ease;
+                  height: 30vh; }
+                html body .content .screen .container .looks .looksWrap .background .cont .title {
+                  transition: all 0.3s ease;
+                  padding: 0;
+                  background: rgba(255, 221, 0, 0.8);
+                  padding: 4%;
+                  height: 8vh;
+                  text-align: center; }
+                  html body .content .screen .container .looks .looksWrap .background .cont .title .fa {
+                    transition: all 0.3s ease;
+                    line-height: 8vh;
+                    color: white; }
+              html body .content .screen .container .looks .looksWrap .background:nth-child(1) .cont {
+                background-image: url(../IMG/looks/abc.jpg); }
+              html body .content .screen .container .looks .looksWrap .background:nth-child(2) .cont {
+                background-image: url(../IMG/looks/basicos.jpg); }
+              html body .content .screen .container .looks .looksWrap .background:nth-child(3) .cont {
+                background-image: url(../IMG/looks/moda.jpg); }
+              html body .content .screen .container .looks .looksWrap .background:nth-child(4) .cont {
+                background-image: url(../IMG/looks/playa.jpg); }
+              html body .content .screen .container .looks .looksWrap .background:hover .cont .img, html body .content .screen .container .looks .looksWrap .background.active .cont .img {
+                height: 0; }
+              html body .content .screen .container .looks .looksWrap .background:hover .cont .title, html body .content .screen .container .looks .looksWrap .background.active .cont .title {
+                height: 38vh;
+                transform: scale(1.5); }
+                html body .content .screen .container .looks .looksWrap .background:hover .cont .title .fa, html body .content .screen .container .looks .looksWrap .background.active .cont .title .fa {
+                  line-height: 30vh;
+                  font-size: 60px; }
+            html body .content .screen .container .looks .continueLooks {
+              text-align: center;
+              margin-top: 3vh; }
+              html body .content .screen .container .looks .continueLooks h3 {
+                height: 10vh;
+                margin: 0;
+                line-height: 10vh;
+                background: #fd0;
+                color: white;
+                cursor: pointer;
+                transition: all 0.3s ease; }
+            html body .content .screen .container .looks.boy .selection-wrap .title .text {
+              border-bottom-color: #fd4605; }
+            html body .content .screen .container .looks.boy .looksWrap .background .cont .title {
+              background: rgba(253, 70, 5, 0.8); }
+            html body .content .screen .container .looks.boy .continueLooks h3 {
+              background-color: #fd4605; }
+            html body .content .screen .container .looks.girl .selection-wrap .title .text {
+              border-bottom-color: #e70095; }
+            html body .content .screen .container .looks.girl .looksWrap .background .cont {
+              border: solid 5px rgba(231, 0, 149, 0.8); }
+              html body .content .screen .container .looks.girl .looksWrap .background .cont .title {
+                background: rgba(231, 0, 149, 0.8); }
+            html body .content .screen .container .looks.girl .continueLooks h3 {
+              background-color: #e70095; }
+            html body .content .screen .container .looks.bBoy .selection-wrap .title .text {
+              border-bottom-color: #82bc00; }
+            html body .content .screen .container .looks.bBoy .looksWrap .background .cont .title {
+              background: rgba(130, 188, 0, 0.8); }
+            html body .content .screen .container .looks.bBoy .continueLooks h3 {
+              background-color: #82bc00; }
+            html body .content .screen .container .looks.bGirl .selection-wrap .title .text {
+              border-bottom-color: #9794d2; }
+            html body .content .screen .container .looks.bGirl .looksWrap .background .cont .title {
+              background: rgba(151, 148, 210, 0.8); }
+            html body .content .screen .container .looks.bGirl .continueLooks h3 {
+              background-color: #9794d2; }
+            html body .content .screen .container .looks.nBoy .selection-wrap .title .text {
+              border-bottom-color: #3e8ede; }
+            html body .content .screen .container .looks.nBoy .looksWrap .background .cont .title {
+              background: rgba(62, 142, 222, 0.8); }
+            html body .content .screen .container .looks.nBoy .continueLooks h3 {
+              background-color: #3e8ede; }
+            html body .content .screen .container .looks.nGirl .selection-wrap .title .text {
+              border-bottom-color: #ee9bac; }
+            html body .content .screen .container .looks.nGirl .looksWrap .background .cont .title {
+              background: rgba(238, 155, 172, 0.8); }
+            html body .content .screen .container .looks.nGirl .continueLooks h3 {
+              background-color: #ee9bac; }
+            html body .content .screen .container .looks .continueLooks.transparent {
+              z-index: -1; }
+              html body .content .screen .container .looks .continueLooks.transparent h3 {
+                color: transparent;
+                cursor: default;
+                background: transparent;
+                z-index: -1; }
+          @media (max-width: 767px) {
+            html body .content .screen .container .looks .looksWrap .background {
+              height: 20vh;
+              margin-bottom: 2vh; }
+              html body .content .screen .container .looks .looksWrap .background .cont .img {
+                height: 15vh;
+                transition: all .3s ease; }
+              html body .content .screen .container .looks .looksWrap .background .cont .title {
+                height: 5vh;
+                transition: all .3s ease; }
+                html body .content .screen .container .looks .looksWrap .background .cont .title .fa {
+                  line-height: 4vh;
+                  transition: all .3s ease; }
+              html body .content .screen .container .looks .looksWrap .background:hover .cont .img, html body .content .screen .container .looks .looksWrap .background.active .cont .img {
+                height: 0vh; }
+              html body .content .screen .container .looks .looksWrap .background:hover .cont .title, html body .content .screen .container .looks .looksWrap .background.active .cont .title {
+                height: 20vh;
+                transform: scale(1.1); }
+                html body .content .screen .container .looks .looksWrap .background:hover .cont .title .fa, html body .content .screen .container .looks .looksWrap .background.active .cont .title .fa {
+                  line-height: 15vh;
+                  font-size: 60px; }
+            html body .content .screen .container .looks .continueLooks {
+              position: absolute;
+              bottom: 3vh; } }
+          html body .content .screen .container .color {
+            z-index: 1;
+            padding: 5vh 0;
+            height: 100%; }
+            html body .content .screen .container .color .selection-wrap {
+              text-align: center; }
+              html body .content .screen .container .color .selection-wrap .title {
+                margin-bottom: 1vh; }
+                html body .content .screen .container .color .selection-wrap .title .text {
+                  transition: all 0.3s ease;
+                  background: white;
+                  border-bottom: solid 3px #fd0;
+                  padding: 2%; }
+            html body .content .screen .container .color .colors .color-wrap .select {
+              overflow: hidden;
+              background: white;
+              height: 10vh;
+              color: inherit;
+              text-align: center;
+              margin-top: 2vh;
+              line-height: 10vh;
+              cursor: pointer;
+              border-radius: 5px;
+              border-top: solid 3px orange;
+              transition: all 0.3s ease;
+              font-size: 20px;
+              border-top-left-radius: 0;
+              border-top-right-radius: 0; }
+            html body .content .screen .container .color .colors .color-wrap:hover .select {
+              background: transparent;
+              border-top: solid 10vh orange; }
+            html body .content .screen .container .color .colors .color-wrap:nth-child(2) .select {
+              border-color: green; }
+            html body .content .screen .container .color .colors .color-wrap:nth-child(3) .select {
+              border-color: #e6e600; }
+            html body .content .screen .container .color .colors .color-wrap:nth-child(4) .select {
+              border-color: #e60000; }
+            html body .content .screen .container .color.boy .selection-wrap .title .text {
+              border-bottom-color: #fd4605; }
+            html body .content .screen .container .color.girl .selection-wrap .title .text {
+              border-bottom-color: #e70095; }
+            html body .content .screen .container .color.bBoy .selection-wrap .title .text {
+              border-bottom-color: #82bc00; }
+            html body .content .screen .container .color.bGirl .selection-wrap .title .text {
+              border-bottom-color: #9794d2; }
+            html body .content .screen .container .color.nBoy .selection-wrap .title .text {
+              border-bottom-color: #3e8ede; }
+            html body .content .screen .container .color.nGirl .selection-wrap .title .text {
+              border-bottom-color: #ee9bac; }
+            html body .content .screen .container .color .continue.transparent {
+              z-index: -1; }
+              html body .content .screen .container .color .continue.transparent h3 {
+                color: transparent;
+                cursor: default;
+                background: transparent;
+                z-index: -1; }
+          html body .content .screen .container .personality {
+            padding: 5vh 0;
+            height: 100%; }
+            html body .content .screen .container .personality .selection-wrap {
+              text-align: center; }
+              html body .content .screen .container .personality .selection-wrap .title {
+                margin-bottom: 5vh; }
+                html body .content .screen .container .personality .selection-wrap .title .text {
+                  transition: all 0.3s ease;
+                  background: white;
+                  border-bottom: solid 3px #fd0;
+                  padding: 2%; }
+            html body .content .screen .container .personality .personWrap .person {
+              padding: 2.5vh 1vw;
+              height: 35vh;
+              background: transparent;
+              overflow: hidden;
+              transition: all .3s ease;
+              transform: scale(1.1);
+              cursor: pointer; }
+              html body .content .screen .container .personality .personWrap .person .fa-check {
+                position: absolute;
+                left: 2vw;
+                top: 3vh;
+                color: white;
+                z-index: 2;
+                transition: all 0.3s ease; }
+              html body .content .screen .container .personality .personWrap .person .background {
+                height: inherit;
+                padding: 0;
+                background: rgba(0, 0, 0, 0.5);
+                border: solid 2px #fd0; }
+                html body .content .screen .container .personality .personWrap .person .background .offset {
+                  height: 28vh; }
+                html body .content .screen .container .personality .personWrap .person .background .title {
+                  height: 5vh;
+                  background: rgba(255, 221, 0, 0.8); }
+                  html body .content .screen .container .personality .personWrap .person .background .title h4 {
+                    line-height: 5vh;
+                    text-transform: uppercase;
+                    margin: 0;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    font-weight: 100;
+                    color: white; }
+              html body .content .screen .container .personality .personWrap .person.transparent {
+                transform: scale(1); }
+                html body .content .screen .container .personality .personWrap .person.transparent .fa-check {
+                  color: transparent; }
+              html body .content .screen .container .personality .personWrap .person:nth-child(1) .background {
+                background: url("../IMG/Personality/activo.jpg");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover; }
+              html body .content .screen .container .personality .personWrap .person:nth-child(2) .background {
+                background: url("../IMG/Personality/timido.jpg");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover; }
+              html body .content .screen .container .personality .personWrap .person:nth-child(3) .background {
+                background: url("../IMG/Personality/simpatico.jpg");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover; }
+              html body .content .screen .container .personality .personWrap .person:nth-child(4) .background {
+                background: url("../IMG/Personality/artistico.jpg");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover; }
+              html body .content .screen .container .personality .personWrap .person:nth-child(5) .background {
+                background: url("../IMG/Personality/silly.jpg");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover; }
+              html body .content .screen .container .personality .personWrap .person:nth-child(6) .background {
+                background: url("../IMG/Personality/raton.jpg");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover; }
+              html body .content .screen .container .personality .personWrap .person:hover {
+                transform: scale(1.1); }
+            html body .content .screen .container .personality .continue {
+              margin-top: 5vh;
+              padding: 0; }
+              html body .content .screen .container .personality .continue h4 {
+                margin: 0;
+                background: #fd0;
+                color: white;
+                padding: 4%;
+                cursor: pointer;
+                transition: all .3s ease; }
+              html body .content .screen .container .personality .continue.transparent h4 {
+                background: transparent !important;
+                color: transparent;
+                cursor: default;
+                user-select: none; }
+            html body .content .screen .container .personality.boy .selection-wrap .title .text {
+              border-bottom-color: #fd4605; }
+            html body .content .screen .container .personality.boy .personWrap .person .background {
+              border-color: #fd4605; }
+              html body .content .screen .container .personality.boy .personWrap .person .background .title {
+                background-color: rgba(253, 70, 5, 0.8); }
+            html body .content .screen .container .personality.boy .continue h4 {
+              background: #fd4605; }
+            html body .content .screen .container .personality.girl .selection-wrap .title .text {
+              border-bottom-color: #e70095; }
+            html body .content .screen .container .personality.girl .personWrap .person .background {
+              border-color: #e70095; }
+              html body .content .screen .container .personality.girl .personWrap .person .background .title {
+                background-color: #e70095; }
+            html body .content .screen .container .personality.girl .continue h4 {
+              background: #e70095; }
+            html body .content .screen .container .personality.bBoy .selection-wrap .title .text {
+              border-bottom-color: #82bc00; }
+            html body .content .screen .container .personality.bBoy .personWrap .person .background {
+              border-color: #82bc00; }
+              html body .content .screen .container .personality.bBoy .personWrap .person .background .title {
+                background-color: #82bc00; }
+            html body .content .screen .container .personality.bBoy .continue h4 {
+              background: #82bc00; }
+            html body .content .screen .container .personality.bGirl .selection-wrap .title .text {
+              border-bottom-color: #9794d2; }
+            html body .content .screen .container .personality.bGirl .personWrap .person .background {
+              border-color: #9794d2; }
+              html body .content .screen .container .personality.bGirl .personWrap .person .background .title {
+                background-color: #9794d2; }
+            html body .content .screen .container .personality.bGirl .continue h4 {
+              background: #9794d2; }
+            html body .content .screen .container .personality.nBoy .selection-wrap .title .text {
+              border-bottom-color: #3e8ede; }
+            html body .content .screen .container .personality.nBoy .personWrap .person .background {
+              border-color: #3e8ede; }
+              html body .content .screen .container .personality.nBoy .personWrap .person .background .title {
+                background-color: #3e8ede; }
+            html body .content .screen .container .personality.nBoy .continue h4 {
+              background: #3e8ede; }
+            html body .content .screen .container .personality.nGirl .selection-wrap .title .text {
+              border-bottom-color: #ee9bac; }
+            html body .content .screen .container .personality.nGirl .personWrap .person .background {
+              border-color: #ee9bac; }
+              html body .content .screen .container .personality.nGirl .personWrap .person .background .title {
+                background-color: #ee9bac; }
+            html body .content .screen .container .personality.nGirl .continue h4 {
+              background: #ee9bac; }
+          @media (max-width: 767px) {
+            html body .content .screen .container .personality {
+              padding: 0; }
+              html body .content .screen .container .personality .selection-wrap .title {
+                margin-bottom: 0; }
+              html body .content .screen .container .personality .personWrap .person {
+                padding: 2.5vh 2.2vw;
+                height: 25vh; }
+                html body .content .screen .container .personality .personWrap .person .background .offset {
+                  height: 17vh; }
+                html body .content .screen .container .personality .personWrap .person .background .title h4 {
+                  font-size: 12px;
+                  font-weight: 600; } }
+          html body .content .screen .container .loaderWrap {
+            left: -37.5px;
+            height: 120px; }
+@keyframes loadO1 {
+  0% {
+    height: 0px;
+    width: 10px;
+    top: 0px; }
+  50% {
+    height: 60px;
+    width: 10px;
+    top: 0px; }
+  100% {
+    height: 60px;
+    width: 10px;
+    top: 0px; } }
+@keyframes loadO2 {
+  0% {
+    height: 10px;
+    width: 0px;
+    top: 60px; }
+  50% {
+    height: 10px;
+    width: 0px;
+    top: 60px; }
+  100% {
+    height: 10px;
+    width: 50px;
+    top: 60px; } }
+@keyframes loadO3 {
+  0% {
+    height: 10px;
+    width: 0px;
+    top: 0px; }
+  5% {
+    height: 10px;
+    width: 0px;
+    top: 0px; }
+  50% {
+    height: 10px;
+    width: 50px;
+    top: 0px; }
+  100% {
+    height: 10px;
+    width: 50px;
+    top: 0px; } }
+@keyframes loadO4 {
+  0% {
+    height: 0px;
+    width: 10px;
+    top: 0px;
+    left: 50px; }
+  50% {
+    height: 0px;
+    width: 10px;
+    top: 0px;
+    left: 55px; }
+  100% {
+    height: 60px;
+    width: 10px;
+    top: 0px;
+    left: 55px; } }
+@keyframes loadO5 {
+  0% {
+    height: 0px;
+    width: 0px;
+    top: 0px;
+    left: 0px; }
+  100% {
+    height: 0px;
+    width: 0px;
+    top: 0px;
+    left: 0px; } }
+@keyframes loadF1 {
+  0% {
+    height: 0px;
+    width: 10px;
+    top: 0px; }
+  100% {
+    height: 60px;
+    width: 10px;
+    top: 0px; } }
+@keyframes loadF2 {
+  15% {
+    height: 10px;
+    width: 0px;
+    top: 0px; }
+  100% {
+    height: 10px;
+    width: 50px;
+    top: 0px; } }
+@keyframes loadF3 {
+  30% {
+    height: 10px;
+    width: 0px;
+    top: 23.07692px; }
+  100% {
+    height: 10px;
+    width: 47.5px;
+    top: 23.07692px; } }
+@keyframes loadF4 {
+  0% {
+    height: 0px;
+    width: 0px;
+    top: 0px; }
+  100% {
+    height: 0px;
+    width: 0px;
+    top: 0px; } }
+@keyframes loadF5 {
+  0% {
+    height: 0px;
+    width: 0px;
+    top: 0px; }
+  100% {
+    height: 0px;
+    width: 0px;
+    top: 0px; } }
+@keyframes loadC1 {
+  0% {
+    height: 10px;
+    width: 0px;
+    top: 0px; }
+  100% {
+    height: 10px;
+    width: 50px;
+    top: 0px; } }
+@keyframes loadC2 {
+  0% {
+    height: 0px;
+    width: 10px;
+    top: 0px; }
+  50% {
+    height: 60px;
+    width: 10px;
+    top: 0px; }
+  100% {
+    height: 60px;
+    width: 10px;
+    top: 0px; } }
+@keyframes loadC3 {
+  50% {
+    height: 10px;
+    width: 0px;
+    top: 60px; }
+  100% {
+    height: 10px;
+    width: 50px;
+    top: 60px; } }
+@keyframes loadC4 {
+  0% {
+    height: 0px;
+    width: 0px;
+    top: 0px; }
+  100% {
+    height: 0px;
+    width: 0px;
+    top: 0px; } }
+@keyframes loadC5 {
+  0% {
+    height: 0px;
+    width: 0px;
+    top: 0px; }
+  100% {
+    height: 0px;
+    width: 0px;
+    top: 0px; } }
+@keyframes loadR1 {
+  0% {
+    height: 10px;
+    width: 0px;
+    top: 0px; }
+  100% {
+    height: 10px;
+    width: 50px;
+    top: 0px; } }
+@keyframes loadR2 {
+  0% {
+    height: 0px;
+    width: 10px;
+    top: 0px; }
+  50% {
+    height: 60px;
+    width: 10px;
+    top: 0px; }
+  100% {
+    height: 60px;
+    width: 10px;
+    top: 0px; } }
+@keyframes loadR3 {
+  50% {
+    height: 10px;
+    width: 0px;
+    top: 30px; }
+  100% {
+    height: 10px;
+    width: 50px;
+    top: 30px; } }
+@keyframes loadR4 {
+  0% {
+    height: 0px;
+    width: 0px;
+    top: 0px;
+    left: 50px; }
+  50% {
+    width: 10px;
+    height: 0px;
+    top: 0px;
+    left: 50px; }
+  100% {
+    height: 30px;
+    width: 10px;
+    top: 0px;
+    left: 50px; } }
+@keyframes loadR5 {
+  0% {
+    height: 0px;
+    width: 10px;
+    top: 30px;
+    left: 12.5px;
+    transform: rotate(-45deg); }
+  70% {
+    transform-origin: top;
+    height: 0px;
+    width: 10px;
+    top: 35px;
+    left: 15px;
+    transform: rotate(-45deg); }
+  100% {
+    transform-origin: top;
+    height: 40px;
+    width: 10px;
+    top: 35px;
+    left: 15px;
+    transform: rotate(-45deg); } }
+@keyframes loadS1 {
+  0% {
+    height: 10px;
+    width: 0px;
+    top: 0px;
+    left: 50px; }
+  20% {
+    height: 10px;
+    width: 0px;
+    top: 0px;
+    left: 50px; }
+  40% {
+    height: 10px;
+    width: 50px;
+    top: 0px;
+    left: 0px; }
+  100% {
+    height: 10px;
+    width: 50px;
+    top: 0px;
+    left: 0px;
+    transform-origin: right; } }
+@keyframes loadS2 {
+  0% {
+    height: 0px;
+    width: 10px;
+    top: 0px;
+    left: 0px; }
+  20% {
+    height: 0px;
+    width: 10px;
+    top: 0px;
+    left: 0px; }
+  40% {
+    height: 30px;
+    width: 10px;
+    top: 0px;
+    left: 0px; }
+  100% {
+    height: 30px;
+    width: 10px;
+    top: 0px;
+    left: 0px; } }
+@keyframes loadS3 {
+  0% {
+    height: 10px;
+    width: 0px;
+    top: 30px;
+    left: 0px; }
+  40% {
+    height: 10px;
+    width: 0px;
+    top: 30px;
+    left: 0px; }
+  60% {
+    height: 10px;
+    width: 50px;
+    top: 30px;
+    left: 0px; }
+  100% {
+    height: 10px;
+    width: 50px;
+    top: 30px;
+    left: 0px; } }
+@keyframes loadS4 {
+  0% {
+    height: 0px;
+    width: 10px;
+    top: 30px;
+    left: 50px; }
+  60% {
+    height: 0px;
+    width: 10px;
+    top: 30px;
+    left: 50px; }
+  80% {
+    height: 30px;
+    width: 10px;
+    top: 30px;
+    left: 50px; }
+  100% {
+    height: 30px;
+    width: 10px;
+    top: 30px;
+    left: 50px; } }
+@keyframes loadS5 {
+  0% {
+    height: 10px;
+    width: 0px;
+    top: 60px;
+    left: 50px; }
+  80% {
+    height: 10px;
+    width: 0px;
+    top: 60px;
+    left: 50px; }
+  100% {
+    height: 10px;
+    width: 50px;
+    top: 60px;
+    left: 0px; } }
+          html body .content .screen .container .result {
+            padding: 5vh 0; }
+            html body .content .screen .container .result .selection-wrap {
+              text-align: center; }
+              html body .content .screen .container .result .selection-wrap .title {
+                margin-bottom: 5vh; }
+                html body .content .screen .container .result .selection-wrap .title .text {
+                  transition: all 0.3s ease;
+                  background: white;
+                  border-bottom: solid 3px #fd0;
+                  padding: 2%; }
+              html body .content .screen .container .result .selection-wrap .nameInput input {
+                border: none;
+                border-bottom: solid 1px black;
+                background-color: transparent; }
+              html body .content .screen .container .result .selection-wrap .continue div {
+                transition: all 0.3s ease;
+                background: #fd0;
+                color: white; }
+            html body .content .screen .container .result .img {
+              height: 60vh; }
+              html body .content .screen .container .result .img .image {
+                height: 100%;
+                background-position: center;
+                background-origin: content-box;
+                background-size: contain;
+                background-repeat: no-repeat; }
+            html body .content .screen .container .result.boy .selection-wrap .title .text {
+              border-bottom-color: #fd4605; }
+            html body .content .screen .container .result.boy .selection-wrap .continue div {
+              background: #fd4605; }
+            html body .content .screen .container .result.boy .img .image {
+              background-image: url("../IMG/Name/boy.png"); }
+            html body .content .screen .container .result.girl .selection-wrap .title .text {
+              border-bottom-color: #e70095; }
+            html body .content .screen .container .result.girl .selection-wrap .continue div {
+              background: #e70095; }
+            html body .content .screen .container .result.girl .img .image {
+              background-image: url("../IMG/Name/girl.png"); }
+    html body .footer {
+      background: white;
+      margin: 0;
+      height: 10vh;
+      padding: 1.5vh 0;
+      z-index: 1;
+      -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
+      box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3); }
+      html body .footer .loader {
+        -webkit-box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, 0.3);
+        padding: 0;
+        position: absolute;
+        top: -1vh;
+        height: 1vh;
+        z-index: 1;
+        background: white; }
+        html body .footer .loader .progress {
+          height: 100%;
+          transition: all 0.3s ease;
+          width: 0%;
+          background: white;
+          -webkit-box-shadow: 0px 0px 12px 1px transparent;
+          -moz-box-shadow: 0px 0px 12px 1px transparent;
+          box-shadow: 0px 0px 12px 1px transparent;
+          border-radius: 0;
+          z-index: 1; }
+        html body .footer .loader.active {
+          transition: all 0.3s ease;
+          -webkit-box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, 0.3);
+          -moz-box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, 0.3);
+          background: whitesmoke; }
+          html body .footer .loader.active .progress {
+            background: transparent;
+            width: 10%; }
+          html body .footer .loader.active.girl .progress {
+            background: #e70095; }
+          html body .footer .loader.active.boy .progress {
+            background: #fd4605; }
+          html body .footer .loader.active.bGirl .progress {
+            background: #9794d2; }
+          html body .footer .loader.active.bBoy .progress {
+            background: #82bc00; }
+          html body .footer .loader.active.nGirl .progress {
+            background: #ee9bac; }
+          html body .footer .loader.active.nBoy .progress {
+            background: #3e8ede; }
+      html body .footer .brand {
+        margin: auto;
+        background-image: url("../IMG/Logo-01.png");
+        height: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center; }
+    html body.admin {
+      height: 106vh; }
+      html body.admin .ui {
+        overflow: visible;
+        bottom: 0;
+        height: 6vh;
+        line-height: 6vh; }
+    html body.edit .text-editable {
+      border: dashed 1px orangered; }
+    html body.edit .colors .color-wrap:hover .select {
+      border-top-width: 3vh;
+      background: white; }
+
+@keyframes fade {
+  0% {
+    z-index: 1;
+    color: inherit; }
+  100% {
+    z-index: 0;
+    color: transparent; } }
+
+/*# sourceMappingURL=main.css.map */

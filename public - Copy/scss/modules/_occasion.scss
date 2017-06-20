@@ -1,0 +1,419 @@
+.occasion {
+    padding: 5vh 0;
+    .selection-wrap {
+        text-align: center;
+        .title {
+            margin-bottom: 5vh;
+            .text {
+                transition: all 0.3s ease;
+                background: white;
+                border-bottom: solid 3px $yellow;
+                padding: 2%;
+            }
+        }
+    }
+    .occasions {
+        .background {
+            transition: all .3s ease;
+            padding: 1%;
+            .cont {
+                cursor: pointer;
+                transition: all 0.3s ease;
+                padding: 0;
+                background: $yellow;
+                background-image: url(../../IMG/smokks.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+                overflow: hidden;
+                $occasionColor: $yellow;
+                $opacity: 0.8;
+                transition: all 0.3s ease;
+                .img {
+                    transition: all 0.3s ease;
+                    height: 30vh;
+                }
+                .title {
+                    transition: all 0.3s ease;
+                    padding: 0;
+                    background: rgba($occasionColor, $opacity);
+                    padding: 4%;
+                    height: 8vh;
+                    h3 {
+                        line-height: 8vh;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        text-align: center;
+                        margin: 0;
+                        color: white;
+                    }
+                }
+                &:hover,
+                &.active {
+                    transform: scale(1);
+                    .img {
+                        height: 0vh;
+                    }
+                    .title {
+                        height: 35vh;
+                        transform: scale(1.4);
+                        h3 {
+                            line-height: 35vh;
+                        }
+                    }
+                }
+            }
+            &:nth-child(1) {
+                .cont {
+                    background-image: url(../IMG/looks/abc.jpg);
+                }
+            }
+            &:nth-child(2) {
+                .cont {
+                    background-image: url(../IMG/looks/basicos.jpg);
+                }
+            }
+            &:nth-child(3) {
+                .cont {
+                    background-image: url(../IMG/looks/moda.jpg);
+                }
+            }
+            &:nth-child(4) {
+                .cont {
+                    background-image: url(../IMG/looks/playa.jpg);
+                }
+            }
+            &:nth-child(5) {
+                .cont {
+                    background-image: url(../IMG/looks/special-occasion.jpg);
+                }
+            }
+            &:nth-child(6) {
+                .cont {
+                    background-image: url(../IMG/looks/sport.jpg);
+                }
+            }
+        }
+    }
+    .occasionsBtn {
+        border-radius: 2px;
+        background: $yellow;
+        transition: all .3s ease;
+        color: white;
+        padding: 1%;
+        cursor: pointer;
+        height: 5vh;
+        line-height: 5vh;
+        padding: 0;
+        &:hover {
+            background: darken($yellow, 5%);
+        }
+        &.disabled {
+            height: 0vh;
+            overflow: hidden;
+            background: lighten($yellow, 20%);
+            cursor: default;
+            background: transparent !important;
+            &:hover {
+                background: lighten($yellow, 10%);
+            }
+        }
+    }
+    &.boy {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $boy;
+                }
+            }
+        }
+        .occasions {
+            .background {
+                .cont {
+                    $occasionColor: $boy;
+                    $opacity: 0.8;
+                    .title {
+                        background: rgba($occasionColor, $opacity);
+                    }
+                }
+            }
+        }
+        .occasionsBtn {
+            background: $boy;
+            &:hover {
+                background: darken($boy, 5%);
+            }
+            &.disabled {
+                background: lighten($boy, 20%);
+                cursor: default;
+                &:hover {
+                    background: lighten($boy, 20%);
+                }
+            }
+        }
+    }
+    &.girl {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $girl;
+                }
+            }
+        }
+        .occasions {
+            .background {
+                .cont {
+                    $occasionColor: $girl;
+                    $opacity: 0.8;
+                    .title {
+                        background: rgba($occasionColor, $opacity);
+                    }
+                }
+            }
+        }
+        .occasionsBtn {
+            background: $girl;
+            &:hover {
+                background: darken($girl, 5%);
+            }
+            &.disabled {
+                background: lighten($girl, 20%);
+                cursor: default;
+                &:hover {
+                    background: lighten($girl, 20%);
+                }
+            }
+        }
+    }
+    &.bBoy {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $bBoy;
+                }
+            }
+        }
+        .occasions {
+            .background {
+                .cont {
+                    $occasionColor: $bBoy;
+                    $opacity: 0.8;
+                    .title {
+                        background: rgba($occasionColor, $opacity);
+                    }
+                }
+            }
+        }
+        .occasionsBtn {
+            background: $bBoy;
+            &:hover {
+                background: darken($bBoy, 5%);
+            }
+            &.disabled {
+                background: lighten($bBoy, 20%);
+                cursor: default;
+                &:hover {
+                    background: lighten($bBoy, 20%);
+                }
+            }
+        }
+    }
+    &.bGirl {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $bGirl;
+                }
+            }
+        }
+        .occasions {
+            .background {
+                .cont {
+                    $occasionColor: $bGirl;
+                    $opacity: 0.8;
+                    .title {
+                        background: rgba($occasionColor, $opacity);
+                    }
+                }
+            }
+        }
+        .occasionsBtn {
+            background: $bGirl;
+            &:hover {
+                background: darken($bGirl, 5%);
+            }
+            &.disabled {
+                background: lighten($bGirl, 20%);
+                cursor: default;
+                &:hover {
+                    background: lighten($bGirl, 20%);
+                }
+            }
+        }
+    }
+    &.nBoy {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $nBoy;
+                }
+            }
+        }
+        .occasions {
+            .background {
+                .cont {
+                    $occasionColor: $nBoy;
+                    $opacity: 0.8;
+                    .title {
+                        background: rgba($occasionColor, $opacity);
+                    }
+                }
+            }
+        }
+        .occasionsBtn {
+            background: $nBoy;
+            &:hover {
+                background: darken($nBoy, 5%);
+            }
+            &.disabled {
+                background: lighten($nBoy, 20%);
+                cursor: default;
+                &:hover {
+                    background: lighten($nBoy, 20%);
+                }
+            }
+        }
+    }
+    &.nGirl {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $nGirl;
+                }
+            }
+        }
+        .occasions {
+            .background {
+                .cont {
+                    $occasionColor: $nGirl;
+                    $opacity: 0.8;
+                    .title {
+                        background: rgba($occasionColor, $opacity);
+                    }
+                }
+            }
+        }
+        .occasionsBtn {
+            background: $nGirl;
+            &:hover {
+                background: darken($nGirl, 5%);
+            }
+            &.disabled {
+                background: lighten($nGirl, 20%);
+                cursor: default;
+                &:hover {
+                    background: lighten($nGirl, 20%);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .occasion {
+        .occasions {
+            .background {
+                .cont {
+                    .img {
+                        height: 20vh;
+                        transition: all .3s ease;
+                    }
+                    .title {
+                        padding: 0;
+                        height: 5vh;
+                        transition: all .3s ease;
+                        h3 {
+                            transition: all .3s ease;
+                            line-height: 5vh;
+                            font-size: 18px;
+                        }
+                    }
+                    &:hover {
+                        transform: scale(1);
+                        .img {
+                            height: 20vh;
+                        }
+                        .title {
+                            height: 5vh;
+                            transform: scale(1);
+                            h3 {
+                                line-height: 5vh;
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-height: 768px) and (orientation: portrait) {
+    .occasion {
+        .occasions {
+            .background {
+                .cont {
+                    .img {
+                        height: 20vh;
+                    }
+                    .title {
+                        height: 5vh;
+                        h3 {
+                            line-height: 4vh;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-height 767px) and (orientation: landscape) {
+    .occasion {
+        .selection-wrap {
+            .title {
+                margin-bottom: 1vh;
+            }
+        }
+        .occasions {
+            .background {
+                .cont {
+                    background-position: bottom;
+                    .img {
+                        height: 16vh;
+                    }
+                    .title {
+                        height: 6vh;
+                        h3 {
+                            line-height: 3vh;
+                        }
+                    }
+                    &:hover {
+                        transform: scale(1);
+                        .title {
+                            height: 21.9vh;
+                            transform: scale(1);
+                            h3 {
+                                transform: scale(1);
+                                line-height: 19vh;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

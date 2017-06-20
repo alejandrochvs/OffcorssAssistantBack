@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+
+<body>
+    <input id='username' title="Username" type="name" placeholder="Username">
+    <input id='email' title="Email" type="email" placeholder="Email">
+    <input id='password' title="Password" type="password" placeholder="Password">
+    <input id='name' title="Name" type="text" placeholder="Name">
+    <input id='last_name' title="Last name" type="text" placeholder="Last name">
+    <select id='gender' title="Gender">
+        <option value="M">Male</option>
+        <option value="F">Female</option>
+    </select>
+    <input id='birthday' type="date" title="Birthday">
+    <input id='access_level' type="number" title="Access level" min="0" max="8" value="8">
+    <button class="btn btn-light post">Post</button>
+    <button class="btn btn-light login">Login</button>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function () {
+            var register = function (username, email, password, name, last_name, gender, birthday, access_level) {
+                if (username != "" && password != "" && name != "" && email != "" && last_name != "" && gender != "" && birthday != "" && access_level != "") {
+                    var data = {
+                        username: username
+                        , mail: email
+                        , password: password
+                        , name: name
+                        , last_name: last_name
+                        , access_level: access_level
+                        , gender: gender
+                        , birthday: birthday
+                        , last_connection: new Date().toISOString()
+                        , current_page: 'Gender'
+                    };
+                    $.ajax({
+                        type: 'GET'
+                        , url: '/db/users/register'
+                        , data: data
+                        , success: function (result) {
+                            return console.log(result);
+                        }
+                    });
+                }
+                else {
+                    console.log('Fill everything.');
+                }
+            };
+            var login = function (username, password) {
+                    if (username != "" && password != "") {
+                        var data = {
+                            username: username
+                            , password: password
+                        };
+                        $.ajax({
+                            type: 'GET'
+                            , url: '/db/users/login'
+                            , data: data
+                            , success: function (result) {
+                                localStorage.token = result.token;
+                                localStorage.username = result.token;
+                                return console.log(result);
+                            }
+                        });
+                    }
+                    else {
+                        console.log('Fill everything.');
+                    }
+                };
+            $('.post').click(function () {
+                var username = $('#username').val();
+                var email = $('#email').val();
+                var password = $('#password').val();
+                var name = $('#name').val();
+                var last_name = $('#last_name').val();
+                var gender = $('#gender').val();
+                var birthday = $('#birthday').val();
+                var access_level = $('#access_level').val();
+                register(username, email, password, name, last_name, gender, birthday, access_level);
+            });
+            $('.login').click(function () {
+                var username = $('#username').val();
+                var password = $('#password').val();
+                login(username, password);
+            });
+        })
+    </script>
+</body>
+
+</html>

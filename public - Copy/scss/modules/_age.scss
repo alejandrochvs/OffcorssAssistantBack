@@ -1,0 +1,215 @@
+.age {
+    padding: 5vh 0;
+    .selection-wrap {
+        text-align: center;
+        .title {
+            margin-bottom: 5vh;
+            .text {
+                transition: all 0.3s ease;
+                background: white;
+                border-bottom: solid 3px $yellow;
+                padding: 2%;
+            }
+        }
+        .pad {
+            padding: 1%;
+            border: solid 2px $yellow;
+            transition: all 0.3s ease;
+            .row {
+                padding: 0;
+                margin: 0;
+                .number {
+                    cursor: pointer;
+                    padding: 1%;
+                    border: solid 2px transparent;
+                    transition: all 0.3s ease;
+                    &:hover {
+                        border: solid 2px $yellow;
+                    }
+                    &.selected {
+                        background: $yellow;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+    .img {
+        height: 60vh;
+        .image {
+            height: 100%;
+            background-position: center;
+            background-origin: content-box;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+    &.boy {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $boy;
+                }
+            }
+            .pad {
+                border-color: $boy;
+                .row {
+                    .number {
+                        &:hover {
+                            border-color: $boy;
+                        }
+                        &.selected {
+                            background: $boy;
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+        .img {
+            .image {
+                background-image: url('../IMG/Age/boy.png');
+            }
+        }
+    }
+    &.girl {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $girl;
+                }
+            }
+            .pad {
+                border-color: $girl;
+                .row {
+                    .number {
+                        &:hover {
+                            border-color: $girl;
+                        }
+                        &.selected {
+                            background: $girl;
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+        .img {
+            .image {
+                background-image: url('../IMG/Age/girl.png');
+            }
+        }
+    }
+    &.bBoy {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $bBoy;
+                }
+            }
+            .pad {
+                border-color: $bBoy;
+                .row {
+                    .number {
+                        &:hover {
+                            border-color: $bBoy;
+                        }
+                        &.selected {
+                            background: $bBoy;
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+        .img {
+            .image {
+                background-image: url('../IMG/Age/bBoy.png');
+            }
+        }
+    }
+    &.bGirl {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $bGirl;
+                }
+            }
+            .pad {
+                border-color: $bGirl;
+                .row {
+                    .number {
+                        &:hover {
+                            border-color: $bGirl;
+                        }
+                        &.selected {
+                            background: $bGirl;
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+        .img {
+            .image {
+                background-image: url('../IMG/Age/bGirl.png');
+            }
+        }
+    }
+    &.nBoy {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $nBoy;
+                }
+            }
+            .pad {
+                border-color: $nBoy;
+                .row {
+                    .number {
+                        &:hover {
+                            border-color: $nBoy;
+                        }
+                        &.selected {
+                            background: $nBoy;
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+        .img {
+            .image {
+                background-image: url('../IMG/Age/nBoy.png');
+            }
+        }
+    }
+    &.nGirl {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $nGirl;
+                }
+            }
+            .pad {
+                border-color: $nGirl;
+                .row {
+                    .number {
+                        &:hover {
+                            border-color: $nGirl;
+                        }
+                        &.selected {
+                            background: $nGirl;
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+        .img {
+            .image {
+                background-image: url('../IMG/Age/nGirl.png');
+            }
+        }
+    }
+}

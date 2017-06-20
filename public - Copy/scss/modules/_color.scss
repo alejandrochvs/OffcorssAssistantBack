@@ -1,0 +1,122 @@
+.color {
+    z-index: 1;
+    padding: 5vh 0;
+    height: 100%;
+    .selection-wrap {
+        text-align: center;
+        .title {
+            margin-bottom: 1vh;
+            .text {
+                transition: all 0.3s ease;
+                background: white;
+                border-bottom: solid 3px $yellow;
+                padding: 2%;
+            }
+        }
+    }
+    .colors {
+        .color-wrap {
+            .select {
+                overflow: hidden;
+                background: white;
+                height: 10vh;
+                color: inherit;
+                text-align: center;
+                margin-top: 2vh;
+                line-height: 10vh;
+                cursor: pointer;
+                border-radius: 5px;
+                border-top: solid 3px orange;
+                transition: all 0.3s ease;
+                font-size: 20px;
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+
+            }
+            &:hover{
+                .select{
+                    background: transparent;
+                    border-top: solid 10vh orange;
+                }
+            }
+            &:nth-child(2) {
+                .select {
+                    border-color: green;
+                }
+            }
+            &:nth-child(3) {
+                .select {
+                    border-color:darken(yellow,5%);
+                }
+            }
+            &:nth-child(4) {
+                .select {
+                    border-color:darken(red,5%);
+                }
+            }
+        }
+    }
+    &.boy {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $boy;
+                }
+            }
+        }
+    }
+    &.girl {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $girl;
+                }
+            }
+        }
+    }
+    &.bBoy {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $bBoy;
+                }
+            }
+        }
+    }
+    &.bGirl {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $bGirl;
+                }
+            }
+        }
+    }
+    &.nBoy {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $nBoy;
+                }
+            }
+        }
+    }
+    &.nGirl {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $nGirl;
+                }
+            }
+        }
+    }
+    .continue.transparent {
+        z-index: -1;
+        h3 {
+            color: transparent;
+            cursor: default;
+            background: transparent;
+            z-index: -1;
+        }
+    }
+}

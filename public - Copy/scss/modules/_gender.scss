@@ -1,0 +1,91 @@
+.gender {
+    padding: 5vh 0;
+    height: 100%;
+    .selection-wrap {
+        text-align: center;
+        height: 50%;
+        .title {
+            margin-bottom: 5vh;
+            .text {
+                background: white;
+                border-bottom: solid 3px $yellow;
+                padding: 2%;
+                transition: all 0.3s ease;
+            }
+        }
+        .selections {
+            .background {
+                .text {
+                    background: white;
+                    padding: 4%;
+                    border-bottom: solid 3px transparent;
+                    transition: all 0.3s ease;
+                    cursor: pointer;
+                    &.boySel {
+                        &:hover {
+                            border-bottom: solid 3px $boy;
+                        }
+                    }
+                    &.girlSel {
+                        &:hover {
+                            border-bottom: solid 3px $girl;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .img {
+        height: 60vh;
+        .image {
+            background-image: url(../IMG/Gender/both.png);
+            height: 100%;
+            background-position: center;
+            background-origin: content-box;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+    &.boy {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $boy;
+                }
+            }
+            .selections{
+                .background{
+                    .boySel{
+                        border-bottom-color: $boy;
+                    }
+                }
+            }
+        }
+        .img {
+            .image {
+                background-image: url(../IMG/Gender/boy.png);
+            }
+        }
+    }
+    &.girl {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $girl;
+                }
+            }
+            .selections{
+                .background{
+                    .girlSel{
+                        border-bottom-color: $girl;
+                    }
+                }
+            }
+        }
+        .img {
+            .image {
+                background-image: url(../IMG/Gender/girl.png);
+            }
+        }
+    }
+}

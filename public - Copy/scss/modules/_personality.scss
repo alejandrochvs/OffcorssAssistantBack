@@ -1,0 +1,307 @@
+.personality {
+    padding: 5vh 0;
+    height: 100%;
+    .selection-wrap {
+        text-align: center;
+        .title {
+            margin-bottom: 5vh;
+            .text {
+                transition: all 0.3s ease;
+                background: white;
+                border-bottom: solid 3px $yellow;
+                padding: 2%;
+            }
+        }
+    }
+    .personWrap {
+        .person {
+            padding: 2.5vh 1vw;
+            height: 35vh;
+            background: transparent;
+            overflow: hidden;
+            transition: all .3s ease;
+            transform: scale(1.1);
+            cursor: pointer;
+            .fa-check {
+                position: absolute;
+                left: 2vw;
+                top: 3vh;
+                color: white;
+                z-index: 2;
+                transition: all 0.3s ease;
+            }
+            .background {
+                height: inherit;
+                padding: 0;
+                background: rgba(black, 0.5);
+                border: solid 2px $yellow;
+                .offset {
+                    height: 28vh;
+                }
+                .title {
+                    height: 5vh;
+                    background: rgba($yellow, 0.8);
+                    h4 {
+                        line-height: 5vh;
+                        text-transform: uppercase;
+                        margin: 0;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        font-weight: 100;
+                        color: white;
+                    }
+                }
+            }
+            &.transparent {
+                transform: scale(1);
+                .fa-check {
+                    color: transparent;
+                }
+            }
+            &:nth-child(1) {
+                .background {
+                    background: url('../IMG/Personality/activo.jpg');
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+            }
+            &:nth-child(2) {
+                .background {
+                    background: url('../IMG/Personality/timido.jpg');
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+            }
+            &:nth-child(3) {
+                .background {
+                    background: url('../IMG/Personality/simpatico.jpg');
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+            }
+            &:nth-child(4) {
+                .background {
+                    background: url('../IMG/Personality/artistico.jpg');
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+            }
+            &:nth-child(5) {
+                .background {
+                    background: url('../IMG/Personality/silly.jpg');
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+            }
+            &:nth-child(6) {
+                .background {
+                    background: url('../IMG/Personality/raton.jpg');
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+            }
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+    .continue {
+        margin-top: 5vh;
+        padding: 0;
+        h4 {
+            margin: 0;
+            background: $yellow;
+            color: white;
+            padding: 4%;
+            cursor: pointer;
+            transition: all .3s ease;
+        }
+        &.transparent {
+            h4 {
+                background: transparent !important;
+                color: transparent;
+                cursor: default;
+                user-select: none;
+            }
+        }
+    }
+    &.boy {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $boy;
+                }
+            }
+        }
+        .personWrap {
+            .person {
+                .background {
+                    border-color: $boy;
+                    .title {
+                        background-color: rgba($boy, 0.8);
+                    }
+                }
+            }
+        }
+        .continue {
+            h4 {
+                background: $boy;
+            }
+        }
+    }
+    &.girl {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $girl;
+                }
+            }
+        }
+        .personWrap {
+            .person {
+                .background {
+                    border-color: $girl;
+                    .title {
+                        background-color: $girl;
+                    }
+                }
+            }
+        }
+        .continue {
+            h4 {
+                background: $girl;
+            }
+        }
+    }
+    &.bBoy {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $bBoy;
+                }
+            }
+        }
+        .personWrap {
+            .person {
+                .background {
+                    border-color: $bBoy;
+                    .title {
+                        background-color: $bBoy;
+                    }
+                }
+            }
+        }
+        .continue {
+            h4 {
+                background: $bBoy;
+            }
+        }
+    }
+    &.bGirl {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $bGirl;
+                }
+            }
+        }
+        .personWrap {
+            .person {
+                .background {
+                    border-color: $bGirl;
+                    .title {
+                        background-color: $bGirl;
+                    }
+                }
+            }
+        }
+        .continue {
+            h4 {
+                background: $bGirl;
+            }
+        }
+    }
+    &.nBoy {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $nBoy;
+                }
+            }
+        }
+        .personWrap {
+            .person {
+                .background {
+                    border-color: $nBoy;
+                    .title {
+                        background-color: $nBoy;
+                    }
+                }
+            }
+        }
+        .continue {
+            h4 {
+                background: $nBoy;
+            }
+        }
+    }
+    &.nGirl {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $nGirl;
+                }
+            }
+        }
+        .personWrap {
+            .person {
+                .background {
+                    border-color: $nGirl;
+                    .title {
+                        background-color: $nGirl;
+                    }
+                }
+            }
+        }
+        .continue {
+            h4 {
+                background: $nGirl;
+            }
+        }
+    }
+}
+
+@media (max-width:767px) {
+    .personality {
+        padding: 0;
+        .selection-wrap{
+            .title{
+                margin-bottom: 0;
+            }
+        }
+        .personWrap{
+            .person{
+                padding: 2.5vh 2.2vw;
+                height: 25vh;
+                .background{
+                    .offset{
+                        height: 17vh;
+                    }
+                    .title{
+                        h4{
+                            font-size: 12px;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

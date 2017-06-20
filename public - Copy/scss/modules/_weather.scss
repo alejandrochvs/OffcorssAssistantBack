@@ -1,0 +1,153 @@
+.weather {
+    padding: 5vh 0;
+    .selection-wrap {
+        text-align: center;
+        .title {
+            margin-bottom: 5vh;
+            .text {
+                transition: all 0.3s ease;
+                background: white;
+                border-bottom: solid 3px $yellow;
+                padding: 2%;
+            }
+        }
+    }
+    .weathers {
+        .background {
+            transition: all 0.3s ease;
+            padding: 1%;
+            .cont {
+                cursor: pointer;
+                transition: all 0.3s ease;
+                padding: 0;
+                background: $yellow;
+                background-image: url(../../IMG/smokks.png);
+                background-position: center top;
+                background-size: contain;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+                overflow: hidden;
+                $occasionColor: $yellow;
+                $opacity: 0.8;
+                border: solid 5px rgba($occasionColor, $opacity);
+                border-bottom: none;
+                padding: 0;
+                background-repeat: repeat;
+                .img {
+                    height: 40vh;
+                    img{
+                        padding: 0;
+                        margin-top: 2vh;
+                    }
+                }
+                .title {
+                    transition: all 0.3s ease;
+                    padding: 0;
+                    background: rgba($occasionColor, $opacity);
+                    padding: 4%;
+                    h3 {
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        text-align: center;
+                        margin: 0;
+                        color: white;
+                    }
+                }
+            }
+            &:nth-child(1) {
+                .cont {
+                    background-image: url(../../IMG/weather/Snow.jp);
+                    $occasionColor: #1E90FF;
+                    background-color: $occasionColor;
+                    $opacity: 0.9;
+                    border: solid 5px rgba($occasionColor, $opacity);
+                    .title{
+                        background: rgba($occasionColor, $opacity);
+                    }
+                }
+            }
+            &:nth-child(2) {
+                .cont {
+                    background-image: url(../../IMG/weather/Grass.pn);
+                    $occasionColor: #A9A9A9;
+                    background-color: $occasionColor;
+                    $opacity: 0.9;
+                    border: solid 5px rgba($occasionColor, $opacity);
+                    .title{
+                        background: rgba($occasionColor, $opacity);
+                    }
+                }
+            }
+            &:nth-child(3) {
+                .cont {
+                    background-image: url(../../IMG/weather/Desert.jp);
+                    $occasionColor: #FDB201;
+                    background-color: $occasionColor;
+                    $opacity: 0.9;
+                    border: solid 5px rgba($occasionColor, $opacity);
+                    .title{
+                        background: rgba($occasionColor, $opacity);
+                    }
+                }
+            }
+            &:hover{
+                transform: scale(1.05);
+            }
+        }
+    }
+    &.boy {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $boy;
+                }
+            }
+        }
+    }
+    &.girl {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $girl;
+                }
+            }
+        }
+    }
+    &.bBoy {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $bBoy;
+                }
+            }
+        }
+    }
+    &.bGirl {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $bGirl;
+                }
+            }
+        }
+    }
+    &.nBoy {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $nBoy;
+                }
+            }
+        }
+    }
+    &.nGirl {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $nGirl;
+                }
+            }
+        }
+    }
+}

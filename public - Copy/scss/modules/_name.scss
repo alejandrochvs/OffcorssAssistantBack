@@ -1,0 +1,167 @@
+.name {
+    padding: 5vh 0;
+    .selection-wrap {
+        text-align: center;
+        .title {
+            margin-bottom: 5vh;
+            .text {
+                transition: all 0.3s ease;
+                background: white;
+                border-bottom: solid 3px $yellow;
+                padding: 2%;
+            }
+        }
+        .nameInput {
+            input {
+                outline: none;
+                color: black;
+                border: none;
+                background-color: transparent;
+                &::placeholder{
+                    color:lightgray;
+                }
+                &:focus{
+                    outline: none;
+                }
+            }
+        }
+        .continue {
+            display: none;
+            cursor: pointer;
+            margin-top: 5vh;
+            div {
+                transition: all 0.3s ease;
+                background: $yellow;
+                color: white;
+                h3{
+                    margin: 0;
+                    padding: 3%;
+                }
+            }
+        }
+    }
+    .img {
+        height: 60vh;
+        .image {
+            height: 100%;
+            background-position: center;
+            background-origin: content-box;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+    &.boy{
+        .selection-wrap{
+            .title{
+                .text{
+                    border-bottom-color: $boy;
+                }
+            }
+            .continue{
+                div{
+                    background: $boy;
+                }
+            }
+        }
+        .img{
+            .image{
+                background-image: url('../IMG/Name/boy.png');
+            }
+        }
+    }
+    &.girl{
+        .selection-wrap{
+            .title{
+                .text{
+                    border-bottom-color: $girl;
+                }
+            }
+            .continue{
+                div{
+                    background: $girl;
+                }
+            }
+        }
+        .img{
+            .image{
+                background-image: url('../IMG/Name/girl.png');
+            }
+        }
+    }
+    &.bBoy{
+        .selection-wrap{
+            .title{
+                .text{
+                    border-bottom-color: $bBoy;
+                }
+            }
+            .continue{
+                div{
+                    background: $bBoy;
+                }
+            }
+        }
+        .img{
+            .image{
+                background-image: url('../IMG/Name/bBoy.png');
+            }
+        }
+    }
+    &.bGirl{
+        .selection-wrap{
+            .title{
+                .text{
+                    border-bottom-color: $bGirl;
+                }
+            }
+            .continue{
+                div{
+                    background: $bGirl;
+                }
+            }
+        }
+        .img{
+            .image{
+                background-image: url('../IMG/Name/bGirl.png');
+            }
+        }
+    }
+    &.nBoy{
+        .selection-wrap{
+            .title{
+                .text{
+                    border-bottom-color: $nBoy;
+                }
+            }
+            .continue{
+                div{
+                    background: $nBoy;
+                }
+            }
+        }
+        .img{
+            .image{
+                background-image: url('../IMG/Name/nBoy.png');
+            }
+        }
+    }
+    &.nGirl{
+        .selection-wrap{
+            .title{
+                .text{
+                    border-bottom-color: $nGirl;
+                }
+            }
+            .continue{
+                div{
+                    background: $nGirl;
+                }
+            }
+        }
+        .img{
+            .image{
+                background-image: url('../IMG/Name/nGirl.png');
+            }
+        }
+    }
+}
