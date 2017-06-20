@@ -14,6 +14,12 @@ var urlEncodedParser = bodyParser.urlencoded({
 var port = process.env.PORT || 80;
 app.set('view engine', 'jade');
 app.use(express.static(path.join(__dirname ,'/public')));
+app.use("/css", express.static(__dirname + '/public/css'));
+app.use("/font", express.static(__dirname + '/public/font'));
+app.use("/img", express.static(__dirname + '/public/img'));
+app.use("/js", express.static(__dirname + '/public/js'));
+app.use("/video", express.static(__dirname + '/public/video'));
+app.use("/views", express.static(__dirname + '/public/views'));
 app.get('/',function(req,res){
 	res.render('index');
 });
