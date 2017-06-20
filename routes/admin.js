@@ -76,6 +76,6 @@ router.post('/colors', function (req, res) {
     });
 });
 router.get('/', function (req, res) {
-    res.render('index',{admin : false});
+    res.render('index',{admin : true});
 });
 module.exports = router;

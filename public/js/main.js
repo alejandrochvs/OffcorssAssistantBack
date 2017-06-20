@@ -617,6 +617,76 @@ $(function () {
                     localStorage.clear();
                     window.location.href = 'http://www.offcorss.com/';
                 });
+            } else if (current == 'login') {
+                var register = function (username, email, password, name, last_name, gender, birthday, access_level) {
+                    if (username != "" && password != "" && name != "" && email != "" && last_name != "" && gender != "" && birthday != "" && access_level != "") {
+                        var data = {
+                            username: username,
+                            mail: email,
+                            password: password,
+                            name: name,
+                            last_name: last_name,
+                            access_level: access_level,
+                            gender: gender,
+                            birthday: birthday,
+                            last_connection: new Date().toISOString(),
+                            current_page: 'Gender'
+                        };
+                        $.ajax({
+                            type: 'GET',
+                            url: '/db/users/register',
+                            data: data,
+                            success: function (result) {
+                                return console.log(result);
+                            }
+                        });
+                    } else {
+                        console.log('Fill everything.');
+                    }
+                };
+                var login = function (username, password) {
+                    if (username != "" && password != "") {
+                        var data = {
+                            username: username,
+                            password: password
+                        };
+                        $.ajax({
+                            type: 'GET',
+                            url: '/db/users/login',
+                            data: data,
+                            success: function (result) {
+                                if (result == "User not found.") {
+                                    console.log(result);
+                                } else {
+                                    sessionStorage.token = result.token;
+                                    sessionStorage.username = result.token;
+                                    loadAdmin();
+                                    next('gender');
+                                }
+                                return true;
+                            }
+                        });
+                    } else {
+                        console.log('Fill everything.');
+                    }
+                };
+                $('.post').click(function () {
+                    var username = $('#username').val();
+                    var email = $('#email').val();
+                    var password = $('#password').val();
+                    var name = $('#name').val();
+                    var last_name = $('#last_name').val();
+                    var gender = $('#gender').val();
+                    var birthday = $('#birthday').val();
+                    var access_level = $('#access_level').val();
+                    register(username, email, password, name, last_name, gender, birthday, access_level);
+                });
+                $('.loginBtn').click(function () {
+                    var username = $('#username').val();
+                    var password = $('#password').val();
+                    login(username, password);
+                });
+                localStorage.current = 'gender';
             }
             $('N').html(name);
             if (admin && edit) {
@@ -629,6 +699,7 @@ $(function () {
         });
     }
     var loadAdmin = function () {
+        $('body').prepend('<div class="ui col-xs-12"> <input type="color" class="colorPicker" style="display:none;"> <div class="ui-section col-xs-1"> <div class="ui-option backAdmin col-xs-6"><i class="fa fa-angle-left" aria-hidden="true"></i></div> <div class="ui-option nextAdmin col-xs-6"><i class="fa fa-angle-right" aria-hidden="true"></i></div> </div> <div class="ui-section col-xs-1"> <div class="ui-option toggle-edit-mode col-xs-12"> <h6>Edit mode</h6> </div> </div> <div class="col-xs-2 ui-section"> <div class="col-xs-12 ui-option admin-color"> <h6>Color</h6> </div> <div class="col-xs-12 ui-hidden color-hidden"> <ul class="colors"> <li> <h5>Boy</h5> <div data-var="boy" class="color"> <h5>Boy</h5> </div> <div class="color-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div> </li> <li> <h5>Girl</h5> <div data-var="girl" class="color"> <h5>Girl</h5> </div> <div class="color-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div> </li> <li> <h5>Baby Boy</h5> <div data-var="bBoy" class="color"> <h5>Baby Boy</h5> </div> <div class="color-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div> </li> <li> <h5>Baby Girl</h5> <div data-var="bGirl" class="color"> <h5>Baby Girl</h5> </div> <div class="color-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div> </li> <li> <h5>Newborn Boy</h5> <div data-var="nBoy" class="color"> <h5>Newborn Boy</h5> </div> <div class="color-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div> </li> <li> <h5>Newborn Girl</h5> <div data-var="nGirl" class="color"> <h5>Newborn Girl</h5> </div> <div class="color-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div> </li> </ul> </div> </div> <div class="col-xs-4 ui-section"> <div class="col-xs-12 ui-option" style="cursor:default;padding:0">Admin mode</div> </div> <div class="col-xs-1 ui-section"> <div class="col-xs-12 ui-option admin-sections"> <h6>Sections</h6> </div> <div class="col-xs-12 ui-hidden sections-hidden"> <ul class="section-divs"> </ul> </div> </div> <div class="col-xs-2 ui-section user"> <div class="ui-option col-xs-12 admin-user" style="padding:0 3px;"> <h6 class="col-xs-8" style="padding-right: 0;">Username</h6><i class="fa fa-user-o col-xs-4" aria-hidden="true" style="padding:0;"></i></div> <div class="col-xs-12 ui-hidden user-hidden"> <ul class="user-settings"> <li> <h5>Account</h5> </li> <li> <h5>Settings</h5> </li> <li> <h5>Log out</h5> </li> </ul> </div> </div> <div class="col-xs-1 ui-section hide-admin"> <div class="col-xs-12 ui-option"><i class="fa fa-times fa-1x exit" aria-hidden="true"></i></div> </div> </div>');
         $('.nextAdmin').click(function () {
             currentIndex++;
             next(divs[currentIndex]);
@@ -681,7 +752,6 @@ $(function () {
             $('.section-divs').append('<li data-section="' + divs[i] + '"><h5>' + divs[i] + '</h5></li>');
             $('.section-divs > li:last-child()').click(function () {
                 next($(this).attr('data-section'));
-                console.log(currentIndex);
             });
         }
         $('.colors > li > .color').click(function () {
@@ -694,7 +764,7 @@ $(function () {
             $('body > .footer > .loader').addClass(currentClass);
             $('body > .content > .current > .container > div').addClass(currentClass);
         });
-        $('.colors > li > .color-edit').click(function(){
+        $('.colors > li > .color-edit').click(function () {
             var color = $(this).siblings('.color').attr('data-var');
             $('.colorPicker').change(function () {
                 requestColorChange(color, $('.colorPicker').val());
@@ -742,16 +812,9 @@ $(function () {
         });
         console.log('Loaded admin.');
     }
-    var userData;
     //Extras
-    if (sessionStorage.token) {
-        console.log('Logged in.');
-    } else {
-        console.log('Not logged in.');
-    }
     if (localStorage.current) {
         current = localStorage.current;
-        next(current);
         gender = localStorage.gender;
         name = localStorage.name;
         age = localStorage.age;
@@ -773,14 +836,43 @@ $(function () {
         }
         $('.loader').addClass('active ' + currentClass);
         $('.header').addClass(currentClass);
+        if (admin) {
+            if (sessionStorage.token) {
+                console.log('Logged in.');
+                loadAdmin();
+                current = divs[0];
+            } else {
+                currentIndex = -10;
+                console.log('Not logged in.');
+                current = 'login';
+            }
+        }
+        next(current);
     } else {
-        current = divs[0];
+        if (admin) {
+            if (sessionStorage.token) {
+                console.log('Logged in.');
+                loadAdmin();
+                current = divs[0];
+            } else {
+                currentIndex = -10;
+                current = 'login';
+                console.log('Not logged in.');
+            }
+        } else {
+            current = divs[0];
+        }
         next(current);
     }
-    if (admin) {
-        loadAdmin();
-    }
     $('.back').click(function () {
+        if (current == divs[5]) {
+            if (currentClass != 'nBoy' && currentClass != 'nGirl') {
+                currentIndex--;
+            }
+        }
+        if (current == divs[4]) {
+            currentIndex--;
+        }
         currentIndex--;
         previous(divs[currentIndex]);
         if (current == divs[0]) {} else if (current == divs[1]) {
@@ -798,6 +890,8 @@ $(function () {
         } else if (current == divs[2]) {
             $('.loader > .progress').css('width', '20%');
         } else if (current == divs[3]) {
+            $('.loader > .progress').css('width', '30%');
+        } else if (current == divs[4]) {
             $('.loader > .progress').css('width', '30%');
         } else if (current == divs[5]) {
             $('.loader > .progress').css('width', '40%');

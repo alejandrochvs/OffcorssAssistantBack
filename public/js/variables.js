@@ -1,5 +1,4 @@
 var StartingPointOfDocumentLineObligatoryForServerFuncionality = 'Don\'t delete this line';
-var admin = true;
 var headTitle0 = 'BUSCA TU ESTILO';
 var headTitle1 = 'ACERCA DE (1/2)';
 var headTitle2 = 'ESTILO (2/2)';

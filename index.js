@@ -15,7 +15,7 @@ var port = process.env.PORT || 80;
 app.set('view engine', 'jade');
 app.use(express.static(path.join(__dirname ,'/public')));
 app.get('/',function(req,res){
-	res.render('index');
+	res.render('index',{admin : false});
 });
 app.use('/db/users', urlEncodedParser, usersRoute);
 app.use('/admin', urlEncodedParser, adminRoute);
