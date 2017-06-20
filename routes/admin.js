@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var router = express.Router();
 var fs = require('fs');
+app.set('view engine','jade');
 router.post('/edit', function (req, res) {
     var editable;
     var query = req.body.string;
@@ -74,9 +75,7 @@ router.post('/colors', function (req, res) {
         });
     });
 });
-router.post('/', function (req, res) {
-    res.send({
-        admin: true
-    });
+router.get('/', function (req, res) {
+    res.render('index',{admin : false});
 });
 module.exports = router;

@@ -1,6 +1,7 @@
 var fs = require('fs');
 var express = require('express');
 var app = express();
+var path = require('path');
 var bodyParser = require('body-parser');
 var main = require('./routes/main');
 var usersRoute = require('./routes/users');
@@ -11,11 +12,10 @@ var urlEncodedParser = bodyParser.urlencoded({
     extended: false
 });
 var port = process.env.PORT || 80;
+app.set('view engine', 'jade');
 app.use(express.static(__dirname + '/public'));
-app.set('views', __dirname + '/public');
-app.set('view engine','ejs');
 app.get('/',function(req,res){
-	res.render('index.html');
+	res.render('index');
 });
 app.use('/db/users', urlEncodedParser, usersRoute);
 app.use('/admin', urlEncodedParser, adminRoute);

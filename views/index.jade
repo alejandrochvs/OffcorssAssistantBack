@@ -1,0 +1,113 @@
+doctype html
+html(lang='en')
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		title Offcorss Assistant
+		link(rel='icon', href='favicon.ico', type='image/x-icon')
+		link(rel='shortcut icon', href='favicon.ico', type='image/x-icon')
+		link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
+		link(rel='stylesheet', href='css/font-awesome.min.css')
+		link(rel='stylesheet', href='fonts/styles.css')
+		link(rel='stylesheet', href='css/main.css')
+	body
+		.ui.col-xs-12
+			input.colorPicker(type='color', style='display:none;')
+			.ui-section.col-xs-1
+				.ui-option.backAdmin.col-xs-6
+					i.fa.fa-angle-left(aria-hidden='true')
+				.ui-option.nextAdmin.col-xs-6
+					i.fa.fa-angle-right(aria-hidden='true')
+			.ui-section.col-xs-1
+				.ui-option.toggle-edit-mode.col-xs-12
+					h6 Edit mode
+			.col-xs-2.ui-section
+				.col-xs-12.ui-option.admin-color
+					h6 Color
+				.col-xs-12.ui-hidden.color-hidden
+					ul.colors
+						li
+							h5 Boy
+							.color(data-var='boy')
+								h5 Boy
+							.color-edit
+								i.fa.fa-pencil(aria-hidden='true')
+						li
+							h5 Girl
+							.color(data-var='girl')
+								h5 Girl
+							.color-edit
+								i.fa.fa-pencil(aria-hidden='true')
+						li
+							h5 Baby Boy
+							.color(data-var='bBoy')
+								h5 Baby Boy
+							.color-edit
+								i.fa.fa-pencil(aria-hidden='true')
+						li
+							h5 Baby Girl
+							.color(data-var='bGirl')
+								h5 Baby Girl
+							.color-edit
+								i.fa.fa-pencil(aria-hidden='true')
+						li
+							h5 Newborn Boy
+							.color(data-var='nBoy')
+								h5 Newborn Boy
+							.color-edit
+								i.fa.fa-pencil(aria-hidden='true')
+						li
+							h5 Newborn Girl
+							.color(data-var='nGirl')
+								h5 Newborn Girl
+							.color-edit
+								i.fa.fa-pencil(aria-hidden='true')
+			.col-xs-4.ui-section
+				.col-xs-12.ui-option(style='cursor:default;padding:0') Admin mode
+			.col-xs-1.ui-section
+				.col-xs-12.ui-option.admin-sections
+					h6 Sections
+				.col-xs-12.ui-hidden.sections-hidden
+					ul.section-divs
+			.col-xs-2.ui-section.user
+				.ui-option.col-xs-12.admin-user(style='padding:0 3px;')
+					h6.col-xs-8(style='padding-right: 0;') Username
+					i.fa.fa-user-o.col-xs-4(aria-hidden='true', style='padding:0;')
+				.col-xs-12.ui-hidden.user-hidden
+					ul.user-settings
+						li
+							h5 Account
+						li
+							h5 Settings
+						li
+							h5 Log out
+			.col-xs-1.ui-section.hide-admin
+				.col-xs-12.ui-option
+					i.fa.fa-times.fa-1x.exit(aria-hidden='true')
+		.col-xs-12.header
+			.col-xs-3.head.transparent
+				.col-xs-12.cont.back
+					i.fa.fa-angle-left(aria-hidden='true')
+					span VOLVER
+			.col-xs-6.head.title
+				.col-xs-12.cont.text-editable(data-var='headTitle0') BUSCA TU ESTILO
+			.col-xs-3.head
+				.col-xs-12.cont
+					a(href='http://www.offcorss.com/')
+						i.fa.fa-times.fa-1x.exit(aria-hidden='true')
+		.col-xs-12.content
+			.screen.prev
+				.container.col-xs-12
+			.screen.current
+				.container.col-xs-12
+			.screen.next
+				.container.col-xs-12
+		footer.col-xs-12.footer
+			.col-xs-12.loader
+				.progress
+			.col-xs-12.brand
+	script(src='js/jquery-3.2.1.min.js')
+	script(src='js/typeit.js')
+	script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
+	script(src='js/main.js')
+	script(src='js/variables.js')
