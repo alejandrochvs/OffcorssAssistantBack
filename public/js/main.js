@@ -619,7 +619,7 @@ $(function () {
                 });
             } else if (current == 'login') {
                 $('.head.title > .cont').html(headTitle4);
-                $('.head.title > .cont').attr('data-var','headTitle4');
+                $('.head.title > .cont').attr('data-var', 'headTitle4');
                 var register = function (username, email, password, name, last_name, gender, birthday, access_level) {
                     if (username != "" && password != "" && name != "" && email != "" && last_name != "" && gender != "" && birthday != "" && access_level != "") {
                         var data = {
@@ -650,8 +650,7 @@ $(function () {
                     if (username != "" && password != "") {
                         var data = {
                             username: username,
-                            password: password,
-                            last_connection : new Date().toISOString()
+                            password: password
                         };
                         $.ajax({
                             type: 'GET',
@@ -702,123 +701,140 @@ $(function () {
         });
     }
     var loadAdmin = function () {
-        $('body').prepend('<div class="ui col-xs-12"> <input type="color" class="colorPicker" style="display:none;"> <div class="ui-section col-xs-1"> <div class="ui-option backAdmin col-xs-6"><i class="fa fa-angle-left" aria-hidden="true"></i></div> <div class="ui-option nextAdmin col-xs-6"><i class="fa fa-angle-right" aria-hidden="true"></i></div> </div> <div class="ui-section col-xs-1"> <div class="ui-option toggle-edit-mode col-xs-12"> <h6>Edit mode</h6> </div> </div> <div class="col-xs-2 ui-section"> <div class="col-xs-12 ui-option admin-color"> <h6>Color</h6> </div> <div class="col-xs-12 ui-hidden color-hidden"> <ul class="colors"> <li> <h5>Boy</h5> <div data-var="boy" class="color"> <h5>Boy</h5> </div> <div class="color-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div> </li> <li> <h5>Girl</h5> <div data-var="girl" class="color"> <h5>Girl</h5> </div> <div class="color-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div> </li> <li> <h5>Baby Boy</h5> <div data-var="bBoy" class="color"> <h5>Baby Boy</h5> </div> <div class="color-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div> </li> <li> <h5>Baby Girl</h5> <div data-var="bGirl" class="color"> <h5>Baby Girl</h5> </div> <div class="color-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div> </li> <li> <h5>Newborn Boy</h5> <div data-var="nBoy" class="color"> <h5>Newborn Boy</h5> </div> <div class="color-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div> </li> <li> <h5>Newborn Girl</h5> <div data-var="nGirl" class="color"> <h5>Newborn Girl</h5> </div> <div class="color-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div> </li> </ul> </div> </div> <div class="col-xs-4 ui-section"> <div class="col-xs-12 ui-option" style="cursor:default;padding:0">Admin mode</div> </div> <div class="col-xs-1 ui-section"> <div class="col-xs-12 ui-option admin-sections"> <h6>Sections</h6> </div> <div class="col-xs-12 ui-hidden sections-hidden"> <ul class="section-divs"> </ul> </div> </div> <div class="col-xs-2 ui-section user"> <div class="ui-option col-xs-12 admin-user" style="padding:0 3px;"> <h6 class="col-xs-8" style="padding-right: 0;">Username</h6><i class="fa fa-user-o col-xs-4" aria-hidden="true" style="padding:0;"></i></div> <div class="col-xs-12 ui-hidden user-hidden"> <ul class="user-settings"> <li> <h5>Account</h5> </li> <li> <h5>Settings</h5> </li> <li class="log-out"> <h5>Log out</h5> </li> </ul> </div> </div> <div class="col-xs-1 ui-section hide-admin"> <div class="col-xs-12 ui-option"><i class="fa fa-times fa-1x exit" aria-hidden="true"></i></div> </div> </div>');
-        $('.log-out').click(function(){
-            sessionStorage.clear();
-            location.reload();
-        });
-        $('.admin-user > h6').html(sessionStorage.username);
-        $('.nextAdmin').click(function () {
-            currentIndex++;
-            next(divs[currentIndex]);
-            $('.header > .head:nth-child(1)').removeClass('transparent');
-        })
-        $('.backAdmin').click(function () {
-            if (currentIndex > 0) {
-                currentIndex--;
-                previous(divs[currentIndex]);
-                if (currentIndex == 0) {
-                    $('.header > .head:nth-child(1)').addClass('transparent');
+        var access_level;
+        var data = {
+            username: sessionStorage.username,
+            password: sessionStorage.token
+        };
+        $.ajax({
+            type: "GET",
+            url: "/db/users/login",
+            data: data,
+            success: function (res) {
+                access_level = res.access_level;
+                console.log(access_level);
+                $('body').prepend('<div class="ui col-xs-12"> <input type="color" class="colorPicker" style="display:none;"> <div class="ui-section col-xs-1"> <div class="ui-option backAdmin col-xs-6"><i class="fa fa-angle-left" aria-hidden="true"></i></div> <div class="ui-option nextAdmin col-xs-6"><i class="fa fa-angle-right" aria-hidden="true"></i></div> </div> <div class="ui-section col-xs-1"> <div class="ui-option toggle-edit-mode col-xs-12"> <h6>Edit mode</h6> </div> </div> <div class="col-xs-2 ui-section"> <div class="col-xs-12 ui-option admin-color"> <h6>Color</h6> </div> <div class="col-xs-12 ui-hidden color-hidden"> <ul class="colors"> <li> <h5>Boy</h5> <div data-var="boy" class="color"> <h5>Boy</h5> </div> <div class="color-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div> </li> <li> <h5>Girl</h5> <div data-var="girl" class="color"> <h5>Girl</h5> </div> <div class="color-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div> </li> <li> <h5>Baby Boy</h5> <div data-var="bBoy" class="color"> <h5>Baby Boy</h5> </div> <div class="color-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div> </li> <li> <h5>Baby Girl</h5> <div data-var="bGirl" class="color"> <h5>Baby Girl</h5> </div> <div class="color-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div> </li> <li> <h5>Newborn Boy</h5> <div data-var="nBoy" class="color"> <h5>Newborn Boy</h5> </div> <div class="color-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div> </li> <li> <h5>Newborn Girl</h5> <div data-var="nGirl" class="color"> <h5>Newborn Girl</h5> </div> <div class="color-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div> </li> </ul> </div> </div> <div class="col-xs-4 ui-section"> <div class="col-xs-12 ui-option" style="cursor:default;padding:0">Admin mode</div> </div> <div class="col-xs-1 ui-section"> <div class="col-xs-12 ui-option admin-sections"> <h6>Sections</h6> </div> <div class="col-xs-12 ui-hidden sections-hidden"> <ul class="section-divs"> </ul> </div> </div> <div class="col-xs-2 ui-section user"> <div class="ui-option col-xs-12 admin-user" style="padding:0 3px;"> <h6 class="col-xs-8" style="padding-right: 0;">Username</h6><i class="fa fa-user-o col-xs-4" aria-hidden="true" style="padding:0;"></i></div> <div class="col-xs-12 ui-hidden user-hidden"> <ul class="user-settings"> <li> <h5>Account</h5> </li> <li> <h5>Settings</h5> </li> </li> <li class="log-out"> <h5>Log out</h5> </li> </ul> </div> </div> <div class="col-xs-1 ui-section hide-admin"> <div class="col-xs-12 ui-option"><i class="fa fa-times fa-1x exit" aria-hidden="true"></i></div> </div> </div>');
+                if (access_level == 8){
+                    $('.user-settings').prepend('<li class="register"> <h5>Register user</h5> </li>')
                 }
+                $('.log-out').click(function () {
+                    sessionStorage.clear();
+                    location.reload();
+                });
+                $('.admin-user > h6').html(sessionStorage.username);
+                $('.nextAdmin').click(function () {
+                    currentIndex++;
+                    next(divs[currentIndex]);
+                    $('.header > .head:nth-child(1)').removeClass('transparent');
+                })
+                $('.backAdmin').click(function () {
+                    if (currentIndex > 0) {
+                        currentIndex--;
+                        previous(divs[currentIndex]);
+                        if (currentIndex == 0) {
+                            $('.header > .head:nth-child(1)').addClass('transparent');
+                        }
+                    }
+                });
+                $('body').addClass('admin');
+                $('.admin-color').hover(function () {
+                    $('.color-hidden').addClass('active');
+                    $('.color-hidden').hover(function () {
+                        $('.color-hidden').addClass('active');
+                    }, function () {
+                        $('.color-hidden').removeClass('active');
+                    });
+                }, function () {
+                    $('.color-hidden').removeClass('active');
+                    $('.color-hidden').unbind('hover');
+                });
+                $('.admin-user').hover(function () {
+                    $('.user-hidden').addClass('active');
+                    $('.user-hidden').hover(function () {
+                        $('.user-hidden').addClass('active');
+                    }, function () {
+                        $('.user-hidden').removeClass('active');
+                    });
+                }, function () {
+                    $('.user-hidden').removeClass('active');
+                    $('.user-hidden').unbind('hover');
+                });
+                $('.admin-sections').hover(function () {
+                    $('.sections-hidden').addClass('active');
+                    $('.sections-hidden').hover(function () {
+                        $('.sections-hidden').addClass('active');
+                    }, function () {
+                        $('.sections-hidden').removeClass('active');
+                    });
+                }, function () {
+                    $('.sections-hidden').removeClass('active');
+                    $('.sections-hidden').unbind('hover');
+                });
+                for (var i = 0; i < divs.length; i++) {
+                    $('.section-divs').append('<li data-section="' + divs[i] + '"><h5>' + divs[i] + '</h5></li>');
+                    $('.section-divs > li:last-child()').click(function () {
+                        next($(this).attr('data-section'));
+                    });
+                }
+                $('.colors > li > .color').click(function () {
+                    var color = $(this).attr('data-var');
+                    currentClass = color;
+                    $('body > .header').removeClass('boy girl bBoy bGirl nBoy nGirl');
+                    $('body > .footer > .loader').removeClass('boy girl bBoy bGirl nBoy nGirl');
+                    $('body > .content > .current > .container > div').removeClass('boy girl bBoy bGirl nBoy nGirl');
+                    $('body > .header').addClass(currentClass);
+                    $('body > .footer > .loader').addClass(currentClass);
+                    $('body > .content > .current > .container > div').addClass(currentClass);
+                });
+                $('.colors > li > .color-edit').click(function () {
+                    var color = $(this).siblings('.color').attr('data-var');
+                    $('.colorPicker').change(function () {
+                        requestColorChange(color, $('.colorPicker').val());
+                        $('.colorPicker').unbind('change');
+                        setTimeout(function () {
+                            location.reload();
+                        }, 2000);
+                    });
+                    $('.colorPicker').click();
+                });
+                currentIndex = localStorage.currentIndex || -1;
+                gender = gender || 'M';
+                name = name || 'Alejo';
+                age = age || 5;
+                bottomSize = bottomSize || 24;
+                topSize = topSize || 24;
+                shoeSize = shoeSize || 24;
+                weather = weather || 'hot';
+                favColor = favColor || 2;
+                current = divs[currentIndex];
+                currentClass = currentClass || 'boy';
+                $('.toggle-edit-mode').click(function () {
+                    edit = !edit;
+                    $(this).toggleClass('active');
+                    if (edit) {
+                        $('body').addClass('edit');
+                        $('.header').find('*').unbind();
+                        $('.content').find('*').unbind();
+                        $('.footer').find('*').unbind();
+                        $('.occasionsBtn').removeClass('disabled');
+                        bindEditable();
+                    } else {
+                        $('body').removeClass('edit');
+                        $('.text-editable').unbind();
+                        setTimeout(function () {
+                            location.reload();
+                        }, 1000);
+                    }
+                });
+                $('.hide-admin').click(function () {
+                    $('body').toggleClass('admin');
+                    $(this).toggleClass('admin-hidden');
+                    $('.hide-admin > .ui-option > .fa').toggleClass('exit fa-times fa-arrow-down')
+                    admin = false;
+                });
+                console.log('Loaded admin.');
             }
         });
-        $('body').addClass('admin');
-        $('.admin-color').hover(function () {
-            $('.color-hidden').addClass('active');
-            $('.color-hidden').hover(function () {
-                $('.color-hidden').addClass('active');
-            }, function () {
-                $('.color-hidden').removeClass('active');
-            });
-        }, function () {
-            $('.color-hidden').removeClass('active');
-            $('.color-hidden').unbind('hover');
-        });
-        $('.admin-user').hover(function () {
-            $('.user-hidden').addClass('active');
-            $('.user-hidden').hover(function () {
-                $('.user-hidden').addClass('active');
-            }, function () {
-                $('.user-hidden').removeClass('active');
-            });
-        }, function () {
-            $('.user-hidden').removeClass('active');
-            $('.user-hidden').unbind('hover');
-        });
-        $('.admin-sections').hover(function () {
-            $('.sections-hidden').addClass('active');
-            $('.sections-hidden').hover(function () {
-                $('.sections-hidden').addClass('active');
-            }, function () {
-                $('.sections-hidden').removeClass('active');
-            });
-        }, function () {
-            $('.sections-hidden').removeClass('active');
-            $('.sections-hidden').unbind('hover');
-        });
-        for (var i = 0; i < divs.length; i++) {
-            $('.section-divs').append('<li data-section="' + divs[i] + '"><h5>' + divs[i] + '</h5></li>');
-            $('.section-divs > li:last-child()').click(function () {
-                next($(this).attr('data-section'));
-            });
-        }
-        $('.colors > li > .color').click(function () {
-            var color = $(this).attr('data-var');
-            currentClass = color;
-            $('body > .header').removeClass('boy girl bBoy bGirl nBoy nGirl');
-            $('body > .footer > .loader').removeClass('boy girl bBoy bGirl nBoy nGirl');
-            $('body > .content > .current > .container > div').removeClass('boy girl bBoy bGirl nBoy nGirl');
-            $('body > .header').addClass(currentClass);
-            $('body > .footer > .loader').addClass(currentClass);
-            $('body > .content > .current > .container > div').addClass(currentClass);
-        });
-        $('.colors > li > .color-edit').click(function () {
-            var color = $(this).siblings('.color').attr('data-var');
-            $('.colorPicker').change(function () {
-                requestColorChange(color, $('.colorPicker').val());
-                $('.colorPicker').unbind('change');
-                setTimeout(function () {
-                    location.reload();
-                }, 2000);
-            });
-            $('.colorPicker').click();
-        });
-        currentIndex = localStorage.currentIndex || -1;
-        gender = gender || 'M';
-        name = name || 'Alejo';
-        age = age || 5;
-        bottomSize = bottomSize || 24;
-        topSize = topSize || 24;
-        shoeSize = shoeSize || 24;
-        weather = weather || 'hot';
-        favColor = favColor || 2;
-        current = divs[currentIndex];
-        currentClass = currentClass || 'boy';
-        $('.toggle-edit-mode').click(function () {
-            edit = !edit;
-            $(this).toggleClass('active');
-            if (edit) {
-                $('body').addClass('edit');
-                $('.header').find('*').unbind();
-                $('.content').find('*').unbind();
-                $('.footer').find('*').unbind();
-                $('.occasionsBtn').removeClass('disabled');
-                bindEditable();
-            } else {
-                $('body').removeClass('edit');
-                $('.text-editable').unbind();
-                setTimeout(function () {
-                    location.reload();
-                }, 1000);
-            }
-        });
-        $('.hide-admin').click(function () {
-            $('body').toggleClass('admin');
-            $(this).toggleClass('admin-hidden');
-            $('.hide-admin > .ui-option > .fa').toggleClass('exit fa-times fa-arrow-down')
-            admin = false;
-        });
-        console.log('Loaded admin.');
     }
     //Extras
     if (localStorage.current) {
