@@ -21,7 +21,6 @@
                 transition: all 0.3s ease;
                 padding: 0;
                 background: $yellow;
-                background-image: url(../../IMG/smokks.png);
                 background-position: center top;
                 background-size: contain;
                 border-top-left-radius: 15px;
@@ -57,7 +56,6 @@
             }
             &:nth-child(1) {
                 .cont {
-                    background-image: url(../../IMG/weather/Snow.jp);
                     $occasionColor: #1E90FF;
                     background-color: $occasionColor;
                     $opacity: 0.9;
@@ -69,7 +67,6 @@
             }
             &:nth-child(2) {
                 .cont {
-                    background-image: url(../../IMG/weather/Grass.pn);
                     $occasionColor: #A9A9A9;
                     background-color: $occasionColor;
                     $opacity: 0.9;
@@ -81,7 +78,6 @@
             }
             &:nth-child(3) {
                 .cont {
-                    background-image: url(../../IMG/weather/Desert.jp);
                     $occasionColor: #FDB201;
                     background-color: $occasionColor;
                     $opacity: 0.9;

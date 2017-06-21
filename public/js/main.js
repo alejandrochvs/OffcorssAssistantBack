@@ -799,9 +799,13 @@ $(function () {
                 for (var i = 0; i < divs.length; i++) {
                     $('.section-divs').append('<li data-section="' + divs[i] + '"><h5>' + divs[i] + '</h5></li>');
                     $('.section-divs > li:last-child()').click(function () {
-                        if (current != $(this).attr('data-section')) {
-                            next($(this).attr('data-section'));
-
+                        var dataSection = $(this).attr('data-section');
+                        if (current != dataSection) {
+                            if ( currentIndex < divs.indexOf(dataSection)){
+                                next(dataSection);
+                            }else{
+                                previous(dataSection);
+                            }
                         }
                     });
                 }
@@ -844,7 +848,7 @@ $(function () {
                         $('body').addClass('edit');
                         $('.header').find('*').unbind();
                         $('.content').find('*').unbind();
-                        $('.footer').find('*').unbind();
+                        $('.footer').find('*').unbind()
                         $('.occasionsBtn').removeClass('disabled');
                         bindEditable();
                     } else {
