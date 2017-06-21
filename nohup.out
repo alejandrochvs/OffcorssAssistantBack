@@ -297,3 +297,51 @@ npm ERR! There is likely additional logging output above.
 
 npm ERR! Please include the following file with any support request:
 npm ERR!     /home/ubuntu/offcorss-assistant/npm-debug.log
+2017-06-21T15:16:39.337+0000 I CONTROL  [initandlisten] MongoDB starting : pid=18754 port=27017 dbpath=/data/db 64-bit host=ip-172-31-18-184
+2017-06-21T15:16:39.338+0000 I CONTROL  [initandlisten] db version v3.2.14
+2017-06-21T15:16:39.338+0000 I CONTROL  [initandlisten] git version: 92f6668a768ebf294bd4f494c50f48459198e6a3
+2017-06-21T15:16:39.338+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2g  1 Mar 2016
+2017-06-21T15:16:39.338+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+2017-06-21T15:16:39.338+0000 I CONTROL  [initandlisten] modules: none
+2017-06-21T15:16:39.338+0000 I CONTROL  [initandlisten] build environment:
+2017-06-21T15:16:39.338+0000 I CONTROL  [initandlisten]     distmod: ubuntu1604
+2017-06-21T15:16:39.338+0000 I CONTROL  [initandlisten]     distarch: x86_64
+2017-06-21T15:16:39.338+0000 I CONTROL  [initandlisten]     target_arch: x86_64
+2017-06-21T15:16:39.338+0000 I CONTROL  [initandlisten] options: {}
+2017-06-21T15:16:39.366+0000 I -        [initandlisten] Detected data files in /data/db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2017-06-21T15:16:39.366+0000 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=1G,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2017-06-21T15:16:39.601+0000 I CONTROL  [initandlisten] ** WARNING: You are running this process as the root user, which is not recommended.
+2017-06-21T15:16:39.601+0000 I CONTROL  [initandlisten] 
+2017-06-21T15:16:39.601+0000 I CONTROL  [initandlisten] 
+2017-06-21T15:16:39.601+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+2017-06-21T15:16:39.601+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+2017-06-21T15:16:39.601+0000 I CONTROL  [initandlisten] 
+2017-06-21T15:16:39.601+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/defrag is 'always'.
+2017-06-21T15:16:39.601+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+2017-06-21T15:16:39.601+0000 I CONTROL  [initandlisten] 
+2017-06-21T15:16:39.602+0000 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/data/db/diagnostic.data'
+2017-06-21T15:16:39.602+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+2017-06-21T15:16:39.602+0000 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2017-06-21T15:16:43.530+0000 I NETWORK  [initandlisten] connection accepted from 190.7.156.123:10835 #1 (1 connection now open)
+2017-06-21T15:16:52.478+0000 I NETWORK  [initandlisten] connection accepted from 190.7.156.123:34704 #2 (2 connections now open)
+2017-06-21T15:16:55.326+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58554 #3 (3 connections now open)
+2017-06-21T15:16:55.362+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58556 #4 (4 connections now open)
+2017-06-21T15:16:55.369+0000 I INDEX    [conn3] build index on: assistant.users properties: { v: 1, unique: true, key: { username: 1 }, name: "username_1", ns: "assistant.users", background: true }
+2017-06-21T15:16:55.369+0000 I INDEX    [conn3] build index done.  scanned 1 total records. 0 secs
+2017-06-21T15:16:55.377+0000 I NETWORK  [conn3] end connection 127.0.0.1:58554 (3 connections now open)
+2017-06-21T15:16:55.378+0000 I NETWORK  [conn4] end connection 127.0.0.1:58556 (2 connections now open)
+2017-06-21T15:17:10.812+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58558 #5 (3 connections now open)
+2017-06-21T15:17:10.815+0000 I NETWORK  [conn5] end connection 127.0.0.1:58558 (2 connections now open)
+2017-06-21T15:17:14.044+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58560 #6 (3 connections now open)
+2017-06-21T15:17:14.046+0000 I NETWORK  [conn6] end connection 127.0.0.1:58560 (2 connections now open)
+2017-06-21T15:17:16.620+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58562 #7 (3 connections now open)
+2017-06-21T15:17:16.626+0000 I NETWORK  [conn7] end connection 127.0.0.1:58562 (2 connections now open)
+2017-06-21T15:17:43.621+0000 I NETWORK  [initandlisten] connection accepted from 190.7.156.123:21600 #8 (3 connections now open)
+
+> offcorss-assistant@1.0.0 start /home/ubuntu/offcorss-assistant
+> node index.js
+
+App listening on port 80.
+2017-06-21T15:17:52.578+0000 I NETWORK  [initandlisten] connection accepted from 190.7.156.123:14127 #9 (4 connections now open)
+2017-06-21T15:42:10.531+0000 I NETWORK  [initandlisten] connection accepted from 190.7.156.123:54547 #10 (5 connections now open)
+2017-06-21T15:42:10.841+0000 I NETWORK  [initandlisten] connection accepted from 190.7.156.123:13528 #11 (6 connections now open)
