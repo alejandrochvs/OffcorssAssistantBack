@@ -3,6 +3,7 @@ var headTitle0 = 'BUSCA TU ESTILO';
 var headTitle1 = 'ACERCA DE (1/2)';
 var headTitle2 = 'ESTILO (2/2)';
 var headTitle3 = 'RESULTADO';
+var headTitle4 = 'ADMIN';
 var genderTitle = '¡Hola! La pinta es para…';
 var genderBoy = 'Niño';
 var genderGirl = 'Niña';

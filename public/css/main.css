@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i");
+::-webkit-scrollbar {
+  display: none; }
+
 html {
   overflow-x: hidden; }
   html #editing {
@@ -10,17 +13,19 @@ html {
     font-family: "Roboto", sans-serif;
     background: white;
     height: 100vh;
-    overflow: hidden; }
+    overflow: hidden;
+    transition: all .4s ease; }
     html body .ui {
-      bottom: 1vh;
+      bottom: 6vh;
       transition: all 0.4s ease;
-      height: 0;
+      height: 0vh;
       padding: 0;
-      z-index: 100;
-      line-height: 0;
-      overflow: hidden; }
+      line-height: 0vh;
+      overflow: hidden;
+      z-index: 5;
+      line-height: 6vh; }
       html body .ui .ui-section {
-        transition: all 0.2s ease;
+        transition: all 0.4s ease;
         font-size: 20px;
         background: #333;
         color: white;
@@ -29,7 +34,7 @@ html {
         height: 6vh;
         z-index: 1; }
         html body .ui .ui-section .ui-option {
-          transition: all 0.2s ease;
+          transition: all 0.4s ease;
           text-align: center;
           cursor: pointer;
           background: #333;
@@ -170,6 +175,27 @@ html {
           html body .ui .ui-section .ui-hidden.active {
             max-height: 70vh;
             background: #333; }
+        html body .ui .ui-section.hide-admin {
+          position: absolute;
+          right: 0;
+          top: 0; }
+          html body .ui .ui-section.hide-admin.admin-hidden {
+            background: rgba(51, 51, 51, 0.9);
+            position: fixed;
+            right: 10px;
+            top: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: solid 2px #fd0; }
+            html body .ui .ui-section.hide-admin.admin-hidden .ui-option {
+              padding: 0;
+              border-radius: 50%;
+              background: transparent;
+              width: 100%;
+              height: 100%; }
+              html body .ui .ui-section.hide-admin.admin-hidden .ui-option i {
+                line-height: 50px; }
     html body .header {
       margin: 0;
       background: white;
@@ -1747,12 +1773,37 @@ html {
             html body .content .screen .container .result.girl .img .image {
               background-image: url("../IMG/Name/girl.png"); }
           html body .content .screen .container .login {
-            margin-top: 10vh;
+            margin-top: 8vh;
             background: rgba(255, 255, 255, 0.7);
             border-radius: 5px;
             padding: 3%; }
+            html body .content .screen .container .login .form-title {
+              padding: 2%;
+              text-align: center; }
+              html body .content .screen .container .login .form-title h2 {
+                margin: 0;
+                margin-bottom: 3vh;
+                color: #666;
+                font-family: 'Roboto' , sans-serif; }
             html body .content .screen .container .login input {
-              margin-bottom: 2.5vh; }
+              margin-bottom: 2.5vh;
+              border: none;
+              padding: 2%;
+              background: whitesmoke;
+              border-bottom: solid 2px transparent;
+              transition: all 0.3s ease;
+              color: #666; }
+              html body .content .screen .container .login input::placeholder {
+                color: lightgray; }
+              html body .content .screen .container .login input:focus {
+                outline: none;
+                border-bottom-color: #fd0; }
+              html body .content .screen .container .login input:after {
+                content: "";
+                display: block;
+                height: 10px;
+                width: 10px;
+                background: red; }
             html body .content .screen .container .login .loginBtn {
               margin-top: 2.5vh;
               background: #fd0;
@@ -1819,10 +1870,10 @@ html {
     html body.admin {
       height: 106vh; }
       html body.admin .ui {
+        bottom: 0vh;
+        background: transparent;
         overflow: visible;
-        bottom: 0;
-        height: 6vh;
-        line-height: 6vh; }
+        height: 6vh; }
     html body.edit .text-editable {
       border: dashed 1px orangered; }
     html body.edit .colors .color-wrap:hover .select {
