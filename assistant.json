@@ -1,0 +1,1 @@
+{"_id":{"$oid":"59495b199c8fa63cd4d4183d"},"last_ip":"::ffff:190.7.156.123","username":"alejandrochvs","mail":"alejandrochvs@hotmail.com","password":"ef38c99b2b66c68736a8","name":"Alejandro","last_name":"Chaves","access_level":"8","gender":"M","birthday":{"$date":"1996-03-10T00:00:00.000Z"},"last_connection":{"$date":"2017-06-20T17:27:51.231Z"},"current_page":"Gender","__v":0}

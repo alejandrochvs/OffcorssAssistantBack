@@ -29,3 +29,8 @@ This selector doesn't have any properties and will not be rendered.
 >>> Change detected to: scss/main.scss
 >>> New template detected: scss/modules/_admin.scss
 >>> New template detected: scss/modules/_login.scss
+>>> Change detected to: scss/main.scss
+>>> Change detected to: scss/modules/_admin.scss
+>>> Change detected to: scss/modules/_login.scss
+      write css/main.css
+      write css/main.css.map
