@@ -1,10 +1,40 @@
 .login{
-    margin-top: 10vh;
+    margin-top: 8vh;
     background: rgba(white,0.7);
     border-radius: 5px;
     padding: 3%;
+    .form-title{
+        padding: 2%;
+        text-align: center;
+        h2{
+            margin: 0;
+            margin-bottom: 3vh;
+            color: #666;
+            font-family: 'Roboto' , sans-serif;
+        }
+    }
     input{
         margin-bottom: 2.5vh;
+        border: none;
+        padding: 2%;
+        background: whitesmoke;
+        border-bottom: solid 2px transparent;
+        transition: all 0.3s ease;
+        color: #666;
+        &::placeholder{
+            color: lightgray;
+        }
+        &:focus{
+            outline: none;
+            border-bottom-color: $yellow;
+        }
+        &:after{
+            content: "";
+            display: block;
+            height: 10px;
+            width: 10px;
+            background: red;
+        }
     }
     .loginBtn{
         margin-top: 2.5vh;

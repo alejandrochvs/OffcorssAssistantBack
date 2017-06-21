@@ -1,4 +1,7 @@
 @import 'modules/variables';
+::-webkit-scrollbar { 
+    display: none; 
+}
 html {
     overflow-x: hidden;
     #editing {
@@ -13,6 +16,7 @@ html {
         height: 100vh;
         overflow: hidden;
         @import 'modules/admin';
+        transition: all .4s ease;
         .header {
             margin: 0;
             background: white;
@@ -253,10 +257,10 @@ html {
         &.admin {
             height: 100 + $ui-height;
             .ui {
+                bottom: 0vh;
+                background: transparent;
                 overflow: visible;
-                bottom: 0;
                 height: $ui-height;
-                line-height: $ui-height;
             }
         }
         &.edit {
