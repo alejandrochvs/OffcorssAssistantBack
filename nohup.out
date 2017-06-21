@@ -214,3 +214,8 @@ npm ERR! There is likely additional logging output above.
 
 npm ERR! Please include the following file with any support request:
 npm ERR!     C:\Users\aleja\OneDrive\Documentos\BASE16\OFFCORSS\Asistente\OffcorssAssistant-back\npm-debug.log
+
+> offcorss-assistant@1.0.0 start /home/ubuntu/offcorss-assistant
+> node index.js
+
+App listening on port 80.
