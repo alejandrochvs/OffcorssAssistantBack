@@ -191,7 +191,7 @@ $(function () {
                         var code = e.which;
                         if (code == 13) {
                             e.preventDefault();
-                            if ($(this).parent().parent().parent().parent().parent().parent().hasClass('current')) {
+                            if ($(this).parent().parent().parent().parent().parent().hasClass('current')) {
                                 $('.continue').click();
                             }
                         }
