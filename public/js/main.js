@@ -650,22 +650,23 @@ $(function () {
                     if (username != "" && password != "") {
                         var data = {
                             username: username,
-                            password: password
+                            password: password,
+                            last_connection : new Date().toISOString()
                         };
                         $.ajax({
                             type: 'GET',
                             url: '/db/users/login',
                             data: data,
                             success: function (result) {
-                                if (result == "User not found.") {
-                                    console.log(result);
+                                if (result.status != 200) {
+                                    return console.error(result);
                                 } else {
                                     sessionStorage.token = result.token;
                                     sessionStorage.username = result.username;
                                     loadAdmin();
                                     next('gender');
+                                    return console.log('Logged in.');
                                 }
-                                return true;
                             }
                         });
                     } else {
