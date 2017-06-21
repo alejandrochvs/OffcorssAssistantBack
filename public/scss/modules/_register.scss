@@ -1,5 +1,5 @@
-.login{
-    margin-top: 8vh;
+.register{
+    margin-top: 5vh;
     background: rgba(white,0.7);
     border-radius: 5px;
     padding: 3%;
@@ -13,14 +13,18 @@
             font-family: 'Roboto' , sans-serif;
         }
     }
-    input{
-        margin-bottom: 2.5vh;
+    h5{
+        margin: 0;
+    }
+    input,select{
+        margin-bottom: 1vh;
         border: none;
-        padding: 2%;
+        padding: 1%;
         background: whitesmoke;
         border-bottom: solid 2px transparent;
         transition: all 0.3s ease;
         color: #666;
+        text-align: center;
         &::placeholder{
             color: lightgray;
         }
@@ -28,15 +32,8 @@
             outline: none;
             border-bottom-color: $yellow;
         }
-        &:after{
-            content: "";
-            display: block;
-            height: 10px;
-            width: 10px;
-            background: red;
-        }
     }
-    .loginBtn{
+    .registerBtn{
         margin-top: 2.5vh;
         background: $yellow;
         transition: all .2s ease;

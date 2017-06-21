@@ -1807,8 +1807,45 @@ html {
             html body .content .screen .container .login .loginBtn {
               margin-top: 2.5vh;
               background: #fd0;
-              transition: all .2s ease; }
+              transition: all .2s ease;
+              color: white; }
               html body .content .screen .container .login .loginBtn:hover {
+                background: #e6c700; }
+          html body .content .screen .container .register {
+            margin-top: 5vh;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 5px;
+            padding: 3%; }
+            html body .content .screen .container .register .form-title {
+              padding: 2%;
+              text-align: center; }
+              html body .content .screen .container .register .form-title h2 {
+                margin: 0;
+                margin-bottom: 3vh;
+                color: #666;
+                font-family: 'Roboto' , sans-serif; }
+            html body .content .screen .container .register h5 {
+              margin: 0; }
+            html body .content .screen .container .register input, html body .content .screen .container .register select {
+              margin-bottom: 1vh;
+              border: none;
+              padding: 1%;
+              background: whitesmoke;
+              border-bottom: solid 2px transparent;
+              transition: all 0.3s ease;
+              color: #666;
+              text-align: center; }
+              html body .content .screen .container .register input::placeholder, html body .content .screen .container .register select::placeholder {
+                color: lightgray; }
+              html body .content .screen .container .register input:focus, html body .content .screen .container .register select:focus {
+                outline: none;
+                border-bottom-color: #fd0; }
+            html body .content .screen .container .register .registerBtn {
+              margin-top: 2.5vh;
+              background: #fd0;
+              transition: all .2s ease;
+              color: white; }
+              html body .content .screen .container .register .registerBtn:hover {
                 background: #e6c700; }
     html body .footer {
       background: white;

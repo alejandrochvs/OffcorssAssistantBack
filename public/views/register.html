@@ -1,12 +1,27 @@
-<input id='username' title="Username" type="name" placeholder="Username">
-<input id='email' title="Email" type="email" placeholder="Email">
-<input id='password' title="Password" type="password" placeholder="Password">
-<input id='name' title="Name" type="text" placeholder="Name">
-<input id='last_name' title="Last name" type="text" placeholder="Last name">
-<select id='gender' title="Gender">
-        <option value="M">Male</option>
-        <option value="F">Female</option>
-    </select>
-<input id='birthday' type="date" title="Birthday">
-<input id='access_level' type="number" title="Access level" min="0" max="8" value="8">
-<button class="btn btn-light post">Register</button>
+<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 register">
+    <div class="form-title col-xs-12">
+        <h2>Sign up</h2>
+    </div>
+    <input class="col-xs-12 col-sm-10 col-sm-offset-1" id='username' title="Username" type="name" placeholder="Username">
+    <input class="col-xs-12 col-sm-10 col-sm-offset-1" id='email' title="Email" type="email" placeholder="Email">
+    <input class="col-xs-12 col-sm-10 col-sm-offset-1" id='password' title="Password" type="password" placeholder="Password">
+    <input class="col-xs-12 col-sm-10 col-sm-offset-1" id='name' title="Name" type="text" placeholder="Name">
+    <input class="col-xs-12 col-sm-10 col-sm-offset-1" id='last_name' title="Last name" type="text" placeholder="Last name">
+    <div class="container col-xs-12">
+        <div class="row hidden-xs" style="margin-bottom:5px;margin-top: 5px;text-align:center;">
+            <div class="col-xs-12 col-sm-2 col-sm-offset-2">Gender</div>
+            <div class="col-xs-12 col-sm-2 col-sm-offset-1">Birthday</div>
+            <div class="col-xs-12 col-sm-2 col-sm-offset-1">Access level</div>
+        </div>
+        <div class="row">
+            <select class="col-xs-12 col-sm-2 col-sm-offset-2" id='gender' title="Gender">
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+            </select>
+            <input class="col-xs-12 col-sm-2 col-sm-offset-1" id='birthday' type="date" title="Birthday">
+            <input class="col-xs-6 col-sm-2 col-sm-offset-1" id='access_level' type="number" title="Access level" min="0" max="8" value="8">
+            <div class="col-xs-6 col-sm-2 col-sm-offset-1 visible-xs">Access level</div>
+        </div>
+    </div>
+    <button class="btn btn-light registerBtn col-xs-12 col-sm-10 col-sm-offset-1"><h4>Register</h4></button>
+</div>
