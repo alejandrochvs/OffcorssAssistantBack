@@ -118,17 +118,20 @@ router.use('/login', function (req, res) {
                 if (query.password == decrypt(docs.password) || query.password == docs.password) {
                     var response = {
                         token: docs.password,
-                        username: docs.username
+                        username: docs.username,
+                        status : 503
                     };
+                    response.status = 200;
                     res.send(response);
-                }else{
-                    res.send('Incorrect password.');
+                    mongoose.connection.close();
+                } else {
+                    mongoose.connection.close();
                 }
             } else {
-                res.send('User not found.');
+                mongoose.connection.close();
             }
             mongoose.connection.close();
-        })
+        });
     })
 });
 module.exports = router;
