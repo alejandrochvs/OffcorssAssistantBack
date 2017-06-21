@@ -345,3 +345,18 @@ App listening on port 80.
 2017-06-21T15:17:52.578+0000 I NETWORK  [initandlisten] connection accepted from 190.7.156.123:14127 #9 (4 connections now open)
 2017-06-21T15:42:10.531+0000 I NETWORK  [initandlisten] connection accepted from 190.7.156.123:54547 #10 (5 connections now open)
 2017-06-21T15:42:10.841+0000 I NETWORK  [initandlisten] connection accepted from 190.7.156.123:13528 #11 (6 connections now open)
+
+> offcorss-assistant@1.0.0 start /home/ubuntu/offcorss-assistant
+> node index.js
+
+App listening on port 80.
+2017-06-21T16:00:55.978+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58572 #12 (7 connections now open)
+2017-06-21T16:00:56.011+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58574 #13 (8 connections now open)
+2017-06-21T16:00:56.021+0000 I NETWORK  [conn12] end connection 127.0.0.1:58572 (7 connections now open)
+2017-06-21T16:00:56.022+0000 I NETWORK  [conn13] end connection 127.0.0.1:58574 (6 connections now open)
+2017-06-21T16:04:21.651+0000 I NETWORK  [conn1] end connection 190.7.156.123:10835 (5 connections now open)
+2017-06-21T16:04:21.655+0000 I NETWORK  [conn8] end connection 190.7.156.123:21600 (4 connections now open)
+2017-06-21T16:04:21.664+0000 I NETWORK  [conn10] end connection 190.7.156.123:54547 (3 connections now open)
+2017-06-21T16:04:21.670+0000 I NETWORK  [conn11] end connection 190.7.156.123:13528 (2 connections now open)
+2017-06-21T16:04:21.676+0000 I NETWORK  [conn2] end connection 190.7.156.123:34704 (1 connection now open)
+2017-06-21T16:04:21.688+0000 I NETWORK  [conn9] end connection 190.7.156.123:14127 (0 connections now open)
