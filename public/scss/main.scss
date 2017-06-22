@@ -1,7 +1,8 @@
 @import 'modules/variables';
-::-webkit-scrollbar { 
-    display: none; 
+::-webkit-scrollbar {
+    display: none;
 }
+
 html {
     overflow-x: hidden;
     #editing {
@@ -184,6 +185,7 @@ html {
             -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
             box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
             .loader {
+                transition: all 0.3s ease;
                 -webkit-box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, 0.3);
                 -moz-box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, 0.3);
                 box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, 0.3);
@@ -204,45 +206,34 @@ html {
                     border-radius: 0;
                     z-index: 1;
                 }
-                &.active {
-                    transition: all 0.3s ease;
-                    -webkit-box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, 0.3);
-                    -moz-box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, 0.3);
-                    box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, 0.3);
-                    background: whitesmoke;
+                &.girl {
                     .progress {
-                        background: transparent;
-                        width: 10%;
+                        background: $girl;
                     }
-                    &.girl {
-                        .progress {
-                            background: $girl;
-                        }
+                }
+                &.boy {
+                    .progress {
+                        background: $boy;
                     }
-                    &.boy {
-                        .progress {
-                            background: $boy;
-                        }
+                }
+                &.bGirl {
+                    .progress {
+                        background: $bGirl;
                     }
-                    &.bGirl {
-                        .progress {
-                            background: $bGirl;
-                        }
+                }
+                &.bBoy {
+                    .progress {
+                        background: $bBoy;
                     }
-                    &.bBoy {
-                        .progress {
-                            background: $bBoy;
-                        }
+                }
+                &.nGirl {
+                    .progress {
+                        background: $nGirl;
                     }
-                    &.nGirl {
-                        .progress {
-                            background: $nGirl;
-                        }
-                    }
-                    &.nBoy {
-                        .progress {
-                            background: $nBoy;
-                        }
+                }
+                &.nBoy {
+                    .progress {
+                        background: $nBoy;
                     }
                 }
             }

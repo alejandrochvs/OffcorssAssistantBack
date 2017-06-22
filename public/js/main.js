@@ -69,12 +69,6 @@ $(function () {
         current = cur;
         currentIndex = divs.indexOf(cur);
         localStorage.currentIndex = currentIndex;
-        if (currentIndex > 0) {
-            $('.header > .head:nth-child(1)').removeClass('transparent');
-            $('.loader').addClass(currentClass);
-        } else {
-            $('.header > .head:nth-child(1)').addClass('transparent');
-        }
         $('.prev').remove();
         $('.current').addClass('prev').removeClass('current');
         loadView($('.next > .container'));
@@ -98,14 +92,23 @@ $(function () {
     var loadView = function (div) {
         div.load('views/' + current + '.html', function () {
             localStorage.current = current;
+            if (currentIndex > 0) {
+                $('.header > .head:nth-child(1)').removeClass('transparent');
+                $('.header').removeClass('bGirl nGirl girl boy bBoy nBoy');
+                $('.loader').removeClass('active bGirl nGirl girl boy bBoy nBoy');
+                $('.loader').addClass(currentClass);
+                $('.header').addClass(currentClass);
+            } else {
+                $('.header > .head:nth-child(1)').addClass('transparent');
+                $('.loader').removeClass('boy girl nBoy nGirl bBoy bGirl');
+                $('body > .header').removeClass('boy girl nBoy nGirl bBoy bGirl');
+            }
             if (current == divs[0]) {
                 $('.gender > .selection-wrap > .title > .text').html(genderTitle);
                 $('.gender > .selection-wrap > .selections > .background > .boySel').html(genderBoy);
                 $('.gender > .selection-wrap > .selections > .background > .girlSel').html(genderGirl);
                 $('.header > .head:nth-child(1)').addClass('transparent');
                 $('.loader > .progress').css('width', '0%');
-                $('.header').removeClass('bGirl nGirl girl boy bBoy nBoy');
-                $('.loader').removeClass('bGirl nGirl girl boy bBoy nBoy');
                 $('.header > .title > .cont').html(headTitle0);
                 $('.header > .title > .cont').attr('data-var', 'headTitle0');
                 $('.header > .head:nth-child(1)').addClass('transparent');
@@ -134,8 +137,6 @@ $(function () {
                     currentClass = 'boy';
                     localStorage.currentClas = currentClass;
                     $('.gender').addClass(currentClass);
-                    $('.header').addClass(currentClass);
-                    $('.loader').addClass('active ' + currentClass);
                     $('.loader > .progress').css('width', '10%');
                     $('.header > .head:nth-child(1)').removeClass('transparent');
                     localStorage.setItem('currentClass', currentClass);
@@ -165,8 +166,6 @@ $(function () {
                     currentClass = 'girl';
                     localStorage.currentClas = currentClass;
                     $('.gender').addClass(currentClass);
-                    $('.header').addClass(currentClass);
-                    $('.loader').addClass('active ' + currentClass);
                     $('.loader > .progress').css('width', '10%');
                     $('.header > .head:nth-child(1)').removeClass('transparent');
                     localStorage.setItem('currentClass', currentClass);
@@ -183,8 +182,6 @@ $(function () {
                 }
                 $('.loader > .progress').css('width', '10%');
                 $('.name').addClass(currentClass);
-                $('.loader').addClass(currentClass);
-                $('.header').addClass(currentClass);
                 $('.nameInput > h1 > input').keyup(function (e) {
                     if ($(this).val().length > 0) {
                         $('.continue').css('display', 'inherit');
@@ -214,11 +211,7 @@ $(function () {
                     setClass(age);
                 }
                 $('.loader > .progress').css('width', '20%');
-                $('.header').removeClass('bGirl nGirl girl boy bBoy nBoy');
-                $('.loader').removeClass('bGirl nGirl girl boy bBoy nBoy');
                 $('.age').removeClass('bGirl nGirl girl boy bBoy nBoy');
-                $('.header').addClass(currentClass);
-                $('.loader').addClass(currentClass);
                 $('.age').addClass(currentClass);
 
                 function setClass(comp) {
@@ -299,10 +292,6 @@ $(function () {
                     localStorage.setItem('currentClass', currentClass);
                 })
             } else if (current == divs[3]) {
-                $('.header').removeClass('boy girl bBoy bGirl nBoy nGirl');
-                $('.header').addClass(currentClass);
-                $('.loader').removeClass('boy girl bBoy bGirl nBoy nGirl');
-                $('.loader').addClass(currentClass);
                 $('.header > .title > .cont').html(headTitle1);
                 $('.header > .title > .cont').attr('data-var', 'headTitle1');
                 $('.size > .selection-wrap > .title > .text-editable').html(sizeTitle);
@@ -663,7 +652,6 @@ $(function () {
                 currentIndex = 100;
                 $('.head.title > .cont').html(headTitle4);
                 $('.head.title > .cont').attr('data-var', 'headTitle4');
-                $('.loader').removeClass('boy girl nBoy nGirl bBoy bGirl');
                 $('body > .header').removeClass('boy girl nBoy nGirl bBoy bGirl');
                 var register = function (username, email, password, name, last_name, gender, birthday, access_level) {
                     if (username != "" && password != "" && name != "" && email != "" && last_name != "" && gender != "" && birthday != "" && access_level != "") {
@@ -678,7 +666,7 @@ $(function () {
                             birthday: birthday,
                             last_connection: new Date().toISOString(),
                             current_page: 0,
-                            profile_picture : " "
+                            profile_picture: " "
                         };
                         $.ajax({
                             type: 'GET',
@@ -752,7 +740,7 @@ $(function () {
                 });
                 $('.admin-user > h6').html(localStorage.name);
                 $('.nextAdmin').click(function () {
-                    if (currentIndex == 100){
+                    if (currentIndex == 100) {
                         currentIndex = -1;
                     }
                     currentIndex++;
@@ -760,7 +748,7 @@ $(function () {
                     $('.header > .head:nth-child(1)').removeClass('transparent');
                 })
                 $('.backAdmin').click(function () {
-                    if (currentIndex == 100){
+                    if (currentIndex == 100) {
                         currentIndex = 1;
                     }
                     if (currentIndex >= 1) {
@@ -810,9 +798,9 @@ $(function () {
                     $('.section-divs > li:last-child()').click(function () {
                         var dataSection = $(this).attr('data-section');
                         if (current != dataSection) {
-                            if ( currentIndex < divs.indexOf(dataSection)){
+                            if (currentIndex < divs.indexOf(dataSection)) {
                                 next(dataSection);
-                            }else{
+                            } else {
                                 previous(dataSection);
                             }
                         }
@@ -900,8 +888,6 @@ $(function () {
         } else {
             personality = [];
         }
-        $('.loader').addClass('active ' + currentClass);
-        $('.header').addClass(currentClass);
         if (admin) {
             if (localStorage.token) {
                 console.log('Logged in.');
@@ -943,9 +929,6 @@ $(function () {
         previous(divs[currentIndex]);
         if (current == divs[0]) {} else if (current == divs[1]) {
             $('.loader > .progress').css('width', '10%');
-            $('.header').removeClass('bGirl nGirl girl boy bBoy nBoy');
-            $('.loader').removeClass('bGirl nGirl girl boy bBoy nBoy');
-            $('.name').removeClass('bGirl nGirl girl boy bBoy nBoy');
             if (gender == "F") {
                 currentClass = "girl";
                 localStorage.currentClas = currentClass;

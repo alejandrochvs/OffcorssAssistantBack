@@ -240,8 +240,85 @@
             }
         }
     }
+    &.nBoy {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $nBoy;
+                }
+            }
+            .padWrap {
+                .image {
+                    div {
+                        color: $nBoy;
+                    }
+                }
+                .padSize {
+                    border-color: $nBoy;
+                    .row {
+                        .box {
+                            &:hover {
+                                border-color: $nBoy;
+                            }
+                            &.active {
+                                background: $nBoy;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+                .nav {
+                    .sel {
+                        &:hover {
+                            .fa {
+                                color: $nBoy;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.nGirl {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $nGirl;
+                }
+            }
+            .padWrap {
+                .image {
+                    div {
+                        color: $nGirl;
+                    }
+                }
+                .padSize {
+                    border-color: $nGirl;
+                    .row {
+                        .box {
+                            &:hover {
+                                border-color: $nGirl;
+                            }
+                            &.active {
+                                background: $nGirl;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+                .nav {
+                    .sel {
+                        &:hover {
+                            .fa {
+                                color: $nGirl;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
-
 @media (max-width: 767px) {
     .size {
         padding: 0;
@@ -250,7 +327,6 @@
                 margin-bottom: 0;
             }
             .padWrap {
-
                 .image {
                     height: 10vh;
                     div {
@@ -262,7 +338,7 @@
                     height: 10vh;
                     .row {
                         padding: 0;
-                        .box{
+                        .box {
                             border: solid 1px lightgray;
                         }
                     }
