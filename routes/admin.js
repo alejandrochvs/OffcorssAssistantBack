@@ -14,6 +14,7 @@ router.post('/edit', function (req, res) {
         }
         editable = data.split(';');
         editable.pop();
+        console.log(editable);
         for (var i = 0; i < editable.length; i++) {
             editable[i] = editable[i].split(' = ');
             if (query == editable[i][0]) {
