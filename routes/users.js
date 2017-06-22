@@ -20,11 +20,11 @@ function decrypt(text) {
 }
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var mongoURL = process.env.MONGOLAB_URI ||
+var mongoURL = process.env.MONGODB_URI ||
     process.env.MONGOHQ_URL ||
     'mongodb://localhost/assistant';
 console.log(mongoURL);
-console.log(process.env.MONGOLAB_URI);
+console.log(process.env.MONGODB_URI);
 var userSchema = new Schema({
     username: {
         type: String,
