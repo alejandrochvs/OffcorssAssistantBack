@@ -45,21 +45,27 @@ $(function () {
             var temp = $(this);
             var tempParent = $(this).parent();
             var text = temp.html();
+            var changed;
             $(this).css('display', 'none');
-            tempParent.append('<input id="editing" class="' + temp.attr('class') + '"type="text" placeholder="' + text + '"/>');
-            $('#editing').focus();
-            $('#editing').keyup(function (e) {
+            tempParent.prepend('<input id="editing" class="' + temp.attr('class') + '"type="text"/>');
+            $('#editing').val(text).focus().keyup(function (e) {
                 var key = e.keyCode || e.which;
                 if (key == 13) {
                     if ($('#editing').val() != '') {
+                        if ($('#editing').val() != text) {
+                            changed = true;
+                        } else {
+                            changed = false;
+                        }
                         text = $('#editing').val();
                         $('#editing').focusout();
                     }
                 }
-            });
-            $('#editing').focusout(function () {
+            }).focusout(function () {
                 $('#editing').remove();
-                requestStringChange(variable, text);
+                if (changed) {
+                    requestStringChange(variable, text);
+                }
                 temp.removeAttr('style');
                 temp.html(text);
             });
@@ -605,7 +611,7 @@ $(function () {
                                 } else {
                                     localStorage.token = result.token;
                                     localStorage.username = result.username;
-                                    localStorage.name = result.name;
+                                    localStorage.adminName = result.name;
                                     loadAdmin();
                                     next('gender');
                                     return console.log('Logged in.');
@@ -718,7 +724,7 @@ $(function () {
                     localStorage.clear();
                     location.reload();
                 });
-                $('.admin-user > h6').html(localStorage.name);
+                $('.admin-user > h6').html(localStorage.adminName);
                 $('.nextAdmin').click(function () {
                     if (currentIndex == 100) {
                         currentIndex = -1;
@@ -831,9 +837,6 @@ $(function () {
                     } else {
                         $('body').removeClass('edit');
                         $('.text-editable').unbind();
-                        setTimeout(function () {
-                            location.reload();
-                        }, 1000);
                     }
                 });
                 $('.hide-admin').click(function () {
