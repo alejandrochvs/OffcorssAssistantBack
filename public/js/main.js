@@ -296,6 +296,8 @@ $(function () {
                 $('.header > .title > .cont').attr('data-var', 'headTitle1');
                 $('.size > .selection-wrap > .title > .text-editable').html(sizeTitle);
                 $('.size > .selection-wrap > .title > .text > N').html(name);
+                $('.size').addClass(currentClass);
+                $('.loader > .progress').css('width', '30%');
                 $.ajax({
                     type: 'POST',
                     url: '/db/sizes',
@@ -304,7 +306,6 @@ $(function () {
                     },
                     success: function (res) {
                         list = [res.top, res.bottom, res.shoes];
-                        $('.size').addClass(currentClass);
                         $('.padSize > .row').remove();
                         for (var i = 0; i < list.length; i++) {
                             var counter = 3;
@@ -361,7 +362,6 @@ $(function () {
                                 }
                             }
                         });
-                        $('.loader > .progress').css('width', '30%');
                         if (shoeSize && topSize && bottomSize) {
                             $($('.padWrap')[0]).find('.box:contains("' + topSize + '")').last().addClass('active');
                             $($('.padWrap')[1]).find('.box:contains("' + bottomSize + '")').last().addClass('active');
@@ -373,6 +373,8 @@ $(function () {
                 $('.header > .title > .cont').html(headTitle1);
                 $('.header > .title > .cont').attr('data-var', 'headTitle1');
                 $('.size > .selection-wrap > .title > .text-editable').html(sizePrimiTitle);
+                $('.sizePrimi').addClass(currentClass);
+                $('.loader > .progress').css('width', '30%');
                 $.ajax({
                     type: "POST",
                     url: '/db/sizes',
@@ -381,7 +383,6 @@ $(function () {
                     },
                     success: function (res) {
                         list = res.top;
-                        $('.sizePrimi').addClass(currentClass);
                         $('.padSizePrimi > .row').remove();
                         var counter = 3;
                         for (var i = 0; i < list.length; i++) {
@@ -401,7 +402,6 @@ $(function () {
                         $('.down').click(function () {
                             $('.padSizePrimi').find('.row').css('top', '-30vh');
                         });
-                        var continueCount = 0;
                         $('.box').click(function () {
                             if ($(this).hasClass('active')) {
                                 $(this).removeClass('active');
@@ -420,7 +420,6 @@ $(function () {
                                 next(divs[5]);
                             }
                         });
-                        $('.loader > .progress').css('width', '30%');
                     }
                 });
             } else if (current == divs[5]) {
