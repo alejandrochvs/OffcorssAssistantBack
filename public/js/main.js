@@ -659,6 +659,7 @@ $(function () {
                 localStorage.current = 'gender';
 
             } else if (current == 'register') {
+                currentIndex = 100;
                 $('.head.title > .cont').html(headTitle4);
                 $('.head.title > .cont').attr('data-var', 'headTitle4');
                 $('.loader').removeClass('boy girl nBoy nGirl bBoy bGirl');
@@ -682,7 +683,7 @@ $(function () {
                             url: '/db/users/register',
                             data: data,
                             success: function (result) {
-                                next('gender');
+                                previous('gender');
                                 return console.log(result);
                             }
                         });
@@ -749,12 +750,18 @@ $(function () {
                 });
                 $('.admin-user > h6').html(sessionStorage.username);
                 $('.nextAdmin').click(function () {
+                    if (currentIndex == 100){
+                        currentIndex = -1;
+                    }
                     currentIndex++;
                     next(divs[currentIndex]);
                     $('.header > .head:nth-child(1)').removeClass('transparent');
                 })
                 $('.backAdmin').click(function () {
-                    if (currentIndex > 0) {
+                    if (currentIndex == 100){
+                        currentIndex = 1;
+                    }
+                    if (currentIndex >= 1) {
                         currentIndex--;
                         previous(divs[currentIndex]);
                         if (currentIndex == 0) {

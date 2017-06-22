@@ -23,6 +23,8 @@ var Schema = mongoose.Schema;
 var mongoURL = process.env.MONGOLAB_URI ||
     process.env.MONGOHQ_URL ||
     'mongodb://localhost/assistant';
+console.log(mongoURL);
+console.log(process.env.MONGOLAB_URI);
 var userSchema = new Schema({
     username: {
         type: String,
