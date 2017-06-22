@@ -77,13 +77,16 @@ router.use('/login', function (req, res) {
                     res.send(response);
                     mongoose.connection.close();
                 } else {
+                    res.send('Wrong password.');
                     mongoose.connection.close();
                 }
-            } else {
+            }
+            else {
+                res.send('User not found.');
                 mongoose.connection.close();
             }
             mongoose.connection.close();
         });
-    })
+    });
 });
 module.exports = router;

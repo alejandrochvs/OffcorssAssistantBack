@@ -296,152 +296,133 @@ $(function () {
                 $('.header > .title > .cont').attr('data-var', 'headTitle1');
                 $('.size > .selection-wrap > .title > .text-editable').html(sizeTitle);
                 $('.size > .selection-wrap > .title > .text > N').html(name);
-                var boySizes = [['12', '18', '24', '2t', '3t', '4t', '5t']
-                                    , ['12', '18', '24', '2t', '3t', '4t', '5t']
-                                    , ['21/22', '23/24', '25/26', '19', '20', '21', '22', '23', '24', '25', '26', '27']
-                                   ];
-                var girlSizes = [['12', '18', '24', '2t', '3t', '4t', '5t']
-                                    , ['12', '18', '24', '2t', '3t', '4t', '5t']
-                                    , ['21/22', '23/24', '25/26', '19', '20', '21', '22', '23', '24', '25', '26', '27']
-                                   ];
-                var bBoySizes = [['12', '18', '24', '2t', '3t', '4t', '5t']
-                                    , ['12', '18', '24', '2t', '3t', '4t', '5t']
-                                    , ['21/22', '23/24', '25/26', '19', '20', '21', '22', '23', '24', '25', '26', '27']
-                                   ];
-                var bGirlSizes = [['12', '18', '24', '2t', '3t', '4t', '5t']
-                                    , ['12', '18', '24', '2t', '3t', '4t', '5t']
-                                    , ['21/22', '23/24', '25/26', '19', '20', '21', '22', '23', '24', '25', '26', '27']
-                                   ];
-                var list = [];
-                if (age >= 2 && age <= 5) {
-                    if (gender == "M") {
-                        list = bBoySizes;
-                    } else {
-                        list = bGirlSizes;
-                    }
-                } else if (age = 5 && age <= 13) {
-                    if (gender == "M") {
-                        list = boySizes;
-                    } else {
-                        list = girlSizes;
-                    }
-                }
-                $('.size').addClass(currentClass);
-                $('.padSize > .row').remove();
-                for (var i = 0; i < list.length; i++) {
-                    var counter = 3;
-                    for (var j = 0; j < list[i].length; j++) {
-                        if (counter == 3) {
-                            $($('.padSize')[i]).append('<div class="col-xs-4 col-sm-12 row"></div>');
-                            counter = 0;
+                $.ajax({
+                    type: 'POST',
+                    url: '/db/sizes',
+                    data: {
+                        category: currentClass
+                    },
+                    success: function (res) {
+                        list = [res.top, res.bottom, res.shoes];
+                        $('.size').addClass(currentClass);
+                        $('.padSize > .row').remove();
+                        for (var i = 0; i < list.length; i++) {
+                            var counter = 3;
+                            for (var j = 0; j < list[i].length; j++) {
+                                if (counter == 3) {
+                                    $($('.padSize')[i]).append('<div class="col-xs-4 col-sm-12 row"></div>');
+                                    counter = 0;
+                                }
+                                $($('.padSize')[i]).find('.row').last().append('<div data-select=' + i + ' class="col-xs-4 box">' + list[i][j] + '</div>');
+                                counter++;
+                            }
+                            if (list[i].length > 9) {
+                                $($('.padWrap')[i]).find('.nav').addClass('active');
+                            }
                         }
-                        $($('.padSize')[i]).find('.row').last().append('<div data-select=' + i + ' class="col-xs-4 box">' + list[i][j] + '</div>');
-                        counter++;
-                    }
-                    if (list[i].length > 9) {
-                        $($('.padWrap')[i]).find('.nav').addClass('active');
-                    }
-                }
-                $('.up').click(function () {
-                    var currentPad = $(this).attr('data-pad');
-                    $($('.padSize')[currentPad]).find('.row').css('top', '0vh');
-                });
-                $('.down').click(function () {
-                    var currentPad = $(this).attr('data-pad');
-                    if (window.innerWidth < 768) {
-                        $($('.padSize')[currentPad]).find('.row').css('top', '-10vh');
-                    } else {
-                        $($('.padSize')[currentPad]).find('.row').css('top', '-30vh');
-                    }
-                });
-                var continueCount = 0;
-                $('.box').click(function () {
-                    var datapad = $(this).attr('data-select');
-                    if ($(this).hasClass('active')) {
-                        $(this).removeClass('active');
-                        if (datapad == 0) {
-                            topSize = undefined;
-                        } else if (datapad == 1) {
-                            bottomSize = undefined;
-                        } else if (datapad == 2) {
-                            shoeSize = undefined;
-                        }
-                    } else {
-                        $($('.padSize')[datapad]).find('.box').removeClass('active');
-                        $(this).addClass('active');
-                        if (datapad == 0) {
-                            topSize = $(this).html();
-                            localStorage.setItem('topSize', topSize);
-                        } else if (datapad == 1) {
-                            bottomSize = $(this).html();
-                            localStorage.setItem('bottomSize', bottomSize);
-                        } else if (datapad == 2) {
-                            shoeSize = $(this).html();
-                            localStorage.setItem('shoeSize', shoeSize);
-                        }
-                        if ($('.padSize > .row .active').length == 3) {
-                            next(divs[5]);
+                        $('.up').click(function () {
+                            var currentPad = $(this).attr('data-pad');
+                            $($('.padSize')[currentPad]).find('.row').css('top', '0vh');
+                        });
+                        $('.down').click(function () {
+                            var currentPad = $(this).attr('data-pad');
+                            if (window.innerWidth < 768) {
+                                $($('.padSize')[currentPad]).find('.row').css('top', '-10vh');
+                            } else {
+                                $($('.padSize')[currentPad]).find('.row').css('top', '-30vh');
+                            }
+                        });
+                        $('.box').click(function () {
+                            var datapad = $(this).attr('data-select');
+                            if ($(this).hasClass('active')) {
+                                $(this).removeClass('active');
+                                if (datapad == 0) {
+                                    topSize = undefined;
+                                } else if (datapad == 1) {
+                                    bottomSize = undefined;
+                                } else if (datapad == 2) {
+                                    shoeSize = undefined;
+                                }
+                            } else {
+                                $($('.padSize')[datapad]).find('.box').removeClass('active');
+                                $(this).addClass('active');
+                                if (datapad == 0) {
+                                    topSize = $(this).html();
+                                    localStorage.setItem('topSize', topSize);
+                                } else if (datapad == 1) {
+                                    bottomSize = $(this).html();
+                                    localStorage.setItem('bottomSize', bottomSize);
+                                } else if (datapad == 2) {
+                                    shoeSize = $(this).html();
+                                    localStorage.setItem('shoeSize', shoeSize);
+                                }
+                                if ($('.padSize > .row .active').length == 3) {
+                                    next(divs[5]);
+                                }
+                            }
+                        });
+                        $('.loader > .progress').css('width', '30%');
+                        if (shoeSize && topSize && bottomSize) {
+                            $($('.padWrap')[0]).find('.box:contains("' + topSize + '")').last().addClass('active');
+                            $($('.padWrap')[1]).find('.box:contains("' + bottomSize + '")').last().addClass('active');
                         }
                     }
                 });
-                $('.loader > .progress').css('width', '30%');
-                if (shoeSize && topSize && bottomSize) {
-                    $($('.padWrap')[0]).find('.box:contains("' + topSize + '")').last().addClass('active');
-                    $($('.padWrap')[1]).find('.box:contains("' + bottomSize + '")').last().addClass('active');
-                }
             } else if (current == divs[4]) {
                 $('.sizePrimi > .selection-wrap > .title > .text > N').html(name);
                 $('.header > .title > .cont').html(headTitle1);
                 $('.header > .title > .cont').attr('data-var', 'headTitle1');
                 $('.size > .selection-wrap > .title > .text-editable').html(sizePrimiTitle);
-                var list = ['21/22', '23/24', '25/26', '19', '20', '21', '22', '23', '24', '25', '26', '27'];
-                if (gender == "M") {
-                    currentClass = 'nBoy';
-                    localStorage.currentClas = currentClass;
-                } else {
-                    currentClass = 'nGirl';
-                    localStorage.currentClas = currentClass;
-                }
-                $('.sizePrimi').addClass(currentClass);
-                $('.padSizePrimi > .row').remove();
-                var counter = 3;
-                for (var i = 0; i < list.length; i++) {
-                    if (counter == 3) {
-                        $('.padSizePrimi').append('<div class="col-xs-12 col-sm-12 row"></div>');
-                        counter = 0;
+                $.ajax({
+                    type: "POST",
+                    url: '/db/sizes',
+                    data: {
+                        category: currentClass
+                    },
+                    success: function (res) {
+                        list = res.top;
+                        $('.sizePrimi').addClass(currentClass);
+                        $('.padSizePrimi > .row').remove();
+                        var counter = 3;
+                        for (var i = 0; i < list.length; i++) {
+                            if (counter == 3) {
+                                $('.padSizePrimi').append('<div class="col-xs-12 col-sm-12 row"></div>');
+                                counter = 0;
+                            }
+                            $('.padSizePrimi').find('.row').last().append('<div data-select=' + i + ' class="col-xs-4 box">' + list[i] + '</div>');
+                            counter++;
+                        }
+                        if (list.length > 9) {
+                            $('.padWrap').find('.nav').addClass('active');
+                        }
+                        $('.up').click(function () {
+                            $('.padSizePrimi').find('.row').css('top', '0vh');
+                        });
+                        $('.down').click(function () {
+                            $('.padSizePrimi').find('.row').css('top', '-30vh');
+                        });
+                        var continueCount = 0;
+                        $('.box').click(function () {
+                            if ($(this).hasClass('active')) {
+                                $(this).removeClass('active');
+                                topSize = undefined;
+                                bottomSize = undefined;
+                                shoeSize = undefined;
+                            } else {
+                                $('.padSizePrimi').find('.box').removeClass('active');
+                                $(this).addClass('active');
+                                topSize = $(this).html();
+                                bottomSize = $(this).html();
+                                shoeSize = $(this).html();
+                                localStorage.setItem('topSize', topSize);
+                                localStorage.setItem('bottomSize', bottomSize);
+                                localStorage.setItem('shoeSize', shoeSize);
+                                next(divs[5]);
+                            }
+                        });
+                        $('.loader > .progress').css('width', '30%');
                     }
-                    $('.padSizePrimi').find('.row').last().append('<div data-select=' + i + ' class="col-xs-4 box">' + list[i] + '</div>');
-                    counter++;
-                }
-                if (list.length > 9) {
-                    $('.padWrap').find('.nav').addClass('active');
-                }
-                $('.up').click(function () {
-                    $('.padSizePrimi').find('.row').css('top', '0vh');
                 });
-                $('.down').click(function () {
-                    $('.padSizePrimi').find('.row').css('top', '-30vh');
-                });
-                var continueCount = 0;
-                $('.box').click(function () {
-                    if ($(this).hasClass('active')) {
-                        $(this).removeClass('active');
-                        topSize = undefined;
-                        bottomSize = undefined;
-                        shoeSize = undefined;
-                    } else {
-                        $('.padSizePrimi').find('.box').removeClass('active');
-                        $(this).addClass('active');
-                        topSize = $(this).html();
-                        bottomSize = $(this).html();
-                        shoeSize = $(this).html();
-                        localStorage.setItem('topSize', topSize);
-                        localStorage.setItem('bottomSize', bottomSize);
-                        localStorage.setItem('shoeSize', shoeSize);
-                        next(divs[5]);
-                    }
-                });
-                $('.loader > .progress').css('width', '30%');
             } else if (current == divs[5]) {
                 $('.header > .title > .cont').html(headTitle2);
                 $('.header > .title > .cont').attr('data-var', 'headTitle2');

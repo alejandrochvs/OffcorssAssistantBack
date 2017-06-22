@@ -12,6 +12,7 @@ var fs = require('fs');
 var port = process.env.PORT || 80;
 // Router variables
 var main = require('./routes/main');
+var sizesRoute = require('./routes/sizes');
 var usersRoute = require('./routes/users');
 var adminRoute = require('./routes/admin');
 
@@ -22,6 +23,7 @@ app.get('/',function(req,res){
 	res.render('index',{admin : false});
 });
 app.use('/db/users', urlEncodedParser, usersRoute);
+app.use('/db/sizes', urlEncodedParser, sizesRoute);
 app.use('/admin', urlEncodedParser, adminRoute);
 app.listen(port, function () {
     console.log('App listening on port ' + port + '.');
