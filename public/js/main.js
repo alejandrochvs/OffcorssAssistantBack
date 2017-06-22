@@ -636,6 +636,7 @@ $(function () {
                                 } else {
                                     localStorage.token = result.token;
                                     localStorage.username = result.username;
+                                    localStorage.name = result.name;
                                     loadAdmin();
                                     next('gender');
                                     return console.log('Logged in.');
@@ -676,14 +677,15 @@ $(function () {
                             gender: gender,
                             birthday: birthday,
                             last_connection: new Date().toISOString(),
-                            current_page: 'Gender'
+                            current_page: 0,
+                            profile_picture : " "
                         };
                         $.ajax({
                             type: 'GET',
                             url: '/db/users/register',
                             data: data,
                             success: function (result) {
-                                previous('gender');
+                                previous(divs[0]);
                                 return console.log(result);
                             }
                         });
@@ -748,7 +750,7 @@ $(function () {
                     localStorage.clear();
                     location.reload();
                 });
-                $('.admin-user > h6').html(localStorage.username);
+                $('.admin-user > h6').html(localStorage.name);
                 $('.nextAdmin').click(function () {
                     if (currentIndex == 100){
                         currentIndex = -1;

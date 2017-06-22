@@ -42,8 +42,12 @@ var userSchema = new Schema({
         required: true
     },
     current_page: {
-        type: String,
+        type: Number,
         required: true
+    },
+    profile_picture : {
+        type : String,
+        required : true
     }
 });
 userSchema.methods.greet = function () {

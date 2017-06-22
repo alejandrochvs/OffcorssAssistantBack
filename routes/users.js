@@ -68,6 +68,7 @@ router.use('/login', function (req, res) {
                         token: docs.password,
                         username: docs.username,
                         access_level : docs.access_level,
+                        name : docs.name,
                         status : 503
                     };
                     response.status = 200;
