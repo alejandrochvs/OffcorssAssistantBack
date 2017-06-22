@@ -11,7 +11,6 @@ function encrypt(text) {
     crypted += cipher.final('hex');
     return crypted;
 }
-
 function decrypt(text) {
     var decipher = crypto.createDecipher(algorithm, password);
     var dec = decipher.update(text, 'hex', 'utf8');
@@ -19,79 +18,26 @@ function decrypt(text) {
     return dec;
 }
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
 var mongoURL = process.env.MONGODB_URI ||
     process.env.MONGOHQ_URL ||
     'mongodb://localhost/assistant';
-console.log(mongoURL);
-console.log(process.env.MONGODB_URI);
-var userSchema = new Schema({
-    username: {
-        type: String,
-        unique: true
-    },
-    mail: {
-        type: String,
-        required: true
-    },
-    password: {
-        type: String,
-        required: true
-    },
-    name: {
-        type: String,
-        required: true
-    },
-    last_name: {
-        type: String,
-        required: true
-    },
-    access_level: {
-        type: String,
-        required: true
-    },
-    gender: {
-        type: String,
-        required: true
-    },
-    birthday: {
-        type: Date,
-        required: true
-    },
-    last_connection: {
-        type: Date,
-        required: true
-    },
-    last_ip: {
-        type: String,
-        required: true
-    },
-    current_page: {
-        type: String,
-        required: true
-    }
-});
-userSchema.methods.greet = function () {
-    var greeting = this.name ? "Hello!, my name is " + this.name : "I don't have a name :( ";
-    return greeting;
-}
-var users = mongoose.model('users', userSchema);
+var users = require('./user_model.js');
 router.use('/register', function (req, res) {
     mongoose.Promise = global.Promise;
     mongoose.connect(mongoURL);
     var db = mongoose.connection;
     db.on('error', console.error.bind(console, 'connection error:'));
     db.once('open', function () {
-        var user = mongoose.model('user', userSchema);
+//        var user = mongoose.model('user', userSchema);
         var query = req.query;
-        var testUser = new user(query);
+        var user = new users(query);
         var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
         if (ip == '::1') {
             ip = '127.0.0.1';
         }
-        testUser.last_ip = ip;
-        testUser.password = encrypt(testUser.password);
-        testUser.save(function (err, user) {
+        user.last_ip = ip;
+        user.password = encrypt(user.password);
+        user.save(function (err, user) {
             if (err && err.code !== 11000) {
                 mongoose.connection.close();
                 return res.send(err);
@@ -100,7 +46,7 @@ router.use('/register', function (req, res) {
                 mongoose.connection.close();
                 return res.send('User already exists.');
             }
-            res.send(testUser.greet());
+            res.send(user.greet());
             mongoose.connection.close();
         });
     });

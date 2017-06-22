@@ -634,8 +634,8 @@ $(function () {
                                 if (result.status != 200) {
                                     return console.error(result);
                                 } else {
-                                    sessionStorage.token = result.token;
-                                    sessionStorage.username = result.username;
+                                    localStorage.token = result.token;
+                                    localStorage.username = result.username;
                                     loadAdmin();
                                     next('gender');
                                     return console.log('Logged in.');
@@ -726,8 +726,8 @@ $(function () {
     var loadAdmin = function () {
         var access_level;
         var data = {
-            username: sessionStorage.username,
-            password: sessionStorage.token
+            username: localStorage.username,
+            password: localStorage.token
         };
         $.ajax({
             type: "GET",
@@ -745,10 +745,10 @@ $(function () {
                     });
                 }
                 $('.log-out').click(function () {
-                    sessionStorage.clear();
+                    localStorage.clear();
                     location.reload();
                 });
-                $('.admin-user > h6').html(sessionStorage.username);
+                $('.admin-user > h6').html(localStorage.username);
                 $('.nextAdmin').click(function () {
                     if (currentIndex == 100){
                         currentIndex = -1;
@@ -901,7 +901,7 @@ $(function () {
         $('.loader').addClass('active ' + currentClass);
         $('.header').addClass(currentClass);
         if (admin) {
-            if (sessionStorage.token) {
+            if (localStorage.token) {
                 console.log('Logged in.');
                 loadAdmin();
                 current = divs[0];
@@ -914,7 +914,7 @@ $(function () {
         next(current);
     } else {
         if (admin) {
-            if (sessionStorage.token) {
+            if (localStorage.token) {
                 console.log('Logged in.');
                 loadAdmin();
                 current = divs[0];
