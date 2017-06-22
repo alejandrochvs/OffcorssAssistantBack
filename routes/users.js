@@ -58,9 +58,11 @@ router.use('/login', function (req, res) {
     db.on('error', console.error.bind(console, 'connection error:'));
     db.once('open', function () {
         var query = req.query;
-        users.findOne({
+        users.findOne({$or:[{
             username: query.username
-        }, function (err, docs) {
+        },{
+            mail: query.username
+        }]}, function (err, docs) {
             if (err) throw err;
             if (docs != null) {
                 if (query.password == decrypt(docs.password) || query.password == docs.password) {
