@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var router = express.Router();
 var fs = require('fs');
-app.set('view engine','jade');
+app.set('view engine', 'jade');
 router.post('/edit', function (req, res) {
     var editable;
     var query = req.body.string;
@@ -17,10 +17,10 @@ router.post('/edit', function (req, res) {
         for (var i = 0; i < editable.length; i++) {
             editable[i] = editable[i].split(' = ');
             editable[i][0] = editable[i][0].split('');
-            if (editable[i][0][0] == '\r'){
+            if (editable[i][0][0] == '\r') {
                 editable[i][0].shift();
             }
-            if (editable[i][0][0] == '\n'){
+            if (editable[i][0][0] == '\n') {
                 editable[i][0].shift();
             }
             editable[i][0] = editable[i][0].join('');
@@ -28,7 +28,7 @@ router.post('/edit', function (req, res) {
                 found = true;
                 editable[i][1] = change;
             }
-            
+
         }
         for (var i = 0; i < editable.length; i++) {
             editable[i] = editable[i].join(' = ');
@@ -41,8 +41,7 @@ router.post('/edit', function (req, res) {
             }
             if (found) {
                 res.send('String succesfully changed.');
-            }
-            else {
+            } else {
                 res.send('String not found.');
             }
         });
@@ -61,6 +60,14 @@ router.post('/colors', function (req, res) {
         editable.pop();
         for (var i = 0; i < editable.length; i++) {
             editable[i] = editable[i].split(': ');
+            editable[i][0] = editable[i][0].split('');
+            if (editable[i][0][0] == '\r') {
+                editable[i][0].shift();
+            }
+            if (editable[i][0][0] == '\n') {
+                editable[i][0].shift();
+            }
+            editable[i][0] = editable[i][0].join('');
             if (query == editable[i][0]) {
                 found = true;
                 editable[i][1] = change;
@@ -76,15 +83,26 @@ router.post('/colors', function (req, res) {
                 return err;
             }
             if (found) {
-                res.send('Color succesfully changed.');
-            }
-            else {
+                var exec = require('child_process').exec;
+                var cmd = 'sass --update public/scss:public/css'
+                exec(cmd, function (error, stdout, stderr) {
+                    if (error) {
+                        res.send(error);
+                    }else if (stderr){
+                        res.send(stderr)
+                    }else{
+                        res.sendStatus(200);
+                    }
+                });
+            } else {
                 res.send('Color not found.');
             }
         });
     });
 });
 router.get('/', function (req, res) {
-    res.render('index',{admin : true});
+    res.render('index', {
+        admin: true
+    });
 });
 module.exports = router;

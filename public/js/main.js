@@ -53,7 +53,11 @@ $(function () {
                 url: '/admin/colors',
                 data: data,
                 success: function (res) {
-                    console.log(res);
+                    if (res == 'OK'){
+                        location.reload();
+                    }else{
+                        console.error(res);
+                    }
                 }
             });
         },
@@ -645,20 +649,22 @@ $(function () {
                     $('.head.title > .cont').html(headTitle4);
                     $('.head.title > .cont').attr('data-var', 'headTitle4');
                     $('body > .header').removeClass('boy girl nBoy nGirl bBoy bGirl');
-                    var register = function (username, email, password,passwordVer, name, last_name, gender, birthday, access_level) {
+                    var register = function (username, email, password, passwordVer, name, last_name, gender, birthday, access_level) {
                         function validateEmail(emailToValidate) {
                             var re = /\S+@\S+\.\S+/;
                             return re.test(emailToValidate);
                         };
+
                         function validateUsername(usernameToValidate) {
                             var re = /^[a-zA-Z\-]+$/;
                             return re.test(usernameToValidate);
                         };
+
                         function validatePassword(passwordToValidate) {
                             var re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
-                            if (password == passwordVer && re.test(passwordToValidate)){
+                            if (password == passwordVer && re.test(passwordToValidate)) {
                                 return true;
-                            }else{
+                            } else {
                                 return false;
                             }
                         };
@@ -689,36 +695,36 @@ $(function () {
                             });
                         } else {
                             if (!validateEmail(email)) {
-                                $('#email').css('border-bottom','solid 2px red');
+                                $('#email').css('border-bottom', 'solid 2px red');
                                 console.log('Wrong e-mail.')
-                            }else{
-                                $('#email').css('border-bottom','solid 2px transparent');
+                            } else {
+                                $('#email').css('border-bottom', 'solid 2px transparent');
                             }
                             if (!validateUsername(username)) {
-                                $('#username').css('border-bottom','solid 2px red');
+                                $('#username').css('border-bottom', 'solid 2px red');
                                 console.log('Wrong username.')
-                            }else{
-                                $('#username').css('border-bottom','solid 2px transparent');
+                            } else {
+                                $('#username').css('border-bottom', 'solid 2px transparent');
                             }
                             if (!validatePassword(password)) {
-                                $('#password').css('border-bottom','solid 2px red');
-                                $('#password-ver').css('border-bottom','solid 2px red');
+                                $('#password').css('border-bottom', 'solid 2px red');
+                                $('#password-ver').css('border-bottom', 'solid 2px red');
                                 console.log('Wrong password.')
-                            }else{
-                                $('#password').css('border-bottom','solid 2px transparent');
-                                $('#password-ver').css('border-bottom','solid 2px transparent');
+                            } else {
+                                $('#password').css('border-bottom', 'solid 2px transparent');
+                                $('#password-ver').css('border-bottom', 'solid 2px transparent');
                             }
                             if (!validateUsername(name)) {
-                                $('#name').css('border-bottom','solid 2px red');
+                                $('#name').css('border-bottom', 'solid 2px red');
                                 console.log('Wrong name.')
-                            }else{
-                                $('#name').css('border-bottom','solid 2px transparent');
+                            } else {
+                                $('#name').css('border-bottom', 'solid 2px transparent');
                             }
                             if (!validateUsername(last_name)) {
-                                $('#last_name').css('border-bottom','solid 2px red');
+                                $('#last_name').css('border-bottom', 'solid 2px red');
                                 console.log('Wrong last name.')
-                            }else{
-                                $('#last_name').css('border-bottom','solid 2px transparent');
+                            } else {
+                                $('#last_name').css('border-bottom', 'solid 2px transparent');
                             }
                             console.log('Fill everything.');
                         }
@@ -733,7 +739,7 @@ $(function () {
                         var gender = $('#gender').val();
                         var birthday = $('#birthday').val();
                         var access_level = $('#access_level').val();
-                        register(username, email, password,passwordVer, name, last_name, gender, birthday, access_level);
+                        register(username, email, password, passwordVer, name, last_name, gender, birthday, access_level);
                     });
                     $('.register > input').keyup(function (e) {
                         if (e.keyCode === 13) {
@@ -894,11 +900,9 @@ $(function () {
                 $('.colors > li > .color-edit').click(function () {
                     var color = $(this).siblings('.color').attr('data-var');
                     $('.colorPicker').change(function () {
+                        console.log(color);
                         requestColorChange(color, $('.colorPicker').val());
                         $('.colorPicker').unbind('change');
-                        setTimeout(function () {
-                            location.reload();
-                        }, 2000);
                     });
                     $('.colorPicker').click();
                 });
