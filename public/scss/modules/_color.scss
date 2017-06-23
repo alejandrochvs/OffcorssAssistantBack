@@ -31,10 +31,7 @@
                 font-size: 20px;
                 border-top-left-radius: 0;
                 border-top-right-radius: 0;
-
-            }
-            &:hover{
-                .select{
+                &:hover {
                     background: transparent;
                     border-top: solid 10vh orange;
                 }
@@ -46,12 +43,12 @@
             }
             &:nth-child(3) {
                 .select {
-                    border-color:darken(yellow,5%);
+                    border-color: darken(yellow, 5%);
                 }
             }
             &:nth-child(4) {
                 .select {
-                    border-color:darken(red,5%);
+                    border-color: darken(red, 5%);
                 }
             }
         }

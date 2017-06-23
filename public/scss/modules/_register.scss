@@ -1,8 +1,9 @@
 .register{
-    margin-top: 5vh;
+    margin-top: 2vh;
     background: rgba(white,0.7);
     border-radius: 5px;
     padding: 3%;
+    padding-top: 1%;
     .form-title{
         padding: 2%;
         text-align: center;
@@ -34,7 +35,7 @@
         }
     }
     .registerBtn{
-        margin-top: 2.5vh;
+        margin-top: 1.5vh;
         background: $yellow;
         transition: all .2s ease;
         color: white;

@@ -1289,9 +1289,9 @@ html {
               font-size: 20px;
               border-top-left-radius: 0;
               border-top-right-radius: 0; }
-            html body .content .screen .container .color .colors .color-wrap:hover .select {
-              background: transparent;
-              border-top: solid 10vh orange; }
+              html body .content .screen .container .color .colors .color-wrap .select:hover {
+                background: transparent;
+                border-top: solid 10vh orange; }
             html body .content .screen .container .color .colors .color-wrap:nth-child(2) .select {
               border-color: green; }
             html body .content .screen .container .color .colors .color-wrap:nth-child(3) .select {
@@ -1890,10 +1890,11 @@ html {
               html body .content .screen .container .login .loginBtn:hover {
                 background: #e6c700; }
           html body .content .screen .container .register {
-            margin-top: 5vh;
+            margin-top: 2vh;
             background: rgba(255, 255, 255, 0.7);
             border-radius: 5px;
-            padding: 3%; }
+            padding: 3%;
+            padding-top: 1%; }
             html body .content .screen .container .register .form-title {
               padding: 2%;
               text-align: center; }
@@ -1919,7 +1920,7 @@ html {
                 outline: none;
                 border-bottom-color: #fd0; }
             html body .content .screen .container .register .registerBtn {
-              margin-top: 2.5vh;
+              margin-top: 1.5vh;
               background: #fd0;
               transition: all .2s ease;
               color: white; }
