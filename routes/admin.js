@@ -14,13 +14,21 @@ router.post('/edit', function (req, res) {
         }
         editable = data.split(';');
         editable.pop();
-        console.log(editable);
         for (var i = 0; i < editable.length; i++) {
             editable[i] = editable[i].split(' = ');
+            editable[i][0] = editable[i][0].split('');
+            if (editable[i][0][0] == '\r'){
+                editable[i][0].shift();
+            }
+            if (editable[i][0][0] == '\n'){
+                editable[i][0].shift();
+            }
+            editable[i][0] = editable[i][0].join('');
             if (query == editable[i][0]) {
                 found = true;
                 editable[i][1] = change;
             }
+            
         }
         for (var i = 0; i < editable.length; i++) {
             editable[i] = editable[i].join(' = ');

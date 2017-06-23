@@ -55,7 +55,9 @@ router.use('/login', function (req, res) {
     mongoose.Promise = global.Promise;
     mongoose.connect(mongoURL);
     var db = mongoose.connection;
-    db.on('error', console.error.bind(console, 'connection error:'));
+    db.on('error', function(err){
+        console.log(err);
+    });
     db.once('open', function () {
         var query = req.query;
         users.findOne({$or:[{
@@ -63,7 +65,10 @@ router.use('/login', function (req, res) {
         },{
             mail: query.username
         }]}, function (err, docs) {
-            if (err) throw err;
+            if (err){
+                res.send(err);
+                mongoose.connection.close();
+            }
             if (docs != null) {
                 if (query.password == decrypt(docs.password) || query.password == docs.password) {
                     var response = {

@@ -9,19 +9,14 @@ html {
     height: 50%;
     top: 25%; }
   html body {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
     font-family: "Roboto", sans-serif;
     background: white;
     height: 100vh;
     overflow: hidden;
-    -webkit-transition: all .4s ease;
     transition: all .4s ease; }
     html body .ui {
       bottom: 6vh;
-      -webkit-transition: all 0.4s ease;
       transition: all 0.4s ease;
       height: 0vh;
       padding: 0;
@@ -30,7 +25,6 @@ html {
       z-index: 5;
       line-height: 6vh; }
       html body .ui .ui-section {
-        -webkit-transition: all 0.4s ease;
         transition: all 0.4s ease;
         font-size: 20px;
         background: #333;
@@ -40,7 +34,6 @@ html {
         height: 6vh;
         z-index: 1; }
         html body .ui .ui-section .ui-option {
-          -webkit-transition: all 0.4s ease;
           transition: all 0.4s ease;
           text-align: center;
           cursor: pointer;
@@ -54,7 +47,6 @@ html {
             color: #fd0; }
           html body .ui .ui-section .ui-option i,
           html body .ui .ui-section .ui-option h6 {
-            -webkit-transition: all 0.2s ease;
             transition: all 0.2s ease;
             margin: 0;
             line-height: 6vh;
@@ -64,11 +56,9 @@ html {
           html body .ui .ui-section .ui-option.active {
             background: #fd0;
             color: black;
-            -webkit-transition: all .2s ease;
             transition: all .2s ease;
             border-right: solid 0px transparent; }
             html body .ui .ui-section .ui-option.active h6 {
-              -webkit-transition: all .2s ease;
               transition: all .2s ease; }
             html body .ui .ui-section .ui-option.active:hover h6 {
               color: white; }
@@ -81,7 +71,6 @@ html {
           top: 5.8vh;
           padding: 0;
           overflow: hidden;
-          -webkit-transition: all .5s ease;
           transition: all .5s ease;
           z-index: 0;
           border-bottom-left-radius: 2px;
@@ -95,7 +84,6 @@ html {
               list-style-type: none;
               text-align: center;
               background: transparent;
-              -webkit-transition: all .3s ease;
               transition: all .3s ease; }
               html body .ui .ui-section .ui-hidden ul li:hover {
                 background: #404040; }
@@ -127,13 +115,11 @@ html {
                 width: 3%;
                 position: relative;
                 background: transparent;
-                -webkit-transition: all .3s ease;
                 transition: all .3s ease;
                 bottom: 100%;
                 z-index: 4;
                 overflow: hidden; }
                 html body .ui .ui-section .ui-hidden ul.colors li .color h5 {
-                  -webkit-transition: all .2s ease;
                   transition: all .2s ease;
                   width: 100%;
                   color: transparent; }
@@ -142,14 +128,12 @@ html {
                 width: 0;
                 position: relative;
                 background: transparent;
-                -webkit-transition: all .3s ease;
                 transition: all .3s ease;
                 bottom: 200%;
                 left: 0;
                 z-index: 4;
                 overflow: hidden; }
                 html body .ui .ui-section .ui-hidden ul.colors li .color-edit i {
-                  -webkit-transition: all .2s ease;
                   transition: all .2s ease;
                   width: 100%;
                   color: transparent; }
@@ -218,10 +202,10 @@ html {
       text-align: center;
       z-index: 1;
       -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
       box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
       padding: 0;
       border-bottom: solid 4px transparent;
-      -webkit-transition: all 0.3s ease;
       transition: all 0.3s ease; }
       html body .header .head {
         margin: 0;
@@ -235,7 +219,6 @@ html {
           white-space: nowrap; }
         html body .header .head .cont {
           z-index: 1;
-          -webkit-transition: all 0.3s ease;
           transition: all 0.3s ease; }
           html body .header .head .cont.back {
             top: 1vh;
@@ -251,7 +234,6 @@ html {
               font-size: 12px;
               position: relative;
               bottom: 4px;
-              -webkit-transition: all 0.3s ease;
               transition: all 0.3s ease; }
               html body .header .head .cont.back span:hover {
                 color: #fd0; }
@@ -260,25 +242,19 @@ html {
             top: 5px;
             position: relative;
             color: #fd0;
-            -webkit-transition: all 0.3s ease;
             transition: all 0.3s ease; }
             html body .header .head .cont a i:hover {
               color: #e6c700; }
         html body .header .head.transparent {
           cursor: default;
-          -webkit-user-select: none;
-          -moz-user-select: none;
-          -ms-user-select: none;
           user-select: none; }
           html body .header .head.transparent .cont.back {
             display: none;
-            -webkit-animation: fade 0.3s ease;
             animation: fade 0.3s ease;
             color: transparent;
             cursor: default; }
             html body .header .head.transparent .cont.back i {
               color: transparent;
-              -webkit-animation: fade 0.3s ease;
               animation: fade 0.3s ease;
               cursor: default; }
             html body .header .head.transparent .cont.back span {
@@ -307,7 +283,6 @@ html {
       html body .content .screen {
         width: 100vw;
         position: absolute;
-        -webkit-transition: all 0.7s ease;
         transition: all 0.7s ease;
         height: 100%; }
         html body .content .screen.prev {
@@ -342,13 +317,11 @@ html {
                   background: white;
                   border-bottom: solid 3px #fd0;
                   padding: 2%;
-                  -webkit-transition: all 0.3s ease;
                   transition: all 0.3s ease; }
               html body .content .screen .container .gender .selection-wrap .selections .background .text {
                 background: white;
                 padding: 4%;
                 border-bottom: solid 3px transparent;
-                -webkit-transition: all 0.3s ease;
                 transition: all 0.3s ease;
                 cursor: pointer; }
                 html body .content .screen .container .gender .selection-wrap .selections .background .text.boySel:hover {
@@ -383,7 +356,6 @@ html {
               html body .content .screen .container .name .selection-wrap .title {
                 margin-bottom: 5vh; }
                 html body .content .screen .container .name .selection-wrap .title .text {
-                  -webkit-transition: all 0.3s ease;
                   transition: all 0.3s ease;
                   background: white;
                   border-bottom: solid 3px #fd0;
@@ -395,10 +367,6 @@ html {
               background-color: transparent;
               font-size: 8vw;
               font-weight: 100; }
-              html body .content .screen .container .name .nameInput input::-webkit-input-placeholder {
-                color: lightgray; }
-              html body .content .screen .container .name .nameInput input:-ms-input-placeholder {
-                color: lightgray; }
               html body .content .screen .container .name .nameInput input::placeholder {
                 color: lightgray; }
               html body .content .screen .container .name .nameInput input:focus {
@@ -408,7 +376,6 @@ html {
               cursor: pointer;
               margin-top: 5vh; }
               html body .content .screen .container .name .continue div {
-                -webkit-transition: all 0.3s ease;
                 transition: all 0.3s ease;
                 background: #fd0;
                 color: white; }
@@ -468,7 +435,6 @@ html {
               html body .content .screen .container .age .selection-wrap .title {
                 margin-bottom: 5vh; }
                 html body .content .screen .container .age .selection-wrap .title .text {
-                  -webkit-transition: all 0.3s ease;
                   transition: all 0.3s ease;
                   background: white;
                   border-bottom: solid 3px #fd0;
@@ -476,7 +442,6 @@ html {
               html body .content .screen .container .age .selection-wrap .pad {
                 padding: 1%;
                 border: solid 2px #fd0;
-                -webkit-transition: all 0.3s ease;
                 transition: all 0.3s ease; }
                 html body .content .screen .container .age .selection-wrap .pad .row {
                   padding: 0;
@@ -485,7 +450,6 @@ html {
                     cursor: pointer;
                     padding: 1%;
                     border: solid 2px transparent;
-                    -webkit-transition: all 0.3s ease;
                     transition: all 0.3s ease; }
                     html body .content .screen .container .age .selection-wrap .pad .row .number:hover {
                       border: solid 2px #fd0; }
@@ -575,7 +539,6 @@ html {
               html body .content .screen .container .size .selection-wrap .title {
                 margin-bottom: 5vh; }
                 html body .content .screen .container .size .selection-wrap .title .text {
-                  -webkit-transition: all 0.3s ease;
                   transition: all 0.3s ease;
                   background: white;
                   border-bottom: solid 3px #fd0;
@@ -583,7 +546,6 @@ html {
               html body .content .screen .container .size .selection-wrap .padWrap .image {
                 height: 20vh; }
                 html body .content .screen .container .size .selection-wrap .padWrap .image div {
-                  -webkit-transition: all 0.3s ease;
                   transition: all 0.3s ease;
                   height: 100%;
                   color: #fd0;
@@ -592,12 +554,10 @@ html {
                 height: 30vh;
                 padding: 0;
                 border: solid 2px #fd0;
-                -webkit-transition: all 0.3s ease;
                 transition: all 0.3s ease;
                 overflow: hidden; }
                 html body .content .screen .container .size .selection-wrap .padWrap .padSize .row {
                   z-index: 1;
-                  -webkit-transition: all 0.3s ease;
                   transition: all 0.3s ease;
                   height: 10vh;
                   margin: 0;
@@ -609,7 +569,6 @@ html {
                     font-size: 18px;
                     line-height: 7vh;
                     border: solid 1px transparent;
-                    -webkit-transition: all 0.3s ease;
                     transition: all 0.3s ease;
                     white-space: nowrap;
                     text-overflow: ellipsis;
@@ -632,7 +591,6 @@ html {
                   html body .content .screen .container .size .selection-wrap .padWrap .nav .sel .fa {
                     width: 100%;
                     height: 5vh;
-                    -webkit-transition: all 0.3s ease;
                     transition: all 0.3s ease;
                     color: inherit; }
                   html body .content .screen .container .size .selection-wrap .padWrap .nav .sel:hover .fa {
@@ -744,7 +702,6 @@ html {
               html body .content .screen .container .sizePrimi .selection-wrap .title {
                 margin-bottom: 5vh; }
                 html body .content .screen .container .sizePrimi .selection-wrap .title .text {
-                  -webkit-transition: all 0.3s ease;
                   transition: all 0.3s ease;
                   background: white;
                   border-bottom: solid 3px #fd0;
@@ -752,7 +709,6 @@ html {
               html body .content .screen .container .sizePrimi .selection-wrap .padWrap .image {
                 height: 20vh; }
                 html body .content .screen .container .sizePrimi .selection-wrap .padWrap .image div {
-                  -webkit-transition: all 0.3s ease;
                   transition: all 0.3s ease;
                   height: 100%;
                   color: #fd0;
@@ -761,12 +717,10 @@ html {
                 height: 30vh;
                 padding: 0;
                 border: solid 2px #fd0;
-                -webkit-transition: all 0.3s ease;
                 transition: all 0.3s ease;
                 overflow: hidden; }
                 html body .content .screen .container .sizePrimi .selection-wrap .padWrap .padSizePrimi .row {
                   z-index: 1;
-                  -webkit-transition: all 0.3s ease;
                   transition: all 0.3s ease;
                   height: 10vh;
                   margin: 0;
@@ -778,7 +732,6 @@ html {
                     font-size: 18px;
                     line-height: 7vh;
                     border: solid 1px transparent;
-                    -webkit-transition: all 0.3s ease;
                     transition: all 0.3s ease; }
                     html body .content .screen .container .sizePrimi .selection-wrap .padWrap .padSizePrimi .row .box:hover {
                       border-color: #fd0; }
@@ -798,7 +751,6 @@ html {
                   html body .content .screen .container .sizePrimi .selection-wrap .padWrap .nav .sel .fa {
                     width: 100%;
                     height: 5vh;
-                    -webkit-transition: all 0.3s ease;
                     transition: all 0.3s ease;
                     color: inherit; }
                   html body .content .screen .container .sizePrimi .selection-wrap .padWrap .nav .sel:hover .fa {
@@ -893,18 +845,15 @@ html {
               html body .content .screen .container .occasion .selection-wrap .title {
                 margin-bottom: 5vh; }
                 html body .content .screen .container .occasion .selection-wrap .title .text {
-                  -webkit-transition: all 0.3s ease;
                   transition: all 0.3s ease;
                   background: white;
                   border-bottom: solid 3px #fd0;
                   padding: 2%; }
             html body .content .screen .container .occasion .occasions .background {
-              -webkit-transition: all .3s ease;
               transition: all .3s ease;
               padding: 1%; }
               html body .content .screen .container .occasion .occasions .background .cont {
                 cursor: pointer;
-                -webkit-transition: all 0.3s ease;
                 transition: all 0.3s ease;
                 padding: 0;
                 background: #fd0;
@@ -917,11 +866,9 @@ html {
                 overflow: hidden;
                 transition: all 0.3s ease; }
                 html body .content .screen .container .occasion .occasions .background .cont .img {
-                  -webkit-transition: all 0.3s ease;
                   transition: all 0.3s ease;
                   height: 30vh; }
                 html body .content .screen .container .occasion .occasions .background .cont .title {
-                  -webkit-transition: all 0.3s ease;
                   transition: all 0.3s ease;
                   padding: 0;
                   background: rgba(255, 221, 0, 0.8);
@@ -936,13 +883,11 @@ html {
                     margin: 0;
                     color: white; }
                 html body .content .screen .container .occasion .occasions .background .cont:hover, html body .content .screen .container .occasion .occasions .background .cont.active {
-                  -webkit-transform: scale(1);
                   transform: scale(1); }
                   html body .content .screen .container .occasion .occasions .background .cont:hover .img, html body .content .screen .container .occasion .occasions .background .cont.active .img {
                     height: 0vh; }
                   html body .content .screen .container .occasion .occasions .background .cont:hover .title, html body .content .screen .container .occasion .occasions .background .cont.active .title {
                     height: 35vh;
-                    -webkit-transform: scale(1.4);
                     transform: scale(1.4); }
                     html body .content .screen .container .occasion .occasions .background .cont:hover .title h3, html body .content .screen .container .occasion .occasions .background .cont.active .title h3 {
                       line-height: 35vh; }
@@ -961,7 +906,6 @@ html {
             html body .content .screen .container .occasion .occasionsBtn {
               border-radius: 2px;
               background: #fd0;
-              -webkit-transition: all .3s ease;
               transition: all .3s ease;
               color: white;
               padding: 1%;
@@ -1060,26 +1004,21 @@ html {
           @media (max-width: 767px) {
             html body .content .screen .container .occasion .occasions .background .cont .img {
               height: 20vh;
-              -webkit-transition: all .3s ease;
               transition: all .3s ease; }
             html body .content .screen .container .occasion .occasions .background .cont .title {
               padding: 0;
               height: 5vh;
-              -webkit-transition: all .3s ease;
               transition: all .3s ease; }
               html body .content .screen .container .occasion .occasions .background .cont .title h3 {
-                -webkit-transition: all .3s ease;
                 transition: all .3s ease;
                 line-height: 5vh;
                 font-size: 18px; }
             html body .content .screen .container .occasion .occasions .background .cont:hover {
-              -webkit-transform: scale(1);
               transform: scale(1); }
               html body .content .screen .container .occasion .occasions .background .cont:hover .img {
                 height: 20vh; }
               html body .content .screen .container .occasion .occasions .background .cont:hover .title {
                 height: 5vh;
-                -webkit-transform: scale(1);
                 transform: scale(1); }
                 html body .content .screen .container .occasion .occasions .background .cont:hover .title h3 {
                   line-height: 5vh;
@@ -1103,14 +1042,11 @@ html {
                 html body .content .screen .container .occasion .occasions .background .cont .title h3 {
                   line-height: 3vh; }
               html body .content .screen .container .occasion .occasions .background .cont:hover {
-                -webkit-transform: scale(1);
                 transform: scale(1); }
                 html body .content .screen .container .occasion .occasions .background .cont:hover .title {
                   height: 21.9vh;
-                  -webkit-transform: scale(1);
                   transform: scale(1); }
                   html body .content .screen .container .occasion .occasions .background .cont:hover .title h3 {
-                    -webkit-transform: scale(1);
                     transform: scale(1);
                     line-height: 19vh; } }
           html body .content .screen .container .weather {
@@ -1120,18 +1056,15 @@ html {
               html body .content .screen .container .weather .selection-wrap .title {
                 margin-bottom: 5vh; }
                 html body .content .screen .container .weather .selection-wrap .title .text {
-                  -webkit-transition: all 0.3s ease;
                   transition: all 0.3s ease;
                   background: white;
                   border-bottom: solid 3px #fd0;
                   padding: 2%; }
             html body .content .screen .container .weather .weathers .background {
-              -webkit-transition: all 0.3s ease;
               transition: all 0.3s ease;
               padding: 1%; }
               html body .content .screen .container .weather .weathers .background .cont {
                 cursor: pointer;
-                -webkit-transition: all 0.3s ease;
                 transition: all 0.3s ease;
                 padding: 0;
                 background: #fd0;
@@ -1150,7 +1083,6 @@ html {
                     padding: 0;
                     margin-top: 2vh; }
                 html body .content .screen .container .weather .weathers .background .cont .title {
-                  -webkit-transition: all 0.3s ease;
                   transition: all 0.3s ease;
                   padding: 0;
                   background: rgba(255, 221, 0, 0.8);
@@ -1178,7 +1110,6 @@ html {
                 html body .content .screen .container .weather .weathers .background:nth-child(3) .cont .title {
                   background: rgba(253, 178, 1, 0.9); }
               html body .content .screen .container .weather .weathers .background:hover {
-                -webkit-transform: scale(1.05);
                 transform: scale(1.05); }
             html body .content .screen .container .weather.boy .selection-wrap .title .text {
               border-bottom-color: #fd4605; }
@@ -1201,7 +1132,6 @@ html {
               html body .content .screen .container .looks .selection-wrap .title {
                 margin-bottom: 1vh; }
                 html body .content .screen .container .looks .selection-wrap .title .text {
-                  -webkit-transition: all 0.3s ease;
                   transition: all 0.3s ease;
                   background: white;
                   border-bottom: solid 3px #fd0;
@@ -1210,7 +1140,6 @@ html {
               padding: 1%; }
               html body .content .screen .container .looks .looksWrap .background .cont {
                 cursor: pointer;
-                -webkit-transition: all 0.3s ease;
                 transition: all 0.3s ease;
                 padding: 0;
                 background: transparent;
@@ -1223,11 +1152,9 @@ html {
                 overflow: hidden;
                 transition: all 0.3s ease; }
                 html body .content .screen .container .looks .looksWrap .background .cont .img {
-                  -webkit-transition: all 0.3s ease;
                   transition: all 0.3s ease;
                   height: 30vh; }
                 html body .content .screen .container .looks .looksWrap .background .cont .title {
-                  -webkit-transition: all 0.3s ease;
                   transition: all 0.3s ease;
                   padding: 0;
                   background: rgba(255, 221, 0, 0.8);
@@ -1235,7 +1162,6 @@ html {
                   height: 8vh;
                   text-align: center; }
                   html body .content .screen .container .looks .looksWrap .background .cont .title .fa {
-                    -webkit-transition: all 0.3s ease;
                     transition: all 0.3s ease;
                     line-height: 8vh;
                     color: white; }
@@ -1251,7 +1177,6 @@ html {
                 height: 0; }
               html body .content .screen .container .looks .looksWrap .background:hover .cont .title, html body .content .screen .container .looks .looksWrap .background.active .cont .title {
                 height: 38vh;
-                -webkit-transform: scale(1.5);
                 transform: scale(1.5); }
                 html body .content .screen .container .looks .looksWrap .background:hover .cont .title .fa, html body .content .screen .container .looks .looksWrap .background.active .cont .title .fa {
                   line-height: 30vh;
@@ -1266,7 +1191,6 @@ html {
                 background: #fd0;
                 color: white;
                 cursor: pointer;
-                -webkit-transition: all 0.3s ease;
                 transition: all 0.3s ease; }
             html body .content .screen .container .looks.boy .selection-wrap .title .text {
               border-bottom-color: #fd4605; }
@@ -1319,21 +1243,17 @@ html {
               margin-bottom: 2vh; }
               html body .content .screen .container .looks .looksWrap .background .cont .img {
                 height: 15vh;
-                -webkit-transition: all .3s ease;
                 transition: all .3s ease; }
               html body .content .screen .container .looks .looksWrap .background .cont .title {
                 height: 5vh;
-                -webkit-transition: all .3s ease;
                 transition: all .3s ease; }
                 html body .content .screen .container .looks .looksWrap .background .cont .title .fa {
                   line-height: 4vh;
-                  -webkit-transition: all .3s ease;
                   transition: all .3s ease; }
               html body .content .screen .container .looks .looksWrap .background:hover .cont .img, html body .content .screen .container .looks .looksWrap .background.active .cont .img {
                 height: 0vh; }
               html body .content .screen .container .looks .looksWrap .background:hover .cont .title, html body .content .screen .container .looks .looksWrap .background.active .cont .title {
                 height: 20vh;
-                -webkit-transform: scale(1.1);
                 transform: scale(1.1); }
                 html body .content .screen .container .looks .looksWrap .background:hover .cont .title .fa, html body .content .screen .container .looks .looksWrap .background.active .cont .title .fa {
                   line-height: 15vh;
@@ -1350,7 +1270,6 @@ html {
               html body .content .screen .container .color .selection-wrap .title {
                 margin-bottom: 1vh; }
                 html body .content .screen .container .color .selection-wrap .title .text {
-                  -webkit-transition: all 0.3s ease;
                   transition: all 0.3s ease;
                   background: white;
                   border-bottom: solid 3px #fd0;
@@ -1366,7 +1285,6 @@ html {
               cursor: pointer;
               border-radius: 5px;
               border-top: solid 3px orange;
-              -webkit-transition: all 0.3s ease;
               transition: all 0.3s ease;
               font-size: 20px;
               border-top-left-radius: 0;
@@ -1407,7 +1325,6 @@ html {
               html body .content .screen .container .personality .selection-wrap .title {
                 margin-bottom: 5vh; }
                 html body .content .screen .container .personality .selection-wrap .title .text {
-                  -webkit-transition: all 0.3s ease;
                   transition: all 0.3s ease;
                   background: white;
                   border-bottom: solid 3px #fd0;
@@ -1417,9 +1334,7 @@ html {
               height: 35vh;
               background: transparent;
               overflow: hidden;
-              -webkit-transition: all .3s ease;
               transition: all .3s ease;
-              -webkit-transform: scale(1.1);
               transform: scale(1.1);
               cursor: pointer; }
               html body .content .screen .container .personality .personWrap .person .fa-check {
@@ -1428,7 +1343,6 @@ html {
                 top: 3vh;
                 color: white;
                 z-index: 2;
-                -webkit-transition: all 0.3s ease;
                 transition: all 0.3s ease; }
               html body .content .screen .container .personality .personWrap .person .background {
                 height: inherit;
@@ -1450,7 +1364,6 @@ html {
                     font-weight: 100;
                     color: white; }
               html body .content .screen .container .personality .personWrap .person.transparent {
-                -webkit-transform: scale(1);
                 transform: scale(1); }
                 html body .content .screen .container .personality .personWrap .person.transparent .fa-check {
                   color: transparent; }
@@ -1485,7 +1398,6 @@ html {
                 background-repeat: no-repeat;
                 background-size: cover; }
               html body .content .screen .container .personality .personWrap .person:hover {
-                -webkit-transform: scale(1.1);
                 transform: scale(1.1); }
             html body .content .screen .container .personality .continue {
               margin-top: 5vh;
@@ -1496,15 +1408,11 @@ html {
                 color: white;
                 padding: 4%;
                 cursor: pointer;
-                -webkit-transition: all .3s ease;
                 transition: all .3s ease; }
               html body .content .screen .container .personality .continue.transparent h4 {
                 background: transparent !important;
                 color: transparent;
                 cursor: default;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                -ms-user-select: none;
                 user-select: none; }
             html body .content .screen .container .personality.boy .selection-wrap .title .text {
               border-bottom-color: #fd4605; }
@@ -1570,19 +1478,6 @@ html {
           html body .content .screen .container .loaderWrap {
             left: -37.5px;
             height: 120px; }
-@-webkit-keyframes loadO1 {
-  0% {
-    height: 0px;
-    width: 10px;
-    top: 0px; }
-  50% {
-    height: 60px;
-    width: 10px;
-    top: 0px; }
-  100% {
-    height: 60px;
-    width: 10px;
-    top: 0px; } }
 @keyframes loadO1 {
   0% {
     height: 0px;
@@ -1596,19 +1491,6 @@ html {
     height: 60px;
     width: 10px;
     top: 0px; } }
-@-webkit-keyframes loadO2 {
-  0% {
-    height: 10px;
-    width: 0px;
-    top: 60px; }
-  50% {
-    height: 10px;
-    width: 0px;
-    top: 60px; }
-  100% {
-    height: 10px;
-    width: 50px;
-    top: 60px; } }
 @keyframes loadO2 {
   0% {
     height: 10px;
@@ -1622,23 +1504,6 @@ html {
     height: 10px;
     width: 50px;
     top: 60px; } }
-@-webkit-keyframes loadO3 {
-  0% {
-    height: 10px;
-    width: 0px;
-    top: 0px; }
-  5% {
-    height: 10px;
-    width: 0px;
-    top: 0px; }
-  50% {
-    height: 10px;
-    width: 50px;
-    top: 0px; }
-  100% {
-    height: 10px;
-    width: 50px;
-    top: 0px; } }
 @keyframes loadO3 {
   0% {
     height: 10px;
@@ -1656,22 +1521,6 @@ html {
     height: 10px;
     width: 50px;
     top: 0px; } }
-@-webkit-keyframes loadO4 {
-  0% {
-    height: 0px;
-    width: 10px;
-    top: 0px;
-    left: 50px; }
-  50% {
-    height: 0px;
-    width: 10px;
-    top: 0px;
-    left: 55px; }
-  100% {
-    height: 60px;
-    width: 10px;
-    top: 0px;
-    left: 55px; } }
 @keyframes loadO4 {
   0% {
     height: 0px;
@@ -1688,17 +1537,6 @@ html {
     width: 10px;
     top: 0px;
     left: 55px; } }
-@-webkit-keyframes loadO5 {
-  0% {
-    height: 0px;
-    width: 0px;
-    top: 0px;
-    left: 0px; }
-  100% {
-    height: 0px;
-    width: 0px;
-    top: 0px;
-    left: 0px; } }
 @keyframes loadO5 {
   0% {
     height: 0px;
@@ -1710,15 +1548,6 @@ html {
     width: 0px;
     top: 0px;
     left: 0px; } }
-@-webkit-keyframes loadF1 {
-  0% {
-    height: 0px;
-    width: 10px;
-    top: 0px; }
-  100% {
-    height: 60px;
-    width: 10px;
-    top: 0px; } }
 @keyframes loadF1 {
   0% {
     height: 0px;
@@ -1727,15 +1556,6 @@ html {
   100% {
     height: 60px;
     width: 10px;
-    top: 0px; } }
-@-webkit-keyframes loadF2 {
-  15% {
-    height: 10px;
-    width: 0px;
-    top: 0px; }
-  100% {
-    height: 10px;
-    width: 50px;
     top: 0px; } }
 @keyframes loadF2 {
   15% {
@@ -1746,15 +1566,6 @@ html {
     height: 10px;
     width: 50px;
     top: 0px; } }
-@-webkit-keyframes loadF3 {
-  30% {
-    height: 10px;
-    width: 0px;
-    top: 23.07692px; }
-  100% {
-    height: 10px;
-    width: 47.5px;
-    top: 23.07692px; } }
 @keyframes loadF3 {
   30% {
     height: 10px;
@@ -1764,25 +1575,7 @@ html {
     height: 10px;
     width: 47.5px;
     top: 23.07692px; } }
-@-webkit-keyframes loadF4 {
-  0% {
-    height: 0px;
-    width: 0px;
-    top: 0px; }
-  100% {
-    height: 0px;
-    width: 0px;
-    top: 0px; } }
 @keyframes loadF4 {
-  0% {
-    height: 0px;
-    width: 0px;
-    top: 0px; }
-  100% {
-    height: 0px;
-    width: 0px;
-    top: 0px; } }
-@-webkit-keyframes loadF5 {
   0% {
     height: 0px;
     width: 0px;
@@ -1800,15 +1593,6 @@ html {
     height: 0px;
     width: 0px;
     top: 0px; } }
-@-webkit-keyframes loadC1 {
-  0% {
-    height: 10px;
-    width: 0px;
-    top: 0px; }
-  100% {
-    height: 10px;
-    width: 50px;
-    top: 0px; } }
 @keyframes loadC1 {
   0% {
     height: 10px;
@@ -1817,19 +1601,6 @@ html {
   100% {
     height: 10px;
     width: 50px;
-    top: 0px; } }
-@-webkit-keyframes loadC2 {
-  0% {
-    height: 0px;
-    width: 10px;
-    top: 0px; }
-  50% {
-    height: 60px;
-    width: 10px;
-    top: 0px; }
-  100% {
-    height: 60px;
-    width: 10px;
     top: 0px; } }
 @keyframes loadC2 {
   0% {
@@ -1844,15 +1615,6 @@ html {
     height: 60px;
     width: 10px;
     top: 0px; } }
-@-webkit-keyframes loadC3 {
-  50% {
-    height: 10px;
-    width: 0px;
-    top: 60px; }
-  100% {
-    height: 10px;
-    width: 50px;
-    top: 60px; } }
 @keyframes loadC3 {
   50% {
     height: 10px;
@@ -1862,25 +1624,7 @@ html {
     height: 10px;
     width: 50px;
     top: 60px; } }
-@-webkit-keyframes loadC4 {
-  0% {
-    height: 0px;
-    width: 0px;
-    top: 0px; }
-  100% {
-    height: 0px;
-    width: 0px;
-    top: 0px; } }
 @keyframes loadC4 {
-  0% {
-    height: 0px;
-    width: 0px;
-    top: 0px; }
-  100% {
-    height: 0px;
-    width: 0px;
-    top: 0px; } }
-@-webkit-keyframes loadC5 {
   0% {
     height: 0px;
     width: 0px;
@@ -1898,15 +1642,6 @@ html {
     height: 0px;
     width: 0px;
     top: 0px; } }
-@-webkit-keyframes loadR1 {
-  0% {
-    height: 10px;
-    width: 0px;
-    top: 0px; }
-  100% {
-    height: 10px;
-    width: 50px;
-    top: 0px; } }
 @keyframes loadR1 {
   0% {
     height: 10px;
@@ -1915,19 +1650,6 @@ html {
   100% {
     height: 10px;
     width: 50px;
-    top: 0px; } }
-@-webkit-keyframes loadR2 {
-  0% {
-    height: 0px;
-    width: 10px;
-    top: 0px; }
-  50% {
-    height: 60px;
-    width: 10px;
-    top: 0px; }
-  100% {
-    height: 60px;
-    width: 10px;
     top: 0px; } }
 @keyframes loadR2 {
   0% {
@@ -1942,15 +1664,6 @@ html {
     height: 60px;
     width: 10px;
     top: 0px; } }
-@-webkit-keyframes loadR3 {
-  50% {
-    height: 10px;
-    width: 0px;
-    top: 30px; }
-  100% {
-    height: 10px;
-    width: 50px;
-    top: 30px; } }
 @keyframes loadR3 {
   50% {
     height: 10px;
@@ -1960,22 +1673,6 @@ html {
     height: 10px;
     width: 50px;
     top: 30px; } }
-@-webkit-keyframes loadR4 {
-  0% {
-    height: 0px;
-    width: 0px;
-    top: 0px;
-    left: 50px; }
-  50% {
-    width: 10px;
-    height: 0px;
-    top: 0px;
-    left: 50px; }
-  100% {
-    height: 30px;
-    width: 10px;
-    top: 0px;
-    left: 50px; } }
 @keyframes loadR4 {
   0% {
     height: 0px;
@@ -1992,81 +1689,27 @@ html {
     width: 10px;
     top: 0px;
     left: 50px; } }
-@-webkit-keyframes loadR5 {
-  0% {
-    height: 0px;
-    width: 10px;
-    top: 30px;
-    left: 12.5px;
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg); }
-  70% {
-    -webkit-transform-origin: top;
-    transform-origin: top;
-    height: 0px;
-    width: 10px;
-    top: 35px;
-    left: 15px;
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg); }
-  100% {
-    -webkit-transform-origin: top;
-    transform-origin: top;
-    height: 40px;
-    width: 10px;
-    top: 35px;
-    left: 15px;
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg); } }
 @keyframes loadR5 {
   0% {
     height: 0px;
     width: 10px;
     top: 30px;
     left: 12.5px;
-    -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg); }
   70% {
-    -webkit-transform-origin: top;
     transform-origin: top;
     height: 0px;
     width: 10px;
     top: 35px;
     left: 15px;
-    -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg); }
   100% {
-    -webkit-transform-origin: top;
     transform-origin: top;
     height: 40px;
     width: 10px;
     top: 35px;
     left: 15px;
-    -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg); } }
-@-webkit-keyframes loadS1 {
-  0% {
-    height: 10px;
-    width: 0px;
-    top: 0px;
-    left: 50px; }
-  20% {
-    height: 10px;
-    width: 0px;
-    top: 0px;
-    left: 50px; }
-  40% {
-    height: 10px;
-    width: 50px;
-    top: 0px;
-    left: 0px; }
-  100% {
-    height: 10px;
-    width: 50px;
-    top: 0px;
-    left: 0px;
-    -webkit-transform-origin: right;
-    transform-origin: right; } }
 @keyframes loadS1 {
   0% {
     height: 10px;
@@ -2088,29 +1731,7 @@ html {
     width: 50px;
     top: 0px;
     left: 0px;
-    -webkit-transform-origin: right;
     transform-origin: right; } }
-@-webkit-keyframes loadS2 {
-  0% {
-    height: 0px;
-    width: 10px;
-    top: 0px;
-    left: 0px; }
-  20% {
-    height: 0px;
-    width: 10px;
-    top: 0px;
-    left: 0px; }
-  40% {
-    height: 30px;
-    width: 10px;
-    top: 0px;
-    left: 0px; }
-  100% {
-    height: 30px;
-    width: 10px;
-    top: 0px;
-    left: 0px; } }
 @keyframes loadS2 {
   0% {
     height: 0px;
@@ -2131,27 +1752,6 @@ html {
     height: 30px;
     width: 10px;
     top: 0px;
-    left: 0px; } }
-@-webkit-keyframes loadS3 {
-  0% {
-    height: 10px;
-    width: 0px;
-    top: 30px;
-    left: 0px; }
-  40% {
-    height: 10px;
-    width: 0px;
-    top: 30px;
-    left: 0px; }
-  60% {
-    height: 10px;
-    width: 50px;
-    top: 30px;
-    left: 0px; }
-  100% {
-    height: 10px;
-    width: 50px;
-    top: 30px;
     left: 0px; } }
 @keyframes loadS3 {
   0% {
@@ -2174,27 +1774,6 @@ html {
     width: 50px;
     top: 30px;
     left: 0px; } }
-@-webkit-keyframes loadS4 {
-  0% {
-    height: 0px;
-    width: 10px;
-    top: 30px;
-    left: 50px; }
-  60% {
-    height: 0px;
-    width: 10px;
-    top: 30px;
-    left: 50px; }
-  80% {
-    height: 30px;
-    width: 10px;
-    top: 30px;
-    left: 50px; }
-  100% {
-    height: 30px;
-    width: 10px;
-    top: 30px;
-    left: 50px; } }
 @keyframes loadS4 {
   0% {
     height: 0px;
@@ -2216,22 +1795,6 @@ html {
     width: 10px;
     top: 30px;
     left: 50px; } }
-@-webkit-keyframes loadS5 {
-  0% {
-    height: 10px;
-    width: 0px;
-    top: 60px;
-    left: 50px; }
-  80% {
-    height: 10px;
-    width: 0px;
-    top: 60px;
-    left: 50px; }
-  100% {
-    height: 10px;
-    width: 50px;
-    top: 60px;
-    left: 0px; } }
 @keyframes loadS5 {
   0% {
     height: 10px;
@@ -2255,7 +1818,6 @@ html {
               html body .content .screen .container .result .selection-wrap .title {
                 margin-bottom: 5vh; }
                 html body .content .screen .container .result .selection-wrap .title .text {
-                  -webkit-transition: all 0.3s ease;
                   transition: all 0.3s ease;
                   background: white;
                   border-bottom: solid 3px #fd0;
@@ -2265,7 +1827,6 @@ html {
                 border-bottom: solid 1px black;
                 background-color: transparent; }
               html body .content .screen .container .result .selection-wrap .continue div {
-                -webkit-transition: all 0.3s ease;
                 transition: all 0.3s ease;
                 background: #fd0;
                 color: white; }
@@ -2308,13 +1869,8 @@ html {
               padding: 2%;
               background: whitesmoke;
               border-bottom: solid 2px transparent;
-              -webkit-transition: all 0.3s ease;
               transition: all 0.3s ease;
               color: #666; }
-              html body .content .screen .container .login input::-webkit-input-placeholder {
-                color: lightgray; }
-              html body .content .screen .container .login input:-ms-input-placeholder {
-                color: lightgray; }
               html body .content .screen .container .login input::placeholder {
                 color: lightgray; }
               html body .content .screen .container .login input:focus {
@@ -2329,7 +1885,6 @@ html {
             html body .content .screen .container .login .loginBtn {
               margin-top: 2.5vh;
               background: #fd0;
-              -webkit-transition: all .2s ease;
               transition: all .2s ease;
               color: white; }
               html body .content .screen .container .login .loginBtn:hover {
@@ -2355,14 +1910,9 @@ html {
               padding: 1%;
               background: whitesmoke;
               border-bottom: solid 2px transparent;
-              -webkit-transition: all 0.3s ease;
               transition: all 0.3s ease;
               color: #666;
               text-align: center; }
-              html body .content .screen .container .register input::-webkit-input-placeholder, html body .content .screen .container .register select::-webkit-input-placeholder {
-                color: lightgray; }
-              html body .content .screen .container .register input:-ms-input-placeholder, html body .content .screen .container .register select:-ms-input-placeholder {
-                color: lightgray; }
               html body .content .screen .container .register input::placeholder, html body .content .screen .container .register select::placeholder {
                 color: lightgray; }
               html body .content .screen .container .register input:focus, html body .content .screen .container .register select:focus {
@@ -2371,11 +1921,12 @@ html {
             html body .content .screen .container .register .registerBtn {
               margin-top: 2.5vh;
               background: #fd0;
-              -webkit-transition: all .2s ease;
               transition: all .2s ease;
               color: white; }
               html body .content .screen .container .register .registerBtn:hover {
                 background: #e6c700; }
+            html body .content .screen .container .register .container {
+              padding: 0 15px; }
     html body .footer {
       background: white;
       margin: 0;
@@ -2383,11 +1934,12 @@ html {
       padding: 1.5vh 0;
       z-index: 1;
       -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
       box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3); }
       html body .footer .loader {
-        -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease;
         -webkit-box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, 0.3);
         box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, 0.3);
         padding: 0;
         position: absolute;
@@ -2397,11 +1949,11 @@ html {
         background: white; }
         html body .footer .loader .progress {
           height: 100%;
-          -webkit-transition: all 0.3s ease;
           transition: all 0.3s ease;
           width: 0%;
           background: white;
           -webkit-box-shadow: 0px 0px 12px 1px transparent;
+          -moz-box-shadow: 0px 0px 12px 1px transparent;
           box-shadow: 0px 0px 12px 1px transparent;
           border-radius: 0;
           z-index: 1; }
@@ -2437,14 +1989,6 @@ html {
       border-top-width: 3vh;
       background: white; }
 
-@-webkit-keyframes fade {
-  0% {
-    z-index: 1;
-    color: inherit; }
-  100% {
-    z-index: 0;
-    color: transparent; } }
-
 @keyframes fade {
   0% {
     z-index: 1;
@@ -2452,3 +1996,5 @@ html {
   100% {
     z-index: 0;
     color: transparent; } }
+
+/*# sourceMappingURL=main.css.map */
