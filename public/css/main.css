@@ -445,17 +445,30 @@ html {
                 transition: all 0.3s ease; }
                 html body .content .screen .container .age .selection-wrap .pad .row {
                   padding: 0;
-                  margin: 0; }
-                  html body .content .screen .container .age .selection-wrap .pad .row .number {
-                    cursor: pointer;
-                    padding: 1%;
-                    border: solid 2px transparent;
-                    transition: all 0.3s ease; }
-                    html body .content .screen .container .age .selection-wrap .pad .row .number:hover {
-                      border: solid 2px #fd0; }
-                    html body .content .screen .container .age .selection-wrap .pad .row .number.selected {
-                      background: #fd0;
-                      color: white; }
+                  margin: 0;
+                  margin-bottom: 2vh;
+                  background: #fd0;
+                  color: white;
+                  transition: all .3s ease;
+                  height: 10vh;
+                  cursor: pointer; }
+                  html body .content .screen .container .age .selection-wrap .pad .row h3 {
+                    margin: 0;
+                    line-height: 10vh; }
+                  html body .content .screen .container .age .selection-wrap .pad .row:last-child {
+                    margin: 0; }
+                  html body .content .screen .container .age .selection-wrap .pad .row.boy {
+                    background: #fd4605; }
+                  html body .content .screen .container .age .selection-wrap .pad .row.bBoy {
+                    background: #82bc00; }
+                  html body .content .screen .container .age .selection-wrap .pad .row.girl {
+                    background: #e70095; }
+                  html body .content .screen .container .age .selection-wrap .pad .row.bGirl {
+                    background: #9794d2; }
+                  html body .content .screen .container .age .selection-wrap .pad .row.nBoy {
+                    background: #3e8ede; }
+                  html body .content .screen .container .age .selection-wrap .pad .row.nGirl {
+                    background: #ee9bac; }
             html body .content .screen .container .age .img {
               height: 60vh; }
               html body .content .screen .container .age .img .image {

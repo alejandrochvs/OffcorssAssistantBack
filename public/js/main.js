@@ -53,9 +53,9 @@ $(function () {
                 url: '/admin/colors',
                 data: data,
                 success: function (res) {
-                    if (res == 'OK'){
+                    if (res == 'OK') {
                         location.reload();
-                    }else{
+                    } else {
                         console.error(res);
                     }
                 }
@@ -133,7 +133,7 @@ $(function () {
                             topSize = undefined;
                             bottomSize = undefined;
                             shoeSize = undefined;
-                            occasion = undefined;
+                            occasion = [];
                             weather = undefined;
                             favColor = undefined;
                             looks = [];
@@ -162,7 +162,7 @@ $(function () {
                             topSize = undefined;
                             bottomSize = undefined;
                             shoeSize = undefined;
-                            occasion = undefined;
+                            occasion = [];
                             weather = undefined;
                             favColor = undefined;
                             looks = [];
@@ -213,91 +213,96 @@ $(function () {
                     $('.header > .title > .cont').html(headTitle1);
                     $('.header > .title > .cont').attr('data-var', 'headTitle1');
                     $('.age > .selection-wrap > .title > .text-editable').html(ageTitle);
-                    var setClass = function (comp) {
-                        if (comp >= 0 && comp < 2) {
-                            if (gender === "F") {
-                                $('.age').addClass('nGirl');
-                            } else {
-                                $('.age').addClass('nBoy');
-                            }
-                        } else if (comp >= 2 && comp <= 5) {
-                            if (gender === "F") {
-                                $('.age').addClass('bGirl');
-                            } else {
-                                $('.age').addClass('bBoy');
-                            }
-                        } else if (comp > 5 && comp <= 13) {
-                            if (gender === "F") {
-                                $('.age').addClass('girl');
-                            } else {
-                                $('.age').addClass('boy');
-                            }
-                        }
-                    };
-                    if (age) {
-                        $('.number').removeClass('selected');
-                        $('.number[value="' + age + '"]').addClass('selected');
-                        setClass(age);
+                    if (gender == 'M') {
+                        $('.row.primi').addClass('nBoy');
+                        $('.row.baby').addClass('bBoy');
+                        $('.row.kid').addClass('boy');
+                    } else {
+                        $('.row.primi').addClass('nGirl');
+                        $('.row.baby').addClass('bGirl');
+                        $('.row.kid').addClass('girl');
                     }
                     $('.loader > .progress').css('width', '20%');
                     $('.age').removeClass('bGirl nGirl girl boy bBoy nBoy');
                     $('.age').addClass(currentClass);
-                    $('.number').hover(function () {
-                        var val = $(this).attr('value');
-                        setClass(val);
+                    var tempCurrentClass = currentClass;
+                    $('.pad > .row').hover(function () {
+                        var classes = 'boy nBoy bBoy girl nGirl bGirl';
+                        $('.age').removeClass(classes);
+                        $('.loader').removeClass(classes);
+                        $('body > .header').removeClass(classes);
+                        if (gender == 'M') {
+                            if ($(this).index() == 0) {
+                                tempCurrentClass = 'nBoy';
+                            } else if ($(this).index() == 1) {
+                                tempCurrentClass = 'bBoy';
+                            } else if ($(this).index() == 2) {
+                                tempCurrentClass = 'boy';
+                            }
+                        } else {
+                            if ($(this).index() == 0) {
+                                tempCurrentClass = 'nGirl';
+                            } else if ($(this).index() == 1) {
+                                tempCurrentClass = 'bGirl';
+                            } else if ($(this).index() == 2) {
+                                tempCurrentClass = 'girl';
+                            }
+                        }
+                        $('.age').addClass(tempCurrentClass);
+                        $('.loader').addClass(tempCurrentClass);
+                        $('body > .header').addClass(tempCurrentClass);
                     }, function () {
-                        $('.age').removeClass('boy girl bBoy bGirl nBoy nGirl');
+                        var classes = 'boy nBoy bBoy girl nGirl bGirl';
+                        $('.age').removeClass(classes);
+                        $('.loader').removeClass(classes);
+                        $('body > .header').removeClass(classes);
                         $('.age').addClass(currentClass);
+                        $('.loader').addClass(currentClass);
+                        $('body > .header').addClass(currentClass);
                     });
-                    $('.number').click(function () {
-                        age = $(this).attr('value');
-                        localStorage.setItem(divs[2], age);
-                        setClass(age);
-                        $('.number').removeClass('selected');
-                        $(this).addClass('selected');
-                        if (age >= 0 && age < 2) {
-                            if (gender === "F") {
-                                currentClass = 'nGirl';
-                                localStorage.currentClass = currentClass;
-                                $('.header').addClass(currentClass);
-                                $('.loader').addClass(currentClass);
-                            } else {
+                    $('.pad > .row').click(function () {
+                        if (gender == 'M') {
+                            if ($(this).index() == 0) {
                                 currentClass = 'nBoy';
                                 localStorage.currentClass = currentClass;
-                                $('.header').addClass(currentClass);
-                                $('.loader').addClass(currentClass);
-                            }
-                            next(divs[4]);
-                        } else if (age >= 2 && age <= 5) {
-                            if (gender === "F") {
-                                currentClass = 'bGirl';
-                                localStorage.currentClass = currentClass;
-                                $('.header').addClass(currentClass);
-                                $('.loader').addClass(currentClass);
-                            } else {
+                                age = 1;
+                                localStorage.age = age;
+                                next(divs[4]);
+                            } else if ($(this).index() == 1) {
                                 currentClass = 'bBoy';
                                 localStorage.currentClass = currentClass;
-                                $('.header').addClass(currentClass);
-                                $('.loader').addClass(currentClass);
-                            }
-                            next(divs[3]);
-                        } else if (age > 5 && age <= 13) {
-                            if (gender === "F") {
-                                currentClass = 'girl';
-                                localStorage.currentClass = currentClass;
-                                $('.header').addClass(currentClass);
-                                $('.loader').addClass(currentClass);
-                            } else {
+                                age = 3;
+                                localStorage.age = age;
+                                next(divs[3]);
+                            } else if ($(this).index() == 2) {
                                 currentClass = 'boy';
                                 localStorage.currentClass = currentClass;
-                                $('.header').addClass(currentClass);
-                                $('.loader').addClass(currentClass);
+                                age = 7;
+                                localStorage.age = age;
+                                next(divs[3]);
                             }
-                            next(divs[3]);
+                        } else {
+                            if ($(this).index() == 0) {
+                                currentClass = 'nGirl';
+                                localStorage.currentClass = currentClass;
+                                age = 1;
+                                localStorage.age = age;
+                                next(divs[4]);
+                            } else if ($(this).index() == 1) {
+                                currentClass = 'bGirl';
+                                localStorage.currentClass = currentClass;
+                                age = 3;
+                                localStorage.age = age;
+                                next(divs[3]);
+                            } else if ($(this).index() == 2) {
+                                currentClass = 'girl';
+                                localStorage.currentClass = currentClass;
+                                age = 7;
+                                localStorage.age = age;
+                                next(divs[3]);
+                            }
                         }
-                        $('.age').addClass(currentClass);
-                        localStorage.setItem('currentClass', currentClass);
-                    });
+                    })
                 } else if (current === divs[3]) {
                     $('.header > .title > .cont').html(headTitle1);
                     $('.header > .title > .cont').attr('data-var', 'headTitle1');
@@ -444,11 +449,13 @@ $(function () {
                     $('.occasions > .background:nth-child(6) > .cont > .title > h3').html(occasionName6);
                     $('.occasion > .occasionsBtn').html(occasionBtn);
                     $('.loader > .progress').css('width', '40%');
-                    if (occasion.length > 0) {
-                        var i;
-                        for (i = 0; i < occasion.length; i++) {
-                            $('[data-occasion="' + occasion[i] + '"]').find('.cont').addClass('active');
-                            $('.occasionsBtn').removeClass('disabled');
+                    if (occasion) {
+                        if (occasion.length > 0) {
+                            var i;
+                            for (i = 0; i < occasion.length; i++) {
+                                $('[data-occasion="' + occasion[i] + '"]').find('.cont').addClass('active');
+                                $('.occasionsBtn').removeClass('disabled');
+                            }
                         }
                     }
                     $('.occasion').addClass(currentClass);
