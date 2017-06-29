@@ -31,6 +31,15 @@
                 $occasionColor: $yellow;
                 $opacity: 0.8;
                 transition: all 0.3s ease;
+                i {
+                    color: transparent;
+                    transition: all .3s ease;
+                    font-size: 30px;
+                    position: absolute;
+                    right: 10px;
+                    top: 10px;
+                    z-index: 2;
+                }
                 .img {
                     transition: all 0.3s ease;
                     height: 30vh;
@@ -54,6 +63,9 @@
                 &:hover,
                 &.active {
                     transform: scale(1);
+                    i{
+                        color: white;
+                    }
                     .img {
                         height: 0vh;
                     }

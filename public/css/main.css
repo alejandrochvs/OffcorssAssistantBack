@@ -878,6 +878,14 @@ html {
                 border-top-right-radius: 15px;
                 overflow: hidden;
                 transition: all 0.3s ease; }
+                html body .content .screen .container .occasion .occasions .background .cont i {
+                  color: transparent;
+                  transition: all .3s ease;
+                  font-size: 30px;
+                  position: absolute;
+                  right: 10px;
+                  top: 10px;
+                  z-index: 2; }
                 html body .content .screen .container .occasion .occasions .background .cont .img {
                   transition: all 0.3s ease;
                   height: 30vh; }
@@ -897,6 +905,8 @@ html {
                     color: white; }
                 html body .content .screen .container .occasion .occasions .background .cont:hover, html body .content .screen .container .occasion .occasions .background .cont.active {
                   transform: scale(1); }
+                  html body .content .screen .container .occasion .occasions .background .cont:hover i, html body .content .screen .container .occasion .occasions .background .cont.active i {
+                    color: white; }
                   html body .content .screen .container .occasion .occasions .background .cont:hover .img, html body .content .screen .container .occasion .occasions .background .cont.active .img {
                     height: 0vh; }
                   html body .content .screen .container .occasion .occasions .background .cont:hover .title, html body .content .screen .container .occasion .occasions .background .cont.active .title {
