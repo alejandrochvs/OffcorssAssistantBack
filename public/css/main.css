@@ -372,9 +372,11 @@ html {
               html body .content .screen .container .name .nameInput input:focus {
                 outline: none; }
             html body .content .screen .container .name .continue {
-              display: none;
+              overflow: hidden;
               cursor: pointer;
-              margin-top: 5vh; }
+              margin-top: 5vh;
+              height: 10vh;
+              transition: all .3s ease; }
               html body .content .screen .container .name .continue div {
                 transition: all 0.3s ease;
                 background: #fd0;
@@ -382,6 +384,12 @@ html {
                 html body .content .screen .container .name .continue div h3 {
                   margin: 0;
                   padding: 3%; }
+              html body .content .screen .container .name .continue.btn-hidden {
+                height: 0vh;
+                overflow: hidden;
+                cursor: default; }
+                html body .content .screen .container .name .continue.btn-hidden div {
+                  background: transparent !important; }
             html body .content .screen .container .name .img {
               height: 60vh;
               position: absolute;

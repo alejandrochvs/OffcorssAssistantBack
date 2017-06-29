@@ -186,13 +186,13 @@ $(function () {
                     $('.name > .selection-wrap > .continue > div > h3').html(nameBtn);
                     if (name) {
                         $('.nameInput > h1 > input').val(name);
-                        $('.continue').css('display', 'inherit');
+                        $('.continue').removeClass('btn-hidden');
                     }
                     $('.loader > .progress').css('width', '10%');
                     $('.name').addClass(currentClass);
                     $('.nameInput > h1 > input').keyup(function (e) {
                         if ($(this).val().length > 0) {
-                            $('.continue').css('display', 'inherit');
+                            $('.continue').removeClass('btn-hidden');
                             var code = e.which;
                             if (code === 13) {
                                 e.preventDefault();
@@ -201,13 +201,15 @@ $(function () {
                                 }
                             }
                         } else {
-                            $('.continue').css('display', 'none');
+                            $('.continue').addClass('btn-hidden');
                         }
                     });
                     $('.continue').click(function () {
-                        name = $('.nameInput > h1 > input').val();
-                        localStorage.name = name;
-                        next(divs[2]);
+                        if (!$(this).hasClass('btn-hidden')) {
+                            name = $('.nameInput > h1 > input').val();
+                            localStorage.name = name;
+                            next(divs[2]);
+                        }
                     });
                 } else if (current === divs[2]) {
                     $('.header > .title > .cont').html(headTitle1);
