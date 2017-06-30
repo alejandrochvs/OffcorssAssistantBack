@@ -1,0 +1,51 @@
+.terminal {
+    background: black;
+    overflow: auto;
+    font-family: courier new, monospace;
+    height: 100%;
+    color: $yellow;
+    font-weight: bold;
+    padding-top: 3vh;
+    padding-bottom: 1vh;
+    .terminal-row {
+        list-style-type: none;
+        text-transform: uppercase;
+        height: auto;
+        margin-bottom: 5px;
+        line-height: 22px;
+        font-size: 18px;
+        &::before {
+            content: '> ';
+            display: inline-block;
+            margin-right: 2vw;
+            float: left;
+        }
+        a{
+            color: white;
+            text-decoration: underline;
+            &:hover{
+                color: $yellow;
+            }
+        }
+        .input{
+            display: inline-block;
+        }
+        blinker{
+            width: 10px;
+            &::before{
+                content: "";
+            }
+            &.blinking{
+                &::before{
+                content: "|";
+            }
+            }
+        }
+        .command-help{
+            padding: 0;
+            div{
+                padding: 0;
+            }
+        }
+    }
+}

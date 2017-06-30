@@ -1959,6 +1959,44 @@ html {
                 background: #e6c700; }
             html body .content .screen .container .register .container {
               padding: 0 15px; }
+          html body .content .screen .container .terminal {
+            background: black;
+            overflow: auto;
+            font-family: courier new, monospace;
+            height: 100%;
+            color: #fd0;
+            font-weight: bold;
+            padding-top: 3vh;
+            padding-bottom: 1vh; }
+            html body .content .screen .container .terminal .terminal-row {
+              list-style-type: none;
+              text-transform: uppercase;
+              height: auto;
+              margin-bottom: 5px;
+              line-height: 22px;
+              font-size: 18px; }
+              html body .content .screen .container .terminal .terminal-row::before {
+                content: '> ';
+                display: inline-block;
+                margin-right: 2vw;
+                float: left; }
+              html body .content .screen .container .terminal .terminal-row a {
+                color: white;
+                text-decoration: underline; }
+                html body .content .screen .container .terminal .terminal-row a:hover {
+                  color: #fd0; }
+              html body .content .screen .container .terminal .terminal-row .input {
+                display: inline-block; }
+              html body .content .screen .container .terminal .terminal-row blinker {
+                width: 10px; }
+                html body .content .screen .container .terminal .terminal-row blinker::before {
+                  content: ""; }
+                html body .content .screen .container .terminal .terminal-row blinker.blinking::before {
+                  content: "|"; }
+              html body .content .screen .container .terminal .terminal-row .command-help {
+                padding: 0; }
+                html body .content .screen .container .terminal .terminal-row .command-help div {
+                  padding: 0; }
     html body .footer {
       background: white;
       margin: 0;
@@ -2020,6 +2058,9 @@ html {
     html body.edit .colors .color-wrap:hover .select {
       border-top-width: 3vh;
       background: white; }
+    @media (max-width: 767px) {
+      html body.admin {
+        height: 100vh; } }
 
 @keyframes fade {
   0% {

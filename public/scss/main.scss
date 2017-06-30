@@ -172,6 +172,7 @@ html {
                     @import 'modules/result'; //10
                     @import 'modules/login';
                     @import 'modules/register';
+                    @import 'modules/404';
                 }
             }
         }
@@ -268,6 +269,11 @@ html {
                         }
                     }
                 }
+            }
+        }
+        @media (max-width: 767px){
+            &.admin{
+                height: 100vh;
             }
         }
     }

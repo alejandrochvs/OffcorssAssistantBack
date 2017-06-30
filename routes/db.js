@@ -1,10 +1,38 @@
 var express = require('express');
 var app = express();
 var router = express.Router();
+var mongoose = require('mongoose');
+var mongoURL = process.env.MONGODB_URI ||
+    process.env.MONGOHQ_URL ||
+    'mongodb://localhost/assistant';
+
+//Sizes
+var sizes = require('./sizes_model.js');
+router.post('/sizes', function (req, res) {
+    mongoose.Promise = global.Promise;
+    mongoose.connect(mongoURL);
+    var db = mongoose.connection;
+    var query = req.body.category;
+    db.on('error', console.error.bind(console, 'connection error:'));
+    db.once('open', function () {
+        sizes.findOne({
+            name: query
+        }, function (err, docs) {
+            if (err) {
+                res.send(err);
+                db.close();
+            }
+            res.json(docs);
+            db.close();
+        })
+    });
+});
+
+//Users
+var users = require('./user_model.js');
 var crypto = require('crypto'),
     algorithm = 'aes-256-ctr',
     password = '2ba8f2b30e434b431e46e008d8f0';
-
 function encrypt(text) {
     var cipher = crypto.createCipher(algorithm, password);
     var crypted = cipher.update(text, 'utf8', 'hex');
@@ -17,19 +45,16 @@ function decrypt(text) {
     dec += decipher.final('utf8');
     return dec;
 }
-var mongoose = require('mongoose');
-var mongoURL = process.env.MONGODB_URI ||
-    process.env.MONGOHQ_URL ||
-    'mongodb://localhost/assistant';
-var users = require('./user_model.js');
-router.use('/register', function (req, res) {
+router.post('/users/register', function (req, res) {
+    console.log(req.body);
+    console.log(req.query);
     mongoose.Promise = global.Promise;
     mongoose.connect(mongoURL);
     var db = mongoose.connection;
     db.on('error', console.error.bind(console, 'connection error:'));
     db.once('open', function () {
 //        var user = mongoose.model('user', userSchema);
-        var query = req.query;
+        var query = req.body;
         var user = new users(query);
         var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
         if (ip == '::1') {
@@ -51,7 +76,7 @@ router.use('/register', function (req, res) {
         });
     });
 });
-router.use('/login', function (req, res) {
+router.post('/users/login', function (req, res) {
     mongoose.Promise = global.Promise;
     mongoose.connect(mongoURL);
     var db = mongoose.connection;
@@ -59,7 +84,7 @@ router.use('/login', function (req, res) {
         console.log(err);
     });
     db.once('open', function () {
-        var query = req.query;
+        var query = req.body;
         users.findOne({$or:[{
             username: query.username
         },{
@@ -94,4 +119,12 @@ router.use('/login', function (req, res) {
         });
     });
 });
+
+//e-cards
+router.post('/e-cards', function (req, res) {
+    res.render('e-cards', {
+        test: "test"
+    });
+});
+
 module.exports = router;

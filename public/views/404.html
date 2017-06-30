@@ -1,0 +1,84 @@
+<ul class="col-xs-12 terminal" tabindex="1">
+    <li class="col-xs-12 terminal-row">$OFFCORSS-TERMINAL V1:</li>
+    <li class="col-xs-12 terminal-row">ERROR 404 :(</li>
+    <li class="col-xs-12 terminal-row">La página que estas buscando no se encuentra, puedes volver al <a href="-">inicio</a></li>
+    <li class="col-xs-12 terminal-row">Puedes escribir 'LIFEISFUN' para tener una divertida sorpresa</li>
+    <li class="col-xs-12 terminal-row">Escribe "AYUDA" para ver los comandos disponibles</li>
+    <li class="col-xs-12 terminal-row">
+        <div class="input"></div><blinker></blinker>
+    </li>
+</ul>
+<script>
+    $(function() {
+        var blinker = setInterval(function() {
+            $('blinker').toggleClass('blinking');
+        }, 500);
+        var allowedKeys = ["q", "Q", "w", "W", "e", "E", "r", "R", "t", "T", "y", "Y", "u", "U", "i", "I", "o", "O", "p", "P", "a", "A", "s", "S", "d", "D", "f", "F", "g", "G", "h", "H", "j", "J", "k", "K", "l", "L", "z", "Z", "x", "X", "c", "C", "v", "V", "b", "B", "n", "N", "m", "M"];
+        var allowedCommands = [
+            ['AYUDA', 'Muestra los comandos disponibles'],
+            ['LIFEISFUN', 'Muestra un divertido gif de un divertido gato'],
+            ['INICIO', 'Regresa al inicio de la aplicación']
+        ]
+        var commands = {
+            "AYUDA": function() {
+                for (var i = 0; i < allowedCommands.length; i++) {
+                    var tempText = "<div class='col-xs-11 command-help'><div class='col-xs-6 col-sm-2'>" + allowedCommands[i][0] + "</div><div class='col-xs-6 col-sm-10'>" + allowedCommands[i][1] + "</div></div>";
+                    appendRow(tempText);
+                }
+                return 'Comandos disponibles...';
+            },
+            "INICIO": function() {
+                window.location.href = "/";
+                return 'Cargando inicio...';
+            },
+            "LIFEISFUN": function() {
+                $.ajax({
+                    type: 'GET',
+                    url: 'http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=kittens',
+                    success: function(res) {
+                        $('.terminal-row:last-child').remove();
+                        $('.terminal-row:last-child').remove();
+                        appendRow("<img src='" + res.data.image_url + "'/>");
+                        return appendInput();
+                    }
+                })
+            },
+            "AIUDA": "Esto se va a descontrolar"
+        };
+        var appendRow = function(html) {
+            $('blinker').remove();
+            $('.terminal').append('<li class="col-xs-12 terminal-row"><div class="input"></div><blinker></blinker></li>');
+            $('.terminal-row:last-child').html(html);
+        }
+        var appendInput = function() {
+            $('.terminal').append('<li class="col-xs-12 terminal-row"><div class="input"></div><blinker></blinker></li>');
+            $('.terminal').animate({
+                scrollTop: $(".terminal-row:last-child").offset().top
+            }, 1000);
+        }
+        var enterCommand = function(html) {
+            appendRow(html);
+            appendInput();
+        }
+        $('.terminal').keydown(function(e) {
+            if (allowedKeys.indexOf(e.key) != -1) {
+                $('.terminal-row:last-child > .input').append(e.key);
+                return;
+            } else if (e.keyCode == 13) {
+                var text = $('.terminal-row:last-child > .input').html().toUpperCase();
+                if (commands[text]) {
+                    enterCommand(commands[text]);
+                } else {
+                    enterCommand('Comando no encontrado.');
+                }
+            } else if (e.keyCode == 8) {
+                if (!$(e.target).is("input, textarea")) {
+                    e.preventDefault();
+                }
+                var text = $('.terminal-row:last-child > .input').html().split('');
+                text.pop();
+                $('.terminal-row:last-child > .input').html(text);
+            }
+        });
+    });
+</script>

@@ -2,7 +2,6 @@ var express = require('express');
 var app = express();
 var router = express.Router();
 var fs = require('fs');
-app.set('view engine', 'jade');
 router.post('/edit', function (req, res) {
     var editable;
     var query = req.body.string;
@@ -88,9 +87,9 @@ router.post('/colors', function (req, res) {
                 exec(cmd, function (error, stdout, stderr) {
                     if (error) {
                         res.send(error);
-                    }else if (stderr){
+                    } else if (stderr) {
                         res.send(stderr)
-                    }else{
+                    } else {
                         res.sendStatus(200);
                     }
                 });
@@ -100,9 +99,10 @@ router.post('/colors', function (req, res) {
         });
     });
 });
-router.get('/', function (req, res) {
+router.use('/', function (req, res) {
     res.render('index', {
-        admin: true
+        admin: true,
+        status: 200
     });
 });
 module.exports = router;
