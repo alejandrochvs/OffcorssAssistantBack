@@ -51,8 +51,10 @@
                         return appendInput();
                     },
                     error : function(err){
-                        appendRow(err);
-                        console.log(err);
+                        $('.terminal-row:last-child').remove();
+                        $('.terminal-row:last-child').remove();
+                        $('.terminal-row:last-child').remove();
+                        appendRow(err.statusText);
                         return appendInput();
                     }
                 })
