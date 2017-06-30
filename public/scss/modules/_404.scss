@@ -2,11 +2,14 @@
     background: transparent;
     color: transparent;
     border: none;
+    position: fixed;
     height: 0;
     width: 0;
+    z-index: 0;
 }
 
 .terminal {
+    z-index: 1;
     background: black;
     overflow: auto;
     font-family: courier new, monospace;
