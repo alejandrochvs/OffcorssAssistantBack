@@ -2006,6 +2006,8 @@ html {
                 padding: 0; }
                 html body .content .screen .container .terminal .terminal-row .command-help div {
                   padding: 0; }
+              html body .content .screen .container .terminal .terminal-row img {
+                max-width: 93%; }
     html body .footer {
       background: white;
       margin: 0;
