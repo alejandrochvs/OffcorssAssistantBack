@@ -33,12 +33,14 @@ var users = require('./user_model.js');
 var crypto = require('crypto'),
     algorithm = 'aes-256-ctr',
     password = '2ba8f2b30e434b431e46e008d8f0';
+
 function encrypt(text) {
     var cipher = crypto.createCipher(algorithm, password);
     var crypted = cipher.update(text, 'utf8', 'hex');
     crypted += cipher.final('hex');
     return crypted;
 }
+
 function decrypt(text) {
     var decipher = crypto.createDecipher(algorithm, password);
     var dec = decipher.update(text, 'hex', 'utf8');
@@ -53,7 +55,7 @@ router.post('/users/register', function (req, res) {
     var db = mongoose.connection;
     db.on('error', console.error.bind(console, 'connection error:'));
     db.once('open', function () {
-//        var user = mongoose.model('user', userSchema);
+        //        var user = mongoose.model('user', userSchema);
         var query = req.body;
         var user = new users(query);
         var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
@@ -80,17 +82,19 @@ router.post('/users/login', function (req, res) {
     mongoose.Promise = global.Promise;
     mongoose.connect(mongoURL);
     var db = mongoose.connection;
-    db.on('error', function(err){
+    db.on('error', function (err) {
         console.log(err);
     });
     db.once('open', function () {
         var query = req.body;
-        users.findOne({$or:[{
-            username: query.username
-        },{
-            mail: query.username
-        }]}, function (err, docs) {
-            if (err){
+        users.findOne({
+            $or: [{
+                username: query.username
+        }, {
+                mail: query.username
+        }]
+        }, function (err, docs) {
+            if (err) {
                 res.send(err);
                 mongoose.connection.close();
             }
@@ -99,9 +103,9 @@ router.post('/users/login', function (req, res) {
                     var response = {
                         token: docs.password,
                         username: docs.username,
-                        access_level : docs.access_level,
-                        name : docs.name,
-                        status : 503
+                        access_level: docs.access_level,
+                        name: docs.name,
+                        status: 503
                     };
                     response.status = 200;
                     res.send(response);
@@ -110,8 +114,7 @@ router.post('/users/login', function (req, res) {
                     res.send('Wrong password.');
                     mongoose.connection.close();
                 }
-            }
-            else {
+            } else {
                 res.send('User not found.');
                 mongoose.connection.close();
             }
@@ -121,10 +124,23 @@ router.post('/users/login', function (req, res) {
 });
 
 //e-cards
+var eCards = require('./e-cards_model.js');
 router.post('/e-cards', function (req, res) {
-    res.render('e-cards', {
-        test: "test"
+    mongoose.Promise = global.Promise;
+    mongoose.connect(mongoURL);
+    var db = mongoose.connection;
+    db.on('error', function (err) {
+        console.log(err);
     });
+    db.once('open',function(){
+        eCards.find().limit(50).skip(0).exec(function(err,docs){
+            if (err){
+                db.close();
+                return console.log(err);
+            }
+            db.close();
+            res.send(docs);
+        });
+    })
 });
-
 module.exports = router;

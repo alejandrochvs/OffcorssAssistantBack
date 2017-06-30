@@ -762,12 +762,46 @@ $(function () {
                     });
                 } else if (current === 'e-cards') {
                     $.ajax({
+                        type: "POST",
                         url: '/db/e-cards',
-                        type: 'POST',
                         success: function (res) {
-                            console.log(res);
+                            for (var i = 0; i < res.length; i++) {
+                                $('.e-cards-table').append('<div class="col-xs-12 e-card-item"></div>');
+                                $('.e-card-item:last-child').append('<div class="col-xs-2 e-card-desc e-card-img"></div>');
+                                $('.e-card-img:last-child').append('<img class="col-xs-12" src="../IMG/ecards/' + res[i].url + '"/>');
+                                $('.e-card-item:last-child').append('<div class="col-xs-1 e-card-desc e-card-gender"><div class="col-xs-12">' + res[i].gender + '</div></div>');
+                                $('.e-card-item:last-child').append('<div class="col-xs-2 e-card-desc e-card-age"><div class="col-xs-12">' + res[i].age + '</div></div>');
+                                $('.e-card-item:last-child').append('<div class="col-xs-2 e-card-desc e-card-reference"></div>');
+                                for (var j = 0; j < res[i].reference.length; j++) {
+                                    $('.e-card-item:last-child >.e-card-desc:last-child').append('<div class="col-xs-12">' + res[i].reference[j] + '</div>');
+                                }
+                                $('.e-card-item:last-child').append('<div class="col-xs-1 e-card-desc e-card-type"></div>');
+                                for (var j = 0; j < res[i].type.length; j++) {
+                                    $('.e-card-item:last-child >.e-card-desc:last-child').append('<div class="col-xs-12">' + res[i].type[j] + '</div>');
+                                }
+                                $('.e-card-item:last-child').append('<div class="col-xs-1 e-card-desc e-card-color"></div>');
+                                for (var j = 0; j < res[i].color.length; j++) {
+                                    $('.e-card-item:last-child >.e-card-desc:last-child').append('<div class="col-xs-12">' + res[i].color[j] + '</div>');
+                                }
+                                $('.e-card-item:last-child').append('<div class="col-xs-1 e-card-desc e-card-weather"></div>');
+                                for (var j = 0; j < res[i].weather.length; j++) {
+                                    $('.e-card-item:last-child >.e-card-desc:last-child').append('<div class="col-xs-12">' + res[i].weather[j] + '</div>');
+                                }
+                                $('.e-card-item:last-child').append('<div class="col-xs-2 e-card-desc e-card-occasion"></div>');
+                                for (var j = 0; j < res[i].occasion.length; j++) {
+                                    $('.e-card-item:last-child >.e-card-desc:last-child').append('<div class="col-xs-12">' + res[i].occasion[j] + '</div>');
+                                }
+                            }
+                            $('.e-card-item').click(function () {
+                                if ($(this).hasClass('active')) {
+                                    $(this).toggleClass('active');
+                                } else {
+                                    $('.e-card-item.active').removeClass('active');
+                                    $(this).toggleClass('active');
+                                }
+                            });
                         }
-                    })
+                    });
                 }
                 $('N').html(name);
                 if (admin && edit) {
@@ -968,7 +1002,7 @@ $(function () {
     //Extras
     if (status == 404) {
         if (current != '404') {
-            if (localStorage.current){
+            if (localStorage.current) {
                 var tempCurrent = localStorage.current;
             }
             next('404');
@@ -976,7 +1010,7 @@ $(function () {
             localStorage.current = current;
             return;
         }
-        
+
     }
     if (localStorage.current) {
         current = localStorage.current;

@@ -2008,6 +2008,89 @@ html {
                   padding: 0; }
               html body .content .screen .container .terminal .terminal-row img {
                 max-width: 93%; }
+          html body .content .screen .container .e-cards-container {
+            text-align: center;
+            overflow: auto;
+            height: 100%; }
+            html body .content .screen .container .e-cards-container .e-cards-table {
+              -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+              -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+              box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+              margin-top: 20px;
+              margin-bottom: 20px;
+              padding: 0;
+              height: auto;
+              background: white;
+              border-radius: 5px;
+              overflow: hidden; }
+              html body .content .screen .container .e-cards-container .e-cards-table .table-header {
+                padding: 0; }
+                html body .content .screen .container .e-cards-container .e-cards-table .table-header .e-card-title {
+                  border-right: solid 1px #e8e8e8;
+                  background: white;
+                  cursor: pointer;
+                  transition: all .3s ease; }
+                  html body .content .screen .container .e-cards-container .e-cards-table .table-header .e-card-title:first-child {
+                    border-top-left-radius: 5px; }
+                  html body .content .screen .container .e-cards-container .e-cards-table .table-header .e-card-title:last-child {
+                    border-right: none;
+                    border-top-right-radius: 5px; }
+                  html body .content .screen .container .e-cards-container .e-cards-table .table-header .e-card-title:hover {
+                    background: #e8e8e8; }
+            html body .content .screen .container .e-cards-container .e-card-item {
+              overflow: hidden;
+              text-align: center;
+              padding: 0;
+              height: 10vh;
+              transition: all .4s ease;
+              cursor: pointer; }
+              html body .content .screen .container .e-cards-container .e-card-item .e-card-desc {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                border-right: solid 1px #e8e8e8;
+                cursor: pointer;
+                transition: all .3s ease;
+                height: 100%; }
+                html body .content .screen .container .e-cards-container .e-card-item .e-card-desc:last-child {
+                  border-right: none; }
+                html body .content .screen .container .e-cards-container .e-card-item .e-card-desc div {
+                  line-height: 10vh;
+                  padding: 0;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap; }
+              html body .content .screen .container .e-cards-container .e-card-item .e-card-img {
+                padding: 10px;
+                overflow: hidden;
+                height: 100%;
+                text-align: center; }
+                html body .content .screen .container .e-cards-container .e-card-item .e-card-img img {
+                  transition: all .3s ease;
+                  border-radius: 20px;
+                  padding: 0; }
+              html body .content .screen .container .e-cards-container .e-card-item:hover {
+                background: #e8e8e8; }
+                html body .content .screen .container .e-cards-container .e-card-item:hover .e-card-desc {
+                  border-color: lightgray; }
+              html body .content .screen .container .e-cards-container .e-card-item.active {
+                height: auto;
+                background: whitesmoke;
+                -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2); }
+                html body .content .screen .container .e-cards-container .e-card-item.active .e-card-desc {
+                  border-color: lightgray; }
+                html body .content .screen .container .e-cards-container .e-card-item.active .e-card-img img {
+                  -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                  -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                  box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2); }
+                  html body .content .screen .container .e-cards-container .e-card-item.active .e-card-img img:hover {
+                    -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
+                    -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
+                    box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3); }
+                html body .content .screen .container .e-cards-container .e-card-item.active:hover {
+                  background: #e8e8e8; }
     html body .footer {
       background: white;
       margin: 0;

@@ -1,0 +1,105 @@
+.e-cards-container {
+    text-align: center;
+    overflow: auto;
+    height: 100%;
+    .e-cards-table {
+        -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 0;
+        height: auto;
+        background: white;
+        border-radius: 5px;
+        overflow: hidden;
+        .table-header {
+            padding: 0;
+            .e-card-title {
+                border-right: solid 1px darken(whitesmoke, 5%);
+                background: white;
+                cursor: pointer;
+                transition: all .3s ease;
+                &:first-child {
+                    border-top-left-radius: 5px;
+                }
+                &:last-child {
+                    border-right: none;
+                    border-top-right-radius: 5px;
+                }
+                &:hover {
+                    background: darken(whitesmoke, 5%);
+                }
+            }
+        }
+    }
+    .e-card-item {
+        overflow: hidden;
+        text-align: center;
+        padding: 0;
+        height: 10vh;
+        transition: all .4s ease;
+        cursor: pointer;
+        .e-card-desc {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            border-right: solid 1px darken(whitesmoke, 5%);
+            cursor: pointer;
+            transition: all .3s ease;
+            height: 100%;
+            &:last-child {
+                border-right: none;
+            }
+            div {
+                line-height: 10vh;
+                padding: 0;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+        .e-card-img {
+            padding: 10px;
+            overflow: hidden;
+            height: 100%;
+            text-align: center;
+            img {
+                transition: all .3s ease;
+                border-radius: 20px;
+                padding: 0;
+            }
+        }
+        &:hover {
+            background: darken(whitesmoke, 5%);
+            .e-card-desc {
+                border-color: lightgray;
+            }
+        }
+        &.active {
+            height: auto;
+            background: whitesmoke;
+            -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+            .e-card-desc {
+                border-color: lightgray;
+            }
+            .e-card-img {
+                img {
+                    -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                    -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                    box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                    &:hover {
+                        -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
+                        -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
+                        box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
+                    }
+                }
+            }
+            &:hover {
+                background: darken(whitesmoke, 5%);
+            }
+        }
+    }
+}
