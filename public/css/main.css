@@ -1959,6 +1959,12 @@ html {
                 background: #e6c700; }
             html body .content .screen .container .register .container {
               padding: 0 15px; }
+          html body .content .screen .container #terminalInput {
+            background: transparent;
+            color: transparent;
+            border: none;
+            height: 0;
+            width: 0; }
           html body .content .screen .container .terminal {
             background: black;
             overflow: auto;

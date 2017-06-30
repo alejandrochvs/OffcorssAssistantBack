@@ -23,7 +23,7 @@ app.get('/', function (req, res) {
 });
 app.use('/db', urlEncodedParser, dbRoute);
 app.use('/admin', urlEncodedParser, adminRoute);
-app.get('*', function (req, res) {
+app.get('/*', function (req, res) {
     res.render('index', {
         admin: false,
         status: 404

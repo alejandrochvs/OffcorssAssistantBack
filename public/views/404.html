@@ -1,3 +1,4 @@
+<input type="text" id="terminalInput" style="position: fixed;">
 <ul class="col-xs-12 terminal" tabindex="1">
     <li class="col-xs-12 terminal-row">$OFFCORSS-TERMINAL V1:</li>
     <li class="col-xs-12 terminal-row">ERROR 404 :(</li>
@@ -5,14 +6,22 @@
     <li class="col-xs-12 terminal-row">Puedes escribir 'LIFEISFUN' para tener una divertida sorpresa</li>
     <li class="col-xs-12 terminal-row">Escribe "AYUDA" para ver los comandos disponibles</li>
     <li class="col-xs-12 terminal-row">
-        <div class="input"></div><blinker></blinker>
+        <div class="input"></div><blinker class="blinking"></blinker>
     </li>
 </ul>
 <script>
     $(function() {
-        var blinker = setInterval(function() {
-            $('blinker').toggleClass('blinking');
-        }, 500);
+        var blinker;
+        $('#terminalInput').focusin(function() {
+            blinker = setInterval(function() {
+                $('blinker').toggleClass('blinking');
+            }, 500);
+        });
+        $('#terminalInput').focusout(function() {
+            clearInterval(blinker);
+            $('blinker').addClass('blinking');
+        });
+        $('#terminalInput').focus();
         var allowedKeys = ["q", "Q", "w", "W", "e", "E", "r", "R", "t", "T", "y", "Y", "u", "U", "i", "I", "o", "O", "p", "P", "a", "A", "s", "S", "d", "D", "f", "F", "g", "G", "h", "H", "j", "J", "k", "K", "l", "L", "z", "Z", "x", "X", "c", "C", "v", "V", "b", "B", "n", "N", "m", "M"];
         var allowedCommands = [
             ['AYUDA', 'Muestra los comandos disponibles'],
@@ -55,12 +64,16 @@
             $('.terminal').animate({
                 scrollTop: $(".terminal-row:last-child").offset().top
             }, 1000);
+            $('#terminalInput').focus();
         }
         var enterCommand = function(html) {
             appendRow(html);
             appendInput();
         }
-        $('.terminal').keydown(function(e) {
+        $('.terminal-row:last-child').click(function() {
+            $('#terminalInput').focus();
+        });
+        $('#terminalInput').keydown(function(e) {
             if (allowedKeys.indexOf(e.key) != -1) {
                 $('.terminal-row:last-child > .input').append(e.key);
                 return;
@@ -81,4 +94,5 @@
             }
         });
     });
+
 </script>

@@ -1,3 +1,11 @@
+#terminalInput {
+    background: transparent;
+    color: transparent;
+    border: none;
+    height: 0;
+    width: 0;
+}
+
 .terminal {
     background: black;
     overflow: auto;
@@ -20,30 +28,30 @@
             margin-right: 2vw;
             float: left;
         }
-        a{
+        a {
             color: white;
             text-decoration: underline;
-            &:hover{
+            &:hover {
                 color: $yellow;
             }
         }
-        .input{
+        .input {
             display: inline-block;
         }
-        blinker{
+        blinker {
             width: 10px;
-            &::before{
+            &::before {
                 content: "";
             }
-            &.blinking{
-                &::before{
-                content: "|";
-            }
+            &.blinking {
+                &::before {
+                    content: "|";
+                }
             }
         }
-        .command-help{
+        .command-help {
             padding: 0;
-            div{
+            div {
                 padding: 0;
             }
         }
