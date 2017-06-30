@@ -49,6 +49,11 @@
                         $('.terminal-row:last-child').remove();
                         appendRow("<img src='" + res.data.image_url + "'/>");
                         return appendInput();
+                    },
+                    error : function(err){
+                        appendRow(err);
+                        console.log(err);
+                        return appendInput();
                     }
                 })
             },
