@@ -604,6 +604,8 @@ $(function () {
                         autoStart: true,
                         loop: true
                     });
+                    console.log(gender)
+                    console.log(age)
                     $('.finish').click(function () {
                         localStorage.clear();
                         window.location.href = 'http://www.offcorss.com/';
@@ -761,6 +763,7 @@ $(function () {
                         }
                     });
                 } else if (current === 'e-cards') {
+                    $('.head.title > .cont').html('E-cards');
                     $.ajax({
                         type: "POST",
                         url: '/db/e-cards/count',
@@ -829,10 +832,60 @@ $(function () {
                                         }
                                         $('.e-card-item').click(function () {
                                             if ($(this).hasClass('active')) {
+                                                $('.e-card-item.active > .e-card-desc').unbind();
+                                                $('.e-card-item.active > .e-card-desc').removeClass('col-xs-2');
+                                                $('.e-card-item.active > .e-card-desc').removeClass('col-xs-4');
+                                                $('.e-card-item.active > .e-card-desc').removeClass('col-xs-1');
+                                                $('.e-card-item.active > .e-card-desc:nth-child(1)').addClass('col-xs-2');
+                                                $('.e-card-item.active > .e-card-desc:nth-child(2)').addClass('col-xs-1');
+                                                $('.e-card-item.active > .e-card-desc:nth-child(3)').addClass('col-xs-2');
+                                                $('.e-card-item.active > .e-card-desc:nth-child(4)').addClass('col-xs-1');
+                                                $('.e-card-item.active > .e-card-desc:nth-child(5)').addClass('col-xs-1');
+                                                $('.e-card-item.active > .e-card-desc:nth-child(6)').addClass('col-xs-1');
+                                                $('.e-card-item.active > .e-card-desc:nth-child(7)').addClass('col-xs-1');
+                                                $('.e-card-item.active > .e-card-desc:nth-child(8)').addClass('col-xs-2');
+                                                $('.table-header > .e-card-title:nth-child(1)').addClass('col-xs-2');
+                                                $('.table-header > .e-card-title:nth-child(2)').addClass('col-xs-1');
+                                                $('.table-header > .e-card-title:nth-child(3)').addClass('col-xs-2');
+                                                $('.table-header > .e-card-title:nth-child(4)').addClass('col-xs-1');
+                                                $('.table-header > .e-card-title:nth-child(5)').addClass('col-xs-1');
+                                                $('.table-header > .e-card-title:nth-child(6)').addClass('col-xs-1');
+                                                $('.table-header > .e-card-title:nth-child(7)').addClass('col-xs-1');
+                                                $('.table-header > .e-card-title:nth-child(8)').addClass('col-xs-2');
                                                 $(this).removeClass('active');
                                             } else {
                                                 $('.e-card-item.active').removeClass('active');
                                                 $(this).toggleClass('active');
+                                                $('.e-card-item.active > .e-card-desc:not(:last-child)').hover(function () {
+                                                    $('.e-card-item.active > .e-card-desc').removeClass('col-xs-2');
+                                                    $('.e-card-item.active > .e-card-desc').addClass('col-xs-1');
+                                                    $(this).removeClass('col-xs-1');
+                                                    $(this).addClass('col-xs-4');
+                                                    $('.table-header > .e-card-title').removeClass('col-xs-2');
+                                                    $('.table-header > .e-card-title').addClass('col-xs-1');
+                                                    console.log($('.table-header > .e-card-title:nth-child(' + ($(this).index()+1) + ')'));
+                                                    $('.table-header > .e-card-title:nth-child(' + ($(this).index() - 1) + ')').addClass('col-xs-4');
+                                                }, function () {
+                                                    $('.e-card-item.active > .e-card-desc').removeClass('col-xs-2');
+                                                    $('.e-card-item.active > .e-card-desc').removeClass('col-xs-4');
+                                                    $('.e-card-item.active > .e-card-desc').removeClass('col-xs-1');
+                                                    $('.e-card-item.active > .e-card-desc:nth-child(1)').addClass('col-xs-2');
+                                                    $('.e-card-item.active > .e-card-desc:nth-child(2)').addClass('col-xs-1');
+                                                    $('.e-card-item.active > .e-card-desc:nth-child(3)').addClass('col-xs-2');
+                                                    $('.e-card-item.active > .e-card-desc:nth-child(4)').addClass('col-xs-1');
+                                                    $('.e-card-item.active > .e-card-desc:nth-child(5)').addClass('col-xs-1');
+                                                    $('.e-card-item.active > .e-card-desc:nth-child(6)').addClass('col-xs-1');
+                                                    $('.e-card-item.active > .e-card-desc:nth-child(7)').addClass('col-xs-1');
+                                                    $('.e-card-item.active > .e-card-desc:nth-child(8)').addClass('col-xs-2');
+                                                    $('.table-header > .e-card-title:nth-child(1)').addClass('col-xs-2');
+                                                    $('.table-header > .e-card-title:nth-child(2)').addClass('col-xs-1');
+                                                    $('.table-header > .e-card-title:nth-child(3)').addClass('col-xs-2');
+                                                    $('.table-header > .e-card-title:nth-child(4)').addClass('col-xs-1');
+                                                    $('.table-header > .e-card-title:nth-child(5)').addClass('col-xs-1');
+                                                    $('.table-header > .e-card-title:nth-child(6)').addClass('col-xs-1');
+                                                    $('.table-header > .e-card-title:nth-child(7)').addClass('col-xs-1');
+                                                    $('.table-header > .e-card-title:nth-child(8)').addClass('col-xs-2');
+                                                });
                                             }
                                         });
                                     }
@@ -865,7 +918,6 @@ $(function () {
                             $('.table-page')[0].click();
                         }
                     });
-
                 }
                 $('N').html(name);
                 if (admin && edit) {
