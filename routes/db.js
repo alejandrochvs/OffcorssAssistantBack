@@ -153,7 +153,6 @@ router.post('/e-cards/count', function (req, res) {
     db.once('open',function(){
         eCards.find().count({},function(err,count){
             db.close();
-            console.log("Count = " + count);
             var data = { count : count};
             res.send(data);
         });
