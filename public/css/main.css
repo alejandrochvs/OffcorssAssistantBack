@@ -2083,7 +2083,7 @@ html {
                         z-index: -1; }
                 html body .content .screen .container .e-cards-container .e-cards-table .e-card-item .e-card-img,
                 html body .content .screen .container .e-cards-container .e-cards-table .e-card-new .e-card-img {
-                  padding-top: 8px;
+                  padding: 8px 15px;
                   overflow: hidden;
                   text-align: center; }
                   html body .content .screen .container .e-cards-container .e-cards-table .e-card-item .e-card-img img,
