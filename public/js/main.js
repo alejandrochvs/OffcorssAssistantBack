@@ -763,45 +763,109 @@ $(function () {
                 } else if (current === 'e-cards') {
                     $.ajax({
                         type: "POST",
-                        url: '/db/e-cards',
+                        url: '/db/e-cards/count',
                         success: function (res) {
-                            for (var i = 0; i < res.length; i++) {
-                                $('.e-cards-table').append('<div class="col-xs-12 e-card-item"></div>');
-                                $('.e-card-item:last-child').append('<div class="col-xs-2 e-card-desc e-card-img"></div>');
-                                $('.e-card-img:last-child').append('<img class="col-xs-12" src="../IMG/ecards/' + res[i].url + '"/>');
-                                $('.e-card-item:last-child').append('<div class="col-xs-1 e-card-desc e-card-gender"><div class="col-xs-12">' + res[i].gender + '</div></div>');
-                                $('.e-card-item:last-child').append('<div class="col-xs-2 e-card-desc e-card-age"><div class="col-xs-12">' + res[i].age + '</div></div>');
-                                $('.e-card-item:last-child').append('<div class="col-xs-2 e-card-desc e-card-reference"></div>');
-                                for (var j = 0; j < res[i].reference.length; j++) {
-                                    $('.e-card-item:last-child >.e-card-desc:last-child').append('<div class="col-xs-12">' + res[i].reference[j] + '</div>');
-                                }
-                                $('.e-card-item:last-child').append('<div class="col-xs-1 e-card-desc e-card-type"></div>');
-                                for (var j = 0; j < res[i].type.length; j++) {
-                                    $('.e-card-item:last-child >.e-card-desc:last-child').append('<div class="col-xs-12">' + res[i].type[j] + '</div>');
-                                }
-                                $('.e-card-item:last-child').append('<div class="col-xs-1 e-card-desc e-card-color"></div>');
-                                for (var j = 0; j < res[i].color.length; j++) {
-                                    $('.e-card-item:last-child >.e-card-desc:last-child').append('<div class="col-xs-12">' + res[i].color[j] + '</div>');
-                                }
-                                $('.e-card-item:last-child').append('<div class="col-xs-1 e-card-desc e-card-weather"></div>');
-                                for (var j = 0; j < res[i].weather.length; j++) {
-                                    $('.e-card-item:last-child >.e-card-desc:last-child').append('<div class="col-xs-12">' + res[i].weather[j] + '</div>');
-                                }
-                                $('.e-card-item:last-child').append('<div class="col-xs-2 e-card-desc e-card-occasion"></div>');
-                                for (var j = 0; j < res[i].occasion.length; j++) {
-                                    $('.e-card-item:last-child >.e-card-desc:last-child').append('<div class="col-xs-12">' + res[i].occasion[j] + '</div>');
-                                }
+                            var pages = Math.ceil(res.count / 10);
+                            var pagesColumns;
+                            if (pages <= 5) {
+                                pagesColumns = 2;
+                            } else {
+                                pagesColumns = 1;
                             }
-                            $('.e-card-item').click(function () {
-                                if ($(this).hasClass('active')) {
-                                    $(this).toggleClass('active');
-                                } else {
-                                    $('.e-card-item.active').removeClass('active');
-                                    $(this).toggleClass('active');
+                            for (var i = 0; i < pages; i++) {
+                                $('<li class="col-xs-' + pagesColumns + ' table-page"><h6>' + (i + 1) + '</h6></li>').insertBefore('.table-next');
+                            }
+                            var requestECards = function (offset) {
+                                $.ajax({
+                                    type: "POST",
+                                    url: '/db/e-cards',
+                                    data: {
+                                        offset: offset * 10
+                                    },
+                                    success: function (res) {
+                                        $('.e-card-item').remove();
+                                        for (var i = 0; i < res.length; i++) {
+                                            $('.e-cards-table').append('<div class="col-xs-12 e-card-item"></div>');
+                                            $('.e-card-item:last-child').append('<div class="col-xs-2 e-card-desc e-card-img"></div>');
+                                            $('.e-card-img:last-child').append('<img class="col-xs-12" src="../IMG/ecards/' + res[i].url + '"/>');
+                                            $('.e-card-item:last-child').append('<div class="col-xs-1 e-card-desc e-card-gender"><div class="col-xs-12">' + res[i].gender + '</div></div>');
+                                            $('.e-card-item:last-child').append('<div class="col-xs-2 e-card-desc e-card-age"><div class="col-xs-12">' + res[i].age + '</div></div>');
+                                            $('.e-card-item:last-child').append('<div class="col-xs-1 e-card-desc e-card-reference"></div>');
+                                            for (var j = 0; j < res[i].reference.length; j++) {
+                                                $('.e-card-item:last-child >.e-card-desc:last-child').append('<div class="col-xs-12">' + res[i].reference[j] + '</div>');
+                                            }
+                                            $('.e-card-item:last-child').append('<div class="col-xs-1 e-card-desc e-card-type"></div>');
+                                            for (var j = 0; j < res[i].type.length; j++) {
+                                                $('.e-card-item:last-child >.e-card-desc:last-child').append('<div class="col-xs-12">' + res[i].type[j] + '</div>');
+                                            }
+                                            $('.e-card-item:last-child').append('<div class="col-xs-1 e-card-desc e-card-color"></div>');
+                                            for (var j = 0; j < res[i].color.length; j++) {
+                                                $('.e-card-item:last-child >.e-card-desc:last-child').append('<div class="col-xs-12">' + res[i].color[j] + '</div>');
+                                            }
+                                            $('.e-card-item:last-child').append('<div class="col-xs-1 e-card-desc e-card-weather"></div>');
+                                            for (var j = 0; j < res[i].weather.length; j++) {
+                                                $('.e-card-item:last-child >.e-card-desc:last-child').append('<div class="col-xs-12">' + res[i].weather[j] + '</div>');
+                                            }
+                                            $('.e-card-item:last-child').append('<div class="col-xs-2 e-card-desc e-card-occasion"></div>');
+                                            for (var j = 0; j < res[i].occasion.length; j++) {
+                                                $('.e-card-item:last-child >.e-card-desc:last-child').append('<div class="col-xs-12">' + res[i].occasion[j] + '</div>');
+                                            }
+                                            $('.e-card-item:last-child').append('<div class="col-xs-1 e-card-desc e-card-edition"><div class="col-xs-6 fa fa-trash"></div><div class="col-xs-6 fa fa-pencil"></div></div>');
+                                            if (res[i].occasion.length > 1) {
+                                                $('.e-card-item:last-child > .e-card-occasion > div:first-child ').append(' <i class="fa fa-angle-down" aria-hidden="true"></i> ');
+                                            }
+                                            if (res[i].weather.length > 1) {
+                                                $('.e-card-item:last-child > .e-card-weather > div:first-child ').append(' <i class="fa fa-angle-down" aria-hidden="true"></i> ');
+                                            }
+                                            if (res[i].color.length > 1) {
+                                                $('.e-card-item:last-child > .e-card-color > div:first-child ').append(' <i class="fa fa-angle-down" aria-hidden="true"></i> ');
+                                            }
+                                            if (res[i].type.length > 1) {
+                                                $('.e-card-item:last-child > .e-card-type > div:first-child ').append(' <i class="fa fa-angle-down" aria-hidden="true"></i> ');
+                                            }
+                                            if (res[i].reference.length > 1) {
+                                                $('.e-card-item:last-child > .e-card-reference > div:first-child ').append(' <i class="fa fa-angle-down" aria-hidden="true"></i> ');
+                                            }
+                                        }
+                                        $('.e-card-item').click(function () {
+                                            if ($(this).hasClass('active')) {
+                                                $(this).removeClass('active');
+                                            } else {
+                                                $('.e-card-item.active').removeClass('active');
+                                                $(this).toggleClass('active');
+                                            }
+                                        });
+                                    }
+                                });
+                            }
+                            $('.table-page').click(function () {
+                                if (!$(this).hasClass('active')) {
+                                    $('.table-page.active').removeClass('active');
+                                    $(this).addClass('active');
+                                    var currentPageIndex = $('.table-page.active').index();
+                                    requestECards(currentPageIndex - 1);
                                 }
                             });
+                            $('.table-next').click(function () {
+                                var currentPageIndex = $('.table-page.active').index();
+                                if (currentPageIndex < pages) {
+                                    $('.table-page.active').removeClass('active');
+                                    $($('.table-page')[currentPageIndex]).addClass('active');
+                                    requestECards(currentPageIndex);
+                                }
+                            });
+                            $('.table-prev').click(function () {
+                                var currentPageIndex = $('.table-page.active').index();
+                                if (currentPageIndex > 1) {
+                                    $('.table-page.active').removeClass('active');
+                                    $($('.table-page')[currentPageIndex - 2]).addClass('active');
+                                    requestECards(currentPageIndex - 2);
+                                }
+                            });
+                            $('.table-page')[0].click();
                         }
                     });
+
                 }
                 $('N').html(name);
                 if (admin && edit) {
@@ -863,7 +927,7 @@ $(function () {
                                 next('register');
                             }
                         });
-                        $('.user-settings').prepend('<li class="e-cards"> <h5>e-cards</h5> </li>');
+                        $('.user-settings').prepend('<li class="e-cards"> <h5>E-cards</h5> </li>');
                         $('.e-cards').click(function () {
                             if (current !== 'e-cards') {
                                 next('e-cards');

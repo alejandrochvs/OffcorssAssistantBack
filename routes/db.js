@@ -133,13 +133,29 @@ router.post('/e-cards', function (req, res) {
         console.log(err);
     });
     db.once('open',function(){
-        eCards.find().limit(50).skip(0).exec(function(err,docs){
+        eCards.find().limit(10).skip(Number(req.body.offset)).exec(function(err,docs){
             if (err){
                 db.close();
                 return console.log(err);
             }
             db.close();
             res.send(docs);
+        });
+    })
+});
+router.post('/e-cards/count', function (req, res) {
+    mongoose.Promise = global.Promise;
+    mongoose.connect(mongoURL);
+    var db = mongoose.connection;
+    db.on('error', function (err) {
+        console.log(err);
+    });
+    db.once('open',function(){
+        eCards.find().count({},function(err,count){
+            db.close();
+            console.log("Count = " + count);
+            var data = { count : count};
+            res.send(data);
         });
     })
 });
