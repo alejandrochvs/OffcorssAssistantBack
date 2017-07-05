@@ -158,4 +158,26 @@ router.post('/e-cards/count', function (req, res) {
         });
     })
 });
+router.post('/e-cards/match', function (req, res) {
+    mongoose.Promise = global.Promise;
+    mongoose.connect(mongoURL);
+    var db = mongoose.connection;
+    db.on('error', function (err) {
+        console.log(err);
+    });
+    db.once('open',function(){
+        console.log(req.body);
+        eCards.find({
+            gender : req.body.gender,
+            age : req.body.age
+        }).exec(function(err,found){
+            if (err){
+                db.close();
+                return res.send(err);
+            }
+            db.close();
+            res.send(found);
+        })
+    })
+});
 module.exports = router;

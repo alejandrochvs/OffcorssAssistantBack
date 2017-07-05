@@ -24,6 +24,8 @@ html {
       overflow: hidden;
       z-index: 5;
       line-height: 6vh; }
+      html body .ui .settings {
+        display: none; }
       html body .ui .ui-section {
         transition: all 0.4s ease;
         font-size: 20px;
@@ -1843,7 +1845,9 @@ html {
     top: 60px;
     left: 0px; } }
           html body .content .screen .container .result {
-            padding: 5vh 0; }
+            padding: 5vh 0;
+            height: 100%;
+            overflow: scroll; }
             html body .content .screen .container .result .selection-wrap {
               text-align: center; }
               html body .content .screen .container .result .selection-wrap .title {
@@ -1861,6 +1865,18 @@ html {
                 transition: all 0.3s ease;
                 background: #fd0;
                 color: white; }
+            html body .content .screen .container .result .resultIMG {
+              -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+              -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+              box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+              padding: 0;
+              transition: all .3s ease; }
+              html body .content .screen .container .result .resultIMG img {
+                padding: 0; }
+              html body .content .screen .container .result .resultIMG:hover {
+                -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+                -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+                box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4); }
             html body .content .screen .container .result .img {
               height: 60vh; }
               html body .content .screen .container .result .img .image {

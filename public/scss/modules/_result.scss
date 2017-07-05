@@ -1,6 +1,8 @@
 @import './loader';
 .result {
     padding: 5vh 0;
+    height: 100%;
+    overflow: scroll;
     .selection-wrap {
         text-align: center;
         .title {
@@ -27,6 +29,21 @@
             }
         }
     }
+    .resultIMG {
+        -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+        padding: 0;
+        transition: all .3s ease;
+        img {
+            padding: 0;
+        }
+        &:hover {
+            -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+            -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+            box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+        }
+    }
     .img {
         height: 60vh;
         .image {
@@ -37,40 +54,40 @@
             background-repeat: no-repeat;
         }
     }
-    &.boy{
-        .selection-wrap{
-            .title{
-                .text{
+    &.boy {
+        .selection-wrap {
+            .title {
+                .text {
                     border-bottom-color: $boy;
                 }
             }
-            .continue{
-                div{
+            .continue {
+                div {
                     background: $boy;
                 }
             }
         }
-        .img{
-            .image{
+        .img {
+            .image {
                 background-image: url('../IMG/Name/boy.png');
             }
         }
     }
-    &.girl{
-        .selection-wrap{
-            .title{
-                .text{
+    &.girl {
+        .selection-wrap {
+            .title {
+                .text {
                     border-bottom-color: $girl;
                 }
             }
-            .continue{
-                div{
+            .continue {
+                div {
                     background: $girl;
                 }
             }
         }
-        .img{
-            .image{
+        .img {
+            .image {
                 background-image: url('../IMG/Name/girl.png');
             }
         }

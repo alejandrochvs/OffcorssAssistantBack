@@ -604,8 +604,38 @@ $(function () {
                         autoStart: true,
                         loop: true
                     });
-                    console.log(gender)
-                    console.log(age)
+                    var data = {
+                        gender: "",
+                        age: "",
+                        type: [],
+                        color: [],
+                        weather: [],
+                        occasion: []
+                    }
+                    if (gender == "F") {
+                        data.gender = "FEMENINO";
+                    } else {
+                        data.gender = "MASCULINO";
+                    }
+                    if (age == 1) {
+                        data.age = 'PRIMI (0-18M)';
+                    } else if (age == 3) {
+                        data.age = 'BEBE (18M - 5 AÑOS)';
+                    } else if (age == 7) {
+                        data.age = 'NIÑO (5 AÑOS - 13 AÑOS)';
+                    }
+                    $.ajax({
+                        type: "POST",
+                        url: "db/e-cards/match",
+                        data: data,
+                        success: function (res) {
+                            console.log(res);
+                            $('.resultIMG').append('<a href="http://www.offcorss.com/'+res[0].reference[0]+'"><img class="col-xs-12" src="IMG/ecards/'+res[0].url+'"/></a>');
+                            $('.resultIMG > a').click(function(){
+                                localStorage.clear();
+                            });
+                        }
+                    });
                     $('.finish').click(function () {
                         localStorage.clear();
                         window.location.href = 'http://www.offcorss.com/';

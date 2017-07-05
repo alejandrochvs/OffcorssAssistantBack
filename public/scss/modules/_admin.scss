@@ -7,6 +7,9 @@
     overflow: hidden;
     z-index: 5;
     line-height: $ui-height;
+    .settings{
+        display: none;
+    }
     .ui-section {
         transition: all 0.4s ease;
         font-size: 20px;
