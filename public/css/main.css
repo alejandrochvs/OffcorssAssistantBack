@@ -2081,6 +2081,35 @@ html {
                         overflow: hidden;
                         position: absolute;
                         z-index: -1; }
+                    html body .content .screen .container .e-cards-container .e-cards-table .e-card-item .e-card-desc div .fa,
+                    html body .content .screen .container .e-cards-container .e-cards-table .e-card-new .e-card-desc div .fa {
+                      padding: 0;
+                      line-height: 7vh; }
+                    html body .content .screen .container .e-cards-container .e-cards-table .e-card-item .e-card-desc div ul,
+                    html body .content .screen .container .e-cards-container .e-cards-table .e-card-new .e-card-desc div ul {
+                      max-height: 0vh;
+                      margin: 0;
+                      transition: all .3s ease;
+                      color: transparent;
+                      background: transparent;
+                      border-bottom-left-radius: 5px;
+                      border-bottom-right-radius: 5px; }
+                      html body .content .screen .container .e-cards-container .e-cards-table .e-card-item .e-card-desc div ul li,
+                      html body .content .screen .container .e-cards-container .e-cards-table .e-card-new .e-card-desc div ul li {
+                        list-style-type: none; }
+                      html body .content .screen .container .e-cards-container .e-cards-table .e-card-item .e-card-desc div ul.active,
+                      html body .content .screen .container .e-cards-container .e-cards-table .e-card-new .e-card-desc div ul.active {
+                        background: white;
+                        color: #333;
+                        max-height: 200vh;
+                        padding: 0; }
+                        html body .content .screen .container .e-cards-container .e-cards-table .e-card-item .e-card-desc div ul.active li,
+                        html body .content .screen .container .e-cards-container .e-cards-table .e-card-new .e-card-desc div ul.active li {
+                          background: transparent;
+                          transition: all .3s ease; }
+                          html body .content .screen .container .e-cards-container .e-cards-table .e-card-item .e-card-desc div ul.active li:hover,
+                          html body .content .screen .container .e-cards-container .e-cards-table .e-card-new .e-card-desc div ul.active li:hover {
+                            background: whitesmoke; }
                 html body .content .screen .container .e-cards-container .e-cards-table .e-card-item .e-card-img,
                 html body .content .screen .container .e-cards-container .e-cards-table .e-card-new .e-card-img {
                   padding: 8px 15px;
@@ -2133,13 +2162,13 @@ html {
                     transform: rotate(180deg); }
                   html body .content .screen .container .e-cards-container .e-cards-table .e-card-item.active:hover,
                   html body .content .screen .container .e-cards-container .e-cards-table .e-card-new.active:hover {
-                    background: #e8e8e8; }
+                    background: whitesmoke; }
               html body .content .screen .container .e-cards-container .e-cards-table .e-card-new .e-card-desc div {
                 padding: 0; }
             html body .content .screen .container .e-cards-container .table-pagination {
               list-style-type: none;
               background: white;
-              margin-bottom: 20px;
+              margin-bottom: 5vh;
               -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
               -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
               box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
