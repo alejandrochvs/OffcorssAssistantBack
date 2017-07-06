@@ -477,6 +477,8 @@ $(function () {
                     if (currentClass === 'nBoy' || currentClass === 'nGirl') {
                         $('.background:nth-child(1)').css('display', 'none');
                         $($('.occasions > .background')[5]).css('display', 'none');
+                        $($('.occasions > .background')[2]).addClass('col-xs-offset-0');
+                        $($('.occasions > .background')[3]).addClass('col-xs-offset-2');
                         $('.background:nth-child(2)').toggleClass('col-xs-offset-2');
                         $('.background:nth-child(3)').toggleClass('col-xs-offset-2 col-md-offset-0');
                     }
@@ -629,8 +631,8 @@ $(function () {
                         url: "db/e-cards/match",
                         data: data,
                         success: function (res) {
-                            $('.resultIMG').append('<a href="http://www.offcorss.com/'+res[0].reference[0]+'"><img class="col-xs-12" src="IMG/ecards/'+res[0].url+'"/></a>');
-                            $('.resultIMG > a').click(function(){
+                            $('.resultIMG').append('<a href="http://www.offcorss.com/' + res[0].reference[0] + '"><img class="col-xs-12" src="IMG/ecards/' + res[0].url + '"/></a>');
+                            $('.resultIMG > a').click(function () {
                                 localStorage.clear();
                             });
                             $('.result > .selection-wrap').remove();
