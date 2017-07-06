@@ -51,6 +51,7 @@
                     padding: 4%;
                     height: 8vh;
                     h3 {
+                        transition: all .3s ease;
                         line-height: 8vh;
                         overflow: hidden;
                         text-overflow: ellipsis;
