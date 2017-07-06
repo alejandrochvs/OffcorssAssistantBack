@@ -446,9 +446,9 @@ $(function () {
                     $('.occasions > .background:nth-child(1) > .cont > .title > h3').html(occasionName1);
                     $('.occasions > .background:nth-child(2) > .cont > .title > h3').html(occasionName2);
                     $('.occasions > .background:nth-child(3) > .cont > .title > h3').html(occasionName3);
-                    $('.occasions > .background:nth-child(4) > .cont > .title > h3').html(occasionName4);
-                    $('.occasions > .background:nth-child(5) > .cont > .title > h3').html(occasionName5);
-                    $('.occasions > .background:nth-child(6) > .cont > .title > h3').html(occasionName6);
+                    $($('.occasions > .background > .cont > .title > h3')[3]).html(occasionName4);
+                    $($('.occasions > .background > .cont > .title > h3')[4]).html(occasionName5);
+                    $($('.occasions > .background > .cont > .title > h3')[5]).html(occasionName6);
                     $('.occasion > .occasionsBtn').html(occasionBtn);
                     $('.loader > .progress').css('width', '40%');
                     if (occasion) {
@@ -476,7 +476,7 @@ $(function () {
                     });
                     if (currentClass === 'nBoy' || currentClass === 'nGirl') {
                         $('.background:nth-child(1)').css('display', 'none');
-                        $('.background:nth-child(6)').css('display', 'none');
+                        $($('.occasions > .background')[5]).css('display', 'none');
                         $('.background:nth-child(2)').toggleClass('col-xs-offset-2');
                         $('.background:nth-child(3)').toggleClass('col-xs-offset-2 col-md-offset-0');
                     }

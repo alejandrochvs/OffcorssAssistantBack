@@ -370,7 +370,7 @@ html {
               font-size: 8vw;
               font-weight: 100; }
               html body .content .screen .container .name .nameInput input::placeholder {
-                color: lightgray; }
+                color: #adadad; }
               html body .content .screen .container .name .nameInput input:focus {
                 outline: none; }
             html body .content .screen .container .name .continue {
@@ -915,8 +915,6 @@ html {
                     color: white; }
                 html body .content .screen .container .occasion .occasions .background .cont:hover, html body .content .screen .container .occasion .occasions .background .cont.active {
                   transform: scale(1); }
-                  html body .content .screen .container .occasion .occasions .background .cont:hover i, html body .content .screen .container .occasion .occasions .background .cont.active i {
-                    color: white; }
                   html body .content .screen .container .occasion .occasions .background .cont:hover .img, html body .content .screen .container .occasion .occasions .background .cont.active .img {
                     height: 0vh; }
                   html body .content .screen .container .occasion .occasions .background .cont:hover .title, html body .content .screen .container .occasion .occasions .background .cont.active .title {
@@ -924,6 +922,8 @@ html {
                     transform: scale(1.4); }
                     html body .content .screen .container .occasion .occasions .background .cont:hover .title h3, html body .content .screen .container .occasion .occasions .background .cont.active .title h3 {
                       line-height: 35vh; }
+                html body .content .screen .container .occasion .occasions .background .cont.active i {
+                  color: white; }
               html body .content .screen .container .occasion .occasions .background:nth-child(1) .cont {
                 background-image: url(../IMG/looks/abc.jpg); }
               html body .content .screen .container .occasion .occasions .background:nth-child(2) .cont {
@@ -960,6 +960,8 @@ html {
               border-bottom-color: #fd4605; }
             html body .content .screen .container .occasion.boy .occasions .background .cont .title {
               background: rgba(253, 70, 5, 0.8); }
+            html body .content .screen .container .occasion.boy .occasions .background .cont.active .img {
+              background: rgba(253, 70, 5, 0.8); }
             html body .content .screen .container .occasion.boy .occasionsBtn {
               background: #fd4605; }
               html body .content .screen .container .occasion.boy .occasionsBtn:hover {
@@ -971,6 +973,8 @@ html {
                   background: #fe916a; }
             html body .content .screen .container .occasion.girl .selection-wrap .title .text {
               border-bottom-color: #e70095; }
+            html body .content .screen .container .occasion.girl .occasions .background .cont.active .img {
+              background: rgba(231, 0, 149, 0.8); }
             html body .content .screen .container .occasion.girl .occasions .background .cont .title {
               background: rgba(231, 0, 149, 0.8); }
             html body .content .screen .container .occasion.girl .occasionsBtn {
@@ -984,6 +988,8 @@ html {
                   background: #ff4ec0; }
             html body .content .screen .container .occasion.bBoy .selection-wrap .title .text {
               border-bottom-color: #82bc00; }
+            html body .content .screen .container .occasion.bBoy .occasions .background .cont.active .img {
+              background: rgba(130, 188, 0, 0.8); }
             html body .content .screen .container .occasion.bBoy .occasions .background .cont .title {
               background: rgba(130, 188, 0, 0.8); }
             html body .content .screen .container .occasion.bBoy .occasionsBtn {
@@ -997,6 +1003,8 @@ html {
                   background: #bbff23; }
             html body .content .screen .container .occasion.bGirl .selection-wrap .title .text {
               border-bottom-color: #9794d2; }
+            html body .content .screen .container .occasion.bGirl .occasions .background .cont.active .img {
+              background: rgba(151, 148, 210, 0.8); }
             html body .content .screen .container .occasion.bGirl .occasions .background .cont .title {
               background: rgba(151, 148, 210, 0.8); }
             html body .content .screen .container .occasion.bGirl .occasionsBtn {
@@ -1010,6 +1018,8 @@ html {
                   background: #dddcf0; }
             html body .content .screen .container .occasion.nBoy .selection-wrap .title .text {
               border-bottom-color: #3e8ede; }
+            html body .content .screen .container .occasion.nBoy .occasions .background .cont.active .img {
+              background: rgba(62, 142, 222, 0.8); }
             html body .content .screen .container .occasion.nBoy .occasions .background .cont .title {
               background: rgba(62, 142, 222, 0.8); }
             html body .content .screen .container .occasion.nBoy .occasionsBtn {
@@ -1023,6 +1033,8 @@ html {
                   background: #95c1ed; }
             html body .content .screen .container .occasion.nGirl .selection-wrap .title .text {
               border-bottom-color: #ee9bac; }
+            html body .content .screen .container .occasion.nGirl .occasions .background .cont.active .img {
+              background: rgba(238, 155, 172, 0.8); }
             html body .content .screen .container .occasion.nGirl .occasions .background .cont .title {
               background: rgba(238, 155, 172, 0.8); }
             html body .content .screen .container .occasion.nGirl .occasionsBtn {
@@ -1035,27 +1047,31 @@ html {
                 html body .content .screen .container .occasion.nGirl .occasionsBtn.disabled:hover {
                   background: #fdf2f4; }
           @media (max-width: 767px) {
-            html body .content .screen .container .occasion .occasions .background .cont .img {
-              height: 20vh;
-              transition: all .3s ease; }
-            html body .content .screen .container .occasion .occasions .background .cont .title {
-              padding: 0;
-              height: 5vh;
-              transition: all .3s ease; }
-              html body .content .screen .container .occasion .occasions .background .cont .title h3 {
-                transition: all .3s ease;
-                line-height: 5vh;
-                font-size: 18px; }
-            html body .content .screen .container .occasion .occasions .background .cont:hover {
-              transform: scale(1); }
-              html body .content .screen .container .occasion .occasions .background .cont:hover .img {
-                height: 20vh; }
-              html body .content .screen .container .occasion .occasions .background .cont:hover .title {
-                height: 5vh;
+            html body .content .screen .container .occasion .occasions {
+              margin-top: -2vh; }
+              html body .content .screen .container .occasion .occasions .background .cont .img {
+                height: 15vh;
+                transition: all .3s ease; }
+              html body .content .screen .container .occasion .occasions .background .cont .title {
+                padding: 0;
+                height: 7vh;
+                transition: all .3s ease; }
+                html body .content .screen .container .occasion .occasions .background .cont .title h3 {
+                  transition: all .3s ease;
+                  line-height: 7vh;
+                  font-size: 18px; }
+              html body .content .screen .container .occasion .occasions .background .cont:hover, html body .content .screen .container .occasion .occasions .background .cont.active {
                 transform: scale(1); }
-                html body .content .screen .container .occasion .occasions .background .cont:hover .title h3 {
-                  line-height: 5vh;
-                  font-size: 18px; } }
+                html body .content .screen .container .occasion .occasions .background .cont:hover .img, html body .content .screen .container .occasion .occasions .background .cont.active .img {
+                  height: 0vh; }
+                html body .content .screen .container .occasion .occasions .background .cont:hover .title, html body .content .screen .container .occasion .occasions .background .cont.active .title {
+                  height: 22vh;
+                  transform: scale(1); }
+                  html body .content .screen .container .occasion .occasions .background .cont:hover .title h3, html body .content .screen .container .occasion .occasions .background .cont.active .title h3 {
+                    line-height: 24vh;
+                    font-size: 18px; }
+            html body .content .screen .container .occasion .occasionsBtn {
+              margin-top: 2vh; } }
           @media (min-height: 768px) and (orientation: portrait) {
             html body .content .screen .container .occasion .occasions .background .cont .img {
               height: 20vh; }
@@ -1063,25 +1079,31 @@ html {
               height: 5vh; }
               html body .content .screen .container .occasion .occasions .background .cont .title h3 {
                 line-height: 4vh; } }
-          @media (max-height 767px) and (orientation: landscape) {
-            html body .content .screen .container .occasion .selection-wrap .title {
-              margin-bottom: 1vh; }
-            html body .content .screen .container .occasion .occasions .background .cont {
-              background-position: bottom; }
-              html body .content .screen .container .occasion .occasions .background .cont .img {
-                height: 16vh; }
-              html body .content .screen .container .occasion .occasions .background .cont .title {
-                height: 6vh; }
-                html body .content .screen .container .occasion .occasions .background .cont .title h3 {
-                  line-height: 3vh; }
-              html body .content .screen .container .occasion .occasions .background .cont:hover {
-                transform: scale(1); }
-                html body .content .screen .container .occasion .occasions .background .cont:hover .title {
-                  height: 21.9vh;
+          @media (max-width: 767px) and (orientation: landscape) {
+            html body .content .screen .container .occasion {
+              height: 100%;
+              overflow: scroll; }
+              html body .content .screen .container .occasion .selection-wrap .title {
+                margin-bottom: 1vh; }
+              html body .content .screen .container .occasion .occasions .background .cont {
+                background-position: bottom; }
+                html body .content .screen .container .occasion .occasions .background .cont .img {
+                  height: 16vh; }
+                html body .content .screen .container .occasion .occasions .background .cont .title {
+                  height: 8vh; }
+                  html body .content .screen .container .occasion .occasions .background .cont .title h3 {
+                    line-height: 8vh; }
+                html body .content .screen .container .occasion .occasions .background .cont:hover {
                   transform: scale(1); }
-                  html body .content .screen .container .occasion .occasions .background .cont:hover .title h3 {
-                    transform: scale(1);
-                    line-height: 19vh; } }
+                  html body .content .screen .container .occasion .occasions .background .cont:hover .title {
+                    height: 24vh;
+                    transform: scale(1); }
+                    html body .content .screen .container .occasion .occasions .background .cont:hover .title h3 {
+                      transform: scale(1);
+                      line-height: 26vh; }
+              html body .content .screen .container .occasion .occasionsBtn {
+                height: 10vh;
+                line-height: 10vh; } }
           html body .content .screen .container .weather {
             padding: 5vh 0; }
             html body .content .screen .container .weather .selection-wrap {

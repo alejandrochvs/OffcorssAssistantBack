@@ -175,6 +175,9 @@ router.post('/e-cards/match', function (req, res) {
                 db.close();
                 return res.send(err);
             }
+            if (found.length > 1){
+                eCards.find({})
+            }
             db.close();
             res.send(found);
         })

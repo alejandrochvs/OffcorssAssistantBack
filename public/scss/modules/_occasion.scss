@@ -63,9 +63,6 @@
                 &:hover,
                 &.active {
                     transform: scale(1);
-                    i{
-                        color: white;
-                    }
                     .img {
                         height: 0vh;
                     }
@@ -75,6 +72,11 @@
                         h3 {
                             line-height: 35vh;
                         }
+                    }
+                }
+                &.active{
+                    i {
+                        color: white;
                     }
                 }
             }
@@ -150,6 +152,11 @@
                     .title {
                         background: rgba($occasionColor, $opacity);
                     }
+                    &.active {
+                        .img {
+                            background: rgba($occasionColor, $opacity);
+                        }
+                    }
                 }
             }
         }
@@ -180,6 +187,11 @@
                 .cont {
                     $occasionColor: $girl;
                     $opacity: 0.8;
+                    &.active {
+                        .img {
+                            background: rgba($occasionColor, $opacity);
+                        }
+                    }
                     .title {
                         background: rgba($occasionColor, $opacity);
                     }
@@ -213,6 +225,11 @@
                 .cont {
                     $occasionColor: $bBoy;
                     $opacity: 0.8;
+                    &.active {
+                        .img {
+                            background: rgba($occasionColor, $opacity);
+                        }
+                    }
                     .title {
                         background: rgba($occasionColor, $opacity);
                     }
@@ -246,6 +263,11 @@
                 .cont {
                     $occasionColor: $bGirl;
                     $opacity: 0.8;
+                    &.active {
+                        .img {
+                            background: rgba($occasionColor, $opacity);
+                        }
+                    }
                     .title {
                         background: rgba($occasionColor, $opacity);
                     }
@@ -279,6 +301,11 @@
                 .cont {
                     $occasionColor: $nBoy;
                     $opacity: 0.8;
+                    &.active {
+                        .img {
+                            background: rgba($occasionColor, $opacity);
+                        }
+                    }
                     .title {
                         background: rgba($occasionColor, $opacity);
                     }
@@ -312,6 +339,11 @@
                 .cont {
                     $occasionColor: $nGirl;
                     $opacity: 0.8;
+                    &.active {
+                        .img {
+                            background: rgba($occasionColor, $opacity);
+                        }
+                    }
                     .title {
                         background: rgba($occasionColor, $opacity);
                     }
@@ -337,38 +369,43 @@
 @media (max-width: 767px) {
     .occasion {
         .occasions {
+            margin-top: -2vh;
             .background {
                 .cont {
                     .img {
-                        height: 20vh;
+                        height: 15vh;
                         transition: all .3s ease;
                     }
                     .title {
                         padding: 0;
-                        height: 5vh;
+                        height: 7vh;
                         transition: all .3s ease;
                         h3 {
                             transition: all .3s ease;
-                            line-height: 5vh;
+                            line-height: 7vh;
                             font-size: 18px;
                         }
                     }
-                    &:hover {
+                    &:hover,
+                    &.active {
                         transform: scale(1);
                         .img {
-                            height: 20vh;
+                            height: 0vh;
                         }
                         .title {
-                            height: 5vh;
+                            height: 22vh;
                             transform: scale(1);
                             h3 {
-                                line-height: 5vh;
+                                line-height: 24vh;
                                 font-size: 18px;
                             }
                         }
                     }
                 }
             }
+        }
+        .occasionsBtn {
+            margin-top: 2vh;
         }
     }
 }
@@ -392,9 +429,10 @@
         }
     }
 }
-
-@media (max-height 767px) and (orientation: landscape) {
+@media (max-width : 767px) and (orientation: landscape) {
     .occasion {
+        height: 100%;
+        overflow: scroll;
         .selection-wrap {
             .title {
                 margin-bottom: 1vh;
@@ -408,24 +446,28 @@
                         height: 16vh;
                     }
                     .title {
-                        height: 6vh;
+                        height: 8vh;
                         h3 {
-                            line-height: 3vh;
+                            line-height: 8vh;
                         }
                     }
                     &:hover {
                         transform: scale(1);
                         .title {
-                            height: 21.9vh;
+                            height: 24vh;
                             transform: scale(1);
                             h3 {
                                 transform: scale(1);
-                                line-height: 19vh;
+                                line-height: 26vh;
                             }
                         }
                     }
                 }
             }
+        }
+        .occasionsBtn{
+            height: 10vh;
+            line-height: 10vh;
         }
     }
 }
