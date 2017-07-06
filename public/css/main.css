@@ -1178,6 +1178,11 @@ html {
               border-bottom-color: #3e8ede; }
             html body .content .screen .container .weather.nGirl .selection-wrap .title .text {
               border-bottom-color: #ee9bac; }
+            @media (max-width: 767px) {
+              html body .content .screen .container .weather .weathers .background .cont .img {
+                height: 5vh; }
+              html body .content .screen .container .weather .weathers .background .cont .title {
+                padding: 2%; } }
           html body .content .screen .container .looks {
             height: 100%;
             z-index: 1;

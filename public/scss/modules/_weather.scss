@@ -146,4 +146,18 @@
             }
         }
     }
+    @media (max-width: 767px){
+        .weathers{
+            .background{
+                .cont{
+                    .img{
+                        height: 5vh;
+                    }
+                    .title{
+                        padding: 2%;
+                    }
+                }
+            }
+        }
+    }
 }

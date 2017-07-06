@@ -629,11 +629,11 @@ $(function () {
                         url: "db/e-cards/match",
                         data: data,
                         success: function (res) {
-                            console.log(res);
                             $('.resultIMG').append('<a href="http://www.offcorss.com/'+res[0].reference[0]+'"><img class="col-xs-12" src="IMG/ecards/'+res[0].url+'"/></a>');
                             $('.resultIMG > a').click(function(){
                                 localStorage.clear();
                             });
+                            $('.result > .selection-wrap').remove();
                         }
                     });
                     $('.finish').click(function () {
