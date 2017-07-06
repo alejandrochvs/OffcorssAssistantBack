@@ -478,7 +478,9 @@ $(function () {
                         $('.background:nth-child(1)').css('display', 'none');
                         $($('.occasions > .background')[5]).css('display', 'none');
                         $($('.occasions > .background')[2]).addClass('col-xs-offset-0');
-                        $($('.occasions > .background')[3]).addClass('col-xs-offset-2');
+                        if ($(window).width() < 767){
+                            $($('.occasions > .background')[3]).addClass('col-xs-offset-2');
+                        }
                         $('.background:nth-child(2)').toggleClass('col-xs-offset-2');
                         $('.background:nth-child(3)').toggleClass('col-xs-offset-2 col-md-offset-0');
                     }
