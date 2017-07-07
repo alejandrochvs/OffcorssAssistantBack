@@ -20,7 +20,7 @@
                 cursor: pointer;
                 transition: all 0.3s ease;
                 padding: 0;
-                background: $yellow;
+                background: tansparent;
                 background-image: url(../../IMG/smokks.png);
                 background-position: center;
                 background-repeat: no-repeat;
@@ -83,32 +83,32 @@
             }
             &:nth-child(1) {
                 .cont {
-                    background-image: url(../IMG/looks/abc.jpg);
+                    background-image: url(../IMG/occasions/abc.jpg);
                 }
             }
             &:nth-child(2) {
                 .cont {
-                    background-image: url(../IMG/looks/basicos.jpg);
+                    background-image: url(../IMG/occasions/basicos.jpg);
                 }
             }
             &:nth-child(3) {
                 .cont {
-                    background-image: url(../IMG/looks/moda.jpg);
+                    background-image: url(../IMG/occasions/moda.jpg);
                 }
             }
             &:nth-child(4) {
                 .cont {
-                    background-image: url(../IMG/looks/playa.jpg);
+                    background-image: url(../IMG/occasions/playa.jpg);
                 }
             }
             &:nth-child(5) {
                 .cont {
-                    background-image: url(../IMG/looks/special-occasion.jpg);
+                    background-image: url(../IMG/occasions/special-occasion.jpg);
                 }
             }
             &:nth-child(6) {
                 .cont {
-                    background-image: url(../IMG/looks/sport.jpg);
+                    background-image: url(../IMG/occasions/sport.jpg);
                 }
             }
         }

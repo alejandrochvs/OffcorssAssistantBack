@@ -384,6 +384,7 @@ html {
                 background: #fd0;
                 color: white; }
                 html body .content .screen .container .name .continue div h3 {
+                  text-align: center;
                   margin: 0;
                   padding: 3%; }
               html body .content .screen .container .name .continue.btn-hidden {
@@ -553,6 +554,35 @@ html {
                 color: white; }
             html body .content .screen .container .age.nGirl .img .image {
               background-image: url("../IMG/Age/nGirl.png"); }
+          html body .content .screen .container .sizes-guide {
+            background: white;
+            padding: 2%;
+            border-radius: 5px;
+            position: absolute;
+            z-index: 3;
+            top: -100%;
+            overflow: hidden;
+            transition: all .3s ease;
+            padding-top: 0;
+            -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+            -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+            box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+            height: 90%; }
+            html body .content .screen .container .sizes-guide .fa-times {
+              position: absolute;
+              right: 1vw;
+              top: 1vh;
+              cursor: pointer;
+              transition: all .3s ease; }
+              html body .content .screen .container .sizes-guide .fa-times:hover {
+                color: #fd0; }
+            html body .content .screen .container .sizes-guide .img {
+              height: 107%;
+              overflow: scroll; }
+              html body .content .screen .container .sizes-guide .img img {
+                margin-bottom: 5vh; }
+            html body .content .screen .container .sizes-guide.active {
+              top: 5%; }
           html body .content .screen .container .size {
             padding: 5vh 0;
             height: 100%; }
@@ -566,6 +596,16 @@ html {
                   background: white;
                   border-bottom: solid 3px #fd0;
                   padding: 2%; }
+                  html body .content .screen .container .size .selection-wrap .title .text .fa {
+                    position: absolute;
+                    right: -7px;
+                    top: -7px;
+                    background: red;
+                    border-radius: 50%;
+                    height: 25px;
+                    width: 25px;
+                    line-height: 25px;
+                    color: white; }
               html body .content .screen .container .size .selection-wrap .padWrap .image {
                 height: 20vh; }
                 html body .content .screen .container .size .selection-wrap .padWrap .image div {
@@ -728,7 +768,18 @@ html {
                   transition: all 0.3s ease;
                   background: white;
                   border-bottom: solid 3px #fd0;
-                  padding: 2%; }
+                  padding: 2%;
+                  cursor: pointer; }
+                  html body .content .screen .container .sizePrimi .selection-wrap .title .text .fa {
+                    position: absolute;
+                    right: -7px;
+                    top: -7px;
+                    background: red;
+                    border-radius: 50%;
+                    height: 25px;
+                    width: 25px;
+                    line-height: 25px;
+                    color: white; }
               html body .content .screen .container .sizePrimi .selection-wrap .padWrap .image {
                 height: 20vh; }
                 html body .content .screen .container .sizePrimi .selection-wrap .padWrap .image div {
@@ -879,7 +930,7 @@ html {
                 cursor: pointer;
                 transition: all 0.3s ease;
                 padding: 0;
-                background: #fd0;
+                background: tansparent;
                 background-image: url(../../IMG/smokks.png);
                 background-position: center;
                 background-repeat: no-repeat;
@@ -926,17 +977,17 @@ html {
                 html body .content .screen .container .occasion .occasions .background .cont.active i {
                   color: white; }
               html body .content .screen .container .occasion .occasions .background:nth-child(1) .cont {
-                background-image: url(../IMG/looks/abc.jpg); }
+                background-image: url(../IMG/occasions/abc.jpg); }
               html body .content .screen .container .occasion .occasions .background:nth-child(2) .cont {
-                background-image: url(../IMG/looks/basicos.jpg); }
+                background-image: url(../IMG/occasions/basicos.jpg); }
               html body .content .screen .container .occasion .occasions .background:nth-child(3) .cont {
-                background-image: url(../IMG/looks/moda.jpg); }
+                background-image: url(../IMG/occasions/moda.jpg); }
               html body .content .screen .container .occasion .occasions .background:nth-child(4) .cont {
-                background-image: url(../IMG/looks/playa.jpg); }
+                background-image: url(../IMG/occasions/playa.jpg); }
               html body .content .screen .container .occasion .occasions .background:nth-child(5) .cont {
-                background-image: url(../IMG/looks/special-occasion.jpg); }
+                background-image: url(../IMG/occasions/special-occasion.jpg); }
               html body .content .screen .container .occasion .occasions .background:nth-child(6) .cont {
-                background-image: url(../IMG/looks/sport.jpg); }
+                background-image: url(../IMG/occasions/sport.jpg); }
             html body .content .screen .container .occasion .occasionsBtn {
               border-radius: 2px;
               background: #fd0;

@@ -311,7 +311,9 @@ $(function () {
                     $('.size > .selection-wrap > .title > .text-editable').html(sizeTitle);
                     $('.size > .selection-wrap > .title > .text > N').html(name);
                     $('.size').addClass(currentClass);
+                    $('.size > .selection-wrap > .title > .text').append('<i class="fa fa-exclamation hidden-xs" aria-hidden="true"></i>')
                     $('.loader > .progress').css('width', '30%');
+                    $('.sizes-guide > .img').append('<img src="../IMG/Size/'+currentClass+'.jpg" class="col-xs-12" alt="">');
                     $.ajax({
                         type: 'POST',
                         url: '/db/sizes',
@@ -390,7 +392,9 @@ $(function () {
                     $('.header > .title > .cont').attr('data-var', 'headTitle1');
                     $('.size > .selection-wrap > .title > .text-editable').html(sizePrimiTitle);
                     $('.sizePrimi').addClass(currentClass);
+                    $('.sizePrimi > .selection-wrap > .title > .text').append('<i class="fa fa-exclamation hidden-xs" aria-hidden="true"></i>')
                     $('.loader > .progress').css('width', '30%');
+                    $('.sizes-guide > .img').append('<img src="../IMG/Size/'+currentClass+'.jpg" class="col-xs-12" alt="">');
                     $.ajax({
                         type: "POST",
                         url: '/db/sizes',

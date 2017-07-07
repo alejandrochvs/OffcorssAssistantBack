@@ -55,7 +55,6 @@ router.post('/users/register', function (req, res) {
     var db = mongoose.connection;
     db.on('error', console.error.bind(console, 'connection error:'));
     db.once('open', function () {
-        //        var user = mongoose.model('user', userSchema);
         var query = req.body;
         var user = new users(query);
         var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
