@@ -105,7 +105,7 @@
                                     background: whitesmoke;
                                 }
                                 &.disabled {
-                                    cursor: not-allowed;
+                                    cursor: default;
                                     background: whitesmoke;
                                     border-left: solid 2px lime;
                                 }
@@ -196,6 +196,12 @@
                                 width: 100%;
                             }
                         }
+                    }
+                }
+                i.fa{
+                    transform: rotate(0deg);
+                    &.active{
+                        transform: rotate(180deg);
                     }
                 }
             }

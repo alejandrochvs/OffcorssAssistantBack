@@ -313,7 +313,7 @@ $(function () {
                     $('.size').addClass(currentClass);
                     $('.size > .selection-wrap > .title > .text').append('<i class="fa fa-exclamation hidden-xs" aria-hidden="true"></i>')
                     $('.loader > .progress').css('width', '30%');
-                    $('.sizes-guide > .img').append('<img src="../IMG/Size/'+currentClass+'.jpg" class="col-xs-12" alt="">');
+                    $('.sizes-guide > .img').append('<img src="../IMG/Size/' + currentClass + '.jpg" class="col-xs-12" alt="">');
                     $.ajax({
                         type: 'POST',
                         url: '/db/sizes',
@@ -394,7 +394,7 @@ $(function () {
                     $('.sizePrimi').addClass(currentClass);
                     $('.sizePrimi > .selection-wrap > .title > .text').append('<i class="fa fa-exclamation hidden-xs" aria-hidden="true"></i>')
                     $('.loader > .progress').css('width', '30%');
-                    $('.sizes-guide > .img').append('<img src="../IMG/Size/'+currentClass+'.jpg" class="col-xs-12" alt="">');
+                    $('.sizes-guide > .img').append('<img src="../IMG/Size/' + currentClass + '.jpg" class="col-xs-12" alt="">');
                     $.ajax({
                         type: "POST",
                         url: '/db/sizes',
@@ -482,7 +482,7 @@ $(function () {
                         $('.background:nth-child(1)').css('display', 'none');
                         $($('.occasions > .background')[5]).css('display', 'none');
                         $($('.occasions > .background')[2]).addClass('col-xs-offset-0');
-                        if ($(window).width() < 767){
+                        if ($(window).width() < 767) {
                             $($('.occasions > .background')[3]).addClass('col-xs-offset-2');
                         }
                         $('.background:nth-child(2)').toggleClass('col-xs-offset-2');
@@ -868,7 +868,23 @@ $(function () {
                                                 $('.e-card-item:last-child > .e-card-reference > div:first-child ').append(' <i class="fa fa-angle-down" aria-hidden="true"></i> ');
                                             }
                                         }
-                                        $('.e-card-item').click(function () {
+                                        $('.e-card-item').click(function (e) {
+                                            if (e.target == $(this).find('.fa-trash')[0] && $(this).hasClass('active')) {
+                                                var tempCurUrl = $(this).find('.e-card-img > img').attr('src').split('/');
+                                                tempCurUrl = tempCurUrl[tempCurUrl.length - 1];
+                                                var tempThis = $(this);
+                                                $.ajax({
+                                                    type: 'POST',
+                                                    url: '/db/e-cards/delete',
+                                                    data: {
+                                                        url: tempCurUrl
+                                                    },
+                                                    success: function () {
+                                                        console.log(res);
+                                                        tempThis.remove();
+                                                    }
+                                                });
+                                            }
                                             if ($(this).hasClass('active')) {
                                                 $('.e-card-item.active > .e-card-desc').unbind();
                                                 $('.e-card-item.active > .e-card-desc').removeClass('col-xs-2');
@@ -894,9 +910,10 @@ $(function () {
                                                 $('.table-header > .e-card-title:nth-child(9)').addClass('col-xs-1');
                                                 $('.e-card-new').css('max-height', '7vh');
                                                 $(this).removeClass('active');
-                                            } else {
+                                            }
+                                            else {
                                                 if ($('.e-card-new').hasClass('active')) {
-                                                    $('.fa-eye-slash').click();
+                                                    $('.fa-eye').click();
                                                 }
                                                 $('.e-card-item.active > .e-card-desc').unbind();
                                                 $('.e-card-item.active').removeClass('active');
@@ -937,6 +954,123 @@ $(function () {
                                     }
                                 });
                             }
+                            var imgToPost, genderToPost, ageToPost, referenceToPost = [],
+                                typeToPost = [],
+                                colorToPost = [],
+                                weatherToPost = [],
+                                occasionToPost = [];
+                            $('.e-card-new').click(function (e) {
+                                if ($('.e-card-new').hasClass('active')) {
+                                    if (e.target == $('.fa-eye')[0]) {
+                                        $('.e-card-new.active > .e-card-desc > div.ul-title >').unbind();
+                                        $(this).removeClass('active');
+                                        $('.e-card-new').css('max-height', '7vh');
+                                    }
+                                } else {
+                                    $('.e-card-new').addClass('active');
+                                    $('.e-card-new').css('max-height', '400vh');
+                                    $('.e-card-new.active > .e-card-desc > div.ul-title >').click(function () {
+                                        var indexOfUL = $(this).parent().parent().index();
+                                        $('.e-card-new.active > .e-card-desc:nth-child(' + (indexOfUL + 1) + ') > div > ul').toggleClass('active');
+                                        $('.e-card-new.active > .e-card-desc:nth-child(' + (indexOfUL + 1) + ') > div > i').toggleClass('active');
+                                    });
+                                }
+                            });
+                            $('.e-card-new > .e-card-desc > div > ul > li').click(function () {
+                                if (!$(this).hasClass('disabled')) {
+                                    var indexOfLi = $(this).parent().parent().parent().index() + 1;
+                                    if (indexOfLi == 2 || indexOfLi == 3) {
+                                        $('.e-card-new > .e-card-desc:nth-child(' + indexOfLi + ') > div > ul > li').addClass('disabled');
+                                        $('.e-card-new > .e-card-desc:nth-child(' + indexOfLi + ') > div.ul-title').click();
+                                    }
+                                    $('.e-card-new > .e-card-desc:nth-child(' + indexOfLi + ')').append('<div class="col-xs-12 new" data-index="' + $(this).index() + '">' + $(this).html() + '<div class="fa fa-trash"></div></div>');
+                                    $('.e-card-new > .e-card-desc:nth-child(' + indexOfLi + ') > .new:last-child() > .fa-trash').click(function () {
+                                        $('.e-card-new > .e-card-desc:nth-child(' + ($(this).parent().parent().index() + 1) + ') > div > ul > li:nth-child(' + (Number($(this).parent().attr('data-index')) + 1) + ')').removeClass('disabled');
+                                        if (($(this).parent().parent().index() + 1) == 2 || ($(this).parent().parent().index() + 1) == 3) {
+                                            $('.e-card-new > .e-card-desc:nth-child(' + ($(this).parent().parent().index() + 1) + ') > div > ul > li').removeClass('disabled');
+                                        }
+                                        $(this).parent().remove();
+                                    });
+                                    $(this).addClass('disabled');
+                                }
+
+                            });
+                            $('.e-card-img-new').click(function (e) {
+                                if (e.target == $('.fa-camera')[0]) {
+                                    $('input[type="file"]').click();
+                                }
+                            });
+                            $('input[type="file"]').on('change', function () {
+                                /*$.ajax({
+                                    type: "POST",
+                                    url: '/db/e-cards/upload/img',
+                                    enctype: 'multipart/form-data',
+                                    data: {
+                                        img: $('input[type="file"]').val()
+                                    }
+                                });*/
+                                var path = $(this).val().split('\\');
+                                path = path[path.length - 1];
+                                imgToPost = path;
+                            });
+                            $('.e-card-new > .e-card-desc > div.ref > .fa-plus-square').click(function () {
+                                var inputVal = $('.e-card-new > .e-card-desc > div.ref > input').val();
+                                if (inputVal != "") {
+                                    if ($('.e-card-new > .e-card-desc:nth-child(4) > div.new:contains(' + inputVal + ')').length == 0) {
+                                        $('.e-card-new > .e-card-desc:nth-child(4)').append('<div class="col-xs-12 new">' + inputVal + '<div class="fa fa-trash"></div></div>');
+                                        $('.e-card-new > .e-card-desc:nth-child(4) > .new:last-child() > .fa-trash').click(function () {
+                                            $(this).parent().remove();
+                                        });
+                                    }
+
+                                }
+                            });
+                            $('.e-card-new > .e-card-desc > .fa-ban').click(function () {
+                                $('.e-card-new > .e-card-desc > div > .fa-trash').click();
+                            });
+                            $('.e-card-new > .e-card-desc > .fa-plus-square').click(function () {
+                                for (var i = 1; i < $('.e-card-new > .e-card-desc').length - 1; i++) {
+                                    for (var j = 0; j < $('.e-card-new > .e-card-desc:nth-child(' + (i + 1) + ') > div.new').length; j++) {
+                                        if ($('.e-card-new > .e-card-desc:nth-child(' + (i + 1) + ') > div.new:nth-child(' + (j + 1) + ')')) {
+                                            var tempVal = $($('.e-card-new > .e-card-desc:nth-child(' + (i + 1) + ') > div.new')[j]).html().split('<div')[0];
+                                            if (i == 1) {
+                                                genderToPost = tempVal;
+                                            } else if (i == 2) {
+                                                ageToPost = tempVal;
+                                            } else if (i == 3) {
+                                                referenceToPost[j] = tempVal;
+                                            } else if (i == 4) {
+                                                typeToPost[j] = tempVal;
+                                            } else if (i == 5) {
+                                                colorToPost[j] = tempVal;
+                                            } else if (i == 6) {
+                                                weatherToPost[j] = tempVal;
+                                            } else if (i == 7) {
+                                                occasionToPost[j] = tempVal;
+                                            }
+                                        }
+                                    }
+                                }
+                                var objToPost = {
+                                    url: imgToPost,
+                                    gender: genderToPost,
+                                    age: ageToPost,
+                                    reference: referenceToPost,
+                                    type: typeToPost,
+                                    color: colorToPost,
+                                    weather: weatherToPost,
+                                    occasion: occasionToPost
+                                }
+                                console.log(objToPost);
+                                $.ajax({
+                                    type: "POST",
+                                    url: 'db/e-cards/upload',
+                                    data: objToPost,
+                                    success: function (res) {
+//                                        $('.fa-ban').click();
+                                    }
+                                })
+                            });
                             $('.table-page').click(function () {
                                 if (!$(this).hasClass('active')) {
                                     $('.table-page.active').removeClass('active');

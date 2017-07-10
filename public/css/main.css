@@ -2209,7 +2209,7 @@ html {
                             background: whitesmoke; }
                           html body .content .screen .container .e-cards-container .e-cards-table .e-card-item .e-card-desc div ul.active li.disabled,
                           html body .content .screen .container .e-cards-container .e-cards-table .e-card-new .e-card-desc div ul.active li.disabled {
-                            cursor: not-allowed;
+                            cursor: default;
                             background: whitesmoke;
                             border-left: solid 2px lime; }
                 html body .content .screen .container .e-cards-container .e-cards-table .e-card-item .e-card-img,
@@ -2281,6 +2281,10 @@ html {
                   html body .content .screen .container .e-cards-container .e-cards-table .e-card-new .e-card-desc div.new:hover .fa-trash {
                     left: 0vw;
                     width: 100%; }
+              html body .content .screen .container .e-cards-container .e-cards-table .e-card-new .e-card-desc i.fa {
+                transform: rotate(0deg); }
+                html body .content .screen .container .e-cards-container .e-cards-table .e-card-new .e-card-desc i.fa.active {
+                  transform: rotate(180deg); }
             html body .content .screen .container .e-cards-container .table-pagination {
               list-style-type: none;
               background: white;

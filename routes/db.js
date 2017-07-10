@@ -131,9 +131,9 @@ router.post('/e-cards', function (req, res) {
     db.on('error', function (err) {
         console.log(err);
     });
-    db.once('open',function(){
-        eCards.find().limit(10).skip(Number(req.body.offset)).exec(function(err,docs){
-            if (err){
+    db.once('open', function () {
+        eCards.find().limit(10).skip(Number(req.body.offset)).exec(function (err, docs) {
+            if (err) {
                 db.close();
                 return console.log(err);
             }
@@ -149,10 +149,12 @@ router.post('/e-cards/count', function (req, res) {
     db.on('error', function (err) {
         console.log(err);
     });
-    db.once('open',function(){
-        eCards.find().count({},function(err,count){
+    db.once('open', function () {
+        eCards.find().count({}, function (err, count) {
             db.close();
-            var data = { count : count};
+            var data = {
+                count: count
+            };
             res.send(data);
         });
     })
@@ -164,22 +166,82 @@ router.post('/e-cards/match', function (req, res) {
     db.on('error', function (err) {
         console.log(err);
     });
-    db.once('open',function(){
+    db.once('open', function () {
         console.log(req.body);
         eCards.find({
-            gender : req.body.gender,
-            age : req.body.age
-        }).exec(function(err,found){
-            if (err){
+            gender: req.body.gender,
+            age: req.body.age
+        }).exec(function (err, found) {
+            if (err) {
                 db.close();
                 return res.send(err);
             }
-            if (found.length > 1){
+            if (found.length > 1) {
                 eCards.find({})
             }
             db.close();
             res.send(found);
         })
     })
+});
+router.post('/e-cards/upload', function (req, res) {
+    mongoose.Promise = global.Promise;
+    mongoose.connect(mongoURL);
+    var db = mongoose.connection;
+    db.on('error', console.error.bind(console, 'connection error:'));
+    db.once('open', function () {
+        var tempECard = req.body;
+        var eCard = new eCards({
+            url: tempECard.url,
+            gender: tempECard.gender,
+            age: tempECard.age,
+            reference: [],
+            type: [],
+            color: [],
+            weather: [],
+            occasion: []
+        });
+        for (var i = 0; i < tempECard['reference[]'].length; i++) {
+            eCard.reference[i] = tempECard['reference[]'][i];
+        }
+        for (var i = 0; i < tempECard['type[]'].length; i++) {
+            eCard.type[i] = tempECard['type[]'][i];
+        }
+        for (var i = 0; i < tempECard['color[]'].length; i++) {
+            eCard.color[i] = tempECard['color[]'][i];
+        }
+        for (var i = 0; i < tempECard['weather[]'].length; i++) {
+            eCard.weather[i] = tempECard['weather[]'][i];
+        }
+        for (var i = 0; i < tempECard['occasion[]'].length; i++) {
+            eCard.occasion[i] = tempECard['occasion[]'][i];
+        }
+        eCard.save(function (err, saved) {
+            if (err) {
+                db.close()
+                return res.send(err);
+            }
+            db.close()
+            res.send('success.')
+        })
+    });
+
+});
+router.post('/e-cards/delete', function (req, res) {
+    mongoose.Promise = global.Promise;
+    mongoose.connect(mongoURL);
+    var db = mongoose.connection;
+    db.on('error', console.error.bind(console, 'connection error:'));
+    db.once('open', function () {
+        var toDelete = req.body.url;
+        eCards.findOneAndRemove({url : toDelete},function(err){
+            if (err){
+                db.close();
+                return res.send(err);
+            }
+            db.close();
+            res.send('Deleted');
+        })
+    });
 });
 module.exports = router;
