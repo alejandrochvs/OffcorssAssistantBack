@@ -870,20 +870,33 @@ $(function () {
                                         }
                                         $('.e-card-item').click(function (e) {
                                             if (e.target == $(this).find('.fa-trash')[0] && $(this).hasClass('active')) {
-                                                var tempCurUrl = $(this).find('.e-card-img > img').attr('src').split('/');
-                                                tempCurUrl = tempCurUrl[tempCurUrl.length - 1];
-                                                var tempThis = $(this);
-                                                $.ajax({
-                                                    type: 'POST',
-                                                    url: '/db/e-cards/delete',
-                                                    data: {
-                                                        url: tempCurUrl
-                                                    },
-                                                    success: function () {
-                                                        console.log(res);
-                                                        tempThis.remove();
-                                                    }
+                                                var tempTrashThis = $(this);
+                                                $('.warning-wrapper').toggleClass('active');
+                                                $('.warning-wrapper > .yes').click(function (e) {
+                                                    var tempCurUrl = tempTrashThis.find('.e-card-img > img').attr('src').split('/');
+                                                    tempCurUrl = tempCurUrl[tempCurUrl.length - 1];
+                                                    var tempThis = tempTrashThis;
+                                                    $.ajax({
+                                                        type: 'POST',
+                                                        url: '/db/e-cards/delete',
+                                                        data: {
+                                                            url: tempCurUrl
+                                                        },
+                                                        success: function () {
+                                                            console.log(res);
+                                                            tempThis.remove();
+                                                        }
+                                                    });
+                                                    $('.warning-wrapper').toggleClass('active');
+                                                    $('.warning-wrapper > .yes').unbind();
+                                                    $('.warning-wrapper > .no').unbind();
                                                 });
+                                                $('.warning-wrapper > .no').click(function(){
+                                                    $('.warning-wrapper').toggleClass('active');
+                                                    $('.warning-wrapper > .yes').unbind();
+                                                    $('.warning-wrapper > .no').unbind();
+                                                })
+                                                return;
                                             }
                                             if ($(this).hasClass('active')) {
                                                 $('.e-card-item.active > .e-card-desc').unbind();
@@ -910,8 +923,7 @@ $(function () {
                                                 $('.table-header > .e-card-title:nth-child(9)').addClass('col-xs-1');
                                                 $('.e-card-new').css('max-height', '7vh');
                                                 $(this).removeClass('active');
-                                            }
-                                            else {
+                                            } else {
                                                 if ($('.e-card-new').hasClass('active')) {
                                                     $('.fa-eye').click();
                                                 }
@@ -1067,7 +1079,7 @@ $(function () {
                                     url: 'db/e-cards/upload',
                                     data: objToPost,
                                     success: function (res) {
-//                                        $('.fa-ban').click();
+                                        //                                        $('.fa-ban').click();
                                     }
                                 })
                             });

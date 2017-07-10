@@ -127,6 +127,35 @@ html {
             z-index: 0;
             background-image: url('../IMG/background.jpg');
             padding: 0;
+            .warning-wrapper {
+                padding: 0;
+                max-height: 0vh;
+                overflow: hidden;
+                transition: all .6s ease;
+                color: white;
+                background: orangered;
+                top: -1vh;
+                z-index: 1;
+                text-align: center;
+                div{
+                    &:nth-child(2){
+                        border-right: solid 2px white;
+                        border-left: solid 2px white;
+                    }
+                }
+                .col-xs-2{
+                    cursor: pointer;
+                    transition: all .3s ease;
+                    background: darken(orangered,5%);
+                    
+                    &:hover{
+                        background: darken(orangered,10%);
+                    }
+                }
+                &.active {
+                    max-height: 30vh;
+                }
+            }
             .screen {
                 width: 100vw;
                 position: absolute;
@@ -272,8 +301,8 @@ html {
                 }
             }
         }
-        @media (max-width: 767px){
-            &.admin{
+        @media (max-width: 767px) {
+            &.admin {
                 height: 100vh;
             }
         }

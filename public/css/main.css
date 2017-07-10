@@ -282,6 +282,27 @@ html {
       z-index: 0;
       background-image: url("../IMG/background.jpg");
       padding: 0; }
+      html body .content .warning-wrapper {
+        padding: 0;
+        max-height: 0vh;
+        overflow: hidden;
+        transition: all .6s ease;
+        color: white;
+        background: orangered;
+        top: -1vh;
+        z-index: 1;
+        text-align: center; }
+        html body .content .warning-wrapper div:nth-child(2) {
+          border-right: solid 2px white;
+          border-left: solid 2px white; }
+        html body .content .warning-wrapper .col-xs-2 {
+          cursor: pointer;
+          transition: all .3s ease;
+          background: #e63e00; }
+          html body .content .warning-wrapper .col-xs-2:hover {
+            background: #cc3700; }
+        html body .content .warning-wrapper.active {
+          max-height: 30vh; }
       html body .content .screen {
         width: 100vw;
         position: absolute;
