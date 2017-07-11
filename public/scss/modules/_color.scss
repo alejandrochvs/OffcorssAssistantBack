@@ -15,6 +15,9 @@
         }
     }
     .colors {
+        overflow: scroll;
+        height: 100%;
+        padding-bottom: 16vh;
         .color-wrap {
             .select {
                 overflow: hidden;

@@ -40,7 +40,6 @@ function encrypt(text) {
     crypted += cipher.final('hex');
     return crypted;
 }
-
 function decrypt(text) {
     var decipher = crypto.createDecipher(algorithm, password);
     var dec = decipher.update(text, 'hex', 'utf8');
@@ -170,7 +169,8 @@ router.post('/e-cards/match', function (req, res) {
         console.log(req.body);
         eCards.find({
             gender: req.body.gender,
-            age: req.body.age
+            age: req.body.age,
+            
         }).exec(function (err, found) {
             if (err) {
                 db.close();
@@ -244,4 +244,125 @@ router.post('/e-cards/delete', function (req, res) {
         })
     });
 });
+
+var ages = require('./ages_model.js');
+router.post('/ages',function(req,res){
+    mongoose.Promise = global.Promise;
+    mongoose.connect(mongoURL);
+    var db = mongoose.connection;
+    db.on('error', function (err) {
+        console.log(err);
+    });
+    db.once('open', function () {
+        ages.find({},function(err,docs){
+            if (err){
+                db.close();
+                return res.send(err);
+            }
+            db.close();
+            res.send(docs);
+        })
+    });
+});
+
+var colors = require('./colors_model.js');
+router.post('/colors',function(req,res){
+    mongoose.Promise = global.Promise;
+    mongoose.connect(mongoURL);
+    var db = mongoose.connection;
+    db.on('error', function (err) {
+        console.log(err);
+    });
+    db.once('open', function () {
+        colors.find({},function(err,docs){
+            if (err){
+                db.close();
+                return res.send(err);
+            }
+            db.close();
+            res.send(docs);
+        })
+    });
+});
+
+var genders = require('./genders_model.js');
+router.post('/genders',function(req,res){
+    mongoose.Promise = global.Promise;
+    mongoose.connect(mongoURL);
+    var db = mongoose.connection;
+    db.on('error', function (err) {
+        console.log(err);
+    });
+    db.once('open', function () {
+        genders.find({},function(err,docs){
+            if (err){
+                db.close();
+                return res.send(err);
+            }
+            db.close();
+            res.send(docs);
+        })
+    });
+});
+
+var occasions = require('./occasions_model.js');
+router.post('/occasions',function(req,res){
+    mongoose.Promise = global.Promise;
+    mongoose.connect(mongoURL);
+    var db = mongoose.connection;
+    db.on('error', function (err) {
+        console.log(err);
+    });
+    db.once('open', function () {
+        occasions.find({},function(err,docs){
+            if (err){
+                db.close();
+                return res.send(err);
+            }
+            db.close();
+            res.send(docs);
+        })
+    });
+});
+
+var types = require('./types_model.js');
+router.post('/types',function(req,res){
+    mongoose.Promise = global.Promise;
+    mongoose.connect(mongoURL);
+    var db = mongoose.connection;
+    db.on('error', function (err) {
+        console.log(err);
+    });
+    db.once('open', function () {
+        types.find({},function(err,docs){
+            if (err){
+                db.close();
+                return res.send(err);
+            }
+            db.close();
+            res.send(docs);
+        })
+    });
+});
+
+var weathers = require('./weathers_model.js');
+router.post('/weathers',function(req,res){
+    mongoose.Promise = global.Promise;
+    mongoose.connect(mongoURL);
+    var db = mongoose.connection;
+    db.on('error', function (err) {
+        console.log(err);
+    });
+    db.once('open', function () {
+        weathers.find({},function(err,docs){
+            if (err){
+                db.close();
+                return res.send(err);
+            }
+            db.close();
+            res.send(docs);
+        })
+    });
+});
+
 module.exports = router;

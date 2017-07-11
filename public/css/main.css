@@ -1407,30 +1407,34 @@ html {
                   background: white;
                   border-bottom: solid 3px #fd0;
                   padding: 2%; }
-            html body .content .screen .container .color .colors .color-wrap .select {
-              overflow: hidden;
-              background: white;
-              height: 10vh;
-              color: inherit;
-              text-align: center;
-              margin-top: 2vh;
-              line-height: 10vh;
-              cursor: pointer;
-              border-radius: 5px;
-              border-top: solid 3px orange;
-              transition: all 0.3s ease;
-              font-size: 20px;
-              border-top-left-radius: 0;
-              border-top-right-radius: 0; }
-              html body .content .screen .container .color .colors .color-wrap .select:hover {
-                background: transparent;
-                border-top: solid 10vh orange; }
-            html body .content .screen .container .color .colors .color-wrap:nth-child(2) .select {
-              border-color: green; }
-            html body .content .screen .container .color .colors .color-wrap:nth-child(3) .select {
-              border-color: #e6e600; }
-            html body .content .screen .container .color .colors .color-wrap:nth-child(4) .select {
-              border-color: #e60000; }
+            html body .content .screen .container .color .colors {
+              overflow: scroll;
+              height: 100%;
+              padding-bottom: 16vh; }
+              html body .content .screen .container .color .colors .color-wrap .select {
+                overflow: hidden;
+                background: white;
+                height: 10vh;
+                color: inherit;
+                text-align: center;
+                margin-top: 2vh;
+                line-height: 10vh;
+                cursor: pointer;
+                border-radius: 5px;
+                border-top: solid 3px orange;
+                transition: all 0.3s ease;
+                font-size: 20px;
+                border-top-left-radius: 0;
+                border-top-right-radius: 0; }
+                html body .content .screen .container .color .colors .color-wrap .select:hover {
+                  background: transparent;
+                  border-top: solid 10vh orange; }
+              html body .content .screen .container .color .colors .color-wrap:nth-child(2) .select {
+                border-color: green; }
+              html body .content .screen .container .color .colors .color-wrap:nth-child(3) .select {
+                border-color: #e6e600; }
+              html body .content .screen .container .color .colors .color-wrap:nth-child(4) .select {
+                border-color: #e60000; }
             html body .content .screen .container .color.boy .selection-wrap .title .text {
               border-bottom-color: #fd4605; }
             html body .content .screen .container .color.girl .selection-wrap .title .text {
