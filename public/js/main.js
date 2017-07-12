@@ -520,14 +520,13 @@ $(function () {
                     $('.color').addClass(currentClass);
                     $.post('/db/colors', function (res) {
                         for (var i = 0; i < res.length; i++) {
-                            $('.colors').append('<div class="col-xs-6 col-sm-4 col-md-2 color-wrap"> <div class="col-xs-12 select text-editable" style="border-color:' + res[i].hex + '; data-color="' + res.color + '" data-var="colorName1">' + res[i].color + '</div></div>')
+                            $('.colors').append('<div class="col-xs-6 col-sm-4 col-md-2 color-wrap"> <div class="col-xs-12 select text-editable" style="border-color:' + res[i].hex + ';" data-color="' + res[i].color + '" data-var="colorName1">' + res[i].color + '</div></div>')
                         }
                         $('.select').click(function () {
                             favColor = $(this).attr('data-color');
                             localStorage.setItem('favColor', favColor);
                             next(divs[8]);
                         });
-                        console.log(res);
                     });
                 } else if (current === "looks") {
                     $('.header > .title > .cont').html(headTitle2);
@@ -638,16 +637,13 @@ $(function () {
                     } else if (age == 7) {
                         data.age = 'NIÑO (5 AÑOS - 13 AÑOS)';
                     }
-                    console.log(favColor);
+                    data.color = favColor;
                     $.ajax({
                         type: "POST",
                         url: "db/e-cards/match",
                         data: data,
                         success: function (res) {
-                            $('.resultIMG').append('<a href="http://www.offcorss.com/' + res[0].reference[0] + '"><img class="col-xs-12" src="IMG/ecards/' + res[0].url + '"/></a>');
-                            $('.resultIMG > a').click(function () {
-                                localStorage.clear();
-                            });
+                            $('.resultIMG').append('<img class="col-xs-12" src="IMG/ecards/' + res[0].url + '"/>');
                             $('.result > .selection-wrap').remove();
                         }
                     });
@@ -926,6 +922,7 @@ $(function () {
                                                                 url: tempCurUrl
                                                             },
                                                             success: function () {
+                                                                tempThis.click();
                                                                 tempThis.remove();
                                                             }
                                                         });
@@ -1057,18 +1054,22 @@ $(function () {
                                         $('input[type="file"]').click();
                                     }
                                 });
-                                $('input[type="file"]').on('change', function () {
-                                    /*$.ajax({
-                                        type: "POST",
-                                        url: '/db/e-cards/upload/img',
-                                        enctype: 'multipart/form-data',
-                                        data: {
-                                            img: $('input[type="file"]').val()
+                                $('#uploadForm').submit(function () {
+                                    $("#status").empty().text("File is uploading...");
+                                    $(this).ajaxSubmit({
+                                        error: function (xhr) {
+                                            status('Error: ' + xhr.status);
+                                        },
+                                        success: function (res) {
+                                            $('.e-card-img-new > div > img').remove();
+                                            $('.e-card-img-new > div').append('<img class="col-xs-12" src="../IMG/ecards/' + res + '">');
+                                            imgToPost = res;
                                         }
-                                    });*/
-                                    var path = $(this).val().split('\\');
-                                    path = path[path.length - 1];
-                                    imgToPost = path;
+                                    });
+                                    return false;
+                                });
+                                $('#uploadForm > input[type="file"]').change(function () {
+                                    $('#uploadForm > input[type="submit"]').click();
                                 });
                                 $('.e-card-new > .e-card-desc > div.ref > .fa-plus-square').click(function () {
                                     var inputVal = $('.e-card-new > .e-card-desc > div.ref > input').val();
@@ -1118,13 +1119,17 @@ $(function () {
                                         weather: weatherToPost,
                                         occasion: occasionToPost
                                     }
-                                    console.log(objToPost);
                                     $.ajax({
                                         type: "POST",
                                         url: 'db/e-cards/upload',
                                         data: objToPost,
                                         success: function (res) {
-                                            //                                        $('.fa-ban').click();
+                                            $('.e-cards-table > div.active > .e-card-desc > .fa-eye').click();
+                                            $('.e-cards-table > div.active > .e-card-desc > .fa-ban').click();
+                                            if ($('.table-page').last().hasClass('active')){
+                                                $('.table-page').first().click();
+                                                $('.table-page').last().click();
+                                            }
                                         }
                                     })
                                 });

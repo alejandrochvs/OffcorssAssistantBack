@@ -1,71 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Offcorss Assistant</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/font-awesome.min.css" />
-    <link rel="stylesheet" href="fonts/styles.css" />
-    <link rel="stylesheet" href="css/main.css" /> </head>
-
-<body>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="fonts/styles.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
     <div class="col-xs-12 header">
-        <div class="col-xs-3 head transparent">
-            <div class="col-xs-12 cont back"> <i class="fa fa-angle-left" aria-hidden="true"></i><span>VOLVER</span></div>
-        </div>
-        <div class="col-xs-6 head title">
-            <div data-var="headTitle0" class="col-xs-12 cont text-editable">BUSCA TU ESTILO</div>
-        </div>
-        <div class="col-xs-3 head">
-            <div class="col-xs-12 cont"><a href="http://www.offcorss.com/"><i class="fa fa-times fa-1x exit" aria-hidden="true"></i></a></div>
-        </div>
+      <div class="col-xs-3 head transparent">
+        <div class="col-xs-12 cont back"><i aria-hidden="true" class="fa fa-angle-left"></i><span>VOLVER</span></div>
+      </div>
+      <div class="col-xs-6 head title">
+        <div data-var="headTitle0" class="col-xs-12 cont text-editable">BUSCA TU ESTILO</div>
+      </div>
+      <div class="col-xs-3 head">
+        <div class="col-xs-12 cont"><a href="http://www.offcorss.com/"><i aria-hidden="true" class="fa fa-times fa-1x exit"></i></a></div>
+      </div>
     </div>
     <div class="col-xs-12 content">
-        <div class="col-xs-12 warning-wrapper">
-            <div class="col-xs-8 title">
-                <h1>Are you sure?</h1>
-            </div>
-            <div class="col-xs-2">
-                <h2>YES</h2>
-            </div>
-            <div class="col-xs-2">
-                <h2>NO</h2>
-            </div>
+      <div class="col-xs-12 warning-wrapper">
+        <div class="col-xs-8 title">
+          <h2>¿Estás seguro?</h2>
         </div>
-        <div class="screen prev">
-            <div class="container col-xs-12"></div>
+        <div class="col-xs-2 yes">
+          <h2>Si</h2>
         </div>
-        <div class="screen current">
-            <div class="container col-xs-12"></div>
+        <div class="col-xs-2 no">
+          <h2>No</h2>
         </div>
-        <div class="screen next">
-            <div class="container col-xs-12"></div>
-        </div>
+      </div>
+      <div class="screen prev">
+        <div class="container col-xs-12"></div>
+      </div>
+      <div class="screen current">
+        <div class="container col-xs-12"></div>
+      </div>
+      <div class="screen next">
+        <div class="container col-xs-12"></div>
+      </div>
     </div>
     <footer class="col-xs-12 footer">
-        <div class="col-xs-12 loader">
-            <div class="progress"></div>
-        </div>
-        <div class="col-xs-12 brand"></div>
+      <div class="col-xs-12 loader">
+        <div class="progress"></div>
+      </div>
+      <div class="col-xs-12 brand"></div>
     </footer>
-</body>
-<script src="js/jquery-3.2.1.min.js"></script>
-<script src="js/typeit.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script>
-    var admin = !{
-        admin
-    };
-    var status = !{
-        status
-    };
-
-</script>
-<script src="js/variables.js"></script>
-<script src="js/main.js"></script>
-
+  </body>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/jquery.form.min.js"></script>
+  <script src="js/typeit.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script>
+    var admin;
+    var status;
+  </script>
+  <script src="js/variables.js"></script>
+  <script src="js/main.js"></script>
 </html>

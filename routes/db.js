@@ -1,6 +1,8 @@
 var express = require('express');
 var app = express();
 var router = express.Router();
+var fs = require('fs');
+var path = require('path');
 var mongoose = require('mongoose');
 var mongoURL = process.env.MONGODB_URI ||
     process.env.MONGOHQ_URL ||
@@ -40,6 +42,7 @@ function encrypt(text) {
     crypted += cipher.final('hex');
     return crypted;
 }
+
 function decrypt(text) {
     var decipher = crypto.createDecipher(algorithm, password);
     var dec = decipher.update(text, 'hex', 'utf8');
@@ -166,18 +169,13 @@ router.post('/e-cards/match', function (req, res) {
         console.log(err);
     });
     db.once('open', function () {
-        console.log(req.body);
         eCards.find({
             gender: req.body.gender,
-            age: req.body.age,
-            
+            age: req.body.age
         }).exec(function (err, found) {
             if (err) {
                 db.close();
                 return res.send(err);
-            }
-            if (found.length > 1) {
-                eCards.find({})
             }
             db.close();
             res.send(found);
@@ -201,21 +199,42 @@ router.post('/e-cards/upload', function (req, res) {
             weather: [],
             occasion: []
         });
-        for (var i = 0; i < tempECard['reference[]'].length; i++) {
-            eCard.reference[i] = tempECard['reference[]'][i];
+        if (typeof tempECard.reference == "string") {
+            eCard.reference[0] = tempECard.reference;
+        } else {
+            for (var i = 0; i < tempECard.reference.length; i++) {
+                eCard.reference[i] = tempECard.reference[i];
+            }
         }
-        for (var i = 0; i < tempECard['type[]'].length; i++) {
-            eCard.type[i] = tempECard['type[]'][i];
+        if (typeof tempECard.type == "string") {
+            eCard.type[0] = tempECard.type;
+        } else {
+            for (var i = 0; i < tempECard.type.length; i++) {
+                eCard.type[i] = tempECard.type[i];
+            }
         }
-        for (var i = 0; i < tempECard['color[]'].length; i++) {
-            eCard.color[i] = tempECard['color[]'][i];
+        if (typeof tempECard.color == "string") {
+            eCard.color[0] = tempECard.color;
+        } else {
+            for (var i = 0; i < tempECard.color.length; i++) {
+                eCard.color[i] = tempECard.color[i];
+            }
         }
-        for (var i = 0; i < tempECard['weather[]'].length; i++) {
-            eCard.weather[i] = tempECard['weather[]'][i];
+        if (typeof tempECard.weather == "string") {
+            eCard.weather[0] = tempECard.weather;
+        } else {
+            for (var i = 0; i < tempECard.weather.length; i++) {
+                eCard.weather[i] = tempECard.weather[i];
+            }
         }
-        for (var i = 0; i < tempECard['occasion[]'].length; i++) {
-            eCard.occasion[i] = tempECard['occasion[]'][i];
+        if (typeof tempECard.occasion == "string") {
+            eCard.occasion[0] = tempECard.occasion;
+        } else {
+            for (var i = 0; i < tempECard.occasion.length; i++) {
+                eCard.occasion[i] = tempECard.occasion[i];
+            }
         }
+
         eCard.save(function (err, saved) {
             if (err) {
                 db.close()
@@ -234,28 +253,37 @@ router.post('/e-cards/delete', function (req, res) {
     db.on('error', console.error.bind(console, 'connection error:'));
     db.once('open', function () {
         var toDelete = req.body.url;
-        eCards.findOneAndRemove({url : toDelete},function(err){
-            if (err){
+        var fileToDelete = path.join('./public/IMG/ecards/' + toDelete);
+        console.log(fileToDelete);
+        eCards.findOneAndRemove({
+            url: toDelete
+        }, function (err) {
+            if (err) {
                 db.close();
                 return res.send(err);
             }
             db.close();
-            res.send('Deleted');
-        })
+            fs.unlink(fileToDelete,function(err){
+                if (err){
+                    return console.log(err);
+                }
+                res.send('Deleted');
+            });
+        });
     });
 });
 
 var ages = require('./ages_model.js');
-router.post('/ages',function(req,res){
+router.post('/ages', function (req, res) {
     mongoose.Promise = global.Promise;
     mongoose.connect(mongoURL);
     var db = mongoose.connection;
     db.on('error', function (err) {
-        console.log(err);
+        //console.log(err);
     });
     db.once('open', function () {
-        ages.find({},function(err,docs){
-            if (err){
+        ages.find({}, function (err, docs) {
+            if (err) {
                 db.close();
                 return res.send(err);
             }
@@ -266,16 +294,16 @@ router.post('/ages',function(req,res){
 });
 
 var colors = require('./colors_model.js');
-router.post('/colors',function(req,res){
+router.post('/colors', function (req, res) {
     mongoose.Promise = global.Promise;
     mongoose.connect(mongoURL);
     var db = mongoose.connection;
     db.on('error', function (err) {
-        console.log(err);
+        //console.log(err);
     });
     db.once('open', function () {
-        colors.find({},function(err,docs){
-            if (err){
+        colors.find({}, function (err, docs) {
+            if (err) {
                 db.close();
                 return res.send(err);
             }
@@ -286,16 +314,16 @@ router.post('/colors',function(req,res){
 });
 
 var genders = require('./genders_model.js');
-router.post('/genders',function(req,res){
+router.post('/genders', function (req, res) {
     mongoose.Promise = global.Promise;
     mongoose.connect(mongoURL);
     var db = mongoose.connection;
     db.on('error', function (err) {
-        console.log(err);
+        //console.log(err);
     });
     db.once('open', function () {
-        genders.find({},function(err,docs){
-            if (err){
+        genders.find({}, function (err, docs) {
+            if (err) {
                 db.close();
                 return res.send(err);
             }
@@ -306,16 +334,16 @@ router.post('/genders',function(req,res){
 });
 
 var occasions = require('./occasions_model.js');
-router.post('/occasions',function(req,res){
+router.post('/occasions', function (req, res) {
     mongoose.Promise = global.Promise;
     mongoose.connect(mongoURL);
     var db = mongoose.connection;
     db.on('error', function (err) {
-        console.log(err);
+        //console.log(err);
     });
     db.once('open', function () {
-        occasions.find({},function(err,docs){
-            if (err){
+        occasions.find({}, function (err, docs) {
+            if (err) {
                 db.close();
                 return res.send(err);
             }
@@ -326,16 +354,16 @@ router.post('/occasions',function(req,res){
 });
 
 var types = require('./types_model.js');
-router.post('/types',function(req,res){
+router.post('/types', function (req, res) {
     mongoose.Promise = global.Promise;
     mongoose.connect(mongoURL);
     var db = mongoose.connection;
     db.on('error', function (err) {
-        console.log(err);
+        //console.log(err);
     });
     db.once('open', function () {
-        types.find({},function(err,docs){
-            if (err){
+        types.find({}, function (err, docs) {
+            if (err) {
                 db.close();
                 return res.send(err);
             }
@@ -346,16 +374,16 @@ router.post('/types',function(req,res){
 });
 
 var weathers = require('./weathers_model.js');
-router.post('/weathers',function(req,res){
+router.post('/weathers', function (req, res) {
     mongoose.Promise = global.Promise;
     mongoose.connect(mongoURL);
     var db = mongoose.connection;
     db.on('error', function (err) {
-        console.log(err);
+        //console.log(err);
     });
     db.once('open', function () {
-        weathers.find({},function(err,docs){
-            if (err){
+        weathers.find({}, function (err, docs) {
+            if (err) {
                 db.close();
                 return res.send(err);
             }
