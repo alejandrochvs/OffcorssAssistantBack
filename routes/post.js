@@ -5,7 +5,7 @@ var router = express.Router();
 var multer = require('multer');
 var storage = multer.diskStorage({
     destination: function (req, file, callback) {
-        callback(null, path.join(__dirname,'../public/img/ecards'));
+        callback(null, path.join(__dirname,'../public/IMG/ecards'));
     },
     filename: function (req, file, callback) {
         callback(null, file.originalname);
