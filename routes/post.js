@@ -1,10 +1,11 @@
 var express = require('express');
+var path = require('path');
 var app = express();
 var router = express.Router();
 var multer = require('multer');
 var storage = multer.diskStorage({
     destination: function (req, file, callback) {
-        callback(null, path.join(__dirname,'public/img/ecards'));
+        callback(null, path.join(__dirname,'../public/img/ecards'));
     },
     filename: function (req, file, callback) {
         callback(null, file.originalname);
@@ -18,7 +19,6 @@ router.post('/img', function (req, res) {
         if (err) {
             return console.log(err);
         }
-        console.log(req.file.originalname);
         res.end(req.file.originalname);
     });
 });
