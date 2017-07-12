@@ -91,12 +91,18 @@
                         border-bottom-right-radius: 5px;
                         li {
                             list-style-type: none;
+                            line-height: 3.5vh;
                         }
                         &.active {
                             background: white;
                             color: #333;
                             max-height: 400vh;
                             padding: 0;
+                            -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1) inset;
+                            -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1) inset;
+                            box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1) inset;
+                            border-bottom-left-radius: 5px;
+                            border-bottom-right-radius: 5px;
                             li {
                                 background: transparent;
                                 transition: all .3s ease;
@@ -167,8 +173,8 @@
                 .fa-angle-down {
                     transform: rotate(180deg);
                 }
-                .fa-eye{
-                    &:before{
+                .fa-eye {
+                    &:before {
                         content: "\f070";
                     }
                 }
@@ -198,9 +204,9 @@
                         }
                     }
                 }
-                i.fa{
+                i.fa {
                     transform: rotate(0deg);
-                    &.active{
+                    &.active {
                         transform: rotate(180deg);
                     }
                 }

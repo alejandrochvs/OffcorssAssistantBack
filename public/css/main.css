@@ -288,21 +288,26 @@ html {
         overflow: hidden;
         transition: all .6s ease;
         color: white;
-        background: orangered;
         top: -1vh;
         z-index: 1;
         text-align: center; }
-        html body .content .warning-wrapper div:nth-child(2) {
-          border-right: solid 2px white;
-          border-left: solid 2px white; }
+        html body .content .warning-wrapper div {
+          background: orangered; }
+          html body .content .warning-wrapper div:nth-child(2) {
+            border-right: solid 2px white;
+            border-left: solid 2px white; }
         html body .content .warning-wrapper .col-xs-2 {
           cursor: pointer;
           transition: all .3s ease;
           background: #e63e00; }
           html body .content .warning-wrapper .col-xs-2:hover {
             background: #cc3700; }
+        html body .content .warning-wrapper .disabler {
+          height: 100vh;
+          background: transparent;
+          transition: all 0s ease; }
         html body .content .warning-wrapper.active {
-          max-height: 30vh; }
+          max-height: 100vh; }
       html body .content .screen {
         width: 100vw;
         position: absolute;
@@ -2217,13 +2222,19 @@ html {
                       border-bottom-right-radius: 5px; }
                       html body .content .screen .container .e-cards-container .e-cards-table .e-card-item .e-card-desc div ul li,
                       html body .content .screen .container .e-cards-container .e-cards-table .e-card-new .e-card-desc div ul li {
-                        list-style-type: none; }
+                        list-style-type: none;
+                        line-height: 3.5vh; }
                       html body .content .screen .container .e-cards-container .e-cards-table .e-card-item .e-card-desc div ul.active,
                       html body .content .screen .container .e-cards-container .e-cards-table .e-card-new .e-card-desc div ul.active {
                         background: white;
                         color: #333;
                         max-height: 400vh;
-                        padding: 0; }
+                        padding: 0;
+                        -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1) inset;
+                        -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1) inset;
+                        box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1) inset;
+                        border-bottom-left-radius: 5px;
+                        border-bottom-right-radius: 5px; }
                         html body .content .screen .container .e-cards-container .e-cards-table .e-card-item .e-card-desc div ul.active li,
                         html body .content .screen .container .e-cards-container .e-cards-table .e-card-new .e-card-desc div ul.active li {
                           background: transparent;
