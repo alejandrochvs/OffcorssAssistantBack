@@ -28,7 +28,7 @@
                     border-top-right-radius: 5px;
                 }
                 &:hover {
-                    background: darken(whitesmoke, 5%);
+                    background: darken(whitesmoke, 0%);
                 }
             }
         }
@@ -64,7 +64,7 @@
                     white-space: nowrap;
                     transition: all .3s ease;
                     background: transparent;
-                    padding: 0;
+                    padding: 0 15px;
                     input {
                         border: none;
                         outline: none;
@@ -91,7 +91,7 @@
                         border-bottom-right-radius: 5px;
                         li {
                             list-style-type: none;
-                            line-height: 3.5vh;
+                            line-height: 4.5vh;
                         }
                         &.active {
                             background: white;
@@ -131,30 +131,45 @@
                 }
             }
             &:hover {
-                background: darken(whitesmoke, 0%);
-                -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-                -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-                box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                background: white;
+                -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.125);
+                -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.125);
+                box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.125);
                 .e-card-desc {
-                    border-color: lightgray;
+                    border-color: darken(whitesmoke, 5%);
                 }
             }
             .fa-angle-down {
                 transition: all .3s ease;
                 transform: rotate(0deg);
             }
+            .fa{
+                transition: all .3s ease;
+            }
+            .fa-camera{
+                &:hover{
+                    color: #6DB75D;
+                }
+            }
             &.active {
                 max-height: 400vh;
                 cursor: default;
-                background: whitesmoke;
+                background: white;
                 -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
                 -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
                 box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
                 .e-card-desc {
-                    border-color: lightgray;
+                    border-color: darken(whitesmoke, 5%);
                     div {
                         &:hover {
-                            background: darken(whitesmoke, 10%);
+                            background: whitesmoke;
+                        }
+                    }
+                    &:last-child {
+                        div {
+                            &:hover {
+                                background: white;
+                            }
                         }
                     }
                 }
@@ -177,9 +192,26 @@
                     &:before {
                         content: "\f070";
                     }
+                    &:hover {
+                        color: #00AFD3;
+                        background: white;
+                    }
                 }
-                &:hover {
-                    background: darken(whitesmoke, 0%);
+                .fa-trash,.fa-ban {
+                    &:hover {
+                        color: orangered;
+                        background: white;
+                    }
+                }
+                .fa-plus-square{
+                    &:hover{
+                        color: #6DB75D;
+                    }
+                }
+                .fa-pencil{
+                    &:hover{
+                        color: $yellow;
+                    }
                 }
             }
         }
@@ -233,10 +265,10 @@
                 white-space: nowrap;
             }
             &:hover {
-                background: whitesmoke;
+                background: darken(whitesmoke,2.5%);
             }
             &.active {
-                background: darken(whitesmoke, 5%);
+                background: darken(whitesmoke, 0%);
             }
         }
         .table-prev {

@@ -812,6 +812,7 @@ $(function () {
                     var getOccasions = $.post('/db/occasions');
                     var getTypes = $.post('/db/types');
                     var getWeathers = $.post('/db/weathers');
+                    var editingECard = false;
                     $.when(getAges, getColors, getGenders, getOccasions, getTypes, getWeathers).done(function (resAges, resColors, resGenders, resOccasions, resTypes, resWeathers) {
                         dbAges = resAges[0];
                         dbColors = resColors[0];
@@ -937,6 +938,11 @@ $(function () {
                                                     })
                                                     return;
                                                 } else if (e.target == $(this).find('.fa-pencil')[0] && $(this).hasClass('active')) {
+                                                    editingECard = true;
+                                                    console.log($(this));
+                                                    $(this).click();
+                                                    $('.e-card-new').click();
+                                                    $('.e-card-item').css('max-height','0');
                                                     console.log('Edit mode.');
                                                     return;
                                                 }
@@ -1085,6 +1091,9 @@ $(function () {
                                 });
                                 $('.e-card-new > .e-card-desc > .fa-ban').click(function () {
                                     $('.e-card-new > .e-card-desc > div > .fa-trash').click();
+                                    if (editingECard){
+                                        $('.e-card-item').css('max-height','7vh');
+                                    }
                                 });
                                 $('.e-card-new > .e-card-desc > .fa-plus-square').click(function () {
                                     for (var i = 1; i < $('.e-card-new > .e-card-desc').length - 1; i++) {
