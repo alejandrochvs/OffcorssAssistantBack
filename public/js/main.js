@@ -891,7 +891,7 @@ $(function () {
                                                 for (var j = 0; j < res[i].occasion.length; j++) {
                                                     $('.e-card-item:last-child >.e-card-desc:last-child').append('<div class="col-xs-12">' + res[i].occasion[j] + '</div>');
                                                 }
-                                                $('.e-card-item:last-child').append('<div class="col-xs-1 e-card-desc e-card-edition"><div class="col-xs-6 fa fa-trash"></div><div class="col-xs-6 fa fa-pencil"></div></div>');
+                                                $('.e-card-item:last-child').append('<div class="col-xs-1 e-card-desc e-card-edition"><div class="col-xs-6 fa fa-trash" title="Borrar"></div><div class="col-xs-6 fa fa-pencil" title="Editar"></div></div>');
                                                 if (res[i].occasion.length > 1) {
                                                     $('.e-card-item:last-child > .e-card-occasion > div:first-child ').append(' <i class="fa fa-angle-down" aria-hidden="true"></i> ');
                                                 }
@@ -912,7 +912,7 @@ $(function () {
                                                 if (e.target == $(this).find('.fa-trash')[0] && $(this).hasClass('active')) {
                                                     var tempTrashThis = $(this);
                                                     $('.warning-wrapper').toggleClass('active');
-                                                    $('.warning-wrapper > .yes').click(function (e) {
+                                                    $('.warning-wrapper > .yes').click(function () {
                                                         var tempCurUrl = tempTrashThis.find('.e-card-img > img').attr('src').split('/');
                                                         tempCurUrl = tempCurUrl[tempCurUrl.length - 1];
                                                         var tempThis = tempTrashThis;
@@ -937,13 +937,11 @@ $(function () {
                                                         $('.warning-wrapper > .no').unbind();
                                                     })
                                                     return;
-                                                } else if (e.target == $(this).find('.fa-pencil')[0] && $(this).hasClass('active')) {
+                                                }
+                                                else if (e.target == $(this).find('.fa-pencil')[0] && $(this).hasClass('active')) {
                                                     editingECard = true;
-                                                    console.log($(this));
                                                     $(this).click();
                                                     $('.e-card-new').click();
-                                                    $('.e-card-item').css('max-height','0');
-                                                    console.log('Edit mode.');
                                                     return;
                                                 }
                                                 if ($(this).hasClass('active')) {
@@ -1091,8 +1089,12 @@ $(function () {
                                 });
                                 $('.e-card-new > .e-card-desc > .fa-ban').click(function () {
                                     $('.e-card-new > .e-card-desc > div > .fa-trash').click();
-                                    if (editingECard){
-                                        $('.e-card-item').css('max-height','7vh');
+                                    if (editingECard) {
+                                        editingECard = false;
+                                        $('.e-card-item').css('max-height', '7vh');
+                                        $('.fa-eye').click();
+                                        $('.fa-eye').click();
+                                        console.log(editingECard);
                                     }
                                 });
                                 $('.e-card-new > .e-card-desc > .fa-plus-square').click(function () {
@@ -1135,7 +1137,7 @@ $(function () {
                                         success: function (res) {
                                             $('.e-cards-table > div.active > .e-card-desc > .fa-eye').click();
                                             $('.e-cards-table > div.active > .e-card-desc > .fa-ban').click();
-                                            if ($('.table-page').last().hasClass('active')){
+                                            if ($('.table-page').last().hasClass('active')) {
                                                 $('.table-page').first().click();
                                                 $('.table-page').last().click();
                                             }
