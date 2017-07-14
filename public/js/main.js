@@ -622,12 +622,6 @@ $(function () {
                         loop: true
                     });
                     var data = {
-                        gender: "",
-                        age: "",
-                        type: [],
-                        color: [],
-                        weather: [],
-                        occasion: []
                     }
                     if (gender == "F") {
                         data.gender = "FEMENINO";
@@ -651,11 +645,22 @@ $(function () {
                             $('.resultIMG').append('<img class="col-xs-12" src="IMG/ecards/' + res[0].url + '"/>');
                             $('.result > .selection-wrap').remove();
                             $('.progress').removeClass('loading');
+                            data.bottomSize = bottomSize;
+                            data.topSize = topSize;
+                            data.shoeSize = shoeSize;
+                            data.occasion = occasion;
+                            data.weather = weather;
+                            data.color = favColor;
+                            data.personality = personality;
+                            data.phone = $('.call-modal > .input > input').val();
+                            console.log($('.call-modal > .input > input').val());
+                            data.e_card = res[0].url;
+                            $('.call-modal > .button').click(function(){
+//                                console.log(name + ' - ' + gender + ' - ' + age + ' - bottom : ' +  bottomSize + ' - top : ' + topSize + ' - shoe : ' + shoeSize + " - Ocasion : " + occasion + ' - Weather : ' + weather + " - Color : " + favColor + ' - Personality : ' + personality + ' - Phone : ' + $('.call-modal > .input > input').val() + ' - e_card : ' + res[0].url);
+                                console.log(data);
+                                $('.call-modal').removeClass('active');
+                            });
                         }
-                    });
-                    $('.finish').click(function () {
-                        localStorage.clear();
-                        window.location.href = 'http://www.offcorss.com/';
                     });
                 } else if (current === 'login') {
                     $('.head.title > .cont').html(headTitle4);
@@ -820,7 +825,7 @@ $(function () {
                         $.post({
                             url: '/db/ages',
                             success: function (res) {
-                                dbAges = res[0];
+                                dbAges = res;
                                 getColors();
                             }
                         });
@@ -829,7 +834,7 @@ $(function () {
                         $.post({
                             url: '/db/colors',
                             success: function (res) {
-                                dbColors = res[0];
+                                dbColors = res;
                                 getGenders();
                             }
                         });
@@ -838,7 +843,7 @@ $(function () {
                         $.post({
                             url: '/db/genders',
                             success: function (res) {
-                                dbGenders = res[0];
+                                dbGenders = res;
                                 getOccasions();
 
                             }
@@ -848,7 +853,7 @@ $(function () {
                         $.post({
                             url: '/db/occasions',
                             success: function (res) {
-                                dbOccasions = res[0];
+                                dbOccasions = res;
                                 getTypes();
                             }
                         });
@@ -857,7 +862,7 @@ $(function () {
                         $.post({
                             url: '/db/types',
                             success: function (res) {
-                                dbTypes = res[0];
+                                dbTypes = res;
                                 getWeathers();
                             }
                         });
@@ -866,7 +871,7 @@ $(function () {
                         $.post({
                             url: '/db/weathers',
                             success: function (res) {
-                                dbWeathers = res[0];
+                                dbWeathers = res;
                                 $('.progress').removeClass('loading');
                                 var loadEdition = function (eCardDiv) {
                                     var ulList = eCardDiv.find('ul');
@@ -992,6 +997,9 @@ $(function () {
                                                         } else if (e.target == $(this).find('.fa-pencil')[0] && $(this).hasClass('active')) {
                                                             editingECard = true;
                                                             $(this).click();
+                                                            $('.e-card-new > .e-card-desc > .fa-ban').click();
+                                                            $('.e-card-new > .e-card-desc:nth-child(1) > div').append(
+                                                            $(this).find('.e-card-desc:nth-child(1) > img')[0].outerHTML);
                                                             $('.e-card-new').click();
                                                             return;
                                                         }
