@@ -318,7 +318,6 @@ $(function () {
                     $('.size > .selection-wrap > .title > .text').append('<i class="fa fa-exclamation hidden-xs" aria-hidden="true"></i>')
                     $('.loader > .progress').css('width', '30%');
                     $('.sizes-guide > .img').append('<img src="../IMG/Size/' + currentClass + '.jpg" class="col-xs-12" alt="">');
-                    $('.progress').addClass('loading');
                     $.ajax({
                         type: 'POST',
                         url: '/db/sizes',
@@ -389,7 +388,6 @@ $(function () {
                                 $($('.padWrap')[0]).find('.box:contains("' + topSize + '")').last().addClass('active');
                                 $($('.padWrap')[1]).find('.box:contains("' + bottomSize + '")').last().addClass('active');
                             }
-                            $('.progress').removeClass('loading');
                         }
                     });
                 } else if (current === divs[4]) {
@@ -401,7 +399,6 @@ $(function () {
                     $('.sizePrimi > .selection-wrap > .title > .text').append('<i class="fa fa-exclamation hidden-xs" aria-hidden="true"></i>')
                     $('.loader > .progress').css('width', '30%');
                     $('.sizes-guide > .img').append('<img src="../IMG/Size/' + currentClass + '.jpg" class="col-xs-12" alt="">');
-                    $('.progress').addClass('loading');
                     $.ajax({
                         type: "POST",
                         url: '/db/sizes',
@@ -448,7 +445,6 @@ $(function () {
                                     next(divs[5]);
                                 }
                             });
-                            $('.progress').removeClass('loading');
                         }
                     });
                 } else if (current === divs[5]) {
@@ -526,6 +522,7 @@ $(function () {
                     $('.colors > .color-wrap:nth-child(4) > .select').html(colorName4);
                     $('.loader > .progress').css('width', '70%');
                     $('.color').addClass(currentClass);
+                    $('.progress').addClass('loading');
                     $.post('/db/colors', function (res) {
                         for (var i = 0; i < res.length; i++) {
                             $('.colors').append('<div class="col-xs-6 col-sm-4 col-md-2 color-wrap"> <div class="col-xs-12 select text-editable" style="border-color:' + res[i].hex + ';" data-color="' + res[i].color + '" data-var="colorName1">' + res[i].color + '</div></div>')
@@ -535,6 +532,7 @@ $(function () {
                             localStorage.setItem('favColor', favColor);
                             next(divs[8]);
                         });
+                        $('.progress').removeClass('loading');
                     });
                 } else if (current === "looks") {
                     $('.header > .title > .cont').html(headTitle2);
@@ -827,6 +825,7 @@ $(function () {
                     var getTypes = $.post('/db/types');
                     var getWeathers = $.post('/db/weathers');
                     var editingECard = false;
+                    $('.progress').addClass('loading');
                     $.when(getAges, getColors, getGenders, getOccasions, getTypes, getWeathers).done(function (resAges, resColors, resGenders, resOccasions, resTypes, resWeathers) {
                         dbAges = resAges[0];
                         dbColors = resColors[0];
@@ -834,6 +833,7 @@ $(function () {
                         dbOccasions = resOccasions[0];
                         dbTypes = resTypes[0];
                         dbWeathers = resWeathers[0];
+                        $('.progress').removeClass('loading');
                         var loadEdition = function (eCardDiv) {
                             var ulList = eCardDiv.find('ul');
                             for (var i = 0; i < dbGenders.length; i++) {
@@ -1093,7 +1093,25 @@ $(function () {
                                     return false;
                                 });
                                 $('#uploadForm > input[type="file"]').change(function () {
-                                    $('#uploadForm > input[type="submit"]').click();
+                                    if ($('.e-card-img-new > div > img').length == 1) {
+                                        var tempCurlUrlFromBan = $('.e-card-img-new > div > img').attr('src').split('/');
+                                        tempCurlUrlFromBan = tempCurlUrlFromBan[tempCurlUrlFromBan.length - 1];
+                                        $('.progress').toggleClass('loading');
+                                        $.ajax({
+                                            type: 'POST',
+                                            url: '/db/e-cards/delete',
+                                            data: {
+                                                url: tempCurlUrlFromBan
+                                            },
+                                            success: function () {
+                                                $('.e-card-img-new > div > img').remove();
+                                                $('#uploadForm > input[type="submit"]').click();
+                                                $('.progress').removeClass('loading');
+                                            }
+                                        });
+                                    } else {
+                                        $('#uploadForm > input[type="submit"]').click();
+                                    }
                                 });
                                 $('.e-card-new > .e-card-desc > div.ref > .fa-plus-square').click(function () {
                                     var inputVal = $('.e-card-new > .e-card-desc > div.ref > input').val();
@@ -1109,6 +1127,22 @@ $(function () {
                                 });
                                 $('.e-card-new > .e-card-desc > .fa-ban').click(function () {
                                     $('.e-card-new > .e-card-desc > div > .fa-trash').click();
+                                    if ($('.e-card-img-new > div > img').length == 1) {
+                                        var tempCurlUrlFromBan = $('.e-card-img-new > div > img').attr('src').split('/');
+                                        tempCurlUrlFromBan = tempCurlUrlFromBan[tempCurlUrlFromBan.length - 1];
+                                        $('.progress').toggleClass('loading');
+                                        $.ajax({
+                                            type: 'POST',
+                                            url: '/db/e-cards/delete',
+                                            data: {
+                                                url: tempCurlUrlFromBan
+                                            },
+                                            success: function () {
+                                                $('.progress').removeClass('loading');
+                                                $('.e-card-img-new > div > img').remove();
+                                            }
+                                        });
+                                    }
                                     if (editingECard) {
                                         editingECard = false;
                                         $('.e-card-item').css('max-height', '7vh');

@@ -254,13 +254,11 @@ router.post('/e-cards/delete', function (req, res) {
     db.once('open', function () {
         var toDelete = req.body.url;
         var fileToDelete = path.join('./public/IMG/ecards/' + toDelete);
-        console.log(fileToDelete);
         eCards.findOneAndRemove({
             url: toDelete
         }, function (err) {
             if (err) {
-                db.close();
-                return res.send(err);
+                console.log(res.send(err));
             }
             db.close();
             fs.unlink(fileToDelete,function(err){
