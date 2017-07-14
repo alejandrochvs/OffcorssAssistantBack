@@ -2399,19 +2399,36 @@ html {
           -moz-box-shadow: 0px 0px 12px 1px transparent;
           box-shadow: 0px 0px 12px 1px transparent;
           border-radius: 0;
-          z-index: 1; }
+          z-index: 1;
+          position: relative;
+          left: 0%; }
+          html body .footer .loader .progress.loading {
+            background: #fd0;
+            animation: loading 3s ease infinite; }
         html body .footer .loader.girl .progress {
           background: #e70095; }
+          html body .footer .loader.girl .progress.loading {
+            background: #e70095; }
         html body .footer .loader.boy .progress {
           background: #fd4605; }
+          html body .footer .loader.boy .progress.loading {
+            background: #fd4605; }
         html body .footer .loader.bGirl .progress {
           background: #9794d2; }
+          html body .footer .loader.bGirl .progress.loading {
+            background: #9794d2; }
         html body .footer .loader.bBoy .progress {
           background: #82bc00; }
+          html body .footer .loader.bBoy .progress.loading {
+            background: #82bc00; }
         html body .footer .loader.nGirl .progress {
           background: #ee9bac; }
+          html body .footer .loader.nGirl .progress.loading {
+            background: #ee9bac; }
         html body .footer .loader.nBoy .progress {
           background: #3e8ede; }
+          html body .footer .loader.nBoy .progress.loading {
+            background: #3e8ede; }
       html body .footer .brand {
         margin: auto;
         background-image: url("../IMG/Logo-01.png");
@@ -2435,6 +2452,22 @@ html {
       html body.admin {
         height: 100vh; } }
 
+@keyframes loading {
+  0% {
+    left: -5%;
+    width: 0%; }
+  5% {
+    left: -5%;
+    width: 0%; }
+  50% {
+    left: 25%;
+    width: 50%; }
+  95% {
+    width: 0%;
+    left: 105%; }
+  100% {
+    width: 0%;
+    left: 105%; } }
 @keyframes fade {
   0% {
     z-index: 1;

@@ -34,12 +34,14 @@ $(function () {
                 string: toFind,
                 change: toChange
             };
+            $('.progress').addClass('loading');
             $.ajax({
                 url: '/admin/edit',
                 type: "POST",
                 data: data,
                 success: function (res) {
                     console.log(res);
+                    $('.progress').removeClass('loading');
                 }
             });
         },
@@ -48,6 +50,7 @@ $(function () {
                 string: "$" + toFind,
                 change: toChange
             };
+            $('.progress').addClass('loading');
             $.ajax({
                 type: 'POST',
                 url: '/admin/colors',
@@ -58,6 +61,7 @@ $(function () {
                     } else {
                         console.error(res);
                     }
+                    $('.progress').removeClass('loading');
                 }
             });
         },
@@ -314,6 +318,7 @@ $(function () {
                     $('.size > .selection-wrap > .title > .text').append('<i class="fa fa-exclamation hidden-xs" aria-hidden="true"></i>')
                     $('.loader > .progress').css('width', '30%');
                     $('.sizes-guide > .img').append('<img src="../IMG/Size/' + currentClass + '.jpg" class="col-xs-12" alt="">');
+                    $('.progress').addClass('loading');
                     $.ajax({
                         type: 'POST',
                         url: '/db/sizes',
@@ -384,6 +389,7 @@ $(function () {
                                 $($('.padWrap')[0]).find('.box:contains("' + topSize + '")').last().addClass('active');
                                 $($('.padWrap')[1]).find('.box:contains("' + bottomSize + '")').last().addClass('active');
                             }
+                            $('.progress').removeClass('loading');
                         }
                     });
                 } else if (current === divs[4]) {
@@ -395,6 +401,7 @@ $(function () {
                     $('.sizePrimi > .selection-wrap > .title > .text').append('<i class="fa fa-exclamation hidden-xs" aria-hidden="true"></i>')
                     $('.loader > .progress').css('width', '30%');
                     $('.sizes-guide > .img').append('<img src="../IMG/Size/' + currentClass + '.jpg" class="col-xs-12" alt="">');
+                    $('.progress').addClass('loading');
                     $.ajax({
                         type: "POST",
                         url: '/db/sizes',
@@ -441,6 +448,7 @@ $(function () {
                                     next(divs[5]);
                                 }
                             });
+                            $('.progress').removeClass('loading');
                         }
                     });
                 } else if (current === divs[5]) {
@@ -638,6 +646,7 @@ $(function () {
                         data.age = 'NIÑO (5 AÑOS - 13 AÑOS)';
                     }
                     data.color = favColor;
+                    $('.progress').addClass('loading');
                     $.ajax({
                         type: "POST",
                         url: "db/e-cards/match",
@@ -645,6 +654,7 @@ $(function () {
                         success: function (res) {
                             $('.resultIMG').append('<img class="col-xs-12" src="IMG/ecards/' + res[0].url + '"/>');
                             $('.result > .selection-wrap').remove();
+                            $('.progress').removeClass('loading');
                         }
                     });
                     $('.finish').click(function () {
@@ -660,6 +670,7 @@ $(function () {
                                 username: username,
                                 password: password
                             };
+                            $('.progress').addClass('loading');
                             $.ajax({
                                 type: 'POST',
                                 url: '/db/users/login',
@@ -676,6 +687,7 @@ $(function () {
                                         loadAdmin();
                                         next('gender');
                                         console.log('Logged in.');
+                                        $('.progress').removeClass('loading');
                                     }
                                 }
                             });
@@ -734,6 +746,7 @@ $(function () {
                                 current_page: 0,
                                 profile_picture: " "
                             };
+                            $('.progress').addClass('loading');
                             $.ajax({
                                 type: 'POST',
                                 url: '/db/users/register',
@@ -742,6 +755,7 @@ $(function () {
                                     if (result !== 'User already exists.') {
                                         previous(divs[0]);
                                     }
+                                    $('.progress').removeClass('loading');
                                     return console.log(result);
                                 }
                             });
@@ -842,6 +856,7 @@ $(function () {
                             }
                         }
                         loadEdition($('.e-card-new'));
+                        $('.progress').addClass('loading');
                         $.ajax({
                             type: "POST",
                             url: '/db/e-cards/count',
@@ -857,6 +872,7 @@ $(function () {
                                     $('<li class="col-xs-' + pagesColumns + ' table-page"><h6>' + (i + 1) + '</h6></li>').insertBefore('.table-next');
                                 }
                                 var requestECards = function (offset) {
+                                    $('.progress').addClass('loading');
                                     $.ajax({
                                         type: "POST",
                                         url: '/db/e-cards',
@@ -916,6 +932,7 @@ $(function () {
                                                         var tempCurUrl = tempTrashThis.find('.e-card-img > img').attr('src').split('/');
                                                         tempCurUrl = tempCurUrl[tempCurUrl.length - 1];
                                                         var tempThis = tempTrashThis;
+                                                        $('.progress').addClass('loading');
                                                         $.ajax({
                                                             type: 'POST',
                                                             url: '/db/e-cards/delete',
@@ -925,6 +942,7 @@ $(function () {
                                                             success: function () {
                                                                 tempThis.click();
                                                                 tempThis.remove();
+                                                                $('.progress').removeClass('loading');
                                                             }
                                                         });
                                                         $('.warning-wrapper').toggleClass('active');
@@ -937,8 +955,7 @@ $(function () {
                                                         $('.warning-wrapper > .no').unbind();
                                                     })
                                                     return;
-                                                }
-                                                else if (e.target == $(this).find('.fa-pencil')[0] && $(this).hasClass('active')) {
+                                                } else if (e.target == $(this).find('.fa-pencil')[0] && $(this).hasClass('active')) {
                                                     editingECard = true;
                                                     $(this).click();
                                                     $('.e-card-new').click();
@@ -1009,6 +1026,7 @@ $(function () {
                                                     });
                                                 }
                                             });
+                                            $('.progress').removeClass('loading');
                                         }
                                     });
                                 }
@@ -1060,6 +1078,7 @@ $(function () {
                                 });
                                 $('#uploadForm').submit(function () {
                                     $("#status").empty().text("File is uploading...");
+                                    $('.progress').addClass('loading');
                                     $(this).ajaxSubmit({
                                         error: function (xhr) {
                                             status('Error: ' + xhr.status);
@@ -1068,6 +1087,7 @@ $(function () {
                                             $('.e-card-img-new > div > img').remove();
                                             $('.e-card-img-new > div').append('<img class="col-xs-12" src="../IMG/ecards/' + res + '">');
                                             imgToPost = res;
+                                            $('.progress').removeClass('loading');
                                         }
                                     });
                                     return false;
@@ -1130,6 +1150,7 @@ $(function () {
                                         weather: weatherToPost,
                                         occasion: occasionToPost
                                     }
+                                    $('.progress').addClass('loading');
                                     $.ajax({
                                         type: "POST",
                                         url: 'db/e-cards/upload',
@@ -1141,6 +1162,7 @@ $(function () {
                                                 $('.table-page').first().click();
                                                 $('.table-page').last().click();
                                             }
+                                            $('.progress').removeClass('loading');
                                         }
                                     })
                                 });
@@ -1184,6 +1206,7 @@ $(function () {
                 }
             });
         };
+
     next = function (cur) {
         current = cur;
         if (cur !== 'login') {
@@ -1217,6 +1240,7 @@ $(function () {
             username: tempLocalStorage.username,
             password: tempLocalStorage.token
         };
+        $('.progress').addClass('loading');
         $.ajax({
             type: "POST",
             url: "/db/users/login",
@@ -1367,6 +1391,7 @@ $(function () {
                     admin = false;
                 });
                 console.log('Loaded admin.');
+                $('.progress').removeClass('loading');
             }
         });
     };
@@ -1379,6 +1404,7 @@ $(function () {
             next('404');
             current = tempCurrent || 'gender';
             localStorage.current = current;
+            $('.progress').removeClass('loading');
             return;
         }
 
@@ -1416,6 +1442,7 @@ $(function () {
             }
         }
         next(current);
+        $('.progress').removeClass('loading');
     } else {
         if (admin) {
             if (localStorage.admin) {
@@ -1431,6 +1458,7 @@ $(function () {
             current = divs[0];
         }
         next(current);
+        $('.progress').removeClass('loading');
     }
     $('.back').click(function () {
         if (current === divs[5]) {

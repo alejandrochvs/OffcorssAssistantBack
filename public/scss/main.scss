@@ -242,35 +242,59 @@ html {
                     box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0);
                     border-radius: 0;
                     z-index: 1;
+                    position: relative;
+                    left: 0%;
+                    &.loading{
+                        background: $yellow;
+                        animation: loading 3s ease infinite;
+                    }
                 }
                 &.girl {
                     .progress {
                         background: $girl;
+                        &.loading{
+                            background: $girl;
+                        }
                     }
                 }
                 &.boy {
                     .progress {
                         background: $boy;
+                        &.loading{
+                            background: $boy;
+                        }
                     }
                 }
                 &.bGirl {
                     .progress {
                         background: $bGirl;
+                        &.loading{
+                            background: $bGirl;
+                        }
                     }
                 }
                 &.bBoy {
                     .progress {
                         background: $bBoy;
+                        &.loading{
+                            background: $bBoy;
+                        }
                     }
                 }
                 &.nGirl {
                     .progress {
                         background: $nGirl;
+                        &.loading{
+                            background: $nGirl;
+                        }
                     }
                 }
                 &.nBoy {
                     .progress {
                         background: $nBoy;
+                        &.loading{
+                            background: $nBoy;
+                        }
                     }
                 }
             }
@@ -314,5 +338,26 @@ html {
         }
     }
 }
-
+@keyframes loading{
+    0%{
+        left: -5%;
+        width: 0%;
+    }
+    5%{
+        left: -5%;
+        width: 0%;
+    }
+    50%{
+        left: 25%;
+        width: 50%;
+    }
+    95%{
+        width: 0%;
+        left: 105%;    
+    }
+    100%{
+        width: 0%;
+        left: 105%; 
+    }
+}
 @import 'modules/keyframes';
