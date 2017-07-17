@@ -239,14 +239,17 @@ html {
               transition: all 0.3s ease; }
               html body .header .head .cont.back span:hover {
                 color: #fd0; }
-          html body .header .head .cont a i {
-            font-size: 28px;
-            top: 5px;
-            position: relative;
-            color: #fd0;
-            transition: all 0.3s ease; }
-            html body .header .head .cont a i:hover {
-              color: #e6c700; }
+          html body .header .head .cont a {
+            text-decoration: none;
+            color: #333; }
+            html body .header .head .cont a i {
+              font-size: 28px;
+              top: 5px;
+              position: relative;
+              color: #fd0;
+              transition: all 0.3s ease; }
+              html body .header .head .cont a i:hover {
+                color: #e6c700; }
         html body .header .head.transparent {
           cursor: default;
           user-select: none; }
