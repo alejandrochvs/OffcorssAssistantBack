@@ -50,6 +50,7 @@
 </div>
 <script>
     var loadCustomers = function(sort) {
+        $('.loader > .progress').addClass('loading');
         $.ajax({
             type: 'POST',
             url: '/db/customers/count',
@@ -97,7 +98,8 @@
                             }else{
                                 $(this).removeClass('active');
                             }
-                        })
+                        });
+                        $('.loader > .progress').removeClass('loading');
                     }
                 })
             }
