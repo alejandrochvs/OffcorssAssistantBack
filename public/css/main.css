@@ -621,16 +621,24 @@ html {
                   transition: all 0.3s ease;
                   background: white;
                   border-bottom: solid 3px #fd0;
-                  padding: 2%; }
+                  padding: 2%;
+                  cursor: pointer; }
+                  html body .content .screen .container .size .selection-wrap .title .text a {
+                    color: #fd0;
+                    transition: all .3s ease;
+                    top: 10px;
+                    position: relative;
+                    font-size: 14px; }
                   html body .content .screen .container .size .selection-wrap .title .text .fa {
                     position: absolute;
-                    right: -7px;
+                    right: -18px;
                     top: -7px;
-                    background: red;
+                    background: #fd0;
                     border-radius: 50%;
-                    height: 25px;
-                    width: 25px;
-                    line-height: 25px;
+                    height: 18px;
+                    width: 18px;
+                    line-height: 18px;
+                    font-size: 14px;
                     color: white; }
               html body .content .screen .container .size .selection-wrap .padWrap .image {
                 height: 20vh; }
@@ -688,6 +696,10 @@ html {
                   display: inherit; }
             html body .content .screen .container .size.boy .selection-wrap .title .text {
               border-bottom-color: #fd4605; }
+              html body .content .screen .container .size.boy .selection-wrap .title .text a {
+                color: #fd4605; }
+                html body .content .screen .container .size.boy .selection-wrap .title .text a .fa {
+                  background-color: #fd4605; }
             html body .content .screen .container .size.boy .selection-wrap .padWrap .image div {
               color: #fd4605; }
             html body .content .screen .container .size.boy .selection-wrap .padWrap .padSize {
@@ -701,6 +713,10 @@ html {
               color: #fd4605; }
             html body .content .screen .container .size.girl .selection-wrap .title .text {
               border-bottom-color: #e70095; }
+              html body .content .screen .container .size.girl .selection-wrap .title .text a {
+                color: #e70095; }
+                html body .content .screen .container .size.girl .selection-wrap .title .text a .fa {
+                  background-color: #e70095; }
             html body .content .screen .container .size.girl .selection-wrap .padWrap .image div {
               color: #e70095; }
             html body .content .screen .container .size.girl .selection-wrap .padWrap .padSize {
@@ -714,6 +730,10 @@ html {
               color: #e70095; }
             html body .content .screen .container .size.bBoy .selection-wrap .title .text {
               border-bottom-color: #82bc00; }
+              html body .content .screen .container .size.bBoy .selection-wrap .title .text a {
+                color: #82bc00; }
+                html body .content .screen .container .size.bBoy .selection-wrap .title .text a .fa {
+                  background-color: #82bc00; }
             html body .content .screen .container .size.bBoy .selection-wrap .padWrap .image div {
               color: #82bc00; }
             html body .content .screen .container .size.bBoy .selection-wrap .padWrap .padSize {
@@ -727,6 +747,10 @@ html {
               color: #82bc00; }
             html body .content .screen .container .size.bGirl .selection-wrap .title .text {
               border-bottom-color: #9794d2; }
+              html body .content .screen .container .size.bGirl .selection-wrap .title .text a {
+                color: #9794d2; }
+                html body .content .screen .container .size.bGirl .selection-wrap .title .text a .fa {
+                  background-color: #9794d2; }
             html body .content .screen .container .size.bGirl .selection-wrap .padWrap .image div {
               color: #9794d2; }
             html body .content .screen .container .size.bGirl .selection-wrap .padWrap .padSize {
@@ -740,6 +764,10 @@ html {
               color: #9794d2; }
             html body .content .screen .container .size.nBoy .selection-wrap .title .text {
               border-bottom-color: #3e8ede; }
+              html body .content .screen .container .size.nBoy .selection-wrap .title .text a {
+                color: #3e8ede; }
+                html body .content .screen .container .size.nBoy .selection-wrap .title .text a .fa {
+                  background-color: #3e8ede; }
             html body .content .screen .container .size.nBoy .selection-wrap .padWrap .image div {
               color: #3e8ede; }
             html body .content .screen .container .size.nBoy .selection-wrap .padWrap .padSize {
@@ -753,6 +781,10 @@ html {
               color: #3e8ede; }
             html body .content .screen .container .size.nGirl .selection-wrap .title .text {
               border-bottom-color: #ee9bac; }
+              html body .content .screen .container .size.nGirl .selection-wrap .title .text a {
+                color: #ee9bac; }
+                html body .content .screen .container .size.nGirl .selection-wrap .title .text a .fa {
+                  background-color: #ee9bac; }
             html body .content .screen .container .size.nGirl .selection-wrap .padWrap .image div {
               color: #ee9bac; }
             html body .content .screen .container .size.nGirl .selection-wrap .padWrap .padSize {
@@ -796,15 +828,22 @@ html {
                   border-bottom: solid 3px #fd0;
                   padding: 2%;
                   cursor: pointer; }
+                  html body .content .screen .container .sizePrimi .selection-wrap .title .text a {
+                    color: #fd0;
+                    transition: all .3s ease;
+                    top: 10px;
+                    position: relative;
+                    font-size: 14px; }
                   html body .content .screen .container .sizePrimi .selection-wrap .title .text .fa {
                     position: absolute;
-                    right: -7px;
+                    right: -18px;
                     top: -7px;
-                    background: red;
+                    background: #fd0;
                     border-radius: 50%;
-                    height: 25px;
-                    width: 25px;
-                    line-height: 25px;
+                    height: 18px;
+                    width: 18px;
+                    line-height: 18px;
+                    font-size: 14px;
                     color: white; }
               html body .content .screen .container .sizePrimi .selection-wrap .padWrap .image {
                 height: 20vh; }
@@ -862,6 +901,10 @@ html {
                   right: 0; } }
             html body .content .screen .container .sizePrimi.nBoy .selection-wrap .title .text {
               border-bottom-color: #3e8ede; }
+              html body .content .screen .container .sizePrimi.nBoy .selection-wrap .title .text a {
+                color: #3e8ede; }
+                html body .content .screen .container .sizePrimi.nBoy .selection-wrap .title .text a .fa {
+                  background-color: #3e8ede; }
             html body .content .screen .container .sizePrimi.nBoy .selection-wrap .padWrap .image div {
               color: #3e8ede; }
             html body .content .screen .container .sizePrimi.nBoy .selection-wrap .padWrap .padSizePrimi {
@@ -875,6 +918,10 @@ html {
               color: #3e8ede; }
             html body .content .screen .container .sizePrimi.nGirl .selection-wrap .title .text {
               border-bottom-color: #ee9bac; }
+              html body .content .screen .container .sizePrimi.nGirl .selection-wrap .title .text a {
+                color: #ee9bac; }
+                html body .content .screen .container .sizePrimi.nGirl .selection-wrap .title .text a .fa {
+                  background-color: #ee9bac; }
             html body .content .screen .container .sizePrimi.nGirl .selection-wrap .padWrap .image div {
               color: #ee9bac; }
             html body .content .screen .container .sizePrimi.nGirl .selection-wrap .padWrap .padSizePrimi {
@@ -888,6 +935,10 @@ html {
               color: #ee9bac; }
             html body .content .screen .container .sizePrimi.girl .selection-wrap .title .text {
               border-bottom-color: #e70095; }
+              html body .content .screen .container .sizePrimi.girl .selection-wrap .title .text a {
+                color: #e70095; }
+                html body .content .screen .container .sizePrimi.girl .selection-wrap .title .text a .fa {
+                  background-color: #e70095; }
             html body .content .screen .container .sizePrimi.girl .selection-wrap .padWrap .image div {
               color: #e70095; }
             html body .content .screen .container .sizePrimi.girl .selection-wrap .padWrap .padSizePrimi {
@@ -901,6 +952,10 @@ html {
               color: #e70095; }
             html body .content .screen .container .sizePrimi.bGirl .selection-wrap .title .text {
               border-bottom-color: #9794d2; }
+              html body .content .screen .container .sizePrimi.bGirl .selection-wrap .title .text a {
+                color: #9794d2; }
+                html body .content .screen .container .sizePrimi.bGirl .selection-wrap .title .text a .fa {
+                  background-color: #9794d2; }
             html body .content .screen .container .sizePrimi.bGirl .selection-wrap .padWrap .image div {
               color: #9794d2; }
             html body .content .screen .container .sizePrimi.bGirl .selection-wrap .padWrap .padSizePrimi {
@@ -914,6 +969,10 @@ html {
               color: #9794d2; }
             html body .content .screen .container .sizePrimi.boy .selection-wrap .title .text {
               border-bottom-color: #fd4605; }
+              html body .content .screen .container .sizePrimi.boy .selection-wrap .title .text a {
+                color: #fd4605; }
+                html body .content .screen .container .sizePrimi.boy .selection-wrap .title .text a .fa {
+                  background-color: #fd4605; }
             html body .content .screen .container .sizePrimi.boy .selection-wrap .padWrap .image div {
               color: #fd4605; }
             html body .content .screen .container .sizePrimi.boy .selection-wrap .padWrap .padSizePrimi {
@@ -927,6 +986,10 @@ html {
               color: #fd4605; }
             html body .content .screen .container .sizePrimi.bBoy .selection-wrap .title .text {
               border-bottom-color: #82bc00; }
+              html body .content .screen .container .sizePrimi.bBoy .selection-wrap .title .text a {
+                color: #82bc00; }
+                html body .content .screen .container .sizePrimi.bBoy .selection-wrap .title .text a .fa {
+                  background-color: #82bc00; }
             html body .content .screen .container .sizePrimi.bBoy .selection-wrap .padWrap .image div {
               color: #82bc00; }
             html body .content .screen .container .sizePrimi.bBoy .selection-wrap .padWrap .padSizePrimi {
@@ -1617,360 +1680,23 @@ html {
                 html body .content .screen .container .personality .personWrap .person .background .title h4 {
                   font-size: 12px;
                   font-weight: 600; } }
-          html body .content .screen .container .loaderWrap {
-            left: -37.5px;
-            height: 120px; }
-@keyframes loadO1 {
-  0% {
-    height: 0px;
-    width: 10px;
-    top: 0px; }
-  50% {
-    height: 60px;
-    width: 10px;
-    top: 0px; }
-  100% {
-    height: 60px;
-    width: 10px;
-    top: 0px; } }
-@keyframes loadO2 {
-  0% {
-    height: 10px;
-    width: 0px;
-    top: 60px; }
-  50% {
-    height: 10px;
-    width: 0px;
-    top: 60px; }
-  100% {
-    height: 10px;
-    width: 50px;
-    top: 60px; } }
-@keyframes loadO3 {
-  0% {
-    height: 10px;
-    width: 0px;
-    top: 0px; }
-  5% {
-    height: 10px;
-    width: 0px;
-    top: 0px; }
-  50% {
-    height: 10px;
-    width: 50px;
-    top: 0px; }
-  100% {
-    height: 10px;
-    width: 50px;
-    top: 0px; } }
-@keyframes loadO4 {
-  0% {
-    height: 0px;
-    width: 10px;
-    top: 0px;
-    left: 50px; }
-  50% {
-    height: 0px;
-    width: 10px;
-    top: 0px;
-    left: 55px; }
-  100% {
-    height: 60px;
-    width: 10px;
-    top: 0px;
-    left: 55px; } }
-@keyframes loadO5 {
-  0% {
-    height: 0px;
-    width: 0px;
-    top: 0px;
-    left: 0px; }
-  100% {
-    height: 0px;
-    width: 0px;
-    top: 0px;
-    left: 0px; } }
-@keyframes loadF1 {
-  0% {
-    height: 0px;
-    width: 10px;
-    top: 0px; }
-  100% {
-    height: 60px;
-    width: 10px;
-    top: 0px; } }
-@keyframes loadF2 {
-  15% {
-    height: 10px;
-    width: 0px;
-    top: 0px; }
-  100% {
-    height: 10px;
-    width: 50px;
-    top: 0px; } }
-@keyframes loadF3 {
-  30% {
-    height: 10px;
-    width: 0px;
-    top: 23.07692px; }
-  100% {
-    height: 10px;
-    width: 47.5px;
-    top: 23.07692px; } }
-@keyframes loadF4 {
-  0% {
-    height: 0px;
-    width: 0px;
-    top: 0px; }
-  100% {
-    height: 0px;
-    width: 0px;
-    top: 0px; } }
-@keyframes loadF5 {
-  0% {
-    height: 0px;
-    width: 0px;
-    top: 0px; }
-  100% {
-    height: 0px;
-    width: 0px;
-    top: 0px; } }
-@keyframes loadC1 {
-  0% {
-    height: 10px;
-    width: 0px;
-    top: 0px; }
-  100% {
-    height: 10px;
-    width: 50px;
-    top: 0px; } }
-@keyframes loadC2 {
-  0% {
-    height: 0px;
-    width: 10px;
-    top: 0px; }
-  50% {
-    height: 60px;
-    width: 10px;
-    top: 0px; }
-  100% {
-    height: 60px;
-    width: 10px;
-    top: 0px; } }
-@keyframes loadC3 {
-  50% {
-    height: 10px;
-    width: 0px;
-    top: 60px; }
-  100% {
-    height: 10px;
-    width: 50px;
-    top: 60px; } }
-@keyframes loadC4 {
-  0% {
-    height: 0px;
-    width: 0px;
-    top: 0px; }
-  100% {
-    height: 0px;
-    width: 0px;
-    top: 0px; } }
-@keyframes loadC5 {
-  0% {
-    height: 0px;
-    width: 0px;
-    top: 0px; }
-  100% {
-    height: 0px;
-    width: 0px;
-    top: 0px; } }
-@keyframes loadR1 {
-  0% {
-    height: 10px;
-    width: 0px;
-    top: 0px; }
-  100% {
-    height: 10px;
-    width: 50px;
-    top: 0px; } }
-@keyframes loadR2 {
-  0% {
-    height: 0px;
-    width: 10px;
-    top: 0px; }
-  50% {
-    height: 60px;
-    width: 10px;
-    top: 0px; }
-  100% {
-    height: 60px;
-    width: 10px;
-    top: 0px; } }
-@keyframes loadR3 {
-  50% {
-    height: 10px;
-    width: 0px;
-    top: 30px; }
-  100% {
-    height: 10px;
-    width: 50px;
-    top: 30px; } }
-@keyframes loadR4 {
-  0% {
-    height: 0px;
-    width: 0px;
-    top: 0px;
-    left: 50px; }
-  50% {
-    width: 10px;
-    height: 0px;
-    top: 0px;
-    left: 50px; }
-  100% {
-    height: 30px;
-    width: 10px;
-    top: 0px;
-    left: 50px; } }
-@keyframes loadR5 {
-  0% {
-    height: 0px;
-    width: 10px;
-    top: 30px;
-    left: 12.5px;
-    transform: rotate(-45deg); }
-  70% {
-    transform-origin: top;
-    height: 0px;
-    width: 10px;
-    top: 35px;
-    left: 15px;
-    transform: rotate(-45deg); }
-  100% {
-    transform-origin: top;
-    height: 40px;
-    width: 10px;
-    top: 35px;
-    left: 15px;
-    transform: rotate(-45deg); } }
-@keyframes loadS1 {
-  0% {
-    height: 10px;
-    width: 0px;
-    top: 0px;
-    left: 50px; }
-  20% {
-    height: 10px;
-    width: 0px;
-    top: 0px;
-    left: 50px; }
-  40% {
-    height: 10px;
-    width: 50px;
-    top: 0px;
-    left: 0px; }
-  100% {
-    height: 10px;
-    width: 50px;
-    top: 0px;
-    left: 0px;
-    transform-origin: right; } }
-@keyframes loadS2 {
-  0% {
-    height: 0px;
-    width: 10px;
-    top: 0px;
-    left: 0px; }
-  20% {
-    height: 0px;
-    width: 10px;
-    top: 0px;
-    left: 0px; }
-  40% {
-    height: 30px;
-    width: 10px;
-    top: 0px;
-    left: 0px; }
-  100% {
-    height: 30px;
-    width: 10px;
-    top: 0px;
-    left: 0px; } }
-@keyframes loadS3 {
-  0% {
-    height: 10px;
-    width: 0px;
-    top: 30px;
-    left: 0px; }
-  40% {
-    height: 10px;
-    width: 0px;
-    top: 30px;
-    left: 0px; }
-  60% {
-    height: 10px;
-    width: 50px;
-    top: 30px;
-    left: 0px; }
-  100% {
-    height: 10px;
-    width: 50px;
-    top: 30px;
-    left: 0px; } }
-@keyframes loadS4 {
-  0% {
-    height: 0px;
-    width: 10px;
-    top: 30px;
-    left: 50px; }
-  60% {
-    height: 0px;
-    width: 10px;
-    top: 30px;
-    left: 50px; }
-  80% {
-    height: 30px;
-    width: 10px;
-    top: 30px;
-    left: 50px; }
-  100% {
-    height: 30px;
-    width: 10px;
-    top: 30px;
-    left: 50px; } }
-@keyframes loadS5 {
-  0% {
-    height: 10px;
-    width: 0px;
-    top: 60px;
-    left: 50px; }
-  80% {
-    height: 10px;
-    width: 0px;
-    top: 60px;
-    left: 50px; }
-  100% {
-    height: 10px;
-    width: 50px;
-    top: 60px;
-    left: 0px; } }
           html body .content .screen .container .result {
             padding: 5vh 0;
             height: 100%;
             overflow: scroll; }
             html body .content .screen .container .result .call-modal {
               background: white;
-              padding: 2%;
+              padding: 0;
               border-radius: 5px;
-              position: absolute;
+              position: fixed;
               z-index: 3;
               top: -100%;
               overflow: hidden;
               transition: all .3s ease;
-              padding: 0;
               -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
               -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
               box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
-              height: 30%; }
+              height: auto; }
               html body .content .screen .container .result .call-modal .fa-times {
                 position: absolute;
                 right: 10px;
@@ -1980,12 +1706,24 @@ html {
                 cursor: pointer;
                 transition: all .3s ease; }
                 html body .content .screen .container .result .call-modal .fa-times:hover {
-                  color: #fd0; }
+                  color: #5f8900; }
               html body .content .screen .container .result .call-modal .title {
                 background: #82bc00;
-                color: white; }
+                color: white;
+                padding: 2%; }
+                html body .content .screen .container .result .call-modal .title h4 {
+                  font-size: 2em; }
               html body .content .screen .container .result .call-modal .input {
-                padding: 4% 0px; }
+                padding: 4% 0px;
+                margin-bottom: 1vh; }
+                html body .content .screen .container .result .call-modal .input input {
+                  border: none;
+                  outline: none;
+                  border-bottom: solid 2px #82bc00;
+                  padding: 2%;
+                  transition: all .3s ease; }
+                html body .content .screen .container .result .call-modal .input.wrong input {
+                  border-bottom-color: orangered !important; }
               html body .content .screen .container .result .call-modal .button {
                 cursor: pointer;
                 border: solid 1px #82bc00;
@@ -1994,18 +1732,19 @@ html {
                 text-align: center;
                 padding: 3%;
                 transition: all .3s ease;
-                background: transparent; }
+                background: transparent;
+                margin-bottom: 3vh; }
                 html body .content .screen .container .result .call-modal .button:hover {
                   background: #82bc00;
                   color: white; }
               html body .content .screen .container .result .call-modal.active {
-                top: 5%; }
+                top: 15%; }
             html body .content .screen .container .result .callcenter {
               width: 80px;
               height: 80px;
-              background: #82bc00;
+              background: #fd0;
               position: fixed;
-              right: 1vw;
+              right: 3vw;
               top: 45%;
               border-radius: 50%;
               color: white;
@@ -2015,7 +1754,30 @@ html {
               html body .content .screen .container .result .callcenter .fa-phone {
                 top: 15%;
                 position: relative;
-                left: 22%; }
+                left: 22%;
+                z-index: 4; }
+              html body .content .screen .container .result .callcenter .wave-wrapper {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                top: 0; }
+                html body .content .screen .container .result .callcenter .wave-wrapper .wave {
+                  height: 100%;
+                  width: 100%;
+                  border-radius: 50%;
+                  position: absolute;
+                  z-index: 3;
+                  transition: all .3s ease; }
+                html body .content .screen .container .result .callcenter .wave-wrapper.active .wave.wave-1 {
+                  animation: pulse 1.3s ease infinite alternate;
+                  background: #fd0; }
+                html body .content .screen .container .result .callcenter .wave-wrapper.active .wave.wave-2 {
+                  animation: pulse1 1.5s ease infinite alternate;
+                  background: #fd0; }
+                html body .content .screen .container .result .callcenter .wave-wrapper.active .wave.wave-3 {
+                  animation: pulse2 1s ease infinite alternate;
+                  background: #fd0; }
               html body .content .screen .container .result .callcenter:hover {
                 background: #94d600; }
             html body .content .screen .container .result .selection-wrap {
@@ -2040,7 +1802,8 @@ html {
               -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
               box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
               padding: 0;
-              transition: all .3s ease; }
+              transition: all .3s ease;
+              cursor: pointer; }
               html body .content .screen .container .result .resultIMG img {
                 padding: 0; }
               html body .content .screen .container .result .resultIMG:hover {
@@ -2055,18 +1818,126 @@ html {
                 background-origin: content-box;
                 background-size: contain;
                 background-repeat: no-repeat; }
-            html body .content .screen .container .result.boy .selection-wrap .title .text {
-              border-bottom-color: #fd4605; }
-            html body .content .screen .container .result.boy .selection-wrap .continue div {
+            html body .content .screen .container .result.boy .call-modal .title {
               background: #fd4605; }
-            html body .content .screen .container .result.boy .img .image {
-              background-image: url("../IMG/Name/boy.png"); }
-            html body .content .screen .container .result.girl .selection-wrap .title .text {
-              border-bottom-color: #e70095; }
-            html body .content .screen .container .result.girl .selection-wrap .continue div {
+            html body .content .screen .container .result.boy .call-modal .input input {
+              border-color: #fd4605; }
+            html body .content .screen .container .result.boy .call-modal .button {
+              color: #fd4605;
+              border-color: #fd4605; }
+              html body .content .screen .container .result.boy .call-modal .button:hover {
+                background: #fd4605;
+                color: white; }
+            html body .content .screen .container .result.boy .call-modal .fa-times:hover {
+              color: #cd3702; }
+            html body .content .screen .container .result.boy .callcenter {
+              background: #fd4605; }
+              html body .content .screen .container .result.boy .callcenter .wave-wrapper .wave.wave-1 {
+                background: #fd4605; }
+              html body .content .screen .container .result.boy .callcenter .wave-wrapper .wave.wave-2 {
+                background: #fd4605; }
+              html body .content .screen .container .result.boy .callcenter .wave-wrapper .wave.wave-3 {
+                background: #fd4605; }
+            html body .content .screen .container .result.girl .call-modal .title {
               background: #e70095; }
-            html body .content .screen .container .result.girl .img .image {
-              background-image: url("../IMG/Name/girl.png"); }
+            html body .content .screen .container .result.girl .call-modal .input input {
+              border-color: #e70095; }
+            html body .content .screen .container .result.girl .call-modal .button {
+              color: #e70095;
+              border-color: #e70095; }
+              html body .content .screen .container .result.girl .call-modal .button:hover {
+                background: #e70095;
+                color: white; }
+            html body .content .screen .container .result.girl .call-modal .fa-times:hover {
+              color: #b40074; }
+            html body .content .screen .container .result.girl .callcenter {
+              background: #e70095; }
+              html body .content .screen .container .result.girl .callcenter .wave-wrapper .wave.wave-1 {
+                background: #e70095; }
+              html body .content .screen .container .result.girl .callcenter .wave-wrapper .wave.wave-2 {
+                background: #e70095; }
+              html body .content .screen .container .result.girl .callcenter .wave-wrapper .wave.wave-3 {
+                background: #e70095; }
+            html body .content .screen .container .result.bBoy .call-modal .title {
+              background: #82bc00; }
+            html body .content .screen .container .result.bBoy .call-modal .input input {
+              border-color: #82bc00; }
+            html body .content .screen .container .result.bBoy .call-modal .button {
+              color: #82bc00;
+              border-color: #82bc00; }
+              html body .content .screen .container .result.bBoy .call-modal .button:hover {
+                background: #82bc00;
+                color: white; }
+            html body .content .screen .container .result.bBoy .call-modal .fa-times:hover {
+              color: #5f8900; }
+            html body .content .screen .container .result.bBoy .callcenter {
+              background: #82bc00; }
+              html body .content .screen .container .result.bBoy .callcenter .wave-wrapper .wave.wave-1 {
+                background: #82bc00; }
+              html body .content .screen .container .result.bBoy .callcenter .wave-wrapper .wave.wave-2 {
+                background: #82bc00; }
+              html body .content .screen .container .result.bBoy .callcenter .wave-wrapper .wave.wave-3 {
+                background: #82bc00; }
+            html body .content .screen .container .result.bGirl .call-modal .title {
+              background: #9794d2; }
+            html body .content .screen .container .result.bGirl .call-modal .input input {
+              border-color: #9794d2; }
+            html body .content .screen .container .result.bGirl .call-modal .button {
+              color: #9794d2;
+              border-color: #9794d2; }
+              html body .content .screen .container .result.bGirl .call-modal .button:hover {
+                background: #9794d2;
+                color: white; }
+            html body .content .screen .container .result.bGirl .call-modal .fa-times:hover {
+              color: #7470c3; }
+            html body .content .screen .container .result.bGirl .callcenter {
+              background: #9794d2; }
+              html body .content .screen .container .result.bGirl .callcenter .wave-wrapper .wave.wave-1 {
+                background: #9794d2; }
+              html body .content .screen .container .result.bGirl .callcenter .wave-wrapper .wave.wave-2 {
+                background: #9794d2; }
+              html body .content .screen .container .result.bGirl .callcenter .wave-wrapper .wave.wave-3 {
+                background: #9794d2; }
+            html body .content .screen .container .result.nBoy .call-modal .title {
+              background: #3e8ede; }
+            html body .content .screen .container .result.nBoy .call-modal .input input {
+              border-color: #3e8ede; }
+            html body .content .screen .container .result.nBoy .call-modal .button {
+              color: #3e8ede;
+              border-color: #3e8ede; }
+              html body .content .screen .container .result.nBoy .call-modal .button:hover {
+                background: #3e8ede;
+                color: white; }
+            html body .content .screen .container .result.nBoy .call-modal .fa-times:hover {
+              color: #2275c7; }
+            html body .content .screen .container .result.nBoy .callcenter {
+              background: #3e8ede; }
+              html body .content .screen .container .result.nBoy .callcenter .wave-wrapper .wave.wave-1 {
+                background: #3e8ede; }
+              html body .content .screen .container .result.nBoy .callcenter .wave-wrapper .wave.wave-2 {
+                background: #3e8ede; }
+              html body .content .screen .container .result.nBoy .callcenter .wave-wrapper .wave.wave-3 {
+                background: #3e8ede; }
+            html body .content .screen .container .result.nGirl .call-modal .title {
+              background: #ee9bac; }
+            html body .content .screen .container .result.nGirl .call-modal .input input {
+              border-color: #ee9bac; }
+            html body .content .screen .container .result.nGirl .call-modal .button {
+              color: #ee9bac;
+              border-color: #ee9bac; }
+              html body .content .screen .container .result.nGirl .call-modal .button:hover {
+                background: #ee9bac;
+                color: white; }
+            html body .content .screen .container .result.nGirl .call-modal .fa-times:hover {
+              color: #e76f88; }
+            html body .content .screen .container .result.nGirl .callcenter {
+              background: #ee9bac; }
+              html body .content .screen .container .result.nGirl .callcenter .wave-wrapper .wave.wave-1 {
+                background: #ee9bac; }
+              html body .content .screen .container .result.nGirl .callcenter .wave-wrapper .wave.wave-2 {
+                background: #ee9bac; }
+              html body .content .screen .container .result.nGirl .callcenter .wave-wrapper .wave.wave-3 {
+                background: #ee9bac; }
             @media (max-width: 767px) {
               html body .content .screen .container .result .callcenter {
                 width: 100%;
@@ -2077,7 +1948,61 @@ html {
                 html body .content .screen .container .result .callcenter .fa-phone {
                   left: 5%;
                   font-size: 40px;
-                  line-height: 90%; } }
+                  line-height: 90%; }
+                html body .content .screen .container .result .callcenter .wave-wrapper {
+                  border-radius: 0; }
+                  html body .content .screen .container .result .callcenter .wave-wrapper .wave {
+                    border-radius: 0; }
+                html body .content .screen .container .result .callcenter .text {
+                  position: absolute;
+                  font-size: 30px;
+                  top: 8%;
+                  left: 30%;
+                  z-index: 4; }
+              html body .content .screen .container .result .resultIMG {
+                margin-bottom: 12%; } }
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1; }
+  100% {
+    transform: scale(2);
+    opacity: 0; } }
+@keyframes pulse1 {
+  0% {
+    transform: scale(1);
+    opacity: 1; }
+  100% {
+    transform: scale(1.7);
+    opacity: 0; } }
+@keyframes pulse2 {
+  0% {
+    transform: scale(1);
+    opacity: 1; }
+  100% {
+    transform: scale(1.5);
+    opacity: 0; } }
+@keyframes pulseM {
+  0% {
+    transform: scale(1);
+    opacity: 1; }
+  100% {
+    transform: scale(2.5);
+    opacity: 0; } }
+@keyframes pulse1M {
+  0% {
+    transform: scale(1);
+    opacity: 1; }
+  100% {
+    transform: scale(2.25);
+    opacity: 0; } }
+@keyframes pulse2M {
+  0% {
+    transform: scale(1);
+    opacity: 1; }
+  100% {
+    transform: scale(2);
+    opacity: 0; } }
           html body .content .screen .container .login {
             margin-top: 8vh;
             background: rgba(255, 255, 255, 0.7);

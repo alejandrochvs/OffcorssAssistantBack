@@ -47,15 +47,24 @@
                 background: white;
                 border-bottom: solid 3px $yellow;
                 padding: 2%;
+                cursor: pointer;
+                a {
+                    color: $yellow;
+                    transition: all .3s ease;
+                    top: 10px;
+                    position: relative;
+                    font-size: 14px;
+                }
                 .fa {
                     position: absolute;
-                    right: -7px;
+                    right: -18px;
                     top: -7px;
-                    background: red;
+                    background: $yellow;
                     border-radius: 50%;
-                    height: 25px;
-                    width: 25px;
-                    line-height: 25px;
+                    height: 18px;
+                    width: 18px;
+                    line-height: 18px;
+                    font-size: 14px;
                     color: white;
                 }
             }
@@ -136,6 +145,12 @@
             .title {
                 .text {
                     border-bottom-color: $boy;
+                    a{
+                        color: $boy;
+                        .fa{
+                            background-color: $boy;
+                        }
+                    }
                 }
             }
             .padWrap {
@@ -175,6 +190,12 @@
             .title {
                 .text {
                     border-bottom-color: $girl;
+                    a{
+                        color: $girl;
+                        .fa{
+                            background-color: $girl;
+                        }
+                    }
                 }
             }
             .padWrap {
@@ -214,6 +235,12 @@
             .title {
                 .text {
                     border-bottom-color: $bBoy;
+                    a{
+                        color: $bBoy;
+                        .fa{
+                            background-color: $bBoy;
+                        }
+                    }
                 }
             }
             .padWrap {
@@ -253,6 +280,12 @@
             .title {
                 .text {
                     border-bottom-color: $bGirl;
+                    a{
+                        color: $bGirl;
+                        .fa{
+                            background-color: $bGirl;
+                        }
+                    }
                 }
             }
             .padWrap {
@@ -292,6 +325,12 @@
             .title {
                 .text {
                     border-bottom-color: $nBoy;
+                    a{
+                        color: $nBoy;
+                        .fa{
+                            background-color: $nBoy;
+                        }
+                    }
                 }
             }
             .padWrap {
@@ -331,6 +370,12 @@
             .title {
                 .text {
                     border-bottom-color: $nGirl;
+                    a{
+                        color: $nGirl;
+                        .fa{
+                            background-color: $nGirl;
+                        }
+                    }
                 }
             }
             .padWrap {

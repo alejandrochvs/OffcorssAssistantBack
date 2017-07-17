@@ -309,13 +309,14 @@ $(function () {
                             }
                         }
                     })
-                } else if (current === divs[3]) {
+                }
+                else if (current === divs[3]) {
                     $('.header > .title > .cont').html(headTitle1);
                     $('.header > .title > .cont').attr('data-var', 'headTitle1');
                     $('.size > .selection-wrap > .title > .text-editable').html(sizeTitle);
                     $('.size > .selection-wrap > .title > .text > N').html(name);
                     $('.size').addClass(currentClass);
-                    $('.size > .selection-wrap > .title > .text').append('<i class="fa fa-exclamation hidden-xs" aria-hidden="true"></i>')
+                    $('.size > .selection-wrap > .title > .text > a').append('<i class="fa fa-exclamation hidden-xs" aria-hidden="true"></i>')
                     $('.loader > .progress').css('width', '30%');
                     $('.sizes-guide > .img').append('<img src="../IMG/Size/' + currentClass + '.jpg" class="col-xs-12" alt="">');
                     $.ajax({
@@ -390,13 +391,14 @@ $(function () {
                             }
                         }
                     });
-                } else if (current === divs[4]) {
+                }
+                else if (current === divs[4]) {
                     $('.sizePrimi > .selection-wrap > .title > .text > N').html(name);
                     $('.header > .title > .cont').html(headTitle1);
                     $('.header > .title > .cont').attr('data-var', 'headTitle1');
-                    $('.size > .selection-wrap > .title > .text-editable').html(sizePrimiTitle);
+                    $('.sizePrimi > .selection-wrap > .title > .text-editable').html(sizePrimiTitle);
                     $('.sizePrimi').addClass(currentClass);
-                    $('.sizePrimi > .selection-wrap > .title > .text').append('<i class="fa fa-exclamation hidden-xs" aria-hidden="true"></i>')
+                    $('.sizePrimi > .selection-wrap > .title > .text > a').append('<i class="fa fa-exclamation hidden-xs" aria-hidden="true"></i>')
                     $('.loader > .progress').css('width', '30%');
                     $('.sizes-guide > .img').append('<img src="../IMG/Size/' + currentClass + '.jpg" class="col-xs-12" alt="">');
                     $.ajax({
@@ -621,8 +623,7 @@ $(function () {
                         autoStart: true,
                         loop: true
                     });
-                    var data = {
-                    }
+                    var data = {}
                     if (gender == "F") {
                         data.gender = "FEMENINO";
                     } else {
@@ -643,6 +644,9 @@ $(function () {
                         data: data,
                         success: function (res) {
                             $('.resultIMG').append('<img class="col-xs-12" src="IMG/ecards/' + res[0].url + '"/>');
+                            $('.resultIMG').click(function () {
+                                $('.callcenter').click();
+                            });
                             $('.result > .selection-wrap').remove();
                             $('.progress').removeClass('loading');
                             data.bottomSize = bottomSize;
@@ -652,13 +656,42 @@ $(function () {
                             data.weather = weather;
                             data.color = favColor;
                             data.personality = personality;
-                            data.phone = $('.call-modal > .input > input').val();
-                            console.log($('.call-modal > .input > input').val());
                             data.e_card = res[0].url;
-                            $('.call-modal > .button').click(function(){
-//                                console.log(name + ' - ' + gender + ' - ' + age + ' - bottom : ' +  bottomSize + ' - top : ' + topSize + ' - shoe : ' + shoeSize + " - Ocasion : " + occasion + ' - Weather : ' + weather + " - Color : " + favColor + ' - Personality : ' + personality + ' - Phone : ' + $('.call-modal > .input > input').val() + ' - e_card : ' + res[0].url);
-                                console.log(data);
-                                $('.call-modal').removeClass('active');
+                            data.name = name;
+                            $('.call-modal > .button').click(function () {
+                                data.phone = $('.call-modal > .input > input').val();
+                                var regex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+                                if (data.phone.match(regex)) {
+                                    var regexToConv = /^[2-9]\d{2}[2-9]\d{2}\d{4}$/;
+                                    data.phone = data.phone.replace(/\D/g, "");
+                                    $.ajax({
+                                        url: '/db/customers',
+                                        type: 'POST',
+                                        data: data,
+                                        success: function (res) {
+                                            if (res == 'User already exists.') {
+                                                $('.call-modal > .input > input').addClass('wrong');
+                                                $('.call-modal > .input > input').tooltip({
+                                                    title: 'El teléfono ya está registrado.',
+                                                    trigger: 'manual',
+                                                    placement: 'top'
+                                                });
+                                                $('.call-modal > .input > input').tooltip('show');
+                                            } else {
+                                                $('.call-modal > .input').removeClass('wrong');
+                                                $('.call-modal').removeClass('active');
+                                            }
+                                        }
+                                    });
+                                } else {
+                                    $('.call-modal > .input > input').addClass('wrong');
+                                    $('.call-modal > .input > input').tooltip({
+                                        title: 'Formato incorrecto.',
+                                        trigger: 'manual',
+                                        placement: 'top'
+                                    });
+                                    $('.call-modal > .input > input').tooltip('show');
+                                }
                             });
                         }
                     });
@@ -999,7 +1032,7 @@ $(function () {
                                                             $(this).click();
                                                             $('.e-card-new > .e-card-desc > .fa-ban').click();
                                                             $('.e-card-new > .e-card-desc:nth-child(1) > div').append(
-                                                            $(this).find('.e-card-desc:nth-child(1) > img')[0].outerHTML);
+                                                                $(this).find('.e-card-desc:nth-child(1) > img')[0].outerHTML);
                                                             $('.e-card-new').click();
                                                             return;
                                                         }

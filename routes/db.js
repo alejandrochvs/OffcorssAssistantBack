@@ -35,14 +35,12 @@ var users = require('./user_model.js');
 var crypto = require('crypto'),
     algorithm = 'aes-256-ctr',
     password = '2ba8f2b30e434b431e46e008d8f0';
-
 function encrypt(text) {
     var cipher = crypto.createCipher(algorithm, password);
     var crypted = cipher.update(text, 'utf8', 'hex');
     crypted += cipher.final('hex');
     return crypted;
 }
-
 function decrypt(text) {
     var decipher = crypto.createDecipher(algorithm, password);
     var dec = decipher.update(text, 'hex', 'utf8');
@@ -50,8 +48,6 @@ function decrypt(text) {
     return dec;
 }
 router.post('/users/register', function (req, res) {
-    console.log(req.body);
-    console.log(req.query);
     mongoose.Promise = global.Promise;
     mongoose.connect(mongoURL);
     var db = mongoose.connection;
@@ -67,15 +63,15 @@ router.post('/users/register', function (req, res) {
         user.password = encrypt(user.password);
         user.save(function (err, user) {
             if (err && err.code !== 11000) {
-                mongoose.connection.close();
+                db.close();
                 return res.send(err);
             }
             if (err && err.code === 11000) {
-                mongoose.connection.close();
+                db.close();
                 return res.send('User already exists.');
             }
             res.send(user.greet());
-            mongoose.connection.close();
+            db.close();
         });
     });
 });
@@ -261,8 +257,8 @@ router.post('/e-cards/delete', function (req, res) {
                 console.log(res.send(err));
             }
             db.close();
-            fs.unlink(fileToDelete,function(err){
-                if (err){
+            fs.unlink(fileToDelete, function (err) {
+                if (err) {
                     return console.log(err);
                 }
                 res.send('Deleted');
@@ -388,6 +384,44 @@ router.post('/weathers', function (req, res) {
             db.close();
             res.send(docs);
         })
+    });
+});
+
+var customers = require('./customers_model.js');
+router.post('/customers', function (req, res) {
+    mongoose.Promise = global.Promise;
+    mongoose.connect(mongoURL);
+    var db = mongoose.connection;
+    db.on('error', function (err) {
+        console.log(err);
+    });
+    db.once('open', function () {
+        var reqCustomer = req.body;
+        var customer = {};
+        customer.name = reqCustomer.name;
+        customer.gender = reqCustomer.gender;
+        customer.size_bottom = reqCustomer.bottomSize;
+        customer.size_top = reqCustomer.topSize;
+        customer.size_shoe = reqCustomer.shoeSize;
+        customer.occasion = reqCustomer.occasion;
+        customer.weather = reqCustomer.weather;
+        customer.color = reqCustomer.color;
+        customer.personality = reqCustomer.personality;
+        customer.phone = reqCustomer.phone;
+        customer.e_card = reqCustomer.e_card;
+        var customertoDb = new customers(customer);
+        customertoDb.save(function(err,customer){
+            if (err && err.code !== 11000) {
+                db.close();
+                return res.send(err);
+            }
+            if (err && err.code === 11000) {
+                db.close();
+                return res.send('User already exists.');
+            }
+            res.sendStatus('OK');
+            db.close();
+        });
     });
 });
 
