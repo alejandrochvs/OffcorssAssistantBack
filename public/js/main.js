@@ -669,6 +669,7 @@ $(function () {
                                         type: 'POST',
                                         data: data,
                                         success: function (res) {
+                                            console.log(res);
                                             if (res == 'User already exists.') {
                                                 $('.call-modal > .input > input').addClass('wrong');
                                                 $('.call-modal > .input > input').tooltip({
