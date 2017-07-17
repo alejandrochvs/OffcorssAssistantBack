@@ -649,6 +649,9 @@ $(function () {
                             });
                             $('.result > .selection-wrap').remove();
                             $('.progress').removeClass('loading');
+                            console.log(bottomSize);
+                            console.log(topSize);
+                            console.log(shoeSize);
                             data.bottomSize = bottomSize;
                             data.topSize = topSize;
                             data.shoeSize = shoeSize;
