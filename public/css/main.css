@@ -1942,28 +1942,33 @@ html {
               html body .content .screen .container .result.nGirl .callcenter .wave-wrapper .wave.wave-3 {
                 background: #ee9bac; }
             @media (max-width: 767px) {
-              html body .content .screen .container .result .callcenter {
-                width: 100%;
-                border-radius: 0;
-                top: 82%;
-                height: 8%;
-                right: 0; }
-                html body .content .screen .container .result .callcenter .fa-phone {
-                  left: 5%;
-                  font-size: 40px;
-                  line-height: 90%; }
-                html body .content .screen .container .result .callcenter .wave-wrapper {
-                  border-radius: 0; }
-                  html body .content .screen .container .result .callcenter .wave-wrapper .wave {
+              html body .content .screen .container .result {
+                padding: 0; }
+                html body .content .screen .container .result .callcenter {
+                  width: 100%;
+                  border-radius: 0;
+                  top: 0vh;
+                  height: 8%;
+                  right: 0;
+                  margin-bottom: 5vh;
+                  position: relative; }
+                  html body .content .screen .container .result .callcenter .fa-phone {
+                    left: 5%;
+                    font-size: 40px;
+                    line-height: 90%; }
+                  html body .content .screen .container .result .callcenter .wave-wrapper {
                     border-radius: 0; }
-                html body .content .screen .container .result .callcenter .text {
-                  position: absolute;
-                  font-size: 30px;
-                  top: 8%;
-                  left: 30%;
-                  z-index: 4; }
-              html body .content .screen .container .result .resultIMG {
-                margin-bottom: 12%; } }
+                    html body .content .screen .container .result .callcenter .wave-wrapper .wave {
+                      border-radius: 0; }
+                  html body .content .screen .container .result .callcenter .text {
+                    position: absolute;
+                    font-size: 25px;
+                    top: 15%;
+                    left: 3%;
+                    z-index: 4;
+                    text-align: center; }
+                html body .content .screen .container .result .resultIMG {
+                  margin-bottom: 12%; } }
 @keyframes pulse {
   0% {
     transform: scale(1);

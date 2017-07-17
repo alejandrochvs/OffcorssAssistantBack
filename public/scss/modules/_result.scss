@@ -422,12 +422,15 @@
         }
     }
     @media (max-width: 767px) {
+        padding: 0;
         .callcenter {
             width: 100%;
             border-radius: 0;
-            top: 82%;
+            top: 0vh;
             height: 8%;
             right: 0;
+            margin-bottom: 5vh;
+            position: relative;
             .fa-phone {
                 left: 5%;
                 font-size: 40px;
@@ -441,10 +444,11 @@
             }
             .text {
                 position: absolute;
-                font-size: 30px;
-                top: 8%;
-                left: 30%;
+                font-size: 25px;
+                top: 15%;
+                left: 3%;
                 z-index: 4;
+                text-align: center;
             }
         }
         .resultIMG {
