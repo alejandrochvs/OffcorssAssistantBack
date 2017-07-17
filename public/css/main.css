@@ -1686,7 +1686,8 @@ html {
           html body .content .screen .container .result {
             padding: 5vh 0;
             height: 100%;
-            overflow: scroll; }
+            overflow: scroll;
+            overflow-x: hidden; }
             html body .content .screen .container .result .call-modal {
               background: white;
               padding: 0;
@@ -1729,7 +1730,7 @@ html {
                   border-bottom-color: orangered !important; }
               html body .content .screen .container .result .call-modal .button {
                 cursor: pointer;
-                border: solid 1px #82bc00;
+                border: solid 2px #82bc00;
                 border-radius: 5px;
                 color: #82bc00;
                 text-align: center;
@@ -1741,7 +1742,8 @@ html {
                   background: #82bc00;
                   color: white; }
               html body .content .screen .container .result .call-modal.active {
-                top: 15%; }
+                top: 15%;
+                z-index: 5; }
             html body .content .screen .container .result .callcenter {
               width: 80px;
               height: 80px;
