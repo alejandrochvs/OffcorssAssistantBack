@@ -664,6 +664,7 @@ $(function () {
                                 if (data.phone.match(regex)) {
                                     var regexToConv = /^[2-9]\d{2}[2-9]\d{2}\d{4}$/;
                                     data.phone = data.phone.replace(/\D/g, "");
+                                    console.log(data);
                                     $.ajax({
                                         url: '/db/customers',
                                         type: 'POST',
