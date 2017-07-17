@@ -108,7 +108,6 @@
     loadCustomers('name');
     $('.customer-title').click(function() {
         if (!$(this).hasClass('active')) {
-            console.log('loading');
             loadCustomers($(this).attr('data-sort'));
             $('.customer-title.active').removeClass('active');
             $(this).addClass('active');
