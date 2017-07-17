@@ -438,12 +438,10 @@ router.post('/customers/register', function (req, res) {
         customer.color = reqCustomer.color;
         customer.personality = reqCustomer.personality;
         var customertoDb = new customers(customer);
-        console.log(reqCustomer);
-        console.log(customertoDb);
         customertoDb.save(function (err, customer) {
             if (err && err.code !== 11000) {
                 db.close();
-//                console.log(err);
+                console.log(err);
                 return res.send(err);
             }
             if (err && err.code === 11000) {
