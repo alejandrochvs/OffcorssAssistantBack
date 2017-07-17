@@ -1736,8 +1736,8 @@ html {
                   border-bottom: solid 2px #82bc00;
                   padding: 2%;
                   transition: all .3s ease; }
-                html body .content .screen .container .result .call-modal .input.wrong input {
-                  border-bottom-color: orangered !important; }
+                  html body .content .screen .container .result .call-modal .input input.wrong {
+                    border-bottom-color: orangered !important; }
               html body .content .screen .container .result .call-modal .button {
                 cursor: pointer;
                 border: solid 2px #82bc00;
@@ -2385,6 +2385,245 @@ html {
                 border-top-left-radius: 5px;
                 border-bottom-left-radius: 5px; }
               html body .content .screen .container .e-cards-container .table-pagination .table-next {
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px; }
+          html body .content .screen .container .customers-container {
+            text-align: center;
+            overflow: auto;
+            height: 100%; }
+            html body .content .screen .container .customers-container .customers-table {
+              -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+              -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+              box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+              margin-top: 20px;
+              margin-bottom: 20px;
+              padding: 0;
+              height: auto;
+              background: white;
+              border-radius: 5px;
+              overflow: hidden; }
+              html body .content .screen .container .customers-container .customers-table .table-header {
+                padding: 0; }
+                html body .content .screen .container .customers-container .customers-table .table-header .customer-title {
+                  border-right: solid 1px #e8e8e8;
+                  background: white;
+                  cursor: pointer;
+                  transition: all .3s ease; }
+                  html body .content .screen .container .customers-container .customers-table .table-header .customer-title:first-child {
+                    border-top-left-radius: 5px; }
+                  html body .content .screen .container .customers-container .customers-table .table-header .customer-title:last-child {
+                    border-right: none;
+                    border-top-right-radius: 5px; }
+                  html body .content .screen .container .customers-container .customers-table .table-header .customer-title:hover {
+                    background: whitesmoke; }
+                  html body .content .screen .container .customers-container .customers-table .table-header .customer-title.active {
+                    background: #e8e8e8; }
+              html body .content .screen .container .customers-container .customers-table .customer-item,
+              html body .content .screen .container .customers-container .customers-table .customer-new {
+                overflow: hidden;
+                text-align: center;
+                padding: 0;
+                max-height: 7vh;
+                transition: all .4s ease;
+                cursor: pointer; }
+                html body .content .screen .container .customers-container .customers-table .customer-item .customer-desc,
+                html body .content .screen .container .customers-container .customers-table .customer-new .customer-desc {
+                  padding: 0;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  border-right: solid 1px #e8e8e8;
+                  cursor: pointer;
+                  transition: all .3s ease;
+                  height: 100%; }
+                  html body .content .screen .container .customers-container .customers-table .customer-item .customer-desc:last-child,
+                  html body .content .screen .container .customers-container .customers-table .customer-new .customer-desc:last-child {
+                    border-right: none; }
+                  html body .content .screen .container .customers-container .customers-table .customer-item .customer-desc.customer-img-new i,
+                  html body .content .screen .container .customers-container .customers-table .customer-new .customer-desc.customer-img-new i {
+                    line-height: 7vh; }
+                  html body .content .screen .container .customers-container .customers-table .customer-item .customer-desc div,
+                  html body .content .screen .container .customers-container .customers-table .customer-new .customer-desc div {
+                    line-height: 7vh;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    transition: all .3s ease;
+                    background: transparent;
+                    padding: 0 15px; }
+                    html body .content .screen .container .customers-container .customers-table .customer-item .customer-desc div input,
+                    html body .content .screen .container .customers-container .customers-table .customer-new .customer-desc div input {
+                      border: none;
+                      outline: none; }
+                      html body .content .screen .container .customers-container .customers-table .customer-item .customer-desc div input[type="file"],
+                      html body .content .screen .container .customers-container .customers-table .customer-new .customer-desc div input[type="file"] {
+                        width: 0.1px;
+                        height: 0.1px;
+                        opacity: 0;
+                        overflow: hidden;
+                        position: absolute;
+                        z-index: -1; }
+                    html body .content .screen .container .customers-container .customers-table .customer-item .customer-desc div .fa,
+                    html body .content .screen .container .customers-container .customers-table .customer-new .customer-desc div .fa {
+                      padding: 0;
+                      line-height: 7vh; }
+                    html body .content .screen .container .customers-container .customers-table .customer-item .customer-desc div ul,
+                    html body .content .screen .container .customers-container .customers-table .customer-new .customer-desc div ul {
+                      max-height: 0vh;
+                      margin: 0;
+                      transition: all .3s ease;
+                      color: transparent;
+                      background: transparent;
+                      border-bottom-left-radius: 5px;
+                      border-bottom-right-radius: 5px; }
+                      html body .content .screen .container .customers-container .customers-table .customer-item .customer-desc div ul li,
+                      html body .content .screen .container .customers-container .customers-table .customer-new .customer-desc div ul li {
+                        list-style-type: none;
+                        line-height: 4.5vh; }
+                      html body .content .screen .container .customers-container .customers-table .customer-item .customer-desc div ul.active,
+                      html body .content .screen .container .customers-container .customers-table .customer-new .customer-desc div ul.active {
+                        background: white;
+                        color: #333;
+                        max-height: 400vh;
+                        padding: 0;
+                        -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1) inset;
+                        -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1) inset;
+                        box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1) inset;
+                        border-bottom-left-radius: 5px;
+                        border-bottom-right-radius: 5px; }
+                        html body .content .screen .container .customers-container .customers-table .customer-item .customer-desc div ul.active li,
+                        html body .content .screen .container .customers-container .customers-table .customer-new .customer-desc div ul.active li {
+                          background: transparent;
+                          transition: all .3s ease;
+                          border-left: solid 2px transparent; }
+                          html body .content .screen .container .customers-container .customers-table .customer-item .customer-desc div ul.active li:hover,
+                          html body .content .screen .container .customers-container .customers-table .customer-new .customer-desc div ul.active li:hover {
+                            background: whitesmoke; }
+                          html body .content .screen .container .customers-container .customers-table .customer-item .customer-desc div ul.active li.disabled,
+                          html body .content .screen .container .customers-container .customers-table .customer-new .customer-desc div ul.active li.disabled {
+                            cursor: default;
+                            background: whitesmoke;
+                            border-left: solid 2px lime; }
+                html body .content .screen .container .customers-container .customers-table .customer-item .customer-img,
+                html body .content .screen .container .customers-container .customers-table .customer-new .customer-img {
+                  padding: 8px 15px;
+                  overflow: hidden;
+                  text-align: center; }
+                  html body .content .screen .container .customers-container .customers-table .customer-item .customer-img img,
+                  html body .content .screen .container .customers-container .customers-table .customer-new .customer-img img {
+                    transition: all .3s ease;
+                    border-radius: 20px;
+                    padding: 0; }
+                html body .content .screen .container .customers-container .customers-table .customer-item:hover,
+                html body .content .screen .container .customers-container .customers-table .customer-new:hover {
+                  background: white;
+                  -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.125);
+                  -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.125);
+                  box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.125); }
+                  html body .content .screen .container .customers-container .customers-table .customer-item:hover .customer-desc,
+                  html body .content .screen .container .customers-container .customers-table .customer-new:hover .customer-desc {
+                    border-color: #e8e8e8; }
+                html body .content .screen .container .customers-container .customers-table .customer-item .fa-angle-down,
+                html body .content .screen .container .customers-container .customers-table .customer-new .fa-angle-down {
+                  transition: all .3s ease;
+                  transform: rotate(0deg); }
+                html body .content .screen .container .customers-container .customers-table .customer-item .fa,
+                html body .content .screen .container .customers-container .customers-table .customer-new .fa {
+                  transition: all .3s ease; }
+                html body .content .screen .container .customers-container .customers-table .customer-item .fa-camera:hover,
+                html body .content .screen .container .customers-container .customers-table .customer-new .fa-camera:hover {
+                  color: #6DB75D; }
+                html body .content .screen .container .customers-container .customers-table .customer-item.active,
+                html body .content .screen .container .customers-container .customers-table .customer-new.active {
+                  max-height: 400vh;
+                  cursor: default;
+                  background: white;
+                  -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                  -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                  box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2); }
+                  html body .content .screen .container .customers-container .customers-table .customer-item.active .customer-desc,
+                  html body .content .screen .container .customers-container .customers-table .customer-new.active .customer-desc {
+                    border-color: #e8e8e8; }
+                    html body .content .screen .container .customers-container .customers-table .customer-item.active .customer-desc div:hover,
+                    html body .content .screen .container .customers-container .customers-table .customer-new.active .customer-desc div:hover {
+                      background: whitesmoke; }
+                    html body .content .screen .container .customers-container .customers-table .customer-item.active .customer-desc:last-child div:hover,
+                    html body .content .screen .container .customers-container .customers-table .customer-new.active .customer-desc:last-child div:hover {
+                      background: white; }
+                  html body .content .screen .container .customers-container .customers-table .customer-item.active .customer-img img,
+                  html body .content .screen .container .customers-container .customers-table .customer-new.active .customer-img img {
+                    -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                    -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                    box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2); }
+                    html body .content .screen .container .customers-container .customers-table .customer-item.active .customer-img img:hover,
+                    html body .content .screen .container .customers-container .customers-table .customer-new.active .customer-img img:hover {
+                      -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
+                      -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
+                      box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3); }
+                  html body .content .screen .container .customers-container .customers-table .customer-item.active .fa-angle-down,
+                  html body .content .screen .container .customers-container .customers-table .customer-new.active .fa-angle-down {
+                    transform: rotate(180deg); }
+                  html body .content .screen .container .customers-container .customers-table .customer-item.active .fa-eye:before,
+                  html body .content .screen .container .customers-container .customers-table .customer-new.active .fa-eye:before {
+                    content: "\f070"; }
+                  html body .content .screen .container .customers-container .customers-table .customer-item.active .fa-eye:hover,
+                  html body .content .screen .container .customers-container .customers-table .customer-new.active .fa-eye:hover {
+                    color: #00AFD3;
+                    background: white; }
+                  html body .content .screen .container .customers-container .customers-table .customer-item.active .fa-trash:hover, html body .content .screen .container .customers-container .customers-table .customer-item.active .fa-ban:hover,
+                  html body .content .screen .container .customers-container .customers-table .customer-new.active .fa-trash:hover,
+                  html body .content .screen .container .customers-container .customers-table .customer-new.active .fa-ban:hover {
+                    color: orangered;
+                    background: white; }
+                  html body .content .screen .container .customers-container .customers-table .customer-item.active .fa-plus-square:hover,
+                  html body .content .screen .container .customers-container .customers-table .customer-new.active .fa-plus-square:hover {
+                    color: #6DB75D; }
+                  html body .content .screen .container .customers-container .customers-table .customer-item.active .fa-pencil:hover,
+                  html body .content .screen .container .customers-container .customers-table .customer-new.active .fa-pencil:hover {
+                    color: #fd0; }
+              html body .content .screen .container .customers-container .customers-table .customer-new .customer-desc div {
+                padding: 0; }
+                html body .content .screen .container .customers-container .customers-table .customer-new .customer-desc div.new {
+                  transition: all .3s ease; }
+                  html body .content .screen .container .customers-container .customers-table .customer-new .customer-desc div.new .fa-trash {
+                    color: white;
+                    background: orangered;
+                    width: 0;
+                    position: absolute;
+                    left: 20vw; }
+                  html body .content .screen .container .customers-container .customers-table .customer-new .customer-desc div.new:hover .fa-trash {
+                    left: 0vw;
+                    width: 100%; }
+              html body .content .screen .container .customers-container .customers-table .customer-new .customer-desc i.fa {
+                transform: rotate(0deg); }
+                html body .content .screen .container .customers-container .customers-table .customer-new .customer-desc i.fa.active {
+                  transform: rotate(180deg); }
+            html body .content .screen .container .customers-container .table-pagination {
+              list-style-type: none;
+              background: white;
+              margin-bottom: 5vh;
+              -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+              -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+              box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+              text-align: center;
+              border-radius: 5px;
+              padding: 0; }
+              html body .content .screen .container .customers-container .table-pagination li {
+                cursor: pointer;
+                transition: all .4s ease;
+                background: transparent; }
+                html body .content .screen .container .customers-container .table-pagination li h6 {
+                  text-overflow: ellipsis;
+                  overflow: hidden;
+                  white-space: nowrap; }
+                html body .content .screen .container .customers-container .table-pagination li:hover {
+                  background: #efefef; }
+                html body .content .screen .container .customers-container .table-pagination li.active {
+                  background: whitesmoke; }
+              html body .content .screen .container .customers-container .table-pagination .table-prev {
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px; }
+              html body .content .screen .container .customers-container .table-pagination .table-next {
                 border-top-right-radius: 5px;
                 border-bottom-right-radius: 5px; }
     html body .footer {

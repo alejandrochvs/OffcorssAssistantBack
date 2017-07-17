@@ -9,6 +9,10 @@ var customersSchema = new Schema({
         type: String,
         required: true
     },
+    age : {
+        type : String,
+        required : true
+    },
     size_bottom: {
         type: String,
         required: true

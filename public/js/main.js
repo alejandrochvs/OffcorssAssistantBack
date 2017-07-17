@@ -647,17 +647,18 @@ $(function () {
                             $('.resultIMG').click(function () {
                                 $('.callcenter').click();
                             });
+                            $('.input > input').keyup(function(e){
+                                if (e.keyCode == 13){
+                                    $('.call-modal > .button').click();
+                                }
+                            })
                             $('.result > .selection-wrap').remove();
                             $('.progress').removeClass('loading');
-                            console.log(bottomSize);
-                            console.log(topSize);
-                            console.log(shoeSize);
                             data.bottomSize = bottomSize;
                             data.topSize = topSize;
                             data.shoeSize = shoeSize;
                             data.occasion = occasion;
                             data.weather = weather;
-                            data.color = favColor;
                             data.personality = personality;
                             data.e_card = res[0].url;
                             data.name = name;
@@ -667,13 +668,11 @@ $(function () {
                                 if (data.phone.match(regex)) {
                                     var regexToConv = /^[2-9]\d{2}[2-9]\d{2}\d{4}$/;
                                     data.phone = data.phone.replace(/\D/g, "");
-                                    console.log(data);
                                     $.ajax({
-                                        url: '/db/customers',
+                                        url: '/db/customers/register',
                                         type: 'POST',
                                         data: data,
                                         success: function (res) {
-                                            console.log(res);
                                             if (res == 'User already exists.') {
                                                 $('.call-modal > .input > input').addClass('wrong');
                                                 $('.call-modal > .input > input').tooltip({
@@ -857,7 +856,7 @@ $(function () {
                         }
                     });
                 } else if (current === 'e-cards') {
-                    $('.head.title > .cont').html('E-cards');
+                    $('.head.title > .cont').html('E-CARDS');
                     var dbAges, dbColors, dbGenders, dbOccasions, dbSizes, dbTypes, dbWeathers;
                     var getAges = function () {
                         $.post({
@@ -1315,6 +1314,9 @@ $(function () {
                     getAges()
 
                 }
+                else if (current == 'customers'){
+                    $('.head.title > .cont').html('CLIENTES');
+                }
                 $('N').html(name);
                 if (admin && edit) {
                     $('.header').find('*').unbind();
@@ -1378,6 +1380,12 @@ $(function () {
                             }
                         });
                         $('.user-settings').prepend('<li class="e-cards"> <h5>E-cards</h5> </li>');
+                        $('.user-settings').prepend('<li class="customers"> <h5>Customers</h5> </li>');
+                        $('.customers').click(function () {
+                            if (current !== 'customers') {
+                                next('customers');
+                            }
+                        });
                         $('.e-cards').click(function () {
                             if (current !== 'e-cards') {
                                 next('e-cards');
@@ -1471,7 +1479,6 @@ $(function () {
                 $('.colors > li > .color-edit').click(function () {
                     var color = $(this).siblings('.color').attr('data-var');
                     $('.colorPicker').change(function () {
-                        console.log(color);
                         requestColorChange(color, $('.colorPicker').val());
                         $('.colorPicker').unbind('change');
                     });

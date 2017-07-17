@@ -45,9 +45,7 @@
                 border-bottom: solid 2px $bBoy;
                 padding: 2%;
                 transition: all .3s ease;
-            }
-            &.wrong {
-                input {
+                &.wrong {
                     border-bottom-color: orangered !important;
                 }
             }

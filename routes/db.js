@@ -35,12 +35,14 @@ var users = require('./user_model.js');
 var crypto = require('crypto'),
     algorithm = 'aes-256-ctr',
     password = '2ba8f2b30e434b431e46e008d8f0';
+
 function encrypt(text) {
     var cipher = crypto.createCipher(algorithm, password);
     var crypted = cipher.update(text, 'utf8', 'hex');
     crypted += cipher.final('hex');
     return crypted;
 }
+
 function decrypt(text) {
     var decipher = crypto.createDecipher(algorithm, password);
     var dec = decipher.update(text, 'hex', 'utf8');
@@ -296,9 +298,13 @@ router.post('/colors', function (req, res) {
         //console.log(err);
     });
     db.once('open', function () {
-        colors.find({active : true},null,{sort : {
-            color : 1
-        }}, function (err, docs) {
+        colors.find({
+            active: true
+        }, null, {
+            sort: {
+                color: 1
+            }
+        }, function (err, docs) {
             if (err) {
                 db.close();
                 return res.send(err);
@@ -398,10 +404,32 @@ router.post('/customers', function (req, res) {
         console.log(err);
     });
     db.once('open', function () {
+        var sort = req.body.sort;
+        customers.find().sort(sort).limit(50).skip(Number(req.body.offset)).exec(function (err, docs) {
+            if (err) {
+                db.close();
+                return console.log(err);
+            }
+            db.close();
+            res.send(docs);
+        });
+    })
+});
+router.post('/customers/register', function (req, res) {
+    mongoose.Promise = global.Promise;
+    mongoose.connect(mongoURL);
+    var db = mongoose.connection;
+    db.on('error', function (err) {
+        console.log(err);
+    });
+    db.once('open', function () {
         var reqCustomer = req.body;
         var customer = {};
+        customer.e_card = reqCustomer.e_card;
         customer.name = reqCustomer.name;
         customer.gender = reqCustomer.gender;
+        customer.age = reqCustomer.age;
+        customer.phone = reqCustomer.phone;
         customer.size_bottom = reqCustomer.bottomSize;
         customer.size_top = reqCustomer.topSize;
         customer.size_shoe = reqCustomer.shoeSize;
@@ -409,10 +437,8 @@ router.post('/customers', function (req, res) {
         customer.weather = reqCustomer.weather;
         customer.color = reqCustomer.color;
         customer.personality = reqCustomer.personality;
-        customer.phone = reqCustomer.phone;
-        customer.e_card = reqCustomer.e_card;
         var customertoDb = new customers(customer);
-        customertoDb.save(function(err,customer){
+        customertoDb.save(function (err, customer) {
             if (err && err.code !== 11000) {
                 db.close();
                 return res.send(err);
@@ -426,5 +452,23 @@ router.post('/customers', function (req, res) {
         });
     });
 });
+router.post('/customers/count', function (req, res) {
+    mongoose.Promise = global.Promise;
+    mongoose.connect(mongoURL);
+    var db = mongoose.connection;
+    db.on('error', function (err) {
+        console.log(err);
+    });
+    db.once('open', function () {
+        customers.find().count({}, function (err, count) {
+            db.close();
+            var data = {
+                count: count
+            };
+            res.send(data);
+        });
+    })
+});
+
 
 module.exports = router;
