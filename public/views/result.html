@@ -27,6 +27,7 @@
     $(function() {
         $('.callcenter').click(function() {
             $('.call-modal').addClass('active');
+            $('.input > input').focusin();
         });
         $('.call-modal > .fa-times').click(function() {
             $('.call-modal').removeClass('active');

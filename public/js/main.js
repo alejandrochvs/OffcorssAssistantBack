@@ -370,13 +370,13 @@ $(function () {
                                 } else {
                                     $($('.padSize')[datapad]).find('.box').removeClass('active');
                                     $(this).addClass('active');
-                                    if (datapad === 0) {
+                                    if (datapad == 0) {
                                         topSize = $(this).html();
                                         localStorage.setItem('topSize', topSize);
-                                    } else if (datapad === 1) {
+                                    } else if (datapad == 1) {
                                         bottomSize = $(this).html();
                                         localStorage.setItem('bottomSize', bottomSize);
-                                    } else if (datapad === 2) {
+                                    } else if (datapad == 2) {
                                         shoeSize = $(this).html();
                                         localStorage.setItem('shoeSize', shoeSize);
                                     }
