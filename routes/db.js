@@ -296,7 +296,9 @@ router.post('/colors', function (req, res) {
         //console.log(err);
     });
     db.once('open', function () {
-        colors.find({}, function (err, docs) {
+        colors.find({active : true},null,{sort : {
+            color : 1
+        }}, function (err, docs) {
             if (err) {
                 db.close();
                 return res.send(err);
