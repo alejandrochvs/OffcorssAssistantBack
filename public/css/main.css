@@ -1751,9 +1751,28 @@ html {
                 html body .content .screen .container .result .call-modal .button:hover {
                   background: #82bc00;
                   color: white; }
+              html body .content .screen .container .result .call-modal .success-content {
+                background: transparent;
+                color: transparent;
+                height: 100%;
+                position: absolute;
+                right: -101%;
+                top: 0;
+                transition: all .3s ease; }
+                html body .content .screen .container .result .call-modal .success-content h1 {
+                  text-align: center; }
               html body .content .screen .container .result .call-modal.active {
                 top: 15%;
                 z-index: 5; }
+                html body .content .screen .container .result .call-modal.active.success .success-content {
+                  color: white;
+                  background: #fd0;
+                  right: 0;
+                  -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                  -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                  box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2); }
+                  html body .content .screen .container .result .call-modal.active.success .success-content h2 {
+                    color: whitesmoke; }
             html body .content .screen .container .result .callcenter {
               width: 80px;
               height: 80px;
@@ -1845,6 +1864,8 @@ html {
                 color: white; }
             html body .content .screen .container .result.boy .call-modal .fa-times:hover {
               color: #cd3702; }
+            html body .content .screen .container .result.boy .call-modal.active.success .success-content {
+              background: #fd4605; }
             html body .content .screen .container .result.boy .callcenter {
               background: #fd4605; }
               html body .content .screen .container .result.boy .callcenter .wave-wrapper .wave.wave-1 {
@@ -1865,6 +1886,8 @@ html {
                 color: white; }
             html body .content .screen .container .result.girl .call-modal .fa-times:hover {
               color: #b40074; }
+            html body .content .screen .container .result.girl .call-modal.active.success .success-content {
+              background: #e70095; }
             html body .content .screen .container .result.girl .callcenter {
               background: #e70095; }
               html body .content .screen .container .result.girl .callcenter .wave-wrapper .wave.wave-1 {
@@ -1885,6 +1908,8 @@ html {
                 color: white; }
             html body .content .screen .container .result.bBoy .call-modal .fa-times:hover {
               color: #5f8900; }
+            html body .content .screen .container .result.bBoy .call-modal.active.success .success-content {
+              background: #82bc00; }
             html body .content .screen .container .result.bBoy .callcenter {
               background: #82bc00; }
               html body .content .screen .container .result.bBoy .callcenter .wave-wrapper .wave.wave-1 {
@@ -1905,6 +1930,8 @@ html {
                 color: white; }
             html body .content .screen .container .result.bGirl .call-modal .fa-times:hover {
               color: #7470c3; }
+            html body .content .screen .container .result.bGirl .call-modal.active.success .success-content {
+              background: #9794d2; }
             html body .content .screen .container .result.bGirl .callcenter {
               background: #9794d2; }
               html body .content .screen .container .result.bGirl .callcenter .wave-wrapper .wave.wave-1 {
@@ -1925,6 +1952,8 @@ html {
                 color: white; }
             html body .content .screen .container .result.nBoy .call-modal .fa-times:hover {
               color: #2275c7; }
+            html body .content .screen .container .result.nBoy .call-modal.active.success .success-content {
+              background: #3e8ede; }
             html body .content .screen .container .result.nBoy .callcenter {
               background: #3e8ede; }
               html body .content .screen .container .result.nBoy .callcenter .wave-wrapper .wave.wave-1 {
@@ -1945,6 +1974,8 @@ html {
                 color: white; }
             html body .content .screen .container .result.nGirl .call-modal .fa-times:hover {
               color: #e76f88; }
+            html body .content .screen .container .result.nGirl .call-modal.active.success .success-content {
+              background: #ee9bac; }
             html body .content .screen .container .result.nGirl .callcenter {
               background: #ee9bac; }
               html body .content .screen .container .result.nGirl .callcenter .wave-wrapper .wave.wave-1 {

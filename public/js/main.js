@@ -682,8 +682,9 @@ $(function () {
                                                 });
                                                 $('.call-modal > .input > input').tooltip('show');
                                             } else {
+                                                $('.input > input').unbind();
                                                 $('.call-modal > .input').removeClass('wrong');
-                                                $('.call-modal').removeClass('active');
+                                                $('.call-modal').addClass('success');
                                             }
                                         }
                                     });
