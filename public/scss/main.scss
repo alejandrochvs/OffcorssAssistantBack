@@ -83,6 +83,7 @@ html {
                     .exit-app {
                         transition: all .3s ease;
                         top: 0px;
+                        margin-right: 5px;
                         &:hover {
                             color: $yellow;
                         }

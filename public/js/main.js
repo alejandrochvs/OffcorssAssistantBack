@@ -995,7 +995,7 @@ $(function () {
                                                         for (var j = 0; j < res[i].occasion.length; j++) {
                                                             $('.e-card-item:last-child >.e-card-desc:last-child').append('<div class="col-xs-12">' + res[i].occasion[j] + '</div>');
                                                         }
-                                                        $('.e-card-item:last-child').append('<div class="col-xs-1 e-card-desc e-card-edition"><div class="col-xs-6 fa fa-trash" title="Borrar"></div><div class="col-xs-6 fa fa-pencil" title="Editar"></div></div>');
+                                                        $('.e-card-item:last-child').append('<div class="col-xs-1 e-card-desc e-card-edition"><div class="col-xs-12 fa fa-trash" title="Borrar"></div><div class="col-xs-6 fa fa-pencil hidden" title="Editar"></div></div>');
                                                         if (res[i].occasion.length > 1) {
                                                             $('.e-card-item:last-child > .e-card-occasion > div:first-child ').append(' <i class="fa fa-angle-down" aria-hidden="true"></i> ');
                                                         }

@@ -28,6 +28,15 @@
         img {
             margin-bottom: 5vh;
         }
+         ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        }
+        ::-webkit-scrollbar-thumb {
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        }
     }
     &.active {
         top: 5%;
@@ -145,9 +154,9 @@
             .title {
                 .text {
                     border-bottom-color: $boy;
-                    a{
+                    a {
                         color: $boy;
-                        .fa{
+                        .fa {
                             background-color: $boy;
                         }
                     }
@@ -190,9 +199,9 @@
             .title {
                 .text {
                     border-bottom-color: $girl;
-                    a{
+                    a {
                         color: $girl;
-                        .fa{
+                        .fa {
                             background-color: $girl;
                         }
                     }
@@ -235,9 +244,9 @@
             .title {
                 .text {
                     border-bottom-color: $bBoy;
-                    a{
+                    a {
                         color: $bBoy;
-                        .fa{
+                        .fa {
                             background-color: $bBoy;
                         }
                     }
@@ -280,9 +289,9 @@
             .title {
                 .text {
                     border-bottom-color: $bGirl;
-                    a{
+                    a {
                         color: $bGirl;
-                        .fa{
+                        .fa {
                             background-color: $bGirl;
                         }
                     }
@@ -325,9 +334,9 @@
             .title {
                 .text {
                     border-bottom-color: $nBoy;
-                    a{
+                    a {
                         color: $nBoy;
-                        .fa{
+                        .fa {
                             background-color: $nBoy;
                         }
                     }
@@ -370,9 +379,9 @@
             .title {
                 .text {
                     border-bottom-color: $nGirl;
-                    a{
+                    a {
                         color: $nGirl;
-                        .fa{
+                        .fa {
                             background-color: $nGirl;
                         }
                     }
@@ -418,8 +427,8 @@
         .selection-wrap {
             .title {
                 margin-bottom: 0;
-                .text{
-                    a{
+                .text {
+                    a {
                         top: 2px;
                     }
                 }

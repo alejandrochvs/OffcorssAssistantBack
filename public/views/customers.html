@@ -1,4 +1,24 @@
 <div class="col-xs-12 customers-container">
+     <div class="col-xs-12 title" style="text-align: left;">
+         <h4 style="">Filtro</h4>
+     </div>
+   <div class="col-xs-12 table-filter">
+      <select name="" id="" class="col-xs-12 col-sm-1 options">
+          <option value="" class="col-xs-12">Nombre</option>
+          <option value="" class="col-xs-12">Género</option>
+          <option value="" class="col-xs-12">Edad</option>
+          <option value="" class="col-xs-12">Superior</option>
+          <option value="" class="col-xs-12">Inferior</option>
+          <option value="" class="col-xs-12">Zapatos</option>
+          <option value="" class="col-xs-12">Teléfono</option>
+          <option value="" class="col-xs-12">Personalidad</option>
+          <option value="" class="col-xs-12">Color</option>
+          <option value="" class="col-xs-12">Clima</option>
+          <option value="" class="col-xs-12">Ocasión</option>
+      </select>
+       <input type="text" class="col-xs-12 col-sm-2">
+       <button class="col-xs-12 col-sm-1">Filtrar</button>
+   </div>
     <div class="col-xs-12 customers-table">
         <div class="col-xs-12 table-header">
             <div class="col-xs-1 customer-title" data-sort="e_card">
@@ -54,7 +74,9 @@
 </div>
 <script>
     $(function() {
-
+        var loadRows = function(object){
+            
+        }
         var loadCustomers = function(sort) {
             $('.loader > .progress').addClass('loading');
             $.ajax({
