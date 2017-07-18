@@ -109,9 +109,9 @@
             .title {
                 .text {
                     border-bottom-color: $nBoy;
-                    a{
+                    a {
                         color: $nBoy;
-                        .fa{
+                        .fa {
                             background-color: $nBoy;
                         }
                     }
@@ -154,9 +154,9 @@
             .title {
                 .text {
                     border-bottom-color: $nGirl;
-                    a{
+                    a {
                         color: $nGirl;
-                        .fa{
+                        .fa {
                             background-color: $nGirl;
                         }
                     }
@@ -199,9 +199,9 @@
             .title {
                 .text {
                     border-bottom-color: $girl;
-                    a{
+                    a {
                         color: $girl;
-                        .fa{
+                        .fa {
                             background-color: $girl;
                         }
                     }
@@ -244,9 +244,9 @@
             .title {
                 .text {
                     border-bottom-color: $bGirl;
-                    a{
+                    a {
                         color: $bGirl;
-                        .fa{
+                        .fa {
                             background-color: $bGirl;
                         }
                     }
@@ -289,9 +289,9 @@
             .title {
                 .text {
                     border-bottom-color: $boy;
-                    a{
+                    a {
                         color: $boy;
-                        .fa{
+                        .fa {
                             background-color: $boy;
                         }
                     }
@@ -334,9 +334,9 @@
             .title {
                 .text {
                     border-bottom-color: $bBoy;
-                    a{
+                    a {
                         color: $bBoy;
-                        .fa{
+                        .fa {
                             background-color: $bBoy;
                         }
                     }
@@ -369,6 +369,22 @@
                                 color: $bBoy;
                             }
                         }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .sizePrimi {
+        padding: 0;
+        .selection-wrap {
+            .title {
+                margin-bottom: 0;
+                .text {
+                    a {
+                        top: 2px;
                     }
                 }
             }

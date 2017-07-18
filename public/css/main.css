@@ -814,6 +814,8 @@ html {
               padding: 0; }
               html body .content .screen .container .size .selection-wrap .title {
                 margin-bottom: 0; }
+                html body .content .screen .container .size .selection-wrap .title .text a {
+                  top: 2px; }
               html body .content .screen .container .size .selection-wrap .padWrap .image {
                 height: 10vh; }
                 html body .content .screen .container .size .selection-wrap .padWrap .image div {
@@ -1014,6 +1016,13 @@ html {
                 color: white; }
             html body .content .screen .container .sizePrimi.bBoy .selection-wrap .padWrap .nav .sel:hover .fa {
               color: #82bc00; }
+          @media (max-width: 767px) {
+            html body .content .screen .container .sizePrimi {
+              padding: 0; }
+              html body .content .screen .container .sizePrimi .selection-wrap .title {
+                margin-bottom: 0; }
+                html body .content .screen .container .sizePrimi .selection-wrap .title .text a {
+                  top: 2px; } }
           html body .content .screen .container .occasion {
             padding: 5vh 0; }
             html body .content .screen .container .occasion .selection-wrap {
