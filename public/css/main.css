@@ -2601,7 +2601,8 @@ html {
                   html body .content .screen .container .customers-container .customers-table .customer-new.active .fa-eye:hover {
                     color: #00AFD3;
                     background: white; }
-                  html body .content .screen .container .customers-container .customers-table .customer-item.active .fa-trash:hover, html body .content .screen .container .customers-container .customers-table .customer-item.active .fa-ban:hover,
+                  html body .content .screen .container .customers-container .customers-table .customer-item.active .fa-trash:hover,
+                  html body .content .screen .container .customers-container .customers-table .customer-item.active .fa-ban:hover,
                   html body .content .screen .container .customers-container .customers-table .customer-new.active .fa-trash:hover,
                   html body .content .screen .container .customers-container .customers-table .customer-new.active .fa-ban:hover {
                     color: orangered;
@@ -2657,6 +2658,36 @@ html {
               html body .content .screen .container .customers-container .table-pagination .table-next {
                 border-top-right-radius: 5px;
                 border-bottom-right-radius: 5px; }
+          html body .content .screen .container .imgViewer {
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+            position: absolute;
+            transition: all .3s ease;
+            text-align: center;
+            overflow: scroll;
+            opacity: 0; }
+            html body .content .screen .container .imgViewer .fa-times {
+              position: absolute;
+              right: 3vw;
+              color: white;
+              font-size: 30px;
+              top: 3vh;
+              transition: all .3s ease;
+              cursor: pointer; }
+              html body .content .screen .container .imgViewer .fa-times:hover {
+                color: orangered; }
+            html body .content .screen .container .imgViewer img {
+              top: 2.5%;
+              position: relative;
+              transition: all .3s ease;
+              padding: 0;
+              height: 95%;
+              float: initial;
+              width: auto; }
+            html body .content .screen .container .imgViewer.active {
+              opacity: 1;
+              z-index: 10; }
     html body .footer {
       background: white;
       margin: 0;

@@ -232,7 +232,6 @@ router.post('/e-cards/upload', function (req, res) {
                 eCard.occasion[i] = tempECard.occasion[i];
             }
         }
-
         eCard.save(function (err, saved) {
             if (err) {
                 db.close()
@@ -437,6 +436,7 @@ router.post('/customers/register', function (req, res) {
         customer.weather = reqCustomer.weather;
         customer.color = reqCustomer.color;
         customer.personality = reqCustomer.personality;
+        customer.date = new Date();
         var customertoDb = new customers(customer);
         customertoDb.save(function (err, customer) {
             if (err && err.code !== 11000) {

@@ -48,69 +48,88 @@
         </li>
     </ul>
 </div>
+<div class="col-xs-12 imgViewer">
+    <i class="fa fa-times"></i>
+    <img src="" alt="">
+</div>
 <script>
-    var loadCustomers = function(sort) {
-        $('.loader > .progress').addClass('loading');
-        $.ajax({
-            type: 'POST',
-            url: '/db/customers/count',
-            success: function(res) {
-                $.ajax({
-                    type: 'POST',
-                    url: '/db/customers',
-                    data: {
-                        offset: 0,
-                        sort: sort
-                    },
-                    success: function(res) {
-                        $('.customer-item').remove();
-                        for (var i = 0; i < res.length; i++) {
-                            $('.customers-table').append('<div class="col-xs-12 customer-item"></div>');
-                            $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-img"><img class="col-xs-12" src="../IMG/ecards/' + res[i].e_card + '"/></div>');
-                            $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-name"><div class="col-xs-12">' + res[i].name + '</div></div>');
-                            $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-gender"><div class="col-xs-12">' + res[i].gender + '</div></div>');
-                            $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-age"><div class="col-xs-12">' + res[i].age + '</div></div>');
-                            $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-top"><div class="col-xs-12">' + res[i].size_top + '</div></div>');
-                            $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-bottom"><div class="col-xs-12">' + res[i].size_bottom + '</div></div>');
-                            $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-shoe"><div class="col-xs-12">' + res[i].size_shoe + '</div></div>');
-                            $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-phone"><div class="col-xs-12">' + res[i].phone + '</div></div>');
-                            $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-personality"></div>');
-                            for (var j = 0; j < res[i].personality.length; j++) {
-                                $('.customers-table > .customer-item:last-child > .customer-desc:last-child').append('<div class="col-xs-12">' + res[i].personality[j] + '</div>');
+    $(function() {
+
+        var loadCustomers = function(sort) {
+            $('.loader > .progress').addClass('loading');
+            $.ajax({
+                type: 'POST',
+                url: '/db/customers/count',
+                success: function(res) {
+                    $.ajax({
+                        type: 'POST',
+                        url: '/db/customers',
+                        data: {
+                            offset: 0,
+                            sort: sort
+                        },
+                        success: function(res) {
+                            $('.customer-item').remove();
+                            for (var i = 0; i < res.length; i++) {
+                                $('.customers-table').append('<div class="col-xs-12 customer-item"></div>');
+                                $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-img"><img class="col-xs-12" src="../IMG/ecards/' + res[i].e_card + '"/></div>');
+                                $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-name"><div class="col-xs-12">' + res[i].name + '</div></div>');
+                                $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-gender"><div class="col-xs-12">' + res[i].gender + '</div></div>');
+                                $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-age"><div class="col-xs-12">' + res[i].age + '</div></div>');
+                                $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-top"><div class="col-xs-12">' + res[i].size_top + '</div></div>');
+                                $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-bottom"><div class="col-xs-12">' + res[i].size_bottom + '</div></div>');
+                                $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-shoe"><div class="col-xs-12">' + res[i].size_shoe + '</div></div>');
+                                $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-phone"><div class="col-xs-12">' + res[i].phone + '</div></div>');
+                                $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-personality"></div>');
+                                for (var j = 0; j < res[i].personality.length; j++) {
+                                    $('.customers-table > .customer-item:last-child > .customer-desc:last-child').append('<div class="col-xs-12">' + res[i].personality[j] + '</div>');
+                                }
+                                $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-color"></div>');
+                                for (var j = 0; j < res[i].color.length; j++) {
+                                    $('.customers-table > .customer-item:last-child > .customer-desc:last-child').append('<div class="col-xs-12">' + res[i].color[j] + '</div>');
+                                }
+                                $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-weather"></div>');
+                                for (var j = 0; j < res[i].weather.length; j++) {
+                                    $('.customers-table > .customer-item:last-child > .customer-desc:last-child').append('<div class="col-xs-12">' + res[i].weather[j] + '</div>');
+                                }
+                                $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-occasion"></div>');
+                                for (var j = 0; j < res[i].occasion.length; j++) {
+                                    $('.customers-table > .customer-item:last-child > .customer-desc:last-child').append('<div class="col-xs-12">' + res[i].occasion[j] + '</div>');
+                                }
                             }
-                            $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-color"></div>');
-                            for (var j = 0; j < res[i].color.length; j++) {
-                                $('.customers-table > .customer-item:last-child > .customer-desc:last-child').append('<div class="col-xs-12">' + res[i].color[j] + '</div>');
-                            }
-                            $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-weather"></div>');
-                            for (var j = 0; j < res[i].weather.length; j++) {
-                                $('.customers-table > .customer-item:last-child > .customer-desc:last-child').append('<div class="col-xs-12">' + res[i].weather[j] + '</div>');
-                            }
-                            $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-occasion"></div>');
-                            for (var j = 0; j < res[i].occasion.length; j++) {
-                                $('.customers-table > .customer-item:last-child > .customer-desc:last-child').append('<div class="col-xs-12">' + res[i].occasion[j] + '</div>');
-                            }
+                            $('.customer-item').click(function() {
+                                if (!$(this).hasClass('active')) {
+                                    $('.customer-item.active').click();
+                                    $(this).addClass('active');
+                                } else {
+                                    $(this).removeClass('active');
+                                }
+                            });
+                            $('.customer-item > .customer-img > img').click(function() {
+                                if ($(this).parent().parent().hasClass('active')) {
+                                    loadImgToViewer($(this).attr('src'));
+                                }
+                            });
+                            $('.loader > .progress').removeClass('loading');
                         }
-                        $('.customer-item').click(function() {
-                            if (!$(this).hasClass('active')) {
-                                $('.customer-item.active').click();
-                                $(this).addClass('active');
-                            }else{
-                                $(this).removeClass('active');
-                            }
-                        });
-                        $('.loader > .progress').removeClass('loading');
-                    }
-                })
+                    })
+                }
+            });
+        }
+        loadCustomers('date');
+        $('.customer-title').click(function() {
+            if (!$(this).hasClass('active')) {
+                loadCustomers($(this).attr('data-sort'));
+                $('.customer-title.active').removeClass('active');
+                $(this).addClass('active');
             }
         });
-    }
-    loadCustomers('name');
-    $('.customer-title').click(function() {
-        if (!$(this).hasClass('active')) {
-            loadCustomers($(this).attr('data-sort'));
-            $('.customer-title.active').removeClass('active');
-            $(this).addClass('active');
+        $('.imgViewer > .fa-times').click(function() {
+            $(this).parent().removeClass('active');
+        });
+        var loadImgToViewer = function(url) {
+            $('.imgViewer').toggleClass('active');
+            $('.imgViewer > img').attr('src', url);
         }
     })
 

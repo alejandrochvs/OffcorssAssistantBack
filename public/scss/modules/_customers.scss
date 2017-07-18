@@ -30,8 +30,8 @@
                 &:hover {
                     background: darken(whitesmoke, 0%);
                 }
-                &.active{
-                    background: darken(whitesmoke,5%);
+                &.active {
+                    background: darken(whitesmoke, 5%);
                 }
             }
         }
@@ -146,11 +146,11 @@
                 transition: all .3s ease;
                 transform: rotate(0deg);
             }
-            .fa{
+            .fa {
                 transition: all .3s ease;
             }
-            .fa-camera{
-                &:hover{
+            .fa-camera {
+                &:hover {
                     color: #6DB75D;
                 }
             }
@@ -200,19 +200,20 @@
                         background: white;
                     }
                 }
-                .fa-trash,.fa-ban {
+                .fa-trash,
+                .fa-ban {
                     &:hover {
                         color: orangered;
                         background: white;
                     }
                 }
-                .fa-plus-square{
-                    &:hover{
+                .fa-plus-square {
+                    &:hover {
                         color: #6DB75D;
                     }
                 }
-                .fa-pencil{
-                    &:hover{
+                .fa-pencil {
+                    &:hover {
                         color: $yellow;
                     }
                 }
@@ -268,7 +269,7 @@
                 white-space: nowrap;
             }
             &:hover {
-                background: darken(whitesmoke,2.5%);
+                background: darken(whitesmoke, 2.5%);
             }
             &.active {
                 background: darken(whitesmoke, 0%);
@@ -282,5 +283,41 @@
             border-top-right-radius: 5px;
             border-bottom-right-radius: 5px;
         }
+    }
+}
+
+.imgViewer {
+    height: 100%;
+    background: rgba(black, 0.6);
+    z-index: -1;
+    position: absolute;
+    transition: all .3s ease;
+    text-align: center;
+    overflow: scroll;
+    opacity: 0;
+    .fa-times {
+        position: absolute;
+        right: 3vw;
+        color: white;
+        font-size: 30px;
+        top: 3vh;
+        transition: all .3s ease;
+        cursor: pointer;
+        &:hover {
+            color: orangered;
+        }
+    }
+    img {
+        top: 2.5%;
+        position: relative;
+        transition: all .3s ease;
+        padding: 0;
+        height: 95%;
+        float: initial;
+        width: auto;
+    }
+    &.active{
+        opacity: 1;
+        z-index: 10;
     }
 }

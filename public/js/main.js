@@ -589,7 +589,19 @@ $(function () {
                     $('.person').click(function () {
                         if ($(this).hasClass('transparent')) {
                             $(this).removeClass('transparent');
-                            personality.push($(this).attr('data-personality'));
+                            var dataPersonalityVar = $(this).attr('data-personality');
+                            if (dataPersonalityVar == 'personalityName1'){
+                                dataPersonalityVar = personalityName1;
+                            }else if (dataPersonalityVar == 'personalityName2'){
+                                dataPersonalityVar = personalityName2;
+                            }else if (dataPersonalityVar == 'personalityName3'){
+                                dataPersonalityVar = personalityName3;
+                            }else if (dataPersonalityVar == 'personalityName4'){
+                                dataPersonalityVar = personalityName4;
+                            }else if (dataPersonalityVar == 'personalityName5'){
+                                dataPersonalityVar = personalityName5;
+                            }
+                            personality.push(dataPersonalityVar);
                         } else {
                             $(this).addClass('transparent');
                             personality.splice(personality.indexOf($(this).attr('data-personality')), 1);

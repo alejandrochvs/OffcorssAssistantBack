@@ -49,6 +49,10 @@ var customersSchema = new Schema({
     e_card: {
         type: String,
         required: true
+    },
+    date : {
+        type : Date,
+        required : true
     }
 });
 var customers = mongoose.model('customers', customersSchema);
