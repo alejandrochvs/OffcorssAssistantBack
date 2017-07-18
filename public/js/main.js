@@ -668,6 +668,7 @@ $(function () {
                                 if (data.phone.match(regex)) {
                                     var regexToConv = /^[2-9]\d{2}[2-9]\d{2}\d{4}$/;
                                     data.phone = data.phone.replace(/\D/g, "");
+                                    $('.progress').addClass('loading');
                                     $.ajax({
                                         url: '/db/customers/register',
                                         type: 'POST',
@@ -684,8 +685,10 @@ $(function () {
                                             } else {
                                                 $('.input > input').unbind();
                                                 $('.call-modal > .input').removeClass('wrong');
+                                                $('.call-modal > .input > input').tooltip('hide');
                                                 $('.call-modal').addClass('success');
                                             }
+                                            $('.progress').removeClass('loading');
                                         }
                                     });
                                 } else {
