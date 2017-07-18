@@ -1759,7 +1759,7 @@ html {
                 margin-bottom: 3vh; }
                 html body .content .screen .container .result .call-modal .button:hover {
                   background: #4a9500 !important;
-                  color: white; }
+                  color: white !important; }
               html body .content .screen .container .result .call-modal .success-content {
                 background: transparent;
                 color: transparent;
