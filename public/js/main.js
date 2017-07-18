@@ -102,6 +102,7 @@ $(function () {
             });
         },
         loadView = function (div) {
+            $('.result > .callcenter').remove();
             div.load('views/' + current + '.html', function () {
                 localStorage.current = current;
                 if (currentIndex > 0) {
