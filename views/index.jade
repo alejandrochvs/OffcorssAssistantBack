@@ -20,7 +20,9 @@ html(lang='en')
                 .col-xs-12.cont.text-editable(data-var='headTitle0') BUSCA TU ESTILO
             .col-xs-3.head
                 .col-xs-12.cont
-                    a(href='http://www.offcorss.com/') SALIR
+                    a.exit-app.hidden-xs(href='http://www.offcorss.com/') SALIR
+                    a(href='http://www.offcorss.com/')
+                        i.fa.fa-times
         .col-xs-12.content
             .col-xs-12.warning-wrapper
                 .col-xs-8.title
@@ -42,7 +44,6 @@ html(lang='en')
             .col-xs-12.brand
     script(src='js/jquery-3.2.1.min.js')
     script(src='js/jquery.form.min.js')
-    script(src='js/typeit.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
     script.
         var admin = !{admin};

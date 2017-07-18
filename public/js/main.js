@@ -630,12 +630,6 @@ $(function () {
                     $('.header > .title > .cont').attr('data-var', 'headTitle3');
                     $('.loader > .progress').css('width', '100%');
                     $('.result').addClass(currentClass);
-                    $('.result > .selection-wrap > .title > h4').typeIt({
-                        strings: 'Cargando...',
-                        speed: 100,
-                        autoStart: true,
-                        loop: true
-                    });
                     var data = {}
                     if (gender == "F") {
                         data.gender = "FEMENINO";
