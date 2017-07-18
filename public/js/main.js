@@ -644,7 +644,8 @@ $(function () {
                         url: "db/e-cards/match",
                         data: data,
                         success: function (res) {
-                            $('.resultIMG').append('<img class="col-xs-12" src="IMG/ecards/' + res[0].url + '"/>');
+                            var randIndex = Math.floor(Math.random() * res.length);
+                            $('.resultIMG').append('<img class="col-xs-12" src="IMG/ecards/' + res[randIndex].url + '"/>');
                             $('.resultIMG').click(function () {
                                 $('.callcenter').click();
                             });
@@ -661,7 +662,7 @@ $(function () {
                             data.occasion = occasion;
                             data.weather = weather;
                             data.personality = personality;
-                            data.e_card = res[0].url;
+                            data.e_card = res[randIndex].url;
                             data.name = name;
                             $('.call-modal > .button').click(function () {
                                 data.phone = $('.call-modal > .input > input').val();
