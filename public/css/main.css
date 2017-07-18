@@ -1776,7 +1776,7 @@ html {
             html body .content .screen .container .result .callcenter {
               width: 80px;
               height: 80px;
-              background: #fd0;
+              background: #4a9500;
               position: fixed;
               right: 3vw;
               top: 45%;
@@ -1805,15 +1805,15 @@ html {
                   transition: all .3s ease; }
                 html body .content .screen .container .result .callcenter .wave-wrapper.active .wave.wave-1 {
                   animation: pulse 1.3s ease infinite alternate;
-                  background: #fd0; }
+                  background: #4a9500; }
                 html body .content .screen .container .result .callcenter .wave-wrapper.active .wave.wave-2 {
                   animation: pulse1 1.5s ease infinite alternate;
-                  background: #fd0; }
+                  background: #4a9500; }
                 html body .content .screen .container .result .callcenter .wave-wrapper.active .wave.wave-3 {
                   animation: pulse2 1s ease infinite alternate;
-                  background: #fd0; }
+                  background: #4a9500; }
               html body .content .screen .container .result .callcenter:hover {
-                background: #94d600; }
+                background: #57af00; }
             html body .content .screen .container .result .selection-wrap {
               text-align: center; }
               html body .content .screen .container .result .selection-wrap .title {
@@ -1866,14 +1866,6 @@ html {
               color: #cd3702; }
             html body .content .screen .container .result.boy .call-modal.active.success .success-content {
               background: #fd4605; }
-            html body .content .screen .container .result.boy .callcenter {
-              background: #fd4605; }
-              html body .content .screen .container .result.boy .callcenter .wave-wrapper .wave.wave-1 {
-                background: #fd4605; }
-              html body .content .screen .container .result.boy .callcenter .wave-wrapper .wave.wave-2 {
-                background: #fd4605; }
-              html body .content .screen .container .result.boy .callcenter .wave-wrapper .wave.wave-3 {
-                background: #fd4605; }
             html body .content .screen .container .result.girl .call-modal .title {
               background: #e70095; }
             html body .content .screen .container .result.girl .call-modal .input input {
@@ -1888,14 +1880,6 @@ html {
               color: #b40074; }
             html body .content .screen .container .result.girl .call-modal.active.success .success-content {
               background: #e70095; }
-            html body .content .screen .container .result.girl .callcenter {
-              background: #e70095; }
-              html body .content .screen .container .result.girl .callcenter .wave-wrapper .wave.wave-1 {
-                background: #e70095; }
-              html body .content .screen .container .result.girl .callcenter .wave-wrapper .wave.wave-2 {
-                background: #e70095; }
-              html body .content .screen .container .result.girl .callcenter .wave-wrapper .wave.wave-3 {
-                background: #e70095; }
             html body .content .screen .container .result.bBoy .call-modal .title {
               background: #82bc00; }
             html body .content .screen .container .result.bBoy .call-modal .input input {
@@ -1910,14 +1894,6 @@ html {
               color: #5f8900; }
             html body .content .screen .container .result.bBoy .call-modal.active.success .success-content {
               background: #82bc00; }
-            html body .content .screen .container .result.bBoy .callcenter {
-              background: #82bc00; }
-              html body .content .screen .container .result.bBoy .callcenter .wave-wrapper .wave.wave-1 {
-                background: #82bc00; }
-              html body .content .screen .container .result.bBoy .callcenter .wave-wrapper .wave.wave-2 {
-                background: #82bc00; }
-              html body .content .screen .container .result.bBoy .callcenter .wave-wrapper .wave.wave-3 {
-                background: #82bc00; }
             html body .content .screen .container .result.bGirl .call-modal .title {
               background: #9794d2; }
             html body .content .screen .container .result.bGirl .call-modal .input input {
@@ -1932,14 +1908,6 @@ html {
               color: #7470c3; }
             html body .content .screen .container .result.bGirl .call-modal.active.success .success-content {
               background: #9794d2; }
-            html body .content .screen .container .result.bGirl .callcenter {
-              background: #9794d2; }
-              html body .content .screen .container .result.bGirl .callcenter .wave-wrapper .wave.wave-1 {
-                background: #9794d2; }
-              html body .content .screen .container .result.bGirl .callcenter .wave-wrapper .wave.wave-2 {
-                background: #9794d2; }
-              html body .content .screen .container .result.bGirl .callcenter .wave-wrapper .wave.wave-3 {
-                background: #9794d2; }
             html body .content .screen .container .result.nBoy .call-modal .title {
               background: #3e8ede; }
             html body .content .screen .container .result.nBoy .call-modal .input input {
@@ -1954,14 +1922,6 @@ html {
               color: #2275c7; }
             html body .content .screen .container .result.nBoy .call-modal.active.success .success-content {
               background: #3e8ede; }
-            html body .content .screen .container .result.nBoy .callcenter {
-              background: #3e8ede; }
-              html body .content .screen .container .result.nBoy .callcenter .wave-wrapper .wave.wave-1 {
-                background: #3e8ede; }
-              html body .content .screen .container .result.nBoy .callcenter .wave-wrapper .wave.wave-2 {
-                background: #3e8ede; }
-              html body .content .screen .container .result.nBoy .callcenter .wave-wrapper .wave.wave-3 {
-                background: #3e8ede; }
             html body .content .screen .container .result.nGirl .call-modal .title {
               background: #ee9bac; }
             html body .content .screen .container .result.nGirl .call-modal .input input {
@@ -1976,14 +1936,6 @@ html {
               color: #e76f88; }
             html body .content .screen .container .result.nGirl .call-modal.active.success .success-content {
               background: #ee9bac; }
-            html body .content .screen .container .result.nGirl .callcenter {
-              background: #ee9bac; }
-              html body .content .screen .container .result.nGirl .callcenter .wave-wrapper .wave.wave-1 {
-                background: #ee9bac; }
-              html body .content .screen .container .result.nGirl .callcenter .wave-wrapper .wave.wave-2 {
-                background: #ee9bac; }
-              html body .content .screen .container .result.nGirl .callcenter .wave-wrapper .wave.wave-3 {
-                background: #ee9bac; }
             @media (max-width: 767px) {
               html body .content .screen .container .result {
                 padding: 0; }

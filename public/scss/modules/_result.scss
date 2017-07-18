@@ -98,7 +98,7 @@
     .callcenter {
         width: 80px;
         height: 80px;
-        background: $yellow;
+        background: #4a9500;
         position: fixed;
         right: 3vw;
         top: 45%;
@@ -131,21 +131,21 @@
                 .wave {
                     &.wave-1 {
                         animation: pulse 1.3s ease infinite alternate;
-                        background: $yellow;
+                        background: #4a9500;
                     }
                     &.wave-2 {
                         animation: pulse1 1.5s ease infinite alternate;
-                        background: $yellow;
+                        background: #4a9500;
                     }
                     &.wave-3 {
                         animation: pulse2 1s ease infinite alternate;
-                        background: $yellow;
+                        background: #4a9500;
                     }
                 }
             }
         }
         &:hover {
-            background: lighten($bBoy, 5%);
+            background: lighten(#4a9500, 5%);
         }
     }
     .selection-wrap {
@@ -231,22 +231,6 @@
                 }
             }
         }
-        .callcenter {
-            background: $boy;
-            .wave-wrapper {
-                .wave {
-                    &.wave-1 {
-                        background: $boy;
-                    }
-                    &.wave-2 {
-                        background: $boy;
-                    }
-                    &.wave-3 {
-                        background: $boy;
-                    }
-                }
-            }
-        }
     }
     &.girl {
         .call-modal {
@@ -274,22 +258,6 @@
             &.active {
                 &.success {
                     .success-content {
-                        background: $girl;
-                    }
-                }
-            }
-        }
-        .callcenter {
-            background: $girl;
-            .wave-wrapper {
-                .wave {
-                    &.wave-1 {
-                        background: $girl;
-                    }
-                    &.wave-2 {
-                        background: $girl;
-                    }
-                    &.wave-3 {
                         background: $girl;
                     }
                 }
@@ -327,22 +295,6 @@
                 }
             }
         }
-        .callcenter {
-            background: $bBoy;
-            .wave-wrapper {
-                .wave {
-                    &.wave-1 {
-                        background: $bBoy;
-                    }
-                    &.wave-2 {
-                        background: $bBoy;
-                    }
-                    &.wave-3 {
-                        background: $bBoy;
-                    }
-                }
-            }
-        }
     }
     &.bGirl {
         .call-modal {
@@ -370,22 +322,6 @@
             &.active {
                 &.success {
                     .success-content {
-                        background: $bGirl;
-                    }
-                }
-            }
-        }
-        .callcenter {
-            background: $bGirl;
-            .wave-wrapper {
-                .wave {
-                    &.wave-1 {
-                        background: $bGirl;
-                    }
-                    &.wave-2 {
-                        background: $bGirl;
-                    }
-                    &.wave-3 {
                         background: $bGirl;
                     }
                 }
@@ -423,22 +359,6 @@
                 }
             }
         }
-        .callcenter {
-            background: $nBoy;
-            .wave-wrapper {
-                .wave {
-                    &.wave-1 {
-                        background: $nBoy;
-                    }
-                    &.wave-2 {
-                        background: $nBoy;
-                    }
-                    &.wave-3 {
-                        background: $nBoy;
-                    }
-                }
-            }
-        }
     }
     &.nGirl {
         .call-modal {
@@ -466,22 +386,6 @@
             &.active {
                 &.success {
                     .success-content {
-                        background: $nGirl;
-                    }
-                }
-            }
-        }
-        .callcenter {
-            background: $nGirl;
-            .wave-wrapper {
-                .wave {
-                    &.wave-1 {
-                        background: $nGirl;
-                    }
-                    &.wave-2 {
-                        background: $nGirl;
-                    }
-                    &.wave-3 {
                         background: $nGirl;
                     }
                 }
