@@ -29,7 +29,7 @@
             }
         }
         .title {
-            background: $bBoy;
+            background: #4a9500 !important;
             color: white;
             padding: 2%;
             h4 {
@@ -42,7 +42,7 @@
             input {
                 border: none;
                 outline: none;
-                border-bottom: solid 2px $bBoy;
+                border-bottom: solid 2px #4a9500 !important;
                 padding: 2%;
                 transition: all .3s ease;
                 &.wrong {
@@ -52,16 +52,16 @@
         }
         .button {
             cursor: pointer;
-            border: solid 2px $bBoy;
+            border: solid 2px #4a9500 !important;
             border-radius: 5px;
-            color: $bBoy;
+            color: #4a9500 !important;
             text-align: center;
             padding: 3%;
             transition: all .3s ease;
             background: transparent;
             margin-bottom: 3vh;
             &:hover {
-                background: $bBoy;
+                background: #4a9500 !important;
                 color: white;
             }
         }
@@ -83,7 +83,7 @@
             &.success {
                 .success-content {
                     color: white;
-                    background: $yellow;
+                    background: #4a9500 !important;
                     right: 0;
                     -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
                     -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);

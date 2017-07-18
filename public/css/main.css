@@ -1722,7 +1722,7 @@ html {
                 html body .content .screen .container .result .call-modal .fa-times:hover {
                   color: #5f8900; }
               html body .content .screen .container .result .call-modal .title {
-                background: #82bc00;
+                background: #4a9500 !important;
                 color: white;
                 padding: 2%; }
                 html body .content .screen .container .result .call-modal .title h4 {
@@ -1733,23 +1733,23 @@ html {
                 html body .content .screen .container .result .call-modal .input input {
                   border: none;
                   outline: none;
-                  border-bottom: solid 2px #82bc00;
+                  border-bottom: solid 2px #4a9500 !important;
                   padding: 2%;
                   transition: all .3s ease; }
                   html body .content .screen .container .result .call-modal .input input.wrong {
                     border-bottom-color: orangered !important; }
               html body .content .screen .container .result .call-modal .button {
                 cursor: pointer;
-                border: solid 2px #82bc00;
+                border: solid 2px #4a9500 !important;
                 border-radius: 5px;
-                color: #82bc00;
+                color: #4a9500 !important;
                 text-align: center;
                 padding: 3%;
                 transition: all .3s ease;
                 background: transparent;
                 margin-bottom: 3vh; }
                 html body .content .screen .container .result .call-modal .button:hover {
-                  background: #82bc00;
+                  background: #4a9500 !important;
                   color: white; }
               html body .content .screen .container .result .call-modal .success-content {
                 background: transparent;
@@ -1766,7 +1766,7 @@ html {
                 z-index: 5; }
                 html body .content .screen .container .result .call-modal.active.success .success-content {
                   color: white;
-                  background: #fd0;
+                  background: #4a9500 !important;
                   right: 0;
                   -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
                   -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
