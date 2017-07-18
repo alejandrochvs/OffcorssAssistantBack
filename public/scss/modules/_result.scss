@@ -25,7 +25,7 @@
             cursor: pointer;
             transition: all .3s ease;
             &:hover {
-                color: darken($bBoy, 10%);
+                color: darken(#4a9500 , 10%) !important;
             }
         }
         .title {

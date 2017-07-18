@@ -1729,7 +1729,7 @@ html {
                 cursor: pointer;
                 transition: all .3s ease; }
                 html body .content .screen .container .result .call-modal .fa-times:hover {
-                  color: #5f8900; }
+                  color: #316200 !important; }
               html body .content .screen .container .result .call-modal .title {
                 background: #4a9500 !important;
                 color: white;
