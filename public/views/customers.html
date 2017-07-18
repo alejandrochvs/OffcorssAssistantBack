@@ -109,6 +109,7 @@
                                 if ($(this).parent().parent().hasClass('active')) {
                                     loadImgToViewer($(this).attr('src'));
                                 }
+                                $(this).parent().parent().click();
                             });
                             $('.loader > .progress').removeClass('loading');
                         }
