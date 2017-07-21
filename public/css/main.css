@@ -2399,7 +2399,9 @@ html {
               text-align: center;
               border-radius: 5px;
               line-height: 5vh;
-              height: 5vh; }
+              height: 5vh;
+              margin-bottom: 20px;
+              text-align: center; }
               html body .content .screen .container .customers-container .table-filter select {
                 height: 80%;
                 top: 10%;
@@ -2422,7 +2424,6 @@ html {
               -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
               -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
               box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-              margin-top: 20px;
               margin-bottom: 20px;
               padding: 0;
               height: auto;
@@ -2611,7 +2612,8 @@ html {
             transition: all .3s ease;
             text-align: center;
             overflow: scroll;
-            opacity: 0; }
+            opacity: 0;
+            cursor: pointer; }
             html body .content .screen .container .imgViewer .fa-times {
               position: absolute;
               right: 3vw;

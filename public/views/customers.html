@@ -17,7 +17,10 @@
           <option value="weather" class="col-xs-12">Clima</option>
           <option value="occasion" class="col-xs-12">Ocasión</option>
       </select>
-        <input id="filter" type="text" class="col-xs-12 col-sm-2" placeholder="Filtrar...">
+        <input id="filter" type="text" class="col-xs-12 col-sm-1" placeholder="Filtrar...">
+    </div>
+    <div class="col-xs-12 title" style="text-align: left;">
+        <h4 style="">Clientes</h4>
     </div>
     <div class="col-xs-12 customers-table">
         <div class="col-xs-12 table-header">
@@ -59,14 +62,6 @@
             </div>
         </div>
     </div>
-    <ul class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 table-pagination">
-        <li class="col-xs-1 table-prev">
-            <h6><i class="fa fa-angle-left"></i></h6>
-        </li>
-        <li class="col-xs-1 table-next pull-right">
-            <h6><i class="fa fa-angle-right"></i></h6>
-        </li>
-    </ul>
 </div>
 <div class="col-xs-12 imgViewer">
     <i class="fa fa-times"></i>
@@ -75,6 +70,9 @@
 <script>
     $(function() {
         var appendCustomers = function(object) {
+            if (object.length > 100){
+                $('.customers-container').append('<ul class="col-xs-12 col-sm-4 col-sm-offset-4 col-md-2 col-md-offset-5 table-pagination"><li class="col-xs-3 table-prev"><h6><i class="fa fa-angle-left"></i></h6></li><li class="col-xs-3 table-nextN pull-right"><h6><i class="fa fa-angle-right"></i></h6></li></ul>');
+            }
             $('.customer-item').remove();
             for (var i = 0; i < object.length; i++) {
                 $('.customers-table').append('<div class="col-xs-12 customer-item"></div>');
@@ -122,42 +120,31 @@
             $('.loader > .progress').addClass('loading');
             $.ajax({
                 type: 'POST',
-                url: '/db/customers/count',
+                url: '/db/customers',
+                data: {
+                    offset: 0,
+                    sort: sort
+                },
                 success: function(res) {
-                    $.ajax({
-                        type: 'POST',
-                        url: '/db/customers',
-                        data: {
-                            offset: 0,
-                            sort: sort
-                        },
-                        success: function(res) {
-                            appendCustomers(res);
-                            $('.loader > .progress').removeClass('loading');
-                        }
-                    })
+                    appendCustomers(res);
+                    $('.loader > .progress').removeClass('loading');
                 }
-            });
+            })
         }
         var filterCustomers = function(name, attr) {
             $('.loader > .progress').addClass('loading');
             $.ajax({
                 type: 'POST',
-                url: '/db/customers/count',
-                success: function(filterRes) {
-                    $.ajax({
-                        type: 'POST',
-                        url: '/db/customers/filter',
-                        data: {
-                            name: name,
-                            attr: attr,
-                            offset: 0
-                        },
-                        success: function(filteredRes) {
-                            appendCustomers(filteredRes);
-                            $('.loader > .progress').removeClass('loading');
-                        }
-                    });
+                url: '/db/customers/filter',
+                data: {
+                    name: name,
+                    attr: attr,
+                    offset: 0
+                },
+                success: function(filteredRes) {
+                    appendCustomers(filteredRes);
+                    console.log(filteredRes.length);
+                    $('.loader > .progress').removeClass('loading');
                 }
             });
         }
