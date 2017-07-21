@@ -2402,15 +2402,22 @@ html {
               height: 5vh; }
               html body .content .screen .container .customers-container .table-filter select {
                 height: 80%;
-                top: 10%; }
+                top: 10%;
+                border: none;
+                outline: none;
+                border-bottom: solid 2px #fd0;
+                transition: all .3s ease;
+                padding: 1px; }
               html body .content .screen .container .customers-container .table-filter input {
                 height: 80%;
-                top: 10%; }
-              html body .content .screen .container .customers-container .table-filter button {
-                height: 80%;
                 top: 10%;
-                padding: 0;
-                line-height: 3vh; }
+                border: none;
+                border-bottom: solid 2px #fd0;
+                margin-left: 1vw;
+                outline: none;
+                transition: all .3s ease; }
+                html body .content .screen .container .customers-container .table-filter input:focus {
+                  border-radius: 5px; }
             html body .content .screen .container .customers-container .customers-table {
               -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
               -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
@@ -2616,13 +2623,14 @@ html {
               html body .content .screen .container .imgViewer .fa-times:hover {
                 color: orangered; }
             html body .content .screen .container .imgViewer img {
-              top: 2.5%;
+              margin-top: 2.5%;
+              margin-bottom: 2.5%;
               position: relative;
               transition: all .3s ease;
               padding: 0;
-              height: 95%;
+              height: auto;
               float: initial;
-              width: auto; }
+              width: 40%; }
             html body .content .screen .container .imgViewer.active {
               opacity: 1;
               z-index: 10; }

@@ -414,6 +414,26 @@ router.post('/customers', function (req, res) {
         });
     })
 });
+router.post('/customers/filter', function (req, res) {
+    mongoose.Promise = global.Promise;
+    mongoose.connect(mongoURL);
+    var db = mongoose.connection;
+    db.on('error', function (err) {
+        console.log(err);
+    });
+    db.once('open', function () {
+        var query = {};
+        query[req.body.name] = new RegExp(req.body.attr, "i");
+        customers.find(query).sort(req.body.name).limit(50).skip(Number(req.body.offset)).exec(function (err, docs) {
+            if (err) {
+                db.close();
+                return console.log(err);
+            }
+            db.close();
+            res.send(docs);
+        });
+    })
+});
 router.post('/customers/register', function (req, res) {
     mongoose.Promise = global.Promise;
     mongoose.connect(mongoURL);

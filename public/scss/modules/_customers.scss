@@ -15,16 +15,23 @@
         select{
             height: 80%;
             top: 10%;
+            border: none;
+            outline: none;
+            border-bottom: solid 2px $yellow;
+            transition: all .3s ease;
+            padding: 1px;
         }
         input{
             height: 80%;
             top: 10%;
-        }
-        button{
-            height: 80%;
-            top: 10%;
-            padding: 0;
-            line-height: 3vh;
+            border: none;
+            border-bottom: solid 2px $yellow;
+            margin-left: 1vw;
+            outline: none;
+            transition: all .3s ease;
+            &:focus{
+                border-radius: 5px;
+            }
         }
     }
     .customers-table {
@@ -280,7 +287,6 @@
         }
     }
 }
-
 .imgViewer {
     height: 100%;
     background: rgba(black, 0.6);
@@ -303,13 +309,14 @@
         }
     }
     img {
-        top: 2.5%;
+        margin-top: 2.5%;
+        margin-bottom: 2.5%;
         position: relative;
         transition: all .3s ease;
         padding: 0;
-        height: 95%;
+        height: auto;
         float: initial;
-        width: auto;
+        width: 40%;
     }
     &.active {
         opacity: 1;
