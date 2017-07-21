@@ -163,15 +163,24 @@
         }
         loadCustomers('date');
         $('#filter').keyup(function(e) {
-            filterCustomers($('select').val(), $('#filter').val());
+            if (!$('.loader > .progress').hasClass('loading')) {
+                filterCustomers($('select').val(), $('#filter').val());
+            }
         })
         $('.customer-title').click(function() {
-            if (!$(this).hasClass('active')) {
-                loadCustomers($(this).attr('data-sort'));
-                $('.customer-title.active').removeClass('active');
-                $(this).addClass('active');
+            if (!$('.loader > .progress').hasClass('.loading')) {
+                if (!$(this).hasClass('active')) {
+                    loadCustomers($(this).attr('data-sort'));
+                    $('.customer-title.active').removeClass('active');
+                    $(this).addClass('active');
+                }
             }
         });
+        $('select').change(function() {
+            if (!$('.loader > .progress').hasClass('loading')) {
+                filterCustomers($('select').val(), $('#filter').val());
+            }
+        })
         $('.imgViewer').click(function() {
             $(this).removeClass('active');
         });
