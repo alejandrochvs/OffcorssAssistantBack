@@ -132,7 +132,7 @@ router.post('/e-cards', function (req, res) {
         console.log(err);
     });
     db.once('open', function () {
-        eCards.find().limit(10).skip(Number(req.body.offset)).exec(function (err, docs) {
+        eCards.find().limit(25).skip(Number(req.body.offset)).exec(function (err, docs) {
             if (err) {
                 db.close();
                 return console.log(err);

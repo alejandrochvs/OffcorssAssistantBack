@@ -965,7 +965,7 @@ $(function () {
                                                 type: "POST",
                                                 url: '/db/e-cards',
                                                 data: {
-                                                    offset: offset * 10
+                                                    offset: offset * 25
                                                 },
                                                 success: function (res) {
                                                     $('.e-card-item').remove();
