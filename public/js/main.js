@@ -1520,6 +1520,7 @@ $(function () {
                     } else {
                         $('body').removeClass('edit');
                         $('.text-editable').unbind();
+                        window.location.reload();
                     }
                 });
                 $('.hide-admin').click(function () {
