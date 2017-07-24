@@ -143,7 +143,6 @@
                 },
                 success: function(filteredRes) {
                     appendCustomers(filteredRes);
-                    console.log(filteredRes.length);
                     $('.loader > .progress').removeClass('loading');
                 }
             });
@@ -170,7 +169,6 @@
             if (!$('.loader > .progress').hasClass('loading')) {
                 filterCustomers($('select').val(), $('#filter').val());
                 $('.customer-title.active').removeClass('active');
-                console.log($(this).val());
                 $('.customer-title[data-sort='+$(this).val()+']').addClass('active');
             }
         })
