@@ -6,7 +6,7 @@ var path = require('path');
 var mongoose = require('mongoose');
 var mongoURL = process.env.MONGODB_URI ||
     process.env.MONGOHQ_URL ||
-    'mongodb://localhost/assistant';
+    'mongodb://HermecoAdmin:Hermeco.123@localhost:27017/assistant';
 
 //Sizes
 var sizes = require('./sizes_model.js');
