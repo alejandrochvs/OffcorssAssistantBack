@@ -65,6 +65,13 @@
 </div>
 <div class="col-xs-12 imgViewer">
     <i class="fa fa-times"></i>
+    <div class="reference-list">
+        <div class="title">
+            <h2>Referencias</h2>
+        </div>
+        <ul class="references">
+        </ul>
+    </div>
     <img src="" alt="">
 </div>
 <script>
@@ -214,12 +221,33 @@
                 $('.customer-title[data-sort=' + $(this).val() + ']').addClass('active');
             }
         })
-        $('.imgViewer').click(function() {
-            $(this).removeClass('active');
+        $('.imgViewer').click(function(e) {
+            console.log(e.target);
+            if (e.target == $('.imgViewer')[0] || e.target == $('.imgViewer > .fa-times')[0]) {
+                $(this).removeClass('active');
+            }
         });
         var loadImgToViewer = function(url) {
-            $('.imgViewer').toggleClass('active');
-            $('.imgViewer > img').attr('src', url);
+            var dataUrl = url.split('/');
+            dataUrl = dataUrl[dataUrl.length - 1];
+            var data = {
+                url: dataUrl
+            }
+            $('.loader > .progress').addClass('loading');
+            $.ajax({
+                type: "POST",
+                url: '/db/e-cards/getReferences',
+                data: data,
+                success: function(refRes) {
+                    $('.references > a').remove();
+                    for (var i = 0; i < refRes.length; i++) {
+                        $('.references').append('<a href="http://www.offcorss.com/' + refRes[i] + '" target="_blank"><li class="reference">' + refRes[i] + '</li></a>')
+                    }
+                    $('.imgViewer').toggleClass('active');
+                    $('.imgViewer > img').attr('src', url);
+                    $('.loader > .progress').removeClass('loading');
+                }
+            })
         }
         loadCount();
     })

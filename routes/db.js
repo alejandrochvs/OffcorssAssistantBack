@@ -140,7 +140,7 @@ router.post('/e-cards', function (req, res) {
             db.close();
             res.send(docs);
         });
-    })
+    });
 });
 router.post('/e-cards/count', function (req, res) {
     mongoose.Promise = global.Promise;
@@ -264,6 +264,24 @@ router.post('/e-cards/delete', function (req, res) {
                 }
                 res.send('Deleted');
             });
+        });
+    });
+});
+router.post('/e-cards/getReferences', function (req, res) {
+    mongoose.Promise = global.Promise;
+    mongoose.connect(mongoURL);
+    var db = mongoose.connection;
+    db.on('error', function (err) {
+        console.log(err);
+    });
+    db.once('open', function () {
+        eCards.findOne({url: req.body.url}, function (err, docs) {
+            if (err) {
+                db.close();
+                return console.log(err);
+            }
+            db.close();
+            res.send(docs.reference);
         });
     });
 });

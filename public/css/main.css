@@ -2624,12 +2624,42 @@ html {
               cursor: pointer; }
               html body .content .screen .container .imgViewer .fa-times:hover {
                 color: orangered; }
+            html body .content .screen .container .imgViewer .reference-list {
+              background: white;
+              width: 20%;
+              position: absolute;
+              top: 5%;
+              left: 5%;
+              text-align: center;
+              border-radius: 5px;
+              cursor: default; }
+              html body .content .screen .container .imgViewer .reference-list .title {
+                text-transform: uppercase;
+                padding: 4%; }
+                html body .content .screen .container .imgViewer .reference-list .title h2 {
+                  font-weight: 100; }
+              html body .content .screen .container .imgViewer .reference-list .references {
+                padding: 0;
+                list-style-type: none; }
+                html body .content .screen .container .imgViewer .reference-list .references a {
+                  color: #e6c700;
+                  transition: all .3s ease; }
+                  html body .content .screen .container .imgViewer .reference-list .references a .reference {
+                    background: whitesmoke;
+                    border-bottom: solid 1px #e8e8e8;
+                    padding: 1%;
+                    font-size: 20px;
+                    transition: all .3s ease; }
+                  html body .content .screen .container .imgViewer .reference-list .references a:hover .reference {
+                    background: #e8e8e8;
+                    border-bottom: solid 1px gainsboro; }
             html body .content .screen .container .imgViewer img {
               margin-top: 2.5%;
               margin-bottom: 2.5%;
               position: relative;
               transition: all .3s ease;
               padding: 0;
+              cursor: default;
               height: auto;
               float: initial;
               width: 40%; }

@@ -289,6 +289,7 @@
         }
     }
 }
+
 .imgViewer {
     height: 100%;
     background: rgba(black, 0.6);
@@ -311,12 +312,51 @@
             color: orangered;
         }
     }
+    .reference-list {
+        background: darken(white, 0%);
+        width: 20%;
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        text-align: center;
+        border-radius: 5px;
+        cursor: default;
+        .title {
+            text-transform: uppercase;
+            padding: 4%;
+            h2 {
+                font-weight: 100;
+            }
+        }
+        .references {
+            padding: 0;
+            list-style-type: none;
+            a {
+                color: darken($yellow, 5%);
+                transition: all .3s ease;
+                .reference {
+                    background: whitesmoke;
+                    border-bottom: solid 1px darken(whitesmoke, 5%);
+                    padding: 1%;
+                    font-size: 20px;
+                    transition: all .3s ease;
+                }
+                &:hover {
+                    .reference {
+                        background: darken(whitesmoke, 5%);
+                        border-bottom: solid 1px darken(whitesmoke, 10%);
+                    }
+                }
+            }
+        }
+    }
     img {
         margin-top: 2.5%;
         margin-bottom: 2.5%;
         position: relative;
         transition: all .3s ease;
         padding: 0;
+        cursor: default;
         height: auto;
         float: initial;
         width: 40%;
