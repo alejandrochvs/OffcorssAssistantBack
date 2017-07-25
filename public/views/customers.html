@@ -25,7 +25,7 @@
     <div class="col-xs-12 customers-table">
         <div class="col-xs-12 table-header">
             <div class="col-xs-1 customer-title" data-sort="e_card">
-                <h4>Imágen</h4>
+                <h4>E-card</h4>
             </div>
             <div class="col-xs-1 customer-title" data-sort="name">
                 <h4>Nombre</h4>
@@ -159,6 +159,7 @@
         }
         var filterCustomers = function(name, attr) {
             $('.loader > .progress').addClass('loading');
+            $('.customer-title[data-sort="' + name + '"]').addClass('active');
             var dataFilterCustomers = {
                 name: name,
                 attr: attr,
@@ -190,6 +191,7 @@
                     $('select option:eq(1)').prop('selected', true);
                 }
                 if ($(this).val() == "") {
+                    $('.customer-title.active').removeClass('active');
                     loadCount();
                 } else {
                     filterCustomers($('select').val(), $('#filter').val());
