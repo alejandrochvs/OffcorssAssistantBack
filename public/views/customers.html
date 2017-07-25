@@ -69,9 +69,34 @@
 </div>
 <script>
     $(function() {
-        var appendCustomers = function(object) {
-            if (object.length > 100) {
-                $('.customers-container').append('<ul class="col-xs-12 col-sm-4 col-sm-offset-4 col-md-2 col-md-offset-5 table-pagination"><li class="col-xs-3 table-prev"><h6><i class="fa fa-angle-left"></i></h6></li><li class="col-xs-3 table-nextN pull-right"><h6><i class="fa fa-angle-right"></i></h6></li></ul>');
+        var appendCustomers = function(object, count, page) {
+            $('.customers-container > ul').remove();
+            if (count && page) {
+                if (count > 25) {
+                    var pages = Math.ceil(count / 25);
+                    if (page == 1) {
+                        $('.customers-container').append('<ul class="col-xs-12 col-sm-4 col-sm-offset-4 table-pagination"><li class="col-xs-3 table-prev"><h6><i class="fa fa-angle-left"></i></h6></li><li class="active col-xs-2"><h6>1</h6></li><li class="col-xs-2"><h6>2</h6></li><li class="col-xs-2"><h6>3</h6></li><li class="col-xs-3 table-nextN pull-right"><h6><i class="fa fa-angle-right"></i></h6></li></ul>');
+                    } else if (page == pages) {
+                        $('.customers-container').append('<ul class="col-xs-12 col-sm-4 col-sm-offset-4 table-pagination"><li class="col-xs-3 table-prev"><h6><i class="fa fa-angle-left"></i></h6></li><li class="col-xs-2"><h6>' + (page - 2) + '</h6></li><li class="col-xs-2"><h6>' + (page - 1) + '</h6></li><li class="col-xs-2 active"><h6>' + page + '</h6></li><li class="col-xs-3 table-nextN pull-right"><h6><i class="fa fa-angle-right"></i></h6></li></ul>');
+                    } else {
+                        $('.customers-container').append('<ul class="col-xs-12 col-sm-4 col-sm-offset-4 table-pagination"><li class="col-xs-3 table-prev"><h6><i class="fa fa-angle-left"></i></h6></li><li class="col-xs-2"><h6>' + (page - 1) + '</h6></li><li class="col-xs-2 active"><h6>' + page + '</h6></li><li class="col-xs-2"><h6>' + (page + 1) + '</h6></li><li class="col-xs-3 table-nextN pull-right"><h6><i class="fa fa-angle-right"></i></h6></li></ul>');
+                    }
+                    $('.customers-container > ul > li').click(function() {
+                        if (!$(this).hasClass('active') && !$('.loader > .progress').hasClass('loading')) {
+                            if ($(this).hasClass('table-prev')) {
+                                if ($('.customers-container > ul > li:nth-child(2)').find('h6').html() == 1 && $('.customers-container > ul > li:nth-child(2)').hasClass('active')) {} else {
+                                    loadCustomers('date', count, page - 1);
+                                }
+                            } else if ($(this).hasClass('table-nextN')) {
+                                if ($('.customers-container > ul > li:nth-child(4)').find('h6').html() == Math.ceil(count / 25) && $('.customers-container > ul > li:nth-child(4)').hasClass('active')) {} else {
+                                    loadCustomers('date', count, page + 1);
+                                }
+                            } else {
+                                loadCustomers('date', count, Number($(this).find('h6').html()));
+                            }
+                        }
+                    })
+                }
             }
             $('.customer-item').remove();
             for (var i = 0; i < object.length; i++) {
@@ -116,44 +141,59 @@
                 }
             });
         }
-        var loadCustomers = function(sort) {
+        var loadCustomers = function(sort, count, page) {
             $('.loader > .progress').addClass('loading');
+            var dataLoadCustomers = {
+                offset: (page - 1) * 25,
+                sort: sort
+            }
             $.ajax({
                 type: 'POST',
                 url: '/db/customers',
-                data: {
-                    offset: 0,
-                    sort: sort
-                },
+                data: dataLoadCustomers,
                 success: function(res) {
-                    appendCustomers(res);
+                    appendCustomers(res, count, page);
                     $('.loader > .progress').removeClass('loading');
                 }
             })
         }
         var filterCustomers = function(name, attr) {
             $('.loader > .progress').addClass('loading');
+            var dataFilterCustomers = {
+                name: name,
+                attr: attr,
+                offset: 0
+            };
             $.ajax({
                 type: 'POST',
                 url: '/db/customers/filter',
-                data: {
-                    name: name,
-                    attr: attr,
-                    offset: 0
-                },
+                data: dataFilterCustomers,
                 success: function(filteredRes) {
                     appendCustomers(filteredRes);
                     $('.loader > .progress').removeClass('loading');
                 }
             });
         }
-        loadCustomers('date');
+        var loadCount = function() {
+            $.ajax({
+                url: '/db/customers/count',
+                type: 'POST',
+                success: function(res) {
+                    var count = res.count;
+                    loadCustomers('date', count, 1);
+                }
+            });
+        }
         $('#filter').keyup(function(e) {
             if (!$('.loader > .progress').hasClass('loading')) {
-                if ($('select').val() == null){
+                if ($('select').val() == null) {
                     $('select option:eq(1)').prop('selected', true);
                 }
-                filterCustomers($('select').val(), $('#filter').val());
+                if ($(this).val() == "") {
+                    loadCount();
+                } else {
+                    filterCustomers($('select').val(), $('#filter').val());
+                }
             }
         })
         $('.customer-title').click(function() {
@@ -169,7 +209,7 @@
             if (!$('.loader > .progress').hasClass('loading')) {
                 filterCustomers($('select').val(), $('#filter').val());
                 $('.customer-title.active').removeClass('active');
-                $('.customer-title[data-sort='+$(this).val()+']').addClass('active');
+                $('.customer-title[data-sort=' + $(this).val() + ']').addClass('active');
             }
         })
         $('.imgViewer').click(function() {
@@ -179,6 +219,7 @@
             $('.imgViewer').toggleClass('active');
             $('.imgViewer > img').attr('src', url);
         }
+        loadCount();
     })
 
 </script>

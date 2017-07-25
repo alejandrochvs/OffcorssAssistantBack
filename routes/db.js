@@ -404,7 +404,7 @@ router.post('/customers', function (req, res) {
     });
     db.once('open', function () {
         var sort = req.body.sort;
-        customers.find().sort(sort).limit(50).skip(Number(req.body.offset)).exec(function (err, docs) {
+        customers.find().sort(sort).limit(25).skip(Number(req.body.offset)).exec(function (err, docs) {
             if (err) {
                 db.close();
                 return console.log(err);
@@ -424,7 +424,7 @@ router.post('/customers/filter', function (req, res) {
     db.once('open', function () {
         var query = {};
         query[req.body.name] = new RegExp(req.body.attr, "i");
-        customers.find(query).sort(req.body.name).limit(50).skip(Number(req.body.offset)).exec(function (err, docs) {
+        customers.find(query).sort(req.body.name).skip(Number(req.body.offset)).exec(function (err, docs) {
             if (err) {
                 db.close();
                 return console.log(err);
