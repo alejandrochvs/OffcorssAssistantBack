@@ -103,6 +103,11 @@ $(function () {
         },
         loadView = function (div) {
             $('.result > .callcenter').remove();
+            if (admin == undefined) {
+                if (current == 'customers' || current == 'e-cards' || current == 'login' || current == 'register' || current == 'looks') {
+                    current = 'gender';
+                }
+            }
             div.load('views/' + current + '.html', function () {
                 localStorage.current = current;
                 if (currentIndex > 0) {
@@ -310,8 +315,7 @@ $(function () {
                             }
                         }
                     })
-                }
-                else if (current === divs[3]) {
+                } else if (current === divs[3]) {
                     $('.header > .title > .cont').html(headTitle1);
                     $('.header > .title > .cont').attr('data-var', 'headTitle1');
                     $('.size > .selection-wrap > .title > .text-editable').html(sizeTitle);
@@ -392,8 +396,7 @@ $(function () {
                             }
                         }
                     });
-                }
-                else if (current === divs[4]) {
+                } else if (current === divs[4]) {
                     $('.sizePrimi > .selection-wrap > .title > .text > N').html(name);
                     $('.header > .title > .cont').html(headTitle1);
                     $('.header > .title > .cont').attr('data-var', 'headTitle1');
@@ -590,15 +593,15 @@ $(function () {
                         if ($(this).hasClass('transparent')) {
                             $(this).removeClass('transparent');
                             var dataPersonalityVar = $(this).attr('data-personality');
-                            if (dataPersonalityVar == 'personalityName1'){
+                            if (dataPersonalityVar == 'personalityName1') {
                                 dataPersonalityVar = personalityName1;
-                            }else if (dataPersonalityVar == 'personalityName2'){
+                            } else if (dataPersonalityVar == 'personalityName2') {
                                 dataPersonalityVar = personalityName2;
-                            }else if (dataPersonalityVar == 'personalityName3'){
+                            } else if (dataPersonalityVar == 'personalityName3') {
                                 dataPersonalityVar = personalityName3;
-                            }else if (dataPersonalityVar == 'personalityName4'){
+                            } else if (dataPersonalityVar == 'personalityName4') {
                                 dataPersonalityVar = personalityName4;
-                            }else if (dataPersonalityVar == 'personalityName5'){
+                            } else if (dataPersonalityVar == 'personalityName5') {
                                 dataPersonalityVar = personalityName5;
                             }
                             personality.push(dataPersonalityVar);
@@ -655,8 +658,8 @@ $(function () {
                             $('.resultIMG').click(function () {
                                 $('.callcenter').click();
                             });
-                            $('.input > input').keyup(function(e){
-                                if (e.keyCode == 13){
+                            $('.input > input').keyup(function (e) {
+                                if (e.keyCode == 13) {
                                     $('.call-modal > .button').click();
                                 }
                             })
@@ -736,7 +739,6 @@ $(function () {
                                         });
                                         loadAdmin();
                                         next('gender');
-                                        console.log('Logged in.');
                                         $('.progress').removeClass('loading');
                                     }
                                 }
@@ -1325,8 +1327,7 @@ $(function () {
                     $('.progress').addClass('loading');
                     getAges()
 
-                }
-                else if (current == 'customers'){
+                } else if (current == 'customers') {
                     $('.head.title > .cont').html('CLIENTES');
                 }
                 $('N').html(name);
@@ -1497,16 +1498,16 @@ $(function () {
                     $('.colorPicker').click();
                 });
                 currentIndex = localStorage.currentIndex || -1;
-                gender = gender || 'M';
-                name = name || 'Alejo';
+                gender = gender || 'F';
+                name = name || 'Alicia';
                 age = age || 5;
                 bottomSize = bottomSize || 24;
                 topSize = topSize || 24;
                 shoeSize = shoeSize || 24;
-                weather = weather || 'hot';
+                weather = weather || 'FRÍO';
                 favColor = favColor || 2;
                 current = divs[currentIndex];
-                currentClass = currentClass || 'boy';
+                currentClass = currentClass || 'girl';
                 $('.toggle-edit-mode').click(function () {
                     edit = !edit;
                     $(this).toggleClass('active');
@@ -1529,7 +1530,6 @@ $(function () {
                     $('.hide-admin > .ui-option > .fa').toggleClass('exit fa-times fa-arrow-down');
                     admin = false;
                 });
-                console.log('Loaded admin.');
                 $('.progress').removeClass('loading');
             }
         });
@@ -1571,12 +1571,10 @@ $(function () {
         }
         if (admin) {
             if (localStorage.admin) {
-                console.log('Logged in.');
                 loadAdmin();
                 current = divs[0];
             } else {
                 currentIndex = -10;
-                console.log('Not logged in.');
                 current = 'login';
             }
         }
@@ -1585,13 +1583,11 @@ $(function () {
     } else {
         if (admin) {
             if (localStorage.admin) {
-                console.log('Logged in.');
                 loadAdmin();
                 current = divs[0];
             } else {
                 currentIndex = -10;
                 current = 'login';
-                console.log('Not logged in.');
             }
         } else {
             current = divs[0];
