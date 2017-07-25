@@ -795,7 +795,8 @@ $(function () {
                                 birthday: birthday,
                                 last_connection: new Date().toISOString(),
                                 current_page: 0,
-                                profile_picture: " "
+                                profile_picture: " ",
+                                access_level: $('#access_level').val()
                             };
                             $('.progress').addClass('loading');
                             $.ajax({
@@ -1378,16 +1379,19 @@ $(function () {
             url: "/db/users/login",
             data: data,
             success: function (res) {
+                access_level = res.access_level;
                 if (res.status !== 200) {
                     console.log(res);
                 } else {
                     $('body').prepend('<div class="ui col-xs-12 hidden-xs"> <input type="color" class="colorPicker" style="display:none;"> <div class="ui-section col-xs-1"> <div class="ui-option backAdmin col-xs-6"><i class="fa fa-angle-left" aria-hidden="true"></i></div> <div class="ui-option nextAdmin col-xs-6"><i class="fa fa-angle-right" aria-hidden="true"></i></div> </div> <div class="ui-section col-xs-1"> <div class="ui-option toggle-edit-mode col-xs-12"> <h6>Modo edición</h6> </div> </div> <div class="col-xs-2 ui-section"> <div class="col-xs-12 ui-option admin-color"> <h6>Color</h6> </div> <div class="col-xs-12 ui-hidden color-hidden"> <ul class="colors"> <li> <h5>Boy</h5> <div data-var="boy" class="color"> <h5>Boy</h5> </div> <div class="color-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div> </li> <li> <h5>Girl</h5> <div data-var="girl" class="color"> <h5>Girl</h5> </div> <div class="color-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div> </li> <li> <h5>Baby Boy</h5> <div data-var="bBoy" class="color"> <h5>Baby Boy</h5> </div> <div class="color-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div> </li> <li> <h5>Baby Girl</h5> <div data-var="bGirl" class="color"> <h5>Baby Girl</h5> </div> <div class="color-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div> </li> <li> <h5>Newborn Boy</h5> <div data-var="nBoy" class="color"> <h5>Newborn Boy</h5> </div> <div class="color-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div> </li> <li> <h5>Newborn Girl</h5> <div data-var="nGirl" class="color"> <h5>Newborn Girl</h5> </div> <div class="color-edit"><i class="fa fa-pencil" aria-hidden="true"></i></div> </li> </ul> </div> </div> <div class="col-xs-4 ui-section"> <div class="col-xs-12 ui-option" style="cursor:default;padding:0">Modo administrador</div> </div> <div class="col-xs-1 ui-section"> <div class="col-xs-12 ui-option admin-sections"> <h6>Secciones</h6> </div> <div class="col-xs-12 ui-hidden sections-hidden"> <ul class="section-divs"> </ul> </div> </div> <div class="col-xs-2 ui-section user"> <div class="ui-option col-xs-12 admin-user" style="padding:0 3px;"> <h6 class="col-xs-8" style="padding-right: 0;">Username</h6><i class="fa fa-user-o col-xs-4" aria-hidden="true" style="padding:0;"></i></div> <div class="col-xs-12 ui-hidden user-hidden"> <ul class="user-settings"> </li> <li class="settings"> <h5>Opciones</h5> </li> <li class="log-out"> <h5>Cerrar sesión</h5> </li> </ul> </div> </div> <div class="col-xs-1 ui-section hide-admin"> <div class="col-xs-12 ui-option"><i class="fa fa-times fa-1x exit" aria-hidden="true"></i></div> </div> </div>');
-                    $('.user-settings').prepend('<li class="register"> <h5>Registrar usuario</h5> </li>');
-                    $('.register').click(function () {
-                        if (current !== 'register') {
-                            next('register');
-                        }
-                    });
+                    if (access_level == 'admin') {
+                        $('.user-settings').prepend('<li class="register"> <h5>Registrar usuario</h5> </li>');
+                        $('.register').click(function () {
+                            if (current !== 'register') {
+                                next('register');
+                            }
+                        });
+                    }
                     $('.user-settings').prepend('<li class="e-cards"> <h5>E-cards</h5> </li>');
                     $('.user-settings').prepend('<li class="customers"> <h5>Clientes</h5> </li>');
                     $('.customers').click(function () {
@@ -1536,6 +1540,12 @@ $(function () {
                     admin = false;
                 });
                 $('.progress').removeClass('loading');
+                if (access_level != 'admin'){
+                    $('.admin-color').remove();
+                    $('.color-hidden').remove();
+                    $('.toggle-edit-mode').remove();
+                    $('.ui-section:nth-child(5) > .ui-option').html('Modo call-center');
+                }
             }
         });
     };

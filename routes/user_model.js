@@ -45,6 +45,10 @@ var userSchema = new Schema({
     profile_picture : {
         type : String,
         required : true
+    },
+    access_level : {
+        type : String,
+        required: true
     }
 });
 var users = mongoose.model('users', userSchema);

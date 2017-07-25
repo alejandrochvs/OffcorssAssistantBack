@@ -10,15 +10,20 @@
     <input class="col-xs-12 col-sm-10 col-sm-offset-1" id='last_name' title="Last name" type="text" placeholder="Apellido">
     <div class="container col-xs-12">
         <div class="row hidden-xs" style="margin-bottom:5px;margin-top: 5px;text-align:center;">
-            <div class="col-xs-12 col-sm-3 col-sm-offset-2">Género</div>
-            <div class="col-xs-12 col-sm-3 col-sm-offset-1">Fecha de nacimiento</div>
+            <div class="col-xs-12 col-sm-2 col-sm-offset-2">Género</div>
+            <div class="col-xs-12 col-sm-2 col-sm-offset-1">Fecha de nacimiento</div>
+            <div class="col-xs-12 col-sm-2 col-sm-offset-1">Nivel de acceso</div>
         </div>
         <div class="row">
-            <select class="col-xs-12 col-sm-3 col-sm-offset-2" id='gender' title="Gender">
+            <select class="col-xs-12 col-sm-2 col-sm-offset-2" id='gender' title="Género">
                 <option value="M">Masculino</option>
                 <option value="F">Femenino</option>
             </select>
-            <input class="col-xs-12 col-sm-3 col-sm-offset-1" id='birthday' type="date" title="Birthday">
+            <input class="col-xs-12 col-sm-2 col-sm-offset-1" id='birthday' type="date" title="Fecha de nacimiento">
+            <select class="col-xs-12 col-sm-2 col-sm-offset-1" id='access_level' title="Nivel de acceso">
+                <option value="admin">Administrador</option>
+                <option value="call_center">Call center</option>
+            </select>
         </div>
     </div>
     <button class="btn btn-light registerBtn col-xs-12 col-sm-10 col-sm-offset-1"><h4>Registrar</h4></button>
