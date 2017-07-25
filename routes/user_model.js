@@ -22,10 +22,6 @@ var userSchema = new Schema({
         type: String,
         required: true
     },
-    access_level: {
-        type: String,
-        required: true
-    },
     gender: {
         type: String,
         required: true
@@ -51,9 +47,5 @@ var userSchema = new Schema({
         required : true
     }
 });
-userSchema.methods.greet = function () {
-    var greeting = this.name ? "Hello!, my name is " + this.name : "I don't have a name :( ";
-    return greeting;
-}
 var users = mongoose.model('users', userSchema);
 module.exports = users;

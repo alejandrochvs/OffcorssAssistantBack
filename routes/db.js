@@ -72,7 +72,7 @@ router.post('/users/register', function (req, res) {
                 db.close();
                 return res.send('User already exists.');
             }
-            res.send(user.greet());
+            res.send('Success');
             db.close();
         });
     });
