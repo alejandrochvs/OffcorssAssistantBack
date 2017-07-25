@@ -6,7 +6,7 @@ var path = require('path');
 var mongoose = require('mongoose');
 var mongoURL = process.env.MONGODB_URI ||
     process.env.MONGOHQ_URL ||
-    'mongodb://alejandrochvs:admin123@localhost:27017/assistant';
+    'mongodb://localhost/assistant';
 
 //Sizes
 var sizes = require('./sizes_model.js');
