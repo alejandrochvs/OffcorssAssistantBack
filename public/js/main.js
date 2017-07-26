@@ -25,7 +25,6 @@ $(function () {
         next,
         loadAdmin,
         previous;
-    //        admin,
     //Functions
     var requestStringChange = function (toFind, toChange) {
             toChange = "'" + toChange + "'";
@@ -103,11 +102,6 @@ $(function () {
         },
         loadView = function (div) {
             $('.result > .callcenter').remove();
-            if (admin == undefined) {
-                if (current == 'customers' || current == 'e-cards' || current == 'login' || current == 'register' || current == 'looks') {
-                    current = 'gender';
-                }
-            }
             div.load('views/' + current + '.html', function () {
                 localStorage.current = current;
                 if (currentIndex > 0) {
@@ -1537,7 +1531,6 @@ $(function () {
                     $('body').toggleClass('admin');
                     $(this).toggleClass('admin-hidden');
                     $('.hide-admin > .ui-option > .fa').toggleClass('exit fa-times fa-arrow-down');
-                    admin = false;
                 });
                 $('.progress').removeClass('loading');
                 if (access_level != 'admin'){
@@ -1595,7 +1588,8 @@ $(function () {
         }
         next(current);
         $('.progress').removeClass('loading');
-    } else {
+    }
+    else {
         if (admin) {
             if (localStorage.admin) {
                 loadAdmin();
@@ -1610,6 +1604,7 @@ $(function () {
         next(current);
         $('.progress').removeClass('loading');
     }
+    $('#delete-me').remove();
     $('.back').click(function () {
         if (current === divs[5]) {
             if (currentClass !== 'nBoy' && currentClass !== 'nGirl') {
