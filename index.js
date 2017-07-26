@@ -24,7 +24,13 @@ app.get('/', function (req, res) {
 });
 app.use('/db', urlEncodedParser, dbRoute);
 app.use('/admin', urlEncodedParser, adminRoute);
-app.use('/post',urlEncodedParser,postRoute);
+app.use('/post', urlEncodedParser, postRoute);
+app.get('/', function (req, res) {
+    res.render('index', {
+        admin: false,
+        status: 200
+    })
+});
 app.get('/*', function (req, res) {
     res.render('index', {
         admin: false,
