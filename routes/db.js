@@ -7,54 +7,44 @@ var mongoose = require('mongoose');
 var mongoURL = process.env.MONGODB_URI ||
     process.env.MONGOHQ_URL ||
     'mongodb://localhost/assistant';
-
-//Sizes
-var sizes = require('./sizes_model.js');
-router.post('/sizes', function (req, res) {
-    mongoose.Promise = global.Promise;
-    mongoose.connect(mongoURL);
-    var db = mongoose.connection;
-    var query = req.body.category;
-    db.on('error', console.error.bind(console, 'connection error:'));
-    db.once('open', function () {
+mongoose.Promise = global.Promise;
+mongoose.connect(mongoURL);
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function () {
+    //Sizes
+    var sizes = require('./sizes_model.js');
+    router.post('/sizes', function (req, res) {
+        var query = req.body.category;
         sizes.findOne({
             name: query
         }, function (err, docs) {
             if (err) {
                 res.send(err);
-                db.close();
             }
             res.json(docs);
-            db.close();
         })
     });
-});
+    //Users
+    var users = require('./user_model.js');
+    var crypto = require('crypto'),
+        algorithm = 'aes-256-ctr',
+        password = '2ba8f2b30e434b431e46e008d8f0';
 
-//Users
-var users = require('./user_model.js');
-var crypto = require('crypto'),
-    algorithm = 'aes-256-ctr',
-    password = '2ba8f2b30e434b431e46e008d8f0';
+    function encrypt(text) {
+        var cipher = crypto.createCipher(algorithm, password);
+        var crypted = cipher.update(text, 'utf8', 'hex');
+        crypted += cipher.final('hex');
+        return crypted;
+    }
 
-function encrypt(text) {
-    var cipher = crypto.createCipher(algorithm, password);
-    var crypted = cipher.update(text, 'utf8', 'hex');
-    crypted += cipher.final('hex');
-    return crypted;
-}
-
-function decrypt(text) {
-    var decipher = crypto.createDecipher(algorithm, password);
-    var dec = decipher.update(text, 'hex', 'utf8');
-    dec += decipher.final('utf8');
-    return dec;
-}
-router.post('/users/register', function (req, res) {
-    mongoose.Promise = global.Promise;
-    mongoose.connect(mongoURL);
-    var db = mongoose.connection;
-    db.on('error', console.error.bind(console, 'connection error:'));
-    db.once('open', function () {
+    function decrypt(text) {
+        var decipher = crypto.createDecipher(algorithm, password);
+        var dec = decipher.update(text, 'hex', 'utf8');
+        dec += decipher.final('utf8');
+        return dec;
+    }
+    router.post('/users/register', function (req, res) {
         var query = req.body;
         var user = new users(query);
         var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
@@ -65,26 +55,15 @@ router.post('/users/register', function (req, res) {
         user.password = encrypt(user.password);
         user.save(function (err, user) {
             if (err && err.code !== 11000) {
-                db.close();
                 return res.send(err);
             }
             if (err && err.code === 11000) {
-                db.close();
                 return res.send('User already exists.');
             }
             res.send('Success');
-            db.close();
         });
     });
-});
-router.post('/users/login', function (req, res) {
-    mongoose.Promise = global.Promise;
-    mongoose.connect(mongoURL);
-    var db = mongoose.connection;
-    db.on('error', function (err) {
-        console.log(err);
-    });
-    db.once('open', function () {
+    router.post('/users/login', function (req, res) {
         var query = req.body;
         users.findOne({
             $or: [{
@@ -95,7 +74,6 @@ router.post('/users/login', function (req, res) {
         }, function (err, docs) {
             if (err) {
                 res.send(err);
-                mongoose.connection.close();
             }
             if (docs != null) {
                 if (query.password == decrypt(docs.password) || query.password == docs.password) {
@@ -108,84 +86,44 @@ router.post('/users/login', function (req, res) {
                     };
                     response.status = 200;
                     res.send(response);
-                    mongoose.connection.close();
                 } else {
                     res.send('Wrong password.');
-                    mongoose.connection.close();
                 }
             } else {
                 res.send('User not found.');
-                mongoose.connection.close();
             }
-            mongoose.connection.close();
         });
     });
-});
-
-//e-cards
-var eCards = require('./e-cards_model.js');
-router.post('/e-cards', function (req, res) {
-    mongoose.Promise = global.Promise;
-    mongoose.connect(mongoURL);
-    var db = mongoose.connection;
-    db.on('error', function (err) {
-        console.log(err);
-    });
-    db.once('open', function () {
+    //e-cards
+    var eCards = require('./e-cards_model.js');
+    router.post('/e-cards', function (req, res) {
         eCards.find().limit(25).skip(Number(req.body.offset)).exec(function (err, docs) {
             if (err) {
-                db.close();
                 return console.log(err);
             }
-            db.close();
             res.send(docs);
         });
     });
-});
-router.post('/e-cards/count', function (req, res) {
-    mongoose.Promise = global.Promise;
-    mongoose.connect(mongoURL);
-    var db = mongoose.connection;
-    db.on('error', function (err) {
-        console.log(err);
-    });
-    db.once('open', function () {
+    router.post('/e-cards/count', function (req, res) {
         eCards.find().count({}, function (err, count) {
-            db.close();
             var data = {
                 count: count
             };
             res.send(data);
         });
-    })
-});
-router.post('/e-cards/match', function (req, res) {
-    mongoose.Promise = global.Promise;
-    mongoose.connect(mongoURL);
-    var db = mongoose.connection;
-    db.on('error', function (err) {
-        console.log(err);
     });
-    db.once('open', function () {
+    router.post('/e-cards/match', function (req, res) {
         eCards.find({
             gender: req.body.gender,
             age: req.body.age
         }).exec(function (err, found) {
             if (err) {
-                db.close();
                 return res.send(err);
             }
-            db.close();
             res.send(found);
         })
-    })
-});
-router.post('/e-cards/upload', function (req, res) {
-    mongoose.Promise = global.Promise;
-    mongoose.connect(mongoURL);
-    var db = mongoose.connection;
-    db.on('error', console.error.bind(console, 'connection error:'));
-    db.once('open', function () {
+    });
+    router.post('/e-cards/upload', function (req, res) {
         var tempECard = req.body;
         var eCard = new eCards({
             url: tempECard.url,
@@ -234,21 +172,12 @@ router.post('/e-cards/upload', function (req, res) {
         }
         eCard.save(function (err, saved) {
             if (err) {
-                db.close()
                 return res.send(err);
             }
-            db.close()
             res.send('success.')
         })
     });
-
-});
-router.post('/e-cards/delete', function (req, res) {
-    mongoose.Promise = global.Promise;
-    mongoose.connect(mongoURL);
-    var db = mongoose.connection;
-    db.on('error', console.error.bind(console, 'connection error:'));
-    db.once('open', function () {
+    router.post('/e-cards/delete', function (req, res) {
         var toDelete = req.body.url;
         var fileToDelete = path.join('./public/IMG/ecards/' + toDelete);
         eCards.findOneAndRemove({
@@ -257,7 +186,6 @@ router.post('/e-cards/delete', function (req, res) {
             if (err) {
                 console.log(res.send(err));
             }
-            db.close();
             fs.unlink(fileToDelete, function (err) {
                 if (err) {
                     return console.log(err);
@@ -266,55 +194,27 @@ router.post('/e-cards/delete', function (req, res) {
             });
         });
     });
-});
-router.post('/e-cards/getReferences', function (req, res) {
-    mongoose.Promise = global.Promise;
-    mongoose.connect(mongoURL);
-    var db = mongoose.connection;
-    db.on('error', function (err) {
-        console.log(err);
-    });
-    db.once('open', function () {
-        eCards.findOne({url: req.body.url}, function (err, docs) {
+    router.post('/e-cards/getReferences', function (req, res) {
+        eCards.findOne({
+            url: req.body.url
+        }, function (err, docs) {
             if (err) {
-                db.close();
                 return console.log(err);
             }
-            db.close();
             res.send(docs.reference);
         });
     });
-});
-
-var ages = require('./ages_model.js');
-router.post('/ages', function (req, res) {
-    mongoose.Promise = global.Promise;
-    mongoose.connect(mongoURL);
-    var db = mongoose.connection;
-    db.on('error', function (err) {
-        //console.log(err);
-    });
-    db.once('open', function () {
+    var ages = require('./ages_model.js');
+    router.post('/ages', function (req, res) {
         ages.find({}, function (err, docs) {
             if (err) {
-                db.close();
                 return res.send(err);
             }
-            db.close();
             res.send(docs);
         })
     });
-});
-
-var colors = require('./colors_model.js');
-router.post('/colors', function (req, res) {
-    mongoose.Promise = global.Promise;
-    mongoose.connect(mongoURL);
-    var db = mongoose.connection;
-    db.on('error', function (err) {
-        //console.log(err);
-    });
-    db.once('open', function () {
+    var colors = require('./colors_model.js');
+    router.post('/colors', function (req, res) {
         colors.find({
             active: true
         }, null, {
@@ -323,143 +223,68 @@ router.post('/colors', function (req, res) {
             }
         }, function (err, docs) {
             if (err) {
-                db.close();
                 return res.send(err);
             }
-            db.close();
             res.send(docs);
         })
     });
-});
-
-var genders = require('./genders_model.js');
-router.post('/genders', function (req, res) {
-    mongoose.Promise = global.Promise;
-    mongoose.connect(mongoURL);
-    var db = mongoose.connection;
-    db.on('error', function (err) {
-        //console.log(err);
-    });
-    db.once('open', function () {
+    var genders = require('./genders_model.js');
+    router.post('/genders', function (req, res) {
         genders.find({}, function (err, docs) {
             if (err) {
-                db.close();
                 return res.send(err);
             }
-            db.close();
             res.send(docs);
         })
     });
-});
-
-var occasions = require('./occasions_model.js');
-router.post('/occasions', function (req, res) {
-    mongoose.Promise = global.Promise;
-    mongoose.connect(mongoURL);
-    var db = mongoose.connection;
-    db.on('error', function (err) {
-        //console.log(err);
-    });
-    db.once('open', function () {
+    var occasions = require('./occasions_model.js');
+    router.post('/occasions', function (req, res) {
         occasions.find({}, function (err, docs) {
             if (err) {
-                db.close();
                 return res.send(err);
             }
-            db.close();
             res.send(docs);
         })
     });
-});
-
-var types = require('./types_model.js');
-router.post('/types', function (req, res) {
-    mongoose.Promise = global.Promise;
-    mongoose.connect(mongoURL);
-    var db = mongoose.connection;
-    db.on('error', function (err) {
-        //console.log(err);
-    });
-    db.once('open', function () {
+    var types = require('./types_model.js');
+    router.post('/types', function (req, res) {
         types.find({}, function (err, docs) {
             if (err) {
-                db.close();
                 return res.send(err);
             }
-            db.close();
             res.send(docs);
         })
     });
-});
-
-var weathers = require('./weathers_model.js');
-router.post('/weathers', function (req, res) {
-    mongoose.Promise = global.Promise;
-    mongoose.connect(mongoURL);
-    var db = mongoose.connection;
-    db.on('error', function (err) {
-        //console.log(err);
-    });
-    db.once('open', function () {
+    var weathers = require('./weathers_model.js');
+    router.post('/weathers', function (req, res) {
         weathers.find({}, function (err, docs) {
             if (err) {
-                db.close();
                 return res.send(err);
             }
-            db.close();
             res.send(docs);
         })
     });
-});
-
-var customers = require('./customers_model.js');
-router.post('/customers', function (req, res) {
-    mongoose.Promise = global.Promise;
-    mongoose.connect(mongoURL);
-    var db = mongoose.connection;
-    db.on('error', function (err) {
-        console.log(err);
-    });
-    db.once('open', function () {
+    var customers = require('./customers_model.js');
+    router.post('/customers', function (req, res) {
         var sort = req.body.sort;
         customers.find().sort(sort).limit(25).skip(Number(req.body.offset)).exec(function (err, docs) {
             if (err) {
-                db.close();
                 return console.log(err);
             }
-            db.close();
             res.send(docs);
         });
-    })
-});
-router.post('/customers/filter', function (req, res) {
-    mongoose.Promise = global.Promise;
-    mongoose.connect(mongoURL);
-    var db = mongoose.connection;
-    db.on('error', function (err) {
-        console.log(err);
     });
-    db.once('open', function () {
+    router.post('/customers/filter', function (req, res) {
         var query = {};
         query[req.body.name] = new RegExp(req.body.attr, "i");
         customers.find(query).sort(req.body.name).skip(Number(req.body.offset)).exec(function (err, docs) {
             if (err) {
-                db.close();
                 return console.log(err);
             }
-            db.close();
             res.send(docs);
         });
-    })
-});
-router.post('/customers/register', function (req, res) {
-    mongoose.Promise = global.Promise;
-    mongoose.connect(mongoURL);
-    var db = mongoose.connection;
-    db.on('error', function (err) {
-        console.log(err);
     });
-    db.once('open', function () {
+    router.post('/customers/register', function (req, res) {
         var reqCustomer = req.body;
         var customer = {};
         customer.e_card = reqCustomer.e_card;
@@ -478,36 +303,23 @@ router.post('/customers/register', function (req, res) {
         var customertoDb = new customers(customer);
         customertoDb.save(function (err, customer) {
             if (err && err.code !== 11000) {
-                db.close();
                 console.log(err);
                 return res.send(err);
             }
             if (err && err.code === 11000) {
-                db.close();
                 return res.send('User already exists.');
             }
             res.sendStatus('OK');
-            db.close();
         });
     });
-});
-router.post('/customers/count', function (req, res) {
-    mongoose.Promise = global.Promise;
-    mongoose.connect(mongoURL);
-    var db = mongoose.connection;
-    db.on('error', function (err) {
-        console.log(err);
-    });
-    db.once('open', function () {
+    router.post('/customers/count', function (req, res) {
         customers.find().count({}, function (err, count) {
-            db.close();
             var data = {
                 count: count
             };
             res.send(data);
         });
-    })
+    });
 });
-
 
 module.exports = router;
