@@ -47,7 +47,7 @@ var customersSchema = new Schema({
         required: true
     },
     e_card: {
-        type: String,
+        type: Array,
         required: true
     },
     date : {

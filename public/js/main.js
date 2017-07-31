@@ -642,13 +642,44 @@ $(function () {
                     }
                     data.color = favColor;
                     $('.progress').addClass('loading');
+                    if (admin) {
+                        switch (Math.floor(Math.random() * 3)) {
+                            case 0:
+                                data.age = "BEBE (18M - 5 AÑOS)";
+                                break;
+                            case 1:
+                                data.age = 'PRIMI (0-18M)';
+                                break;
+                            case 2:
+                                data.age = 'NIÑO (5 AÑOS - 13 AÑOS)';
+                                break;
+                        }
+                        switch (Math.floor(Math.random() * 2)) {
+                            case 0:
+                                data.gender = "FEMENINO";
+                                break;
+                            case 1:
+                                data.gender = "MASCULINO";
+                                break;
+                        }
+                    }
                     $.ajax({
                         type: "POST",
                         url: "db/e-cards/match",
                         data: data,
                         success: function (res) {
                             var randIndex = Math.floor(Math.random() * res.length);
-                            $('.resultIMG').append('<img class="col-xs-12" src="IMG/ecards/' + res[randIndex].url + '"/>');
+                            var randIndex2 = randIndex + 1;
+                            var randIndex3 = randIndex2 + 1;
+                            if (randIndex2 > res.length - 1) {
+                                randIndex2 = randIndex2 - res.length;
+                            }
+                            if (randIndex3 > res.length - 1) {
+                                randIndex3 = randIndex3 - res.length;
+                            }
+                            $($('.resultIMG')[0]).append('<img class="col-xs-10 col-xs-offset-1" src="IMG/ecards/' + res[randIndex].url + '"/>');
+                            $($('.resultIMG')[1]).append('<img class="col-xs-10 col-xs-offset-1" src="IMG/ecards/' + res[randIndex2].url + '"/>');
+                            $($('.resultIMG')[2]).append('<img class="col-xs-10 col-xs-offset-1" src="IMG/ecards/' + res[randIndex3].url + '"/>');
                             $('.resultIMG').click(function () {
                                 $('.callcenter').click();
                             });
@@ -665,7 +696,7 @@ $(function () {
                             data.occasion = occasion;
                             data.weather = weather;
                             data.personality = personality;
-                            data.e_card = res[randIndex].url;
+                            data.e_card = [res[randIndex].url,res[randIndex2].url,res[randIndex3].url];
                             data.name = name;
                             $('.call-modal > .button').click(function () {
                                 data.phone = $('.call-modal > .input > input').val();
@@ -1533,7 +1564,7 @@ $(function () {
                     $('.hide-admin > .ui-option > .fa').toggleClass('exit fa-times fa-arrow-down');
                 });
                 $('.progress').removeClass('loading');
-                if (access_level != 'admin'){
+                if (access_level != 'admin') {
                     $('.admin-color').remove();
                     $('.color-hidden').remove();
                     $('.toggle-edit-mode').remove();
@@ -1588,8 +1619,7 @@ $(function () {
         }
         next(current);
         $('.progress').removeClass('loading');
-    }
-    else {
+    } else {
         if (admin) {
             if (localStorage.admin) {
                 loadAdmin();

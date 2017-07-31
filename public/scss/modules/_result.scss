@@ -25,7 +25,7 @@
             cursor: pointer;
             transition: all .3s ease;
             &:hover {
-                color: darken(#4a9500 , 10%) !important;
+                color: darken(#4a9500, 10%) !important;
             }
         }
         .title {
@@ -175,29 +175,20 @@
         }
     }
     .resultIMG {
-        -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-        -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-        box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
         padding: 0;
         transition: all .3s ease;
-        cursor: pointer;
         img {
+            cursor: pointer;
+            -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+            transition: all .3s ease;
             padding: 0;
-        }
-        &:hover {
-            -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
-            -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
-            box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
-        }
-    }
-    .img {
-        height: 60vh;
-        .image {
-            height: 100%;
-            background-position: center;
-            background-origin: content-box;
-            background-size: contain;
-            background-repeat: no-repeat;
+            &:hover {
+                -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+                -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+                box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+            }
         }
     }
     &.boy {

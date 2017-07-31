@@ -318,7 +318,7 @@ html {
             background: #cc3700; }
         html body .content .warning-wrapper .disabler {
           height: 100vh;
-          background: transparent;
+          background: rgba(0, 0, 0, 0);
           transition: all 0s ease; }
         html body .content .warning-wrapper.active {
           max-height: 100vh; }
@@ -1848,26 +1848,19 @@ html {
                 background: #fd0;
                 color: white; }
             html body .content .screen .container .result .resultIMG {
-              -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-              -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-              box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
               padding: 0;
-              transition: all .3s ease;
-              cursor: pointer; }
+              transition: all .3s ease; }
               html body .content .screen .container .result .resultIMG img {
+                cursor: pointer;
+                -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                transition: all .3s ease;
                 padding: 0; }
-              html body .content .screen .container .result .resultIMG:hover {
-                -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
-                -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
-                box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4); }
-            html body .content .screen .container .result .img {
-              height: 60vh; }
-              html body .content .screen .container .result .img .image {
-                height: 100%;
-                background-position: center;
-                background-origin: content-box;
-                background-size: contain;
-                background-repeat: no-repeat; }
+                html body .content .screen .container .result .resultIMG img:hover {
+                  -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+                  -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+                  box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4); }
             html body .content .screen .container .result.boy .call-modal .title {
               background: #fd4605; }
             html body .content .screen .container .result.boy .call-modal .input input {
@@ -2691,9 +2684,9 @@ html {
           transition: all 0.3s ease;
           width: 0%;
           background: white;
-          -webkit-box-shadow: 0px 0px 12px 1px transparent;
-          -moz-box-shadow: 0px 0px 12px 1px transparent;
-          box-shadow: 0px 0px 12px 1px transparent;
+          -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0);
+          -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0);
+          box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0);
           border-radius: 0;
           z-index: 1;
           position: relative;
