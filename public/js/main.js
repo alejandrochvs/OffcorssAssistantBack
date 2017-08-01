@@ -688,14 +688,12 @@ $(function () {
                                 }, 100);
                                 $(this).mouseup(function () {
                                     clearInterval(mouseDownTimer);
+                                    if (dragging == false) {
+                                        $('.callcenter').click();
+                                    }
                                     dragging = false;
                                     $(this).unbind('mouseup');
                                 });
-                            });
-                            $('.resultIMG').click(function () {
-                                if (dragging == false) {
-                                    $('.callcenter').click();
-                                }
                             });
                             $('.input > input').keyup(function (e) {
                                 if (e.keyCode == 13) {
