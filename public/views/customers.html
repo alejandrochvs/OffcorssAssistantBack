@@ -150,9 +150,9 @@
                 }
             });
             $('.customer-item > .customer-img > .slick-list > .slick-track > img').click(function() {
-                if ($(this).parent().parent().hasClass('active')) {
+                if ($(this).parent().parent().parent().parent().hasClass('active')) {
                     loadImgToViewer($(this).attr('src'));
-                    $(this).parent().parent().click();
+                    $(this).parent().parent().parent().parent().click();
                 }
             });
         }
