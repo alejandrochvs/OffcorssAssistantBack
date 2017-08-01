@@ -105,6 +105,9 @@
                     });
                 }
             }
+            $(window).load(function() {
+                console.log('Loaded')
+            })
             $('.customer-item').remove();
             for (var i = 0; i < object.length; i++) {
                 $('.customers-table').append('<div class="col-xs-12 customer-item"></div>');
@@ -143,7 +146,7 @@
                 adaptiveHeight: true,
                 infinite: true,
                 initialSlide: 1,
-                speed : 300,
+                speed: 300,
             });
             $('.customer-item').click(function() {
                 if (!$(this).hasClass('active')) {
