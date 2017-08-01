@@ -689,6 +689,7 @@ $(function () {
                             });
                             $('.resultIMG').mouseup(function(){
                                 clearInterval(mouseDownTimer);
+                                dragging = false;
                             });
                             $('.resultIMG').click(function () {
                                 if (dragging == false) {
