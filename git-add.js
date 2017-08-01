@@ -1,21 +1,21 @@
 var exec = require('child_process').exec;
-var V = 100;
-var isPaused = false;
+var fs = require('fs');
+var isPaused = true;
+var V, currentPackageJson;
 var gitStatus = function () {
     if (isPaused) {
         return console.log('Paused');
     }
     exec('git status .', function (err, stdout, stderr) {
         var status = stdout.split('\n')[2];
-        if (err){
+        if (err) {
             return console.log('GIT STATUS EXEC ERR : ' + err);
         }
-        if (stderr){
+        if (stderr) {
             return console.log('GIT STATUS STDERR : ' + stderr);
         }
-        console.log(stdout);
+        console.log('STATUS = {' + stdout + '} = STATUS');
         if (status == 'Untracked files:' || status == 'Changes not staged for commit:') {
-            console.log("Untracked");
             gitAdd();
         } else if (status == "Changes to be committed:") {
             gitCommit();
@@ -27,6 +27,7 @@ var gitStatus = function () {
 }
 var gitAdd = function () {
     isPaused = true;
+    console.log('git add .');
     exec('git add .', function (err, stdout, stderr) {
         if (err) {
             return console.log('GIT ADD EXEC ERR : ' + err);
@@ -34,15 +35,17 @@ var gitAdd = function () {
         if (stderr) {
             return console.log('GIT ADD STDERR : ' + stderr);
         }
-        console.log('STDOUT : ' + stdout);
+        console.log('GIT ADD STDOUT : {' + stdout + '} GIT ADD STDOUT');
         isPaused = false;
         return;
     });
 
 }
 var gitCommit = function () {
+    console.log('Commiting...');
     isPaused = true;
-    exec('git commit -m "Auto push V' + JSON.stringify(V).split('').join('.') + '"', function (err, stdout, stderr) {
+    var CurrentVersion = JSON.stringify(V).split('').join('.');
+    exec('git commit -m "Auto push V' + CurrentVersion + '"', function (err, stdout, stderr) {
         if (err) {
             return console.log('GIT COMMIT EXEC ERR : ' + err);
         }
@@ -51,8 +54,16 @@ var gitCommit = function () {
         }
         console.log('STDOUT : ' + stdout);
         V++;
-        isPaused = false;
-        return;
+        currentPackageJson.version = CurrentVersion;
+        console.log('Saving file...');
+        fs.writeFile('./package.json', currentPackageJson, function (err) {
+            if (err) {
+                return console.log(err);
+            }
+            console.log("The file was saved!");
+            isPaused = false;
+            return;
+        });
     });
 }
 var gitPush = function () {
@@ -66,6 +77,15 @@ var gitPush = function () {
         return;
     });
 }
-var main = setInterval(function () {
-    gitStatus();
+
+fs.readFile('./package.json', 'utf8', function (err, data) {
+    if (err) {
+        return console.log(err);
+    }
+    currentPackageJson = JSON.parse(data);
+    V = Number(currentPackageJson.version.split('.').join(''));
+    isPaused = false;
+});
+var main = setTimeout(function () {
+    gitStatus()
 }, 1000);
