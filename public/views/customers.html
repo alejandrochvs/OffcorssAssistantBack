@@ -114,10 +114,15 @@
                     slidesToScroll: 1,
                     arrows: false,
                     fade: true,
-                    asNavFor: '.slider-nav'
+                    asNavFor: '.customers-table > .customer-item:last-child > .customer-img'
                 });
-                $('.customers-table > .customer-item:last-child > .customer-img > .slick-showcase').slick({
-                    
+                $('.customers-table > .customer-item:last-child > .customer-img').slick({
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    asNavFor: '.customers-table > .customer-item:last-child > .customer-img > .slick-showcase',
+                    dots: true,
+                    centerMode: true,
+                    focusOnSelect: true
                 })
                 $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-name"><div class="col-xs-12">' + object[i].name + '</div></div>');
                 $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-gender"><div class="col-xs-12">' + object[i].gender + '</div></div>');
