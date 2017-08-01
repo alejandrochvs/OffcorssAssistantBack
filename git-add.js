@@ -83,7 +83,7 @@ var gitPush = function () {
 
 fs.readFile('./version.json', 'utf8', function (err, data) {
     if (err) {
-        return console.log(new Date().toLocaleTimeString() + err);
+        return console.log(new Date().toLocaleTimeString() + ': ' + err);
     }
     currentPackageJson = JSON.parse(data);
     V = Number(currentPackageJson.version.split('.').join(''));
