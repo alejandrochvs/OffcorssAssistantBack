@@ -52,11 +52,11 @@ var gitCommit = function () {
         if (stderr) {
             return console.log('GIT COMMIT STDERR : ' + stderr);
         }
-        console.log('STDOUT : ' + stdout);
+        console.log('GIT COMMIT STDOUT : {' + stdout + '} GIT COMMIT STDOUT');
         V++;
         currentPackageJson.version = CurrentVersion;
         console.log('Saving file...');
-        fs.writeFile('./package.json', currentPackageJson, function (err) {
+        fs.writeFile('./package.json', JSON.stringify(currentPackageJson), function (err) {
             if (err) {
                 return console.log(err);
             }
@@ -85,6 +85,7 @@ fs.readFile('./package.json', 'utf8', function (err, data) {
     currentPackageJson = JSON.parse(data);
     V = Number(currentPackageJson.version.split('.').join(''));
     isPaused = false;
+    return;
 });
 var main = setTimeout(function () {
     gitStatus()
