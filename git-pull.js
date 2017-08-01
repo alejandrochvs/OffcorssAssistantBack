@@ -4,4 +4,4 @@ setInterval(function () {
     exec(cmd, function (err, stdout, stderr) {
         return console.log(stdout);
     });
-}, 1000);
+}, 10000);
