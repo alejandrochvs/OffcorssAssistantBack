@@ -13,7 +13,7 @@ var gitStatus = function () {
         if (stderr){
             return console.log('GIT STATUS STDERR : ' + stderr);
         }
-        console.log('STDERR : ' + stderr);
+        console.log(stdout);
         if (status == 'Untracked files:' || status == 'Changes not staged for commit:') {
             console.log("Untracked");
             gitAdd();
