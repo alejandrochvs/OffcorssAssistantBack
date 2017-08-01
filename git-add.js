@@ -65,10 +65,8 @@ var gitPush = function () {
             return console.log('GIT PUSH STDERR : ' + stderr);
         }
         console.log('STDOUT : ' + stdout);
-        console.log('GIT PUSH');
         isPaused = false;
         return;
-
     });
 }
 var main = setInterval(function () {
