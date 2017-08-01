@@ -149,7 +149,7 @@
                     $(this).removeClass('active');
                 }
             });
-            $('.customer-item > .customer-img > img').click(function() {
+            $('.customer-item > .customer-img > >.slick-list > .slick-track > img').click(function() {
                 if ($(this).parent().parent().hasClass('active')) {
                     loadImgToViewer($(this).attr('src'));
                     $(this).parent().parent().click();
