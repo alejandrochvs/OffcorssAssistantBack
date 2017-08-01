@@ -6,7 +6,7 @@ var gitStatus = function () {
         console.log('Err : ' + err);
         console.log('STDOUT : ' + status);
         console.log('STDERR : ' + stderr);
-        if (status == 'Untracked files:') {
+        if (status == 'Untracked files:' || status == 'Changes not staged for commit:') {
             console.log("Untracked");
             gitAdd();
         } else if (status == "Changes to be committed:") {
@@ -45,4 +45,6 @@ var gitPush = function () {
         return;
     });
 }
-gitStatus();
+setInterval(function () {
+    gitStatus();
+}, 250);
