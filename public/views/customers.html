@@ -133,7 +133,14 @@
                     $('.customers-table > .customer-item:last-child > .customer-desc:last-child').append('<div class="col-xs-12">' + object[i].occasion[j] + '</div>');
                 }
             }
-            $('.customers-table > .customer-item > .customer-img').slick();
+            $('.customers-table > .customer-item > .customer-img').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                asNavFor: '.slider-for',
+                dots: true,
+                centerMode: true,
+                focusOnSelect: true
+            });
             $('.customer-item').click(function() {
                 if (!$(this).hasClass('active')) {
                     $('.customer-item.active').click();
