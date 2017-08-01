@@ -31,9 +31,7 @@ var gitAdd = function () {
         if (stderr){
             return console.log('GIT ADD STDERR : ' + stderr);
         }
-        console.log('Err : ' + err);
         console.log('STDOUT : ' + stdout);
-        console.log('STDERR : ' + stderr);
         isPaused = false;
         return;
     });
