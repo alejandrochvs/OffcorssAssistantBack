@@ -109,17 +109,10 @@
             for (var i = 0; i < object.length; i++) {
                 $('.customers-table').append('<div class="col-xs-12 customer-item"></div>');
                 $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-img"><div class="col-xs-12 slick-showcase"></div><div class="col-xs-12 slick-wrapper"><img class="col-xs-12" src="../IMG/ecards/' + object[i].e_card[0] + '"/><img class="col-xs-12" src="../IMG/ecards/' + object[i].e_card[1] + '"/><img class="col-xs-12" src="../IMG/ecards/' + object[i].e_card[2] + '"/></div></div>');
-                $('.customers-table > .customer-item:last-child > .customer-img > .slick-showcase').slick({
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    arrows: false,
-                    fade: true,
-                    asNavFor: '.customers-table > .customer-item:last-child > .customer-img > .slick-wrapper' 
-                });
-                $('.customers-table > .customer-item:last-child > .customer-img > .slick-wrapper').slick({
+
+                $('.customers-table > .customer-item:last-child > .customer-img').slick({
                     slidesToShow: 3,
                     slidesToScroll: 1,
-                    asNavFor: '.customers-table > .customer-item:last-child > .customer-img > .slick-showcase',
                     dots: true,
                     centerMode: true,
                     focusOnSelect: true
