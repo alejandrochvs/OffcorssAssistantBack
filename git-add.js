@@ -55,6 +55,7 @@ var gitCommit = function () {
         console.log('GIT COMMIT STDOUT : {' + stdout + '} GIT COMMIT STDOUT');
         V++;
         currentPackageJson.version = CurrentVersion;
+        console.log(CurrentVersion);
         console.log('Saving file...');
         fs.writeFile('./package.json', JSON.stringify(currentPackageJson), function (err) {
             if (err) {
