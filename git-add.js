@@ -78,6 +78,7 @@ var gitPush = function () {
         isPaused = false;
         return;
     });
+    
 }
 
 fs.readFile('./version.json', 'utf8', function (err, data) {
