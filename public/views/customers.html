@@ -106,7 +106,6 @@
                 }
             }
             $('.customer-item').remove();
-            console.log(object);
             for (var i = 0; i < object.length; i++) {
                 $('.customers-table').append('<div class="col-xs-12 customer-item"></div>');
                 $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-img"><img class="col-xs-12" src="../IMG/ecards/' + object[i].e_card[0] + '"/><img class="col-xs-12" src="../IMG/ecards/' + object[i].e_card[1] + '"/><img class="col-xs-12" src="../IMG/ecards/' + object[i].e_card[2] + '"/></div>');
