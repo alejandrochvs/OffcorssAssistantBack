@@ -61,9 +61,6 @@ var gitPush = function () {
         if (err) {
             return console.log('GIT PUSH EXEC ERR : ' + err);
         }
-        if (stderr) {
-            return console.log('GIT PUSH STDERR : ' + stderr);
-        }
         console.log('STDOUT : ' + stdout);
         isPaused = false;
         return;
