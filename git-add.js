@@ -91,9 +91,10 @@ fs.readFile('./version.json', 'utf8', function (err, data) {
     currentPackageJson = JSON.parse(data);
     V = Number(currentPackageJson.version.split('.').join(''));
     isPaused = false;
+    gitStatus();
     return;
 });
-gitStatus();
+
 var main = setInterval(function () {
     gitStatus()
 }, 30000);
