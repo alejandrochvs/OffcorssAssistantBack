@@ -64,6 +64,7 @@ var gitCommit = function () {
             isPaused = false;
             return;
         });
+        return;
     });
 }
 var gitPush = function () {
@@ -72,7 +73,7 @@ var gitPush = function () {
         if (err) {
             return console.log('GIT PUSH EXEC ERR : ' + err);
         }
-        console.log('STDOUT : ' + stdout);
+        console.log('GIT PUSH STDOUT : {' + stdout + '} GIT PUSH STDOUT');
         isPaused = false;
         return;
     });
