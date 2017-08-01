@@ -10,9 +10,9 @@ var gitStatus = function () {
         if (status == 'Untracked files:' || status == 'Changes not staged for commit:' || isPaused == false) {
             console.log("Untracked");
             gitAdd();
-        } else if (status == "Changes to be committed:") {
+        } else if (status == "Changes to be committed:" || isPaused == false) {
             gitCommit();
-        } else if (status == '  (use "git push" to publish your local commits)') {
+        } else if (status == '  (use "git push" to publish your local commits)' || isPaused == false) {
             gitPush();
         }
         return;
