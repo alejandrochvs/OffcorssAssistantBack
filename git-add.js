@@ -25,6 +25,12 @@ var gitStatus = function () {
 var gitAdd = function () {
     isPaused = true;
     exec('git add .', function (err, stdout, stderr) {
+        if (err){
+            return console.log('GIT ADD EXEC ERR : ' + err);
+        }
+        if (stderr){
+            return console.log('GIT ADD STDERR : ' + stderr);
+        }
         console.log('Err : ' + err);
         console.log('STDOUT : ' + stdout);
         console.log('STDERR : ' + stderr);
