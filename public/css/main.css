@@ -2522,7 +2522,8 @@ html {
                   html body .content .screen .container .customers-container .customers-table .customer-item .customer-img img {
                     transition: all .3s ease;
                     border-radius: 20px;
-                    padding: 0; }
+                    padding: 0;
+                    position: absolute; }
                 html body .content .screen .container .customers-container .customers-table .customer-item:hover {
                   background: white;
                   -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.125);
