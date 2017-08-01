@@ -146,6 +146,7 @@
                     autoplaySpeed: 100
                 });
             var slickInterval = setInterval(function() {
+                $('.customers-table > .customer-item > .customer-img').slick('destroy');
                 $('.customers-table > .customer-item > .customer-img').slick({
                     slidesToShow: 1,
                     slidesToScroll: 1,
