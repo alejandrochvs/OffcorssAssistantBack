@@ -141,7 +141,7 @@
                     $(this).removeClass('active');
                 }
             });
-            var slickTimer = setTimeout(function() {
+            var slickInterval = setInterval(function() {
                 $('.customers-table > .customer-item > .customer-img').slick({
                     slidesToShow: 1,
                     slidesToScroll: 1,
@@ -153,7 +153,8 @@
                     infinite: true,
                     initialSlide: 1
                 });
-            }, 300)
+                clearInterval(slickInterval);
+            }, 500)
 
             $('.customer-item > .customer-img > .slick-list > .slick-track > img').click(function() {
                 if ($(this).parent().parent().parent().parent().hasClass('active')) {
