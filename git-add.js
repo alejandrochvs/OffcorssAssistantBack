@@ -7,12 +7,12 @@ var gitStatus = function () {
         console.log('Err : ' + err);
         console.log('STDOUT : ' + status);
         console.log('STDERR : ' + stderr);
-        if (status == 'Untracked files:' || status == 'Changes not staged for commit:' || isPaused == false) {
+        if (status == 'Untracked files:' || status == 'Changes not staged for commit:') {
             console.log("Untracked");
             gitAdd();
-        } else if (status == "Changes to be committed:" || isPaused == false) {
+        } else if (status == "Changes to be committed:") {
             gitCommit();
-        } else if (status == '  (use "git push" to publish your local commits)' || isPaused == false) {
+        } else if (status == '  (use "git push" to publish your local commits)') {
             gitPush();
         }
         return;
@@ -29,6 +29,7 @@ var gitAdd = function () {
     });
 }
 var gitCommit = function () {
+    
     exec('git commit -m "Auto push V' + JSON.stringify(V).split('').join('.') + '"', function (err, stdout, stderr) {
         console.log('Err : ' + err);
         console.log('STDOUT : ' + stdout);
