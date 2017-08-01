@@ -92,4 +92,4 @@ fs.readFile('./version.json', 'utf8', function (err, data) {
 });
 var main = setInterval(function () {
     gitStatus()
-}, 1000);
+}, 5000);
