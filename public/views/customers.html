@@ -143,10 +143,10 @@
                     adaptiveHeight: true,
                     infinite: true,
                     initialSlide: 1,
-                    autoplaySpeed: 100
+                    autoplaySpeed: 150
                 });
             var slickInterval = setInterval(function() {
-                $('.customers-table > .customer-item > .customer-img').slick('destroy');
+                $('.customers-table > .customer-item > .customer-img').slick('unslick');
                 $('.customers-table > .customer-item > .customer-img').slick({
                     slidesToShow: 1,
                     slidesToScroll: 1,
