@@ -143,7 +143,7 @@
                     adaptiveHeight: true,
                     infinite: true,
                     initialSlide: 1,
-                    autoplaySpeed: 150
+                    autoplaySpeed: 100
                 });
             var slickInterval = setInterval(function() {
                 $('.customers-table > .customer-item > .customer-img').slick('unslick');
@@ -160,7 +160,7 @@
                     autoplaySpeed: 2000
                 });
                 clearInterval(slickInterval);
-            }, 300)
+            }, 1000)
             $('.customer-item').click(function() {
                 if (!$(this).hasClass('active')) {
                     $('.customer-item.active').click();
