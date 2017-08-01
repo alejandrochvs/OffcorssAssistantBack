@@ -262,6 +262,17 @@
             })
         }
         loadCount();
+        $('.imgViewer').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            arrows: false,
+            centerMode: true,
+            centerPadding: '0px',
+            adaptiveHeight: true,
+            infinite: true,
+            initialSlide: 1
+        });
     })
 
 </script>
