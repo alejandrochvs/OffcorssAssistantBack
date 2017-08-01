@@ -19,11 +19,12 @@ var gitStatus = function () {
     });
 }
 var gitAdd = function () {
+    isPaused = true;
     exec('git add .', function (err, stdout, stderr) {
         console.log('Err : ' + err);
         console.log('STDOUT : ' + stdout);
         console.log('STDERR : ' + stderr);
-        console.log('GIT ADD');
+        isPaused = false;
         return;
     });
 }
