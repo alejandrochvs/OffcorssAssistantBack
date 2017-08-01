@@ -1,5 +1,6 @@
 var exec = require('child_process').exec;
 var V = 100;
+var isPaused = false;
 var gitStatus = function () {
     exec('git status .', function (err, stdout, stderr) {
         var status = stdout.split('\n')[2];
