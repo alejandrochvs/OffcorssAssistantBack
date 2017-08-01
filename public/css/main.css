@@ -2512,7 +2512,7 @@ html {
                             background: whitesmoke;
                             border-left: solid 2px lime; }
                 html body .content .screen .container .customers-container .customers-table .customer-item .customer-img {
-                  padding: 8px 15px;
+                  padding: 8px 0px;
                   overflow: hidden;
                   text-align: center; }
                   html body .content .screen .container .customers-container .customers-table .customer-item .customer-img img {
