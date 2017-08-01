@@ -2513,6 +2513,8 @@ html {
                             border-left: solid 2px lime; }
                     html body .content .screen .container .customers-container .customers-table .customer-item .customer-desc div.slick-list {
                       padding: 0; }
+                      html body .content .screen .container .customers-container .customers-table .customer-item .customer-desc div.slick-list .slick-track {
+                        padding: 0; }
                 html body .content .screen .container .customers-container .customers-table .customer-item .customer-img {
                   padding: 8px 0px;
                   overflow: hidden;
