@@ -112,7 +112,10 @@
                 $('.customers-table > .customer-item:last-child > .customer-img').slick({
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    autoplay: true
+                    autoplay: true,
+                    arrows : false,
+                    centerMode : true,
+                    centerPadding: '0px',
                 })
                 $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-name"><div class="col-xs-12">' + object[i].name + '</div></div>');
                 $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-gender"><div class="col-xs-12">' + object[i].gender + '</div></div>');
