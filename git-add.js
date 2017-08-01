@@ -5,7 +5,6 @@ var gitStatus = function () {
     if (isPaused) {
         return console.log('Paused');
     }
-    console.log('Not paused...');
     exec('git status .', function (err, stdout, stderr) {
         var status = stdout.split('\n')[2];
         console.log('Err : ' + err);
