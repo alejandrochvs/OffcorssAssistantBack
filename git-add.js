@@ -2,6 +2,9 @@ var exec = require('child_process').exec;
 var V = 100;
 var isPaused = false;
 var gitStatus = function () {
+    if (isPaused){
+        return console.log('Paused');
+    }
     exec('git status .', function (err, stdout, stderr) {
         var status = stdout.split('\n')[2];
         console.log('Err : ' + err);
