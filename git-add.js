@@ -44,6 +44,7 @@ var gitAdd = function () {
 var gitCommit = function () {
     console.log('Commiting...');
     isPaused = true;
+    V++;
     var CurrentVersion = JSON.stringify(V).split('').join('.');
     exec('git commit -m "Auto push V' + CurrentVersion + '"', function (err, stdout, stderr) {
         if (err) {
@@ -53,7 +54,6 @@ var gitCommit = function () {
             return console.log('GIT COMMIT STDERR : ' + stderr);
         }
         console.log('GIT COMMIT STDOUT : {' + stdout + '} GIT COMMIT STDOUT');
-        V++;
         currentPackageJson.version = CurrentVersion;
         console.log(CurrentVersion);
         console.log('Saving file...');
