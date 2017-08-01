@@ -68,6 +68,7 @@ var gitPush = function () {
         console.log('GIT PUSH');
         isPaused = false;
         return;
+
     });
 }
 var main = setInterval(function () {
