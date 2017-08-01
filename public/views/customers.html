@@ -120,8 +120,6 @@
                     infinite : true,
                     initialSlide : 1
                 });
-                $('.customers-table > .customer-item:last-child > .customer-img').slick('slickNext');
-                $('.customers-table > .customer-item:last-child > .customer-img').slick('slickNext');
                 $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-name"><div class="col-xs-12">' + object[i].name + '</div></div>');
                 $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-gender"><div class="col-xs-12">' + object[i].gender + '</div></div>');
                 $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-age"><div class="col-xs-12">' + object[i].age + '</div></div>');
@@ -160,6 +158,11 @@
                     $(this).parent().parent().parent().parent().click();
                 }
             });
+            $('.customers-table > .customer-item > .customer-img').slick('slickNext');
+            $('.customers-table > .customer-item > .customer-img').slick('slickNext');
+            $('.customers-table > .customer-item > .customer-img').slick('slickNext');
+            $('.customers-table > .customer-item > .customer-img').slick('slickNext');
+            $('.customers-table > .customer-item > .customer-img').slick('slickNext');
         }
         var loadCustomers = function(sort, count, page) {
             $('.loader > .progress').addClass('loading');
