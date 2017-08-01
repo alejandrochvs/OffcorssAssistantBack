@@ -687,6 +687,9 @@ $(function () {
                                     console.log(dragging);
                                 }, 300);
                             });
+                            $('.resultIMG').mouseup(function(){
+                                clearInterval(mouseDownTimer);
+                            });
                             $('.resultIMG').click(function () {
                                 if (dragging == false) {
                                     $('.callcenter').click();
