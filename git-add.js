@@ -14,7 +14,7 @@ var gitStatus = function () {
         if (stderr) {
             return console.log('GIT STATUS STDERR : ' + stderr);
         }
-        console.log(new Date() + ': STATUS = {' + stdout + '} = STATUS');
+        console.log(new Date().toLocaleTimeString() + ': STATUS = {' + stdout + '} = STATUS');
         if (status == 'Untracked files:' || status == 'Changes not staged for commit:') {
             gitAdd();
         } else if (status == "Changes to be committed:") {
@@ -78,7 +78,7 @@ var gitPush = function () {
         isPaused = false;
         return;
     });
-    
+
 }
 
 fs.readFile('./version.json', 'utf8', function (err, data) {
