@@ -2511,6 +2511,8 @@ html {
                             cursor: default;
                             background: whitesmoke;
                             border-left: solid 2px lime; }
+                    html body .content .screen .container .customers-container .customers-table .customer-item .customer-desc div .stick-list {
+                      padding: 0; }
                 html body .content .screen .container .customers-container .customers-table .customer-item .customer-img {
                   padding: 8px 0px;
                   overflow: hidden;
