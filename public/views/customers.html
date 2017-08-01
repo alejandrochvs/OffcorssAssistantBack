@@ -133,18 +133,21 @@
                     $('.customers-table > .customer-item:last-child > .customer-desc:last-child').append('<div class="col-xs-12">' + object[i].occasion[j] + '</div>');
                 }
             }
-            $('.customers-table > .customer-item > .customer-img').slick({
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplay: true,
-                arrows: false,
-                centerMode: true,
-                centerPadding: '0px',
-                adaptiveHeight: true,
-                infinite: true,
-                initialSlide: 1,
-                speed: 300,
-            });
+            var slickInterval = setInterval(function() {
+                $('.customers-table > .customer-item > .customer-img').slick({
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '0px',
+                    adaptiveHeight: true,
+                    infinite: true,
+                    initialSlide: 1,
+                    speed: 300
+                });
+                clearInterval(slickInterval);
+            }, 300)
             $('.customer-item').click(function() {
                 if (!$(this).hasClass('active')) {
                     $('.customer-item.active').click();
