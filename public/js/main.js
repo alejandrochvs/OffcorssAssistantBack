@@ -682,7 +682,9 @@ $(function () {
                             $($('.resultIMG')[2]).append('<img class="col-xs-10 col-xs-offset-1" src="IMG/ecards/' + res[randIndex3].url + '"/>');
                             var dragging = false;
                             $('.resultIMG').mousedown(function () {
-                                $('.callcenter').click();
+                                var mouseDownTimer = setInterval(function(){
+                                    dragging = true;
+                                },300);
                             });
                             $('.resultIMG').click(function () {
                                 $('.callcenter').click();
