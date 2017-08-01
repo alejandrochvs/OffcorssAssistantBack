@@ -680,11 +680,11 @@ $(function () {
                             $($('.resultIMG')[0]).append('<img class="col-xs-10 col-xs-offset-1" src="IMG/ecards/' + res[randIndex].url + '"/>');
                             $($('.resultIMG')[1]).append('<img class="col-xs-10 col-xs-offset-1" src="IMG/ecards/' + res[randIndex2].url + '"/>');
                             $($('.resultIMG')[2]).append('<img class="col-xs-10 col-xs-offset-1" src="IMG/ecards/' + res[randIndex3].url + '"/>');
+                            var dragging = false;
+                            $('.resultIMG').mousedown(function () {
+                                $('.callcenter').click();
+                            });
                             $('.resultIMG').click(function () {
-                                $(this).mousedown(function(){
-                                    console.log('mouseover');
-                                    return $(this).unbind('mouseover');
-                                })
                                 $('.callcenter').click();
                             });
                             $('.input > input').keyup(function (e) {
