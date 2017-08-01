@@ -57,7 +57,7 @@ var gitCommit = function () {
         currentPackageJson.version = CurrentVersion;
         console.log(CurrentVersion);
         console.log('Saving file...');
-        fs.writeFile('./package.json', JSON.stringify(currentPackageJson), function (err) {
+        fs.writeFile('./version.json', JSON.stringify(currentPackageJson), function (err) {
             if (err) {
                 return console.log(err);
             }
@@ -80,7 +80,7 @@ var gitPush = function () {
     });
 }
 
-fs.readFile('./package.json', 'utf8', function (err, data) {
+fs.readFile('./version.json', 'utf8', function (err, data) {
     if (err) {
         return console.log(err);
     }
