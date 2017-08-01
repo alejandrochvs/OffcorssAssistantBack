@@ -137,25 +137,21 @@
                 if (!$(this).hasClass('active')) {
                     $('.customer-item.active').click();
                     $(this).addClass('active');
+                    $('.customers-table > .customer-item > .customer-img').slick({
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        autoplay: true,
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '0px',
+                        adaptiveHeight: true,
+                        infinite: true,
+                        initialSlide: 1
+                    });
                 } else {
                     $(this).removeClass('active');
                 }
             });
-            var slickInterval = setInterval(function() {
-                $('.customers-table > .customer-item > .customer-img').slick({
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    autoplay: true,
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '0px',
-                    adaptiveHeight: true,
-                    infinite: true,
-                    initialSlide: 1
-                });
-                $('.customers-table > .customer-item > .customer-img').slick('slickNext');
-                clearInterval(slickInterval);
-            }, 500)
             $('.customer-item > .customer-img > .slick-list > .slick-track > img').click(function() {
                 if ($(this).parent().parent().parent().parent().hasClass('active')) {
                     loadImgToViewer($(this).attr('src'));
