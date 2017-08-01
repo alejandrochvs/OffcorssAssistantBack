@@ -33,7 +33,7 @@ var gitAdd = function () {
     });
 }
 var gitCommit = function () {
-    
+    isPaused = true;
     exec('git commit -m "Auto push V' + JSON.stringify(V).split('').join('.') + '"', function (err, stdout, stderr) {
         console.log('Err : ' + err);
         console.log('STDOUT : ' + stdout);
@@ -44,6 +44,7 @@ var gitCommit = function () {
     });
 }
 var gitPush = function () {
+    isPaused = true;
     exec('git push origin master', function (err, stdout, stderr) {
         console.log('Err : ' + err);
         console.log('STDOUT : ' + stdout);
