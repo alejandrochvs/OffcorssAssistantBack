@@ -150,6 +150,7 @@
                     });
                 } else {
                     $(this).removeClass('active');
+                    $('.customers-table > .customer-item > .customer-img').slick('unslick');
                 }
             });
             $('.customer-item > .customer-img > .slick-list > .slick-track > img').click(function() {
