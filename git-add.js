@@ -58,4 +58,4 @@ var gitPush = function () {
 }
 var main = setInterval(function () {
     gitStatus();
-}, 10);
+}, 1000);
