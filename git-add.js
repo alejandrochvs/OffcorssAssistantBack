@@ -9,12 +9,12 @@ var gitStatus = function () {
     exec('git status .', function (err, stdout, stderr) {
         var status = stdout.split('\n')[2];
         if (err) {
-            return console.log(new Date().toLocaleTimeString() + 'GIT STATUS EXEC ERR : ' + err);
+            return console.log(new Date().toLocaleTimeString() + ': GIT STATUS EXEC ERR = ' + err);
         }
         if (stderr) {
-            return console.log(new Date().toLocaleTimeString() + 'GIT STATUS STDERR : ' + stderr);
+            return console.log(new Date().toLocaleTimeString() + ': GIT STATUS STDERR = ' + stderr);
         }
-        console.log(new Date().toLocaleTimeString() + ': STATUS = {' + stdout + '} = STATUS');
+        console.log(new Date().toLocaleTimeString() + ': STATUS = {' + stdout + '}');
         if (status == 'Untracked files:' || status == 'Changes not staged for commit:') {
             gitAdd();
         } else if (status == "Changes to be committed:") {
@@ -27,39 +27,39 @@ var gitStatus = function () {
 }
 var gitAdd = function () {
     isPaused = true;
-    console.log(new Date().toLocaleTimeString() + 'git add .');
+    console.log(new Date().toLocaleTimeString() + ': git add .');
     exec('git add .', function (err, stdout, stderr) {
         if (err) {
-            return console.log(new Date().toLocaleTimeString() + 'GIT ADD EXEC ERR : ' + err);
+            return console.log(new Date().toLocaleTimeString() + ': GIT ADD EXEC ERR = ' + err);
         }
         if (stderr) {
-            return console.log(new Date().toLocaleTimeString() + ' GIT ADD STDERR : ' + stderr);
+            return console.log(new Date().toLocaleTimeString() + ': GIT ADD STDERR = ' + stderr);
         }
-        console.log(new Date().toLocaleTimeString() + ' GIT ADD STDOUT : {' + stdout + '} GIT ADD STDOUT');
+        console.log(new Date().toLocaleTimeString() + ': GIT ADD STDOUT = {' + stdout + '}');
         isPaused = false;
         return;
     });
 
 }
 var gitCommit = function () {
-    console.log(new Date().toLocaleTimeString() + 'Commiting...');
+    console.log(new Date().toLocaleTimeString() + ': Commiting...');
     isPaused = true;
     V++;
     var CurrentVersion = JSON.stringify(V).split('').join('.');
     exec('git commit -m "Auto push V' + CurrentVersion + '"', function (err, stdout, stderr) {
         if (err) {
-            return console.log(new Date().toLocaleTimeString() + ' GIT COMMIT EXEC ERR : ' + err);
+            return console.log(new Date().toLocaleTimeString() + ': GIT COMMIT EXEC ERR = ' + err);
         }
         if (stderr) {
-            return console.log(new Date().toLocaleTimeString() + ' GIT COMMIT STDERR : ' + stderr);
+            return console.log(new Date().toLocaleTimeString() + ': GIT COMMIT STDERR = ' + stderr);
         }
-        console.log(new Date().toLocaleTimeString() + ': GIT COMMIT STDOUT = {' + stdout + '} GIT COMMIT STDOUT');
+        console.log(new Date().toLocaleTimeString() + ': GIT COMMIT STDOUT = {' + stdout + '}');
         currentPackageJson.version = CurrentVersion;
         console.log(new Date().toLocaleTimeString() + ': Current version = ' + CurrentVersion);
         console.log(new Date().toLocaleTimeString() + ': Saving file...');
         fs.writeFile('./version.json', JSON.stringify(currentPackageJson), function (err) {
             if (err) {
-                return console.log(new Date().toLocaleTimeString() + err);
+                return console.log(new Date().toLocaleTimeString() + ': ' +  err);
             }
             console.log(new Date().toLocaleTimeString() + ": The file was saved!");
             isPaused = false;
@@ -74,7 +74,7 @@ var gitPush = function () {
         if (err) {
             return console.log(new Date().toLocaleTimeString() + ': GIT PUSH EXEC ERR : ' + err);
         }
-        console.log(new Date().toLocaleTimeString() + ': GIT PUSH STDOUT : {' + stdout + '} GIT PUSH STDOUT');
+        console.log(new Date().toLocaleTimeString() + ': GIT PUSH STDOUT : {' + stdout + '}');
         isPaused = false;
         return;
     });
