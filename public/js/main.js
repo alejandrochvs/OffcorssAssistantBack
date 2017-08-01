@@ -682,12 +682,14 @@ $(function () {
                             $($('.resultIMG')[2]).append('<img class="col-xs-10 col-xs-offset-1" src="IMG/ecards/' + res[randIndex3].url + '"/>');
                             var dragging = false;
                             $('.resultIMG').mousedown(function () {
-                                var mouseDownTimer = setInterval(function(){
+                                var mouseDownTimer = setInterval(function () {
                                     dragging = true;
-                                },300);
+                                }, 300);
                             });
                             $('.resultIMG').click(function () {
-                                $('.callcenter').click();
+                                if (dragging == false) {
+                                    $('.callcenter').click();
+                                }
                             });
                             $('.input > input').keyup(function (e) {
                                 if (e.keyCode == 13) {
