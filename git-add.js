@@ -53,15 +53,15 @@ var gitCommit = function () {
         if (stderr) {
             return console.log(new Date().toLocaleTimeString() + ' GIT COMMIT STDERR : ' + stderr);
         }
-        console.log(new Date().toLocaleTimeString() + ' GIT COMMIT STDOUT : {' + stdout + '} GIT COMMIT STDOUT');
+        console.log(new Date().toLocaleTimeString() + ': GIT COMMIT STDOUT = {' + stdout + '} GIT COMMIT STDOUT');
         currentPackageJson.version = CurrentVersion;
-        console.log(new Date().toLocaleTimeString() + ' Current version = ' + CurrentVersion);
-        console.log(new Date().toLocaleTimeString() + ' Saving file...');
+        console.log(new Date().toLocaleTimeString() + ': Current version = ' + CurrentVersion);
+        console.log(new Date().toLocaleTimeString() + ': Saving file...');
         fs.writeFile('./version.json', JSON.stringify(currentPackageJson), function (err) {
             if (err) {
                 return console.log(new Date().toLocaleTimeString() + err);
             }
-            console.log(new Date().toLocaleTimeString() + " The file was saved!");
+            console.log(new Date().toLocaleTimeString() + ": The file was saved!");
             isPaused = false;
             return;
         });
@@ -72,9 +72,9 @@ var gitPush = function () {
     isPaused = true;
     exec('git push origin master', function (err, stdout, stderr) {
         if (err) {
-            return console.log(new Date().toLocaleTimeString() + ' GIT PUSH EXEC ERR : ' + err);
+            return console.log(new Date().toLocaleTimeString() + ': GIT PUSH EXEC ERR : ' + err);
         }
-        console.log(new Date().toLocaleTimeString() + ' GIT PUSH STDOUT : {' + stdout + '} GIT PUSH STDOUT');
+        console.log(new Date().toLocaleTimeString() + ': GIT PUSH STDOUT : {' + stdout + '} GIT PUSH STDOUT');
         isPaused = false;
         return;
     });
