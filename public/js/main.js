@@ -684,6 +684,7 @@ $(function () {
                             $('.resultIMG').mousedown(function () {
                                 var mouseDownTimer = setInterval(function () {
                                     dragging = true;
+                                    console.log(dragging);
                                 }, 300);
                             });
                             $('.resultIMG').click(function () {
