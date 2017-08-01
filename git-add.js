@@ -38,6 +38,7 @@ var gitAdd = function () {
         }
         console.log(new Date().toLocaleTimeString() + ': GIT ADD STDOUT = {' + stdout + '}');
         isPaused = false;
+        gitCommit();
         return;
     });
 
@@ -64,6 +65,7 @@ var gitCommit = function () {
             }
             console.log(new Date().toLocaleTimeString() + ": The file was saved!");
             isPaused = false;
+            gitPush();
             return;
         });
         return;
@@ -91,6 +93,7 @@ fs.readFile('./version.json', 'utf8', function (err, data) {
     isPaused = false;
     return;
 });
+gitStatus();
 var main = setInterval(function () {
     gitStatus()
 }, 5000);
