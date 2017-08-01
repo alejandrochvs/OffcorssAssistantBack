@@ -681,6 +681,10 @@ $(function () {
                             $($('.resultIMG')[1]).append('<img class="col-xs-10 col-xs-offset-1" src="IMG/ecards/' + res[randIndex2].url + '"/>');
                             $($('.resultIMG')[2]).append('<img class="col-xs-10 col-xs-offset-1" src="IMG/ecards/' + res[randIndex3].url + '"/>');
                             $('.resultIMG').click(function () {
+                                $(this).mousedown(function(){
+                                    console.log('mouseover');
+                                    return $(this).unbind('mouseover');
+                                })
                                 $('.callcenter').click();
                             });
                             $('.input > input').keyup(function (e) {
@@ -690,13 +694,30 @@ $(function () {
                             })
                             $('.result > .selection-wrap').remove();
                             $('.progress').removeClass('loading');
+                            $('.result-wrapper').slick({
+                                centerMode: true,
+                                centerPadding: '60px',
+                                slidesToShow: 2,
+                                slidesToScroll: 1,
+                                autoplay: true,
+                                autoplaySpeed: 2000,
+                                responsive: [{
+                                    breakpoint: 768,
+                                    settings: {
+                                        centerMode: true,
+                                        centerPadding: '40px',
+                                        slidesToShow: 1,
+                                        slidesToScroll: 1
+                                    }
+                                }]
+                            });
                             data.bottomSize = bottomSize;
                             data.topSize = topSize;
                             data.shoeSize = shoeSize;
                             data.occasion = occasion;
                             data.weather = weather;
                             data.personality = personality;
-                            data.e_card = [res[randIndex].url,res[randIndex2].url,res[randIndex3].url];
+                            data.e_card = [res[randIndex].url, res[randIndex2].url, res[randIndex3].url];
                             data.name = name;
                             $('.call-modal > .button').click(function () {
                                 data.phone = $('.call-modal > .input > input').val();
