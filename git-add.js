@@ -20,7 +20,7 @@ var gitStatus = function () {
             gitCommit();
         } else if (status == '  (use "git push" to publish your local commits)') {
             gitPush();
-        }else{
+        } else {
             console.log(new Date().toLocaleTimeString() + ': Up-to-date');
         }
         return;
@@ -61,7 +61,7 @@ var gitCommit = function () {
         console.log(new Date().toLocaleTimeString() + ': Saving file...');
         fs.writeFile('./version.json', JSON.stringify(currentPackageJson), function (err) {
             if (err) {
-                return console.log(new Date().toLocaleTimeString() + ': ' +  err);
+                return console.log(new Date().toLocaleTimeString() + ': ' + err);
             }
             console.log(new Date().toLocaleTimeString() + ": The file was saved!");
             isPaused = false;
