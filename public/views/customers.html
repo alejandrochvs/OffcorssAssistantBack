@@ -155,7 +155,7 @@
                 });
                 $('.customers-table > .customer-item > .customer-img').slick('slickNext');
                 clearInterval(slickInterval);
-            }, 1000)
+            }, 500)
             $('.customer-item > .customer-img > .slick-list > .slick-track > img').click(function() {
                 if ($(this).parent().parent().parent().parent().hasClass('active')) {
                     loadImgToViewer($(this).attr('src'));
