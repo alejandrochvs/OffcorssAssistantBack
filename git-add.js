@@ -31,6 +31,7 @@ var gitAdd = function () {
         isPaused = false;
         return;
     });
+    
 }
 var gitCommit = function () {
     isPaused = true;
