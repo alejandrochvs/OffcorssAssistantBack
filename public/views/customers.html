@@ -133,24 +133,25 @@
                     $('.customers-table > .customer-item:last-child > .customer-desc:last-child').append('<div class="col-xs-12">' + object[i].occasion[j] + '</div>');
                 }
             }
+            $('.customers-table > .customer-item > .customer-img').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                arrows: false,
+                centerMode: true,
+                centerPadding: '0px',
+                adaptiveHeight: true,
+                infinite: true,
+                initialSlide: 1
+            });
             $('.customer-item').click(function() {
                 if (!$(this).hasClass('active')) {
                     $('.customer-item.active').click();
                     $(this).addClass('active');
-                    $('.customers-table > .customer-item > .customer-img').slick({
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        autoplay: true,
-                        arrows: false,
-                        centerMode: true,
-                        centerPadding: '0px',
-                        adaptiveHeight: true,
-                        infinite: true,
-                        initialSlide: 1
-                    });
+
                 } else {
                     $(this).removeClass('active');
-                    $('.customers-table > .customer-item > .customer-img').slick('unslick');
+
                 }
             });
             $('.customer-item > .customer-img > .slick-list > .slick-track > img').click(function() {
