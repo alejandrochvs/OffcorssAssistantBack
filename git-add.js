@@ -4,7 +4,7 @@ var isPaused = true;
 var V, currentPackageJson;
 var gitStatus = function () {
     if (isPaused) {
-        return console.log(new Date().toLocaleTimeString() + 'Paused');
+        return console.log(new Date().toLocaleTimeString() + ': Paused');
     }
     exec('git status .', function (err, stdout, stderr) {
         var status = stdout.split('\n')[2];
