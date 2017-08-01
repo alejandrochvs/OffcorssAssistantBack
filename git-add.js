@@ -33,6 +33,7 @@ var gitAdd = function () {
         }
         console.log('STDOUT : ' + stdout);
         isPaused = false;
+        
         return;
     });
     
