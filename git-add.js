@@ -7,8 +7,12 @@ var gitStatus = function () {
     }
     exec('git status .', function (err, stdout, stderr) {
         var status = stdout.split('\n')[2];
-        console.log('Err : ' + err);
-        console.log('STDOUT : ' + status);
+        if (err){
+            return console.log('GIT STATUS EXEC ERR : ' + err);
+        }
+        if (stderr){
+            return console.log('GIT STATUS STDERR : ' + stderr);
+        }
         console.log('STDERR : ' + stderr);
         if (status == 'Untracked files:' || status == 'Changes not staged for commit:') {
             console.log("Untracked");
@@ -54,10 +58,10 @@ var gitCommit = function () {
 var gitPush = function () {
     isPaused = true;
     exec('git push origin master', function (err, stdout, stderr) {
-        if (err){
+        if (err) {
             return console.log('GIT PUSH EXEC ERR : ' + err);
         }
-        if (stderr){
+        if (stderr) {
             return console.log('GIT PUSH STDERR : ' + stderr);
         }
         console.log('STDOUT : ' + stdout);
