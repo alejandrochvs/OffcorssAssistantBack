@@ -45,6 +45,6 @@ var gitPush = function () {
         return;
     });
 }
-setInterval(function () {
+var main = setInterval(function () {
     gitStatus();
 }, 250);
