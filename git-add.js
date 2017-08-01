@@ -14,13 +14,14 @@ var gitStatus = function () {
         if (stderr) {
             return console.log(new Date().toLocaleTimeString() + ': GIT STATUS STDERR = ' + stderr);
         }
-        console.log(new Date().toLocaleTimeString() + ': STATUS = {' + stdout + '}');
         if (status == 'Untracked files:' || status == 'Changes not staged for commit:') {
             gitAdd();
         } else if (status == "Changes to be committed:") {
             gitCommit();
         } else if (status == '  (use "git push" to publish your local commits)') {
             gitPush();
+        }else{
+            console.log(new Date().toLocaleTimeString() + ': Up-to-date');
         }
         return;
     });
