@@ -89,6 +89,6 @@ fs.readFile('./package.json', 'utf8', function (err, data) {
     isPaused = false;
     return;
 });
-var main = setTimeout(function () {
+var main = setInterval(function () {
     gitStatus()
 }, 1000);
