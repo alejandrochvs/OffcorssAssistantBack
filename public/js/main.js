@@ -685,7 +685,7 @@ $(function () {
                                 var mouseDownTimer = setInterval(function () {
                                     dragging = true;
                                     console.log(dragging);
-                                }, 100);
+                                }, 200);
                                 $(this).mouseup(function () {
                                     clearInterval(mouseDownTimer);
                                     if (dragging == false) {
