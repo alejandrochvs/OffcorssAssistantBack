@@ -4,15 +4,15 @@ var isPaused = true;
 var V, currentPackageJson;
 var gitStatus = function () {
     if (isPaused) {
-        return console.log('Paused');
+        return console.log(new Date().toLocaleTimeString() + 'Paused');
     }
     exec('git status .', function (err, stdout, stderr) {
         var status = stdout.split('\n')[2];
         if (err) {
-            return console.log('GIT STATUS EXEC ERR : ' + err);
+            return console.log(new Date().toLocaleTimeString() + 'GIT STATUS EXEC ERR : ' + err);
         }
         if (stderr) {
-            return console.log('GIT STATUS STDERR : ' + stderr);
+            return console.log(new Date().toLocaleTimeString() + 'GIT STATUS STDERR : ' + stderr);
         }
         console.log(new Date().toLocaleTimeString() + ': STATUS = {' + stdout + '} = STATUS');
         if (status == 'Untracked files:' || status == 'Changes not staged for commit:') {
@@ -27,41 +27,41 @@ var gitStatus = function () {
 }
 var gitAdd = function () {
     isPaused = true;
-    console.log('git add .');
+    console.log(new Date().toLocaleTimeString() + 'git add .');
     exec('git add .', function (err, stdout, stderr) {
         if (err) {
-            return console.log('GIT ADD EXEC ERR : ' + err);
+            return console.log(new Date().toLocaleTimeString() + 'GIT ADD EXEC ERR : ' + err);
         }
         if (stderr) {
-            return console.log('GIT ADD STDERR : ' + stderr);
+            return console.log(new Date().toLocaleTimeString() + 'GIT ADD STDERR : ' + stderr);
         }
-        console.log('GIT ADD STDOUT : {' + stdout + '} GIT ADD STDOUT');
+        console.log(new Date().toLocaleTimeString() + 'GIT ADD STDOUT : {' + stdout + '} GIT ADD STDOUT');
         isPaused = false;
         return;
     });
 
 }
 var gitCommit = function () {
-    console.log('Commiting...');
+    console.log(new Date().toLocaleTimeString() + 'Commiting...');
     isPaused = true;
     V++;
     var CurrentVersion = JSON.stringify(V).split('').join('.');
     exec('git commit -m "Auto push V' + CurrentVersion + '"', function (err, stdout, stderr) {
         if (err) {
-            return console.log('GIT COMMIT EXEC ERR : ' + err);
+            return console.log(new Date().toLocaleTimeString() + 'GIT COMMIT EXEC ERR : ' + err);
         }
         if (stderr) {
-            return console.log('GIT COMMIT STDERR : ' + stderr);
+            return console.log(new Date().toLocaleTimeString() + 'GIT COMMIT STDERR : ' + stderr);
         }
-        console.log('GIT COMMIT STDOUT : {' + stdout + '} GIT COMMIT STDOUT');
+        console.log(new Date().toLocaleTimeString() + 'GIT COMMIT STDOUT : {' + stdout + '} GIT COMMIT STDOUT');
         currentPackageJson.version = CurrentVersion;
-        console.log('Current version = ' + CurrentVersion);
-        console.log('Saving file...');
+        console.log(new Date().toLocaleTimeString() + 'Current version = ' + CurrentVersion);
+        console.log(new Date().toLocaleTimeString() + 'Saving file...');
         fs.writeFile('./version.json', JSON.stringify(currentPackageJson), function (err) {
             if (err) {
-                return console.log(err);
+                return console.log(new Date().toLocaleTimeString() + err);
             }
-            console.log("The file was saved!");
+            console.log(new Date().toLocaleTimeString() + "The file was saved!");
             isPaused = false;
             return;
         });
@@ -72,9 +72,9 @@ var gitPush = function () {
     isPaused = true;
     exec('git push origin master', function (err, stdout, stderr) {
         if (err) {
-            return console.log('GIT PUSH EXEC ERR : ' + err);
+            return console.log(new Date().toLocaleTimeString() + 'GIT PUSH EXEC ERR : ' + err);
         }
-        console.log('GIT PUSH STDOUT : {' + stdout + '} GIT PUSH STDOUT');
+        console.log(new Date().toLocaleTimeString() + 'GIT PUSH STDOUT : {' + stdout + '} GIT PUSH STDOUT');
         isPaused = false;
         return;
     });
@@ -83,7 +83,7 @@ var gitPush = function () {
 
 fs.readFile('./version.json', 'utf8', function (err, data) {
     if (err) {
-        return console.log(err);
+        return console.log(new Date().toLocaleTimeString() + err);
     }
     currentPackageJson = JSON.parse(data);
     V = Number(currentPackageJson.version.split('.').join(''));
