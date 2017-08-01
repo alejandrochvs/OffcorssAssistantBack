@@ -40,10 +40,13 @@ var gitAdd = function () {
 var gitCommit = function () {
     isPaused = true;
     exec('git commit -m "Auto push V' + JSON.stringify(V).split('').join('.') + '"', function (err, stdout, stderr) {
-        console.log('Err : ' + err);
+        if (err){
+            return console.log('GIT ADD EXEC ERR : ' + err);
+        }
+        if (stderr){
+            return console.log('GIT ADD STDERR : ' + stderr);
+        }
         console.log('STDOUT : ' + stdout);
-        console.log('STDERR : ' + stderr);
-        console.log('GIT COMMIT');
         V++;
         isPaused = false;
         return;
