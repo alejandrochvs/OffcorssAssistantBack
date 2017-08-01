@@ -41,6 +41,7 @@ var gitCommit = function () {
         console.log('STDERR : ' + stderr);
         console.log('GIT COMMIT');
         V++;
+        isPaused = false;
         return;
     });
 }
@@ -51,6 +52,7 @@ var gitPush = function () {
         console.log('STDOUT : ' + stdout);
         console.log('STDERR : ' + stderr);
         console.log('GIT PUSH');
+        isPaused = false;
         return;
     });
 }
