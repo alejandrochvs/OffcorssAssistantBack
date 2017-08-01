@@ -2,7 +2,7 @@ var exec = require('child_process').exec;
 var V = 100;
 var isPaused = false;
 var gitStatus = function () {
-    if (isPaused){
+    if (isPaused) {
         return console.log('Paused');
     }
     console.log('Not paused...');
@@ -25,26 +25,26 @@ var gitStatus = function () {
 var gitAdd = function () {
     isPaused = true;
     exec('git add .', function (err, stdout, stderr) {
-        if (err){
+        if (err) {
             return console.log('GIT ADD EXEC ERR : ' + err);
         }
-        if (stderr){
+        if (stderr) {
             return console.log('GIT ADD STDERR : ' + stderr);
         }
         console.log('STDOUT : ' + stdout);
         isPaused = false;
         return;
     });
-    
+
 }
 var gitCommit = function () {
     isPaused = true;
     exec('git commit -m "Auto push V' + JSON.stringify(V).split('').join('.') + '"', function (err, stdout, stderr) {
-        if (err){
-            return console.log('GIT ADD EXEC ERR : ' + err);
+        if (err) {
+            return console.log('GIT COMMIT EXEC ERR : ' + err);
         }
-        if (stderr){
-            return console.log('GIT ADD STDERR : ' + stderr);
+        if (stderr) {
+            return console.log('GIT COMMIT STDERR : ' + stderr);
         }
         console.log('STDOUT : ' + stdout);
         V++;
@@ -55,9 +55,13 @@ var gitCommit = function () {
 var gitPush = function () {
     isPaused = true;
     exec('git push origin master', function (err, stdout, stderr) {
-        console.log('Err : ' + err);
+        if (err){
+            return console.log('GIT PUSH EXEC ERR : ' + err);
+        }
+        if (stderr){
+            return console.log('GIT PUSH STDERR : ' + stderr);
+        }
         console.log('STDOUT : ' + stdout);
-        console.log('STDERR : ' + stderr);
         console.log('GIT PUSH');
         isPaused = false;
         return;
