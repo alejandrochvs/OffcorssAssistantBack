@@ -1012,6 +1012,8 @@ $(function () {
                                             var pages = Math.ceil(count/25);
                                             console.log('Count : ' + count);
                                             console.log('Pages : ' + pages);
+                                            $('.current-page').val(1).attr('placeholder','1').attr('max',pages);
+                                            $('.pages').html(pages);
                                             $('.e-card-item').remove();
                                             var e_cards = res.docs;
                                             for (var i = 0; i < e_cards.length; i++) {

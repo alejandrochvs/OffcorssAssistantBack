@@ -2371,7 +2371,8 @@ html {
                 display: inline-block;
                 font-size: 22px;
                 cursor: pointer;
-                transition: all .3s ease; }
+                transition: all .3s ease;
+                color: #666; }
                 html body .content .screen .container .e-cards-container .e-cards-nav .fa:hover {
                   color: #fd0; }
               html body .content .screen .container .e-cards-container .e-cards-nav .current-page-wrapper {
@@ -2380,7 +2381,10 @@ html {
                 display: inline-block; }
                 html body .content .screen .container .e-cards-container .e-cards-nav .current-page-wrapper .current-page {
                   width: 35px;
-                  padding-left: 5px; }
+                  padding-left: 5px;
+                  border: none;
+                  border-bottom: solid 1px #fd0;
+                  outline: none; }
                 html body .content .screen .container .e-cards-container .e-cards-nav .current-page-wrapper .pages {
                   display: inline-block; }
           html body .content .screen .container .customers-container {
