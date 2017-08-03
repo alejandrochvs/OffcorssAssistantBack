@@ -998,21 +998,22 @@ $(function () {
                                     }
                                 }
                                 loadEdition($('.e-card-new'));
+                                var currentPage = 1;
                                 var requestECards = function (offset) {
                                     $('.progress').addClass('loading');
                                     $.ajax({
                                         type: "POST",
                                         url: '/db/e-cards',
                                         data: {
-                                            offset: offset * 25
+                                            offset: (offset - 1) * 25
                                         },
                                         success: function (res) {
                                             console.log(res);
                                             var count = res.count;
-                                            var pages = Math.ceil(count/25);
+                                            var pages = Math.ceil(count / 25);
                                             console.log('Count : ' + count);
                                             console.log('Pages : ' + pages);
-                                            $('.current-page').val(1).attr('placeholder','1').attr('max',pages);
+                                            $('.current-page').val(currentPage).attr('placeholder', currentPage).attr('max', pages);
                                             $('.pages').html(pages);
                                             $('.e-card-item').remove();
                                             var e_cards = res.docs;
@@ -1165,10 +1166,24 @@ $(function () {
                                                 }
                                             });
                                             $('.progress').removeClass('loading');
+                                            $('.fa-angle-double-left').click(function () {});
+                                            $('.fa-angle-left').click(function () {
+                                                if (currentPage > 1) {
+                                                    currentPage--;
+                                                    requestECards(currentPage);
+                                                }
+                                            });
+                                            $('.fa-angle-right').click(function () {
+                                                if (currentPage < pages) {
+                                                    currentPage++;
+                                                    requestECards(currentPage);
+                                                }
+                                            });
+                                            $('.fa-angle-double-right').click(function () {});
                                         }
                                     });
                                 }
-                                requestECards(0);
+                                requestECards(currentPage);
                                 var imgToPost, genderToPost, ageToPost, referenceToPost = [],
                                     typeToPost = [],
                                     colorToPost = [],
