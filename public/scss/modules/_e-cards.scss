@@ -22,17 +22,14 @@
             .e-card-title {
                 border-right: solid 1px darken(whitesmoke, 5%);
                 background: white;
-                cursor: pointer;
                 transition: all .3s ease;
+                user-select: none;
                 &:first-child {
                     border-top-left-radius: 5px;
                 }
                 &:last-child {
                     border-right: none;
                     border-top-right-radius: 5px;
-                }
-                &:hover {
-                    background: darken(whitesmoke, 0%);
                 }
             }
         }

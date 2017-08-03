@@ -2166,15 +2166,13 @@ html {
                 html body .content .screen .container .e-cards-container .e-cards-table .table-header .e-card-title {
                   border-right: solid 1px #e8e8e8;
                   background: white;
-                  cursor: pointer;
-                  transition: all .3s ease; }
+                  transition: all .3s ease;
+                  user-select: none; }
                   html body .content .screen .container .e-cards-container .e-cards-table .table-header .e-card-title:first-child {
                     border-top-left-radius: 5px; }
                   html body .content .screen .container .e-cards-container .e-cards-table .table-header .e-card-title:last-child {
                     border-right: none;
                     border-top-right-radius: 5px; }
-                  html body .content .screen .container .e-cards-container .e-cards-table .table-header .e-card-title:hover {
-                    background: whitesmoke; }
               html body .content .screen .container .e-cards-container .e-cards-table .table-body {
                 overflow: auto;
                 height: 60vh;
