@@ -32,18 +32,18 @@
                     border-top-right-radius: 5px;
                 }
             }
-            .scroll{
-            position: absolute;
-            display: block;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 1%;
-            background: $yellow;
-            z-index: 5;
+            .scroll {
+                position: absolute;
+                display: block;
+                bottom: 0;
+                left: 0;
+                width: 0%;
+                height: 7.5%;
+                background: $yellow;
+                z-index: 5;
+                transition: all .2s ease;
+            }
         }
-        }
-        
         .table-body {
             overflow: auto;
             height: 63vh;
@@ -263,7 +263,7 @@
             }
         }
     }
-    .e-cards-nav{
+    .e-cards-nav {
         text-align: center;
         background: white;
         padding: 0.7%;
@@ -272,34 +272,34 @@
         -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1);
         box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1);
         line-height: 3vh;
-        .fa{
+        .fa {
             display: inline-block;
             font-size: 24px;
             cursor: pointer;
             transition: all .3s ease;
             color: #666;
-            &.fa-angle-right{
+            &.fa-angle-right {
                 margin-right: 5px;
             }
-            &.fa-angle-left{
+            &.fa-angle-left {
                 margin-left: 5px;
             }
-            &:hover{
+            &:hover {
                 color: $yellow;
             }
         }
-        .current-page-wrapper{
+        .current-page-wrapper {
             margin-left: 10px;
             margin-right: 10px;
             display: inline-block;
-            .current-page{
+            .current-page {
                 width: 35px;
                 padding-left: 5px;
                 border: none;
                 border-bottom: solid 1px $yellow;
                 outline: none;
             }
-            .pages{
+            .pages {
                 display: inline-block;
             }
         }

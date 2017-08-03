@@ -2176,12 +2176,13 @@ html {
                 html body .content .screen .container .e-cards-container .e-cards-table .table-header .scroll {
                   position: absolute;
                   display: block;
-                  top: 0;
+                  bottom: 0;
                   left: 0;
                   width: 0%;
-                  height: 1%;
+                  height: 7.5%;
                   background: #fd0;
-                  z-index: 5; }
+                  z-index: 5;
+                  transition: all .2s ease; }
               html body .content .screen .container .e-cards-container .e-cards-table .table-body {
                 overflow: auto;
                 height: 63vh;
