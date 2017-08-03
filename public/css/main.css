@@ -2358,6 +2358,12 @@ html {
                   transform: rotate(0deg); }
                   html body .content .screen .container .e-cards-container .e-cards-table .table-body .e-card-new .e-card-desc i.fa.active {
                     transform: rotate(180deg); }
+            html body .content .screen .container .e-cards-container .e-cards-nav .fa {
+              display: inline-block; }
+            html body .content .screen .container .e-cards-container .e-cards-nav .current-page-wrapper {
+              display: inline-block; }
+              html body .content .screen .container .e-cards-container .e-cards-nav .current-page-wrapper .pages {
+                display: inline-block; }
           html body .content .screen .container .customers-container {
             text-align: center;
             overflow: auto;

@@ -252,4 +252,15 @@
             }
         }
     }
+    .e-cards-nav{
+        .fa{
+            display: inline-block;
+        }
+        .current-page-wrapper{
+            display: inline-block;
+            .pages{
+                display: inline-block;
+            }
+        }
+    }
 }
