@@ -999,378 +999,338 @@ $(function () {
                                 }
                                 loadEdition($('.e-card-new'));
                                 $('.progress').addClass('loading');
-                                $.ajax({
-                                    type: "POST",
-                                    url: '/db/e-cards/count',
-                                    success: function (res) {
-                                        var pages = Math.ceil(res.count / 10);
-                                        var pagesColumns;
-                                        if (pages <= 5) {
-                                            pagesColumns = 2;
-                                        } else {
-                                            pagesColumns = 1;
-                                        }
-                                        for (var i = 0; i < pages; i++) {
-                                            $('<li class="col-xs-' + pagesColumns + ' table-page"><h6>' + (i + 1) + '</h6></li>').insertBefore('.table-next');
-                                        }
-                                        var requestECards = function (offset) {
-                                            $('.progress').addClass('loading');
-                                            $.ajax({
-                                                type: "POST",
-                                                url: '/db/e-cards',
-                                                data: {
-                                                    offset: offset * 25
-                                                },
-                                                success: function (res) {
-                                                    $('.e-card-item').remove();
-                                                    for (var i = 0; i < res.length; i++) {
-                                                        $('.e-cards-table').append('<div class="col-xs-12 e-card-item"></div>');
-                                                        $('.e-card-item:last-child').append('<div class="col-xs-2 e-card-desc e-card-img"></div>');
-                                                        $('.e-card-img:last-child').append('<img class="col-xs-12" src="../IMG/ecards/' + res[i].url + '"/>');
-                                                        $('.e-card-item:last-child').append('<div class="col-xs-1 e-card-desc e-card-gender"><div class="col-xs-12">' + res[i].gender + '</div></div>');
-                                                        $('.e-card-item:last-child').append('<div class="col-xs-2 e-card-desc e-card-age"><div class="col-xs-12">' + res[i].age + '</div></div>');
-                                                        $('.e-card-item:last-child').append('<div class="col-xs-1 e-card-desc e-card-reference"></div>');
-                                                        for (var j = 0; j < res[i].reference.length; j++) {
-                                                            $('.e-card-item:last-child >.e-card-desc:last-child').append('<div class="col-xs-12">' + res[i].reference[j] + '</div>');
-                                                        }
-                                                        $('.e-card-item:last-child').append('<div class="col-xs-1 e-card-desc e-card-type"></div>');
-                                                        for (var j = 0; j < res[i].type.length; j++) {
-                                                            $('.e-card-item:last-child >.e-card-desc:last-child').append('<div class="col-xs-12">' + res[i].type[j] + '</div>');
-                                                        }
-                                                        $('.e-card-item:last-child').append('<div class="col-xs-1 e-card-desc e-card-color"></div>');
-                                                        for (var j = 0; j < res[i].color.length; j++) {
-                                                            $('.e-card-item:last-child >.e-card-desc:last-child').append('<div class="col-xs-12">' + res[i].color[j] + '</div>');
-                                                        }
-                                                        $('.e-card-item:last-child').append('<div class="col-xs-1 e-card-desc e-card-weather"></div>');
-                                                        for (var j = 0; j < res[i].weather.length; j++) {
-                                                            $('.e-card-item:last-child >.e-card-desc:last-child').append('<div class="col-xs-12">' + res[i].weather[j] + '</div>');
-                                                        }
-                                                        $('.e-card-item:last-child').append('<div class="col-xs-2 e-card-desc e-card-occasion"></div>');
-                                                        for (var j = 0; j < res[i].occasion.length; j++) {
-                                                            $('.e-card-item:last-child >.e-card-desc:last-child').append('<div class="col-xs-12">' + res[i].occasion[j] + '</div>');
-                                                        }
-                                                        $('.e-card-item:last-child').append('<div class="col-xs-1 e-card-desc e-card-edition"><div class="col-xs-12 fa fa-trash" title="Borrar"></div><div class="col-xs-6 fa fa-pencil hidden" title="Editar"></div></div>');
-                                                        if (res[i].occasion.length > 1) {
-                                                            $('.e-card-item:last-child > .e-card-occasion > div:first-child ').append(' <i class="fa fa-angle-down" aria-hidden="true"></i> ');
-                                                        }
-                                                        if (res[i].weather.length > 1) {
-                                                            $('.e-card-item:last-child > .e-card-weather > div:first-child ').append(' <i class="fa fa-angle-down" aria-hidden="true"></i> ');
-                                                        }
-                                                        if (res[i].color.length > 1) {
-                                                            $('.e-card-item:last-child > .e-card-color > div:first-child ').append(' <i class="fa fa-angle-down" aria-hidden="true"></i> ');
-                                                        }
-                                                        if (res[i].type.length > 1) {
-                                                            $('.e-card-item:last-child > .e-card-type > div:first-child ').append(' <i class="fa fa-angle-down" aria-hidden="true"></i> ');
-                                                        }
-                                                        if (res[i].reference.length > 1) {
-                                                            $('.e-card-item:last-child > .e-card-reference > div:first-child ').append(' <i class="fa fa-angle-down" aria-hidden="true"></i> ');
-                                                        }
-                                                    }
-                                                    $('.e-card-item').click(function (e) {
-                                                        if (e.target == $(this).find('.fa-trash')[0] && $(this).hasClass('active')) {
-                                                            var tempTrashThis = $(this);
-                                                            $('.warning-wrapper').toggleClass('active');
-                                                            $('.warning-wrapper > .yes').click(function () {
-                                                                var tempCurUrl = tempTrashThis.find('.e-card-img > img').attr('src').split('/');
-                                                                tempCurUrl = tempCurUrl[tempCurUrl.length - 1];
-                                                                var tempThis = tempTrashThis;
-                                                                $('.progress').addClass('loading');
-                                                                $.ajax({
-                                                                    type: 'POST',
-                                                                    url: '/db/e-cards/delete',
-                                                                    data: {
-                                                                        url: tempCurUrl
-                                                                    },
-                                                                    success: function () {
-                                                                        tempThis.click();
-                                                                        tempThis.remove();
-                                                                        $('.progress').removeClass('loading');
-                                                                    }
-                                                                });
-                                                                $('.warning-wrapper').toggleClass('active');
-                                                                $('.warning-wrapper > .yes').unbind();
-                                                                $('.warning-wrapper > .no').unbind();
-                                                            });
-                                                            $('.warning-wrapper > .no').click(function () {
-                                                                $('.warning-wrapper').toggleClass('active');
-                                                                $('.warning-wrapper > .yes').unbind();
-                                                                $('.warning-wrapper > .no').unbind();
-                                                            })
-                                                            return;
-                                                        } else if (e.target == $(this).find('.fa-pencil')[0] && $(this).hasClass('active')) {
-                                                            editingECard = true;
-                                                            $(this).click();
-                                                            $('.e-card-new > .e-card-desc > .fa-ban').click();
-                                                            $('.e-card-new > .e-card-desc:nth-child(1) > div').append(
-                                                                $(this).find('.e-card-desc:nth-child(1) > img')[0].outerHTML);
-                                                            $('.e-card-new').click();
-                                                            return;
-                                                        }
-                                                        if ($(this).hasClass('active')) {
-                                                            $('.e-card-item.active > .e-card-desc').unbind();
-                                                            $('.e-card-item.active > .e-card-desc').removeClass('col-xs-2');
-                                                            $('.e-card-item.active > .e-card-desc').removeClass('col-xs-4');
-                                                            $('.e-card-item.active > .e-card-desc').removeClass('col-xs-1');
-                                                            $('.e-card-item.active > .e-card-desc:nth-child(1)').addClass('col-xs-2');
-                                                            $('.e-card-item.active > .e-card-desc:nth-child(2)').addClass('col-xs-1');
-                                                            $('.e-card-item.active > .e-card-desc:nth-child(3)').addClass('col-xs-2');
-                                                            $('.e-card-item.active > .e-card-desc:nth-child(4)').addClass('col-xs-1');
-                                                            $('.e-card-item.active > .e-card-desc:nth-child(5)').addClass('col-xs-1');
-                                                            $('.e-card-item.active > .e-card-desc:nth-child(6)').addClass('col-xs-1');
-                                                            $('.e-card-item.active > .e-card-desc:nth-child(7)').addClass('col-xs-1');
-                                                            $('.e-card-item.active > .e-card-desc:nth-child(8)').addClass('col-xs-2');
-                                                            $('.table-header > .e-card-title').removeClass('col-xs-1 col-xs-2 col-xs-4');
-                                                            $('.table-header > .e-card-title:nth-child(1)').addClass('col-xs-2');
-                                                            $('.table-header > .e-card-title:nth-child(2)').addClass('col-xs-1');
-                                                            $('.table-header > .e-card-title:nth-child(3)').addClass('col-xs-2');
-                                                            $('.table-header > .e-card-title:nth-child(4)').addClass('col-xs-1');
-                                                            $('.table-header > .e-card-title:nth-child(5)').addClass('col-xs-1');
-                                                            $('.table-header > .e-card-title:nth-child(6)').addClass('col-xs-1');
-                                                            $('.table-header > .e-card-title:nth-child(7)').addClass('col-xs-1');
-                                                            $('.table-header > .e-card-title:nth-child(8)').addClass('col-xs-2');
-                                                            $('.table-header > .e-card-title:nth-child(9)').addClass('col-xs-1');
-                                                            $('.e-card-new').css('max-height', '7vh');
-                                                            $(this).removeClass('active');
-                                                        } else {
-                                                            if ($('.e-card-new').hasClass('active')) {
-                                                                $('.fa-eye').click();
+                                var requestECards = function (offset) {
+                                    $('.progress').addClass('loading');
+                                    $.ajax({
+                                        type: "POST",
+                                        url: '/db/e-cards',
+                                        data: {
+                                            offset: offset * 25
+                                        },
+                                        success: function (res) {
+                                            $('.e-card-item').remove();
+                                            var e_cards = res.docs;
+                                            for (var i = 0; i < e_cards.length; i++) {
+                                                $('.e-cards-table').append('<div class="col-xs-12 e-card-item"></div>');
+                                                $('.e-card-item:last-child').append('<div class="col-xs-2 e-card-desc e-card-img"></div>');
+                                                $('.e-card-img:last-child').append('<img class="col-xs-12" src="../IMG/ecards/' + e_cards[i].url + '"/>');
+                                                $('.e-card-item:last-child').append('<div class="col-xs-1 e-card-desc e-card-gender"><div class="col-xs-12">' + e_cards[i].gender + '</div></div>');
+                                                $('.e-card-item:last-child').append('<div class="col-xs-2 e-card-desc e-card-age"><div class="col-xs-12">' + e_cards[i].age + '</div></div>');
+                                                $('.e-card-item:last-child').append('<div class="col-xs-1 e-card-desc e-card-reference"></div>');
+                                                for (var j = 0; j < e_cards[i].reference.length; j++) {
+                                                    $('.e-card-item:last-child >.e-card-desc:last-child').append('<div class="col-xs-12">' + e_cards[i].reference[j] + '</div>');
+                                                }
+                                                $('.e-card-item:last-child').append('<div class="col-xs-1 e-card-desc e-card-type"></div>');
+                                                for (var j = 0; j < e_cards[i].type.length; j++) {
+                                                    $('.e-card-item:last-child >.e-card-desc:last-child').append('<div class="col-xs-12">' + e_cards[i].type[j] + '</div>');
+                                                }
+                                                $('.e-card-item:last-child').append('<div class="col-xs-1 e-card-desc e-card-color"></div>');
+                                                for (var j = 0; j < e_cards[i].color.length; j++) {
+                                                    $('.e-card-item:last-child >.e-card-desc:last-child').append('<div class="col-xs-12">' + e_cards[i].color[j] + '</div>');
+                                                }
+                                                $('.e-card-item:last-child').append('<div class="col-xs-1 e-card-desc e-card-weather"></div>');
+                                                for (var j = 0; j < res[i].weather.length; j++) {
+                                                    $('.e-card-item:last-child >.e-card-desc:last-child').append('<div class="col-xs-12">' + e_cards[i].weather[j] + '</div>');
+                                                }
+                                                $('.e-card-item:last-child').append('<div class="col-xs-2 e-card-desc e-card-occasion"></div>');
+                                                for (var j = 0; j < e_cards[i].occasion.length; j++) {
+                                                    $('.e-card-item:last-child >.e-card-desc:last-child').append('<div class="col-xs-12">' + e_cards[i].occasion[j] + '</div>');
+                                                }
+                                                $('.e-card-item:last-child').append('<div class="col-xs-1 e-card-desc e-card-edition"><div class="col-xs-12 fa fa-trash" title="Borrar"></div><div class="col-xs-6 fa fa-pencil hidden" title="Editar"></div></div>');
+                                                if (e_cards[i].occasion.length > 1) {
+                                                    $('.e-card-item:last-child > .e-card-occasion > div:first-child ').append(' <i class="fa fa-angle-down" aria-hidden="true"></i> ');
+                                                }
+                                                if (e_cards[i].weather.length > 1) {
+                                                    $('.e-card-item:last-child > .e-card-weather > div:first-child ').append(' <i class="fa fa-angle-down" aria-hidden="true"></i> ');
+                                                }
+                                                if (e_cards[i].color.length > 1) {
+                                                    $('.e-card-item:last-child > .e-card-color > div:first-child ').append(' <i class="fa fa-angle-down" aria-hidden="true"></i> ');
+                                                }
+                                                if (e_cards[i].type.length > 1) {
+                                                    $('.e-card-item:last-child > .e-card-type > div:first-child ').append(' <i class="fa fa-angle-down" aria-hidden="true"></i> ');
+                                                }
+                                                if (e_cards[i].reference.length > 1) {
+                                                    $('.e-card-item:last-child > .e-card-reference > div:first-child ').append(' <i class="fa fa-angle-down" aria-hidden="true"></i> ');
+                                                }
+                                            }
+                                            $('.e-card-item').click(function (e) {
+                                                if (e.target == $(this).find('.fa-trash')[0] && $(this).hasClass('active')) {
+                                                    var tempTrashThis = $(this);
+                                                    $('.warning-wrapper').toggleClass('active');
+                                                    $('.warning-wrapper > .yes').click(function () {
+                                                        var tempCurUrl = tempTrashThis.find('.e-card-img > img').attr('src').split('/');
+                                                        tempCurUrl = tempCurUrl[tempCurUrl.length - 1];
+                                                        var tempThis = tempTrashThis;
+                                                        $('.progress').addClass('loading');
+                                                        $.ajax({
+                                                            type: 'POST',
+                                                            url: '/db/e-cards/delete',
+                                                            data: {
+                                                                url: tempCurUrl
+                                                            },
+                                                            success: function () {
+                                                                tempThis.click();
+                                                                tempThis.remove();
+                                                                $('.progress').removeClass('loading');
                                                             }
-                                                            $('.e-card-item.active > .e-card-desc').unbind();
-                                                            $('.e-card-item.active').removeClass('active');
-                                                            $(this).toggleClass('active');
-                                                            $('.e-card-new').css('max-height', '0vh');
-                                                            $('.e-card-item.active > .e-card-desc:not(:last-child)').hover(function () {
-                                                                $('.e-card-item.active > .e-card-desc').removeClass('col-xs-2');
-                                                                $('.e-card-item.active > .e-card-desc').addClass('col-xs-1');
-                                                                $(this).removeClass('col-xs-1');
-                                                                $(this).addClass('col-xs-4');
-                                                                $('.table-header > .e-card-title').removeClass('col-xs-1 col-xs-2');
-                                                                $('.table-header > .e-card-title').addClass('col-xs-1');
-                                                                $('.table-header > .e-card-title:nth-child(' + ($(this).index() + 1) + ')').removeClass('col-xs-1');
-                                                                $('.table-header > .e-card-title:nth-child(' + ($(this).index() + 1) + ')').addClass('col-xs-4');
-                                                            }, function () {
-                                                                $('.e-card-item.active > .e-card-desc').removeClass('col-xs-1 col-xs-2 col-xs-4');
-                                                                $('.e-card-item.active > .e-card-desc:nth-child(1)').addClass('col-xs-2');
-                                                                $('.e-card-item.active > .e-card-desc:nth-child(2)').addClass('col-xs-1');
-                                                                $('.e-card-item.active > .e-card-desc:nth-child(3)').addClass('col-xs-2');
-                                                                $('.e-card-item.active > .e-card-desc:nth-child(4)').addClass('col-xs-1');
-                                                                $('.e-card-item.active > .e-card-desc:nth-child(5)').addClass('col-xs-1');
-                                                                $('.e-card-item.active > .e-card-desc:nth-child(6)').addClass('col-xs-1');
-                                                                $('.e-card-item.active > .e-card-desc:nth-child(7)').addClass('col-xs-1');
-                                                                $('.e-card-item.active > .e-card-desc:nth-child(8)').addClass('col-xs-2');
-                                                                $('.table-header > .e-card-title').removeClass('col-xs-1 col-xs-2 col-xs-4');
-                                                                $('.table-header > .e-card-title:nth-child(1)').addClass('col-xs-2');
-                                                                $('.table-header > .e-card-title:nth-child(2)').addClass('col-xs-1');
-                                                                $('.table-header > .e-card-title:nth-child(3)').addClass('col-xs-2');
-                                                                $('.table-header > .e-card-title:nth-child(4)').addClass('col-xs-1');
-                                                                $('.table-header > .e-card-title:nth-child(5)').addClass('col-xs-1');
-                                                                $('.table-header > .e-card-title:nth-child(6)').addClass('col-xs-1');
-                                                                $('.table-header > .e-card-title:nth-child(7)').addClass('col-xs-1');
-                                                                $('.table-header > .e-card-title:nth-child(8)').addClass('col-xs-2');
-                                                                $('.table-header > .e-card-title:nth-child(9)').addClass('col-xs-1');
-                                                            });
-                                                        }
+                                                        });
+                                                        $('.warning-wrapper').toggleClass('active');
+                                                        $('.warning-wrapper > .yes').unbind();
+                                                        $('.warning-wrapper > .no').unbind();
                                                     });
-                                                    $('.progress').removeClass('loading');
+                                                    $('.warning-wrapper > .no').click(function () {
+                                                        $('.warning-wrapper').toggleClass('active');
+                                                        $('.warning-wrapper > .yes').unbind();
+                                                        $('.warning-wrapper > .no').unbind();
+                                                    })
+                                                    return;
+                                                } else if (e.target == $(this).find('.fa-pencil')[0] && $(this).hasClass('active')) {
+                                                    editingECard = true;
+                                                    $(this).click();
+                                                    $('.e-card-new > .e-card-desc > .fa-ban').click();
+                                                    $('.e-card-new > .e-card-desc:nth-child(1) > div').append(
+                                                        $(this).find('.e-card-desc:nth-child(1) > img')[0].outerHTML);
+                                                    $('.e-card-new').click();
+                                                    return;
                                                 }
+                                                if ($(this).hasClass('active')) {
+                                                    $('.e-card-item.active > .e-card-desc').unbind();
+                                                    $('.e-card-item.active > .e-card-desc').removeClass('col-xs-2');
+                                                    $('.e-card-item.active > .e-card-desc').removeClass('col-xs-4');
+                                                    $('.e-card-item.active > .e-card-desc').removeClass('col-xs-1');
+                                                    $('.e-card-item.active > .e-card-desc:nth-child(1)').addClass('col-xs-2');
+                                                    $('.e-card-item.active > .e-card-desc:nth-child(2)').addClass('col-xs-1');
+                                                    $('.e-card-item.active > .e-card-desc:nth-child(3)').addClass('col-xs-2');
+                                                    $('.e-card-item.active > .e-card-desc:nth-child(4)').addClass('col-xs-1');
+                                                    $('.e-card-item.active > .e-card-desc:nth-child(5)').addClass('col-xs-1');
+                                                    $('.e-card-item.active > .e-card-desc:nth-child(6)').addClass('col-xs-1');
+                                                    $('.e-card-item.active > .e-card-desc:nth-child(7)').addClass('col-xs-1');
+                                                    $('.e-card-item.active > .e-card-desc:nth-child(8)').addClass('col-xs-2');
+                                                    $('.table-header > .e-card-title').removeClass('col-xs-1 col-xs-2 col-xs-4');
+                                                    $('.table-header > .e-card-title:nth-child(1)').addClass('col-xs-2');
+                                                    $('.table-header > .e-card-title:nth-child(2)').addClass('col-xs-1');
+                                                    $('.table-header > .e-card-title:nth-child(3)').addClass('col-xs-2');
+                                                    $('.table-header > .e-card-title:nth-child(4)').addClass('col-xs-1');
+                                                    $('.table-header > .e-card-title:nth-child(5)').addClass('col-xs-1');
+                                                    $('.table-header > .e-card-title:nth-child(6)').addClass('col-xs-1');
+                                                    $('.table-header > .e-card-title:nth-child(7)').addClass('col-xs-1');
+                                                    $('.table-header > .e-card-title:nth-child(8)').addClass('col-xs-2');
+                                                    $('.table-header > .e-card-title:nth-child(9)').addClass('col-xs-1');
+                                                    $('.e-card-new').css('max-height', '7vh');
+                                                    $(this).removeClass('active');
+                                                } else {
+                                                    if ($('.e-card-new').hasClass('active')) {
+                                                        $('.fa-eye').click();
+                                                    }
+                                                    $('.e-card-item.active > .e-card-desc').unbind();
+                                                    $('.e-card-item.active').removeClass('active');
+                                                    $(this).toggleClass('active');
+                                                    $('.e-card-new').css('max-height', '0vh');
+                                                    $('.e-card-item.active > .e-card-desc:not(:last-child)').hover(function () {
+                                                        $('.e-card-item.active > .e-card-desc').removeClass('col-xs-2');
+                                                        $('.e-card-item.active > .e-card-desc').addClass('col-xs-1');
+                                                        $(this).removeClass('col-xs-1');
+                                                        $(this).addClass('col-xs-4');
+                                                        $('.table-header > .e-card-title').removeClass('col-xs-1 col-xs-2');
+                                                        $('.table-header > .e-card-title').addClass('col-xs-1');
+                                                        $('.table-header > .e-card-title:nth-child(' + ($(this).index() + 1) + ')').removeClass('col-xs-1');
+                                                        $('.table-header > .e-card-title:nth-child(' + ($(this).index() + 1) + ')').addClass('col-xs-4');
+                                                    }, function () {
+                                                        $('.e-card-item.active > .e-card-desc').removeClass('col-xs-1 col-xs-2 col-xs-4');
+                                                        $('.e-card-item.active > .e-card-desc:nth-child(1)').addClass('col-xs-2');
+                                                        $('.e-card-item.active > .e-card-desc:nth-child(2)').addClass('col-xs-1');
+                                                        $('.e-card-item.active > .e-card-desc:nth-child(3)').addClass('col-xs-2');
+                                                        $('.e-card-item.active > .e-card-desc:nth-child(4)').addClass('col-xs-1');
+                                                        $('.e-card-item.active > .e-card-desc:nth-child(5)').addClass('col-xs-1');
+                                                        $('.e-card-item.active > .e-card-desc:nth-child(6)').addClass('col-xs-1');
+                                                        $('.e-card-item.active > .e-card-desc:nth-child(7)').addClass('col-xs-1');
+                                                        $('.e-card-item.active > .e-card-desc:nth-child(8)').addClass('col-xs-2');
+                                                        $('.table-header > .e-card-title').removeClass('col-xs-1 col-xs-2 col-xs-4');
+                                                        $('.table-header > .e-card-title:nth-child(1)').addClass('col-xs-2');
+                                                        $('.table-header > .e-card-title:nth-child(2)').addClass('col-xs-1');
+                                                        $('.table-header > .e-card-title:nth-child(3)').addClass('col-xs-2');
+                                                        $('.table-header > .e-card-title:nth-child(4)').addClass('col-xs-1');
+                                                        $('.table-header > .e-card-title:nth-child(5)').addClass('col-xs-1');
+                                                        $('.table-header > .e-card-title:nth-child(6)').addClass('col-xs-1');
+                                                        $('.table-header > .e-card-title:nth-child(7)').addClass('col-xs-1');
+                                                        $('.table-header > .e-card-title:nth-child(8)').addClass('col-xs-2');
+                                                        $('.table-header > .e-card-title:nth-child(9)').addClass('col-xs-1');
+                                                    });
+                                                }
+                                            });
+                                            $('.progress').removeClass('loading');
+                                        }
+                                    });
+                                }
+                                var imgToPost, genderToPost, ageToPost, referenceToPost = [],
+                                    typeToPost = [],
+                                    colorToPost = [],
+                                    weatherToPost = [],
+                                    occasionToPost = [];
+                                $('.e-card-new').click(function (e) {
+                                    if ($('.e-card-new').hasClass('active')) {
+                                        if (e.target == $('.fa-eye')[0]) {
+                                            $('.e-card-new.active > .e-card-desc > div.ul-title >').unbind();
+                                            $(this).removeClass('active');
+                                            $('.e-card-new').css('max-height', '7vh');
+                                        }
+                                    } else {
+                                        $('.e-card-new').addClass('active');
+                                        $('.e-card-new').css('max-height', '400vh');
+                                        $('.e-card-new.active > .e-card-desc > div.ul-title >').click(function () {
+                                            var indexOfUL = $(this).parent().parent().index();
+                                            $('.e-card-new.active > .e-card-desc:nth-child(' + (indexOfUL + 1) + ') > div > ul').toggleClass('active');
+                                            $('.e-card-new.active > .e-card-desc:nth-child(' + (indexOfUL + 1) + ') > div > i').toggleClass('active');
+                                        });
+                                    }
+                                });
+                                $('.e-card-new > .e-card-desc > div > ul > li').click(function () {
+                                    if (!$(this).hasClass('disabled')) {
+                                        var indexOfLi = $(this).parent().parent().parent().index() + 1;
+                                        if (indexOfLi == 2 || indexOfLi == 3) {
+                                            $('.e-card-new > .e-card-desc:nth-child(' + indexOfLi + ') > div > ul > li').addClass('disabled');
+                                            $('.e-card-new > .e-card-desc:nth-child(' + indexOfLi + ') > div.ul-title').click();
+                                        }
+                                        $('.e-card-new > .e-card-desc:nth-child(' + indexOfLi + ')').append('<div class="col-xs-12 new" data-index="' + $(this).index() + '">' + $(this).html() + '<div class="fa fa-trash"></div></div>');
+                                        $('.e-card-new > .e-card-desc:nth-child(' + indexOfLi + ') > .new:last-child() > .fa-trash').click(function () {
+                                            $('.e-card-new > .e-card-desc:nth-child(' + ($(this).parent().parent().index() + 1) + ') > div > ul > li:nth-child(' + (Number($(this).parent().attr('data-index')) + 1) + ')').removeClass('disabled');
+                                            if (($(this).parent().parent().index() + 1) == 2 || ($(this).parent().parent().index() + 1) == 3) {
+                                                $('.e-card-new > .e-card-desc:nth-child(' + ($(this).parent().parent().index() + 1) + ') > div > ul > li').removeClass('disabled');
+                                            }
+                                            $(this).parent().remove();
+                                        });
+                                        $(this).addClass('disabled');
+                                    }
+
+                                });
+                                $('.e-card-img-new').click(function (e) {
+                                    if (e.target == $('.fa-camera')[0]) {
+                                        $('input[type="file"]').click();
+                                    }
+                                });
+                                $('#uploadForm').submit(function () {
+                                    $("#status").empty().text("File is uploading...");
+                                    $('.progress').addClass('loading');
+                                    $(this).ajaxSubmit({
+                                        error: function (xhr) {
+                                            status('Error: ' + xhr.status);
+                                        },
+                                        success: function (res) {
+                                            $('.e-card-img-new > div > img').remove();
+                                            $('.e-card-img-new > div').append('<img class="col-xs-12" src="../IMG/ecards/' + res + '">');
+                                            imgToPost = res;
+                                            $('.progress').removeClass('loading');
+                                        }
+                                    });
+                                    return false;
+                                });
+                                $('#uploadForm > input[type="file"]').change(function () {
+                                    if ($('.e-card-img-new > div > img').length == 1) {
+                                        var tempCurlUrlFromBan = $('.e-card-img-new > div > img').attr('src').split('/');
+                                        tempCurlUrlFromBan = tempCurlUrlFromBan[tempCurlUrlFromBan.length - 1];
+                                        $('.progress').toggleClass('loading');
+                                        $.ajax({
+                                            type: 'POST',
+                                            url: '/db/e-cards/delete',
+                                            data: {
+                                                url: tempCurlUrlFromBan
+                                            },
+                                            success: function () {
+                                                $('.e-card-img-new > div > img').remove();
+                                                $('#uploadForm > input[type="submit"]').click();
+                                                $('.progress').removeClass('loading');
+                                            }
+                                        });
+                                    } else {
+                                        $('#uploadForm > input[type="submit"]').click();
+                                    }
+                                });
+                                $('.e-card-new > .e-card-desc > div.ref > .fa-plus-square').click(function () {
+                                    var inputVal = $('.e-card-new > .e-card-desc > div.ref > input').val();
+                                    if (inputVal != "") {
+                                        if ($('.e-card-new > .e-card-desc:nth-child(4) > div.new:contains(' + inputVal + ')').length == 0) {
+                                            $('.e-card-new > .e-card-desc:nth-child(4)').append('<div class="col-xs-12 new">' + inputVal + '<div class="fa fa-trash"></div></div>');
+                                            $('.e-card-new > .e-card-desc:nth-child(4) > .new:last-child() > .fa-trash').click(function () {
+                                                $(this).parent().remove();
                                             });
                                         }
-                                        var imgToPost, genderToPost, ageToPost, referenceToPost = [],
-                                            typeToPost = [],
-                                            colorToPost = [],
-                                            weatherToPost = [],
-                                            occasionToPost = [];
-                                        $('.e-card-new').click(function (e) {
-                                            if ($('.e-card-new').hasClass('active')) {
-                                                if (e.target == $('.fa-eye')[0]) {
-                                                    $('.e-card-new.active > .e-card-desc > div.ul-title >').unbind();
-                                                    $(this).removeClass('active');
-                                                    $('.e-card-new').css('max-height', '7vh');
-                                                }
-                                            } else {
-                                                $('.e-card-new').addClass('active');
-                                                $('.e-card-new').css('max-height', '400vh');
-                                                $('.e-card-new.active > .e-card-desc > div.ul-title >').click(function () {
-                                                    var indexOfUL = $(this).parent().parent().index();
-                                                    $('.e-card-new.active > .e-card-desc:nth-child(' + (indexOfUL + 1) + ') > div > ul').toggleClass('active');
-                                                    $('.e-card-new.active > .e-card-desc:nth-child(' + (indexOfUL + 1) + ') > div > i').toggleClass('active');
-                                                });
-                                            }
-                                        });
-                                        $('.e-card-new > .e-card-desc > div > ul > li').click(function () {
-                                            if (!$(this).hasClass('disabled')) {
-                                                var indexOfLi = $(this).parent().parent().parent().index() + 1;
-                                                if (indexOfLi == 2 || indexOfLi == 3) {
-                                                    $('.e-card-new > .e-card-desc:nth-child(' + indexOfLi + ') > div > ul > li').addClass('disabled');
-                                                    $('.e-card-new > .e-card-desc:nth-child(' + indexOfLi + ') > div.ul-title').click();
-                                                }
-                                                $('.e-card-new > .e-card-desc:nth-child(' + indexOfLi + ')').append('<div class="col-xs-12 new" data-index="' + $(this).index() + '">' + $(this).html() + '<div class="fa fa-trash"></div></div>');
-                                                $('.e-card-new > .e-card-desc:nth-child(' + indexOfLi + ') > .new:last-child() > .fa-trash').click(function () {
-                                                    $('.e-card-new > .e-card-desc:nth-child(' + ($(this).parent().parent().index() + 1) + ') > div > ul > li:nth-child(' + (Number($(this).parent().attr('data-index')) + 1) + ')').removeClass('disabled');
-                                                    if (($(this).parent().parent().index() + 1) == 2 || ($(this).parent().parent().index() + 1) == 3) {
-                                                        $('.e-card-new > .e-card-desc:nth-child(' + ($(this).parent().parent().index() + 1) + ') > div > ul > li').removeClass('disabled');
-                                                    }
-                                                    $(this).parent().remove();
-                                                });
-                                                $(this).addClass('disabled');
-                                            }
 
-                                        });
-                                        $('.e-card-img-new').click(function (e) {
-                                            if (e.target == $('.fa-camera')[0]) {
-                                                $('input[type="file"]').click();
-                                            }
-                                        });
-                                        $('#uploadForm').submit(function () {
-                                            $("#status").empty().text("File is uploading...");
-                                            $('.progress').addClass('loading');
-                                            $(this).ajaxSubmit({
-                                                error: function (xhr) {
-                                                    status('Error: ' + xhr.status);
-                                                },
-                                                success: function (res) {
-                                                    $('.e-card-img-new > div > img').remove();
-                                                    $('.e-card-img-new > div').append('<img class="col-xs-12" src="../IMG/ecards/' + res + '">');
-                                                    imgToPost = res;
-                                                    $('.progress').removeClass('loading');
-                                                }
-                                            });
-                                            return false;
-                                        });
-                                        $('#uploadForm > input[type="file"]').change(function () {
-                                            if ($('.e-card-img-new > div > img').length == 1) {
-                                                var tempCurlUrlFromBan = $('.e-card-img-new > div > img').attr('src').split('/');
-                                                tempCurlUrlFromBan = tempCurlUrlFromBan[tempCurlUrlFromBan.length - 1];
-                                                $('.progress').toggleClass('loading');
-                                                $.ajax({
-                                                    type: 'POST',
-                                                    url: '/db/e-cards/delete',
-                                                    data: {
-                                                        url: tempCurlUrlFromBan
-                                                    },
-                                                    success: function () {
-                                                        $('.e-card-img-new > div > img').remove();
-                                                        $('#uploadForm > input[type="submit"]').click();
-                                                        $('.progress').removeClass('loading');
-                                                    }
-                                                });
-                                            } else {
-                                                $('#uploadForm > input[type="submit"]').click();
-                                            }
-                                        });
-                                        $('.e-card-new > .e-card-desc > div.ref > .fa-plus-square').click(function () {
-                                            var inputVal = $('.e-card-new > .e-card-desc > div.ref > input').val();
-                                            if (inputVal != "") {
-                                                if ($('.e-card-new > .e-card-desc:nth-child(4) > div.new:contains(' + inputVal + ')').length == 0) {
-                                                    $('.e-card-new > .e-card-desc:nth-child(4)').append('<div class="col-xs-12 new">' + inputVal + '<div class="fa fa-trash"></div></div>');
-                                                    $('.e-card-new > .e-card-desc:nth-child(4) > .new:last-child() > .fa-trash').click(function () {
-                                                        $(this).parent().remove();
-                                                    });
-                                                }
-
-                                            }
-                                        });
-                                        $('.e-card-new > .e-card-desc > .fa-ban').click(function () {
-                                            $('.e-card-new > .e-card-desc > div > .fa-trash').click();
-                                            if ($('.e-card-img-new > div > img').length == 1) {
-                                                var tempCurlUrlFromBan = $('.e-card-img-new > div > img').attr('src').split('/');
-                                                tempCurlUrlFromBan = tempCurlUrlFromBan[tempCurlUrlFromBan.length - 1];
-                                                $('.progress').toggleClass('loading');
-                                                $.ajax({
-                                                    type: 'POST',
-                                                    url: '/db/e-cards/delete',
-                                                    data: {
-                                                        url: tempCurlUrlFromBan
-                                                    },
-                                                    success: function () {
-                                                        $('.progress').removeClass('loading');
-                                                        $('.e-card-img-new > div > img').remove();
-                                                    }
-                                                });
-                                            }
-                                            if (editingECard) {
-                                                editingECard = false;
-                                                $('.e-card-item').css('max-height', '7vh');
-                                                $('.fa-eye').click();
-                                                $('.fa-eye').click();
-                                                console.log(editingECard);
-                                            }
-                                        });
-                                        $('.e-card-new > .e-card-desc > .fa-plus-square').click(function () {
-                                            for (var i = 1; i < $('.e-card-new > .e-card-desc').length - 1; i++) {
-                                                for (var j = 0; j < $('.e-card-new > .e-card-desc:nth-child(' + (i + 1) + ') > div.new').length; j++) {
-                                                    if ($('.e-card-new > .e-card-desc:nth-child(' + (i + 1) + ') > div.new:nth-child(' + (j + 1) + ')')) {
-                                                        var tempVal = $($('.e-card-new > .e-card-desc:nth-child(' + (i + 1) + ') > div.new')[j]).html().split('<div')[0];
-                                                        if (i == 1) {
-                                                            genderToPost = tempVal;
-                                                        } else if (i == 2) {
-                                                            ageToPost = tempVal;
-                                                        } else if (i == 3) {
-                                                            referenceToPost[j] = tempVal;
-                                                        } else if (i == 4) {
-                                                            typeToPost[j] = tempVal;
-                                                        } else if (i == 5) {
-                                                            colorToPost[j] = tempVal;
-                                                        } else if (i == 6) {
-                                                            weatherToPost[j] = tempVal;
-                                                        } else if (i == 7) {
-                                                            occasionToPost[j] = tempVal;
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                            var objToPost = {
-                                                url: imgToPost,
-                                                gender: genderToPost,
-                                                age: ageToPost,
-                                                reference: referenceToPost,
-                                                type: typeToPost,
-                                                color: colorToPost,
-                                                weather: weatherToPost,
-                                                occasion: occasionToPost
-                                            }
-                                            $('.progress').addClass('loading');
-                                            $.ajax({
-                                                type: "POST",
-                                                url: 'db/e-cards/upload',
-                                                data: objToPost,
-                                                success: function (res) {
-                                                    $('.e-cards-table > div.active > .e-card-desc > .fa-eye').click();
-                                                    $('.e-cards-table > div.active > .e-card-desc > .fa-ban').click();
-                                                    if ($('.table-page').last().hasClass('active')) {
-                                                        $('.table-page').first().click();
-                                                        $('.table-page').last().click();
-                                                    }
-                                                    $('.progress').removeClass('loading');
-                                                }
-                                            })
-                                        });
-                                        $('.table-page').click(function () {
-                                            if (!$(this).hasClass('active')) {
-                                                $('.table-page.active').removeClass('active');
-                                                $(this).addClass('active');
-                                                var currentPageIndex = $('.table-page.active').index();
-                                                requestECards(currentPageIndex - 1);
-                                            }
-                                        });
-                                        $('.table-next').click(function () {
-                                            var currentPageIndex = $('.table-page.active').index();
-                                            if (currentPageIndex < pages) {
-                                                $('.table-page.active').removeClass('active');
-                                                $($('.table-page')[currentPageIndex]).addClass('active');
-                                                requestECards(currentPageIndex);
-                                            }
-                                        });
-                                        $('.table-prev').click(function () {
-                                            var currentPageIndex = $('.table-page.active').index();
-                                            if (currentPageIndex > 1) {
-                                                $('.table-page.active').removeClass('active');
-                                                $($('.table-page')[currentPageIndex - 2]).addClass('active');
-                                                requestECards(currentPageIndex - 2);
-                                            }
-                                        });
-                                        $('.table-page')[0].click();
                                     }
+                                });
+                                $('.e-card-new > .e-card-desc > .fa-ban').click(function () {
+                                    $('.e-card-new > .e-card-desc > div > .fa-trash').click();
+                                    if ($('.e-card-img-new > div > img').length == 1) {
+                                        var tempCurlUrlFromBan = $('.e-card-img-new > div > img').attr('src').split('/');
+                                        tempCurlUrlFromBan = tempCurlUrlFromBan[tempCurlUrlFromBan.length - 1];
+                                        $('.progress').toggleClass('loading');
+                                        $.ajax({
+                                            type: 'POST',
+                                            url: '/db/e-cards/delete',
+                                            data: {
+                                                url: tempCurlUrlFromBan
+                                            },
+                                            success: function () {
+                                                $('.progress').removeClass('loading');
+                                                $('.e-card-img-new > div > img').remove();
+                                            }
+                                        });
+                                    }
+                                    if (editingECard) {
+                                        editingECard = false;
+                                        $('.e-card-item').css('max-height', '7vh');
+                                        $('.fa-eye').click();
+                                        $('.fa-eye').click();
+                                        console.log(editingECard);
+                                    }
+                                });
+                                $('.e-card-new > .e-card-desc > .fa-plus-square').click(function () {
+                                    for (var i = 1; i < $('.e-card-new > .e-card-desc').length - 1; i++) {
+                                        for (var j = 0; j < $('.e-card-new > .e-card-desc:nth-child(' + (i + 1) + ') > div.new').length; j++) {
+                                            if ($('.e-card-new > .e-card-desc:nth-child(' + (i + 1) + ') > div.new:nth-child(' + (j + 1) + ')')) {
+                                                var tempVal = $($('.e-card-new > .e-card-desc:nth-child(' + (i + 1) + ') > div.new')[j]).html().split('<div')[0];
+                                                if (i == 1) {
+                                                    genderToPost = tempVal;
+                                                } else if (i == 2) {
+                                                    ageToPost = tempVal;
+                                                } else if (i == 3) {
+                                                    referenceToPost[j] = tempVal;
+                                                } else if (i == 4) {
+                                                    typeToPost[j] = tempVal;
+                                                } else if (i == 5) {
+                                                    colorToPost[j] = tempVal;
+                                                } else if (i == 6) {
+                                                    weatherToPost[j] = tempVal;
+                                                } else if (i == 7) {
+                                                    occasionToPost[j] = tempVal;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    var objToPost = {
+                                        url: imgToPost,
+                                        gender: genderToPost,
+                                        age: ageToPost,
+                                        reference: referenceToPost,
+                                        type: typeToPost,
+                                        color: colorToPost,
+                                        weather: weatherToPost,
+                                        occasion: occasionToPost
+                                    }
+                                    $('.progress').addClass('loading');
+                                    $.ajax({
+                                        type: "POST",
+                                        url: 'db/e-cards/upload',
+                                        data: objToPost,
+                                        success: function (res) {
+                                            $('.e-cards-table > div.active > .e-card-desc > .fa-eye').click();
+                                            $('.e-cards-table > div.active > .e-card-desc > .fa-ban').click();
+                                            if ($('.table-page').last().hasClass('active')) {
+                                                $('.table-page').first().click();
+                                                $('.table-page').last().click();
+                                            }
+                                            $('.progress').removeClass('loading');
+                                        }
+                                    })
                                 });
                             }
                         });
