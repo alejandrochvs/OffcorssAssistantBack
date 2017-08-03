@@ -9,7 +9,7 @@
         margin-top: 20px;
         margin-bottom: 20px;
         padding: 0;
-        height: auto;
+        height: 70vh;
         background: white;
         border-radius: 5px;
         overflow: hidden;
@@ -243,41 +243,6 @@
                     }
                 }
             }
-        }
-    }
-    .table-pagination {
-        list-style-type: none;
-        background: white;
-        margin-bottom: 5vh;
-        -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-        -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-        box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-        text-align: center;
-        border-radius: 5px;
-        padding: 0;
-        li {
-            cursor: pointer;
-            transition: all .4s ease;
-            background: transparent;
-            h6 {
-                text-overflow: ellipsis;
-                overflow: hidden;
-                white-space: nowrap;
-            }
-            &:hover {
-                background: darken(whitesmoke,2.5%);
-            }
-            &.active {
-                background: darken(whitesmoke, 0%);
-            }
-        }
-        .table-prev {
-            border-top-left-radius: 5px;
-            border-bottom-left-radius: 5px;
-        }
-        .table-next {
-            border-top-right-radius: 5px;
-            border-bottom-right-radius: 5px;
         }
     }
 }

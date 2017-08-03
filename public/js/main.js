@@ -1011,7 +1011,7 @@ $(function () {
                                             $('.e-card-item').remove();
                                             var e_cards = res.docs;
                                             for (var i = 0; i < e_cards.length; i++) {
-                                                $('.e-cards-table').append('<div class="col-xs-12 e-card-item"></div>');
+                                                $('.table-body').append('<div class="col-xs-12 e-card-item"></div>');
                                                 $('.e-card-item:last-child').append('<div class="col-xs-2 e-card-desc e-card-img"></div>');
                                                 $('.e-card-img:last-child').append('<img class="col-xs-12" src="../IMG/ecards/' + e_cards[i].url + '"/>');
                                                 $('.e-card-item:last-child').append('<div class="col-xs-1 e-card-desc e-card-gender"><div class="col-xs-12">' + e_cards[i].gender + '</div></div>');

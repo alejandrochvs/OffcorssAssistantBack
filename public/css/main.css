@@ -2153,7 +2153,7 @@ html {
               margin-top: 20px;
               margin-bottom: 20px;
               padding: 0;
-              height: auto;
+              height: 70vh;
               background: white;
               border-radius: 5px;
               overflow: hidden; }
@@ -2351,34 +2351,6 @@ html {
                 transform: rotate(0deg); }
                 html body .content .screen .container .e-cards-container .e-cards-table .e-card-new .e-card-desc i.fa.active {
                   transform: rotate(180deg); }
-            html body .content .screen .container .e-cards-container .table-pagination {
-              list-style-type: none;
-              background: white;
-              margin-bottom: 5vh;
-              -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-              -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-              box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-              text-align: center;
-              border-radius: 5px;
-              padding: 0; }
-              html body .content .screen .container .e-cards-container .table-pagination li {
-                cursor: pointer;
-                transition: all .4s ease;
-                background: transparent; }
-                html body .content .screen .container .e-cards-container .table-pagination li h6 {
-                  text-overflow: ellipsis;
-                  overflow: hidden;
-                  white-space: nowrap; }
-                html body .content .screen .container .e-cards-container .table-pagination li:hover {
-                  background: #efefef; }
-                html body .content .screen .container .e-cards-container .table-pagination li.active {
-                  background: whitesmoke; }
-              html body .content .screen .container .e-cards-container .table-pagination .table-prev {
-                border-top-left-radius: 5px;
-                border-bottom-left-radius: 5px; }
-              html body .content .screen .container .e-cards-container .table-pagination .table-next {
-                border-top-right-radius: 5px;
-                border-bottom-right-radius: 5px; }
           html body .content .screen .container .customers-container {
             text-align: center;
             overflow: auto;
