@@ -254,19 +254,31 @@
     }
     .e-cards-nav{
         text-align: center;
+        background: white;
+        padding: 0.7%;
+        border-radius: 5px;
+        -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1);
+        line-height: 3vh;
         .fa{
             display: inline-block;
-            font-size: 20px;
+            font-size: 22px;
             cursor: pointer;
+            transition: all .3s ease;
             &:hover{
                 color: $yellow;
             }
         }
         .current-page-wrapper{
+            margin-left: 10px;
+            margin-right: 10px;
             display: inline-block;
             .current-page{
                 width: 35px;
                 padding-left: 5px;
+                border: none;
+                border-bottom: solid 1px $yellow;
             }
             .pages{
                 display: inline-block;
