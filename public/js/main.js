@@ -1008,6 +1008,8 @@ $(function () {
                                         },
                                         success: function (res) {
                                             console.log(res);
+                                            var count = res.count;
+                                            var pages = Math.ceil(count/25);
                                             $('.e-card-item').remove();
                                             var e_cards = res.docs;
                                             for (var i = 0; i < e_cards.length; i++) {

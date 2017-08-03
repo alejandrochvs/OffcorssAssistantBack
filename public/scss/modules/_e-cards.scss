@@ -9,12 +9,16 @@
         margin-top: 20px;
         margin-bottom: 20px;
         padding: 0;
-        height: 70vh;
+        height: auto;
         background: white;
         border-radius: 5px;
         overflow: hidden;
         .table-header {
             padding: 0;
+            -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1);
+            z-index: 1;
             .e-card-title {
                 border-right: solid 1px darken(whitesmoke, 5%);
                 background: white;
@@ -32,214 +36,220 @@
                 }
             }
         }
-        .e-card-item,
-        .e-card-new {
-            overflow: hidden;
-            text-align: center;
+        .table-body {
+            overflow: auto;
+            height: 60vh;
             padding: 0;
-            max-height: 7vh;
-            transition: all .4s ease;
-            cursor: pointer;
-            .e-card-desc {
-                padding: 0;
+            .e-card-item,
+            .e-card-new {
                 overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                border-right: solid 1px darken(whitesmoke, 5%);
+                text-align: center;
+                padding: 0;
+                max-height: 7vh;
+                transition: all .4s ease;
                 cursor: pointer;
-                transition: all .3s ease;
-                height: 100%;
-                &:last-child {
-                    border-right: none;
-                }
-                &.e-card-img-new {
-                    i {
-                        line-height: 7vh;
-                    }
-                }
-                div {
-                    line-height: 7vh;
+                .e-card-desc {
+                    padding: 0;
                     overflow: hidden;
                     text-overflow: ellipsis;
                     white-space: nowrap;
+                    border-right: solid 1px darken(whitesmoke, 5%);
+                    cursor: pointer;
                     transition: all .3s ease;
-                    background: transparent;
-                    padding: 0 15px;
-                    input {
-                        border: none;
-                        outline: none;
-                        &[type="file"] {
-                            width: 0.1px;
-                            height: 0.1px;
-                            opacity: 0;
-                            overflow: hidden;
-                            position: absolute;
-                            z-index: -1;
+                    height: 100%;
+                    &:last-child {
+                        border-right: none;
+                    }
+                    &.e-card-img-new {
+                        i {
+                            line-height: 7vh;
                         }
                     }
-                    .fa {
-                        padding: 0;
+                    div {
                         line-height: 7vh;
-                    }
-                    ul {
-                        max-height: 0vh;
-                        margin: 0;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
                         transition: all .3s ease;
-                        color: transparent;
                         background: transparent;
-                        border-bottom-left-radius: 5px;
-                        border-bottom-right-radius: 5px;
-                        li {
-                            list-style-type: none;
-                            line-height: 4.5vh;
+                        padding: 0 15px;
+                        input {
+                            border: none;
+                            outline: none;
+                            &[type="file"] {
+                                width: 0.1px;
+                                height: 0.1px;
+                                opacity: 0;
+                                overflow: hidden;
+                                position: absolute;
+                                z-index: -1;
+                            }
                         }
-                        &.active {
-                            background: white;
-                            color: #333;
-                            max-height: 400vh;
+                        .fa {
                             padding: 0;
-                            -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1) inset;
-                            -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1) inset;
-                            box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1) inset;
+                            line-height: 7vh;
+                        }
+                        ul {
+                            max-height: 0vh;
+                            margin: 0;
+                            transition: all .3s ease;
+                            color: transparent;
+                            background: transparent;
                             border-bottom-left-radius: 5px;
                             border-bottom-right-radius: 5px;
                             li {
-                                background: transparent;
-                                transition: all .3s ease;
-                                border-left: solid 2px transparent;
-                                &:hover {
-                                    background: whitesmoke;
-                                }
-                                &.disabled {
-                                    cursor: default;
-                                    background: whitesmoke;
-                                    border-left: solid 2px lime;
-                                }
+                                list-style-type: none;
+                                line-height: 4.5vh;
                             }
-                        }
-                    }
-                }
-            }
-            .e-card-img {
-                padding: 8px 15px;
-                overflow: hidden;
-                text-align: center;
-                img {
-                    transition: all .3s ease;
-                    border-radius: 20px;
-                    padding: 0;
-                }
-            }
-            &:hover {
-                background: white;
-                -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.125);
-                -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.125);
-                box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.125);
-                .e-card-desc {
-                    border-color: darken(whitesmoke, 5%);
-                }
-            }
-            .fa-angle-down {
-                transition: all .3s ease;
-                transform: rotate(0deg);
-            }
-            .fa{
-                transition: all .3s ease;
-            }
-            .fa-camera{
-                &:hover{
-                    color: #6DB75D;
-                }
-            }
-            &.active {
-                max-height: 400vh;
-                cursor: default;
-                background: white;
-                -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-                -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-                box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-                .e-card-desc {
-                    border-color: darken(whitesmoke, 5%);
-                    div {
-                        &:hover {
-                            background: whitesmoke;
-                        }
-                    }
-                    &:last-child {
-                        div {
-                            &:hover {
+                            &.active {
                                 background: white;
+                                color: #333;
+                                max-height: 400vh;
+                                padding: 0;
+                                -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1) inset;
+                                -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1) inset;
+                                box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1) inset;
+                                border-bottom-left-radius: 5px;
+                                border-bottom-right-radius: 5px;
+                                li {
+                                    background: transparent;
+                                    transition: all .3s ease;
+                                    border-left: solid 2px transparent;
+                                    &:hover {
+                                        background: whitesmoke;
+                                    }
+                                    &.disabled {
+                                        cursor: default;
+                                        background: whitesmoke;
+                                        border-left: solid 2px lime;
+                                    }
+                                }
                             }
                         }
                     }
                 }
                 .e-card-img {
+                    padding: 8px 15px;
+                    overflow: hidden;
+                    text-align: center;
                     img {
-                        -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-                        -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-                        box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-                        &:hover {
-                            -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
-                            -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
-                            box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
-                        }
+                        transition: all .3s ease;
+                        border-radius: 20px;
+                        padding: 0;
+                    }
+                }
+                &:hover {
+                    background: white;
+                    -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.125);
+                    -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.125);
+                    box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.125);
+                    .e-card-desc {
+                        border-color: darken(whitesmoke, 5%);
                     }
                 }
                 .fa-angle-down {
-                    transform: rotate(180deg);
+                    transition: all .3s ease;
+                    transform: rotate(0deg);
                 }
-                .fa-eye {
-                    &:before {
-                        content: "\f070";
-                    }
+                .fa {
+                    transition: all .3s ease;
+                }
+                .fa-camera {
                     &:hover {
-                        color: #00AFD3;
-                        background: white;
-                    }
-                }
-                .fa-trash,.fa-ban {
-                    &:hover {
-                        color: orangered;
-                        background: white;
-                    }
-                }
-                .fa-plus-square{
-                    &:hover{
                         color: #6DB75D;
                     }
                 }
-                .fa-pencil{
-                    &:hover{
-                        color: $yellow;
-                    }
-                }
-            }
-        }
-        .e-card-new {
-            .e-card-desc {
-                div {
-                    padding: 0;
-                    &.new {
-                        transition: all .3s ease;
-                        .fa-trash {
-                            color: white;
-                            background: orangered;
-                            width: 0;
-                            position: absolute;
-                            left: 20vw;
+                &.active {
+                    max-height: 400vh;
+                    cursor: default;
+                    background: white;
+                    -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                    -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                    box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                    .e-card-desc {
+                        border-color: darken(whitesmoke, 5%);
+                        div {
+                            &:hover {
+                                background: whitesmoke;
+                            }
                         }
-                        &:hover {
-                            .fa-trash {
-                                left: 0vw;
-                                width: 100%;
+                        &:last-child {
+                            div {
+                                &:hover {
+                                    background: white;
+                                }
                             }
                         }
                     }
-                }
-                i.fa {
-                    transform: rotate(0deg);
-                    &.active {
+                    .e-card-img {
+                        img {
+                            -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                            -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                            box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                            &:hover {
+                                -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
+                                -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
+                                box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
+                            }
+                        }
+                    }
+                    .fa-angle-down {
                         transform: rotate(180deg);
+                    }
+                    .fa-eye {
+                        &:before {
+                            content: "\f070";
+                        }
+                        &:hover {
+                            color: #00AFD3;
+                            background: white;
+                        }
+                    }
+                    .fa-trash,
+                    .fa-ban {
+                        &:hover {
+                            color: orangered;
+                            background: white;
+                        }
+                    }
+                    .fa-plus-square {
+                        &:hover {
+                            color: #6DB75D;
+                        }
+                    }
+                    .fa-pencil {
+                        &:hover {
+                            color: $yellow;
+                        }
+                    }
+                }
+            }
+            .e-card-new {
+                .e-card-desc {
+                    div {
+                        padding: 0;
+                        &.new {
+                            transition: all .3s ease;
+                            .fa-trash {
+                                color: white;
+                                background: orangered;
+                                width: 0;
+                                position: absolute;
+                                left: 20vw;
+                            }
+                            &:hover {
+                                .fa-trash {
+                                    left: 0vw;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                    i.fa {
+                        transform: rotate(0deg);
+                        &.active {
+                            transform: rotate(180deg);
+                        }
                     }
                 }
             }

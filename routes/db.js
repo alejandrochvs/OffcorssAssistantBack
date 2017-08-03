@@ -106,7 +106,6 @@ db.once('open', function () {
                     return console.log(err);
                 }
                 data.docs = docs;
-                console.log(data);
                 res.send(data);
             });
         });
