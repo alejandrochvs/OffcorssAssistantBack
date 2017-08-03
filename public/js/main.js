@@ -998,7 +998,6 @@ $(function () {
                                     }
                                 }
                                 loadEdition($('.e-card-new'));
-                                $('.progress').addClass('loading');
                                 var requestECards = function (offset) {
                                     $('.progress').addClass('loading');
                                     $.ajax({
@@ -1008,6 +1007,7 @@ $(function () {
                                             offset: offset * 25
                                         },
                                         success: function (res) {
+                                            console.log(res);
                                             $('.e-card-item').remove();
                                             var e_cards = res.docs;
                                             for (var i = 0; i < e_cards.length; i++) {
@@ -1029,7 +1029,7 @@ $(function () {
                                                     $('.e-card-item:last-child >.e-card-desc:last-child').append('<div class="col-xs-12">' + e_cards[i].color[j] + '</div>');
                                                 }
                                                 $('.e-card-item:last-child').append('<div class="col-xs-1 e-card-desc e-card-weather"></div>');
-                                                for (var j = 0; j < res[i].weather.length; j++) {
+                                                for (var j = 0; j < e_cards[i].weather.length; j++) {
                                                     $('.e-card-item:last-child >.e-card-desc:last-child').append('<div class="col-xs-12">' + e_cards[i].weather[j] + '</div>');
                                                 }
                                                 $('.e-card-item:last-child').append('<div class="col-xs-2 e-card-desc e-card-occasion"></div>');
