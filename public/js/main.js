@@ -1162,6 +1162,7 @@ $(function () {
                                         }
                                     });
                                 }
+                                requestECards(0);
                                 var imgToPost, genderToPost, ageToPost, referenceToPost = [],
                                     typeToPost = [],
                                     colorToPost = [],
