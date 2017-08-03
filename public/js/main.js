@@ -1200,9 +1200,11 @@ $(function () {
                                         requestECards(currentPage);
                                     }
                                 });
-                                $('.current-page').on('change', function (e) {
-                                    currentPage = $(this).val();
-                                    requestECards(currentPage);
+                                $('.current-page').on('change click', function (e) {
+                                    if ($(this).val != currentPage) {
+                                        currentPage = $(this).val();
+                                        requestECards(currentPage);
+                                    }
                                 });
                                 var imgToPost, genderToPost, ageToPost, referenceToPost = [],
                                     typeToPost = [],
