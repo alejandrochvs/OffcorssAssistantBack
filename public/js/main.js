@@ -1001,6 +1001,7 @@ $(function () {
                                 var currentPage = 1;
                                 var perPage = 15;
                                 var pages;
+                                var maxOverflow;
                                 var requestECards = function (offset) {
                                     $('.progress').addClass('loading');
                                     $.ajax({
@@ -1166,6 +1167,12 @@ $(function () {
                                                 }
                                             });
                                             $('.progress').removeClass('loading');
+                                            if ($('.e-card-item').length <= 8){
+                                                maxOverflow = 0;
+                                            }else {
+                                                maxOverflow = $('.e-card-item').height()*($('.e-card-item').length - 8);
+                                            }
+                                            console.log(maxOverflow);
                                         }
                                     });
                                 }
@@ -1206,6 +1213,9 @@ $(function () {
                                         requestECards(currentPage);
                                     }
                                 });
+                                $('.table-body').scroll(function(e){
+                                    console.log($(this).scrollTop());
+                                })
                                 var imgToPost, genderToPost, ageToPost, referenceToPost = [],
                                     typeToPost = [],
                                     colorToPost = [],
