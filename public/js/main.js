@@ -1201,7 +1201,7 @@ $(function () {
                                     }
                                 });
                                 $('.current-page').on('change click', function (e) {
-                                    if ($(this).val != currentPage) {
+                                    if ($(this).val() != currentPage) {
                                         currentPage = $(this).val();
                                         requestECards(currentPage);
                                     }
