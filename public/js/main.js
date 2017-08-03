@@ -1172,7 +1172,6 @@ $(function () {
                                             }else {
                                                 maxOverflow = $('.e-card-item').height()*($('.e-card-item').length - 8);
                                             }
-                                            console.log(maxOverflow);
                                         }
                                     });
                                 }
@@ -1216,7 +1215,6 @@ $(function () {
                                 $('.table-body').scroll(function(e){
                                     var currentScroll = $(this).scrollTop();
                                     var percentage = (currentScroll/maxOverflow)*100 + '%';
-                                    console.log(percentage);
                                     $('.scroll').css('width',percentage);
                                 })
                                 var imgToPost, genderToPost, ageToPost, referenceToPost = [],
