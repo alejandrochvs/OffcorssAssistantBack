@@ -33,6 +33,16 @@
                 }
             }
         }
+        .scroll{
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: 1%;
+            background: $yellow;
+            z-index: 5;
+        }
         .table-body {
             overflow: auto;
             height: 63vh;

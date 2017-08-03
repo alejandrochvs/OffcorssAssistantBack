@@ -1214,7 +1214,10 @@ $(function () {
                                     }
                                 });
                                 $('.table-body').scroll(function(e){
-                                    console.log($(this).scrollTop());
+                                    var currentScroll = $(this).scrollTop();
+                                    var percentage = (currentScroll/maxOverflow)*100 + '%';
+                                    console.log(percentage);
+                                    $('.scroll').css('height',percentage);
                                 })
                                 var imgToPost, genderToPost, ageToPost, referenceToPost = [],
                                     typeToPost = [],

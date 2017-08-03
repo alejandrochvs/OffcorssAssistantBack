@@ -2173,6 +2173,15 @@ html {
                   html body .content .screen .container .e-cards-container .e-cards-table .table-header .e-card-title:last-child {
                     border-right: none;
                     border-top-right-radius: 5px; }
+              html body .content .screen .container .e-cards-container .e-cards-table .scroll {
+                position: absolute;
+                display: block;
+                top: 0;
+                left: 0;
+                width: 10px;
+                height: 1%;
+                background: #fd0;
+                z-index: 5; }
               html body .content .screen .container .e-cards-container .e-cards-table .table-body {
                 overflow: auto;
                 height: 63vh;
