@@ -97,20 +97,20 @@ db.once('open', function () {
     //e-cards
     var eCards = require('./e-cards_model.js');
     router.post('/e-cards', function (req, res) {
-        eCards.find().limit(25).skip(Number(req.body.offset)).exec(function (err, docs) {
-            if (err) {
-                return console.log(err);
-            }
-            res.send(docs);
-        });
-    });
-    router.post('/e-cards/count', function (req, res) {
         eCards.find().count({}, function (err, count) {
             var data = {
                 count: count
             };
-            res.send(data);
+            eCards.find().limit(25).skip(Number(req.body.offset)).exec(function (err, docs) {
+                if (err) {
+                    return console.log(err);
+                }
+                data.docs = docs;
+                console.log(data);
+                res.send(data);
+            });
         });
+
     });
     router.post('/e-cards/match', function (req, res) {
         eCards.find({
