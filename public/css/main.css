@@ -2369,10 +2369,14 @@ html {
               line-height: 3vh; }
               html body .content .screen .container .e-cards-container .e-cards-nav .fa {
                 display: inline-block;
-                font-size: 22px;
+                font-size: 24px;
                 cursor: pointer;
                 transition: all .3s ease;
                 color: #666; }
+                html body .content .screen .container .e-cards-container .e-cards-nav .fa.fa-angle-right {
+                  margin-right: 5px; }
+                html body .content .screen .container .e-cards-container .e-cards-nav .fa.fa-angle-left {
+                  margin-left: 5px; }
                 html body .content .screen .container .e-cards-container .e-cards-nav .fa:hover {
                   color: #fd0; }
               html body .content .screen .container .e-cards-container .e-cards-nav .current-page-wrapper {

@@ -999,8 +999,8 @@ $(function () {
                                 }
                                 loadEdition($('.e-card-new'));
                                 var currentPage = 1;
-                                var perPage = 1;
-
+                                var perPage = 15;
+                                var pages;
                                 var requestECards = function (offset) {
                                     $('.progress').addClass('loading');
                                     $.ajax({
@@ -1012,7 +1012,7 @@ $(function () {
                                         },
                                         success: function (res) {
                                             var count = res.count;
-                                            var pages = Math.ceil(count / perPage);
+                                            pages = Math.ceil(count / perPage);
                                             $('.current-page').val(currentPage).attr('placeholder', currentPage).attr('max', pages);
                                             $('.pages').html(pages);
                                             $('.e-card-item').remove();
