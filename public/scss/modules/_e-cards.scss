@@ -32,17 +32,18 @@
                     border-top-right-radius: 5px;
                 }
             }
-        }
-        .scroll{
+            .scroll{
             position: absolute;
             display: block;
             top: 0;
             left: 0;
-            width: 10px;
+            width: 0%;
             height: 1%;
             background: $yellow;
             z-index: 5;
         }
+        }
+        
         .table-body {
             overflow: auto;
             height: 63vh;

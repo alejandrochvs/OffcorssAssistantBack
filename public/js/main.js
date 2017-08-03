@@ -1217,7 +1217,7 @@ $(function () {
                                     var currentScroll = $(this).scrollTop();
                                     var percentage = (currentScroll/maxOverflow)*100 + '%';
                                     console.log(percentage);
-                                    $('.scroll').css('height',percentage);
+                                    $('.scroll').css('width',percentage);
                                 })
                                 var imgToPost, genderToPost, ageToPost, referenceToPost = [],
                                     typeToPost = [],
