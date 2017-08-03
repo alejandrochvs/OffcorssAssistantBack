@@ -101,7 +101,7 @@ db.once('open', function () {
             var data = {
                 count: count
             };
-            eCards.find().limit(25).skip(Number(req.body.offset)).exec(function (err, docs) {
+            eCards.find().limit(Number(req.body.perPage)).skip(Number(req.body.offset)).exec(function (err, docs) {
                 if (err) {
                     return console.log(err);
                 }
