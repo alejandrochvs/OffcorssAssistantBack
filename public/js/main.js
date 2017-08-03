@@ -1167,11 +1167,12 @@ $(function () {
                                                 }
                                             });
                                             $('.progress').removeClass('loading');
-                                            if ($('.e-card-item').length <= 8){
+                                            if ($('.e-card-item').length <= 8) {
                                                 maxOverflow = 0;
-                                                $('.scroll').css('width','100%');
-                                            }else {
-                                                maxOverflow = $('.e-card-item').height()*($('.e-card-item').length - 8);
+                                                $('.scroll').css('width', '100%');
+                                            } else {
+                                                maxOverflow = $('.e-card-item').height() * ($('.e-card-item').length - 8);
+                                                $('.scroll').css('width', ($('.table-body').scrollTop() / maxOverflow) * 100 + '%');
                                             }
                                         }
                                     });
@@ -1213,10 +1214,10 @@ $(function () {
                                         requestECards(currentPage);
                                     }
                                 });
-                                $('.table-body').scroll(function(e){
+                                $('.table-body').scroll(function (e) {
                                     var currentScroll = $(this).scrollTop();
-                                    var percentage = (currentScroll/maxOverflow)*100 + '%';
-                                    $('.scroll').css('width',percentage);
+                                    var percentage = (currentScroll / maxOverflow) * 100 + '%';
+                                    $('.scroll').css('width', percentage);
                                 })
                                 var imgToPost, genderToPost, ageToPost, referenceToPost = [],
                                     typeToPost = [],
