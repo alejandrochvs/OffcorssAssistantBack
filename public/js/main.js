@@ -999,18 +999,18 @@ $(function () {
                                 }
                                 loadEdition($('.e-card-new'));
                                 var currentPage = 1;
+                                var perPage = 10;
                                 var requestECards = function (offset) {
                                     $('.progress').addClass('loading');
                                     $.ajax({
                                         type: "POST",
                                         url: '/db/e-cards',
                                         data: {
-                                            offset: (offset - 1) * 25
+                                            offset: (offset - 1) * perPage
                                         },
                                         success: function (res) {
-                                            console.log(res);
                                             var count = res.count;
-                                            var pages = Math.ceil(count / 25);
+                                            var pages = Math.ceil(count / perPage);
                                             console.log('Count : ' + count);
                                             console.log('Pages : ' + pages);
                                             $('.current-page').val(currentPage).attr('placeholder', currentPage).attr('max', pages);
@@ -1166,7 +1166,12 @@ $(function () {
                                                 }
                                             });
                                             $('.progress').removeClass('loading');
-                                            $('.fa-angle-double-left').click(function () {});
+                                            $('.fa-angle-double-left').click(function () {
+                                                if (currentPage != 1) {
+                                                    currentPage = 1;
+                                                    requestECards(currentPage);
+                                                }
+                                            });
                                             $('.fa-angle-left').click(function () {
                                                 if (currentPage > 1) {
                                                     currentPage--;
@@ -1179,7 +1184,22 @@ $(function () {
                                                     requestECards(currentPage);
                                                 }
                                             });
-                                            $('.fa-angle-double-right').click(function () {});
+                                            $('.fa-angle-double-right').click(function () {
+                                                if (currentPage != pages) {
+                                                    currentPage = pages;
+                                                    requestECards(currentPage);
+                                                }
+                                            });
+                                            $('.current-page').on('keyup', function (e) {
+                                                if (e.keyCode == 13) {
+                                                    currentPage = $(this).val();
+                                                    requestECards(currentPage);
+                                                }
+                                            });
+                                            $('.current-page').on('change', function (e) {
+                                                currentPage = $(this).val();
+                                                requestECards(currentPage);
+                                            });
                                         }
                                     });
                                 }
