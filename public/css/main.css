@@ -2358,12 +2358,21 @@ html {
                   transform: rotate(0deg); }
                   html body .content .screen .container .e-cards-container .e-cards-table .table-body .e-card-new .e-card-desc i.fa.active {
                     transform: rotate(180deg); }
-            html body .content .screen .container .e-cards-container .e-cards-nav .fa {
-              display: inline-block; }
-            html body .content .screen .container .e-cards-container .e-cards-nav .current-page-wrapper {
-              display: inline-block; }
-              html body .content .screen .container .e-cards-container .e-cards-nav .current-page-wrapper .pages {
+            html body .content .screen .container .e-cards-container .e-cards-nav {
+              text-align: center; }
+              html body .content .screen .container .e-cards-container .e-cards-nav .fa {
+                display: inline-block;
+                font-size: 20px;
+                cursor: pointer; }
+                html body .content .screen .container .e-cards-container .e-cards-nav .fa:hover {
+                  color: #fd0; }
+              html body .content .screen .container .e-cards-container .e-cards-nav .current-page-wrapper {
                 display: inline-block; }
+                html body .content .screen .container .e-cards-container .e-cards-nav .current-page-wrapper .current-page {
+                  width: 35px;
+                  padding-left: 5px; }
+                html body .content .screen .container .e-cards-container .e-cards-nav .current-page-wrapper .pages {
+                  display: inline-block; }
           html body .content .screen .container .customers-container {
             text-align: center;
             overflow: auto;
