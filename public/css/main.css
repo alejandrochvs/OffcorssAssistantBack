@@ -2550,14 +2550,6 @@ html {
                       background: whitesmoke; }
                     html body .content .screen .container .customers-container .customers-table .customer-item.active .customer-desc:last-child div:hover {
                       background: white; }
-                  html body .content .screen .container .customers-container .customers-table .customer-item.active .customer-img img {
-                    -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-                    -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-                    box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2); }
-                    html body .content .screen .container .customers-container .customers-table .customer-item.active .customer-img img:hover {
-                      -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
-                      -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
-                      box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3); }
                   html body .content .screen .container .customers-container .customers-table .customer-item.active .fa-angle-down {
                     transform: rotate(180deg); }
                   html body .content .screen .container .customers-container .customers-table .customer-item.active .fa-eye:before {
