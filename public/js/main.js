@@ -990,6 +990,7 @@ $(function () {
                             }
                         });
                     }
+                    $('.user-settings').prepend('<li class="colors-go"> <h5>Colores</h5> </li>');
                     $('.user-settings').prepend('<li class="e-cards"> <h5>E-cards</h5> </li>');
                     $('.user-settings').prepend('<li class="customers"> <h5>Clientes</h5> </li>');
                     $('.customers').click(function () {
@@ -1000,6 +1001,11 @@ $(function () {
                     $('.e-cards').click(function () {
                         if (current !== 'e-cards') {
                             next('e-cards');
+                        }
+                    });
+                    $('.colors-go').click(function () {
+                        if (current !== 'adminColors') {
+                            next('adminColors');
                         }
                     });
                     $('.log-out').click(function () {
