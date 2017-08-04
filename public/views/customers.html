@@ -102,7 +102,6 @@
         var innerHeight;
         var tableHeight = $('.customers-table > .table-body').height();
         var appendCustomers = function(object, count, page) {
-            console.log(count);
             $('.customer-item').remove();
             pages = Math.ceil(count / 25);
             $('.customers-nav > .current-page-wrapper > .current-page').val(currentPage);
