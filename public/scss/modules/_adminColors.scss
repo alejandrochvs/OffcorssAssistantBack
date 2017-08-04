@@ -18,8 +18,12 @@
         }
         .table-body {
             overflow: scroll;
-            padding: 1% 0;
+            padding: 0;
             height: 70vh;
+            .color-wrap {
+                border: solid 1px whitesmoke;
+                z-index: 1;
+            }
         }
     }
 }
