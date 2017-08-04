@@ -258,7 +258,7 @@
                 }
                 if ($(this).val() == "") {
                     $('.customer-title.active').removeClass('active');
-                    loadCount();
+                    loadCustomers(currentFilter, currentPage);
                 } else {
                     filterCustomers($('select').val(), $('#filter').val());
                 }
