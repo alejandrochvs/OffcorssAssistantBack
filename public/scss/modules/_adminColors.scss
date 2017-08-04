@@ -5,17 +5,19 @@
         border-radius: 5px;
         overflow: hidden;
         background: white;
+        text-align: center;
         -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
         -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
         box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+        line-height: 5vh;
         .table-header {
             padding: 0;
-            line-height: 5vh;
             -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1);
             -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1);
             box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1);
         }
         .table-body {
+            overflow: scroll;
             padding: 1% 0;
             height: 70vh;
         }
