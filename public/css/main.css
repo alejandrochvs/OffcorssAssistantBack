@@ -2701,10 +2701,25 @@ html {
               width: 40%; }
             html body .content .screen .container .imgViewer.active {
               top: 0; }
-          html body .content .screen .container .adminColors-container .colors-table {
-            background: white; }
-            html body .content .screen .container .adminColors-container .colors-table .table-header {
-              line-height: 5vh; }
+          html body .content .screen .container .adminColors-container {
+            padding: 2vh 15px; }
+            html body .content .screen .container .adminColors-container .colors-table {
+              padding: 0;
+              border-radius: 5px;
+              overflow: hidden;
+              background: white;
+              -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+              -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+              box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2); }
+              html body .content .screen .container .adminColors-container .colors-table .table-header {
+                padding: 0;
+                line-height: 5vh;
+                -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1);
+                -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1);
+                box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1); }
+              html body .content .screen .container .adminColors-container .colors-table .table-body {
+                padding: 1% 0;
+                height: 70vh; }
     html body .footer {
       background: white;
       margin: 0;
