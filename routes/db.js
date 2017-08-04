@@ -294,16 +294,15 @@ db.once('open', function () {
     });
     router.post('/customers', function (req, res) {
         var sort = req.body.sort;
-        customers.find().count({}, function (err, count) {
+        var query;
+        if (req.body.query) {
+            query = {};
+            query[req.body.sort] = new RegExp(req.body.query, "i");
+        }
+        customers.find(query).count({}).exec(function (err, count) {
             var data = {
                 count: count
             };
-            var query;
-            console.log(req.body);
-            if (req.body.query) {
-                query = {};
-                query[req.body.sort] = new RegExp(req.body.query, "i");
-            }
             console.log(query);
             customers.find(query).sort(sort).limit(25).skip(Number(req.body.offset)).exec(function (err, docs) {
                 if (err) {
