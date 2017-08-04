@@ -300,12 +300,15 @@ db.once('open', function () {
             query[req.body.sort] = new RegExp(req.body.query, "i");
         }
         customers.find(query).count({}).exec(function (err, count) {
+            if (err){
+                return res.send(err);
+            }
             var data = {
                 count: count
             };
             customers.find(query).sort(sort).limit(25).skip(Number(req.body.offset)).exec(function (err, docs) {
                 if (err) {
-                    return console.log(err);
+                    return res.send(err);
                 }
                 data.docs = docs;
                 res.send(data);
