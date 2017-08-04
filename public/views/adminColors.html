@@ -1,0 +1,11 @@
+<div class="col-xs-12 adminColors-container"></div>
+<script>
+    $.ajax({
+        type: 'POST',
+        url: '/db/colors',
+        success: function(res) {
+            console.log(res);
+        }
+    });
+
+</script>
