@@ -126,6 +126,13 @@
             padding: 0;
             height: 55vh;
             overflow: auto;
+            .not-found{
+                line-height: 7vh;
+                display: none;
+                &.active{
+                    display: inherit;
+                }
+            }
             .customer-item {
                 overflow: hidden;
                 text-align: center;

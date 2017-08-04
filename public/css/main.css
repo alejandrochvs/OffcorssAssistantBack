@@ -2508,6 +2508,11 @@ html {
                 padding: 0;
                 height: 55vh;
                 overflow: auto; }
+                html body .content .screen .container .customers-container .customers-table .table-body .not-found {
+                  line-height: 7vh;
+                  display: none; }
+                  html body .content .screen .container .customers-container .customers-table .table-body .not-found.active {
+                    display: inherit; }
                 html body .content .screen .container .customers-container .customers-table .table-body .customer-item {
                   overflow: hidden;
                   text-align: center;

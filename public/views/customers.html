@@ -76,7 +76,9 @@
             </div>
             <div class="customers-scroll"></div>
         </div>
-        <div class="col-xs-12 table-body"></div>
+        <div class="col-xs-12 table-body">
+            <div class="col-xs-12 not-found">Lo sentimos, no hemos encontrado ningún resultado.</div>
+        </div>
     </div>
 </div>
 <div class="col-xs-12 imgViewer">
@@ -101,28 +103,13 @@
         var tableHeight = $('.customers-table > .table-body').height();
         var appendCustomers = function(object, count, page) {
             console.log(count);
-            $('.customers-container > ul').remove();
+            $('.customer-item').remove();
             if (count == 0){
+                $('.customers-table > .table-body > .not-found').addClass('active');
                 return;
             }
+            $('.customers-table > .table-body > .not-found.active').removeClass('active');
             pages = Math.ceil(count / 25);
-            
-            $('.customers-container > ul > li').click(function() {
-                if (!$(this).hasClass('active') && !$('.loader > .progress').hasClass('loading')) {
-                    if ($(this).hasClass('table-prev')) {
-                        if ($('.customers-container > ul > li:nth-child(2)').find('h6').html() == 1 && $('.customers-container > ul > li:nth-child(2)').hasClass('active')) {} else {
-                            loadCustomers('date', count, page - 1);
-                        }
-                    } else if ($(this).hasClass('table-nextN')) {
-                        if ($('.customers-container > ul > li:nth-child(4)').find('h6').html() == Math.ceil(count / 25) && $('.customers-container > ul > li:nth-child(4)').hasClass('active')) {} else {
-                            loadCustomers('date', count, page + 1);
-                        }
-                    } else {
-                        loadCustomers('date', count, Number($(this).find('h6').html()));
-                    }
-                }
-            });
-            $('.customer-item').remove();
             for (var i = 0; i < object.length; i++) {
                 $('.table-body').append('<div class="col-xs-12 customer-item"></div>');
                 $('.table-body > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-img"><img class="col-xs-12" src="../IMG/ecards/' + object[i].e_card[0] + '"/><img class="col-xs-12" src="../IMG/ecards/' + object[i].e_card[1] + '"/><img class="col-xs-12" src="../IMG/ecards/' + object[i].e_card[2] + '"/></div>');
