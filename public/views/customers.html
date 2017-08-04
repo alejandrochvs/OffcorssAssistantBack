@@ -240,64 +240,7 @@
                     }
                 })
             }
-            if (query) {
-                dataLoadCustomers.query = query;
-                if (sort == 'name') {
-                    if (typeof query == 'string') {
-                        ajaxLoad();
-                    }
-                }else if (sort == 'gender'){
-                    if (typeof query == 'string') {
-                        ajaxLoad();
-                    }
-                }
-                else if (sort == 'age'){
-                    if (typeof query == 'string') {
-                        ajaxLoad();
-                    }
-                }else if (sort == 'size_top'){
-                    if (typeof query == 'string') {
-                        ajaxLoad();
-                    }
-                }else if (sort == 'size_bottom'){
-                    if (typeof query == 'string') {
-                        ajaxLoad();
-                    }
-                }else if (sort == 'size_shoe'){
-                    if (typeof query == 'string') {
-                        ajaxLoad();
-                    }
-                }else if (sort == 'date'){
-                    if (typeof query == 'Date') {
-                        ajaxLoad();
-                    }
-                }
-                else if (sort == 'phone'){
-                    if (typeof query == 'string') {
-                        ajaxLoad();
-                    }
-                }else if (sort == 'personality'){
-                    if (typeof query == 'string') {
-                        ajaxLoad();
-                    }
-                }else if (sort == 'color'){
-                    if (typeof query == 'String') {
-                        ajaxLoad();
-                    }
-                }else if (sort == 'weather'){
-                    if (typeof query == 'string') {
-                        ajaxLoad();
-                    }
-                }else if (sort == 'occasion'){
-                    if (typeof query == 'string') {
-                        ajaxLoad();
-                    }
-                }else{
-                    return console.log('Wrong');
-                }
-            }else{
-                ajaxLoad();
-            }
+            ajaxLoad();
 
         }
         $('#filter').keyup(function(e) {
@@ -306,9 +249,6 @@
                     $('select option:eq(1)').prop('selected', true);
                     currentFilter = $('select').val();
                 }
-                console.log(currentPage);
-                console.log(currentFilter);
-                console.log($('#filter').val());
                 loadCustomers(currentFilter, currentPage, $('#filter').val());
             }
         })
