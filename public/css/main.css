@@ -2714,6 +2714,7 @@ html {
               box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
               line-height: 5vh; }
               html body .content .screen .container .adminColors-container .colors-table .table-header {
+                z-index: 5;
                 padding: 0;
                 -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1);
                 -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1);
@@ -2723,8 +2724,11 @@ html {
                 padding: 0;
                 height: 70vh; }
                 html body .content .screen .container .adminColors-container .colors-table .table-body .color-wrap {
+                  padding: 0;
                   border: solid 1px whitesmoke;
                   z-index: 1; }
+                  html body .content .screen .container .adminColors-container .colors-table .table-body .color-wrap .color-prev {
+                    height: 5vh; }
     html body .footer {
       background: white;
       margin: 0;

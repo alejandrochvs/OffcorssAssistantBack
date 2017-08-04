@@ -15,7 +15,7 @@
         url: '/db/colors',
         success: function(res) {
             for (var i = 0; i < res.length;i++){
-                $('.table-body').append('<div class="col-xs-12 color-wrap"><div class="col-xs-2 color-name">'+res[i].name+'</div><div class="col-xs-4 color-hex">#f4de48</div><div class="col-xs-2 color-status">Activo</div><div class="col-xs-4 color-prev"></div></div>');
+                $('.table-body').append('<div class="col-xs-12 color-wrap"><div class="col-xs-3 color-name">'+res[i].color+'</div><div class="col-xs-3 color-hex">'+res[i].hex+'</div><div class="col-xs-3 color-status">'+res[i].active+'</div><div class="col-xs-3 color-prev" style="background:'+res[i].hex+'"></div></div>');
             }
             console.log(res);
         }
