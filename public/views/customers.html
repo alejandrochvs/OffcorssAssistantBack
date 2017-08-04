@@ -220,9 +220,10 @@
         })
         var loadCustomers = function(sort, page, query) {
             $('.loader > .progress').addClass('loading');
+            console.log(page);
             var dataLoadCustomers = {
                 offset: (page - 1) * 25,
-                sort: sort
+                sort: sort,
             }
             if (query) {
                 dataLoadCustomers.query = query;
@@ -250,7 +251,8 @@
         $('.customer-title').click(function() {
             if (!$('.loader > .progress').hasClass('.loading')) {
                 if (!$(this).hasClass('active')) {
-                    loadCustomers($(this).attr('data-sort'));
+                    currentFilter = $(this).attr('data-sort');
+                    loadCustomers(currentFilter,currentPage);
                     $('.customer-title.active').removeClass('active');
                     $(this).addClass('active');
                 }
