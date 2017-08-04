@@ -1,9 +1,13 @@
 <div class="col-xs-12 customers-container">
-    <div class="col-xs-12 title" style="text-align: left;">
+    <div class="col-xs-2 title" style="text-align: left;">
         <h4 style="">Filtro</h4>
     </div>
-    <div class="col-xs-12 table-filter">
-        <select class="col-xs-12 col-sm-1 options">
+    <div class="col-xs-2 col-xs-offset-8 title" style="text-align: left;">
+        <h4 style="">Navegación</h4>
+    </div>
+    <div class="col-xs-12"></div>
+    <div class="col-xs-2 table-filter">
+        <select class="col-xs-12 col-sm-5 options">
          <option value="" disabled selected>Categoría</option>
           <option value="name" class="col-xs-12">Nombre</option>
           <option value="gender" class="col-xs-12">Género</option>
@@ -17,7 +21,17 @@
           <option value="weather" class="col-xs-12">Clima</option>
           <option value="occasion" class="col-xs-12">Ocasión</option>
       </select>
-        <input id="filter" type="text" class="col-xs-12 col-sm-1" placeholder="Filtrar...">
+        <input id="filter" type="text" class="col-xs-12 col-sm-6" placeholder="Filtrar...">
+    </div>
+    <div class="col-xs-2 col-xs-offset-8 customers-nav">
+        <i class="fa fa-angle-double-left col-xs-1"></i>
+        <i class="fa fa-angle-left col-xs-1"></i>
+        <div class="current-page-wrapper col-xs-8">
+            Página <input class="current-page" type="number" placeholder="" min="1" max="" value="" /> de
+            <div class="pages"></div>
+        </div>
+        <i class="fa fa-angle-right col-xs-1"></i>
+        <i class="fa fa-angle-double-right col-xs-1"></i>
     </div>
     <div class="col-xs-12 title" style="text-align: left;">
         <h4 style="">Clientes</h4>
@@ -60,7 +74,9 @@
             <div class="col-xs-1 customer-title" data-sort="occasion">
                 <h4>Ocasión</h4>
             </div>
+            <div class="customers-scroll"></div>
         </div>
+        <div class="col-xs-12 table-body"></div>
     </div>
 </div>
 <div class="col-xs-12 imgViewer">
@@ -76,78 +92,74 @@
 </div>
 <script>
     $(function() {
+        var currentPage = 1;
+        var pages;
+        var currentFilter = 'date';
+        var tableScroll = 0;
+        var tablePercentage = 0;
+        var innerHeight;
+        var tableHeight = $('.customers-table > .table-body').height();
         var appendCustomers = function(object, count, page) {
+            pages = Math.ceil(count / 25);
             $('.customers-container > ul').remove();
-            if (count && page) {
-                if (count > 25) {
-                    var pages = Math.ceil(count / 25);
-                    if (page == 1) {
-                        $('.customers-container').append('<ul class="col-xs-12 col-sm-4 col-sm-offset-4 table-pagination"><li class="col-xs-3 table-prev"><h6><i class="fa fa-angle-left"></i></h6></li><li class="active col-xs-2"><h6>1</h6></li><li class="col-xs-2"><h6>2</h6></li><li class="col-xs-2"><h6>3</h6></li><li class="col-xs-3 table-nextN pull-right"><h6><i class="fa fa-angle-right"></i></h6></li></ul>');
-                    } else if (page == pages) {
-                        $('.customers-container').append('<ul class="col-xs-12 col-sm-4 col-sm-offset-4 table-pagination"><li class="col-xs-3 table-prev"><h6><i class="fa fa-angle-left"></i></h6></li><li class="col-xs-2"><h6>' + (page - 2) + '</h6></li><li class="col-xs-2"><h6>' + (page - 1) + '</h6></li><li class="col-xs-2 active"><h6>' + page + '</h6></li><li class="col-xs-3 table-nextN pull-right"><h6><i class="fa fa-angle-right"></i></h6></li></ul>');
-                    } else {
-                        $('.customers-container').append('<ul class="col-xs-12 col-sm-4 col-sm-offset-4 table-pagination"><li class="col-xs-3 table-prev"><h6><i class="fa fa-angle-left"></i></h6></li><li class="col-xs-2"><h6>' + (page - 1) + '</h6></li><li class="col-xs-2 active"><h6>' + page + '</h6></li><li class="col-xs-2"><h6>' + (page + 1) + '</h6></li><li class="col-xs-3 table-nextN pull-right"><h6><i class="fa fa-angle-right"></i></h6></li></ul>');
-                    }
-                    $('.customers-container > ul > li').click(function() {
-                        if (!$(this).hasClass('active') && !$('.loader > .progress').hasClass('loading')) {
-                            if ($(this).hasClass('table-prev')) {
-                                if ($('.customers-container > ul > li:nth-child(2)').find('h6').html() == 1 && $('.customers-container > ul > li:nth-child(2)').hasClass('active')) {} else {
-                                    loadCustomers('date', count, page - 1);
-                                }
-                            } else if ($(this).hasClass('table-nextN')) {
-                                if ($('.customers-container > ul > li:nth-child(4)').find('h6').html() == Math.ceil(count / 25) && $('.customers-container > ul > li:nth-child(4)').hasClass('active')) {} else {
-                                    loadCustomers('date', count, page + 1);
-                                }
-                            } else {
-                                loadCustomers('date', count, Number($(this).find('h6').html()));
-                            }
+            $('.customers-container > ul > li').click(function() {
+                if (!$(this).hasClass('active') && !$('.loader > .progress').hasClass('loading')) {
+                    if ($(this).hasClass('table-prev')) {
+                        if ($('.customers-container > ul > li:nth-child(2)').find('h6').html() == 1 && $('.customers-container > ul > li:nth-child(2)').hasClass('active')) {} else {
+                            loadCustomers('date', count, page - 1);
                         }
-                    });
+                    } else if ($(this).hasClass('table-nextN')) {
+                        if ($('.customers-container > ul > li:nth-child(4)').find('h6').html() == Math.ceil(count / 25) && $('.customers-container > ul > li:nth-child(4)').hasClass('active')) {} else {
+                            loadCustomers('date', count, page + 1);
+                        }
+                    } else {
+                        loadCustomers('date', count, Number($(this).find('h6').html()));
+                    }
                 }
-            }
+            });
             $('.customer-item').remove();
             for (var i = 0; i < object.length; i++) {
-                $('.customers-table').append('<div class="col-xs-12 customer-item"></div>');
-                $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-img"><img class="col-xs-12" src="../IMG/ecards/' + object[i].e_card[0] + '"/><img class="col-xs-12" src="../IMG/ecards/' + object[i].e_card[1] + '"/><img class="col-xs-12" src="../IMG/ecards/' + object[i].e_card[2] + '"/></div>');
-                $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-name"><div class="col-xs-12">' + object[i].name + '</div></div>');
-                $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-gender"><div class="col-xs-12">' + object[i].gender + '</div></div>');
-                $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-age"><div class="col-xs-12">' + object[i].age + '</div></div>');
-                $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-top"><div class="col-xs-12">' + object[i].size_top + '</div></div>');
-                $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-bottom"><div class="col-xs-12">' + object[i].size_bottom + '</div></div>');
-                $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-shoe"><div class="col-xs-12">' + object[i].size_shoe + '</div></div>');
-                $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-phone"><div class="col-xs-12">' + object[i].phone + '</div></div>');
-                $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-personality"></div>');
+                $('.table-body').append('<div class="col-xs-12 customer-item"></div>');
+                $('.table-body > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-img"><img class="col-xs-12" src="../IMG/ecards/' + object[i].e_card[0] + '"/><img class="col-xs-12" src="../IMG/ecards/' + object[i].e_card[1] + '"/><img class="col-xs-12" src="../IMG/ecards/' + object[i].e_card[2] + '"/></div>');
+                $('.customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-name"><div class="col-xs-12">' + object[i].name + '</div></div>');
+                $('.customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-gender"><div class="col-xs-12">' + object[i].gender + '</div></div>');
+                $('.customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-age"><div class="col-xs-12">' + object[i].age + '</div></div>');
+                $('.customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-top"><div class="col-xs-12">' + object[i].size_top + '</div></div>');
+                $('.customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-bottom"><div class="col-xs-12">' + object[i].size_bottom + '</div></div>');
+                $('.customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-shoe"><div class="col-xs-12">' + object[i].size_shoe + '</div></div>');
+                $('.customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-phone"><div class="col-xs-12">' + object[i].phone + '</div></div>');
+                $('.customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-personality"></div>');
                 for (var j = 0; j < object[i].personality.length; j++) {
-                    $('.customers-table > .customer-item:last-child > .customer-desc:last-child').append('<div class="col-xs-12">' + object[i].personality[j] + '</div>');
+                    $('.customer-item:last-child > .customer-desc:last-child').append('<div class="col-xs-12">' + object[i].personality[j] + '</div>');
                 }
-                $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-color"></div>');
+                $('.customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-color"></div>');
                 for (var j = 0; j < object[i].color.length; j++) {
-                    $('.customers-table > .customer-item:last-child > .customer-desc:last-child').append('<div class="col-xs-12">' + object[i].color[j] + '</div>');
+                    $('.customer-item:last-child > .customer-desc:last-child').append('<div class="col-xs-12">' + object[i].color[j] + '</div>');
                 }
-                $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-weather"></div>');
+                $('.customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-weather"></div>');
                 for (var j = 0; j < object[i].weather.length; j++) {
-                    $('.customers-table > .customer-item:last-child > .customer-desc:last-child').append('<div class="col-xs-12">' + object[i].weather[j] + '</div>');
+                    $('.customer-item:last-child > .customer-desc:last-child').append('<div class="col-xs-12">' + object[i].weather[j] + '</div>');
                 }
-                $('.customers-table > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-occasion"></div>');
+                $('.customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-occasion"></div>');
                 for (var j = 0; j < object[i].occasion.length; j++) {
-                    $('.customers-table > .customer-item:last-child > .customer-desc:last-child').append('<div class="col-xs-12">' + object[i].occasion[j] + '</div>');
+                    $('.customer-item:last-child > .customer-desc:last-child').append('<div class="col-xs-12">' + object[i].occasion[j] + '</div>');
                 }
             }
-            $('.customers-table > .customer-item > .customer-img').slick({
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    autoplay: true,
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '0px',
-                    adaptiveHeight: true,
-                    infinite: true,
-                    initialSlide: 1,
-                    autoplaySpeed: 100
-                });
+            $('.customer-item > .customer-img').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                arrows: false,
+                centerMode: true,
+                centerPadding: '0px',
+                adaptiveHeight: true,
+                infinite: true,
+                initialSlide: 1,
+                autoplaySpeed: 100
+            });
             var slickInterval = setInterval(function() {
-                $('.customers-table > .customer-item > .customer-img').slick('unslick');
-                $('.customers-table > .customer-item > .customer-img').slick({
+                $('.table-body > .customer-item > .customer-img').slick('unslick');
+                $('.table-body > .customer-item > .customer-img').slick({
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     autoplay: true,
@@ -165,20 +177,47 @@
                 if (!$(this).hasClass('active')) {
                     $('.customer-item.active').click();
                     $(this).addClass('active');
-
                 } else {
                     $(this).removeClass('active');
-
+                    innerHeight = object.length * ($('.customer-item').height() - 1);
+                    updateScroll(innerHeight);
                 }
             });
+            var prevCustomerHeight = $('.customer-item').height();
+            var customerItemHeightChange = setInterval(function() {
+                if (prevCustomerHeight != $('.customer-item.active').height()) {
+                    $('.customer-item.active').trigger('heightChange');
+                    prevCustomerHeight = $('.customer-item.active').height();
+                }
+            }, 300);
+            innerHeight = object.length * ($('.customer-item').height() - 1);
+            updateScroll(innerHeight);
+            $('.customer-item').bind('heightChange', function() {
+                innerHeight = ((object.length - 1) * ($('.customer-item').height() - 1)) + $(this).height();
+                updateScroll(innerHeight);
+            })
             $('.customer-item > .customer-img > .slick-list > .slick-track > img').click(function() {
                 if ($(this).parent().parent().parent().parent().hasClass('active')) {
                     loadImgToViewer($(this).attr('src'));
                     $(this).parent().parent().parent().parent().click();
                 }
             });
+            $('.customers-nav > .current-page-wrapper > .current-page').val(currentPage);
+            $('.customers-nav > .current-page-wrapper > .pages').html(pages);
         }
-        var loadCustomers = function(sort, count, page) {
+        var updateScroll = function(height, overflow) {
+            if (height > tableHeight) {
+                tableScroll = $('.customers-table > .table-body').scrollTop();
+                tablePercentage = (tableScroll / (height - tableHeight)) * 100;
+            } else {
+                tablePercentage = 100;
+            }
+            $('.customers-scroll').css('width', tablePercentage + '%');
+        }
+        $('.customers-table > .table-body').scroll(function() {
+            updateScroll(innerHeight);
+        })
+        var loadCustomers = function(sort, page) {
             $('.loader > .progress').addClass('loading');
             var dataLoadCustomers = {
                 offset: (page - 1) * 25,
@@ -189,7 +228,7 @@
                 url: '/db/customers',
                 data: dataLoadCustomers,
                 success: function(res) {
-                    appendCustomers(res, count, page);
+                    appendCustomers(res.docs, res.count, page);
                     $('.loader > .progress').removeClass('loading');
                 }
             })
@@ -209,16 +248,6 @@
                 success: function(filteredRes) {
                     appendCustomers(filteredRes);
                     $('.loader > .progress').removeClass('loading');
-                }
-            });
-        }
-        var loadCount = function() {
-            $.ajax({
-                url: '/db/customers/count',
-                type: 'POST',
-                success: function(res) {
-                    var count = res.count;
-                    loadCustomers('date', count, 1);
                 }
             });
         }
@@ -278,7 +307,31 @@
                 }
             })
         }
-        loadCount();
+        $('.customers-nav > .fa-angle-double-left').click(function() {
+            if (currentPage > 1) {
+                currentPage = 1;
+                loadCustomers(currentFilter, currentPage);
+            }
+        })
+        $('.customers-nav > .fa-angle-left').click(function() {
+            if (currentPage > 1) {
+                currentPage--;
+                loadCustomers(currentFilter, currentPage);
+            }
+        })
+        $('.customers-nav > .fa-angle-right').click(function() {
+            if (currentPage < pages) {
+                currentPage++;
+                loadCustomers(currentFilter, currentPage);
+            }
+        })
+        $('.customers-nav > .fa-angle-double-right').click(function() {
+            if (currentPage < pages) {
+                currentPage = pages;
+                loadCustomers(currentFilter, currentPage);
+            }
+        })
+        loadCustomers(currentFilter, currentPage);
     })
 
 </script>

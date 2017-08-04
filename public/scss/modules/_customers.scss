@@ -2,6 +2,12 @@
     text-align: center;
     overflow: auto;
     height: 100%;
+    padding-top: 10px;
+    .title {
+        h4 {
+            margin: 5px 0;
+        }
+    }
     .table-filter {
         list-style-type: none;
         background: white;
@@ -12,7 +18,7 @@
         border-radius: 5px;
         line-height: 5vh;
         height: 5vh;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         text-align: center;
         select {
             height: 80%;
@@ -36,12 +42,46 @@
             }
         }
     }
+    .customers-nav {
+        text-align: center;
+        background: white;
+        padding: 0;
+        border-radius: 5px;
+        -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1);
+        line-height: 3vh;
+        padding: 1vh 1vw;
+        .fa {
+            padding: 0;
+            display: inline-block;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all .3s ease;
+            color: #666;
+            &:hover {
+                color: $yellow;
+            }
+        }
+        .current-page-wrapper {
+            padding: 0;
+            display: inline-block;
+            .current-page {
+                width: 40px;
+                padding-left: 2.5px;
+                border: none;
+                border-bottom: solid 1px $yellow;
+                outline: none;
+            }
+            .pages {
+                display: inline-block;
+            }
+        }
+    }
     .customers-table {
         -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
         -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
         box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-        //        margin-top: 20px;
-        margin-bottom: 20px;
         padding: 0;
         height: auto;
         background: white;
@@ -49,6 +89,10 @@
         overflow: hidden;
         .table-header {
             padding: 0;
+            -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+            z-index: 5;
             .customer-title {
                 border-right: solid 1px darken(whitesmoke, 5%);
                 background: white;
@@ -68,221 +112,201 @@
                     background: darken(whitesmoke, 5%);
                 }
             }
-        }
-        .customer-item {
-            overflow: hidden;
-            text-align: center;
-            padding: 0;
-            max-height: 7vh;
-            transition: all .4s ease;
-            cursor: pointer;
-            .customer-desc {
-                padding: 0;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                border-right: solid 1px darken(whitesmoke, 5%);
-                cursor: pointer;
+            .customers-scroll {
+                background: $yellow;
+                position: absolute;
+                display: block;
+                bottom: 0;
+                width: 10px;
+                height: 10%;
                 transition: all .3s ease;
-                height: 100%;
-                &:last-child {
-                    border-right: none;
-                }
-                &.customer-img-new {
-                    i {
-                        line-height: 7vh;
-                    }
-                }
-                div {
-                    line-height: 7vh;
+            }
+        }
+        .table-body {
+            padding: 0;
+            height: 55vh;
+            overflow: auto;
+            .customer-item {
+                overflow: hidden;
+                text-align: center;
+                padding: 0;
+                max-height: 7vh;
+                transition: all .4s ease;
+                cursor: pointer;
+                .customer-desc {
+                    padding: 0;
                     overflow: hidden;
                     text-overflow: ellipsis;
                     white-space: nowrap;
+                    border-right: solid 1px darken(whitesmoke, 5%);
+                    cursor: pointer;
                     transition: all .3s ease;
-                    background: transparent;
-                    padding: 0 15px;
-                    input {
-                        border: none;
-                        outline: none;
-                        &[type="file"] {
-                            width: 0.1px;
-                            height: 0.1px;
-                            opacity: 0;
-                            overflow: hidden;
-                            position: absolute;
-                            z-index: -1;
+                    height: 100%;
+                    &:last-child {
+                        border-right: none;
+                    }
+                    &.customer-img-new {
+                        i {
+                            line-height: 7vh;
                         }
                     }
-                    .fa {
-                        padding: 0;
+                    div {
                         line-height: 7vh;
-                    }
-                    ul {
-                        max-height: 0vh;
-                        margin: 0;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
                         transition: all .3s ease;
-                        color: transparent;
                         background: transparent;
-                        border-bottom-left-radius: 5px;
-                        border-bottom-right-radius: 5px;
-                        li {
-                            list-style-type: none;
-                            line-height: 4.5vh;
+                        padding: 0 15px;
+                        input {
+                            border: none;
+                            outline: none;
+                            &[type="file"] {
+                                width: 0.1px;
+                                height: 0.1px;
+                                opacity: 0;
+                                overflow: hidden;
+                                position: absolute;
+                                z-index: -1;
+                            }
                         }
-                        &.active {
-                            background: white;
-                            color: #333;
-                            max-height: 400vh;
+                        .fa {
                             padding: 0;
-                            -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1) inset;
-                            -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1) inset;
-                            box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1) inset;
+                            line-height: 7vh;
+                        }
+                        ul {
+                            max-height: 0vh;
+                            margin: 0;
+                            transition: all .3s ease;
+                            color: transparent;
+                            background: transparent;
                             border-bottom-left-radius: 5px;
                             border-bottom-right-radius: 5px;
                             li {
-                                background: transparent;
-                                transition: all .3s ease;
-                                border-left: solid 2px transparent;
-                                &:hover {
-                                    background: whitesmoke;
-                                }
-                                &.disabled {
-                                    cursor: default;
-                                    background: whitesmoke;
-                                    border-left: solid 2px lime;
-                                }
+                                list-style-type: none;
+                                line-height: 4.5vh;
                             }
-                        }
-                    }
-                    &.slick-list {
-                        padding: 0;
-                        .slick-track {
-                            padding: 0;
-                        }
-                    }
-                }
-            }
-            .customer-img {
-                padding: 8px 0px;
-                overflow: hidden;
-                text-align: center;
-                img {
-                    transition: all .3s ease;
-                    border-radius: 20px;
-                    padding: 0;
-                }
-            }
-            &:hover {
-                background: white;
-                -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.125);
-                -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.125);
-                box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.125);
-                .customer-desc {
-                    border-color: darken(whitesmoke, 5%);
-                }
-            }
-            .fa-angle-down {
-                transition: all .3s ease;
-                transform: rotate(0deg);
-            }
-            .fa {
-                transition: all .3s ease;
-            }
-            .fa-camera {
-                &:hover {
-                    color: #6DB75D;
-                }
-            }
-            &.active {
-                max-height: 400vh;
-                cursor: default;
-                background: white;
-                -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-                -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-                box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-                .customer-desc {
-                    border-color: darken(whitesmoke, 5%);
-                    div {
-                        &:hover {
-                            background: whitesmoke;
-                        }
-                    }
-                    &:last-child {
-                        div {
-                            &:hover {
+                            &.active {
                                 background: white;
+                                color: #333;
+                                max-height: 400vh;
+                                padding: 0;
+                                -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1) inset;
+                                -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1) inset;
+                                box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1) inset;
+                                border-bottom-left-radius: 5px;
+                                border-bottom-right-radius: 5px;
+                                li {
+                                    background: transparent;
+                                    transition: all .3s ease;
+                                    border-left: solid 2px transparent;
+                                    &:hover {
+                                        background: whitesmoke;
+                                    }
+                                    &.disabled {
+                                        cursor: default;
+                                        background: whitesmoke;
+                                        border-left: solid 2px lime;
+                                    }
+                                }
                             }
                         }
+                        &.slick-list {
+                            padding: 0;
+                            .slick-track {
+                                padding: 0;
+                            }
+                        }
+                    }
+                }
+                .customer-img {
+                    padding: 8px 0px;
+                    overflow: hidden;
+                    text-align: center;
+                    img {
+                        transition: all .3s ease;
+                        border-radius: 20px;
+                        padding: 0;
+                    }
+                }
+                &:hover {
+                    background: white;
+                    -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.125);
+                    -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.125);
+                    box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.125);
+                    .customer-desc {
+                        border-color: darken(whitesmoke, 5%);
                     }
                 }
                 .fa-angle-down {
-                    transform: rotate(180deg);
+                    transition: all .3s ease;
+                    transform: rotate(0deg);
                 }
-                .fa-eye {
-                    &:before {
-                        content: "\f070";
-                    }
-                    &:hover {
-                        color: #00AFD3;
-                        background: white;
-                    }
+                .fa {
+                    transition: all .3s ease;
                 }
-                .fa-trash,
-                .fa-ban {
-                    &:hover {
-                        color: orangered;
-                        background: white;
-                    }
-                }
-                .fa-plus-square {
+                .fa-camera {
                     &:hover {
                         color: #6DB75D;
                     }
                 }
-                .fa-pencil {
-                    &:hover {
-                        color: $yellow;
+                &.active {
+                    max-height: 400vh;
+                    cursor: default;
+                    background: white;
+                    -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                    -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                    box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                    .customer-desc {
+                        border-color: darken(whitesmoke, 5%);
+                        div {
+                            &:hover {
+                                background: whitesmoke;
+                            }
+                        }
+                        &:last-child {
+                            div {
+                                &:hover {
+                                    background: white;
+                                }
+                            }
+                        }
+                    }
+                    .fa-angle-down {
+                        transform: rotate(180deg);
+                    }
+                    .fa-eye {
+                        &:before {
+                            content: "\f070";
+                        }
+                        &:hover {
+                            color: #00AFD3;
+                            background: white;
+                        }
+                    }
+                    .fa-trash,
+                    .fa-ban {
+                        &:hover {
+                            color: orangered;
+                            background: white;
+                        }
+                    }
+                    .fa-plus-square {
+                        &:hover {
+                            color: #6DB75D;
+                        }
+                    }
+                    .fa-pencil {
+                        &:hover {
+                            color: $yellow;
+                        }
                     }
                 }
             }
         }
     }
-    .table-pagination {
-        list-style-type: none;
-        background: white;
-        margin-bottom: 5vh;
-        -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-        -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-        box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-        text-align: center;
-        border-radius: 5px;
-        padding: 0;
-        li {
-            cursor: pointer;
-            transition: all .4s ease;
-            background: transparent;
-            h6 {
-                text-overflow: ellipsis;
-                overflow: hidden;
-                white-space: nowrap;
-            }
-            &:hover {
-                background: darken(whitesmoke, 2.5%);
-            }
-            &.active {
-                background: darken(whitesmoke, 0%);
-            }
-        }
-        .table-prev {
-            border-top-left-radius: 5px;
-            border-bottom-left-radius: 5px;
-        }
-        .table-next {
-            border-top-right-radius: 5px;
-            border-bottom-right-radius: 5px;
-        }
-    }
 }
+
 .imgViewer {
     height: 100%;
     background: rgba(black, 0.6);

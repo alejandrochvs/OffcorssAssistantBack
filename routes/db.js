@@ -264,15 +264,6 @@ db.once('open', function () {
         })
     });
     var customers = require('./customers_model.js');
-    router.post('/customers', function (req, res) {
-        var sort = req.body.sort;
-        customers.find().sort(sort).limit(25).skip(Number(req.body.offset)).exec(function (err, docs) {
-            if (err) {
-                return console.log(err);
-            }
-            res.send(docs);
-        });
-    });
     router.post('/customers/filter', function (req, res) {
         var query = {};
         query[req.body.name] = new RegExp(req.body.attr, "i");
@@ -311,13 +302,21 @@ db.once('open', function () {
             res.sendStatus('OK');
         });
     });
-    router.post('/customers/count', function (req, res) {
+    router.post('/customers', function (req, res) {
+        var sort = req.body.sort;
         customers.find().count({}, function (err, count) {
             var data = {
                 count: count
             };
-            res.send(data);
+            customers.find().sort(sort).limit(25).skip(Number(req.body.offset)).exec(function (err, docs) {
+                if (err) {
+                    return console.log(err);
+                }
+                data.docs = docs;
+                res.send(data);
+            });
         });
+
     });
 });
 

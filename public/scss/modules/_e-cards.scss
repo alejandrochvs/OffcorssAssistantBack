@@ -32,7 +32,7 @@
                     border-top-right-radius: 5px;
                 }
             }
-            .scroll {
+            .e-cards-scroll {
                 position: absolute;
                 display: block;
                 bottom: 0;
@@ -266,31 +266,26 @@
     .e-cards-nav {
         text-align: center;
         background: white;
-        padding: 0.7%;
+        padding: 0;
         border-radius: 5px;
         -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1);
         -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1);
         box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1);
         line-height: 3vh;
+        padding: 1vh 1vw;
         .fa {
+            padding: 0;
             display: inline-block;
             font-size: 24px;
             cursor: pointer;
             transition: all .3s ease;
             color: #666;
-            &.fa-angle-right {
-                margin-right: 5px;
-            }
-            &.fa-angle-left {
-                margin-left: 5px;
-            }
             &:hover {
                 color: $yellow;
             }
         }
         .current-page-wrapper {
-            margin-left: 10px;
-            margin-right: 10px;
+            padding: 0;
             display: inline-block;
             .current-page {
                 width: 35px;
