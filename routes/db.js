@@ -264,16 +264,6 @@ db.once('open', function () {
         })
     });
     var customers = require('./customers_model.js');
-    router.post('/customers/filter', function (req, res) {
-        var query = {};
-        query[req.body.name] = new RegExp(req.body.attr, "i");
-        customers.find(query).sort(req.body.name).skip(Number(req.body.offset)).exec(function (err, docs) {
-            if (err) {
-                return console.log(err);
-            }
-            res.send(docs);
-        });
-    });
     router.post('/customers/register', function (req, res) {
         var reqCustomer = req.body;
         var customer = {};
@@ -308,7 +298,12 @@ db.once('open', function () {
             var data = {
                 count: count
             };
-            customers.find().sort(sort).limit(25).skip(Number(req.body.offset)).exec(function (err, docs) {
+            var query;
+            if (req.body.query) {
+                query = {};
+                query[req.body.sort] = new RegExp(req.body.query, "i");
+            }
+            customers.find(query).sort(sort).limit(25).skip(Number(req.body.offset)).exec(function (err, docs) {
                 if (err) {
                     return console.log(err);
                 }

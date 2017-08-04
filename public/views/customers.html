@@ -217,11 +217,14 @@
         $('.customers-table > .table-body').scroll(function() {
             updateScroll(innerHeight);
         })
-        var loadCustomers = function(sort, page) {
+        var loadCustomers = function(sort, page, query) {
             $('.loader > .progress').addClass('loading');
             var dataLoadCustomers = {
                 offset: (page - 1) * 25,
                 sort: sort
+            }
+            if (query) {
+                dataLoadCustomers.query = query;
             }
             $.ajax({
                 type: 'POST',
@@ -233,35 +236,12 @@
                 }
             })
         }
-        var filterCustomers = function(name, attr) {
-            $('.customer-title[data-sort="' + name + '"]').addClass('active');
-            var dataFilterCustomers = {
-                name: name,
-                attr: attr,
-                offset: 0
-            };
-            $('.loader > .progress').addClass('loading');
-            $.ajax({
-                type: 'POST',
-                url: '/db/customers/filter',
-                data: dataFilterCustomers,
-                success: function(filteredRes) {
-                    appendCustomers(filteredRes);
-                    $('.loader > .progress').removeClass('loading');
-                }
-            });
-        }
         $('#filter').keyup(function(e) {
             if (!$('.loader > .progress').hasClass('loading')) {
                 if ($('select').val() == null) {
                     $('select option:eq(1)').prop('selected', true);
                 }
-                if ($(this).val() == "") {
-                    $('.customer-title.active').removeClass('active');
-                    loadCustomers(currentFilter, currentPage);
-                } else {
-                    filterCustomers($('select').val(), $('#filter').val());
-                }
+                loadCustomers(currentFilter, currentPage, $('#filter').val());
             }
         })
         $('.customer-title').click(function() {
@@ -275,7 +255,9 @@
         });
         $('select').change(function() {
             if (!$('.loader > .progress').hasClass('loading')) {
-                filterCustomers($('select').val(), $('#filter').val());
+                currentFilter = $(this).val();
+                console.log(currentFilter);
+                loadCustomers(currentFilter,currentPage, $('#filter').val());
                 $('.customer-title.active').removeClass('active');
                 $('.customer-title[data-sort=' + $(this).val() + ']').addClass('active');
             }
