@@ -219,6 +219,9 @@
         })
         var loadCustomers = function(sort, page, query) {
             $('.loader > .progress').addClass('loading');
+            if (page == 0){
+                page = 1;
+            }
             var dataLoadCustomers = {
                 offset: (page - 1) * 25,
                 sort: sort,
@@ -239,31 +242,29 @@
             }
             if (query) {
                 dataLoadCustomers.query = query;
-                console.log(sort);
-                console.log(typeof sort);
                 if (sort == 'name') {
-                    if (typeof query == String) {
+                    if (typeof query == 'string') {
                         ajaxLoad();
                     }
                 }else if (sort == 'gender'){
-                    if (typeof query == 'String') {
+                    if (typeof query == 'string') {
                         ajaxLoad();
                     }
                 }
                 else if (sort == 'age'){
-                    if (typeof query == 'String') {
+                    if (typeof query == 'string') {
                         ajaxLoad();
                     }
                 }else if (sort == 'size_top'){
-                    if (typeof query == 'String') {
+                    if (typeof query == 'string') {
                         ajaxLoad();
                     }
                 }else if (sort == 'size_bottom'){
-                    if (typeof query == 'String') {
+                    if (typeof query == 'string') {
                         ajaxLoad();
                     }
                 }else if (sort == 'size_shoe'){
-                    if (typeof query == 'String') {
+                    if (typeof query == 'string') {
                         ajaxLoad();
                     }
                 }else if (sort == 'date'){
@@ -272,11 +273,11 @@
                     }
                 }
                 else if (sort == 'phone'){
-                    if (typeof query == 'String') {
+                    if (typeof query == 'string') {
                         ajaxLoad();
                     }
                 }else if (sort == 'personality'){
-                    if (typeof query == 'String') {
+                    if (typeof query == 'string') {
                         ajaxLoad();
                     }
                 }else if (sort == 'color'){
@@ -284,15 +285,15 @@
                         ajaxLoad();
                     }
                 }else if (sort == 'weather'){
-                    if (typeof query == 'String') {
+                    if (typeof query == 'string') {
                         ajaxLoad();
                     }
                 }else if (sort == 'occasion'){
-                    if (typeof query == 'String') {
+                    if (typeof query == 'string') {
                         ajaxLoad();
                     }
                 }else{
-                    console.log('Wrong');
+                    return console.log('Wrong');
                 }
             }else{
                 ajaxLoad();
