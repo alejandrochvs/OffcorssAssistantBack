@@ -101,7 +101,6 @@
         var tableHeight = $('.customers-table > .table-body').height();
         var appendCustomers = function(object, count, page) {
             pages = Math.ceil(count / 25);
-            console.log(pages);
             $('.customers-container > ul').remove();
             $('.customers-container > ul > li').click(function() {
                 if (!$(this).hasClass('active') && !$('.loader > .progress').hasClass('loading')) {
@@ -220,7 +219,6 @@
         })
         var loadCustomers = function(sort, page, query) {
             $('.loader > .progress').addClass('loading');
-            console.log(page);
             var dataLoadCustomers = {
                 offset: (page - 1) * 25,
                 sort: sort,
@@ -228,12 +226,14 @@
             if (query) {
                 dataLoadCustomers.query = query;
             }
-            console.log(dataLoadCustomers);
             $.ajax({
                 type: 'POST',
                 url: '/db/customers',
                 data: dataLoadCustomers,
                 success: function(res) {
+                    if( currentPage > Math.ceil(res.count/25)){
+                        currentPage = Math.ceil(res.count/25);
+                    }
                     appendCustomers(res.docs, res.count, page);
                     $('.loader > .progress').removeClass('loading');
                 }
@@ -252,7 +252,7 @@
             if (!$('.loader > .progress').hasClass('.loading')) {
                 if (!$(this).hasClass('active')) {
                     currentFilter = $(this).attr('data-sort');
-                    loadCustomers(currentFilter,currentPage);
+                    loadCustomers(currentFilter, currentPage);
                     $('.customer-title.active').removeClass('active');
                     $(this).addClass('active');
                 }
@@ -261,8 +261,7 @@
         $('select').change(function() {
             if (!$('.loader > .progress').hasClass('loading')) {
                 currentFilter = $(this).val();
-                console.log(currentFilter);
-                loadCustomers(currentFilter,currentPage, $('#filter').val());
+                loadCustomers(currentFilter, currentPage, $('#filter').val());
                 $('.customer-title.active').removeClass('active');
                 $('.customer-title[data-sort=' + $(this).val() + ']').addClass('active');
             }
