@@ -228,13 +228,10 @@
             }
             if (query) {
                 if (!isNaN(query)) {
-                    $('.loader > .progress').removeClass('loading');
-                    return;
-                } else {
-                    dataLoadCustomers.query = query.match(/[a-zA-Z]+/g).join('');
+                    query = query.toString();
                 }
+                dataLoadCustomers.query = query;
             }
-            console.log(dataLoadCustomers.query);
             var ajaxLoad = function() {
                 $.ajax({
                     type: 'POST',
@@ -250,7 +247,6 @@
                 })
             }
             ajaxLoad();
-
         }
         $('#filter').keyup(function(e) {
             if (!$('.loader > .progress').hasClass('loading')) {
