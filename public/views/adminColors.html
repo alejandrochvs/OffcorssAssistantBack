@@ -16,7 +16,7 @@
         url: '/db/colors',
         data : {
             query : false
-        }
+        },
         success: function(res) {
             for (var i = 0; i < res.length; i++) {
                 $('.table-body').append('<div class="col-xs-12 color-wrap"><div class="col-xs-3 color-name">' + res[i].color + '</div><div class="col-xs-3 color-hex">' + res[i].hex + '</div><div class="col-xs-3 color-prev" style="background:' + res[i].hex + '"></div></div>');

@@ -215,14 +215,13 @@ db.once('open', function () {
     var colors = require('./colors_model.js');
     router.post('/colors', function (req, res) {
         var query = {};
-        if (req.body.query = true) {
-            query = {
-                active: true
-            }
+        if (req.body.query == false) {
+            query.active = false;
+        }else{
+            query.active = true;
         }
-        colors.find({
-            active: true
-        }, null, {
+        console.log(query);
+        colors.find(query, null, {
             sort: {
                 color: 1
             }
