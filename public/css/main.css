@@ -1847,6 +1847,8 @@ html {
                 transition: all 0.3s ease;
                 background: #fd0;
                 color: white; }
+            html body .content .screen .container .result .result-wrapper {
+              padding: 0; }
             html body .content .screen .container .result .resultIMG {
               padding: 0;
               transition: all .3s ease; }
