@@ -244,7 +244,7 @@
             if (!$('.loader > .progress').hasClass('loading')) {
                 if ($('select').val() == null) {
                     $('select option:eq(1)').prop('selected', true);
-                    currentFilter = $('select option:eq(1)').prop('selected');
+                    currentFilter = $('select').val();
                 }
                 console.log(currentPage);
                 console.log(currentFilter);
@@ -256,7 +256,8 @@
             if (!$('.loader > .progress').hasClass('.loading')) {
                 if (!$(this).hasClass('active')) {
                     currentFilter = $(this).attr('data-sort');
-                    $('select option[value="'+currentFilter+'"]').prop('selected',true)
+                    $('select option[value="'+currentFilter+'"]').prop('selected',true);
+                    $('#filter').val('');
                     loadCustomers(currentFilter, currentPage);
                     $('.customer-title.active').removeClass('active');
                     $(this).addClass('active');
@@ -266,6 +267,8 @@
         $('select').change(function() {
             if (!$('.loader > .progress').hasClass('loading')) {
                 currentFilter = $(this).val();
+                $('#filter').val('');
+                console.log('change');
                 loadCustomers(currentFilter, currentPage, $('#filter').val());
                 $('.customer-title.active').removeClass('active');
                 $('.customer-title[data-sort=' + $(this).val() + ']').addClass('active');
