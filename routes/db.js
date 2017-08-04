@@ -214,6 +214,12 @@ db.once('open', function () {
     });
     var colors = require('./colors_model.js');
     router.post('/colors', function (req, res) {
+        var query = {};
+        if (req.body.query = true) {
+            query = {
+                active: true
+            }
+        }
         colors.find({
             active: true
         }, null, {
@@ -300,7 +306,7 @@ db.once('open', function () {
             query[req.body.sort] = new RegExp(req.body.query, "i");
         }
         customers.find(query).count({}).exec(function (err, count) {
-            if (err){
+            if (err) {
                 return res.send(err);
             }
             var data = {

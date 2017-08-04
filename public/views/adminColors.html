@@ -3,8 +3,8 @@
         <div class="col-xs-12 table-header">
             <div class="col-xs-3 color-name">Nombre</div>
             <div class="col-xs-3 color-hex">HEX</div>
-            <div class="col-xs-3 color-status">Estado</div>
             <div class="col-xs-3 color-prev">Previsualizar</div>
+            <div class="col-xs-3 color-status">Estado</div>
         </div>
         <div class="col-xs-12 table-body">
         </div>
@@ -14,9 +14,18 @@
     $.ajax({
         type: 'POST',
         url: '/db/colors',
+        data : {
+            query : false
+        }
         success: function(res) {
-            for (var i = 0; i < res.length;i++){
-                $('.table-body').append('<div class="col-xs-12 color-wrap"><div class="col-xs-3 color-name">'+res[i].color+'</div><div class="col-xs-3 color-hex">'+res[i].hex+'</div><div class="col-xs-3 color-status">'+res[i].active+'</div><div class="col-xs-3 color-prev" style="background:'+res[i].hex+'"></div></div>');
+            for (var i = 0; i < res.length; i++) {
+                $('.table-body').append('<div class="col-xs-12 color-wrap"><div class="col-xs-3 color-name">' + res[i].color + '</div><div class="col-xs-3 color-hex">' + res[i].hex + '</div><div class="col-xs-3 color-prev" style="background:' + res[i].hex + '"></div></div>');
+                if (res[i].active) {
+                    $('.table-body > .color-wrap:last-child').append('<div class="col-xs-3 color-status"><i class="fa fa-check" aria-hidden="true"></i></div>');
+                }else{
+                    $('.table-body > .color-wrap:last-child').append('<div class="col-xs-3 color-status"><i class="fa fa-times" aria-hidden="true"></i></div>');
+                }
+
             }
             console.log(res);
         }
