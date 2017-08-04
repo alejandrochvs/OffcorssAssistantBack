@@ -2701,6 +2701,10 @@ html {
               width: 40%; }
             html body .content .screen .container .imgViewer.active {
               top: 0; }
+          html body .content .screen .container .adminColors-container .colors-table {
+            background: white; }
+            html body .content .screen .container .adminColors-container .colors-table .table-header {
+              line-height: 5vh; }
     html body .footer {
       background: white;
       margin: 0;
