@@ -246,6 +246,9 @@
                     $('select option:eq(1)').prop('selected', true);
                     currentFilter = $('select option:eq(1)').prop('selected');
                 }
+                console.log(currentPage);
+                console.log(currentFilter);
+                console.log($('#filter').val());
                 loadCustomers(currentFilter, currentPage, $('#filter').val());
             }
         })
