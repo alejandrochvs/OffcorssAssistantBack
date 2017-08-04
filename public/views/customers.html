@@ -242,6 +242,7 @@
             if (!$('.loader > .progress').hasClass('loading')) {
                 if ($('select').val() == null) {
                     $('select option:eq(1)').prop('selected', true);
+                    currentFilter = $('select option:eq(1)').prop('selected');
                 }
                 loadCustomers(currentFilter, currentPage, $('#filter').val());
             }
