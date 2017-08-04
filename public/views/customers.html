@@ -223,22 +223,54 @@
                 offset: (page - 1) * 25,
                 sort: sort,
             }
+            var ajaxLoad = function() {
+                $.ajax({
+                    type: 'POST',
+                    url: '/db/customers',
+                    data: dataLoadCustomers,
+                    success: function(res) {
+                        if (currentPage > Math.ceil(res.count / 25)) {
+                            currentPage = Math.ceil(res.count / 25);
+                        }
+                        appendCustomers(res.docs, res.count, page);
+                        $('.loader > .progress').removeClass('loading');
+                    }
+                })
+            }
             if (query) {
                 dataLoadCustomers.query = query;
-            }
-            console.log(dataLoadCustomers);
-            $.ajax({
-                type: 'POST',
-                url: '/db/customers',
-                data: dataLoadCustomers,
-                success: function(res) {
-                    if( currentPage > Math.ceil(res.count/25)){
-                        currentPage = Math.ceil(res.count/25);
+                if (sort == 'name') {
+                    if (typeof query == String) {
+                        ajaxLoad();
                     }
-                    appendCustomers(res.docs, res.count, page);
-                    $('.loader > .progress').removeClass('loading');
+                }else if (sort == 'gender'){
+                    if (typeof query == String) {
+                        ajaxLoad();
+                    }
                 }
-            })
+                else if (sort == 'age'){
+                    if (typeof query == String) {
+                        ajaxLoad();
+                    }
+                }else if (sort == 'size_top'){
+                    if (typeof query == String) {
+                        ajaxLoad();
+                    }
+                }else if (sort == 'size_bottom'){
+                    if (typeof query == String) {
+                        ajaxLoad();
+                    }
+                }else if (sort == 'size_shoe'){
+                    if (typeof query == String) {
+                        ajaxLoad();
+                    }
+                }else if (sort == 'date'){
+                    if (typeof query == Date) {
+                        ajaxLoad();
+                    }
+                }
+            }
+
         }
         $('#filter').keyup(function(e) {
             if (!$('.loader > .progress').hasClass('loading')) {
@@ -256,7 +288,7 @@
             if (!$('.loader > .progress').hasClass('.loading')) {
                 if (!$(this).hasClass('active')) {
                     currentFilter = $(this).attr('data-sort');
-                    $('select option[value="'+currentFilter+'"]').prop('selected',true);
+                    $('select option[value="' + currentFilter + '"]').prop('selected', true);
                     $('#filter').val('');
                     loadCustomers(currentFilter, currentPage);
                     $('.customer-title.active').removeClass('active');
