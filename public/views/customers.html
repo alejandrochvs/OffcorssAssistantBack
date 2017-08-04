@@ -100,8 +100,13 @@
         var innerHeight;
         var tableHeight = $('.customers-table > .table-body').height();
         var appendCustomers = function(object, count, page) {
-            pages = Math.ceil(count / 25);
+            console.log(count);
             $('.customers-container > ul').remove();
+            if (count == 0){
+                return;
+            }
+            pages = Math.ceil(count / 25);
+            
             $('.customers-container > ul > li').click(function() {
                 if (!$(this).hasClass('active') && !$('.loader > .progress').hasClass('loading')) {
                     if ($(this).hasClass('table-prev')) {
@@ -262,7 +267,6 @@
                 if (!$(this).hasClass('active')) {
                     currentFilter = $(this).attr('data-sort');
                     $('select option[value="' + currentFilter + '"]').prop('selected', true);
-                    $('#filter').val('');
                     loadCustomers(currentFilter, currentPage);
                     $('.customer-title.active').removeClass('active');
                     $(this).addClass('active');
@@ -272,7 +276,6 @@
         $('select').change(function() {
             if (!$('.loader > .progress').hasClass('loading')) {
                 currentFilter = $(this).val();
-                $('#filter').val('');
                 loadCustomers(currentFilter, currentPage, $('#filter').val());
                 $('.customer-title.active').removeClass('active');
                 $('.customer-title[data-sort=' + $(this).val() + ']').addClass('active');
