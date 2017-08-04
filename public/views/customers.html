@@ -268,7 +268,6 @@
             if (!$('.loader > .progress').hasClass('loading')) {
                 currentFilter = $(this).val();
                 $('#filter').val('');
-                console.log('change');
                 loadCustomers(currentFilter, currentPage, $('#filter').val());
                 $('.customer-title.active').removeClass('active');
                 $('.customer-title[data-sort=' + $(this).val() + ']').addClass('active');
