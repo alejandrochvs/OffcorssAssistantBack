@@ -101,6 +101,7 @@
         var tableHeight = $('.customers-table > .table-body').height();
         var appendCustomers = function(object, count, page) {
             pages = Math.ceil(count / 25);
+            console.log(pages);
             $('.customers-container > ul').remove();
             $('.customers-container > ul > li').click(function() {
                 if (!$(this).hasClass('active') && !$('.loader > .progress').hasClass('loading')) {
@@ -226,6 +227,7 @@
             if (query) {
                 dataLoadCustomers.query = query;
             }
+            console.log(dataLoadCustomers);
             $.ajax({
                 type: 'POST',
                 url: '/db/customers',
