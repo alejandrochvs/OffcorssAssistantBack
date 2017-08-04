@@ -226,6 +226,11 @@
                 offset: (page - 1) * 25,
                 sort: sort,
             }
+            if (query){
+                console.log(isNaN(query));
+                dataLoadCustomers.query = query.match(/[a-zA-Z]+/g).join('');
+            }
+            console.log(dataLoadCustomers.query);
             var ajaxLoad = function() {
                 $.ajax({
                     type: 'POST',
