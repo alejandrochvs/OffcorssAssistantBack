@@ -239,6 +239,8 @@
             }
             if (query) {
                 dataLoadCustomers.query = query;
+                console.log(sort);
+                console.log(typeof sort);
                 if (sort == 'name') {
                     if (typeof query == String) {
                         ajaxLoad();
@@ -292,6 +294,8 @@
                 }else{
                     console.log('Wrong');
                 }
+            }else{
+                ajaxLoad();
             }
 
         }
