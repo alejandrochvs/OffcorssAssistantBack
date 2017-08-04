@@ -215,12 +215,10 @@ db.once('open', function () {
     var colors = require('./colors_model.js');
     router.post('/colors', function (req, res) {
         var query = {};
-        console.log(req.body.query);
         if (req.body.query == 'false') {
         }else {
             query.active = true;
         }
-        console.log(query);
         colors.find(query, null, {
             sort: {
                 color: 1
