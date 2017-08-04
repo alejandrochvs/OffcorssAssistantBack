@@ -299,10 +299,12 @@ db.once('open', function () {
                 count: count
             };
             var query;
+            console.log(req.body);
             if (req.body.query) {
                 query = {};
                 query[req.body.sort] = new RegExp(req.body.query, "i");
             }
+            console.log(query);
             customers.find(query).sort(sort).limit(25).skip(Number(req.body.offset)).exec(function (err, docs) {
                 if (err) {
                     return console.log(err);
