@@ -104,12 +104,16 @@
         var appendCustomers = function(object, count, page) {
             console.log(count);
             $('.customer-item').remove();
+            pages = Math.ceil(count / 25);
+            $('.customers-nav > .current-page-wrapper > .current-page').val(currentPage);
+            $('.customers-nav > .current-page-wrapper > .pages').html(pages);
             if (count == 0){
                 $('.customers-table > .table-body > .not-found').addClass('active');
+                currentPage = 1;
                 return;
             }
             $('.customers-table > .table-body > .not-found.active').removeClass('active');
-            pages = Math.ceil(count / 25);
+            
             for (var i = 0; i < object.length; i++) {
                 $('.table-body').append('<div class="col-xs-12 customer-item"></div>');
                 $('.table-body > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-img"><img class="col-xs-12" src="../IMG/ecards/' + object[i].e_card[0] + '"/><img class="col-xs-12" src="../IMG/ecards/' + object[i].e_card[1] + '"/><img class="col-xs-12" src="../IMG/ecards/' + object[i].e_card[2] + '"/></div>');
@@ -194,8 +198,7 @@
                     $(this).parent().parent().parent().parent().click();
                 }
             });
-            $('.customers-nav > .current-page-wrapper > .current-page').val(currentPage);
-            $('.customers-nav > .current-page-wrapper > .pages').html(pages);
+            
         }
         var updateScroll = function(height, overflow) {
             if (height > tableHeight) {
