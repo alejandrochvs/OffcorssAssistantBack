@@ -2726,9 +2726,14 @@ html {
                 html body .content .screen .container .adminColors-container .colors-table .table-body .color-wrap {
                   padding: 0;
                   border: solid 1px whitesmoke;
-                  z-index: 1; }
+                  z-index: 1;
+                  white-space: nowrap; }
                   html body .content .screen .container .adminColors-container .colors-table .table-body .color-wrap .color-prev {
                     height: 5vh; }
+                  html body .content .screen .container .adminColors-container .colors-table .table-body .color-wrap .color-status .fa-times {
+                    color: lightcoral; }
+                  html body .content .screen .container .adminColors-container .colors-table .table-body .color-wrap .color-status .fa-check {
+                    color: lightgreen; }
     html body .footer {
       background: white;
       margin: 0;
