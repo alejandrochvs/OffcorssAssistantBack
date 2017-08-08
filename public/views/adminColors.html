@@ -27,6 +27,11 @@
                 }
 
             }
+            $('.color-wrap').click(function(e){
+                if (e.target == $(this).find('.color-status')[0]){
+                    var tempHex = $(this).find('.color-hex').html();
+                }
+            })
         }
     });
 
