@@ -220,16 +220,17 @@ db.once('open', function () {
         } else {
             request.status = false;
         }
-        console.log(request);
-        colors.findOneAndUpdate({
+        colors.findOne({
             hex: request.hex
-        }, {
-            active: request.status
-        }, function (err, doc) {
+        }, function (err, docs) {
             if (err) {
                 return res.send(err);
             }
-            res.send(doc);
+            var doc = docs;
+            docs.active = request.status;
+            console.log(request);
+            console.log(docs);
+            res.send(docs);
         });
     })
     router.post('/colors', function (req, res) {
