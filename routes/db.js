@@ -224,7 +224,12 @@ db.once('open', function () {
             if (err) {
                 return res.send(err);
             }
+            console.log(color.color);
+            console.log(color.hex);
             console.log(color.active);
+            color.hex = request.status;
+            console.log(color.active);
+            console.log(color);
             color.save(function(err,colorSaved){
                 if (err){
                     return res.send(err);
