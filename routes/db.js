@@ -224,7 +224,9 @@ db.once('open', function () {
         colors.update({
             hex: request.hex
         }, {
-            active: request.status
+            $set: {
+                active: request.status
+            }
         }, {
             upsert: true
         }, function (err, doc) {
