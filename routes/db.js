@@ -226,11 +226,11 @@ db.once('open', function () {
             $set: {
                 active: request.status
             }
-        }, {}, function (err, doc) {
+        }, {multi : false}, function (err) {
             if (err) {
                 return res.send(err);
             }
-            res.send(doc);
+            res.send(true);
         });
     })
     router.post('/colors', function (req, res) {
