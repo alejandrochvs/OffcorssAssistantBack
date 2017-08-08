@@ -14,35 +14,39 @@
     $.ajax({
         type: 'POST',
         url: '/db/colors',
-        data : {
-            query : false
+        data: {
+            query: false
         },
         success: function(res) {
             for (var i = 0; i < res.length; i++) {
                 $('.table-body').append('<div class="col-xs-12 color-wrap"><div class="col-xs-3 color-name">' + res[i].color + '</div><div class="col-xs-3 color-hex">' + res[i].hex + '</div><div class="col-xs-3 color-prev" style="background:' + res[i].hex + '"></div></div>');
                 if (res[i].active) {
                     $('.table-body > .color-wrap:last-child').append('<div class="col-xs-3 color-status"><i class="fa fa-check" aria-hidden="true"></i></div>');
-                }else{
+                } else {
                     $('.table-body > .color-wrap:last-child').append('<div class="col-xs-3 color-status"><i class="fa fa-times" aria-hidden="true"></i></div>');
                 }
 
             }
-            $('.color-wrap').click(function(e){
-                if (e.target == $(this).find('.color-status')[0]){
+            $('.color-wrap').click(function(e) {
+                if ((e.target == $(this).find('.color-status')[0] || (e.target == $(this).find('.color-status > .fa')[0]) && (!$('.loader > .progress').hasClass('loading'))) {
                     var tempHex = $(this).find('.color-hex').html();
+                    var tempThis = $(this);
                     var data = {
-                        hex : tempHex                    }
-                    if ($(this).find('.color-status > .fa').hasClass('fa-check')){
+                        hex: tempHex
+                    }
+                    if (tempThis.find('.color-status > .fa').hasClass('fa-check')) {
                         data.status = false;
-                    }else{
+                    } else {
                         data.status = true;
                     }
-                    console.log(data);
+                    $('.loader > .progress').addClass('loading');
                     $.ajax({
-                        type : 'POST',
-                        url : '/db/colors/toggle',
-                        data : data,
-                        success : function(response){
+                        type: 'POST',
+                        url: '/db/colors/toggle',
+                        data: data,
+                        success: function(response) {
+                            tempThis.find('.color-status > .fa').toggleClass('fa-check fa-times');
+                            $('.loader > .progress').removeClass('loading');
                             console.log(response);
                         }
                     })
