@@ -220,7 +220,6 @@ db.once('open', function () {
         } else {
             request.status = false;
         }
-        console.log(request.status);
         colors.findOneAndUpdate({
             hex: request.hex
         }, {
@@ -228,7 +227,9 @@ db.once('open', function () {
                 active: request.status
             }
         }, {
-            new: true
+            upsert: true,
+            new: true,
+            runValidators: true
         }, function (err, doc) {
             if (err) {
                 return res.send(err);
