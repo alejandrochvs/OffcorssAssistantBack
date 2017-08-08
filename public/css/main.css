@@ -2730,10 +2730,15 @@ html {
                   white-space: nowrap; }
                   html body .content .screen .container .adminColors-container .colors-table .table-body .color-wrap .color-prev {
                     height: 5vh; }
-                  html body .content .screen .container .adminColors-container .colors-table .table-body .color-wrap .color-status .fa-times {
-                    color: lightcoral; }
-                  html body .content .screen .container .adminColors-container .colors-table .table-body .color-wrap .color-status .fa-check {
-                    color: lightgreen; }
+                  html body .content .screen .container .adminColors-container .colors-table .table-body .color-wrap .color-status {
+                    cursor: pointer;
+                    transition: all .3s ease; }
+                    html body .content .screen .container .adminColors-container .colors-table .table-body .color-wrap .color-status .fa-times {
+                      color: lightcoral; }
+                    html body .content .screen .container .adminColors-container .colors-table .table-body .color-wrap .color-status .fa-check {
+                      color: lightgreen; }
+                    html body .content .screen .container .adminColors-container .colors-table .table-body .color-wrap .color-status:hover {
+                      background: whitesmoke; }
     html body .footer {
       background: white;
       margin: 0;

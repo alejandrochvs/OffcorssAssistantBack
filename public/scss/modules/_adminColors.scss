@@ -30,11 +30,16 @@
                     height: 5vh;
                 }
                 .color-status{
+                    cursor: pointer;
+                    transition: all .3s ease;
                     .fa-times{
                         color: lightcoral;
                     }
                     .fa-check{
                         color: lightgreen;
+                    }
+                    &:hover{
+                        background: whitesmoke;
                     }
                 }
             }
