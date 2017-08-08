@@ -220,17 +220,18 @@ db.once('open', function () {
         } else {
             request.status = false;
         }
-        colors.findOne({
-            hex: request.hex
-        }, function (err, docs) {
+        colors.findOne({hex: request.hex}, function (err, color) {
             if (err) {
                 return res.send(err);
             }
-            var doc = docs;
-            docs.active = request.status;
-            console.log(request);
-            console.log(docs);
-            res.send(docs);
+            color.active = request.status;
+            var tempColor = new colors(color);
+            color.save(function(err,colorSaved){
+                if (err){
+                    return res.send(err);
+                }
+                res.send(colorSaved);
+            })
         });
     })
     router.post('/colors', function (req, res) {
