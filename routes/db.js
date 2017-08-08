@@ -220,17 +220,13 @@ db.once('open', function () {
         } else {
             request.status = false;
         }
-        colors.findOneAndUpdate({
+        colors.update({
             hex: request.hex
         }, {
             $set: {
                 active: request.status
             }
-        }, {
-            upsert: true,
-            new: true,
-            runValidators: true
-        }, function (err, doc) {
+        }, {}, function (err, doc) {
             if (err) {
                 return res.send(err);
             }
