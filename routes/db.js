@@ -224,10 +224,8 @@ db.once('open', function () {
             if (err) {
                 return res.send(err);
             }
-            var tempColor = new colors(color);
-            tempColor.active = request.status;
-            console.log(tempColor);
-            tempColor.save(function(err,colorSaved){
+            console.log(color.active);
+            color.save(function(err,colorSaved){
                 if (err){
                     return res.send(err);
                 }
