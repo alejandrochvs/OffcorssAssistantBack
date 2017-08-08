@@ -30,6 +30,18 @@
             $('.color-wrap').click(function(e){
                 if (e.target == $(this).find('.color-status')[0]){
                     var tempHex = $(this).find('.color-hex').html();
+                    var data = {
+                        hex : tempHex,
+                        status : true
+                    }
+                    $.ajax({
+                        type : 'POST',
+                        url : '/db/colors/toggle',
+                        data : data,
+                        success : function(response){
+                            console.log(response);
+                        }
+                    })
                 }
             })
         }
