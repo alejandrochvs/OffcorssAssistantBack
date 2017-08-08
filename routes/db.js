@@ -215,7 +215,7 @@ db.once('open', function () {
     var colors = require('./colors_model.js');
     router.post('/colors/toggle', function(req,res){
         var request = req.body;
-        eCards.findOneAndUpdate({hex : request.hex},{$set : {active : request.status}},function(err,doc){
+        colors.findOneAndUpdate({hex : request.hex},{$set : {active : request.status}},function(err,doc){
             if (err){
                 return res.send(err);
             }

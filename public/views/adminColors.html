@@ -31,9 +31,13 @@
                 if (e.target == $(this).find('.color-status')[0]){
                     var tempHex = $(this).find('.color-hex').html();
                     var data = {
-                        hex : tempHex,
-                        status : true
+                        hex : tempHex                    }
+                    if ($(this).find('.color-status > .fa').hasClass('fa-check')){
+                        data.status = false;
+                    }else{
+                        data.status = true;
                     }
+                    console.log(data);
                     $.ajax({
                         type : 'POST',
                         url : '/db/colors/toggle',
