@@ -28,7 +28,7 @@
 
             }
             $('.color-wrap').click(function(e) {
-                if ((e.target == $(this).find('.color-status')[0] || (e.target == $(this).find('.color-status > .fa')[0]) && (!$('.loader > .progress').hasClass('loading'))) {
+                if ((e.target == $(this).find('.color-status')[0] || (e.target == $(this).find('.color-status > .fa')[0])) && (!$('.loader > .progress').hasClass('loading'))) {
                     var tempHex = $(this).find('.color-hex').html();
                     var tempThis = $(this);
                     var data = {

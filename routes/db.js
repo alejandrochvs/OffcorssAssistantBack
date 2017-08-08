@@ -213,10 +213,24 @@ db.once('open', function () {
         })
     });
     var colors = require('./colors_model.js');
-    router.post('/colors/toggle', function(req,res){
+    router.post('/colors/toggle', function (req, res) {
         var request = req.body;
-        colors.findOneAndUpdate({hex : request.hex},{$set : {active : request.status}},function(err,doc){
-            if (err){
+        if (request.status == 'true') {
+            request.status = true;
+        } else {
+            request.status = false;
+        }
+        console.log(request.status);
+        colors.findOneAndUpdate({
+            hex: request.hex
+        }, {
+            $set: {
+                active: request.status
+            }
+        }, {
+            new: true
+        }, function (err, doc) {
+            if (err) {
                 return res.send(err);
             }
             res.send(doc);
@@ -224,8 +238,7 @@ db.once('open', function () {
     })
     router.post('/colors', function (req, res) {
         var query = {};
-        if (req.body.query == 'false') {
-        }else {
+        if (req.body.query == 'false') {} else {
             query.active = true;
         }
         colors.find(query, null, {
