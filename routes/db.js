@@ -220,17 +220,18 @@ db.once('open', function () {
         } else {
             request.status = false;
         }
+        console.log(request);
         colors.update({
             hex: request.hex
         }, {
             $set: {
                 active: request.status
             }
-        }, {multi : false}, function (err) {
+        }, {multi : false}, function (err,doc) {
             if (err) {
                 return res.send(err);
             }
-            res.send(true);
+            res.send(doc);
         });
     })
     router.post('/colors', function (req, res) {
