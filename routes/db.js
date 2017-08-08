@@ -221,14 +221,10 @@ db.once('open', function () {
             request.status = false;
         }
         console.log(request);
-        colors.update({
+        colors.findOneAndUpdate({
             hex: request.hex
         }, {
-            $set: {
-                active: request.status
-            }
-        }, {
-            upsert: true
+            active: request.status
         }, function (err, doc) {
             if (err) {
                 return res.send(err);
