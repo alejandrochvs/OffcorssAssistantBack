@@ -224,10 +224,10 @@ db.once('open', function () {
         colors.update({
             hex: request.hex
         }, {
-            $set: {
-                active: request.status
-            }
-        }, {multi : false}, function (err,doc) {
+            active: request.status
+        }, {
+            upsert: true
+        }, function (err, doc) {
             if (err) {
                 return res.send(err);
             }
