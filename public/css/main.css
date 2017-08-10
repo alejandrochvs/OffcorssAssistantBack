@@ -215,7 +215,7 @@ html {
         line-height: 10vh;
         padding: 0; }
         html body .header .head.title .cont {
-          font-size: 28px;
+          font-size: 34px;
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
@@ -231,16 +231,21 @@ html {
             white-space: nowrap; }
             html body .header .head .cont.back i {
               cursor: pointer;
-              color: #fd0;
-              font-size: 28px; }
+              color: #80D6BF;
+              font-size: 28px;
+              border: dashed 2px #80D6BF;
+              padding: 0 3%;
+              border-radius: 5px;
+              font-weight: 500;
+              margin-right: 10px; }
             html body .header .head .cont.back span {
               cursor: pointer;
-              font-size: 12px;
+              font-size: 24px;
               position: relative;
-              bottom: 4px;
+              color: #73626E;
               transition: all 0.3s ease; }
               html body .header .head .cont.back span:hover {
-                color: #fd0; }
+                color: #59caac; }
           html body .header .head .cont a {
             text-decoration: none;
             color: #73626E;
