@@ -1,5 +1,5 @@
 .gender {
-    padding: 5vh 0;
+    padding: 5vh 30px;
     height: 100%;
     .selection-wrap {
         text-align: center;
@@ -64,9 +64,9 @@
                     border-bottom-color: $boy;
                 }
             }
-            .selections{
-                .background{
-                    .boySel{
+            .selections {
+                .background {
+                    .boySel {
                         border-bottom-color: $boy;
                     }
                 }
@@ -77,8 +77,8 @@
                 display: inherit;
             }
         }
-        .img-girl{
-            .image{
+        .img-girl {
+            .image {
                 display: none;
             }
         }
@@ -90,17 +90,22 @@
                     border-bottom-color: $girl;
                 }
             }
-            .selections{
-                .background{
-                    .girlSel{
+            .selections {
+                .background {
+                    .girlSel {
                         border-bottom-color: $girl;
                     }
                 }
             }
         }
-        .img {
+        .img-boy {
             .image {
-                background-image: url(../IMG/Gender/girl.jpg);
+                display: none;
+            }
+        }
+        .img-girl {
+            .image {
+                display: inherit;
             }
         }
     }

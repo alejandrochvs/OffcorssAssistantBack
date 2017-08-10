@@ -349,7 +349,7 @@ html {
         html body .content .screen .container {
           padding: 0; }
           html body .content .screen .container .gender {
-            padding: 5vh 0;
+            padding: 5vh 30px;
             height: 100%; }
             html body .content .screen .container .gender .selection-wrap {
               text-align: center;
@@ -401,8 +401,10 @@ html {
               border-bottom-color: #e70095; }
             html body .content .screen .container .gender.girl .selection-wrap .selections .background .girlSel {
               border-bottom-color: #e70095; }
-            html body .content .screen .container .gender.girl .img .image {
-              background-image: url(../IMG/Gender/girl.jpg); }
+            html body .content .screen .container .gender.girl .img-boy .image {
+              display: none; }
+            html body .content .screen .container .gender.girl .img-girl .image {
+              display: inherit; }
           html body .content .screen .container .name {
             padding: 5vh 0; }
             html body .content .screen .container .name .selection-wrap {
