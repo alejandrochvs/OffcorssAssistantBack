@@ -1627,6 +1627,22 @@ html {
                 border-color: #e6e600; }
               html body .content .screen .container .color .colors .color-wrap:nth-child(4) .select {
                 border-color: #e60000; }
+              html body .content .screen .container .color .colors .color {
+                height: 5vw;
+                width: 5vw;
+                display: inline-block;
+                background: transparent;
+                border-radius: 50%;
+                border: solid 2px white;
+                overflow: hidden; }
+                html body .content .screen .container .color .colors .color .half {
+                  position: absolute;
+                  height: 5vw;
+                  width: 5vw;
+                  top: 0; }
+                html body .content .screen .container .color .colors .color .left-half {
+                  background: red;
+                  left: 0; }
             html body .content .screen .container .color.boy .selection-wrap .title .text {
               border-bottom-color: #FF4D0F; }
             html body .content .screen .container .color.girl .selection-wrap .title .text {

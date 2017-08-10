@@ -57,6 +57,25 @@
                 }
             }
         }
+        .color {
+            height: 5vw;
+            width: 5vw;
+            display: inline-block;
+            background: transparent;
+            border-radius: 50%;
+            border: solid 2px white;
+            overflow: hidden;
+            .half {
+                position: absolute;
+                height: 5vw;
+                width: 5vw;
+                top: 0;
+            }
+            .left-half {
+                background: red;
+                left: 0;
+            }
+        }
     }
     &.boy {
         .selection-wrap {
