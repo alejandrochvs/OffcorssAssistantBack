@@ -118,7 +118,7 @@ $(function () {
                 if (current === divs[0]) {
                     $('body > .content').css({
                         'background-image': 'url(../IMG/fondo-1.jpg)',
-                        'background-size': 'contain'
+                        'background-size': 'cover'
                     });
                     $('.gender > .selection-wrap > .title > .text').html(genderTitle);
                     $('.gender > .selection-wrap > .selections > .background > .boySel').html(genderBoy);
@@ -191,7 +191,7 @@ $(function () {
                 else if (current === divs[1]) {
                     $('body > .content').css({
                         'background-image': 'url(../IMG/fondo-1.jpg)',
-                        'background-size': 'contain'
+                        'background-size': 'cover'
                     });
                     $('.header > .title > .cont').html(headTitle1);
                     $('.header > .title > .cont').attr('data-var', 'headTitle1');
@@ -229,7 +229,7 @@ $(function () {
                     $('body > .content').css({
                         'background-image' :
                         'url(../IMG/fondo-1.jpg)',
-                        'background-size' : 'contain'
+                        'background-size' : 'cover'
                     });
                     $('.header > .title > .cont').html(headTitle1);
                     $('.header > .title > .cont').attr('data-var', 'headTitle1');
@@ -329,7 +329,7 @@ $(function () {
                     $('body > .content').css({
                         'background-image' :
                         'url(../IMG/fondo-2.jpg)',
-                        'background-size' : 'contain'
+                        'background-size' : 'cover'
                     });
                     $('.header > .title > .cont').html(headTitle1);
                     $('.header > .title > .cont').attr('data-var', 'headTitle1');
@@ -416,7 +416,7 @@ $(function () {
                     $('body > .content').css({
                         'background-image' :
                         'url(../IMG/fondo-2.jpg)',
-                        'background-size' : 'contain'
+                        'background-size' : 'cover'
                     });
                     $('.sizePrimi > .selection-wrap > .title > .text > N').html(name);
                     $('.header > .title > .cont').html(headTitle1);
@@ -479,7 +479,7 @@ $(function () {
                     $('body > .content').css({
                         'background-image' :
                         'url(../IMG/fondo-2.jpg)',
-                        'background-size' : 'contain'
+                        'background-size' : 'cover'
                     });
                     $('.header > .title > .cont').html(headTitle2);
                     $('.header > .title > .cont').attr('data-var', 'headTitle2');
@@ -531,7 +531,13 @@ $(function () {
                             next(divs[6]);
                         }
                     });
-                } else if (current === divs[6]) {
+                }
+                else if (current === divs[6]) {
+                    $('body > .content').css({
+                        'background-image' :
+                        'url(../IMG/fondo-2.jpg)',
+                        'background-size' : 'cover'
+                    });
                     $('.header > .title > .cont').html(headTitle2);
                     $('.header > .title > .cont').attr('data-var', 'headTitle2');
                     $('.weather > .selection-wrap > .title > .text-editable').html(weatherTitle);
@@ -545,7 +551,13 @@ $(function () {
                         localStorage.setItem(divs[6], weather);
                         next(divs[7]);
                     });
-                } else if (current === divs[7]) {
+                }
+                else if (current === divs[7]) {
+                    $('body > .content').css({
+                        'background-image' :
+                        'url(../IMG/fondo-2.jpg)',
+                        'background-size' : 'cover'
+                    });
                     $('.header > .title > .cont').html(headTitle2);
                     $('.header > .title > .cont').attr('data-var', 'headTitle2');
                     $('.color > .selection-wrap > .title > .text-editable').html(colorTitle);
@@ -565,7 +577,13 @@ $(function () {
                             next(divs[8]);
                         });
                     });
-                } else if (current === "looks") {
+                }
+                else if (current === "looks") {
+                    $('body > .content').css({
+                        'background-image' :
+                        'url(../IMG/fondo-2.jpg)',
+                        'background-size' : 'cover'
+                    });
                     $('.header > .title > .cont').html(headTitle2);
                     $('.header > .title > .cont').attr('data-var', 'headTitle2');
                     if (looks.length > 0) {
@@ -598,7 +616,13 @@ $(function () {
                         }
                     });
                     $('.looks').addClass(currentClass);
-                } else if (current === divs[8]) {
+                }
+                else if (current === divs[8]) {
+                    $('body > .content').css({
+                        'background-image' :
+                        'url(../IMG/fondo-3.jpg)',
+                        'background-size' : 'cover'
+                    });
                     $('.header > .title > .cont').html(headTitle2);
                     $('.header > .title > .cont').attr('data-var', 'headTitle2');
                     $('.personality > .selection-wrap > .title > .text-editable').html(personalityTitle);
@@ -655,7 +679,13 @@ $(function () {
                         $('.person:nth-child(4) > .background > .title > h4').html(personalityNameF4);
                         $('.person:nth-child(5) > .background > .title > h4').html(personalityNameF5);
                     }
-                } else if (current === divs[9]) {
+                }
+                else if (current === divs[9]) {
+                    $('body > .content').css({
+                        'background-image' :
+                        'url(../IMG/fondo-3.jpg)',
+                        'background-size' : 'cover'
+                    });
                     $('.header > .title > .cont').html(headTitle3);
                     $('.header > .title > .cont').attr('data-var', 'headTitle3');
                     $('.loader > .progress').css('width', '100%');
