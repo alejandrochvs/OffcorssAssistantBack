@@ -60,10 +60,11 @@
         .color {
             height: 5vw;
             width: 5vw;
-            display: inline-block;
             background: transparent;
             border-radius: 50%;
+            display: inline-block;
             border: solid 2px white;
+            padding: 0;
 //            overflow: hidden;
             .half {
                 position: absolute;
@@ -72,7 +73,7 @@
             }
             .left-half {
                 background: red;
-                top: -100%;
+                left: 0;
             }
             .right-half{
                 background: blue;

@@ -1630,17 +1630,18 @@ html {
               html body .content .screen .container .color .colors .color {
                 height: 5vw;
                 width: 5vw;
-                display: inline-block;
                 background: transparent;
                 border-radius: 50%;
-                border: solid 2px white; }
+                display: inline-block;
+                border: solid 2px white;
+                padding: 0; }
                 html body .content .screen .container .color .colors .color .half {
                   position: absolute;
                   height: 5vw;
                   width: 5vw; }
                 html body .content .screen .container .color .colors .color .left-half {
                   background: red;
-                  top: -100%; }
+                  left: 0; }
                 html body .content .screen .container .color .colors .color .right-half {
                   background: blue;
                   right: 0; }
