@@ -116,6 +116,10 @@ $(function () {
                     $('body > .header').removeClass('boy girl nBoy nGirl bBoy bGirl');
                 }
                 if (current === divs[0]) {
+                    $('body > .content').css({
+                        'background-image': 'url(../IMG/fondo-1.jpg)',
+                        'background-size': 'contain'
+                    });
                     $('.gender > .selection-wrap > .title > .text').html(genderTitle);
                     $('.gender > .selection-wrap > .selections > .background > .boySel').html(genderBoy);
                     $('.gender > .selection-wrap > .selections > .background > .girlSel').html(genderGirl);
@@ -183,7 +187,12 @@ $(function () {
                         localStorage.setItem('currentClass', currentClass);
                         next(divs[1]);
                     });
-                } else if (current === divs[1]) {
+                }
+                else if (current === divs[1]) {
+                    $('body > .content').css({
+                        'background-image': 'url(../IMG/fondo-1.jpg)',
+                        'background-size': 'contain'
+                    });
                     $('.header > .title > .cont').html(headTitle1);
                     $('.header > .title > .cont').attr('data-var', 'headTitle1');
                     $('.name > .selection-wrap > .title > .text').html(nameTitle);
@@ -215,7 +224,13 @@ $(function () {
                             next(divs[2]);
                         }
                     });
-                } else if (current === divs[2]) {
+                }
+                else if (current === divs[2]) {
+                    $('body > .content').css({
+                        'background-image' :
+                        'url(../IMG/fondo-1.jpg)',
+                        'background-size' : 'contain'
+                    });
                     $('.header > .title > .cont').html(headTitle1);
                     $('.header > .title > .cont').attr('data-var', 'headTitle1');
                     $('.age > .selection-wrap > .title > .text-editable').html(ageTitle);
@@ -309,7 +324,13 @@ $(function () {
                             }
                         }
                     })
-                } else if (current === divs[3]) {
+                }
+                else if (current === divs[3]) {
+                    $('body > .content').css({
+                        'background-image' :
+                        'url(../IMG/fondo-2.jpg)',
+                        'background-size' : 'contain'
+                    });
                     $('.header > .title > .cont').html(headTitle1);
                     $('.header > .title > .cont').attr('data-var', 'headTitle1');
                     $('.size > .selection-wrap > .title > .text-editable').html(sizeTitle);
@@ -390,7 +411,13 @@ $(function () {
                             }
                         }
                     });
-                } else if (current === divs[4]) {
+                }
+                else if (current === divs[4]) {
+                    $('body > .content').css({
+                        'background-image' :
+                        'url(../IMG/fondo-2.jpg)',
+                        'background-size' : 'contain'
+                    });
                     $('.sizePrimi > .selection-wrap > .title > .text > N').html(name);
                     $('.header > .title > .cont').html(headTitle1);
                     $('.header > .title > .cont').attr('data-var', 'headTitle1');
@@ -447,7 +474,13 @@ $(function () {
                             });
                         }
                     });
-                } else if (current === divs[5]) {
+                }
+                else if (current === divs[5]) {
+                    $('body > .content').css({
+                        'background-image' :
+                        'url(../IMG/fondo-2.jpg)',
+                        'background-size' : 'contain'
+                    });
                     $('.header > .title > .cont').html(headTitle2);
                     $('.header > .title > .cont').attr('data-var', 'headTitle2');
                     $('.occasion > .selection-wrap > .title > .text-editable').html(occasionsTitle);
