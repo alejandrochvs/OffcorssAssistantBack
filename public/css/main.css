@@ -1391,9 +1391,10 @@ html {
                 html body .content .screen .container .weather .selection-wrap .title .text {
                   transition: all 0.3s ease;
                   background: transparent;
-                  border-bottom: solid 3px #fd0;
+                  border-bottom: solid 1px #fd0;
                   padding: 2%;
-                  color: white; }
+                  color: white;
+                  font-size: 45px; }
             html body .content .screen .container .weather .weathers .background {
               transition: all 0.3s ease;
               padding: 1%; }
@@ -1593,9 +1594,11 @@ html {
                 margin-bottom: 1vh; }
                 html body .content .screen .container .color .selection-wrap .title .text {
                   transition: all 0.3s ease;
-                  background: white;
-                  border-bottom: solid 3px #fd0;
-                  padding: 2%; }
+                  background: transparent;
+                  color: white;
+                  border-bottom: solid 1px #fd0;
+                  padding: 2%;
+                  font-size: 45px; }
             html body .content .screen .container .color .colors {
               overflow: scroll;
               height: 100%;

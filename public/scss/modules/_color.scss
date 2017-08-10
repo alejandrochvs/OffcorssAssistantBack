@@ -8,9 +8,11 @@
             margin-bottom: 1vh;
             .text {
                 transition: all 0.3s ease;
-                background: white;
-                border-bottom: solid 3px $yellow;
+                background: transparent;
+                color: white;
+                border-bottom: solid 1px $yellow;
                 padding: 2%;
+                font-size: 45px;
             }
         }
     }

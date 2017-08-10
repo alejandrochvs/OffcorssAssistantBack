@@ -7,9 +7,10 @@
             .text {
                 transition: all 0.3s ease;
                 background: transparent;
-                border-bottom: solid 3px $yellow;
+                border-bottom: solid 1px $yellow;
                 padding: 2%;
                 color: white;
+                font-size: 45px;
             }
         }
     }
