@@ -6,8 +6,9 @@
             margin-bottom: 5vh;
             .text {
                 transition: all 0.3s ease;
-                background: white;
-                border-bottom: solid 3px $yellow;
+                color: white;
+                border-bottom: solid 1px $yellow;
+                font-size: 40px;
                 padding: 2%;
             }
         }
@@ -15,7 +16,7 @@
     .occasions {
         .background {
             transition: all .3s ease;
-            padding: 1%;
+            padding: 0.25%;
             .cont {
                 cursor: pointer;
                 transition: all 0.3s ease;
@@ -24,8 +25,6 @@
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-                border-top-left-radius: 15px;
-                border-top-right-radius: 15px;
                 overflow: hidden;
                 $occasionColor: $yellow;
                 $opacity: 0.8;
@@ -46,10 +45,11 @@
                 .title {
                     transition: all 0.3s ease;
                     padding: 0;
-                    background: rgba($occasionColor, $opacity);
+                    background: white !important;
                     padding: 4%;
                     height: 8vh;
                     h3 {
+                        color: #333 !important;
                         transition: all .3s ease;
                         line-height: 8vh;
                         overflow: hidden;
@@ -74,7 +74,7 @@
                         }
                     }
                 }
-                &.active{
+                &.active {
                     i {
                         color: white;
                     }
@@ -429,7 +429,8 @@
         }
     }
 }
-@media (max-width : 767px) and (orientation: landscape) {
+
+@media (max-width: 767px) and (orientation: landscape) {
     .occasion {
         height: 100%;
         overflow: scroll;
@@ -465,7 +466,7 @@
                 }
             }
         }
-        .occasionsBtn{
+        .occasionsBtn {
             height: 10vh;
             line-height: 10vh;
         }
