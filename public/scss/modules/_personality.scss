@@ -38,7 +38,7 @@
                 background: rgba(black, 0.5);
                 border: none !important;
                 .offset {
-                    height: 28vh;
+                    height: 30vh;
                 }
                 .title {
                     height: 10vh;
@@ -69,8 +69,8 @@
                     background-position: center;
                     background-repeat: no-repeat;
                     background-size: cover;
-                    .title{
-                        h4{
+                    .title {
+                        h4 {
                             color: #73626E;
                         }
                     }
@@ -82,6 +82,11 @@
                     background-position: center;
                     background-repeat: no-repeat;
                     background-size: cover;
+                    .title {
+                        h4 {
+                            color: #80D6BF;
+                        }
+                    }
                 }
             }
             &:nth-child(3) {
@@ -90,6 +95,11 @@
                     background-position: center;
                     background-repeat: no-repeat;
                     background-size: cover;
+                    .title {
+                        h4 {
+                            color: #73626E;
+                        }
+                    }
                 }
             }
             &:nth-child(4) {
@@ -98,6 +108,11 @@
                     background-position: center;
                     background-repeat: no-repeat;
                     background-size: cover;
+                    .title {
+                        h4 {
+                            color: #80D6BF;
+                        }
+                    }
                 }
             }
             &:nth-child(5) {
@@ -106,6 +121,11 @@
                     background-position: center;
                     background-repeat: no-repeat;
                     background-size: cover;
+                    .title {
+                        h4 {
+                            color: #73626E;
+                        }
+                    }
                 }
             }
             &:nth-child(6) {
@@ -290,21 +310,21 @@
 @media (max-width:767px) {
     .personality {
         padding: 0;
-        .selection-wrap{
-            .title{
+        .selection-wrap {
+            .title {
                 margin-bottom: 0;
             }
         }
-        .personWrap{
-            .person{
+        .personWrap {
+            .person {
                 padding: 2.5vh 2.2vw;
                 height: 25vh;
-                .background{
-                    .offset{
+                .background {
+                    .offset {
                         height: 17.3vh;
                     }
-                    .title{
-                        h4{
+                    .title {
+                        h4 {
                             font-size: 12px;
                             font-weight: 600;
                         }

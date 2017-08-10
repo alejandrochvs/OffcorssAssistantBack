@@ -1704,7 +1704,7 @@ html {
                 background: rgba(0, 0, 0, 0.5);
                 border: none !important; }
                 html body .content .screen .container .personality .personWrap .person .background .offset {
-                  height: 28vh; }
+                  height: 30vh; }
                 html body .content .screen .container .personality .personWrap .person .background .title {
                   height: 10vh;
                   background: white !important; }
@@ -1735,21 +1735,29 @@ html {
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover; }
+                html body .content .screen .container .personality .personWrap .person:nth-child(2) .background .title h4 {
+                  color: #80D6BF; }
               html body .content .screen .container .personality .personWrap .person:nth-child(3) .background {
                 background: url("../IMG/Personality/personalidad-3.jpg");
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover; }
+                html body .content .screen .container .personality .personWrap .person:nth-child(3) .background .title h4 {
+                  color: #73626E; }
               html body .content .screen .container .personality .personWrap .person:nth-child(4) .background {
                 background: url("../IMG/Personality/personalidad-4.jpg");
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover; }
+                html body .content .screen .container .personality .personWrap .person:nth-child(4) .background .title h4 {
+                  color: #80D6BF; }
               html body .content .screen .container .personality .personWrap .person:nth-child(5) .background {
                 background: url("../IMG/Personality/personalidad-5.jpg");
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover; }
+                html body .content .screen .container .personality .personWrap .person:nth-child(5) .background .title h4 {
+                  color: #73626E; }
               html body .content .screen .container .personality .personWrap .person:nth-child(6) .background {
                 background: url("../IMG/Personality/raton.jpg");
                 background-position: center;
