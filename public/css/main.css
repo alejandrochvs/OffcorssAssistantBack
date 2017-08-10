@@ -569,8 +569,9 @@ html {
                 background: #fd0;
                 color: white;
                 transition: all .3s ease;
-                width: 10vw;
-                height: 10vw;
+                width: 12.5vw;
+                height: 12.5vw;
+                margin-right: 7.5vw;
                 border-radius: 50%;
                 cursor: pointer;
                 -webkit-box-shadow: 7.5px 7.5px 0px 2px white;
@@ -578,10 +579,11 @@ html {
                 box-shadow: 7.5px 7.5px 0px 2px white; }
                 html body .content .screen .container .age .age-wrapper .pad .row h3 {
                   margin: 0;
-                  line-height: 10vh; }
+                  font-size: 24px;
+                  font-family: FrontageCN; }
                   html body .content .screen .container .age .age-wrapper .pad .row h3 b {
-                    font-size: 60px;
-                    right: 50%;
+                    font-size: 45px;
+                    right: 25%;
                     position: relative;
                     font-family: FrontageCBold; }
                 html body .content .screen .container .age .age-wrapper .pad .row:last-child {
