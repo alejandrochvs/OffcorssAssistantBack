@@ -560,7 +560,7 @@ html {
                 padding: 2%; }
             html body .content .screen .container .age .age-wrapper .pad {
               padding: 1%;
-              border-bottom: solid 2px white;
+              border-bottom: dashed 2px white;
               transition: all 0.3s ease; }
               html body .content .screen .container .age .age-wrapper .pad .row {
                 padding: 0;
@@ -569,8 +569,13 @@ html {
                 background: #fd0;
                 color: white;
                 transition: all .3s ease;
-                height: 10vh;
-                cursor: pointer; }
+                height: 150px;
+                width: 150px;
+                border-radius: 50%;
+                cursor: pointer;
+                -webkit-box-shadow: 7.5px 7.5px 0px 2px white;
+                -moz-box-shadow: 7.5px 7.5px 0px 2px white;
+                box-shadow: 7.5px 7.5px 0px 2px white; }
                 html body .content .screen .container .age .age-wrapper .pad .row h3 {
                   margin: 0;
                   line-height: 10vh; }
