@@ -276,7 +276,7 @@
                         }
                         &:hover {
                             .fa {
-                                color: darken($bBoy,20%);
+                                color: darken($bBoy, 20%);
                             }
                         }
                     }
@@ -311,12 +311,12 @@
                 }
                 .nav {
                     .sel {
-                        .fa{
+                        .fa {
                             color: $bGirl;
                         }
                         &:hover {
                             .fa {
-                                color: darken($bGirl,20%);
+                                color: darken($bGirl, 20%);
                             }
                         }
                     }
@@ -351,12 +351,12 @@
                 }
                 .nav {
                     .sel {
-                        .fa{
+                        .fa {
                             color: $nBoy;
                         }
                         &:hover {
                             .fa {
-                                color: darken($nBoy,20%);
+                                color: darken($nBoy, 20%);
                             }
                         }
                     }
@@ -391,9 +391,12 @@
                 }
                 .nav {
                     .sel {
+                        .fa {
+                            color: $nGirl;
+                        }
                         &:hover {
                             .fa {
-                                color: $nGirl;
+                                color: darken($nGirl, 20%);
                             }
                         }
                     }

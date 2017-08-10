@@ -898,8 +898,10 @@ html {
             html body .content .screen .container .size.nGirl .selection-wrap .padWrap .padSize .row .box.active, html body .content .screen .container .size.nGirl .selection-wrap .padWrap .padSize .row .box:hover {
               background: #FF98AA;
               color: white; }
-            html body .content .screen .container .size.nGirl .selection-wrap .padWrap .nav .sel:hover .fa {
+            html body .content .screen .container .size.nGirl .selection-wrap .padWrap .nav .sel .fa {
               color: #FF98AA; }
+            html body .content .screen .container .size.nGirl .selection-wrap .padWrap .nav .sel:hover .fa {
+              color: #ff3256; }
           @media (max-width: 767px) {
             html body .content .screen .container .size {
               padding: 0; }
