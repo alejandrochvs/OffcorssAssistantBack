@@ -90,7 +90,7 @@
         }
         .img {
             .image {
-                background-image: url('../IMG/Age/boy.png');
+                background-image: url('../IMG/Age/boy.jpg');
             }
         }
     }
@@ -102,7 +102,7 @@
                 }
             }
         }
-        .age-wrapper{
+        .age-wrapper {
             .pad {
                 border-color: $girl;
                 .row {
@@ -120,7 +120,7 @@
         }
         .img {
             .image {
-                background-image: url('../IMG/Age/girl.png');
+                background-image: url('../IMG/Age/girl.jpg');
             }
         }
     }
@@ -132,7 +132,7 @@
                 }
             }
         }
-        .age-wrapper{
+        .age-wrapper {
             .pad {
                 border-color: $bBoy;
                 .row {
@@ -150,7 +150,7 @@
         }
         .img {
             .image {
-                background-image: url('../IMG/Age/bBoy.png');
+                background-image: url('../IMG/Age/boy.jpg');
             }
         }
     }
@@ -161,6 +161,8 @@
                     border-bottom-color: $bGirl;
                 }
             }
+        }
+        .age-wrapper {
             .pad {
                 border-color: $bGirl;
                 .row {
@@ -178,7 +180,7 @@
         }
         .img {
             .image {
-                background-image: url('../IMG/Age/bGirl.png');
+                background-image: url('../IMG/Age/girl.jpg');
             }
         }
     }
@@ -189,6 +191,8 @@
                     border-bottom-color: $nBoy;
                 }
             }
+        }
+        .age-wrapper {
             .pad {
                 border-color: $nBoy;
                 .row {
@@ -206,7 +210,7 @@
         }
         .img {
             .image {
-                background-image: url('../IMG/Age/nBoy.png');
+                background-image: url('../IMG/Age/boy.jpg');
             }
         }
     }
@@ -217,6 +221,8 @@
                     border-bottom-color: $nGirl;
                 }
             }
+        }
+        .age-wrapper {
             .pad {
                 border-color: $nGirl;
                 .row {
@@ -234,7 +240,7 @@
         }
         .img {
             .image {
-                background-image: url('../IMG/Age/nGirl.png');
+                background-image: url('../IMG/Age/girl.jpg');
             }
         }
     }

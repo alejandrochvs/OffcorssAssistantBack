@@ -607,7 +607,7 @@ html {
                 background: #6B85AB;
                 color: white; }
             html body .content .screen .container .age.boy .img .image {
-              background-image: url("../IMG/Age/boy.png"); }
+              background-image: url("../IMG/Age/boy.jpg"); }
             html body .content .screen .container .age.girl .selection-wrap .title .text {
               border-bottom-color: #FF0080; }
             html body .content .screen .container .age.girl .age-wrapper .pad {
@@ -618,51 +618,51 @@ html {
                 background: #FF0080;
                 color: white; }
             html body .content .screen .container .age.girl .img .image {
-              background-image: url("../IMG/Age/girl.png"); }
+              background-image: url("../IMG/Age/girl.jpg"); }
             html body .content .screen .container .age.bBoy .selection-wrap .title .text {
               border-bottom-color: #82bc00; }
-            html body .content .screen .container .age.bBoy .selection-wrap .pad {
+            html body .content .screen .container .age.bBoy .age-wrapper .pad {
               border-color: #82bc00; }
-              html body .content .screen .container .age.bBoy .selection-wrap .pad .row .number:hover {
+              html body .content .screen .container .age.bBoy .age-wrapper .pad .row .number:hover {
                 border-color: #82bc00; }
-              html body .content .screen .container .age.bBoy .selection-wrap .pad .row .number.selected {
+              html body .content .screen .container .age.bBoy .age-wrapper .pad .row .number.selected {
                 background: #82bc00;
                 color: white; }
             html body .content .screen .container .age.bBoy .img .image {
-              background-image: url("../IMG/Age/bBoy.png"); }
+              background-image: url("../IMG/Age/boy.jpg"); }
             html body .content .screen .container .age.bGirl .selection-wrap .title .text {
               border-bottom-color: #9794d2; }
-            html body .content .screen .container .age.bGirl .selection-wrap .pad {
+            html body .content .screen .container .age.bGirl .age-wrapper .pad {
               border-color: #9794d2; }
-              html body .content .screen .container .age.bGirl .selection-wrap .pad .row .number:hover {
+              html body .content .screen .container .age.bGirl .age-wrapper .pad .row .number:hover {
                 border-color: #9794d2; }
-              html body .content .screen .container .age.bGirl .selection-wrap .pad .row .number.selected {
+              html body .content .screen .container .age.bGirl .age-wrapper .pad .row .number.selected {
                 background: #9794d2;
                 color: white; }
             html body .content .screen .container .age.bGirl .img .image {
-              background-image: url("../IMG/Age/bGirl.png"); }
+              background-image: url("../IMG/Age/girl.jpg"); }
             html body .content .screen .container .age.nBoy .selection-wrap .title .text {
               border-bottom-color: #3e8ede; }
-            html body .content .screen .container .age.nBoy .selection-wrap .pad {
+            html body .content .screen .container .age.nBoy .age-wrapper .pad {
               border-color: #3e8ede; }
-              html body .content .screen .container .age.nBoy .selection-wrap .pad .row .number:hover {
+              html body .content .screen .container .age.nBoy .age-wrapper .pad .row .number:hover {
                 border-color: #3e8ede; }
-              html body .content .screen .container .age.nBoy .selection-wrap .pad .row .number.selected {
+              html body .content .screen .container .age.nBoy .age-wrapper .pad .row .number.selected {
                 background: #3e8ede;
                 color: white; }
             html body .content .screen .container .age.nBoy .img .image {
-              background-image: url("../IMG/Age/nBoy.png"); }
+              background-image: url("../IMG/Age/boy.jpg"); }
             html body .content .screen .container .age.nGirl .selection-wrap .title .text {
               border-bottom-color: #ee9bac; }
-            html body .content .screen .container .age.nGirl .selection-wrap .pad {
+            html body .content .screen .container .age.nGirl .age-wrapper .pad {
               border-color: #ee9bac; }
-              html body .content .screen .container .age.nGirl .selection-wrap .pad .row .number:hover {
+              html body .content .screen .container .age.nGirl .age-wrapper .pad .row .number:hover {
                 border-color: #ee9bac; }
-              html body .content .screen .container .age.nGirl .selection-wrap .pad .row .number.selected {
+              html body .content .screen .container .age.nGirl .age-wrapper .pad .row .number.selected {
                 background: #ee9bac;
                 color: white; }
             html body .content .screen .container .age.nGirl .img .image {
-              background-image: url("../IMG/Age/nGirl.png"); }
+              background-image: url("../IMG/Age/girl.jpg"); }
           html body .content .screen .container .sizes-guide {
             background: white;
             padding: 2%;
