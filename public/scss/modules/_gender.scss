@@ -1,5 +1,5 @@
 .gender {
-    padding: 5vh 30px;
+    padding: 5vh 5vw;
     height: 100%;
     .selection-wrap {
         text-align: center;
@@ -7,7 +7,8 @@
         .title {
             margin-bottom: 5vh;
             .text {
-                background: white;
+                background: transparent;
+                color: white;
                 border-bottom: solid 3px $yellow;
                 padding: 2%;
                 transition: all 0.3s ease;
@@ -16,7 +17,8 @@
         .selections {
             .background {
                 .text {
-                    background: white;
+                    background: transparent;
+                    color: white;
                     padding: 4%;
                     border-bottom: solid 3px transparent;
                     transition: all 0.3s ease;
