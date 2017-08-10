@@ -1134,13 +1134,14 @@ html {
                 overflow: hidden;
                 transition: all 0.3s ease; }
                 html body .content .screen .container .occasion .occasions .background .cont img {
-                  color: transparent;
+                  opacity: 0;
                   transition: all .3s ease;
                   font-size: 30px;
                   position: absolute;
-                  right: 10px;
-                  top: 10px;
-                  z-index: 2; }
+                  z-index: 2;
+                  width: 50%;
+                  left: 25%;
+                  top: 25%; }
                 html body .content .screen .container .occasion .occasions .background .cont .img {
                   transition: all 0.3s ease;
                   height: 30vh; }
@@ -1207,8 +1208,8 @@ html {
                 background-image: url(../IMG/occasions/ocasiones-6.jpg); }
                 html body .content .screen .container .occasion .occasions .background:nth-child(7) .cont .title h3 {
                   color: #5A6069; }
-              html body .content .screen .container .occasion .occasions .background .cont.active i {
-                color: white; }
+              html body .content .screen .container .occasion .occasions .background .cont.active img {
+                opacity: 1; }
               html body .content .screen .container .occasion .occasions .background .cont.active .title .occasion-desc {
                 color: white; }
               html body .content .screen .container .occasion .occasions .background .cont.active .title h3 {
