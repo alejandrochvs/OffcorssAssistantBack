@@ -566,7 +566,7 @@ $(function () {
                     }
                     $.post('/db/colors', function (res) {
                         for (var i = 0; i < res.length; i++) {
-                            $('div.colors').append('<div class="color"><div class="half left-half" style="background-color : ' + res[i].hex + '"></div><div class="half right-half" style="background-color : ' + shadeColor2(res[i].hex,0.15) + '"></div><div class="tag">' + res[i].color + '</div></div>')
+                            $('div.colors').append('<div class="color-wrap"><div class="half left-half" style="background-color : ' + res[i].hex + '"></div><div class="half right-half" style="background-color : ' + shadeColor2(res[i].hex,0.15) + '"></div><div class="tag">' + res[i].color + '</div></div>')
                         }
                         $('.select').click(function () {
                             favColor = $(this).attr('data-color');

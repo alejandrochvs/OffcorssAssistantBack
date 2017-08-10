@@ -20,44 +20,8 @@
         overflow: inherit;
         height: 100%;
         padding-bottom: 16vh;
+        padding-left: 4%;
         .color-wrap {
-            .select {
-                overflow: hidden;
-                background: white;
-                height: 10vh;
-                color: inherit;
-                text-align: center;
-                margin-top: 2vh;
-                line-height: 10vh;
-                cursor: pointer;
-                border-radius: 5px;
-                border-top: solid 3px orange;
-                transition: all 0.3s ease;
-                font-size: 20px;
-                border-top-left-radius: 0;
-                border-top-right-radius: 0;
-                &:hover {
-                    background: transparent;
-                    border-top: solid 10vh orange;
-                }
-            }
-            &:nth-child(2) {
-                .select {
-                    border-color: green;
-                }
-            }
-            &:nth-child(3) {
-                .select {
-                    border-color: darken(yellow, 5%);
-                }
-            }
-            &:nth-child(4) {
-                .select {
-                    border-color: darken(red, 5%);
-                }
-            }
-        }
-        .color {
             position: relative;
             transition: all .3s ease;
             height: 7.5vw;
@@ -69,12 +33,19 @@
             padding: 0;
             overflow: hidden;
             cursor: pointer;
-            .tag{
+            margin-right: 2vw;
+            margin-bottom: 2.5vh;
+            .tag {
                 position: absolute;
                 line-height: 6.5vw;
                 font-size: 16px;
                 text-align: center;
-                left: 10%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                left: 2%;
+                width: 90%;
+                text-shadow: -0.5px 0 white, 0 0.5px white, 0.5px 0 white, 0 -0.5px white;
             }
             .half {
                 position: absolute;
@@ -82,24 +53,24 @@
                 transform: rotate(45deg);
             }
             .left-half {
-                background: darken($yellow,2.5%);
+                background: darken($yellow, 2.5%);
                 left: -10%;
                 top: -10%;
                 width: 120%;
             }
-            .right-half{
-                background: darken($yellow,0%);
+            .right-half {
+                background: darken($yellow, 0%);
                 left: 0%;
                 bottom: 0;
                 width: 70%;
                 transition: all .3s ease;
             }
-            &:hover{
+            &:hover {
                 transform: scale(1.1);
-                .half{
+                .half {
                     transform: rotate(0deg);
                 }
-                .right-half{
+                .right-half {
                     left: -20%;
                 }
             }
