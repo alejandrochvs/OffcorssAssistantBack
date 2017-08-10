@@ -381,12 +381,12 @@ html {
                     font-weight: 800; }
                     html body .content .screen .container .gender .selection-wrap .selections .background .text.boySel {
                       color: #fd4605;
-                      border-right: dashed 1px white; }
+                      border-right: dashed 1.5px white; }
                       html body .content .screen .container .gender .selection-wrap .selections .background .text.boySel:hover {
                         border-bottom: solid 3px #fd4605; }
                     html body .content .screen .container .gender .selection-wrap .selections .background .text.girlSel {
                       color: #e70095;
-                      border-left: dashed 1px white; }
+                      border-left: dashed 1.5px white; }
                       html body .content .screen .container .gender .selection-wrap .selections .background .text.girlSel:hover {
                         border-bottom: solid 3px #e70095; }
             html body .content .screen .container .gender .img-boy {
