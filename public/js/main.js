@@ -187,8 +187,7 @@ $(function () {
                         localStorage.setItem('currentClass', currentClass);
                         next(divs[1]);
                     });
-                }
-                else if (current === divs[1]) {
+                } else if (current === divs[1]) {
                     $('body > .content').css({
                         'background-image': 'url(../IMG/fondo-1.jpg)',
                         'background-size': 'cover'
@@ -224,12 +223,10 @@ $(function () {
                             next(divs[2]);
                         }
                     });
-                }
-                else if (current === divs[2]) {
+                } else if (current === divs[2]) {
                     $('body > .content').css({
-                        'background-image' :
-                        'url(../IMG/fondo-1.jpg)',
-                        'background-size' : 'cover'
+                        'background-image': 'url(../IMG/fondo-1.jpg)',
+                        'background-size': 'cover'
                     });
                     $('.header > .title > .cont').html(headTitle1);
                     $('.header > .title > .cont').attr('data-var', 'headTitle1');
@@ -324,12 +321,10 @@ $(function () {
                             }
                         }
                     })
-                }
-                else if (current === divs[3]) {
+                } else if (current === divs[3]) {
                     $('body > .content').css({
-                        'background-image' :
-                        'url(../IMG/fondo-2.jpg)',
-                        'background-size' : 'cover'
+                        'background-image': 'url(../IMG/fondo-2.jpg)',
+                        'background-size': 'cover'
                     });
                     $('.header > .title > .cont').html(headTitle1);
                     $('.header > .title > .cont').attr('data-var', 'headTitle1');
@@ -411,12 +406,10 @@ $(function () {
                             }
                         }
                     });
-                }
-                else if (current === divs[4]) {
+                } else if (current === divs[4]) {
                     $('body > .content').css({
-                        'background-image' :
-                        'url(../IMG/fondo-2.jpg)',
-                        'background-size' : 'cover'
+                        'background-image': 'url(../IMG/fondo-2.jpg)',
+                        'background-size': 'cover'
                     });
                     $('.sizePrimi > .selection-wrap > .title > .text > N').html(name);
                     $('.header > .title > .cont').html(headTitle1);
@@ -474,12 +467,10 @@ $(function () {
                             });
                         }
                     });
-                }
-                else if (current === divs[5]) {
+                } else if (current === divs[5]) {
                     $('body > .content').css({
-                        'background-image' :
-                        'url(../IMG/fondo-2.jpg)',
-                        'background-size' : 'cover'
+                        'background-image': 'url(../IMG/fondo-2.jpg)',
+                        'background-size': 'cover'
                     });
                     $('.header > .title > .cont').html(headTitle2);
                     $('.header > .title > .cont').attr('data-var', 'headTitle2');
@@ -531,12 +522,10 @@ $(function () {
                             next(divs[6]);
                         }
                     });
-                }
-                else if (current === divs[6]) {
+                } else if (current === divs[6]) {
                     $('body > .content').css({
-                        'background-image' :
-                        'url(../IMG/fondo-2.jpg)',
-                        'background-size' : 'cover'
+                        'background-image': 'url(../IMG/fondo-2.jpg)',
+                        'background-size': 'cover'
                     });
                     $('.header > .title > .cont').html(headTitle2);
                     $('.header > .title > .cont').attr('data-var', 'headTitle2');
@@ -551,12 +540,10 @@ $(function () {
                         localStorage.setItem(divs[6], weather);
                         next(divs[7]);
                     });
-                }
-                else if (current === divs[7]) {
+                } else if (current === divs[7]) {
                     $('body > .content').css({
-                        'background-image' :
-                        'url(../IMG/fondo-2.jpg)',
-                        'background-size' : 'cover'
+                        'background-image': 'url(../IMG/fondo-2.jpg)',
+                        'background-size': 'cover'
                     });
                     $('.header > .title > .cont').html(headTitle2);
                     $('.header > .title > .cont').attr('data-var', 'headTitle2');
@@ -567,9 +554,19 @@ $(function () {
                     $('.colors > .color-wrap:nth-child(4) > .select').html(colorName4);
                     $('.loader > .progress').css('width', '70%');
                     $('.color').addClass(currentClass);
+
+                    function shadeColor2(color, percent) {
+                        var f = parseInt(color.slice(1), 16),
+                            t = percent < 0 ? 0 : 255,
+                            p = percent < 0 ? percent * -1 : percent,
+                            R = f >> 16,
+                            G = f >> 8 & 0x00FF,
+                            B = f & 0x0000FF;
+                        return "#" + (0x1000000 + (Math.round((t - R) * p) + R) * 0x10000 + (Math.round((t - G) * p) + G) * 0x100 + (Math.round((t - B) * p) + B)).toString(16).slice(1);
+                    }
                     $.post('/db/colors', function (res) {
                         for (var i = 0; i < res.length; i++) {
-                            $('div.colors').append('<div class="color"><div class="half left-half"></div><div class="half right-half"></div><div class="tag">'+res.name+'</div></div>')
+                            $('div.colors').append('<div class="color"><div class="half left-half" style="background-color : ' + res[i].hex + '"></div><div class="half right-half" style="background-color : ' + shadeColor2(res[i].hex,0.15) + '"></div><div class="tag">' + res[i].color + '</div></div>')
                         }
                         $('.select').click(function () {
                             favColor = $(this).attr('data-color');
@@ -577,12 +574,10 @@ $(function () {
                             next(divs[8]);
                         });
                     });
-                }
-                else if (current === "looks") {
+                } else if (current === "looks") {
                     $('body > .content').css({
-                        'background-image' :
-                        'url(../IMG/fondo-2.jpg)',
-                        'background-size' : 'cover'
+                        'background-image': 'url(../IMG/fondo-2.jpg)',
+                        'background-size': 'cover'
                     });
                     $('.header > .title > .cont').html(headTitle2);
                     $('.header > .title > .cont').attr('data-var', 'headTitle2');
@@ -616,12 +611,10 @@ $(function () {
                         }
                     });
                     $('.looks').addClass(currentClass);
-                }
-                else if (current === divs[8]) {
+                } else if (current === divs[8]) {
                     $('body > .content').css({
-                        'background-image' :
-                        'url(../IMG/fondo-3.jpg)',
-                        'background-size' : 'cover'
+                        'background-image': 'url(../IMG/fondo-3.jpg)',
+                        'background-size': 'cover'
                     });
                     $('.header > .title > .cont').html(headTitle2);
                     $('.header > .title > .cont').attr('data-var', 'headTitle2');
@@ -679,12 +672,10 @@ $(function () {
                         $('.person:nth-child(4) > .background > .title > h4').html(personalityNameF4);
                         $('.person:nth-child(5) > .background > .title > h4').html(personalityNameF5);
                     }
-                }
-                else if (current === divs[9]) {
+                } else if (current === divs[9]) {
                     $('body > .content').css({
-                        'background-image' :
-                        'url(../IMG/fondo-3.jpg)',
-                        'background-size' : 'cover'
+                        'background-image': 'url(../IMG/fondo-3.jpg)',
+                        'background-size': 'cover'
                     });
                     $('.header > .title > .cont').html(headTitle3);
                     $('.header > .title > .cont').attr('data-var', 'headTitle3');
@@ -830,12 +821,10 @@ $(function () {
                             });
                         }
                     });
-                }
-                else if (current === 'login') {
+                } else if (current === 'login') {
                     $('body > .content').css({
-                        'background-image' :
-                        'url(../IMG/background.jpg)',
-                        'background-size' : 'initial'
+                        'background-image': 'url(../IMG/background.jpg)',
+                        'background-size': 'initial'
                     });
                     $('.head.title > .cont').html(headTitle4);
                     $('.head.title > .cont').attr('data-var', 'headTitle4');
@@ -881,12 +870,10 @@ $(function () {
                     });
                     localStorage.current = 'gender';
 
-                }
-                else if (current === 'register') {
+                } else if (current === 'register') {
                     $('body > .content').css({
-                        'background-image' :
-                        'url(../IMG/background.jpg)',
-                        'background-size' : 'initial'
+                        'background-image': 'url(../IMG/background.jpg)',
+                        'background-size': 'initial'
                     });
                     currentIndex = 100;
                     localStorage.current = divs[0];
@@ -996,21 +983,17 @@ $(function () {
                             $('.registerBtn').click();
                         }
                     });
-                }
-                else if (current === 'e-cards') {
+                } else if (current === 'e-cards') {
                     $('body > .content').css({
-                        'background-image' :
-                        'url(../IMG/background.jpg)',
-                        'background-size' : 'initial'
+                        'background-image': 'url(../IMG/background.jpg)',
+                        'background-size': 'initial'
                     });
                     $('.head.title > .cont').html('E-CARDS');
 
-                }
-                else if (current == 'customers') {
+                } else if (current == 'customers') {
                     $('body > .content').css({
-                        'background-image' :
-                        'url(../IMG/background.jpg)',
-                        'background-size' : 'initial'
+                        'background-image': 'url(../IMG/background.jpg)',
+                        'background-size': 'initial'
                     });
                     $('.head.title > .cont').html('CLIENTES');
                 }
