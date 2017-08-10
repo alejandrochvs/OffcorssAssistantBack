@@ -1168,7 +1168,8 @@ html {
                     height: 35vh;
                     transform: scale(1.4); }
                     html body .content .screen .container .occasion .occasions .background .cont:hover .title h3, html body .content .screen .container .occasion .occasions .background .cont.active .title h3 {
-                      line-height: 35vh; }
+                      line-height: 35vh;
+                      font-size: 12px; }
                 html body .content .screen .container .occasion .occasions .background .cont.active i {
                   color: white; }
               html body .content .screen .container .occasion .occasions .background:nth-child(1) .cont {
