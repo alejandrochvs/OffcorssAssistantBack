@@ -363,7 +363,8 @@ html {
                   border-bottom: solid 3px #fd0;
                   padding: 2%;
                   font-size: 40px;
-                  transition: all 0.3s ease; }
+                  transition: all 0.3s ease;
+                  font-weight: 300; }
               html body .content .screen .container .gender .selection-wrap .selections {
                 padding: 0; }
                 html body .content .screen .container .gender .selection-wrap .selections .background {
