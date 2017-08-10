@@ -6,9 +6,10 @@
             margin-bottom: 5vh;
             .text {
                 transition: all 0.3s ease;
-                background: white;
+                background: transparent;
                 border-bottom: solid 3px $yellow;
                 padding: 2%;
+                color: white;
             }
         }
     }
@@ -25,15 +26,17 @@
                 $occasionColor: $yellow;
                 $opacity: 0.8;
                 padding: 0;
-                border: none !important;
+                border-right: dashed 2px white;
                 .img {
-                    height: 40vh;
                     img{
+                        height: 20vh;
                         padding: 0;
                         margin-top: 2vh;
                     }
                 }
                 .title {
+                    margin-top: 5vh;
+                    margin-bottom: 5vh;
                     transition: all 0.3s ease;
                     padding: 0;
                     background: transparent !important;
@@ -50,36 +53,12 @@
                 }
             }
             &:nth-child(1) {
-                .cont {
-                    $occasionColor: #1E90FF;
-                    background-color: $occasionColor;
-                    $opacity: 0.9;
-                    border: solid 5px rgba($occasionColor, $opacity);
-                    .title{
-                        background: rgba($occasionColor, $opacity);
-                    }
-                }
             }
             &:nth-child(2) {
-                .cont {
-                    $occasionColor: #A9A9A9;
-                    background-color: $occasionColor;
-                    $opacity: 0.9;
-                    border: solid 5px rgba($occasionColor, $opacity);
-                    .title{
-                        background: rgba($occasionColor, $opacity);
-                    }
-                }
             }
             &:nth-child(3) {
-                .cont {
-                    $occasionColor: #FDB201;
-                    background-color: $occasionColor;
-                    $opacity: 0.9;
-                    border: solid 5px rgba($occasionColor, $opacity);
-                    .title{
-                        background: rgba($occasionColor, $opacity);
-                    }
+                .cont{
+                    border-right: none;
                 }
             }
             &:hover{

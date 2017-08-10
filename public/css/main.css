@@ -1390,9 +1390,10 @@ html {
                 margin-bottom: 5vh; }
                 html body .content .screen .container .weather .selection-wrap .title .text {
                   transition: all 0.3s ease;
-                  background: white;
+                  background: transparent;
                   border-bottom: solid 3px #fd0;
-                  padding: 2%; }
+                  padding: 2%;
+                  color: white; }
             html body .content .screen .container .weather .weathers .background {
               transition: all 0.3s ease;
               padding: 1%; }
@@ -1403,13 +1404,14 @@ html {
                 background: transparent !important;
                 overflow: hidden;
                 padding: 0;
-                border: none !important; }
-                html body .content .screen .container .weather .weathers .background .cont .img {
-                  height: 40vh; }
-                  html body .content .screen .container .weather .weathers .background .cont .img img {
-                    padding: 0;
-                    margin-top: 2vh; }
+                border-right: dashed 2px white; }
+                html body .content .screen .container .weather .weathers .background .cont .img img {
+                  height: 20vh;
+                  padding: 0;
+                  margin-top: 2vh; }
                 html body .content .screen .container .weather .weathers .background .cont .title {
+                  margin-top: 5vh;
+                  margin-bottom: 5vh;
                   transition: all 0.3s ease;
                   padding: 0;
                   background: transparent !important; }
@@ -1422,21 +1424,8 @@ html {
                     font-size: 60px;
                     font-family: FrontageCBold;
                     color: white; }
-              html body .content .screen .container .weather .weathers .background:nth-child(1) .cont {
-                background-color: #1E90FF;
-                border: solid 5px rgba(30, 144, 255, 0.9); }
-                html body .content .screen .container .weather .weathers .background:nth-child(1) .cont .title {
-                  background: rgba(30, 144, 255, 0.9); }
-              html body .content .screen .container .weather .weathers .background:nth-child(2) .cont {
-                background-color: #A9A9A9;
-                border: solid 5px rgba(169, 169, 169, 0.9); }
-                html body .content .screen .container .weather .weathers .background:nth-child(2) .cont .title {
-                  background: rgba(169, 169, 169, 0.9); }
               html body .content .screen .container .weather .weathers .background:nth-child(3) .cont {
-                background-color: #FDB201;
-                border: solid 5px rgba(253, 178, 1, 0.9); }
-                html body .content .screen .container .weather .weathers .background:nth-child(3) .cont .title {
-                  background: rgba(253, 178, 1, 0.9); }
+                border-right: none; }
               html body .content .screen .container .weather .weathers .background:hover {
                 transform: scale(1.05); }
             html body .content .screen .container .weather.boy .selection-wrap .title .text {
