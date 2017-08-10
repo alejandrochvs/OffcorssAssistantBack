@@ -374,7 +374,7 @@ html {
             html body .content .screen .container .gender .img {
               height: 60vh; }
               html body .content .screen .container .gender .img .image {
-                background-image: url(../IMG/Gender/both.png);
+                background-image: url(../IMG/Gender/both.jpg);
                 height: 100%;
                 background-position: center;
                 background-origin: content-box;
@@ -385,13 +385,13 @@ html {
             html body .content .screen .container .gender.boy .selection-wrap .selections .background .boySel {
               border-bottom-color: #fd4605; }
             html body .content .screen .container .gender.boy .img .image {
-              background-image: url(../IMG/Gender/boy.png); }
+              background-image: url(../IMG/Gender/boy.jpg); }
             html body .content .screen .container .gender.girl .selection-wrap .title .text {
               border-bottom-color: #e70095; }
             html body .content .screen .container .gender.girl .selection-wrap .selections .background .girlSel {
               border-bottom-color: #e70095; }
             html body .content .screen .container .gender.girl .img .image {
-              background-image: url(../IMG/Gender/girl.png); }
+              background-image: url(../IMG/Gender/girl.jpg); }
           html body .content .screen .container .name {
             padding: 5vh 0; }
             html body .content .screen .container .name .selection-wrap {
