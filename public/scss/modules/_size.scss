@@ -44,13 +44,13 @@
 }
 
 .size {
+    overflow: scroll;
     padding: 5vh 0;
     height: 100%;
     .selection-wrap {
         height: 100%;
         text-align: center;
         .title {
-            margin-bottom: 5vh;
             .text {
                 transition: all 0.3s ease;
                 background: transparent;
@@ -88,6 +88,7 @@
             }
         }
         .padWrap {
+            margin-bottom: 5vh;
             .image {
                 height: 20vh;
                 div {
@@ -100,7 +101,7 @@
             .padSize {
                 height: 30vh;
                 padding: 0;
-                border: solid 2px $yellow;
+                border-right: dashed 2px $yellow;
                 transition: all 0.3s ease;
                 overflow: hidden;
                 .row {

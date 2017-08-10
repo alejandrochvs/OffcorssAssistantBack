@@ -552,7 +552,7 @@ html {
           html body .content .screen .container .age {
             padding: 5vh 0; }
             html body .content .screen .container .age .selection-wrap {
-              margin-top: 10vh;
+              margin-top: 7vh;
               text-align: center; }
               html body .content .screen .container .age .selection-wrap .title .text {
                 color: white;
@@ -726,98 +726,99 @@ html {
             html body .content .screen .container .sizes-guide.active {
               top: 5%; }
           html body .content .screen .container .size {
+            overflow: scroll;
             padding: 5vh 0;
             height: 100%; }
             html body .content .screen .container .size .selection-wrap {
               height: 100%;
               text-align: center; }
-              html body .content .screen .container .size .selection-wrap .title {
-                margin-bottom: 5vh; }
-                html body .content .screen .container .size .selection-wrap .title .text {
-                  transition: all 0.3s ease;
-                  background: transparent;
-                  padding: 2%;
-                  color: white;
-                  cursor: pointer;
-                  font-size: 35px; }
-                  html body .content .screen .container .size .selection-wrap .title .text a {
-                    text-decoration: none;
-                    color: white;
-                    border-bottom: solid 2px #fd0;
-                    transition: all .3s ease;
-                    padding-bottom: 5px;
-                    padding-right: 10px;
-                    padding-left: 10px;
-                    top: 10px;
-                    position: relative;
-                    font-size: 36px;
-                    font-family: FrontageCBold; }
-                    html body .content .screen .container .size .selection-wrap .title .text a:hover {
-                      border-color: white !important; }
-                  html body .content .screen .container .size .selection-wrap .title .text .fa {
-                    position: absolute;
-                    right: -20%;
-                    background: white;
-                    border-radius: 50%;
-                    height: 3.5vw;
-                    width: 3.5vw;
-                    line-height: 50px;
-                    font-size: 34px;
-                    color: #fd0; }
-              html body .content .screen .container .size .selection-wrap .padWrap .image {
-                height: 20vh; }
-                html body .content .screen .container .size .selection-wrap .padWrap .image div {
-                  transition: all 0.3s ease;
-                  height: 100%;
-                  color: #fd0;
-                  font-size: 15vh; }
-              html body .content .screen .container .size .selection-wrap .padWrap .padSize {
-                height: 30vh;
-                padding: 0;
-                border: solid 2px #fd0;
+              html body .content .screen .container .size .selection-wrap .title .text {
                 transition: all 0.3s ease;
-                overflow: hidden; }
-                html body .content .screen .container .size .selection-wrap .padWrap .padSize .row {
-                  z-index: 1;
+                background: transparent;
+                padding: 2%;
+                color: white;
+                cursor: pointer;
+                font-size: 35px; }
+                html body .content .screen .container .size .selection-wrap .title .text a {
+                  text-decoration: none;
+                  color: white;
+                  border-bottom: solid 2px #fd0;
+                  transition: all .3s ease;
+                  padding-bottom: 5px;
+                  padding-right: 10px;
+                  padding-left: 10px;
+                  top: 10px;
+                  position: relative;
+                  font-size: 36px;
+                  font-family: FrontageCBold; }
+                  html body .content .screen .container .size .selection-wrap .title .text a:hover {
+                    border-color: white !important; }
+                html body .content .screen .container .size .selection-wrap .title .text .fa {
+                  position: absolute;
+                  right: -20%;
+                  background: white;
+                  border-radius: 50%;
+                  height: 3.5vw;
+                  width: 3.5vw;
+                  line-height: 50px;
+                  font-size: 34px;
+                  color: #fd0; }
+              html body .content .screen .container .size .selection-wrap .padWrap {
+                margin-bottom: 5vh; }
+                html body .content .screen .container .size .selection-wrap .padWrap .image {
+                  height: 20vh; }
+                  html body .content .screen .container .size .selection-wrap .padWrap .image div {
+                    transition: all 0.3s ease;
+                    height: 100%;
+                    color: #fd0;
+                    font-size: 15vh; }
+                html body .content .screen .container .size .selection-wrap .padWrap .padSize {
+                  height: 30vh;
+                  padding: 0;
+                  border-right: dashed 2px #fd0;
                   transition: all 0.3s ease;
-                  height: 10vh;
-                  margin: 0;
-                  padding: 1vh 2vw;
-                  top: 0; }
-                  html body .content .screen .container .size .selection-wrap .padWrap .padSize .row .box {
-                    cursor: pointer;
-                    padding: 0;
-                    font-size: 18px;
-                    line-height: 7vh;
-                    border: solid 1px transparent;
+                  overflow: hidden; }
+                  html body .content .screen .container .size .selection-wrap .padWrap .padSize .row {
+                    z-index: 1;
                     transition: all 0.3s ease;
-                    white-space: nowrap;
-                    text-overflow: ellipsis;
-                    overflow: hidden; }
-                    html body .content .screen .container .size .selection-wrap .padWrap .padSize .row .box:hover {
-                      border-color: #fd0; }
-                    html body .content .screen .container .size .selection-wrap .padWrap .padSize .row .box.active {
-                      background: #fd0;
-                      color: white; }
-              html body .content .screen .container .size .selection-wrap .padWrap .nav {
-                display: none;
-                z-index: 2;
-                position: absolute;
-                right: 2vw;
-                bottom: 1vh;
-                width: 2vw;
-                height: 10vh; }
-                html body .content .screen .container .size .selection-wrap .padWrap .nav .sel {
-                  cursor: pointer; }
-                  html body .content .screen .container .size .selection-wrap .padWrap .nav .sel .fa {
-                    width: 100%;
-                    height: 5vh;
-                    transition: all 0.3s ease;
-                    color: inherit; }
-                  html body .content .screen .container .size .selection-wrap .padWrap .nav .sel:hover .fa {
-                    color: #fd0; }
-                html body .content .screen .container .size .selection-wrap .padWrap .nav.active {
-                  display: inherit; }
+                    height: 10vh;
+                    margin: 0;
+                    padding: 1vh 2vw;
+                    top: 0; }
+                    html body .content .screen .container .size .selection-wrap .padWrap .padSize .row .box {
+                      cursor: pointer;
+                      padding: 0;
+                      font-size: 18px;
+                      line-height: 7vh;
+                      border: solid 1px transparent;
+                      transition: all 0.3s ease;
+                      white-space: nowrap;
+                      text-overflow: ellipsis;
+                      overflow: hidden; }
+                      html body .content .screen .container .size .selection-wrap .padWrap .padSize .row .box:hover {
+                        border-color: #fd0; }
+                      html body .content .screen .container .size .selection-wrap .padWrap .padSize .row .box.active {
+                        background: #fd0;
+                        color: white; }
+                html body .content .screen .container .size .selection-wrap .padWrap .nav {
+                  display: none;
+                  z-index: 2;
+                  position: absolute;
+                  right: 2vw;
+                  bottom: 1vh;
+                  width: 2vw;
+                  height: 10vh; }
+                  html body .content .screen .container .size .selection-wrap .padWrap .nav .sel {
+                    cursor: pointer; }
+                    html body .content .screen .container .size .selection-wrap .padWrap .nav .sel .fa {
+                      width: 100%;
+                      height: 5vh;
+                      transition: all 0.3s ease;
+                      color: inherit; }
+                    html body .content .screen .container .size .selection-wrap .padWrap .nav .sel:hover .fa {
+                      color: #fd0; }
+                  html body .content .screen .container .size .selection-wrap .padWrap .nav.active {
+                    display: inherit; }
             html body .content .screen .container .size.boy .selection-wrap .title .text {
               border-bottom-color: #6B85AB; }
               html body .content .screen .container .size.boy .selection-wrap .title .text a {
