@@ -60,11 +60,12 @@
                 cursor: pointer;
                 font-size: 35px;
                 a {
-                    color: $yellow;
+                    color: white;
+                    border-bottom: solid $yellow;
                     transition: all .3s ease;
                     top: 10px;
                     position: relative;
-                    font-size: 14px;
+                    font-size: 36px;
                     font-family: FrontageCBold;
                 }
                 .fa {
