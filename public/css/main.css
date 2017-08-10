@@ -368,11 +368,16 @@ html {
                 padding: 4%;
                 border-bottom: solid 3px transparent;
                 transition: all 0.3s ease;
-                cursor: pointer; }
-                html body .content .screen .container .gender .selection-wrap .selections .background .text.boySel:hover {
-                  border-bottom: solid 3px #fd4605; }
-                html body .content .screen .container .gender .selection-wrap .selections .background .text.girlSel:hover {
-                  border-bottom: solid 3px #e70095; }
+                cursor: pointer;
+                text-transform: uppercase; }
+                html body .content .screen .container .gender .selection-wrap .selections .background .text.boySel {
+                  color: #fd4605; }
+                  html body .content .screen .container .gender .selection-wrap .selections .background .text.boySel:hover {
+                    border-bottom: solid 3px #fd4605; }
+                html body .content .screen .container .gender .selection-wrap .selections .background .text.girlSel {
+                  color: #e70095; }
+                  html body .content .screen .container .gender .selection-wrap .selections .background .text.girlSel:hover {
+                    border-bottom: solid 3px #e70095; }
             html body .content .screen .container .gender .img-boy {
               height: 60vh; }
               html body .content .screen .container .gender .img-boy .image {
