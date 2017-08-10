@@ -220,12 +220,11 @@ html {
           text-overflow: ellipsis;
           white-space: nowrap;
           color: #73626E;
-          font-weight: 500; }
+          font-weight: 700; }
         html body .header .head .cont {
           z-index: 1;
           transition: all 0.3s ease; }
           html body .header .head .cont.back {
-            top: 1vh;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap; }
@@ -233,19 +232,22 @@ html {
               cursor: pointer;
               color: #80D6BF;
               font-size: 28px;
+              bottom: 2.5px;
+              position: relative;
               border: dashed 2px #80D6BF;
               padding: 0 3%;
               border-radius: 5px;
               font-weight: 500;
-              margin-right: 10px; }
+              margin-right: 10px;
+              transition: all .3s ease; }
             html body .header .head .cont.back span {
               cursor: pointer;
-              font-size: 24px;
+              font-size: 32px;
               position: relative;
               color: #73626E;
               transition: all 0.3s ease; }
-              html body .header .head .cont.back span:hover {
-                color: #59caac; }
+            html body .header .head .cont.back:hover i, html body .header .head .cont.back:hover span {
+              color: #59caac; }
           html body .header .head .cont a {
             text-decoration: none;
             color: #73626E;
