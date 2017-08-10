@@ -17,7 +17,7 @@
         }
     }
     .colors {
-        overflow: scroll;
+        overflow: inherit;
         height: 100%;
         padding-bottom: 16vh;
         .color-wrap {
@@ -59,16 +59,22 @@
         }
         .color {
             position: relative;
-            height: 5vw;
-            width: 5vw;
+            transition: all .3s ease;
+            height: 7.5vw;
+            width: 7.5vw;
             background: transparent;
             border-radius: 50%;
             display: inline-block;
-            border: solid 2px white;
+            border: solid 5px white;
             padding: 0;
             overflow: hidden;
+            cursor: pointer;
             .tag{
                 position: absolute;
+                line-height: 6.5vw;
+                font-size: 16px;
+                text-align: center;
+                left: 10%;
             }
             .half {
                 position: absolute;
@@ -76,15 +82,19 @@
                 transform: rotate(45deg);
             }
             .left-half {
-                background: $yellow;
+                background: darken($yellow,2.5%);
                 left: -10%;
                 top: -10%;
                 width: 100%;
             }
             .right-half{
+                background: darken($yellow,0%);
                 left: 0%;
                 bottom: 0;
                 width: 60%;
+            }
+            &:hover{
+                transform: scale(1.1);
             }
         }
     }

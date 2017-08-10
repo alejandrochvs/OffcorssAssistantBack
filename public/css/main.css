@@ -1600,7 +1600,7 @@ html {
                   padding: 2%;
                   font-size: 45px; }
             html body .content .screen .container .color .colors {
-              overflow: scroll;
+              overflow: inherit;
               height: 100%;
               padding-bottom: 16vh; }
               html body .content .screen .container .color .colors .color-wrap .select {
@@ -1629,29 +1629,38 @@ html {
                 border-color: #e60000; }
               html body .content .screen .container .color .colors .color {
                 position: relative;
-                height: 5vw;
-                width: 5vw;
+                transition: all .3s ease;
+                height: 7.5vw;
+                width: 7.5vw;
                 background: transparent;
                 border-radius: 50%;
                 display: inline-block;
-                border: solid 2px white;
+                border: solid 5px white;
                 padding: 0;
-                overflow: hidden; }
+                overflow: hidden;
+                cursor: pointer; }
                 html body .content .screen .container .color .colors .color .tag {
-                  position: absolute; }
+                  position: absolute;
+                  line-height: 6.5vw;
+                  font-size: 16px;
+                  text-align: center;
+                  left: 10%; }
                 html body .content .screen .container .color .colors .color .half {
                   position: absolute;
                   height: 150%;
                   transform: rotate(45deg); }
                 html body .content .screen .container .color .colors .color .left-half {
-                  background: #fd0;
+                  background: #f2d200;
                   left: -10%;
                   top: -10%;
                   width: 100%; }
                 html body .content .screen .container .color .colors .color .right-half {
+                  background: #ffdd00;
                   left: 0%;
                   bottom: 0;
                   width: 60%; }
+                html body .content .screen .container .color .colors .color:hover {
+                  transform: scale(1.1); }
             html body .content .screen .container .color.boy .selection-wrap .title .text {
               border-bottom-color: #FF4D0F; }
             html body .content .screen .container .color.girl .selection-wrap .title .text {
