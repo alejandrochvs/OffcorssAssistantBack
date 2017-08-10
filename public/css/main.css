@@ -1647,20 +1647,25 @@ html {
                   left: 10%; }
                 html body .content .screen .container .color .colors .color .half {
                   position: absolute;
-                  height: 150%;
+                  height: 160%;
                   transform: rotate(45deg); }
                 html body .content .screen .container .color .colors .color .left-half {
                   background: #f2d200;
                   left: -10%;
                   top: -10%;
-                  width: 100%; }
+                  width: 120%; }
                 html body .content .screen .container .color .colors .color .right-half {
                   background: #ffdd00;
                   left: 0%;
                   bottom: 0;
-                  width: 60%; }
+                  width: 70%;
+                  transition: all .3s ease; }
                 html body .content .screen .container .color .colors .color:hover {
                   transform: scale(1.1); }
+                  html body .content .screen .container .color .colors .color:hover .half {
+                    transform: rotate(0deg); }
+                  html body .content .screen .container .color .colors .color:hover .right-half {
+                    left: -20%; }
             html body .content .screen .container .color.boy .selection-wrap .title .text {
               border-bottom-color: #FF4D0F; }
             html body .content .screen .container .color.girl .selection-wrap .title .text {

@@ -78,23 +78,30 @@
             }
             .half {
                 position: absolute;
-                height: 150%;
+                height: 160%;
                 transform: rotate(45deg);
             }
             .left-half {
                 background: darken($yellow,2.5%);
                 left: -10%;
                 top: -10%;
-                width: 100%;
+                width: 120%;
             }
             .right-half{
                 background: darken($yellow,0%);
                 left: 0%;
                 bottom: 0;
-                width: 60%;
+                width: 70%;
+                transition: all .3s ease;
             }
             &:hover{
                 transform: scale(1.1);
+                .half{
+                    transform: rotate(0deg);
+                }
+                .right-half{
+                    left: -20%;
+                }
             }
         }
     }

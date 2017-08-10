@@ -569,7 +569,7 @@ $(function () {
                     $('.color').addClass(currentClass);
                     $.post('/db/colors', function (res) {
                         for (var i = 0; i < res.length; i++) {
-                            $('div.colors').append('<div class="col-xs-6 col-sm-4 col-md-2 color-wrap"> <div class="col-xs-12 select text-editable" style="border-color:' + res[i].hex + ';" data-color="' + res[i].color + '" data-var="colorName1">' + res[i].color + '</div></div>')
+                            $('div.colors').append('<div class="color"><div class="half left-half"></div><div class="half right-half"></div><div class="tag">'+res.name+'</div></div>')
                         }
                         $('.select').click(function () {
                             favColor = $(this).attr('data-color');
