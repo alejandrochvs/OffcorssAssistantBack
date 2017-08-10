@@ -1133,7 +1133,7 @@ html {
                 background-size: cover;
                 overflow: hidden;
                 transition: all 0.3s ease; }
-                html body .content .screen .container .occasion .occasions .background .cont i {
+                html body .content .screen .container .occasion .occasions .background .cont img {
                   color: transparent;
                   transition: all .3s ease;
                   font-size: 30px;
@@ -1168,6 +1168,7 @@ html {
                     white-space: nowrap;
                     text-align: center;
                     margin: 0;
+                    font-size: 16px;
                     color: white; }
                 html body .content .screen .container .occasion .occasions .background .cont:hover, html body .content .screen .container .occasion .occasions .background .cont.active {
                   transform: scale(1); }

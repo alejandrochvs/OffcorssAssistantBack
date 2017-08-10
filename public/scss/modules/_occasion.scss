@@ -29,7 +29,7 @@
                 $occasionColor: $yellow;
                 $opacity: 0.8;
                 transition: all 0.3s ease;
-                i {
+                img {
                     color: transparent;
                     transition: all .3s ease;
                     font-size: 30px;
@@ -67,6 +67,7 @@
                         white-space: nowrap;
                         text-align: center;
                         margin: 0;
+                        font-size: 16px;
                         color: white;
                     }
                 }
