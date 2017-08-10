@@ -1671,7 +1671,8 @@ html {
                 z-index: -1; }
           html body .content .screen .container .personality {
             padding: 5vh 0;
-            height: 100%; }
+            height: 100%;
+            overflow: scroll; }
             html body .content .screen .container .personality .selection-wrap {
               text-align: center; }
               html body .content .screen .container .personality .selection-wrap .title {
@@ -1683,8 +1684,8 @@ html {
                   padding: 2%;
                   font-size: 50px; }
             html body .content .screen .container .personality .personWrap .person {
-              padding: 2.5vh 1vw;
-              height: 35vh;
+              padding: 1vh 0.5vw;
+              height: 40vh;
               background: transparent;
               overflow: hidden;
               transition: all .3s ease;
@@ -1705,10 +1706,10 @@ html {
                 html body .content .screen .container .personality .personWrap .person .background .offset {
                   height: 28vh; }
                 html body .content .screen .container .personality .personWrap .person .background .title {
-                  height: 5vh;
+                  height: 10vh;
                   background: white !important; }
                   html body .content .screen .container .personality .personWrap .person .background .title h4 {
-                    line-height: 4vh;
+                    line-height: 8vh;
                     text-transform: uppercase;
                     margin: 0;
                     white-space: nowrap;
@@ -1717,7 +1718,7 @@ html {
                     font-weight: 100;
                     color: #333;
                     font-family: FrontageCBold;
-                    font-size: 20px; }
+                    font-size: 30px; }
               html body .content .screen .container .personality .personWrap .person.transparent {
                 transform: scale(1); }
                 html body .content .screen .container .personality .personWrap .person.transparent .fa-check {
@@ -1727,6 +1728,8 @@ html {
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover; }
+                html body .content .screen .container .personality .personWrap .person:nth-child(1) .background .title h4 {
+                  color: #73626E; }
               html body .content .screen .container .personality .personWrap .person:nth-child(2) .background {
                 background: url("../IMG/Personality/personalidad-2.jpg");
                 background-position: center;
