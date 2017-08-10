@@ -1628,6 +1628,7 @@ html {
               html body .content .screen .container .color .colors .color-wrap:nth-child(4) .select {
                 border-color: #e60000; }
               html body .content .screen .container .color .colors .color {
+                position: relative;
                 height: 5vw;
                 width: 5vw;
                 background: transparent;
@@ -1638,7 +1639,7 @@ html {
                 html body .content .screen .container .color .colors .color .half {
                   position: absolute;
                   height: 5vw;
-                  width: 5vw; }
+                  width: 2.5vw; }
                 html body .content .screen .container .color .colors .color .left-half {
                   background: red;
                   left: 0; }

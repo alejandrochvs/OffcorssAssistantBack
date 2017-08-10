@@ -58,6 +58,7 @@
             }
         }
         .color {
+            position: relative;
             height: 5vw;
             width: 5vw;
             background: transparent;
@@ -69,7 +70,7 @@
             .half {
                 position: absolute;
                 height: 5vw;
-                width: 5vw;
+                width: 2.5vw;
             }
             .left-half {
                 background: red;
