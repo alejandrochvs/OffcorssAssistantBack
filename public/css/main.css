@@ -736,27 +736,32 @@ html {
                 html body .content .screen .container .size .selection-wrap .title .text {
                   transition: all 0.3s ease;
                   background: transparent;
-                  border-bottom: solid 3px #fd0;
                   padding: 2%;
                   color: white;
                   cursor: pointer;
                   font-size: 35px; }
                   html body .content .screen .container .size .selection-wrap .title .text a {
+                    text-decoration: none;
                     color: white;
-                    border-bottom: solid #fd0;
+                    border-bottom: solid 2px #fd0;
                     transition: all .3s ease;
+                    padding-bottom: 5px;
+                    padding-right: 10px;
+                    padding-left: 10px;
                     top: 10px;
                     position: relative;
                     font-size: 36px;
                     font-family: FrontageCBold; }
+                    html body .content .screen .container .size .selection-wrap .title .text a:hover {
+                      border-color: white !important; }
                   html body .content .screen .container .size .selection-wrap .title .text .fa {
                     position: absolute;
-                    right: -25px;
-                    top: -7px;
+                    right: -20%;
+                    top: 0px;
                     background: #fd0;
                     border-radius: 50%;
-                    height: 18px;
-                    width: 18px;
+                    height: 3.5vw;
+                    width: 3.5vw;
                     line-height: 18px;
                     font-size: 14px;
                     color: white; }
@@ -817,7 +822,7 @@ html {
             html body .content .screen .container .size.boy .selection-wrap .title .text {
               border-bottom-color: #6B85AB; }
               html body .content .screen .container .size.boy .selection-wrap .title .text a {
-                color: #6B85AB; }
+                border-color: #6B85AB; }
                 html body .content .screen .container .size.boy .selection-wrap .title .text a .fa {
                   background-color: #6B85AB; }
             html body .content .screen .container .size.boy .selection-wrap .padWrap .image div {
@@ -834,7 +839,7 @@ html {
             html body .content .screen .container .size.girl .selection-wrap .title .text {
               border-bottom-color: #FF0080; }
               html body .content .screen .container .size.girl .selection-wrap .title .text a {
-                color: #FF0080; }
+                border-color: #FF0080; }
                 html body .content .screen .container .size.girl .selection-wrap .title .text a .fa {
                   background-color: #FF0080; }
             html body .content .screen .container .size.girl .selection-wrap .padWrap .image div {
@@ -851,7 +856,7 @@ html {
             html body .content .screen .container .size.bBoy .selection-wrap .title .text {
               border-bottom-color: #82bc00; }
               html body .content .screen .container .size.bBoy .selection-wrap .title .text a {
-                color: #82bc00; }
+                border-color: #82bc00; }
                 html body .content .screen .container .size.bBoy .selection-wrap .title .text a .fa {
                   background-color: #82bc00; }
             html body .content .screen .container .size.bBoy .selection-wrap .padWrap .image div {
@@ -868,7 +873,7 @@ html {
             html body .content .screen .container .size.bGirl .selection-wrap .title .text {
               border-bottom-color: #9794d2; }
               html body .content .screen .container .size.bGirl .selection-wrap .title .text a {
-                color: #9794d2; }
+                border-color: #9794d2; }
                 html body .content .screen .container .size.bGirl .selection-wrap .title .text a .fa {
                   background-color: #9794d2; }
             html body .content .screen .container .size.bGirl .selection-wrap .padWrap .image div {
@@ -885,7 +890,7 @@ html {
             html body .content .screen .container .size.nBoy .selection-wrap .title .text {
               border-bottom-color: #3e8ede; }
               html body .content .screen .container .size.nBoy .selection-wrap .title .text a {
-                color: #3e8ede; }
+                border-color: #3e8ede; }
                 html body .content .screen .container .size.nBoy .selection-wrap .title .text a .fa {
                   background-color: #3e8ede; }
             html body .content .screen .container .size.nBoy .selection-wrap .padWrap .image div {
@@ -902,7 +907,7 @@ html {
             html body .content .screen .container .size.nGirl .selection-wrap .title .text {
               border-bottom-color: #ee9bac; }
               html body .content .screen .container .size.nGirl .selection-wrap .title .text a {
-                color: #ee9bac; }
+                border-color: #ee9bac; }
                 html body .content .screen .container .size.nGirl .selection-wrap .title .text a .fa {
                   background-color: #ee9bac; }
             html body .content .screen .container .size.nGirl .selection-wrap .padWrap .image div {

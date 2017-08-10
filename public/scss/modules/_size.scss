@@ -54,28 +54,34 @@
             .text {
                 transition: all 0.3s ease;
                 background: transparent;
-                border-bottom: solid 3px $yellow;
                 padding: 2%;
                 color: white;
                 cursor: pointer;
                 font-size: 35px;
                 a {
+                    text-decoration: none;
                     color: white;
-                    border-bottom: solid $yellow;
+                    border-bottom: solid 2px $yellow;
                     transition: all .3s ease;
+                    padding-bottom: 5px;
+                    padding-right: 10px;
+                    padding-left: 10px;
                     top: 10px;
                     position: relative;
                     font-size: 36px;
                     font-family: FrontageCBold;
+                    &:hover{
+                        border-color: white !important;
+                    }
                 }
                 .fa {
                     position: absolute;
-                    right: -25px;
-                    top: -7px;
+                    right: -20%;
+                    top: 0px;
                     background: $yellow;
                     border-radius: 50%;
-                    height: 18px;
-                    width: 18px;
+                    height: 3.5vw;
+                    width: 3.5vw;
                     line-height: 18px;
                     font-size: 14px;
                     color: white;
@@ -159,7 +165,7 @@
                 .text {
                     border-bottom-color: $boy;
                     a {
-                        color: $boy;
+                        border-color: $boy;
                         .fa {
                             background-color: $boy;
                         }
@@ -204,7 +210,7 @@
                 .text {
                     border-bottom-color: $girl;
                     a {
-                        color: $girl;
+                        border-color: $girl;
                         .fa {
                             background-color: $girl;
                         }
@@ -249,7 +255,7 @@
                 .text {
                     border-bottom-color: $bBoy;
                     a {
-                        color: $bBoy;
+                        border-color: $bBoy;
                         .fa {
                             background-color: $bBoy;
                         }
@@ -294,7 +300,7 @@
                 .text {
                     border-bottom-color: $bGirl;
                     a {
-                        color: $bGirl;
+                        border-color: $bGirl;
                         .fa {
                             background-color: $bGirl;
                         }
@@ -339,7 +345,7 @@
                 .text {
                     border-bottom-color: $nBoy;
                     a {
-                        color: $nBoy;
+                        border-color: $nBoy;
                         .fa {
                             background-color: $nBoy;
                         }
@@ -384,7 +390,7 @@
                 .text {
                     border-bottom-color: $nGirl;
                     a {
-                        color: $nGirl;
+                        border-color: $nGirl;
                         .fa {
                             background-color: $nGirl;
                         }
