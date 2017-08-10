@@ -48,6 +48,9 @@
                     background: white;
                     padding: 4%;
                     height: 8vh;
+                    .occasion-desc{
+                        position: absolute;
+                    }
                     h3 {
                         color: #333;
                         transition: all .3s ease;
@@ -70,9 +73,8 @@
                         height: 35vh;
                         transform: scale(1.4);
                         h3 {
+                        line-height: 50vh;
                             font-size: 12px;
-                            bottom: 0;
-                            position: absolute;
                         }
                     }
                 }
