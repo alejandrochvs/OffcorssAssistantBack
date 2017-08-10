@@ -1157,7 +1157,8 @@ html {
                     transition: all .3s ease;
                     left: 0;
                     font-size: 10px;
-                    padding: 0 20%; }
+                    padding: 0 20%;
+                    color: transparent; }
                   html body .content .screen .container .occasion .occasions .background .cont .title h3 {
                     color: #333;
                     transition: all .3s ease;
@@ -1176,12 +1177,11 @@ html {
                     height: 35vh;
                     transform: scale(1.4); }
                     html body .content .screen .container .occasion .occasions .background .cont:hover .title .occasion-desc, html body .content .screen .container .occasion .occasions .background .cont.active .title .occasion-desc {
-                      top: 20%; }
+                      top: 20%;
+                      color: inherit; }
                     html body .content .screen .container .occasion .occasions .background .cont:hover .title h3, html body .content .screen .container .occasion .occasions .background .cont.active .title h3 {
                       line-height: 50vh;
                       font-size: 12px; }
-                html body .content .screen .container .occasion .occasions .background .cont.active i {
-                  color: white; }
               html body .content .screen .container .occasion .occasions .background:nth-child(1) .cont {
                 background-image: url(../IMG/occasions/ocasiones-1.jpg); }
                 html body .content .screen .container .occasion .occasions .background:nth-child(1) .cont .title h3 {
@@ -1206,11 +1206,17 @@ html {
                 background-image: url(../IMG/occasions/ocasiones-6.jpg); }
                 html body .content .screen .container .occasion .occasions .background:nth-child(7) .cont .title h3 {
                   color: #5A6069; }
+              html body .content .screen .container .occasion .occasions .background .cont.active i {
+                color: white; }
+              html body .content .screen .container .occasion .occasions .background .cont.active .title .occasion-desc {
+                color: white; }
+              html body .content .screen .container .occasion .occasions .background .cont.active .title h3 {
+                color: white; }
             html body .content .screen .container .occasion .occasionsBtn {
               border-radius: 2px;
-              background: #fd0;
+              background: white;
               transition: all .3s ease;
-              color: white;
+              color: #fd0;
               padding: 1%;
               cursor: pointer;
               height: 5vh;

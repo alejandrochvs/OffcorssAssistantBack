@@ -56,6 +56,7 @@
                         left: 0;
                         font-size: 10px;
                         padding: 0 20%;
+                        color: transparent;
                     }
                     h3 {
                         color: #333;
@@ -80,16 +81,12 @@
                         transform: scale(1.4);
                         .occasion-desc {
                             top: 20%;
+                            color: inherit;
                         }
                         h3 {
                             line-height: 50vh;
                             font-size: 12px;
                         }
-                    }
-                }
-                &.active {
-                    i {
-                        color: white;
                     }
                 }
             }
@@ -153,13 +150,28 @@
                     }
                 }
             }
+            .cont {
+                &.active {
+                    i {
+                        color: white;
+                    }
+                    .title {
+                        .occasion-desc {
+                            color: white;
+                        }
+                        h3 {
+                            color: white;
+                        }
+                    }
+                }
+            }
         }
     }
     .occasionsBtn {
         border-radius: 2px;
-        background: $yellow;
+        background: white;
         transition: all .3s ease;
-        color: white;
+        color: $yellow;
         padding: 1%;
         cursor: pointer;
         height: 5vh;
@@ -196,8 +208,8 @@
                         .img {
                             background: rgba($occasionColor, $opacity);
                         }
-                        .title{
-                            background: rgba($occasionColor,$opacity);
+                        .title {
+                            background: rgba($occasionColor, $opacity);
                         }
                     }
                 }
@@ -234,8 +246,8 @@
                         .img {
                             background: rgba($occasionColor, $opacity);
                         }
-                        .title{
-                            background: rgba($occasionColor,$opacity);
+                        .title {
+                            background: rgba($occasionColor, $opacity);
                         }
                     }
                 }
@@ -272,8 +284,8 @@
                         .img {
                             background: rgba($occasionColor, $opacity);
                         }
-                        .title{
-                            background: rgba($occasionColor,$opacity);
+                        .title {
+                            background: rgba($occasionColor, $opacity);
                         }
                     }
                 }
@@ -310,8 +322,8 @@
                         .img {
                             background: rgba($occasionColor, $opacity);
                         }
-                        .title{
-                            background: rgba($occasionColor,$opacity);
+                        .title {
+                            background: rgba($occasionColor, $opacity);
                         }
                     }
                 }
@@ -348,8 +360,8 @@
                         .img {
                             background: rgba($occasionColor, $opacity);
                         }
-                        .title{
-                            background: rgba($occasionColor,$opacity);
+                        .title {
+                            background: rgba($occasionColor, $opacity);
                         }
                     }
                 }
@@ -386,8 +398,8 @@
                         .img {
                             background: rgba($occasionColor, $opacity);
                         }
-                        .title{
-                            background: rgba($occasionColor,$opacity);
+                        .title {
+                            background: rgba($occasionColor, $opacity);
                         }
                     }
                 }
