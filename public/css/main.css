@@ -1633,16 +1633,17 @@ html {
                 display: inline-block;
                 background: transparent;
                 border-radius: 50%;
-                border: solid 2px white;
-                overflow: hidden; }
+                border: solid 2px white; }
                 html body .content .screen .container .color .colors .color .half {
                   position: absolute;
                   height: 5vw;
-                  width: 5vw;
-                  top: 0; }
+                  width: 5vw; }
                 html body .content .screen .container .color .colors .color .left-half {
                   background: red;
-                  left: 0; }
+                  top: -100%; }
+                html body .content .screen .container .color .colors .color .right-half {
+                  background: blue;
+                  right: 0; }
             html body .content .screen .container .color.boy .selection-wrap .title .text {
               border-bottom-color: #FF4D0F; }
             html body .content .screen .container .color.girl .selection-wrap .title .text {
