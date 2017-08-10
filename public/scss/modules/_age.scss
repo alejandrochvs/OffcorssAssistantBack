@@ -1,11 +1,12 @@
 .age {
     padding: 5vh 0;
     .selection-wrap {
+        margin-top: 10vh;
         text-align: center;
         .title {
             .text {
                 color: white;
-                font-size: 4vw;
+                font-size: 3.5vw;
                 transition: all 0.3s ease;
                 background: transparent;
                 padding: 2%;
@@ -34,13 +35,13 @@
                 box-shadow: 7.5px 7.5px 0px 2px rgba(255, 255, 255, 1);
                 h3 {
                     margin: 0;
-                    font-size: 20px;
+                    font-size: 22px;
                     white-space: nowrap;
                     font-family: FrontageCN;
                     right: 10%;
                     top: 40%;
                     position: absolute;
-                    b{
+                    b {
                         font-size: 45px;
                         right: 10%;
                         top: -100%;
@@ -51,10 +52,8 @@
                 &:last-child {
                     margin: 0;
                 }
-                &:hover{
-                    -webkit-box-shadow: 15px 15px 0px 2px rgba(255, 255, 255, 1);
-                -moz-box-shadow: 15px 15px 0px 2px rgba(255, 255, 255, 1);
-                box-shadow: 15px 15px 0px 2px rgba(255, 255, 255, 1);
+                &:hover {
+                    transform: scale(1.1);
                 }
                 &.boy {
                     background: $boy;
@@ -80,10 +79,14 @@
     .img {
         height: 60vh;
         padding: 0;
+        top: 10vh;
+        position: absolute;
+        right: 0;
         .image {
             height: 100%;
             padding: 0;
-            padding-right: 15px;
+            padding-right: 3vw;
+            padding-left: 1vw;
             background-position: center;
             background-origin: content-box;
             background-size: contain;

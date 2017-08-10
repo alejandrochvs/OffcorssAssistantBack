@@ -551,10 +551,11 @@ html {
           html body .content .screen .container .age {
             padding: 5vh 0; }
             html body .content .screen .container .age .selection-wrap {
+              margin-top: 10vh;
               text-align: center; }
               html body .content .screen .container .age .selection-wrap .title .text {
                 color: white;
-                font-size: 4vw;
+                font-size: 3.5vw;
                 transition: all 0.3s ease;
                 background: transparent;
                 padding: 2%; }
@@ -579,7 +580,7 @@ html {
                 box-shadow: 7.5px 7.5px 0px 2px white; }
                 html body .content .screen .container .age .age-wrapper .pad .row h3 {
                   margin: 0;
-                  font-size: 20px;
+                  font-size: 22px;
                   white-space: nowrap;
                   font-family: FrontageCN;
                   right: 10%;
@@ -594,9 +595,7 @@ html {
                 html body .content .screen .container .age .age-wrapper .pad .row:last-child {
                   margin: 0; }
                 html body .content .screen .container .age .age-wrapper .pad .row:hover {
-                  -webkit-box-shadow: 15px 15px 0px 2px white;
-                  -moz-box-shadow: 15px 15px 0px 2px white;
-                  box-shadow: 15px 15px 0px 2px white; }
+                  transform: scale(1.1); }
                 html body .content .screen .container .age .age-wrapper .pad .row.boy {
                   background: #6B85AB; }
                 html body .content .screen .container .age .age-wrapper .pad .row.bBoy {
@@ -611,11 +610,15 @@ html {
                   background: #ee9bac; }
             html body .content .screen .container .age .img {
               height: 60vh;
-              padding: 0; }
+              padding: 0;
+              top: 10vh;
+              position: absolute;
+              right: 0; }
               html body .content .screen .container .age .img .image {
                 height: 100%;
                 padding: 0;
-                padding-right: 15px;
+                padding-right: 3vw;
+                padding-left: 1vw;
                 background-position: center;
                 background-origin: content-box;
                 background-size: contain;
