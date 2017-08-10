@@ -36,10 +36,12 @@ html {
                 padding: 0;
                 &.title {
                     .cont {
-                        font-size: 18px;
+                        font-size: 28px;
                         overflow: hidden;
                         text-overflow: ellipsis;
                         white-space: nowrap;
+                        color:#73626E;
+                        font-weight: 500;
                     }
                 }
                 .cont {
@@ -68,7 +70,8 @@ html {
                     }
                     a {
                         text-decoration: none;
-                        color: #333;
+                        color: #73626E;
+                        font-size: 30px;
                         i {
                             font-size: 28px;
                             top: 5px;
@@ -77,9 +80,9 @@ html {
                             transition: all 0.3s ease;
                             &:hover {
                                 color: darken($yellow, 5%);
-                                &.fa-times{
-                                    color : darken(#80D6BF,10%);
-                                    border-color: darken(#80D6BF,10%);
+                                &.fa-times {
+                                    color: darken(#80D6BF, 10%);
+                                    border-color: darken(#80D6BF, 10%);
                                 }
                             }
                         }
@@ -87,15 +90,15 @@ html {
                     .exit-app {
                         transition: all .3s ease;
                         top: 0px;
-                        margin-right: 5px;
+                        margin-right: 10px;
                         &:hover {
-                            color: lighten(#80D6BF,5%);
+                            color: lighten(#80D6BF, 5%);
                         }
                     }
                     .fa-times {
                         color: #80D6BF;
                         font-size: 28px;
-                        top: 4px;
+                        top: 0px;
                         border: dashed 2px #80D6BF;
                         border-radius: 5px;
                         padding: 0 1%;

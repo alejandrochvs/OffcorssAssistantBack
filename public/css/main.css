@@ -215,10 +215,12 @@ html {
         line-height: 10vh;
         padding: 0; }
         html body .header .head.title .cont {
-          font-size: 18px;
+          font-size: 28px;
           overflow: hidden;
           text-overflow: ellipsis;
-          white-space: nowrap; }
+          white-space: nowrap;
+          color: #73626E;
+          font-weight: 500; }
         html body .header .head .cont {
           z-index: 1;
           transition: all 0.3s ease; }
@@ -241,7 +243,8 @@ html {
                 color: #fd0; }
           html body .header .head .cont a {
             text-decoration: none;
-            color: #333; }
+            color: #73626E;
+            font-size: 30px; }
             html body .header .head .cont a i {
               font-size: 28px;
               top: 5px;
@@ -256,13 +259,13 @@ html {
           html body .header .head .cont .exit-app {
             transition: all .3s ease;
             top: 0px;
-            margin-right: 5px; }
+            margin-right: 10px; }
             html body .header .head .cont .exit-app:hover {
               color: #93dcc9; }
           html body .header .head .cont .fa-times {
             color: #80D6BF;
             font-size: 28px;
-            top: 4px;
+            top: 0px;
             border: dashed 2px #80D6BF;
             border-radius: 5px;
             padding: 0 1%;
