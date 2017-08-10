@@ -20,18 +20,12 @@
                 cursor: pointer;
                 transition: all 0.3s ease;
                 padding: 0;
-                background: $yellow;
-                background-position: center top;
-                background-size: contain;
-                border-top-left-radius: 15px;
-                border-top-right-radius: 15px;
+                background: transparent !important;
                 overflow: hidden;
                 $occasionColor: $yellow;
                 $opacity: 0.8;
-                border: solid 5px rgba($occasionColor, $opacity);
-                border-bottom: none;
                 padding: 0;
-                background-repeat: repeat;
+                border: none !important;
                 .img {
                     height: 40vh;
                     img{
@@ -42,14 +36,15 @@
                 .title {
                     transition: all 0.3s ease;
                     padding: 0;
-                    background: rgba($occasionColor, $opacity);
-                    padding: 4%;
+                    background: transparent !important;
                     h3 {
                         overflow: hidden;
                         text-overflow: ellipsis;
                         white-space: nowrap;
                         text-align: center;
                         margin: 0;
+                        font-size: 60px;
+                        font-family: FrontageCBold;
                         color: white;
                     }
                 }

@@ -1400,16 +1400,10 @@ html {
                 cursor: pointer;
                 transition: all 0.3s ease;
                 padding: 0;
-                background: #fd0;
-                background-position: center top;
-                background-size: contain;
-                border-top-left-radius: 15px;
-                border-top-right-radius: 15px;
+                background: transparent !important;
                 overflow: hidden;
-                border: solid 5px rgba(255, 221, 0, 0.8);
-                border-bottom: none;
                 padding: 0;
-                background-repeat: repeat; }
+                border: none !important; }
                 html body .content .screen .container .weather .weathers .background .cont .img {
                   height: 40vh; }
                   html body .content .screen .container .weather .weathers .background .cont .img img {
@@ -1418,14 +1412,15 @@ html {
                 html body .content .screen .container .weather .weathers .background .cont .title {
                   transition: all 0.3s ease;
                   padding: 0;
-                  background: rgba(255, 221, 0, 0.8);
-                  padding: 4%; }
+                  background: transparent !important; }
                   html body .content .screen .container .weather .weathers .background .cont .title h3 {
                     overflow: hidden;
                     text-overflow: ellipsis;
                     white-space: nowrap;
                     text-align: center;
                     margin: 0;
+                    font-size: 60px;
+                    font-family: FrontageCBold;
                     color: white; }
               html body .content .screen .container .weather .weathers .background:nth-child(1) .cont {
                 background-color: #1E90FF;
