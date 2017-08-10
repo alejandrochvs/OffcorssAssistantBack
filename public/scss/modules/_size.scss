@@ -121,8 +121,14 @@
                         overflow: hidden;
                         color: white;
                         font-size: 24px;
+                        background: transparent;
+                        border-radius: 50%;
+                        width: 4vw;
+                        height: 4vw;
+                        margin-right: 4.7vw;
                         &:hover {
                             border-color: $yellow;
+                            background: white;
                         }
                         &.active {
                             background: $yellow;
@@ -145,7 +151,7 @@
                         width: 100%;
                         height: 5vh;
                         transition: all 0.3s ease;
-                        color: inherit;
+                        color: white;
                     }
                     &:hover {
                         .fa {
@@ -176,7 +182,7 @@
                 .padSize {
                     .row {
                         .box {
-                            &.active {
+                            &.active,&:hover {
                                 background: $boy;
                                 color: white;
                             }
@@ -212,7 +218,7 @@
                 .padSize {
                     .row {
                         .box {
-                            &.active {
+                            &.active,&:hover {
                                 background: $girl;
                                 color: white;
                             }
@@ -248,7 +254,7 @@
                 .padSize {
                     .row {
                         .box {
-                            &.active {
+                            &.active,&:hover {
                                 background: $bBoy;
                                 color: white;
                             }
@@ -284,7 +290,7 @@
                 .padSize {
                     .row {
                         .box {
-                            &.active {
+                            &.active,&:hover {
                                 background: $bGirl;
                                 color: white;
                             }
@@ -320,7 +326,7 @@
                 .padSize {
                     .row {
                         .box {
-                            &.active {
+                            &.active,&:hover {
                                 background: $nBoy;
                                 color: white;
                             }
@@ -356,7 +362,7 @@
                 .padSize {
                     .row {
                         .box {
-                            &.active {
+                            &.active,&:hover {
                                 background: $nGirl;
                                 color: white;
                             }
