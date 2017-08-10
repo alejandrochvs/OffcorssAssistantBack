@@ -7,9 +7,10 @@
             margin-bottom: 5vh;
             .text {
                 transition: all 0.3s ease;
-                background: white;
-                border-bottom: solid 3px $yellow;
+                color: white;
+                border-bottom: solid 1px $yellow;
                 padding: 2%;
+                font-size: 50px;
             }
         }
     }
@@ -34,22 +35,24 @@
                 height: inherit;
                 padding: 0;
                 background: rgba(black, 0.5);
-                border: solid 2px $yellow;
+                border: none !important;
                 .offset {
                     height: 28vh;
                 }
                 .title {
                     height: 5vh;
-                    background: rgba($yellow, 0.8);
+                    background: white !important;
                     h4 {
-                        line-height: 5vh;
+                        line-height: 4vh;
                         text-transform: uppercase;
                         margin: 0;
                         white-space: nowrap;
                         text-overflow: ellipsis;
                         overflow: hidden;
                         font-weight: 100;
-                        color: white;
+                        color: #333;
+                        font-family: FrontageCBold;
+                        font-size: 20px;
                     }
                 }
             }

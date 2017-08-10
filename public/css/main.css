@@ -1678,9 +1678,10 @@ html {
                 margin-bottom: 5vh; }
                 html body .content .screen .container .personality .selection-wrap .title .text {
                   transition: all 0.3s ease;
-                  background: white;
-                  border-bottom: solid 3px #fd0;
-                  padding: 2%; }
+                  color: white;
+                  border-bottom: solid 1px #fd0;
+                  padding: 2%;
+                  font-size: 50px; }
             html body .content .screen .container .personality .personWrap .person {
               padding: 2.5vh 1vw;
               height: 35vh;
@@ -1700,21 +1701,23 @@ html {
                 height: inherit;
                 padding: 0;
                 background: rgba(0, 0, 0, 0.5);
-                border: solid 2px #fd0; }
+                border: none !important; }
                 html body .content .screen .container .personality .personWrap .person .background .offset {
                   height: 28vh; }
                 html body .content .screen .container .personality .personWrap .person .background .title {
                   height: 5vh;
-                  background: rgba(255, 221, 0, 0.8); }
+                  background: white !important; }
                   html body .content .screen .container .personality .personWrap .person .background .title h4 {
-                    line-height: 5vh;
+                    line-height: 4vh;
                     text-transform: uppercase;
                     margin: 0;
                     white-space: nowrap;
                     text-overflow: ellipsis;
                     overflow: hidden;
                     font-weight: 100;
-                    color: white; }
+                    color: #333;
+                    font-family: FrontageCBold;
+                    font-size: 20px; }
               html body .content .screen .container .personality .personWrap .person.transparent {
                 transform: scale(1); }
                 html body .content .screen .container .personality .personWrap .person.transparent .fa-check {
