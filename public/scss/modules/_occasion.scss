@@ -48,8 +48,14 @@
                     background: white;
                     padding: 4%;
                     height: 8vh;
-                    .occasion-desc{
+                    overflow: hidden;
+                    .occasion-desc {
                         position: absolute;
+                        top: -15vh;
+                        transition: all .3s ease;
+                        left: 0;
+                        font-size: 10px;
+                        padding: 0 20%;
                     }
                     h3 {
                         color: #333;
@@ -72,8 +78,11 @@
                     .title {
                         height: 35vh;
                         transform: scale(1.4);
+                        .occasion-desc {
+                            top: 10vh;
+                        }
                         h3 {
-                        line-height: 50vh;
+                            line-height: 50vh;
                             font-size: 12px;
                         }
                     }
