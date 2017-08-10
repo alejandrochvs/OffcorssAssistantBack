@@ -11,6 +11,8 @@
                 padding: 2%;
             }
         }
+    }
+    .age-wrapper {
         .pad {
             padding: 1%;
             border: solid 2px $yellow;
@@ -24,29 +26,29 @@
                 transition: all .3s ease;
                 height: 10vh;
                 cursor: pointer;
-                h3{
+                h3 {
                     margin: 0;
                     line-height: 10vh;
                 }
-                &:last-child{
+                &:last-child {
                     margin: 0;
                 }
-                &.boy{
+                &.boy {
                     background: $boy;
                 }
-                &.bBoy{
+                &.bBoy {
                     background: $bBoy;
                 }
-                &.girl{
+                &.girl {
                     background: $girl;
                 }
-                &.bGirl{
+                &.bGirl {
                     background: $bGirl;
                 }
-                &.nBoy{
+                &.nBoy {
                     background: $nBoy;
                 }
-                &.nGirl{
+                &.nGirl {
                     background: $nGirl;
                 }
             }
@@ -69,6 +71,8 @@
                     border-bottom-color: $boy;
                 }
             }
+        }
+        .age-wrapper {
             .pad {
                 border-color: $boy;
                 .row {
@@ -97,6 +101,8 @@
                     border-bottom-color: $girl;
                 }
             }
+        }
+        .age-wrapper{
             .pad {
                 border-color: $girl;
                 .row {
@@ -125,6 +131,8 @@
                     border-bottom-color: $bBoy;
                 }
             }
+        }
+        .age-wrapper{
             .pad {
                 border-color: $bBoy;
                 .row {
