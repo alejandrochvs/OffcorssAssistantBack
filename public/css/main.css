@@ -449,7 +449,8 @@ html {
                 margin-bottom: 5vh; }
                 html body .content .screen .container .name .selection-wrap .title .text {
                   transition: all 0.3s ease;
-                  background: white;
+                  background: transparent;
+                  color: white;
                   border-bottom: solid 3px #fd0;
                   padding: 2%; }
             html body .content .screen .container .name .nameInput input {
@@ -498,13 +499,13 @@ html {
             html body .content .screen .container .name.boy .continue div {
               background: #6B85AB; }
             html body .content .screen .container .name.boy .img .image {
-              background-image: url("../IMG/Name/boy.png"); }
+              background-image: url("../IMG/Name/boy.jpg"); }
             html body .content .screen .container .name.girl .selection-wrap .title .text {
               border-bottom-color: #e70095; }
             html body .content .screen .container .name.girl .continue div {
               background: #e70095; }
             html body .content .screen .container .name.girl .img .image {
-              background-image: url("../IMG/Name/girl.png"); }
+              background-image: url("../IMG/Name/girl.jpg"); }
             html body .content .screen .container .name.bBoy .selection-wrap .title .text {
               border-bottom-color: #82bc00; }
             html body .content .screen .container .name.bBoy .continue div {

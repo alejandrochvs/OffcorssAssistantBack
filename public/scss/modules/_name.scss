@@ -6,7 +6,8 @@
             margin-bottom: 5vh;
             .text {
                 transition: all 0.3s ease;
-                background: white;
+                background: transparent;
+                color: white;
                 border-bottom: solid 3px $yellow;
                 padding: 2%;
             }
@@ -80,7 +81,7 @@
         }
         .img {
             .image {
-                background-image: url('../IMG/Name/boy.png');
+                background-image: url('../IMG/Name/boy.jpg');
             }
         }
     }
@@ -99,7 +100,7 @@
         }
         .img {
             .image {
-                background-image: url('../IMG/Name/girl.png');
+                background-image: url('../IMG/Name/girl.jpg');
             }
         }
     }
