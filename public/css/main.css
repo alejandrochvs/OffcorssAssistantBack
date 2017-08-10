@@ -734,16 +734,19 @@ html {
                 margin-bottom: 5vh; }
                 html body .content .screen .container .size .selection-wrap .title .text {
                   transition: all 0.3s ease;
-                  background: white;
+                  background: transparent;
                   border-bottom: solid 3px #fd0;
                   padding: 2%;
-                  cursor: pointer; }
+                  color: white;
+                  cursor: pointer;
+                  font-size: 35px; }
                   html body .content .screen .container .size .selection-wrap .title .text a {
                     color: #fd0;
                     transition: all .3s ease;
                     top: 10px;
                     position: relative;
-                    font-size: 14px; }
+                    font-size: 14px;
+                    font-family: FrontageCBold; }
                   html body .content .screen .container .size .selection-wrap .title .text .fa {
                     position: absolute;
                     right: -25px;

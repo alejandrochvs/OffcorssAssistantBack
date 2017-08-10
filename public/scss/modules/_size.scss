@@ -53,16 +53,19 @@
             margin-bottom: 5vh;
             .text {
                 transition: all 0.3s ease;
-                background: white;
+                background: transparent;
                 border-bottom: solid 3px $yellow;
                 padding: 2%;
+                color: white;
                 cursor: pointer;
+                font-size: 35px;
                 a {
                     color: $yellow;
                     transition: all .3s ease;
                     top: 10px;
                     position: relative;
                     font-size: 14px;
+                    font-family: FrontageCBold;
                 }
                 .fa {
                     position: absolute;
