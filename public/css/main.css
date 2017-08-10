@@ -475,7 +475,7 @@ html {
                 color: white;
                 border: none;
                 background-color: transparent;
-                font-size: 5vw;
+                font-size: 6vw;
                 font-weight: 100;
                 border-bottom: dashed 2px white; }
                 html body .content .screen .container .name .nameInput input::placeholder {
@@ -2821,7 +2821,7 @@ html {
         transition: all 0.3s ease;
         padding: 0;
         position: absolute;
-        top: -1vh;
+        top: 0;
         height: 1vh;
         z-index: 1;
         background: white; }
