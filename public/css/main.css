@@ -444,19 +444,23 @@ html {
           html body .content .screen .container .name {
             padding: 5vh 0; }
             html body .content .screen .container .name .selection-wrap {
-              text-align: center; }
+              text-align: center;
+              margin-top: 15vh; }
               html body .content .screen .container .name .selection-wrap .title .text {
                 transition: all 0.3s ease;
                 background: transparent;
                 color: white;
                 padding: 2%;
-                font-size: 50px; }
+                font-weight: 300;
+                font-size: 3vw; }
+            html body .content .screen .container .name .nameInput h1 {
+              margin: 0; }
             html body .content .screen .container .name .nameInput input {
               outline: none;
               color: white;
               border: none;
               background-color: transparent;
-              font-size: 8vw;
+              font-size: 5vw;
               font-weight: 100;
               border-bottom: dashed 2px white; }
               html body .content .screen .container .name .nameInput input::placeholder {
