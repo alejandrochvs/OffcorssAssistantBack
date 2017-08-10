@@ -79,7 +79,7 @@
                         height: 35vh;
                         transform: scale(1.4);
                         .occasion-desc {
-                            top: 10vh;
+                            top: 20%;
                         }
                         h3 {
                             line-height: 50vh;
@@ -196,6 +196,9 @@
                         .img {
                             background: rgba($occasionColor, $opacity);
                         }
+                        .title{
+                            background: rgba($occasionColor,$opacity);
+                        }
                     }
                 }
             }
@@ -230,6 +233,9 @@
                     &.active {
                         .img {
                             background: rgba($occasionColor, $opacity);
+                        }
+                        .title{
+                            background: rgba($occasionColor,$opacity);
                         }
                     }
                 }
@@ -266,6 +272,9 @@
                         .img {
                             background: rgba($occasionColor, $opacity);
                         }
+                        .title{
+                            background: rgba($occasionColor,$opacity);
+                        }
                     }
                 }
             }
@@ -300,6 +309,9 @@
                     &.active {
                         .img {
                             background: rgba($occasionColor, $opacity);
+                        }
+                        .title{
+                            background: rgba($occasionColor,$opacity);
                         }
                     }
                 }
@@ -336,6 +348,9 @@
                         .img {
                             background: rgba($occasionColor, $opacity);
                         }
+                        .title{
+                            background: rgba($occasionColor,$opacity);
+                        }
                     }
                 }
             }
@@ -370,6 +385,9 @@
                     &.active {
                         .img {
                             background: rgba($occasionColor, $opacity);
+                        }
+                        .title{
+                            background: rgba($occasionColor,$opacity);
                         }
                     }
                 }
