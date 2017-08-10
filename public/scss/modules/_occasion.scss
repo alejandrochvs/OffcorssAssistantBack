@@ -45,11 +45,11 @@
                 .title {
                     transition: all 0.3s ease;
                     padding: 0;
-                    background: white !important;
+                    background: white;
                     padding: 4%;
                     height: 8vh;
                     h3 {
-                        color: #333 !important;
+                        color: #333;
                         transition: all .3s ease;
                         line-height: 8vh;
                         overflow: hidden;
@@ -70,8 +70,9 @@
                         height: 35vh;
                         transform: scale(1.4);
                         h3 {
-                            line-height: 35vh;
                             font-size: 12px;
+                            bottom: 0;
+                            position: absolute;
                         }
                     }
                 }
@@ -126,7 +127,7 @@
                     background-image: url(../IMG/occasions/ocasiones-5.jpg);
                     .title {
                         h3 {
-                            color: #75AE9B;
+                            color: #A79E98;
                         }
                     }
                 }
@@ -136,7 +137,7 @@
                     background-image: url(../IMG/occasions/ocasiones-6.jpg);
                     .title {
                         h3 {
-                            color: #75AE9B;
+                            color: #5A6069;
                         }
                     }
                 }
@@ -180,9 +181,6 @@
                 .cont {
                     $occasionColor: $boy;
                     $opacity: 0.8;
-                    .title {
-                        background: rgba($occasionColor, $opacity);
-                    }
                     &.active {
                         .img {
                             background: rgba($occasionColor, $opacity);
@@ -223,9 +221,6 @@
                             background: rgba($occasionColor, $opacity);
                         }
                     }
-                    .title {
-                        background: rgba($occasionColor, $opacity);
-                    }
                 }
             }
         }
@@ -260,9 +255,6 @@
                         .img {
                             background: rgba($occasionColor, $opacity);
                         }
-                    }
-                    .title {
-                        background: rgba($occasionColor, $opacity);
                     }
                 }
             }
@@ -299,9 +291,6 @@
                             background: rgba($occasionColor, $opacity);
                         }
                     }
-                    .title {
-                        background: rgba($occasionColor, $opacity);
-                    }
                 }
             }
         }
@@ -337,9 +326,6 @@
                             background: rgba($occasionColor, $opacity);
                         }
                     }
-                    .title {
-                        background: rgba($occasionColor, $opacity);
-                    }
                 }
             }
         }
@@ -374,9 +360,6 @@
                         .img {
                             background: rgba($occasionColor, $opacity);
                         }
-                    }
-                    .title {
-                        background: rgba($occasionColor, $opacity);
                     }
                 }
             }
