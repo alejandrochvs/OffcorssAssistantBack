@@ -153,29 +153,29 @@ html {
                   width: 100%;
                   color: transparent; }
               html body .ui .ui-section .ui-hidden ul.colors li:nth-child(1) .color {
-                background: #6B85AB; }
+                background: #FF4D0F; }
                 html body .ui .ui-section .ui-hidden ul.colors li:nth-child(1) .color h5 {
-                  color: #6B85AB; }
+                  color: #FF4D0F; }
               html body .ui .ui-section .ui-hidden ul.colors li:nth-child(2) .color {
-                background: #FF0080; }
+                background: #FF0295; }
                 html body .ui .ui-section .ui-hidden ul.colors li:nth-child(2) .color h5 {
-                  color: #FF0080; }
+                  color: #FF0295; }
               html body .ui .ui-section .ui-hidden ul.colors li:nth-child(3) .color {
-                background: #82bc00; }
+                background: #78BF01; }
                 html body .ui .ui-section .ui-hidden ul.colors li:nth-child(3) .color h5 {
-                  color: #82bc00; }
+                  color: #78BF01; }
               html body .ui .ui-section .ui-hidden ul.colors li:nth-child(4) .color {
-                background: #9794d2; }
+                background: #9692D1; }
                 html body .ui .ui-section .ui-hidden ul.colors li:nth-child(4) .color h5 {
-                  color: #9794d2; }
+                  color: #9692D1; }
               html body .ui .ui-section .ui-hidden ul.colors li:nth-child(5) .color {
-                background: #3e8ede; }
+                background: #009DB8; }
                 html body .ui .ui-section .ui-hidden ul.colors li:nth-child(5) .color h5 {
-                  color: #3e8ede; }
+                  color: #009DB8; }
               html body .ui .ui-section .ui-hidden ul.colors li:nth-child(6) .color {
-                background: #ee9bac; }
+                background: #FF98AA; }
                 html body .ui .ui-section .ui-hidden ul.colors li:nth-child(6) .color h5 {
-                  color: #ee9bac; }
+                  color: #FF98AA; }
               html body .ui .ui-section .ui-hidden ul.colors li:hover .color {
                 width: 80%;
                 opacity: 1; }
@@ -308,17 +308,17 @@ html {
               html body .header .head.transparent .cont.back span:hover {
                 color: transparent; }
       html body .header.boy {
-        border-bottom-color: #6B85AB; }
+        border-bottom-color: #FF4D0F; }
       html body .header.girl {
-        border-bottom-color: #FF0080; }
+        border-bottom-color: #FF0295; }
       html body .header.bBoy {
-        border-bottom-color: #82bc00; }
+        border-bottom-color: #78BF01; }
       html body .header.bGirl {
-        border-bottom-color: #9794d2; }
+        border-bottom-color: #9692D1; }
       html body .header.nBoy {
-        border-bottom-color: #3e8ede; }
+        border-bottom-color: #009DB8; }
       html body .header.nGirl {
-        border-bottom-color: #ee9bac; }
+        border-bottom-color: #FF98AA; }
     html body .content {
       margin: 0;
       height: 80vh;
@@ -411,15 +411,15 @@ html {
                     font-size: 6em;
                     font-weight: 800; }
                     html body .content .screen .container .gender .selection-wrap .selections .background .text.boySel {
-                      color: #6B85AB;
+                      color: #FF4D0F;
                       border-right: dashed 1.5px white; }
                       html body .content .screen .container .gender .selection-wrap .selections .background .text.boySel:hover {
-                        border-bottom: solid 3px #6B85AB; }
+                        border-bottom: solid 3px #FF4D0F; }
                     html body .content .screen .container .gender .selection-wrap .selections .background .text.girlSel {
-                      color: #FF0080;
+                      color: #FF0295;
                       border-left: dashed 1.5px white; }
                       html body .content .screen .container .gender .selection-wrap .selections .background .text.girlSel:hover {
-                        border-bottom: solid 3px #FF0080; }
+                        border-bottom: solid 3px #FF0295; }
             html body .content .screen .container .gender .img-boy {
               height: 60vh; }
               html body .content .screen .container .gender .img-boy .image {
@@ -439,17 +439,17 @@ html {
                 background-size: contain;
                 background-repeat: no-repeat; }
             html body .content .screen .container .gender.boy .selection-wrap .title .text {
-              border-bottom-color: #6B85AB; }
+              border-bottom-color: #FF4D0F; }
             html body .content .screen .container .gender.boy .selection-wrap .selections .background .boySel {
-              border-bottom-color: #6B85AB; }
+              border-bottom-color: #FF4D0F; }
             html body .content .screen .container .gender.boy .img-boy .image {
               display: inherit; }
             html body .content .screen .container .gender.boy .img-girl .image {
               display: none; }
             html body .content .screen .container .gender.girl .selection-wrap .title .text {
-              border-bottom-color: #FF0080; }
+              border-bottom-color: #FF0295; }
             html body .content .screen .container .gender.girl .selection-wrap .selections .background .girlSel {
-              border-bottom-color: #FF0080; }
+              border-bottom-color: #FF0295; }
             html body .content .screen .container .gender.girl .img-boy .image {
               display: none; }
             html body .content .screen .container .gender.girl .img-girl .image {
@@ -514,39 +514,39 @@ html {
                 background-size: contain;
                 background-repeat: no-repeat; }
             html body .content .screen .container .name.boy .selection-wrap .title .text {
-              border-bottom-color: #6B85AB; }
+              border-bottom-color: #FF4D0F; }
             html body .content .screen .container .name.boy .continue div {
-              background: #6B85AB; }
+              background: #FF4D0F; }
             html body .content .screen .container .name.boy .img .image {
               background-image: url("../IMG/Name/boy.jpg"); }
             html body .content .screen .container .name.girl .selection-wrap .title .text {
-              border-bottom-color: #FF0080; }
+              border-bottom-color: #FF0295; }
             html body .content .screen .container .name.girl .continue div {
-              background: #FF0080; }
+              background: #FF0295; }
             html body .content .screen .container .name.girl .img .image {
               background-image: url("../IMG/Name/girl.jpg"); }
             html body .content .screen .container .name.bBoy .selection-wrap .title .text {
-              border-bottom-color: #82bc00; }
+              border-bottom-color: #78BF01; }
             html body .content .screen .container .name.bBoy .continue div {
-              background: #82bc00; }
+              background: #78BF01; }
             html body .content .screen .container .name.bBoy .img .image {
               background-image: url("../IMG/Name/bBoy.png"); }
             html body .content .screen .container .name.bGirl .selection-wrap .title .text {
-              border-bottom-color: #9794d2; }
+              border-bottom-color: #9692D1; }
             html body .content .screen .container .name.bGirl .continue div {
-              background: #9794d2; }
+              background: #9692D1; }
             html body .content .screen .container .name.bGirl .img .image {
               background-image: url("../IMG/Name/bGirl.png"); }
             html body .content .screen .container .name.nBoy .selection-wrap .title .text {
-              border-bottom-color: #3e8ede; }
+              border-bottom-color: #009DB8; }
             html body .content .screen .container .name.nBoy .continue div {
-              background: #3e8ede; }
+              background: #009DB8; }
             html body .content .screen .container .name.nBoy .img .image {
               background-image: url("../IMG/Name/nBoy.png"); }
             html body .content .screen .container .name.nGirl .selection-wrap .title .text {
-              border-bottom-color: #ee9bac; }
+              border-bottom-color: #FF98AA; }
             html body .content .screen .container .name.nGirl .continue div {
-              background: #ee9bac; }
+              background: #FF98AA; }
             html body .content .screen .container .name.nGirl .img .image {
               background-image: url("../IMG/Name/nGirl.png"); }
           html body .content .screen .container .age {
@@ -598,17 +598,17 @@ html {
                 html body .content .screen .container .age .age-wrapper .pad .row:hover {
                   transform: scale(1.1); }
                 html body .content .screen .container .age .age-wrapper .pad .row.boy {
-                  background: #6B85AB; }
+                  background: #FF4D0F; }
                 html body .content .screen .container .age .age-wrapper .pad .row.bBoy {
-                  background: #82bc00; }
+                  background: #78BF01; }
                 html body .content .screen .container .age .age-wrapper .pad .row.girl {
-                  background: #FF0080; }
+                  background: #FF0295; }
                 html body .content .screen .container .age .age-wrapper .pad .row.bGirl {
-                  background: #9794d2; }
+                  background: #9692D1; }
                 html body .content .screen .container .age .age-wrapper .pad .row.nBoy {
-                  background: #3e8ede; }
+                  background: #009DB8; }
                 html body .content .screen .container .age .age-wrapper .pad .row.nGirl {
-                  background: #ee9bac; }
+                  background: #FF98AA; }
             html body .content .screen .container .age .img {
               height: 60vh;
               padding: 0;
@@ -625,68 +625,68 @@ html {
                 background-size: contain;
                 background-repeat: no-repeat; }
             html body .content .screen .container .age.boy .selection-wrap .title .text {
-              border-bottom-color: #6B85AB; }
+              border-bottom-color: #FF4D0F; }
             html body .content .screen .container .age.boy .age-wrapper .pad {
-              border-color: #6B85AB; }
+              border-color: #FF4D0F; }
               html body .content .screen .container .age.boy .age-wrapper .pad .row .number:hover {
-                border-color: #6B85AB; }
+                border-color: #FF4D0F; }
               html body .content .screen .container .age.boy .age-wrapper .pad .row .number.selected {
-                background: #6B85AB;
+                background: #FF4D0F;
                 color: white; }
             html body .content .screen .container .age.boy .img .image {
               background-image: url("../IMG/Age/boy.jpg"); }
             html body .content .screen .container .age.girl .selection-wrap .title .text {
-              border-bottom-color: #FF0080; }
+              border-bottom-color: #FF0295; }
             html body .content .screen .container .age.girl .age-wrapper .pad {
-              border-color: #FF0080; }
+              border-color: #FF0295; }
               html body .content .screen .container .age.girl .age-wrapper .pad .row .number:hover {
-                border-color: #FF0080; }
+                border-color: #FF0295; }
               html body .content .screen .container .age.girl .age-wrapper .pad .row .number.selected {
-                background: #FF0080;
+                background: #FF0295;
                 color: white; }
             html body .content .screen .container .age.girl .img .image {
               background-image: url("../IMG/Age/girl.jpg"); }
             html body .content .screen .container .age.bBoy .selection-wrap .title .text {
-              border-bottom-color: #82bc00; }
+              border-bottom-color: #78BF01; }
             html body .content .screen .container .age.bBoy .age-wrapper .pad {
-              border-color: #82bc00; }
+              border-color: #78BF01; }
               html body .content .screen .container .age.bBoy .age-wrapper .pad .row .number:hover {
-                border-color: #82bc00; }
+                border-color: #78BF01; }
               html body .content .screen .container .age.bBoy .age-wrapper .pad .row .number.selected {
-                background: #82bc00;
+                background: #78BF01;
                 color: white; }
             html body .content .screen .container .age.bBoy .img .image {
               background-image: url("../IMG/Age/boy.jpg"); }
             html body .content .screen .container .age.bGirl .selection-wrap .title .text {
-              border-bottom-color: #9794d2; }
+              border-bottom-color: #9692D1; }
             html body .content .screen .container .age.bGirl .age-wrapper .pad {
-              border-color: #9794d2; }
+              border-color: #9692D1; }
               html body .content .screen .container .age.bGirl .age-wrapper .pad .row .number:hover {
-                border-color: #9794d2; }
+                border-color: #9692D1; }
               html body .content .screen .container .age.bGirl .age-wrapper .pad .row .number.selected {
-                background: #9794d2;
+                background: #9692D1;
                 color: white; }
             html body .content .screen .container .age.bGirl .img .image {
               background-image: url("../IMG/Age/girl.jpg"); }
             html body .content .screen .container .age.nBoy .selection-wrap .title .text {
-              border-bottom-color: #3e8ede; }
+              border-bottom-color: #009DB8; }
             html body .content .screen .container .age.nBoy .age-wrapper .pad {
-              border-color: #3e8ede; }
+              border-color: #009DB8; }
               html body .content .screen .container .age.nBoy .age-wrapper .pad .row .number:hover {
-                border-color: #3e8ede; }
+                border-color: #009DB8; }
               html body .content .screen .container .age.nBoy .age-wrapper .pad .row .number.selected {
-                background: #3e8ede;
+                background: #009DB8;
                 color: white; }
             html body .content .screen .container .age.nBoy .img .image {
               background-image: url("../IMG/Age/boy.jpg"); }
             html body .content .screen .container .age.nGirl .selection-wrap .title .text {
-              border-bottom-color: #ee9bac; }
+              border-bottom-color: #FF98AA; }
             html body .content .screen .container .age.nGirl .age-wrapper .pad {
-              border-color: #ee9bac; }
+              border-color: #FF98AA; }
               html body .content .screen .container .age.nGirl .age-wrapper .pad .row .number:hover {
-                border-color: #ee9bac; }
+                border-color: #FF98AA; }
               html body .content .screen .container .age.nGirl .age-wrapper .pad .row .number.selected {
-                background: #ee9bac;
+                background: #FF98AA;
                 color: white; }
             html body .content .screen .container .age.nGirl .img .image {
               background-image: url("../IMG/Age/girl.jpg"); }
@@ -826,71 +826,71 @@ html {
                   html body .content .screen .container .size .selection-wrap .padWrap .nav.active {
                     display: inherit; }
             html body .content .screen .container .size.boy .selection-wrap .title .text {
-              border-bottom-color: #6B85AB; }
+              border-bottom-color: #FF4D0F; }
               html body .content .screen .container .size.boy .selection-wrap .title .text a {
-                border-color: #6B85AB; }
+                border-color: #FF4D0F; }
                 html body .content .screen .container .size.boy .selection-wrap .title .text a .fa {
-                  color: #6B85AB; }
+                  color: #FF4D0F; }
             html body .content .screen .container .size.boy .selection-wrap .padWrap .padSize .row .box.active, html body .content .screen .container .size.boy .selection-wrap .padWrap .padSize .row .box:hover {
-              background: #6B85AB;
+              background: #FF4D0F;
               color: white; }
             html body .content .screen .container .size.boy .selection-wrap .padWrap .nav .sel:hover .fa {
-              color: #6B85AB; }
+              color: #FF4D0F; }
             html body .content .screen .container .size.girl .selection-wrap .title .text {
-              border-bottom-color: #FF0080; }
+              border-bottom-color: #FF0295; }
               html body .content .screen .container .size.girl .selection-wrap .title .text a {
-                border-color: #FF0080; }
+                border-color: #FF0295; }
                 html body .content .screen .container .size.girl .selection-wrap .title .text a .fa {
-                  color: #FF0080; }
+                  color: #FF0295; }
             html body .content .screen .container .size.girl .selection-wrap .padWrap .padSize .row .box.active, html body .content .screen .container .size.girl .selection-wrap .padWrap .padSize .row .box:hover {
-              background: #FF0080;
+              background: #FF0295;
               color: white; }
             html body .content .screen .container .size.girl .selection-wrap .padWrap .nav .sel:hover .fa {
-              color: #FF0080; }
+              color: #FF0295; }
             html body .content .screen .container .size.bBoy .selection-wrap .title .text {
-              border-bottom-color: #82bc00; }
+              border-bottom-color: #78BF01; }
               html body .content .screen .container .size.bBoy .selection-wrap .title .text a {
-                border-color: #82bc00; }
+                border-color: #78BF01; }
                 html body .content .screen .container .size.bBoy .selection-wrap .title .text a .fa {
-                  color: #82bc00; }
+                  color: #78BF01; }
             html body .content .screen .container .size.bBoy .selection-wrap .padWrap .padSize .row .box.active, html body .content .screen .container .size.bBoy .selection-wrap .padWrap .padSize .row .box:hover {
-              background: #82bc00;
+              background: #78BF01;
               color: white; }
             html body .content .screen .container .size.bBoy .selection-wrap .padWrap .nav .sel:hover .fa {
-              color: #82bc00; }
+              color: #78BF01; }
             html body .content .screen .container .size.bGirl .selection-wrap .title .text {
-              border-bottom-color: #9794d2; }
+              border-bottom-color: #9692D1; }
               html body .content .screen .container .size.bGirl .selection-wrap .title .text a {
-                border-color: #9794d2; }
+                border-color: #9692D1; }
                 html body .content .screen .container .size.bGirl .selection-wrap .title .text a .fa {
-                  color: #9794d2; }
+                  color: #9692D1; }
             html body .content .screen .container .size.bGirl .selection-wrap .padWrap .padSize .row .box.active, html body .content .screen .container .size.bGirl .selection-wrap .padWrap .padSize .row .box:hover {
-              background: #9794d2;
+              background: #9692D1;
               color: white; }
             html body .content .screen .container .size.bGirl .selection-wrap .padWrap .nav .sel:hover .fa {
-              color: #9794d2; }
+              color: #9692D1; }
             html body .content .screen .container .size.nBoy .selection-wrap .title .text {
-              border-bottom-color: #3e8ede; }
+              border-bottom-color: #009DB8; }
               html body .content .screen .container .size.nBoy .selection-wrap .title .text a {
-                border-color: #3e8ede; }
+                border-color: #009DB8; }
                 html body .content .screen .container .size.nBoy .selection-wrap .title .text a .fa {
-                  color: #3e8ede; }
+                  color: #009DB8; }
             html body .content .screen .container .size.nBoy .selection-wrap .padWrap .padSize .row .box.active, html body .content .screen .container .size.nBoy .selection-wrap .padWrap .padSize .row .box:hover {
-              background: #3e8ede;
+              background: #009DB8;
               color: white; }
             html body .content .screen .container .size.nBoy .selection-wrap .padWrap .nav .sel:hover .fa {
-              color: #3e8ede; }
+              color: #009DB8; }
             html body .content .screen .container .size.nGirl .selection-wrap .title .text {
-              border-bottom-color: #ee9bac; }
+              border-bottom-color: #FF98AA; }
               html body .content .screen .container .size.nGirl .selection-wrap .title .text a {
-                border-color: #ee9bac; }
+                border-color: #FF98AA; }
                 html body .content .screen .container .size.nGirl .selection-wrap .title .text a .fa {
-                  color: #ee9bac; }
+                  color: #FF98AA; }
             html body .content .screen .container .size.nGirl .selection-wrap .padWrap .padSize .row .box.active, html body .content .screen .container .size.nGirl .selection-wrap .padWrap .padSize .row .box:hover {
-              background: #ee9bac;
+              background: #FF98AA;
               color: white; }
             html body .content .screen .container .size.nGirl .selection-wrap .padWrap .nav .sel:hover .fa {
-              color: #ee9bac; }
+              color: #FF98AA; }
           @media (max-width: 767px) {
             html body .content .screen .container .size {
               padding: 0; }
@@ -997,107 +997,107 @@ html {
                 html body .content .screen .container .sizePrimi .selection-wrap .padWrap .nav {
                   right: 0; } }
             html body .content .screen .container .sizePrimi.nBoy .selection-wrap .title .text {
-              border-bottom-color: #3e8ede; }
+              border-bottom-color: #009DB8; }
               html body .content .screen .container .sizePrimi.nBoy .selection-wrap .title .text a {
-                color: #3e8ede; }
+                color: #009DB8; }
                 html body .content .screen .container .sizePrimi.nBoy .selection-wrap .title .text a .fa {
-                  background-color: #3e8ede; }
+                  background-color: #009DB8; }
             html body .content .screen .container .sizePrimi.nBoy .selection-wrap .padWrap .image div {
-              color: #3e8ede; }
+              color: #009DB8; }
             html body .content .screen .container .sizePrimi.nBoy .selection-wrap .padWrap .padSizePrimi {
-              border-color: #3e8ede; }
+              border-color: #009DB8; }
               html body .content .screen .container .sizePrimi.nBoy .selection-wrap .padWrap .padSizePrimi .row .box:hover {
-                border-color: #3e8ede; }
+                border-color: #009DB8; }
               html body .content .screen .container .sizePrimi.nBoy .selection-wrap .padWrap .padSizePrimi .row .box.active {
-                background: #3e8ede;
+                background: #009DB8;
                 color: white; }
             html body .content .screen .container .sizePrimi.nBoy .selection-wrap .padWrap .nav .sel:hover .fa {
-              color: #3e8ede; }
+              color: #009DB8; }
             html body .content .screen .container .sizePrimi.nGirl .selection-wrap .title .text {
-              border-bottom-color: #ee9bac; }
+              border-bottom-color: #FF98AA; }
               html body .content .screen .container .sizePrimi.nGirl .selection-wrap .title .text a {
-                color: #ee9bac; }
+                color: #FF98AA; }
                 html body .content .screen .container .sizePrimi.nGirl .selection-wrap .title .text a .fa {
-                  background-color: #ee9bac; }
+                  background-color: #FF98AA; }
             html body .content .screen .container .sizePrimi.nGirl .selection-wrap .padWrap .image div {
-              color: #ee9bac; }
+              color: #FF98AA; }
             html body .content .screen .container .sizePrimi.nGirl .selection-wrap .padWrap .padSizePrimi {
-              border-color: #ee9bac; }
+              border-color: #FF98AA; }
               html body .content .screen .container .sizePrimi.nGirl .selection-wrap .padWrap .padSizePrimi .row .box:hover {
-                border-color: #ee9bac; }
+                border-color: #FF98AA; }
               html body .content .screen .container .sizePrimi.nGirl .selection-wrap .padWrap .padSizePrimi .row .box.active {
-                background: #ee9bac;
+                background: #FF98AA;
                 color: white; }
             html body .content .screen .container .sizePrimi.nGirl .selection-wrap .padWrap .nav .sel:hover .fa {
-              color: #ee9bac; }
+              color: #FF98AA; }
             html body .content .screen .container .sizePrimi.girl .selection-wrap .title .text {
-              border-bottom-color: #FF0080; }
+              border-bottom-color: #FF0295; }
               html body .content .screen .container .sizePrimi.girl .selection-wrap .title .text a {
-                color: #FF0080; }
+                color: #FF0295; }
                 html body .content .screen .container .sizePrimi.girl .selection-wrap .title .text a .fa {
-                  background-color: #FF0080; }
+                  background-color: #FF0295; }
             html body .content .screen .container .sizePrimi.girl .selection-wrap .padWrap .image div {
-              color: #FF0080; }
+              color: #FF0295; }
             html body .content .screen .container .sizePrimi.girl .selection-wrap .padWrap .padSizePrimi {
-              border-color: #FF0080; }
+              border-color: #FF0295; }
               html body .content .screen .container .sizePrimi.girl .selection-wrap .padWrap .padSizePrimi .row .box:hover {
-                border-color: #FF0080; }
+                border-color: #FF0295; }
               html body .content .screen .container .sizePrimi.girl .selection-wrap .padWrap .padSizePrimi .row .box.active {
-                background: #FF0080;
+                background: #FF0295;
                 color: white; }
             html body .content .screen .container .sizePrimi.girl .selection-wrap .padWrap .nav .sel:hover .fa {
-              color: #FF0080; }
+              color: #FF0295; }
             html body .content .screen .container .sizePrimi.bGirl .selection-wrap .title .text {
-              border-bottom-color: #9794d2; }
+              border-bottom-color: #9692D1; }
               html body .content .screen .container .sizePrimi.bGirl .selection-wrap .title .text a {
-                color: #9794d2; }
+                color: #9692D1; }
                 html body .content .screen .container .sizePrimi.bGirl .selection-wrap .title .text a .fa {
-                  background-color: #9794d2; }
+                  background-color: #9692D1; }
             html body .content .screen .container .sizePrimi.bGirl .selection-wrap .padWrap .image div {
-              color: #9794d2; }
+              color: #9692D1; }
             html body .content .screen .container .sizePrimi.bGirl .selection-wrap .padWrap .padSizePrimi {
-              border-color: #9794d2; }
+              border-color: #9692D1; }
               html body .content .screen .container .sizePrimi.bGirl .selection-wrap .padWrap .padSizePrimi .row .box:hover {
-                border-color: #9794d2; }
+                border-color: #9692D1; }
               html body .content .screen .container .sizePrimi.bGirl .selection-wrap .padWrap .padSizePrimi .row .box.active {
-                background: #9794d2;
+                background: #9692D1;
                 color: white; }
             html body .content .screen .container .sizePrimi.bGirl .selection-wrap .padWrap .nav .sel:hover .fa {
-              color: #9794d2; }
+              color: #9692D1; }
             html body .content .screen .container .sizePrimi.boy .selection-wrap .title .text {
-              border-bottom-color: #6B85AB; }
+              border-bottom-color: #FF4D0F; }
               html body .content .screen .container .sizePrimi.boy .selection-wrap .title .text a {
-                color: #6B85AB; }
+                color: #FF4D0F; }
                 html body .content .screen .container .sizePrimi.boy .selection-wrap .title .text a .fa {
-                  background-color: #6B85AB; }
+                  background-color: #FF4D0F; }
             html body .content .screen .container .sizePrimi.boy .selection-wrap .padWrap .image div {
-              color: #6B85AB; }
+              color: #FF4D0F; }
             html body .content .screen .container .sizePrimi.boy .selection-wrap .padWrap .padSizePrimi {
-              border-color: #6B85AB; }
+              border-color: #FF4D0F; }
               html body .content .screen .container .sizePrimi.boy .selection-wrap .padWrap .padSizePrimi .row .box:hover {
-                border-color: #6B85AB; }
+                border-color: #FF4D0F; }
               html body .content .screen .container .sizePrimi.boy .selection-wrap .padWrap .padSizePrimi .row .box.active {
-                background: #6B85AB;
+                background: #FF4D0F;
                 color: white; }
             html body .content .screen .container .sizePrimi.boy .selection-wrap .padWrap .nav .sel:hover .fa {
-              color: #6B85AB; }
+              color: #FF4D0F; }
             html body .content .screen .container .sizePrimi.bBoy .selection-wrap .title .text {
-              border-bottom-color: #82bc00; }
+              border-bottom-color: #78BF01; }
               html body .content .screen .container .sizePrimi.bBoy .selection-wrap .title .text a {
-                color: #82bc00; }
+                color: #78BF01; }
                 html body .content .screen .container .sizePrimi.bBoy .selection-wrap .title .text a .fa {
-                  background-color: #82bc00; }
+                  background-color: #78BF01; }
             html body .content .screen .container .sizePrimi.bBoy .selection-wrap .padWrap .image div {
-              color: #82bc00; }
+              color: #78BF01; }
             html body .content .screen .container .sizePrimi.bBoy .selection-wrap .padWrap .padSizePrimi {
-              border-color: #82bc00; }
+              border-color: #78BF01; }
               html body .content .screen .container .sizePrimi.bBoy .selection-wrap .padWrap .padSizePrimi .row .box:hover {
-                border-color: #82bc00; }
+                border-color: #78BF01; }
               html body .content .screen .container .sizePrimi.bBoy .selection-wrap .padWrap .padSizePrimi .row .box.active {
-                background: #82bc00;
+                background: #78BF01;
                 color: white; }
             html body .content .screen .container .sizePrimi.bBoy .selection-wrap .padWrap .nav .sel:hover .fa {
-              color: #82bc00; }
+              color: #78BF01; }
           @media (max-width: 767px) {
             html body .content .screen .container .sizePrimi {
               padding: 0; }
@@ -1202,95 +1202,95 @@ html {
                 html body .content .screen .container .occasion .occasionsBtn.disabled:hover {
                   background: #ffe433; }
             html body .content .screen .container .occasion.boy .selection-wrap .title .text {
-              border-bottom-color: #6B85AB; }
+              border-bottom-color: #FF4D0F; }
             html body .content .screen .container .occasion.boy .occasions .background .cont .title {
-              background: rgba(107, 133, 171, 0.8); }
+              background: rgba(255, 77, 15, 0.8); }
             html body .content .screen .container .occasion.boy .occasions .background .cont.active .img {
-              background: rgba(107, 133, 171, 0.8); }
+              background: rgba(255, 77, 15, 0.8); }
             html body .content .screen .container .occasion.boy .occasionsBtn {
-              background: #6B85AB; }
+              background: #FF4D0F; }
               html body .content .screen .container .occasion.boy .occasionsBtn:hover {
-                background: #5b78a1; }
+                background: #f53f00; }
               html body .content .screen .container .occasion.boy .occasionsBtn.disabled {
-                background: #acbbd0;
+                background: #ff9975;
                 cursor: default; }
                 html body .content .screen .container .occasion.boy .occasionsBtn.disabled:hover {
-                  background: #acbbd0; }
+                  background: #ff9975; }
             html body .content .screen .container .occasion.girl .selection-wrap .title .text {
-              border-bottom-color: #FF0080; }
+              border-bottom-color: #FF0295; }
             html body .content .screen .container .occasion.girl .occasions .background .cont.active .img {
-              background: rgba(255, 0, 128, 0.8); }
+              background: rgba(255, 2, 149, 0.8); }
             html body .content .screen .container .occasion.girl .occasions .background .cont .title {
-              background: rgba(255, 0, 128, 0.8); }
+              background: rgba(255, 2, 149, 0.8); }
             html body .content .screen .container .occasion.girl .occasionsBtn {
-              background: #FF0080; }
+              background: #FF0295; }
               html body .content .screen .container .occasion.girl .occasionsBtn:hover {
-                background: #e60073; }
+                background: #e80087; }
               html body .content .screen .container .occasion.girl .occasionsBtn.disabled {
-                background: #ff66b3;
+                background: #ff68c0;
                 cursor: default; }
                 html body .content .screen .container .occasion.girl .occasionsBtn.disabled:hover {
-                  background: #ff66b3; }
+                  background: #ff68c0; }
             html body .content .screen .container .occasion.bBoy .selection-wrap .title .text {
-              border-bottom-color: #82bc00; }
+              border-bottom-color: #78BF01; }
             html body .content .screen .container .occasion.bBoy .occasions .background .cont.active .img {
-              background: rgba(130, 188, 0, 0.8); }
+              background: rgba(120, 191, 1, 0.8); }
             html body .content .screen .container .occasion.bBoy .occasions .background .cont .title {
-              background: rgba(130, 188, 0, 0.8); }
+              background: rgba(120, 191, 1, 0.8); }
             html body .content .screen .container .occasion.bBoy .occasionsBtn {
-              background: #82bc00; }
+              background: #78BF01; }
               html body .content .screen .container .occasion.bBoy .occasionsBtn:hover {
-                background: #70a300; }
+                background: #68a601; }
               html body .content .screen .container .occasion.bBoy .occasionsBtn.disabled {
-                background: #bbff23;
+                background: #aefe28;
                 cursor: default; }
                 html body .content .screen .container .occasion.bBoy .occasionsBtn.disabled:hover {
-                  background: #bbff23; }
+                  background: #aefe28; }
             html body .content .screen .container .occasion.bGirl .selection-wrap .title .text {
-              border-bottom-color: #9794d2; }
+              border-bottom-color: #9692D1; }
             html body .content .screen .container .occasion.bGirl .occasions .background .cont.active .img {
-              background: rgba(151, 148, 210, 0.8); }
+              background: rgba(150, 146, 209, 0.8); }
             html body .content .screen .container .occasion.bGirl .occasions .background .cont .title {
-              background: rgba(151, 148, 210, 0.8); }
+              background: rgba(150, 146, 209, 0.8); }
             html body .content .screen .container .occasion.bGirl .occasionsBtn {
-              background: #9794d2; }
+              background: #9692D1; }
               html body .content .screen .container .occasion.bGirl .occasionsBtn:hover {
-                background: #8682ca; }
+                background: #8580c9; }
               html body .content .screen .container .occasion.bGirl .occasionsBtn.disabled {
-                background: #dddcf0;
+                background: #dbdaef;
                 cursor: default; }
                 html body .content .screen .container .occasion.bGirl .occasionsBtn.disabled:hover {
-                  background: #dddcf0; }
+                  background: #dbdaef; }
             html body .content .screen .container .occasion.nBoy .selection-wrap .title .text {
-              border-bottom-color: #3e8ede; }
+              border-bottom-color: #009DB8; }
             html body .content .screen .container .occasion.nBoy .occasions .background .cont.active .img {
-              background: rgba(62, 142, 222, 0.8); }
+              background: rgba(0, 157, 184, 0.8); }
             html body .content .screen .container .occasion.nBoy .occasions .background .cont .title {
-              background: rgba(62, 142, 222, 0.8); }
+              background: rgba(0, 157, 184, 0.8); }
             html body .content .screen .container .occasion.nBoy .occasionsBtn {
-              background: #3e8ede; }
+              background: #009DB8; }
               html body .content .screen .container .occasion.nBoy .occasionsBtn:hover {
-                background: #2881da; }
+                background: #00879f; }
               html body .content .screen .container .occasion.nBoy .occasionsBtn.disabled {
-                background: #95c1ed;
+                background: #1fdeff;
                 cursor: default; }
                 html body .content .screen .container .occasion.nBoy .occasionsBtn.disabled:hover {
-                  background: #95c1ed; }
+                  background: #1fdeff; }
             html body .content .screen .container .occasion.nGirl .selection-wrap .title .text {
-              border-bottom-color: #ee9bac; }
+              border-bottom-color: #FF98AA; }
             html body .content .screen .container .occasion.nGirl .occasions .background .cont.active .img {
-              background: rgba(238, 155, 172, 0.8); }
+              background: rgba(255, 152, 170, 0.8); }
             html body .content .screen .container .occasion.nGirl .occasions .background .cont .title {
-              background: rgba(238, 155, 172, 0.8); }
+              background: rgba(255, 152, 170, 0.8); }
             html body .content .screen .container .occasion.nGirl .occasionsBtn {
-              background: #ee9bac; }
+              background: #FF98AA; }
               html body .content .screen .container .occasion.nGirl .occasionsBtn:hover {
-                background: #ea859a; }
+                background: #ff7f95; }
               html body .content .screen .container .occasion.nGirl .occasionsBtn.disabled {
-                background: #fdf2f4;
+                background: #fffefe;
                 cursor: default; }
                 html body .content .screen .container .occasion.nGirl .occasionsBtn.disabled:hover {
-                  background: #fdf2f4; }
+                  background: #fffefe; }
           @media (max-width: 767px) {
             html body .content .screen .container .occasion .occasions {
               margin-top: -2vh; }
@@ -1412,17 +1412,17 @@ html {
               html body .content .screen .container .weather .weathers .background:hover {
                 transform: scale(1.05); }
             html body .content .screen .container .weather.boy .selection-wrap .title .text {
-              border-bottom-color: #6B85AB; }
+              border-bottom-color: #FF4D0F; }
             html body .content .screen .container .weather.girl .selection-wrap .title .text {
-              border-bottom-color: #FF0080; }
+              border-bottom-color: #FF0295; }
             html body .content .screen .container .weather.bBoy .selection-wrap .title .text {
-              border-bottom-color: #82bc00; }
+              border-bottom-color: #78BF01; }
             html body .content .screen .container .weather.bGirl .selection-wrap .title .text {
-              border-bottom-color: #9794d2; }
+              border-bottom-color: #9692D1; }
             html body .content .screen .container .weather.nBoy .selection-wrap .title .text {
-              border-bottom-color: #3e8ede; }
+              border-bottom-color: #009DB8; }
             html body .content .screen .container .weather.nGirl .selection-wrap .title .text {
-              border-bottom-color: #ee9bac; }
+              border-bottom-color: #FF98AA; }
             @media (max-width: 767px) {
               html body .content .screen .container .weather .weathers .background .cont .img {
                 height: 5vh; }
@@ -1498,43 +1498,43 @@ html {
                 cursor: pointer;
                 transition: all 0.3s ease; }
             html body .content .screen .container .looks.boy .selection-wrap .title .text {
-              border-bottom-color: #6B85AB; }
+              border-bottom-color: #FF4D0F; }
             html body .content .screen .container .looks.boy .looksWrap .background .cont .title {
-              background: rgba(107, 133, 171, 0.8); }
+              background: rgba(255, 77, 15, 0.8); }
             html body .content .screen .container .looks.boy .continueLooks h3 {
-              background-color: #6B85AB; }
+              background-color: #FF4D0F; }
             html body .content .screen .container .looks.girl .selection-wrap .title .text {
-              border-bottom-color: #FF0080; }
+              border-bottom-color: #FF0295; }
             html body .content .screen .container .looks.girl .looksWrap .background .cont {
-              border: solid 5px rgba(255, 0, 128, 0.8); }
+              border: solid 5px rgba(255, 2, 149, 0.8); }
               html body .content .screen .container .looks.girl .looksWrap .background .cont .title {
-                background: rgba(255, 0, 128, 0.8); }
+                background: rgba(255, 2, 149, 0.8); }
             html body .content .screen .container .looks.girl .continueLooks h3 {
-              background-color: #FF0080; }
+              background-color: #FF0295; }
             html body .content .screen .container .looks.bBoy .selection-wrap .title .text {
-              border-bottom-color: #82bc00; }
+              border-bottom-color: #78BF01; }
             html body .content .screen .container .looks.bBoy .looksWrap .background .cont .title {
-              background: rgba(130, 188, 0, 0.8); }
+              background: rgba(120, 191, 1, 0.8); }
             html body .content .screen .container .looks.bBoy .continueLooks h3 {
-              background-color: #82bc00; }
+              background-color: #78BF01; }
             html body .content .screen .container .looks.bGirl .selection-wrap .title .text {
-              border-bottom-color: #9794d2; }
+              border-bottom-color: #9692D1; }
             html body .content .screen .container .looks.bGirl .looksWrap .background .cont .title {
-              background: rgba(151, 148, 210, 0.8); }
+              background: rgba(150, 146, 209, 0.8); }
             html body .content .screen .container .looks.bGirl .continueLooks h3 {
-              background-color: #9794d2; }
+              background-color: #9692D1; }
             html body .content .screen .container .looks.nBoy .selection-wrap .title .text {
-              border-bottom-color: #3e8ede; }
+              border-bottom-color: #009DB8; }
             html body .content .screen .container .looks.nBoy .looksWrap .background .cont .title {
-              background: rgba(62, 142, 222, 0.8); }
+              background: rgba(0, 157, 184, 0.8); }
             html body .content .screen .container .looks.nBoy .continueLooks h3 {
-              background-color: #3e8ede; }
+              background-color: #009DB8; }
             html body .content .screen .container .looks.nGirl .selection-wrap .title .text {
-              border-bottom-color: #ee9bac; }
+              border-bottom-color: #FF98AA; }
             html body .content .screen .container .looks.nGirl .looksWrap .background .cont .title {
-              background: rgba(238, 155, 172, 0.8); }
+              background: rgba(255, 152, 170, 0.8); }
             html body .content .screen .container .looks.nGirl .continueLooks h3 {
-              background-color: #ee9bac; }
+              background-color: #FF98AA; }
             html body .content .screen .container .looks .continueLooks.transparent {
               z-index: -1; }
               html body .content .screen .container .looks .continueLooks.transparent h3 {
@@ -1608,17 +1608,17 @@ html {
               html body .content .screen .container .color .colors .color-wrap:nth-child(4) .select {
                 border-color: #e60000; }
             html body .content .screen .container .color.boy .selection-wrap .title .text {
-              border-bottom-color: #6B85AB; }
+              border-bottom-color: #FF4D0F; }
             html body .content .screen .container .color.girl .selection-wrap .title .text {
-              border-bottom-color: #FF0080; }
+              border-bottom-color: #FF0295; }
             html body .content .screen .container .color.bBoy .selection-wrap .title .text {
-              border-bottom-color: #82bc00; }
+              border-bottom-color: #78BF01; }
             html body .content .screen .container .color.bGirl .selection-wrap .title .text {
-              border-bottom-color: #9794d2; }
+              border-bottom-color: #9692D1; }
             html body .content .screen .container .color.nBoy .selection-wrap .title .text {
-              border-bottom-color: #3e8ede; }
+              border-bottom-color: #009DB8; }
             html body .content .screen .container .color.nGirl .selection-wrap .title .text {
-              border-bottom-color: #ee9bac; }
+              border-bottom-color: #FF98AA; }
             html body .content .screen .container .color .continue.transparent {
               z-index: -1; }
               html body .content .screen .container .color .continue.transparent h3 {
@@ -1724,53 +1724,53 @@ html {
                 cursor: default;
                 user-select: none; }
             html body .content .screen .container .personality.boy .selection-wrap .title .text {
-              border-bottom-color: #6B85AB; }
+              border-bottom-color: #FF4D0F; }
             html body .content .screen .container .personality.boy .personWrap .person .background {
-              border-color: #6B85AB; }
+              border-color: #FF4D0F; }
               html body .content .screen .container .personality.boy .personWrap .person .background .title {
-                background-color: rgba(107, 133, 171, 0.8); }
+                background-color: rgba(255, 77, 15, 0.8); }
             html body .content .screen .container .personality.boy .continue h4 {
-              background: #6B85AB; }
+              background: #FF4D0F; }
             html body .content .screen .container .personality.girl .selection-wrap .title .text {
-              border-bottom-color: #FF0080; }
+              border-bottom-color: #FF0295; }
             html body .content .screen .container .personality.girl .personWrap .person .background {
-              border-color: #FF0080; }
+              border-color: #FF0295; }
               html body .content .screen .container .personality.girl .personWrap .person .background .title {
-                background-color: #FF0080; }
+                background-color: #FF0295; }
             html body .content .screen .container .personality.girl .continue h4 {
-              background: #FF0080; }
+              background: #FF0295; }
             html body .content .screen .container .personality.bBoy .selection-wrap .title .text {
-              border-bottom-color: #82bc00; }
+              border-bottom-color: #78BF01; }
             html body .content .screen .container .personality.bBoy .personWrap .person .background {
-              border-color: #82bc00; }
+              border-color: #78BF01; }
               html body .content .screen .container .personality.bBoy .personWrap .person .background .title {
-                background-color: #82bc00; }
+                background-color: #78BF01; }
             html body .content .screen .container .personality.bBoy .continue h4 {
-              background: #82bc00; }
+              background: #78BF01; }
             html body .content .screen .container .personality.bGirl .selection-wrap .title .text {
-              border-bottom-color: #9794d2; }
+              border-bottom-color: #9692D1; }
             html body .content .screen .container .personality.bGirl .personWrap .person .background {
-              border-color: #9794d2; }
+              border-color: #9692D1; }
               html body .content .screen .container .personality.bGirl .personWrap .person .background .title {
-                background-color: #9794d2; }
+                background-color: #9692D1; }
             html body .content .screen .container .personality.bGirl .continue h4 {
-              background: #9794d2; }
+              background: #9692D1; }
             html body .content .screen .container .personality.nBoy .selection-wrap .title .text {
-              border-bottom-color: #3e8ede; }
+              border-bottom-color: #009DB8; }
             html body .content .screen .container .personality.nBoy .personWrap .person .background {
-              border-color: #3e8ede; }
+              border-color: #009DB8; }
               html body .content .screen .container .personality.nBoy .personWrap .person .background .title {
-                background-color: #3e8ede; }
+                background-color: #009DB8; }
             html body .content .screen .container .personality.nBoy .continue h4 {
-              background: #3e8ede; }
+              background: #009DB8; }
             html body .content .screen .container .personality.nGirl .selection-wrap .title .text {
-              border-bottom-color: #ee9bac; }
+              border-bottom-color: #FF98AA; }
             html body .content .screen .container .personality.nGirl .personWrap .person .background {
-              border-color: #ee9bac; }
+              border-color: #FF98AA; }
               html body .content .screen .container .personality.nGirl .personWrap .person .background .title {
-                background-color: #ee9bac; }
+                background-color: #FF98AA; }
             html body .content .screen .container .personality.nGirl .continue h4 {
-              background: #ee9bac; }
+              background: #FF98AA; }
           @media (max-width: 767px) {
             html body .content .screen .container .personality {
               padding: 0; }
@@ -1939,89 +1939,89 @@ html {
                   -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
                   box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4); }
             html body .content .screen .container .result.boy .call-modal .title {
-              background: #6B85AB; }
+              background: #FF4D0F; }
             html body .content .screen .container .result.boy .call-modal .input input {
-              border-color: #6B85AB; }
+              border-color: #FF4D0F; }
             html body .content .screen .container .result.boy .call-modal .button {
-              color: #6B85AB;
-              border-color: #6B85AB; }
+              color: #FF4D0F;
+              border-color: #FF4D0F; }
               html body .content .screen .container .result.boy .call-modal .button:hover {
-                background: #6B85AB;
+                background: #FF4D0F;
                 color: white; }
             html body .content .screen .container .result.boy .call-modal .fa-times:hover {
-              color: #526c91; }
+              color: #db3900; }
             html body .content .screen .container .result.boy .call-modal.active.success .success-content {
-              background: #6B85AB; }
+              background: #FF4D0F; }
             html body .content .screen .container .result.girl .call-modal .title {
-              background: #FF0080; }
+              background: #FF0295; }
             html body .content .screen .container .result.girl .call-modal .input input {
-              border-color: #FF0080; }
+              border-color: #FF0295; }
             html body .content .screen .container .result.girl .call-modal .button {
-              color: #FF0080;
-              border-color: #FF0080; }
+              color: #FF0295;
+              border-color: #FF0295; }
               html body .content .screen .container .result.girl .call-modal .button:hover {
-                background: #FF0080;
+                background: #FF0295;
                 color: white; }
             html body .content .screen .container .result.girl .call-modal .fa-times:hover {
-              color: #cc0066; }
+              color: #ce0078; }
             html body .content .screen .container .result.girl .call-modal.active.success .success-content {
-              background: #FF0080; }
+              background: #FF0295; }
             html body .content .screen .container .result.bBoy .call-modal .title {
-              background: #82bc00; }
+              background: #78BF01; }
             html body .content .screen .container .result.bBoy .call-modal .input input {
-              border-color: #82bc00; }
+              border-color: #78BF01; }
             html body .content .screen .container .result.bBoy .call-modal .button {
-              color: #82bc00;
-              border-color: #82bc00; }
+              color: #78BF01;
+              border-color: #78BF01; }
               html body .content .screen .container .result.bBoy .call-modal .button:hover {
-                background: #82bc00;
+                background: #78BF01;
                 color: white; }
             html body .content .screen .container .result.bBoy .call-modal .fa-times:hover {
-              color: #5f8900; }
+              color: #588c01; }
             html body .content .screen .container .result.bBoy .call-modal.active.success .success-content {
-              background: #82bc00; }
+              background: #78BF01; }
             html body .content .screen .container .result.bGirl .call-modal .title {
-              background: #9794d2; }
+              background: #9692D1; }
             html body .content .screen .container .result.bGirl .call-modal .input input {
-              border-color: #9794d2; }
+              border-color: #9692D1; }
             html body .content .screen .container .result.bGirl .call-modal .button {
-              color: #9794d2;
-              border-color: #9794d2; }
+              color: #9692D1;
+              border-color: #9692D1; }
               html body .content .screen .container .result.bGirl .call-modal .button:hover {
-                background: #9794d2;
+                background: #9692D1;
                 color: white; }
             html body .content .screen .container .result.bGirl .call-modal .fa-times:hover {
-              color: #7470c3; }
+              color: #736ec2; }
             html body .content .screen .container .result.bGirl .call-modal.active.success .success-content {
-              background: #9794d2; }
+              background: #9692D1; }
             html body .content .screen .container .result.nBoy .call-modal .title {
-              background: #3e8ede; }
+              background: #009DB8; }
             html body .content .screen .container .result.nBoy .call-modal .input input {
-              border-color: #3e8ede; }
+              border-color: #009DB8; }
             html body .content .screen .container .result.nBoy .call-modal .button {
-              color: #3e8ede;
-              border-color: #3e8ede; }
+              color: #009DB8;
+              border-color: #009DB8; }
               html body .content .screen .container .result.nBoy .call-modal .button:hover {
-                background: #3e8ede;
+                background: #009DB8;
                 color: white; }
             html body .content .screen .container .result.nBoy .call-modal .fa-times:hover {
-              color: #2275c7; }
+              color: #007185; }
             html body .content .screen .container .result.nBoy .call-modal.active.success .success-content {
-              background: #3e8ede; }
+              background: #009DB8; }
             html body .content .screen .container .result.nGirl .call-modal .title {
-              background: #ee9bac; }
+              background: #FF98AA; }
             html body .content .screen .container .result.nGirl .call-modal .input input {
-              border-color: #ee9bac; }
+              border-color: #FF98AA; }
             html body .content .screen .container .result.nGirl .call-modal .button {
-              color: #ee9bac;
-              border-color: #ee9bac; }
+              color: #FF98AA;
+              border-color: #FF98AA; }
               html body .content .screen .container .result.nGirl .call-modal .button:hover {
-                background: #ee9bac;
+                background: #FF98AA;
                 color: white; }
             html body .content .screen .container .result.nGirl .call-modal .fa-times:hover {
-              color: #e76f88; }
+              color: #ff6580; }
             html body .content .screen .container .result.nGirl .call-modal.active.success .success-content {
-              background: #ee9bac; }
+              background: #FF98AA; }
             @media (max-width: 767px) {
               html body .content .screen .container .result {
                 padding: 0; }
@@ -2847,29 +2847,29 @@ html {
             background: #fd0;
             animation: loading 3s ease infinite; }
         html body .footer .loader.girl .progress {
-          background: #FF0080; }
+          background: #FF0295; }
           html body .footer .loader.girl .progress.loading {
-            background: #FF0080; }
+            background: #FF0295; }
         html body .footer .loader.boy .progress {
-          background: #6B85AB; }
+          background: #FF4D0F; }
           html body .footer .loader.boy .progress.loading {
-            background: #6B85AB; }
+            background: #FF4D0F; }
         html body .footer .loader.bGirl .progress {
-          background: #9794d2; }
+          background: #9692D1; }
           html body .footer .loader.bGirl .progress.loading {
-            background: #9794d2; }
+            background: #9692D1; }
         html body .footer .loader.bBoy .progress {
-          background: #82bc00; }
+          background: #78BF01; }
           html body .footer .loader.bBoy .progress.loading {
-            background: #82bc00; }
+            background: #78BF01; }
         html body .footer .loader.nGirl .progress {
-          background: #ee9bac; }
+          background: #FF98AA; }
           html body .footer .loader.nGirl .progress.loading {
-            background: #ee9bac; }
+            background: #FF98AA; }
         html body .footer .loader.nBoy .progress {
-          background: #3e8ede; }
+          background: #009DB8; }
           html body .footer .loader.nBoy .progress.loading {
-            background: #3e8ede; }
+            background: #009DB8; }
       html body .footer .brand {
         margin: auto;
         background-image: url("../IMG/Logo-01.png");
