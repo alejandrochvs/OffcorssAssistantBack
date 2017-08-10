@@ -295,7 +295,8 @@ html {
       background: white;
       z-index: 0;
       background-image: url("../IMG/background.jpg");
-      padding: 0; }
+      padding: 0;
+      background-position: center; }
       html body .content .warning-wrapper {
         padding: 0;
         max-height: 0vh;
