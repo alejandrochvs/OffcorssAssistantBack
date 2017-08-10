@@ -77,6 +77,10 @@ html {
                             transition: all 0.3s ease;
                             &:hover {
                                 color: darken($yellow, 5%);
+                                &.fa-times{
+                                    color : darken(#80D6BF,10%);
+                                    border-color: darken(#80D6BF,10%);
+                                }
                             }
                         }
                     }
@@ -85,13 +89,16 @@ html {
                         top: 0px;
                         margin-right: 5px;
                         &:hover {
-                            color: $yellow;
+                            color: lighten(#80D6BF,5%);
                         }
                     }
                     .fa-times {
-                        color: $yellow;
+                        color: #80D6BF;
                         font-size: 28px;
                         top: 4px;
+                        border: dashed 2px #80D6BF;
+                        border-radius: 5px;
+                        padding: 0 1%;
                         position: relative;
                     }
                 }

@@ -250,16 +250,22 @@ html {
               transition: all 0.3s ease; }
               html body .header .head .cont a i:hover {
                 color: #e6c700; }
+                html body .header .head .cont a i:hover.fa-times {
+                  color: #59caac;
+                  border-color: #59caac; }
           html body .header .head .cont .exit-app {
             transition: all .3s ease;
             top: 0px;
             margin-right: 5px; }
             html body .header .head .cont .exit-app:hover {
-              color: #fd0; }
+              color: #93dcc9; }
           html body .header .head .cont .fa-times {
-            color: #fd0;
+            color: #80D6BF;
             font-size: 28px;
             top: 4px;
+            border: dashed 2px #80D6BF;
+            border-radius: 5px;
+            padding: 0 1%;
             position: relative; }
         html body .header .head.transparent {
           cursor: default;
