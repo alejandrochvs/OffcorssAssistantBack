@@ -1720,27 +1720,27 @@ html {
                 html body .content .screen .container .personality .personWrap .person.transparent .fa-check {
                   color: transparent; }
               html body .content .screen .container .personality .personWrap .person:nth-child(1) .background {
-                background: url("../IMG/Personality/activo.jpg");
+                background: url("../IMG/Personality/personalidad-1.jpg");
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover; }
               html body .content .screen .container .personality .personWrap .person:nth-child(2) .background {
-                background: url("../IMG/Personality/timido.jpg");
+                background: url("../IMG/Personality/personalidad-2.jpg");
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover; }
               html body .content .screen .container .personality .personWrap .person:nth-child(3) .background {
-                background: url("../IMG/Personality/simpatico.jpg");
+                background: url("../IMG/Personality/personalidad-3.jpg");
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover; }
               html body .content .screen .container .personality .personWrap .person:nth-child(4) .background {
-                background: url("../IMG/Personality/artistico.jpg");
+                background: url("../IMG/Personality/personalidad-4.jpg");
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover; }
               html body .content .screen .container .personality .personWrap .person:nth-child(5) .background {
-                background: url("../IMG/Personality/silly.jpg");
+                background: url("../IMG/Personality/personalidad-5.jpg");
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover; }
