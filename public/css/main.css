@@ -928,31 +928,38 @@ html {
             padding: 5vh 0; }
             html body .content .screen .container .sizePrimi .selection-wrap {
               text-align: center; }
-              html body .content .screen .container .sizePrimi .selection-wrap .title {
-                margin-bottom: 5vh; }
-                html body .content .screen .container .sizePrimi .selection-wrap .title .text {
-                  transition: all 0.3s ease;
+              html body .content .screen .container .sizePrimi .selection-wrap .title .text {
+                transition: all 0.3s ease;
+                background: transparent;
+                padding: 2%;
+                padding-top: 0;
+                color: white;
+                cursor: pointer;
+                font-size: 35px; }
+                html body .content .screen .container .sizePrimi .selection-wrap .title .text a {
+                  text-decoration: none;
+                  color: white;
+                  border-bottom: solid 2px #fd0;
+                  transition: all .3s ease;
+                  padding-bottom: 5px;
+                  padding-right: 10px;
+                  padding-left: 10px;
+                  top: 10px;
+                  position: relative;
+                  font-size: 36px;
+                  font-family: FrontageCBold; }
+                  html body .content .screen .container .sizePrimi .selection-wrap .title .text a:hover {
+                    border-color: white !important; }
+                html body .content .screen .container .sizePrimi .selection-wrap .title .text .fa {
+                  position: absolute;
+                  right: -20%;
                   background: white;
-                  border-bottom: solid 3px #fd0;
-                  padding: 2%;
-                  cursor: pointer; }
-                  html body .content .screen .container .sizePrimi .selection-wrap .title .text a {
-                    color: #fd0;
-                    transition: all .3s ease;
-                    top: 10px;
-                    position: relative;
-                    font-size: 14px; }
-                  html body .content .screen .container .sizePrimi .selection-wrap .title .text .fa {
-                    position: absolute;
-                    right: -25px;
-                    top: -7px;
-                    background: #fd0;
-                    border-radius: 50%;
-                    height: 18px;
-                    width: 18px;
-                    line-height: 18px;
-                    font-size: 14px;
-                    color: white; }
+                  border-radius: 50%;
+                  height: 3.5vw;
+                  width: 3.5vw;
+                  line-height: 50px;
+                  font-size: 34px;
+                  color: #fd0; }
               html body .content .screen .container .sizePrimi .selection-wrap .padWrap .image {
                 height: 20vh; }
                 html body .content .screen .container .sizePrimi .selection-wrap .padWrap .image div {
@@ -1009,10 +1016,8 @@ html {
                   right: 0; } }
             html body .content .screen .container .sizePrimi.nBoy .selection-wrap .title .text {
               border-bottom-color: #009DB8; }
-              html body .content .screen .container .sizePrimi.nBoy .selection-wrap .title .text a {
-                color: #009DB8; }
-                html body .content .screen .container .sizePrimi.nBoy .selection-wrap .title .text a .fa {
-                  background-color: #009DB8; }
+              html body .content .screen .container .sizePrimi.nBoy .selection-wrap .title .text a .fa {
+                background-color: #009DB8; }
             html body .content .screen .container .sizePrimi.nBoy .selection-wrap .padWrap .image div {
               color: #009DB8; }
             html body .content .screen .container .sizePrimi.nBoy .selection-wrap .padWrap .padSizePrimi {
@@ -1026,10 +1031,8 @@ html {
               color: #009DB8; }
             html body .content .screen .container .sizePrimi.nGirl .selection-wrap .title .text {
               border-bottom-color: #FF98AA; }
-              html body .content .screen .container .sizePrimi.nGirl .selection-wrap .title .text a {
-                color: #FF98AA; }
-                html body .content .screen .container .sizePrimi.nGirl .selection-wrap .title .text a .fa {
-                  background-color: #FF98AA; }
+              html body .content .screen .container .sizePrimi.nGirl .selection-wrap .title .text a .fa {
+                background-color: #FF98AA; }
             html body .content .screen .container .sizePrimi.nGirl .selection-wrap .padWrap .image div {
               color: #FF98AA; }
             html body .content .screen .container .sizePrimi.nGirl .selection-wrap .padWrap .padSizePrimi {
@@ -1043,10 +1046,8 @@ html {
               color: #FF98AA; }
             html body .content .screen .container .sizePrimi.girl .selection-wrap .title .text {
               border-bottom-color: #FF0295; }
-              html body .content .screen .container .sizePrimi.girl .selection-wrap .title .text a {
-                color: #FF0295; }
-                html body .content .screen .container .sizePrimi.girl .selection-wrap .title .text a .fa {
-                  background-color: #FF0295; }
+              html body .content .screen .container .sizePrimi.girl .selection-wrap .title .text a .fa {
+                background-color: #FF0295; }
             html body .content .screen .container .sizePrimi.girl .selection-wrap .padWrap .image div {
               color: #FF0295; }
             html body .content .screen .container .sizePrimi.girl .selection-wrap .padWrap .padSizePrimi {
@@ -1060,10 +1061,8 @@ html {
               color: #FF0295; }
             html body .content .screen .container .sizePrimi.bGirl .selection-wrap .title .text {
               border-bottom-color: #9692D1; }
-              html body .content .screen .container .sizePrimi.bGirl .selection-wrap .title .text a {
-                color: #9692D1; }
-                html body .content .screen .container .sizePrimi.bGirl .selection-wrap .title .text a .fa {
-                  background-color: #9692D1; }
+              html body .content .screen .container .sizePrimi.bGirl .selection-wrap .title .text a .fa {
+                background-color: #9692D1; }
             html body .content .screen .container .sizePrimi.bGirl .selection-wrap .padWrap .image div {
               color: #9692D1; }
             html body .content .screen .container .sizePrimi.bGirl .selection-wrap .padWrap .padSizePrimi {
@@ -1077,10 +1076,8 @@ html {
               color: #9692D1; }
             html body .content .screen .container .sizePrimi.boy .selection-wrap .title .text {
               border-bottom-color: #FF4D0F; }
-              html body .content .screen .container .sizePrimi.boy .selection-wrap .title .text a {
-                color: #FF4D0F; }
-                html body .content .screen .container .sizePrimi.boy .selection-wrap .title .text a .fa {
-                  background-color: #FF4D0F; }
+              html body .content .screen .container .sizePrimi.boy .selection-wrap .title .text a .fa {
+                background-color: #FF4D0F; }
             html body .content .screen .container .sizePrimi.boy .selection-wrap .padWrap .image div {
               color: #FF4D0F; }
             html body .content .screen .container .sizePrimi.boy .selection-wrap .padWrap .padSizePrimi {
@@ -1094,10 +1091,8 @@ html {
               color: #FF4D0F; }
             html body .content .screen .container .sizePrimi.bBoy .selection-wrap .title .text {
               border-bottom-color: #78BF01; }
-              html body .content .screen .container .sizePrimi.bBoy .selection-wrap .title .text a {
-                color: #78BF01; }
-                html body .content .screen .container .sizePrimi.bBoy .selection-wrap .title .text a .fa {
-                  background-color: #78BF01; }
+              html body .content .screen .container .sizePrimi.bBoy .selection-wrap .title .text a .fa {
+                background-color: #78BF01; }
             html body .content .screen .container .sizePrimi.bBoy .selection-wrap .padWrap .image div {
               color: #78BF01; }
             html body .content .screen .container .sizePrimi.bBoy .selection-wrap .padWrap .padSizePrimi {
