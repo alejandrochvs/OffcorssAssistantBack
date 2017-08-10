@@ -1635,17 +1635,23 @@ html {
                 border-radius: 50%;
                 display: inline-block;
                 border: solid 2px white;
-                padding: 0; }
+                padding: 0;
+                overflow: hidden; }
+                html body .content .screen .container .color .colors .color .tag {
+                  position: absolute; }
                 html body .content .screen .container .color .colors .color .half {
                   position: absolute;
-                  height: 5vw;
-                  width: 2.5vw; }
+                  height: 150%;
+                  transform: rotate(45deg); }
                 html body .content .screen .container .color .colors .color .left-half {
-                  background: red;
-                  left: 0; }
+                  background: #fd0;
+                  left: -10%;
+                  top: -10%;
+                  width: 100%; }
                 html body .content .screen .container .color .colors .color .right-half {
-                  background: blue;
-                  right: 0; }
+                  left: 0%;
+                  bottom: 0;
+                  width: 60%; }
             html body .content .screen .container .color.boy .selection-wrap .title .text {
               border-bottom-color: #FF4D0F; }
             html body .content .screen .container .color.girl .selection-wrap .title .text {

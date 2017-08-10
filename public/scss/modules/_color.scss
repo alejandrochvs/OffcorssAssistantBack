@@ -66,19 +66,25 @@
             display: inline-block;
             border: solid 2px white;
             padding: 0;
-//            overflow: hidden;
+            overflow: hidden;
+            .tag{
+                position: absolute;
+            }
             .half {
                 position: absolute;
-                height: 5vw;
-                width: 2.5vw;
+                height: 150%;
+                transform: rotate(45deg);
             }
             .left-half {
-                background: red;
-                left: 0;
+                background: $yellow;
+                left: -10%;
+                top: -10%;
+                width: 100%;
             }
             .right-half{
-                background: blue;
-                right: 0;
+                left: 0%;
+                bottom: 0;
+                width: 60%;
             }
         }
     }
