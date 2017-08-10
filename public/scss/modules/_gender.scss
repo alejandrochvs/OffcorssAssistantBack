@@ -35,10 +35,21 @@
             }
         }
     }
-    .img {
+    .img-boy {
         height: 60vh;
         .image {
-            background-image: url(../IMG/Gender/both.jpg);
+            background-image: url(../IMG/Gender/boy.jpg);
+            height: 100%;
+            background-position: center;
+            background-origin: content-box;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+    .img-girl {
+        height: 60vh;
+        .image {
+            background-image: url(../IMG/Gender/girl.jpg);
             height: 100%;
             background-position: center;
             background-origin: content-box;
@@ -61,9 +72,14 @@
                 }
             }
         }
-        .img {
+        .img-boy {
             .image {
-                background-image: url(../IMG/Gender/boy.jpg);
+                display: inherit;
+            }
+        }
+        .img-girl{
+            .image{
+                display: none;
             }
         }
     }

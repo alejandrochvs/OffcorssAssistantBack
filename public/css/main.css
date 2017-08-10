@@ -371,10 +371,19 @@ html {
                   border-bottom: solid 3px #fd4605; }
                 html body .content .screen .container .gender .selection-wrap .selections .background .text.girlSel:hover {
                   border-bottom: solid 3px #e70095; }
-            html body .content .screen .container .gender .img {
+            html body .content .screen .container .gender .img-boy {
               height: 60vh; }
-              html body .content .screen .container .gender .img .image {
-                background-image: url(../IMG/Gender/both.jpg);
+              html body .content .screen .container .gender .img-boy .image {
+                background-image: url(../IMG/Gender/boy.jpg);
+                height: 100%;
+                background-position: center;
+                background-origin: content-box;
+                background-size: contain;
+                background-repeat: no-repeat; }
+            html body .content .screen .container .gender .img-girl {
+              height: 60vh; }
+              html body .content .screen .container .gender .img-girl .image {
+                background-image: url(../IMG/Gender/girl.jpg);
                 height: 100%;
                 background-position: center;
                 background-origin: content-box;
@@ -384,8 +393,10 @@ html {
               border-bottom-color: #fd4605; }
             html body .content .screen .container .gender.boy .selection-wrap .selections .background .boySel {
               border-bottom-color: #fd4605; }
-            html body .content .screen .container .gender.boy .img .image {
-              background-image: url(../IMG/Gender/boy.jpg); }
+            html body .content .screen .container .gender.boy .img-boy .image {
+              display: inherit; }
+            html body .content .screen .container .gender.boy .img-girl .image {
+              display: none; }
             html body .content .screen .container .gender.girl .selection-wrap .title .text {
               border-bottom-color: #e70095; }
             html body .content .screen .container .gender.girl .selection-wrap .selections .background .girlSel {
