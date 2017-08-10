@@ -144,9 +144,9 @@ html {
                 html body .ui .ui-section .ui-hidden ul.colors li:nth-child(1) .color h5 {
                   color: #6B85AB; }
               html body .ui .ui-section .ui-hidden ul.colors li:nth-child(2) .color {
-                background: #e70095; }
+                background: #FF0080; }
                 html body .ui .ui-section .ui-hidden ul.colors li:nth-child(2) .color h5 {
-                  color: #e70095; }
+                  color: #FF0080; }
               html body .ui .ui-section .ui-hidden ul.colors li:nth-child(3) .color {
                 background: #82bc00; }
                 html body .ui .ui-section .ui-hidden ul.colors li:nth-child(3) .color h5 {
@@ -296,7 +296,7 @@ html {
       html body .header.boy {
         border-bottom-color: #6B85AB; }
       html body .header.girl {
-        border-bottom-color: #e70095; }
+        border-bottom-color: #FF0080; }
       html body .header.bBoy {
         border-bottom-color: #82bc00; }
       html body .header.bGirl {
@@ -403,10 +403,10 @@ html {
                       html body .content .screen .container .gender .selection-wrap .selections .background .text.boySel:hover {
                         border-bottom: solid 3px #6B85AB; }
                     html body .content .screen .container .gender .selection-wrap .selections .background .text.girlSel {
-                      color: #e70095;
+                      color: #FF0080;
                       border-left: dashed 1.5px white; }
                       html body .content .screen .container .gender .selection-wrap .selections .background .text.girlSel:hover {
-                        border-bottom: solid 3px #e70095; }
+                        border-bottom: solid 3px #FF0080; }
             html body .content .screen .container .gender .img-boy {
               height: 60vh; }
               html body .content .screen .container .gender .img-boy .image {
@@ -434,9 +434,9 @@ html {
             html body .content .screen .container .gender.boy .img-girl .image {
               display: none; }
             html body .content .screen .container .gender.girl .selection-wrap .title .text {
-              border-bottom-color: #e70095; }
+              border-bottom-color: #FF0080; }
             html body .content .screen .container .gender.girl .selection-wrap .selections .background .girlSel {
-              border-bottom-color: #e70095; }
+              border-bottom-color: #FF0080; }
             html body .content .screen .container .gender.girl .img-boy .image {
               display: none; }
             html body .content .screen .container .gender.girl .img-girl .image {
@@ -504,9 +504,9 @@ html {
             html body .content .screen .container .name.boy .img .image {
               background-image: url("../IMG/Name/boy.jpg"); }
             html body .content .screen .container .name.girl .selection-wrap .title .text {
-              border-bottom-color: #e70095; }
+              border-bottom-color: #FF0080; }
             html body .content .screen .container .name.girl .continue div {
-              background: #e70095; }
+              background: #FF0080; }
             html body .content .screen .container .name.girl .img .image {
               background-image: url("../IMG/Name/girl.jpg"); }
             html body .content .screen .container .name.bBoy .selection-wrap .title .text {
@@ -567,7 +567,7 @@ html {
                   html body .content .screen .container .age .selection-wrap .pad .row.bBoy {
                     background: #82bc00; }
                   html body .content .screen .container .age .selection-wrap .pad .row.girl {
-                    background: #e70095; }
+                    background: #FF0080; }
                   html body .content .screen .container .age .selection-wrap .pad .row.bGirl {
                     background: #9794d2; }
                   html body .content .screen .container .age .selection-wrap .pad .row.nBoy {
@@ -594,13 +594,13 @@ html {
             html body .content .screen .container .age.boy .img .image {
               background-image: url("../IMG/Age/boy.png"); }
             html body .content .screen .container .age.girl .selection-wrap .title .text {
-              border-bottom-color: #e70095; }
+              border-bottom-color: #FF0080; }
             html body .content .screen .container .age.girl .selection-wrap .pad {
-              border-color: #e70095; }
+              border-color: #FF0080; }
               html body .content .screen .container .age.girl .selection-wrap .pad .row .number:hover {
-                border-color: #e70095; }
+                border-color: #FF0080; }
               html body .content .screen .container .age.girl .selection-wrap .pad .row .number.selected {
-                background: #e70095;
+                background: #FF0080;
                 color: white; }
             html body .content .screen .container .age.girl .img .image {
               background-image: url("../IMG/Age/girl.png"); }
@@ -786,22 +786,22 @@ html {
             html body .content .screen .container .size.boy .selection-wrap .padWrap .nav .sel:hover .fa {
               color: #6B85AB; }
             html body .content .screen .container .size.girl .selection-wrap .title .text {
-              border-bottom-color: #e70095; }
+              border-bottom-color: #FF0080; }
               html body .content .screen .container .size.girl .selection-wrap .title .text a {
-                color: #e70095; }
+                color: #FF0080; }
                 html body .content .screen .container .size.girl .selection-wrap .title .text a .fa {
-                  background-color: #e70095; }
+                  background-color: #FF0080; }
             html body .content .screen .container .size.girl .selection-wrap .padWrap .image div {
-              color: #e70095; }
+              color: #FF0080; }
             html body .content .screen .container .size.girl .selection-wrap .padWrap .padSize {
-              border-color: #e70095; }
+              border-color: #FF0080; }
               html body .content .screen .container .size.girl .selection-wrap .padWrap .padSize .row .box:hover {
-                border-color: #e70095; }
+                border-color: #FF0080; }
               html body .content .screen .container .size.girl .selection-wrap .padWrap .padSize .row .box.active {
-                background: #e70095;
+                background: #FF0080;
                 color: white; }
             html body .content .screen .container .size.girl .selection-wrap .padWrap .nav .sel:hover .fa {
-              color: #e70095; }
+              color: #FF0080; }
             html body .content .screen .container .size.bBoy .selection-wrap .title .text {
               border-bottom-color: #82bc00; }
               html body .content .screen .container .size.bBoy .selection-wrap .title .text a {
@@ -1010,22 +1010,22 @@ html {
             html body .content .screen .container .sizePrimi.nGirl .selection-wrap .padWrap .nav .sel:hover .fa {
               color: #ee9bac; }
             html body .content .screen .container .sizePrimi.girl .selection-wrap .title .text {
-              border-bottom-color: #e70095; }
+              border-bottom-color: #FF0080; }
               html body .content .screen .container .sizePrimi.girl .selection-wrap .title .text a {
-                color: #e70095; }
+                color: #FF0080; }
                 html body .content .screen .container .sizePrimi.girl .selection-wrap .title .text a .fa {
-                  background-color: #e70095; }
+                  background-color: #FF0080; }
             html body .content .screen .container .sizePrimi.girl .selection-wrap .padWrap .image div {
-              color: #e70095; }
+              color: #FF0080; }
             html body .content .screen .container .sizePrimi.girl .selection-wrap .padWrap .padSizePrimi {
-              border-color: #e70095; }
+              border-color: #FF0080; }
               html body .content .screen .container .sizePrimi.girl .selection-wrap .padWrap .padSizePrimi .row .box:hover {
-                border-color: #e70095; }
+                border-color: #FF0080; }
               html body .content .screen .container .sizePrimi.girl .selection-wrap .padWrap .padSizePrimi .row .box.active {
-                background: #e70095;
+                background: #FF0080;
                 color: white; }
             html body .content .screen .container .sizePrimi.girl .selection-wrap .padWrap .nav .sel:hover .fa {
-              color: #e70095; }
+              color: #FF0080; }
             html body .content .screen .container .sizePrimi.bGirl .selection-wrap .title .text {
               border-bottom-color: #9794d2; }
               html body .content .screen .container .sizePrimi.bGirl .selection-wrap .title .text a {
@@ -1196,20 +1196,20 @@ html {
                 html body .content .screen .container .occasion.boy .occasionsBtn.disabled:hover {
                   background: #acbbd0; }
             html body .content .screen .container .occasion.girl .selection-wrap .title .text {
-              border-bottom-color: #e70095; }
+              border-bottom-color: #FF0080; }
             html body .content .screen .container .occasion.girl .occasions .background .cont.active .img {
-              background: rgba(231, 0, 149, 0.8); }
+              background: rgba(255, 0, 128, 0.8); }
             html body .content .screen .container .occasion.girl .occasions .background .cont .title {
-              background: rgba(231, 0, 149, 0.8); }
+              background: rgba(255, 0, 128, 0.8); }
             html body .content .screen .container .occasion.girl .occasionsBtn {
-              background: #e70095; }
+              background: #FF0080; }
               html body .content .screen .container .occasion.girl .occasionsBtn:hover {
-                background: #ce0085; }
+                background: #e60073; }
               html body .content .screen .container .occasion.girl .occasionsBtn.disabled {
-                background: #ff4ec0;
+                background: #ff66b3;
                 cursor: default; }
                 html body .content .screen .container .occasion.girl .occasionsBtn.disabled:hover {
-                  background: #ff4ec0; }
+                  background: #ff66b3; }
             html body .content .screen .container .occasion.bBoy .selection-wrap .title .text {
               border-bottom-color: #82bc00; }
             html body .content .screen .container .occasion.bBoy .occasions .background .cont.active .img {
@@ -1393,7 +1393,7 @@ html {
             html body .content .screen .container .weather.boy .selection-wrap .title .text {
               border-bottom-color: #6B85AB; }
             html body .content .screen .container .weather.girl .selection-wrap .title .text {
-              border-bottom-color: #e70095; }
+              border-bottom-color: #FF0080; }
             html body .content .screen .container .weather.bBoy .selection-wrap .title .text {
               border-bottom-color: #82bc00; }
             html body .content .screen .container .weather.bGirl .selection-wrap .title .text {
@@ -1483,13 +1483,13 @@ html {
             html body .content .screen .container .looks.boy .continueLooks h3 {
               background-color: #6B85AB; }
             html body .content .screen .container .looks.girl .selection-wrap .title .text {
-              border-bottom-color: #e70095; }
+              border-bottom-color: #FF0080; }
             html body .content .screen .container .looks.girl .looksWrap .background .cont {
-              border: solid 5px rgba(231, 0, 149, 0.8); }
+              border: solid 5px rgba(255, 0, 128, 0.8); }
               html body .content .screen .container .looks.girl .looksWrap .background .cont .title {
-                background: rgba(231, 0, 149, 0.8); }
+                background: rgba(255, 0, 128, 0.8); }
             html body .content .screen .container .looks.girl .continueLooks h3 {
-              background-color: #e70095; }
+              background-color: #FF0080; }
             html body .content .screen .container .looks.bBoy .selection-wrap .title .text {
               border-bottom-color: #82bc00; }
             html body .content .screen .container .looks.bBoy .looksWrap .background .cont .title {
@@ -1589,7 +1589,7 @@ html {
             html body .content .screen .container .color.boy .selection-wrap .title .text {
               border-bottom-color: #6B85AB; }
             html body .content .screen .container .color.girl .selection-wrap .title .text {
-              border-bottom-color: #e70095; }
+              border-bottom-color: #FF0080; }
             html body .content .screen .container .color.bBoy .selection-wrap .title .text {
               border-bottom-color: #82bc00; }
             html body .content .screen .container .color.bGirl .selection-wrap .title .text {
@@ -1711,13 +1711,13 @@ html {
             html body .content .screen .container .personality.boy .continue h4 {
               background: #6B85AB; }
             html body .content .screen .container .personality.girl .selection-wrap .title .text {
-              border-bottom-color: #e70095; }
+              border-bottom-color: #FF0080; }
             html body .content .screen .container .personality.girl .personWrap .person .background {
-              border-color: #e70095; }
+              border-color: #FF0080; }
               html body .content .screen .container .personality.girl .personWrap .person .background .title {
-                background-color: #e70095; }
+                background-color: #FF0080; }
             html body .content .screen .container .personality.girl .continue h4 {
-              background: #e70095; }
+              background: #FF0080; }
             html body .content .screen .container .personality.bBoy .selection-wrap .title .text {
               border-bottom-color: #82bc00; }
             html body .content .screen .container .personality.bBoy .personWrap .person .background {
@@ -1932,19 +1932,19 @@ html {
             html body .content .screen .container .result.boy .call-modal.active.success .success-content {
               background: #6B85AB; }
             html body .content .screen .container .result.girl .call-modal .title {
-              background: #e70095; }
+              background: #FF0080; }
             html body .content .screen .container .result.girl .call-modal .input input {
-              border-color: #e70095; }
+              border-color: #FF0080; }
             html body .content .screen .container .result.girl .call-modal .button {
-              color: #e70095;
-              border-color: #e70095; }
+              color: #FF0080;
+              border-color: #FF0080; }
               html body .content .screen .container .result.girl .call-modal .button:hover {
-                background: #e70095;
+                background: #FF0080;
                 color: white; }
             html body .content .screen .container .result.girl .call-modal .fa-times:hover {
-              color: #b40074; }
+              color: #cc0066; }
             html body .content .screen .container .result.girl .call-modal.active.success .success-content {
-              background: #e70095; }
+              background: #FF0080; }
             html body .content .screen .container .result.bBoy .call-modal .title {
               background: #82bc00; }
             html body .content .screen .container .result.bBoy .call-modal .input input {
@@ -2804,9 +2804,6 @@ html {
       box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2); }
       html body .footer .loader {
         transition: all 0.3s ease;
-        -webkit-box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, 0.2);
-        -moz-box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, 0.2);
-        box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, 0.2);
         padding: 0;
         position: absolute;
         top: -1vh;
@@ -2815,13 +2812,10 @@ html {
         background: white; }
         html body .footer .loader .progress {
           height: 200%;
-          bottom: 50%;
+          bottom: 100%;
           transition: all 0.3s ease;
           width: 0%;
-          background: white;
-          -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0);
-          -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0);
-          box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0);
+          background: transparent;
           border-radius: 0;
           z-index: 1;
           position: relative;
@@ -2832,9 +2826,9 @@ html {
             background: #fd0;
             animation: loading 3s ease infinite; }
         html body .footer .loader.girl .progress {
-          background: #e70095; }
+          background: #FF0080; }
           html body .footer .loader.girl .progress.loading {
-            background: #e70095; }
+            background: #FF0080; }
         html body .footer .loader.boy .progress {
           background: #6B85AB; }
           html body .footer .loader.boy .progress.loading {

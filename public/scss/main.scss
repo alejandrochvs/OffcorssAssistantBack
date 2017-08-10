@@ -260,9 +260,6 @@ html {
             box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, $footer-shadow-opacity);
             .loader {
                 transition: all 0.3s ease;
-                -webkit-box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, $footer-shadow-opacity);
-                -moz-box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, $footer-shadow-opacity);
-                box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, $footer-shadow-opacity);
                 padding: 0;
                 position: absolute;
                 top: -1vh;
@@ -271,13 +268,10 @@ html {
                 background: white;
                 .progress {
                     height: 200%;
-                    bottom: 50%;
+                    bottom: 100%;
                     transition: all 0.3s ease;
                     width: 0%;
-                    background: white;
-                    -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0);
-                    -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0);
-                    box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0);
+                    background: transparent;
                     border-radius: 0;
                     z-index: 1;
                     position: relative;
