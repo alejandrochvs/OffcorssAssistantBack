@@ -178,16 +178,17 @@
         line-height: 5vh;
         padding: 0;
         &:hover {
-            background: darken($yellow, 5%);
+            color: darken($yellow, 5%);
         }
         &.disabled {
             height: 0vh;
             overflow: hidden;
-            background: lighten($yellow, 20%);
+            color: lighten($yellow, 20%);
             cursor: default;
             background: transparent !important;
+            
             &:hover {
-                background: lighten($yellow, 10%);
+                color: lighten($yellow, 10%);
             }
         }
     }
@@ -203,7 +204,7 @@
             .background {
                 .cont {
                     $occasionColor: $boy;
-                    $opacity: 0.8;
+                    $opacity: 0.9;
                     &.active {
                         .img {
                             background: rgba($occasionColor, $opacity);
@@ -216,15 +217,15 @@
             }
         }
         .occasionsBtn {
-            background: $boy;
+            color: $boy;
             &:hover {
-                background: darken($boy, 5%);
+                color: darken($boy, 5%);
             }
             &.disabled {
-                background: lighten($boy, 20%);
+                color: lighten($boy, 20%);
                 cursor: default;
                 &:hover {
-                    background: lighten($boy, 20%);
+                    color: lighten($boy, 20%);
                 }
             }
         }
@@ -241,7 +242,7 @@
             .background {
                 .cont {
                     $occasionColor: $girl;
-                    $opacity: 0.8;
+                    $opacity: 0.9;
                     &.active {
                         .img {
                             background: rgba($occasionColor, $opacity);
@@ -254,15 +255,15 @@
             }
         }
         .occasionsBtn {
-            background: $girl;
+            color: $girl;
             &:hover {
-                background: darken($girl, 5%);
+                color: darken($girl, 5%);
             }
             &.disabled {
-                background: lighten($girl, 20%);
+                color: lighten($girl, 20%);
                 cursor: default;
                 &:hover {
-                    background: lighten($girl, 20%);
+                    color: lighten($girl, 20%);
                 }
             }
         }
@@ -279,7 +280,7 @@
             .background {
                 .cont {
                     $occasionColor: $bBoy;
-                    $opacity: 0.8;
+                    $opacity: 0.9;
                     &.active {
                         .img {
                             background: rgba($occasionColor, $opacity);
@@ -292,15 +293,15 @@
             }
         }
         .occasionsBtn {
-            background: $bBoy;
+            color: $bBoy;
             &:hover {
-                background: darken($bBoy, 5%);
+                color: darken($bBoy, 5%);
             }
             &.disabled {
-                background: lighten($bBoy, 20%);
+                color: lighten($bBoy, 20%);
                 cursor: default;
                 &:hover {
-                    background: lighten($bBoy, 20%);
+                    color: lighten($bBoy, 20%);
                 }
             }
         }
@@ -317,7 +318,7 @@
             .background {
                 .cont {
                     $occasionColor: $bGirl;
-                    $opacity: 0.8;
+                    $opacity: 0.9;
                     &.active {
                         .img {
                             background: rgba($occasionColor, $opacity);
@@ -330,15 +331,15 @@
             }
         }
         .occasionsBtn {
-            background: $bGirl;
+            color: $bGirl;
             &:hover {
-                background: darken($bGirl, 5%);
+                color: darken($bGirl, 5%);
             }
             &.disabled {
-                background: lighten($bGirl, 20%);
+                color: lighten($bGirl, 20%);
                 cursor: default;
                 &:hover {
-                    background: lighten($bGirl, 20%);
+                    color: lighten($bGirl, 20%);
                 }
             }
         }
@@ -355,7 +356,7 @@
             .background {
                 .cont {
                     $occasionColor: $nBoy;
-                    $opacity: 0.8;
+                    $opacity: 0.9;
                     &.active {
                         .img {
                             background: rgba($occasionColor, $opacity);
@@ -368,15 +369,15 @@
             }
         }
         .occasionsBtn {
-            background: $nBoy;
+            color: $nBoy;
             &:hover {
-                background: darken($nBoy, 5%);
+                color: darken($nBoy, 5%);
             }
             &.disabled {
-                background: lighten($nBoy, 20%);
+                color: lighten($nBoy, 20%);
                 cursor: default;
                 &:hover {
-                    background: lighten($nBoy, 20%);
+                    color: lighten($nBoy, 20%);
                 }
             }
         }
@@ -393,7 +394,7 @@
             .background {
                 .cont {
                     $occasionColor: $nGirl;
-                    $opacity: 0.8;
+                    $opacity: 0.9;
                     &.active {
                         .img {
                             background: rgba($occasionColor, $opacity);
@@ -406,15 +407,15 @@
             }
         }
         .occasionsBtn {
-            background: $nGirl;
+            color: $nGirl;
             &:hover {
-                background: darken($nGirl, 5%);
+                color: darken($nGirl, 5%);
             }
             &.disabled {
-                background: lighten($nGirl, 20%);
+                color: lighten($nGirl, 20%);
                 cursor: default;
                 &:hover {
-                    background: lighten($nGirl, 20%);
+                    color: lighten($nGirl, 20%);
                 }
             }
         }

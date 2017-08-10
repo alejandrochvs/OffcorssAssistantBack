@@ -1223,105 +1223,105 @@ html {
               line-height: 5vh;
               padding: 0; }
               html body .content .screen .container .occasion .occasionsBtn:hover {
-                background: #e6c700; }
+                color: #e6c700; }
               html body .content .screen .container .occasion .occasionsBtn.disabled {
                 height: 0vh;
                 overflow: hidden;
-                background: #ffeb66;
+                color: #ffeb66;
                 cursor: default;
                 background: transparent !important; }
                 html body .content .screen .container .occasion .occasionsBtn.disabled:hover {
-                  background: #ffe433; }
+                  color: #ffe433; }
             html body .content .screen .container .occasion.boy .selection-wrap .title .text {
               border-bottom-color: #FF4D0F; }
             html body .content .screen .container .occasion.boy .occasions .background .cont.active .img {
-              background: rgba(255, 77, 15, 0.8); }
+              background: rgba(255, 77, 15, 0.9); }
             html body .content .screen .container .occasion.boy .occasions .background .cont.active .title {
-              background: rgba(255, 77, 15, 0.8); }
+              background: rgba(255, 77, 15, 0.9); }
             html body .content .screen .container .occasion.boy .occasionsBtn {
-              background: #FF4D0F; }
+              color: #FF4D0F; }
               html body .content .screen .container .occasion.boy .occasionsBtn:hover {
-                background: #f53f00; }
+                color: #f53f00; }
               html body .content .screen .container .occasion.boy .occasionsBtn.disabled {
-                background: #ff9975;
+                color: #ff9975;
                 cursor: default; }
                 html body .content .screen .container .occasion.boy .occasionsBtn.disabled:hover {
-                  background: #ff9975; }
+                  color: #ff9975; }
             html body .content .screen .container .occasion.girl .selection-wrap .title .text {
               border-bottom-color: #FF0295; }
             html body .content .screen .container .occasion.girl .occasions .background .cont.active .img {
-              background: rgba(255, 2, 149, 0.8); }
+              background: rgba(255, 2, 149, 0.9); }
             html body .content .screen .container .occasion.girl .occasions .background .cont.active .title {
-              background: rgba(255, 2, 149, 0.8); }
+              background: rgba(255, 2, 149, 0.9); }
             html body .content .screen .container .occasion.girl .occasionsBtn {
-              background: #FF0295; }
+              color: #FF0295; }
               html body .content .screen .container .occasion.girl .occasionsBtn:hover {
-                background: #e80087; }
+                color: #e80087; }
               html body .content .screen .container .occasion.girl .occasionsBtn.disabled {
-                background: #ff68c0;
+                color: #ff68c0;
                 cursor: default; }
                 html body .content .screen .container .occasion.girl .occasionsBtn.disabled:hover {
-                  background: #ff68c0; }
+                  color: #ff68c0; }
             html body .content .screen .container .occasion.bBoy .selection-wrap .title .text {
               border-bottom-color: #78BF01; }
             html body .content .screen .container .occasion.bBoy .occasions .background .cont.active .img {
-              background: rgba(120, 191, 1, 0.8); }
+              background: rgba(120, 191, 1, 0.9); }
             html body .content .screen .container .occasion.bBoy .occasions .background .cont.active .title {
-              background: rgba(120, 191, 1, 0.8); }
+              background: rgba(120, 191, 1, 0.9); }
             html body .content .screen .container .occasion.bBoy .occasionsBtn {
-              background: #78BF01; }
+              color: #78BF01; }
               html body .content .screen .container .occasion.bBoy .occasionsBtn:hover {
-                background: #68a601; }
+                color: #68a601; }
               html body .content .screen .container .occasion.bBoy .occasionsBtn.disabled {
-                background: #aefe28;
+                color: #aefe28;
                 cursor: default; }
                 html body .content .screen .container .occasion.bBoy .occasionsBtn.disabled:hover {
-                  background: #aefe28; }
+                  color: #aefe28; }
             html body .content .screen .container .occasion.bGirl .selection-wrap .title .text {
               border-bottom-color: #9692D1; }
             html body .content .screen .container .occasion.bGirl .occasions .background .cont.active .img {
-              background: rgba(150, 146, 209, 0.8); }
+              background: rgba(150, 146, 209, 0.9); }
             html body .content .screen .container .occasion.bGirl .occasions .background .cont.active .title {
-              background: rgba(150, 146, 209, 0.8); }
+              background: rgba(150, 146, 209, 0.9); }
             html body .content .screen .container .occasion.bGirl .occasionsBtn {
-              background: #9692D1; }
+              color: #9692D1; }
               html body .content .screen .container .occasion.bGirl .occasionsBtn:hover {
-                background: #8580c9; }
+                color: #8580c9; }
               html body .content .screen .container .occasion.bGirl .occasionsBtn.disabled {
-                background: #dbdaef;
+                color: #dbdaef;
                 cursor: default; }
                 html body .content .screen .container .occasion.bGirl .occasionsBtn.disabled:hover {
-                  background: #dbdaef; }
+                  color: #dbdaef; }
             html body .content .screen .container .occasion.nBoy .selection-wrap .title .text {
               border-bottom-color: #009DB8; }
             html body .content .screen .container .occasion.nBoy .occasions .background .cont.active .img {
-              background: rgba(0, 157, 184, 0.8); }
+              background: rgba(0, 157, 184, 0.9); }
             html body .content .screen .container .occasion.nBoy .occasions .background .cont.active .title {
-              background: rgba(0, 157, 184, 0.8); }
+              background: rgba(0, 157, 184, 0.9); }
             html body .content .screen .container .occasion.nBoy .occasionsBtn {
-              background: #009DB8; }
+              color: #009DB8; }
               html body .content .screen .container .occasion.nBoy .occasionsBtn:hover {
-                background: #00879f; }
+                color: #00879f; }
               html body .content .screen .container .occasion.nBoy .occasionsBtn.disabled {
-                background: #1fdeff;
+                color: #1fdeff;
                 cursor: default; }
                 html body .content .screen .container .occasion.nBoy .occasionsBtn.disabled:hover {
-                  background: #1fdeff; }
+                  color: #1fdeff; }
             html body .content .screen .container .occasion.nGirl .selection-wrap .title .text {
               border-bottom-color: #FF98AA; }
             html body .content .screen .container .occasion.nGirl .occasions .background .cont.active .img {
-              background: rgba(255, 152, 170, 0.8); }
+              background: rgba(255, 152, 170, 0.9); }
             html body .content .screen .container .occasion.nGirl .occasions .background .cont.active .title {
-              background: rgba(255, 152, 170, 0.8); }
+              background: rgba(255, 152, 170, 0.9); }
             html body .content .screen .container .occasion.nGirl .occasionsBtn {
-              background: #FF98AA; }
+              color: #FF98AA; }
               html body .content .screen .container .occasion.nGirl .occasionsBtn:hover {
-                background: #ff7f95; }
+                color: #ff7f95; }
               html body .content .screen .container .occasion.nGirl .occasionsBtn.disabled {
-                background: #fffefe;
+                color: #fffefe;
                 cursor: default; }
                 html body .content .screen .container .occasion.nGirl .occasionsBtn.disabled:hover {
-                  background: #fffefe; }
+                  color: #fffefe; }
           @media (max-width: 767px) {
             html body .content .screen .container .occasion .occasions {
               margin-top: -2vh; }
