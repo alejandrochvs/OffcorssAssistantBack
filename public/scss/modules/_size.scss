@@ -77,14 +77,13 @@
                 .fa {
                     position: absolute;
                     right: -20%;
-                    top: 0px;
-                    background: $yellow;
+                    background: white;
                     border-radius: 50%;
                     height: 3.5vw;
                     width: 3.5vw;
-                    line-height: 18px;
-                    font-size: 14px;
-                    color: white;
+                    line-height: 50px;
+                    font-size: 34px;
+                    color: $yellow;
                 }
             }
         }
@@ -167,7 +166,7 @@
                     a {
                         border-color: $boy;
                         .fa {
-                            background-color: $boy;
+                            color: $boy;
                         }
                     }
                 }
@@ -212,7 +211,7 @@
                     a {
                         border-color: $girl;
                         .fa {
-                            background-color: $girl;
+                            color: $girl;
                         }
                     }
                 }
@@ -257,7 +256,7 @@
                     a {
                         border-color: $bBoy;
                         .fa {
-                            background-color: $bBoy;
+                            color: $bBoy;
                         }
                     }
                 }
@@ -302,7 +301,7 @@
                     a {
                         border-color: $bGirl;
                         .fa {
-                            background-color: $bGirl;
+                            color: $bGirl;
                         }
                     }
                 }
@@ -347,7 +346,7 @@
                     a {
                         border-color: $nBoy;
                         .fa {
-                            background-color: $nBoy;
+                            color: $nBoy;
                         }
                     }
                 }
@@ -392,7 +391,7 @@
                     a {
                         border-color: $nGirl;
                         .fa {
-                            background-color: $nGirl;
+                            color: $nGirl;
                         }
                     }
                 }

@@ -757,14 +757,13 @@ html {
                   html body .content .screen .container .size .selection-wrap .title .text .fa {
                     position: absolute;
                     right: -20%;
-                    top: 0px;
-                    background: #fd0;
+                    background: white;
                     border-radius: 50%;
                     height: 3.5vw;
                     width: 3.5vw;
-                    line-height: 18px;
-                    font-size: 14px;
-                    color: white; }
+                    line-height: 50px;
+                    font-size: 34px;
+                    color: #fd0; }
               html body .content .screen .container .size .selection-wrap .padWrap .image {
                 height: 20vh; }
                 html body .content .screen .container .size .selection-wrap .padWrap .image div {
@@ -824,7 +823,7 @@ html {
               html body .content .screen .container .size.boy .selection-wrap .title .text a {
                 border-color: #6B85AB; }
                 html body .content .screen .container .size.boy .selection-wrap .title .text a .fa {
-                  background-color: #6B85AB; }
+                  color: #6B85AB; }
             html body .content .screen .container .size.boy .selection-wrap .padWrap .image div {
               color: #6B85AB; }
             html body .content .screen .container .size.boy .selection-wrap .padWrap .padSize {
@@ -841,7 +840,7 @@ html {
               html body .content .screen .container .size.girl .selection-wrap .title .text a {
                 border-color: #FF0080; }
                 html body .content .screen .container .size.girl .selection-wrap .title .text a .fa {
-                  background-color: #FF0080; }
+                  color: #FF0080; }
             html body .content .screen .container .size.girl .selection-wrap .padWrap .image div {
               color: #FF0080; }
             html body .content .screen .container .size.girl .selection-wrap .padWrap .padSize {
@@ -858,7 +857,7 @@ html {
               html body .content .screen .container .size.bBoy .selection-wrap .title .text a {
                 border-color: #82bc00; }
                 html body .content .screen .container .size.bBoy .selection-wrap .title .text a .fa {
-                  background-color: #82bc00; }
+                  color: #82bc00; }
             html body .content .screen .container .size.bBoy .selection-wrap .padWrap .image div {
               color: #82bc00; }
             html body .content .screen .container .size.bBoy .selection-wrap .padWrap .padSize {
@@ -875,7 +874,7 @@ html {
               html body .content .screen .container .size.bGirl .selection-wrap .title .text a {
                 border-color: #9794d2; }
                 html body .content .screen .container .size.bGirl .selection-wrap .title .text a .fa {
-                  background-color: #9794d2; }
+                  color: #9794d2; }
             html body .content .screen .container .size.bGirl .selection-wrap .padWrap .image div {
               color: #9794d2; }
             html body .content .screen .container .size.bGirl .selection-wrap .padWrap .padSize {
@@ -892,7 +891,7 @@ html {
               html body .content .screen .container .size.nBoy .selection-wrap .title .text a {
                 border-color: #3e8ede; }
                 html body .content .screen .container .size.nBoy .selection-wrap .title .text a .fa {
-                  background-color: #3e8ede; }
+                  color: #3e8ede; }
             html body .content .screen .container .size.nBoy .selection-wrap .padWrap .image div {
               color: #3e8ede; }
             html body .content .screen .container .size.nBoy .selection-wrap .padWrap .padSize {
@@ -909,7 +908,7 @@ html {
               html body .content .screen .container .size.nGirl .selection-wrap .title .text a {
                 border-color: #ee9bac; }
                 html body .content .screen .container .size.nGirl .selection-wrap .title .text a .fa {
-                  background-color: #ee9bac; }
+                  color: #ee9bac; }
             html body .content .screen .container .size.nGirl .selection-wrap .padWrap .image div {
               color: #ee9bac; }
             html body .content .screen .container .size.nGirl .selection-wrap .padWrap .padSize {
