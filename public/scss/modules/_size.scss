@@ -31,10 +31,10 @@
          ::-webkit-scrollbar {
             width: 6px;
         }
-        ::-webkit-scrollbar-track {
+         ::-webkit-scrollbar-track {
             -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
         }
-        ::-webkit-scrollbar-thumb {
+         ::-webkit-scrollbar-thumb {
             -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
         }
     }
@@ -70,7 +70,7 @@
                     position: relative;
                     font-size: 36px;
                     font-family: FrontageCBold;
-                    &:hover{
+                    &:hover {
                         border-color: white !important;
                     }
                 }
@@ -94,14 +94,14 @@
                 div {
                     transition: all 0.3s ease;
                     height: 100%;
-                    color: $yellow;
+                    color: white;
                     font-size: 15vh
                 }
             }
             .padSize {
                 height: 30vh;
                 padding: 0;
-                border-right: dashed 2px $yellow;
+                border-right: dashed 2px white;
                 transition: all 0.3s ease;
                 overflow: hidden;
                 .row {
@@ -114,13 +114,13 @@
                     .box {
                         cursor: pointer;
                         padding: 0;
-                        font-size: 18px;
                         line-height: 7vh;
-                        border: solid 1px transparent;
                         transition: all 0.3s ease;
                         white-space: nowrap;
                         text-overflow: ellipsis;
                         overflow: hidden;
+                        color: white;
+                        font-size: 24px;
                         &:hover {
                             border-color: $yellow;
                         }
@@ -173,18 +173,9 @@
                 }
             }
             .padWrap {
-                .image {
-                    div {
-                        color: $boy;
-                    }
-                }
                 .padSize {
-                    border-color: $boy;
                     .row {
                         .box {
-                            &:hover {
-                                border-color: $boy;
-                            }
                             &.active {
                                 background: $boy;
                                 color: white;
@@ -218,18 +209,9 @@
                 }
             }
             .padWrap {
-                .image {
-                    div {
-                        color: $girl;
-                    }
-                }
                 .padSize {
-                    border-color: $girl;
                     .row {
                         .box {
-                            &:hover {
-                                border-color: $girl;
-                            }
                             &.active {
                                 background: $girl;
                                 color: white;
@@ -263,18 +245,9 @@
                 }
             }
             .padWrap {
-                .image {
-                    div {
-                        color: $bBoy;
-                    }
-                }
                 .padSize {
-                    border-color: $bBoy;
                     .row {
                         .box {
-                            &:hover {
-                                border-color: $bBoy;
-                            }
                             &.active {
                                 background: $bBoy;
                                 color: white;
@@ -308,18 +281,9 @@
                 }
             }
             .padWrap {
-                .image {
-                    div {
-                        color: $bGirl;
-                    }
-                }
                 .padSize {
-                    border-color: $bGirl;
                     .row {
                         .box {
-                            &:hover {
-                                border-color: $bGirl;
-                            }
                             &.active {
                                 background: $bGirl;
                                 color: white;
@@ -353,18 +317,9 @@
                 }
             }
             .padWrap {
-                .image {
-                    div {
-                        color: $nBoy;
-                    }
-                }
                 .padSize {
-                    border-color: $nBoy;
                     .row {
                         .box {
-                            &:hover {
-                                border-color: $nBoy;
-                            }
                             &.active {
                                 background: $nBoy;
                                 color: white;
@@ -398,18 +353,9 @@
                 }
             }
             .padWrap {
-                .image {
-                    div {
-                        color: $nGirl;
-                    }
-                }
                 .padSize {
-                    border-color: $nGirl;
                     .row {
                         .box {
-                            &:hover {
-                                border-color: $nGirl;
-                            }
                             &.active {
                                 background: $nGirl;
                                 color: white;
