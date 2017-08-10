@@ -579,15 +579,24 @@ html {
                 box-shadow: 7.5px 7.5px 0px 2px white; }
                 html body .content .screen .container .age .age-wrapper .pad .row h3 {
                   margin: 0;
-                  font-size: 24px;
-                  font-family: FrontageCN; }
+                  font-size: 20px;
+                  white-space: nowrap;
+                  font-family: FrontageCN;
+                  right: 10%;
+                  top: 40%;
+                  position: absolute; }
                   html body .content .screen .container .age .age-wrapper .pad .row h3 b {
                     font-size: 45px;
-                    right: 25%;
-                    position: relative;
+                    right: 10%;
+                    top: -100%;
+                    position: absolute;
                     font-family: FrontageCBold; }
                 html body .content .screen .container .age .age-wrapper .pad .row:last-child {
                   margin: 0; }
+                html body .content .screen .container .age .age-wrapper .pad .row:hover {
+                  -webkit-box-shadow: 15px 15px 0px 2px white;
+                  -moz-box-shadow: 15px 15px 0px 2px white;
+                  box-shadow: 15px 15px 0px 2px white; }
                 html body .content .screen .container .age .age-wrapper .pad .row.boy {
                   background: #6B85AB; }
                 html body .content .screen .container .age .age-wrapper .pad .row.bBoy {
