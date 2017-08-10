@@ -353,7 +353,8 @@ html {
             height: 100%; }
             html body .content .screen .container .gender .selection-wrap {
               text-align: center;
-              height: 50%; }
+              height: 50%;
+              padding: 0; }
               html body .content .screen .container .gender .selection-wrap .title {
                 margin-bottom: 5vh; }
                 html body .content .screen .container .gender .selection-wrap .title .text {
@@ -362,22 +363,32 @@ html {
                   border-bottom: solid 3px #fd0;
                   padding: 2%;
                   transition: all 0.3s ease; }
-              html body .content .screen .container .gender .selection-wrap .selections .background .text {
-                background: transparent;
-                color: white;
-                padding: 4%;
-                border-bottom: solid 3px transparent;
-                transition: all 0.3s ease;
-                cursor: pointer;
-                text-transform: uppercase; }
-                html body .content .screen .container .gender .selection-wrap .selections .background .text.boySel {
-                  color: #fd4605; }
-                  html body .content .screen .container .gender .selection-wrap .selections .background .text.boySel:hover {
-                    border-bottom: solid 3px #fd4605; }
-                html body .content .screen .container .gender .selection-wrap .selections .background .text.girlSel {
-                  color: #e70095; }
-                  html body .content .screen .container .gender .selection-wrap .selections .background .text.girlSel:hover {
-                    border-bottom: solid 3px #e70095; }
+              html body .content .screen .container .gender .selection-wrap .selections {
+                padding: 0; }
+                html body .content .screen .container .gender .selection-wrap .selections .background {
+                  padding: 0; }
+                  html body .content .screen .container .gender .selection-wrap .selections .background .text {
+                    padding: 0;
+                    background: transparent;
+                    color: white;
+                    padding: 4%;
+                    border-bottom: solid 3px transparent;
+                    transition: all 0.3s ease;
+                    cursor: pointer;
+                    text-transform: uppercase;
+                    text-shadow: -3px 3px 0px white;
+                    font-size: 6em;
+                    font-weight: 800; }
+                    html body .content .screen .container .gender .selection-wrap .selections .background .text.boySel {
+                      color: #fd4605;
+                      border-right: dashed 1px white; }
+                      html body .content .screen .container .gender .selection-wrap .selections .background .text.boySel:hover {
+                        border-bottom: solid 3px #fd4605; }
+                    html body .content .screen .container .gender .selection-wrap .selections .background .text.girlSel {
+                      color: #e70095;
+                      border-left: dashed 1px white; }
+                      html body .content .screen .container .gender .selection-wrap .selections .background .text.girlSel:hover {
+                        border-bottom: solid 3px #e70095; }
             html body .content .screen .container .gender .img-boy {
               height: 60vh; }
               html body .content .screen .container .gender .img-boy .image {

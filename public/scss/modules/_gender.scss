@@ -4,6 +4,7 @@
     .selection-wrap {
         text-align: center;
         height: 50%;
+        padding: 0;
         .title {
             margin-bottom: 5vh;
             .text {
@@ -15,8 +16,11 @@
             }
         }
         .selections {
+            padding: 0;
             .background {
+                padding: 0;
                 .text {
+                    padding: 0;
                     background: transparent;
                     color: white;
                     padding: 4%;
@@ -24,14 +28,19 @@
                     transition: all 0.3s ease;
                     cursor: pointer;
                     text-transform: uppercase;
+                    text-shadow: -3px 3px 0px rgba(255, 255, 255, 1);
+                    font-size: 6em;
+                    font-weight: 800;
                     &.boySel {
                         color: $boy;
+                        border-right: dashed 1px white;
                         &:hover {
                             border-bottom: solid 3px $boy;
                         }
                     }
                     &.girlSel {
                         color: $girl;
+                        border-left: dashed 1px white;
                         &:hover {
                             border-bottom: solid 3px $girl;
                         }
