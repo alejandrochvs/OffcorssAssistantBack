@@ -93,6 +93,10 @@
     <img src="" alt="">
 </div>
 <script>
+    $('body > .content').css({
+        'background-image': 'url(../IMG/background.jpg)',
+        'background-size': 'initial'
+    });
     $(function() {
         var currentPage = 1;
         var pages;
@@ -106,13 +110,13 @@
             pages = Math.ceil(count / 25);
             $('.customers-nav > .current-page-wrapper > .current-page').val(currentPage);
             $('.customers-nav > .current-page-wrapper > .pages').html(pages);
-            if (count == 0){
+            if (count == 0) {
                 $('.customers-table > .table-body > .not-found').addClass('active');
                 currentPage = 1;
                 return;
             }
             $('.customers-table > .table-body > .not-found.active').removeClass('active');
-            
+
             for (var i = 0; i < object.length; i++) {
                 $('.table-body').append('<div class="col-xs-12 customer-item"></div>');
                 $('.table-body > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-img"><img class="col-xs-12" src="../IMG/ecards/' + object[i].e_card[0] + '"/><img class="col-xs-12" src="../IMG/ecards/' + object[i].e_card[1] + '"/><img class="col-xs-12" src="../IMG/ecards/' + object[i].e_card[2] + '"/></div>');
@@ -197,7 +201,7 @@
                     $(this).parent().parent().parent().parent().click();
                 }
             });
-            
+
         }
         var updateScroll = function(height, overflow) {
             if (height > tableHeight) {

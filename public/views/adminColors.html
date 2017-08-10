@@ -11,6 +11,10 @@
     </div>
 </div>
 <script>
+    $('body > .content').css({
+        'background-image': 'url(../IMG/background.jpg)',
+        'background-size': 'initial'
+    });
     $.ajax({
         type: 'POST',
         url: '/db/colors',

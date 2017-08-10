@@ -830,7 +830,13 @@ $(function () {
                             });
                         }
                     });
-                } else if (current === 'login') {
+                }
+                else if (current === 'login') {
+                    $('body > .content').css({
+                        'background-image' :
+                        'url(../IMG/background.jpg)',
+                        'background-size' : 'initial'
+                    });
                     $('.head.title > .cont').html(headTitle4);
                     $('.head.title > .cont').attr('data-var', 'headTitle4');
                     var login = function (username, password) {
@@ -875,7 +881,13 @@ $(function () {
                     });
                     localStorage.current = 'gender';
 
-                } else if (current === 'register') {
+                }
+                else if (current === 'register') {
+                    $('body > .content').css({
+                        'background-image' :
+                        'url(../IMG/background.jpg)',
+                        'background-size' : 'initial'
+                    });
                     currentIndex = 100;
                     localStorage.current = divs[0];
                     $('.head.title > .cont').html(headTitle4);
@@ -984,10 +996,22 @@ $(function () {
                             $('.registerBtn').click();
                         }
                     });
-                } else if (current === 'e-cards') {
+                }
+                else if (current === 'e-cards') {
+                    $('body > .content').css({
+                        'background-image' :
+                        'url(../IMG/background.jpg)',
+                        'background-size' : 'initial'
+                    });
                     $('.head.title > .cont').html('E-CARDS');
 
-                } else if (current == 'customers') {
+                }
+                else if (current == 'customers') {
+                    $('body > .content').css({
+                        'background-image' :
+                        'url(../IMG/background.jpg)',
+                        'background-size' : 'initial'
+                    });
                     $('.head.title > .cont').html('CLIENTES');
                 }
                 $('N').html(name);
