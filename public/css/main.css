@@ -552,16 +552,15 @@ html {
             padding: 5vh 0; }
             html body .content .screen .container .age .selection-wrap {
               text-align: center; }
-              html body .content .screen .container .age .selection-wrap .title {
-                margin-bottom: 5vh; }
-                html body .content .screen .container .age .selection-wrap .title .text {
-                  transition: all 0.3s ease;
-                  background: white;
-                  border-bottom: solid 3px #fd0;
-                  padding: 2%; }
+              html body .content .screen .container .age .selection-wrap .title .text {
+                color: white;
+                font-size: 4vw;
+                transition: all 0.3s ease;
+                background: transparent;
+                padding: 2%; }
             html body .content .screen .container .age .age-wrapper .pad {
               padding: 1%;
-              border: solid 2px #fd0;
+              border-bottom: solid 2px white;
               transition: all 0.3s ease; }
               html body .content .screen .container .age .age-wrapper .pad .row {
                 padding: 0;
@@ -590,9 +589,12 @@ html {
                 html body .content .screen .container .age .age-wrapper .pad .row.nGirl {
                   background: #ee9bac; }
             html body .content .screen .container .age .img {
-              height: 60vh; }
+              height: 60vh;
+              padding: 0; }
               html body .content .screen .container .age .img .image {
                 height: 100%;
+                padding: 0;
+                padding-right: 15px;
                 background-position: center;
                 background-origin: content-box;
                 background-size: contain;

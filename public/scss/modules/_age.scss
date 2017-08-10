@@ -3,11 +3,11 @@
     .selection-wrap {
         text-align: center;
         .title {
-            margin-bottom: 5vh;
             .text {
+                color: white;
+                font-size: 4vw;
                 transition: all 0.3s ease;
-                background: white;
-                border-bottom: solid 3px $yellow;
+                background: transparent;
                 padding: 2%;
             }
         }
@@ -15,7 +15,7 @@
     .age-wrapper {
         .pad {
             padding: 1%;
-            border: solid 2px $yellow;
+            border-bottom: solid 2px white;
             transition: all 0.3s ease;
             .row {
                 padding: 0;
@@ -56,8 +56,11 @@
     }
     .img {
         height: 60vh;
+        padding: 0;
         .image {
             height: 100%;
+            padding: 0;
+            padding-right: 15px;
             background-position: center;
             background-origin: content-box;
             background-size: contain;
