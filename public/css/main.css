@@ -232,7 +232,8 @@ html {
           text-overflow: ellipsis;
           white-space: nowrap;
           color: #73626E;
-          font-weight: 700; }
+          font-weight: 700;
+          font-family: FrontageCBold; }
         html body .header .head .cont {
           z-index: 1;
           transition: all 0.3s ease; }
@@ -388,7 +389,6 @@ html {
                 html body .content .screen .container .gender .selection-wrap .title .text {
                   background: transparent;
                   color: white;
-                  border-bottom: solid 3px #fd0;
                   padding: 2%;
                   font-size: 40px;
                   transition: all 0.3s ease;
@@ -470,6 +470,7 @@ html {
               html body .content .screen .container .name .nameInput h1 {
                 margin: 0; }
               html body .content .screen .container .name .nameInput input {
+                padding-bottom: 5%;
                 outline: none;
                 color: white;
                 border: none;
@@ -494,7 +495,7 @@ html {
                 html body .content .screen .container .name .continue div h3 {
                   text-align: center;
                   margin: 0;
-                  padding: 3%; }
+                  line-height: 6vh; }
               html body .content .screen .container .name .continue.btn-hidden {
                 height: 0vh;
                 overflow: hidden;

@@ -20,6 +20,7 @@
             margin: 0;
         }
         input {
+            padding-bottom: 5%;
             outline: none;
             color: white;
             border: none;
@@ -48,7 +49,7 @@
             h3 {
                 text-align: center;
                 margin: 0;
-                padding: 3%;
+                line-height: 6vh;
             }
         }
         &.btn-hidden {
