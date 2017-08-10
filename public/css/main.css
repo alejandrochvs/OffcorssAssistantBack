@@ -1127,7 +1127,6 @@ html {
                 transition: all 0.3s ease;
                 padding: 0;
                 background: tansparent;
-                background-image: url(../../IMG/smokks.png);
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
@@ -1178,11 +1177,11 @@ html {
                 background-image: url(../IMG/occasions/ocasiones-2.jpg); }
               html body .content .screen .container .occasion .occasions .background:nth-child(3) .cont {
                 background-image: url(../IMG/occasions/ocasiones-3.jpg); }
-              html body .content .screen .container .occasion .occasions .background:nth-child(4) .cont {
-                background-image: url(../IMG/occasions/ocasiones-4.jpg); }
               html body .content .screen .container .occasion .occasions .background:nth-child(5) .cont {
-                background-image: url(../IMG/occasions/ocasiones-5.jpg); }
+                background-image: url(../IMG/occasions/ocasiones-4.jpg); }
               html body .content .screen .container .occasion .occasions .background:nth-child(6) .cont {
+                background-image: url(../IMG/occasions/ocasiones-5.jpg); }
+              html body .content .screen .container .occasion .occasions .background:nth-child(7) .cont {
                 background-image: url(../IMG/occasions/ocasiones-6.jpg); }
             html body .content .screen .container .occasion .occasionsBtn {
               border-radius: 2px;
