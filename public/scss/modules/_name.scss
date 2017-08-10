@@ -16,13 +16,14 @@
     .nameInput {
         input {
             outline: none;
-            color: black;
+            color: white;
             border: none;
             background-color: transparent;
             font-size: 8vw;
             font-weight: 100;
+            border-bottom: dashed 2px white;
             &::placeholder {
-                color: darken(lightgray,15%);
+                color: rgba(white,0.9);
             }
             &:focus {
                 outline: none;
