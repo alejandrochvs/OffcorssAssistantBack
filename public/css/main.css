@@ -764,14 +764,12 @@ html {
                   font-size: 34px;
                   color: #fd0; }
               html body .content .screen .container .size .selection-wrap .padWrap {
-                margin-bottom: 5vh; }
+                margin-bottom: 5vh;
+                margin-top: 2.5vh; }
                 html body .content .screen .container .size .selection-wrap .padWrap .image {
-                  height: 20vh; }
-                  html body .content .screen .container .size .selection-wrap .padWrap .image div {
-                    transition: all 0.3s ease;
-                    height: 100%;
-                    color: white;
-                    font-size: 15vh; }
+                  margin-bottom: 2.5vh; }
+                  html body .content .screen .container .size .selection-wrap .padWrap .image img {
+                    max-height: 10vh; }
                 html body .content .screen .container .size .selection-wrap .padWrap .padSize {
                   height: 30vh;
                   padding: 0;
