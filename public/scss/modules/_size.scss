@@ -121,7 +121,7 @@
                         color: white;
                         font-size: 24px;
                         background: transparent;
-                        border-radius: 50%;
+                        border-radius: 50px;
                         &:hover {
                             border-color: $yellow;
                             background: white;
@@ -137,21 +137,23 @@
                 display: none;
                 z-index: 2;
                 position: absolute;
-                right: 2vw;
-                bottom: 1vh;
-                width: 2vw;
-                height: 10vh;
+                right: -3vw;
+                bottom: 25%;
+                width: 3.5vw;
+                height: 3.5vw;
+                border-radius: 50%;
+                background: white;
                 .sel {
                     cursor: pointer;
                     .fa {
                         width: 100%;
-                        height: 5vh;
+                        height: 1vh;
                         transition: all 0.3s ease;
-                        color: white;
+                        color: blue !important;
                     }
                     &:hover {
                         .fa {
-                            color: $yellow;
+                            color: blue !important;
                         }
                     }
                 }

@@ -795,7 +795,7 @@ html {
                       color: white;
                       font-size: 24px;
                       background: transparent;
-                      border-radius: 50%; }
+                      border-radius: 50px; }
                       html body .content .screen .container .size .selection-wrap .padWrap .padSize .row .box:hover {
                         border-color: #fd0;
                         background: white; }
@@ -806,19 +806,21 @@ html {
                   display: none;
                   z-index: 2;
                   position: absolute;
-                  right: 2vw;
-                  bottom: 1vh;
-                  width: 2vw;
-                  height: 10vh; }
+                  right: -3vw;
+                  bottom: 25%;
+                  width: 3.5vw;
+                  height: 3.5vw;
+                  border-radius: 50%;
+                  background: white; }
                   html body .content .screen .container .size .selection-wrap .padWrap .nav .sel {
                     cursor: pointer; }
                     html body .content .screen .container .size .selection-wrap .padWrap .nav .sel .fa {
                       width: 100%;
-                      height: 5vh;
+                      height: 1vh;
                       transition: all 0.3s ease;
-                      color: white; }
+                      color: blue !important; }
                     html body .content .screen .container .size .selection-wrap .padWrap .nav .sel:hover .fa {
-                      color: #fd0; }
+                      color: blue !important; }
                   html body .content .screen .container .size .selection-wrap .padWrap .nav.active {
                     display: inherit; }
             html body .content .screen .container .size.boy .selection-wrap .title .text {
