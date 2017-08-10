@@ -45,7 +45,7 @@
 
 .size {
     overflow: scroll;
-    padding: 5vh 0;
+    padding: 2.5vh 0;
     height: 100%;
     .selection-wrap {
         height: 100%;
@@ -55,6 +55,7 @@
                 transition: all 0.3s ease;
                 background: transparent;
                 padding: 2%;
+                padding-top: 0;
                 color: white;
                 cursor: pointer;
                 font-size: 35px;
@@ -97,7 +98,7 @@
                 }
             }
             .padSize {
-                height: 30vh;
+                height: 32vh;
                 padding: 0;
                 border-right: dashed 2px white;
                 transition: all 0.3s ease;
@@ -112,7 +113,7 @@
                     .box {
                         cursor: pointer;
                         padding: 0;
-                        line-height: 7vh;
+                        line-height: 10vh;
                         transition: all 0.3s ease;
                         white-space: nowrap;
                         text-overflow: ellipsis;
@@ -121,9 +122,6 @@
                         font-size: 24px;
                         background: transparent;
                         border-radius: 50%;
-                        width: 4vw;
-                        height: 4vw;
-                        margin-right: 4.7vw;
                         &:hover {
                             border-color: $yellow;
                             background: white;
