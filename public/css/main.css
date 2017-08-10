@@ -960,150 +960,147 @@ html {
                   line-height: 50px;
                   font-size: 34px;
                   color: #fd0; }
-              html body .content .screen .container .sizePrimi .selection-wrap .padWrap .image {
-                height: 20vh; }
-                html body .content .screen .container .sizePrimi .selection-wrap .padWrap .image div {
+              html body .content .screen .container .sizePrimi .selection-wrap .padWrap {
+                margin-bottom: 5vh;
+                margin-top: 2.5vh; }
+                html body .content .screen .container .sizePrimi .selection-wrap .padWrap .image {
+                  margin-bottom: 2.5vh; }
+                  html body .content .screen .container .sizePrimi .selection-wrap .padWrap .image img {
+                    max-height: 10vh; }
+                html body .content .screen .container .sizePrimi .selection-wrap .padWrap .padSizePrimi {
+                  height: 32vh;
+                  padding: 0;
+                  border-right: dashed 2px white;
                   transition: all 0.3s ease;
-                  height: 100%;
-                  color: #fd0;
-                  font-size: 15vh; }
-              html body .content .screen .container .sizePrimi .selection-wrap .padWrap .padSizePrimi {
-                height: 30vh;
-                padding: 0;
-                border: solid 2px #fd0;
-                transition: all 0.3s ease;
-                overflow: hidden; }
-                html body .content .screen .container .sizePrimi .selection-wrap .padWrap .padSizePrimi .row {
-                  z-index: 1;
-                  transition: all 0.3s ease;
-                  height: 10vh;
-                  margin: 0;
-                  padding: 1vh 2vw;
-                  top: 0; }
-                  html body .content .screen .container .sizePrimi .selection-wrap .padWrap .padSizePrimi .row .box {
-                    cursor: pointer;
-                    padding: 0;
-                    font-size: 18px;
-                    line-height: 7vh;
-                    border: solid 1px transparent;
-                    transition: all 0.3s ease; }
-                    html body .content .screen .container .sizePrimi .selection-wrap .padWrap .padSizePrimi .row .box:hover {
-                      border-color: #fd0; }
-                    html body .content .screen .container .sizePrimi .selection-wrap .padWrap .padSizePrimi .row .box.active {
-                      background: #fd0;
-                      color: white; }
-              html body .content .screen .container .sizePrimi .selection-wrap .padWrap .nav {
-                display: none;
-                z-index: 2;
-                position: absolute;
-                right: -2vw;
-                bottom: 1vh;
-                width: 2vw;
-                height: 10vh; }
-                html body .content .screen .container .sizePrimi .selection-wrap .padWrap .nav .sel {
-                  cursor: pointer; }
-                  html body .content .screen .container .sizePrimi .selection-wrap .padWrap .nav .sel .fa {
-                    width: 100%;
-                    height: 5vh;
+                  overflow: hidden; }
+                  html body .content .screen .container .sizePrimi .selection-wrap .padWrap .padSizePrimi .row {
+                    z-index: 1;
                     transition: all 0.3s ease;
-                    color: inherit; }
-                  html body .content .screen .container .sizePrimi .selection-wrap .padWrap .nav .sel:hover .fa {
-                    color: #fd0; }
-                html body .content .screen .container .sizePrimi .selection-wrap .padWrap .nav.active {
-                  display: inherit; }
-              @media (max-width: 767px) {
+                    height: 10vh;
+                    margin: 0;
+                    padding: 1vh 2vw;
+                    top: 0; }
+                    html body .content .screen .container .sizePrimi .selection-wrap .padWrap .padSizePrimi .row .box {
+                      cursor: pointer;
+                      padding: 0;
+                      line-height: 10vh;
+                      transition: all 0.3s ease;
+                      white-space: nowrap;
+                      text-overflow: ellipsis;
+                      overflow: hidden;
+                      color: white;
+                      font-size: 24px;
+                      background: transparent;
+                      border-radius: 50px; }
+                      html body .content .screen .container .sizePrimi .selection-wrap .padWrap .padSizePrimi .row .box:hover {
+                        border-color: #fd0;
+                        background: white; }
+                      html body .content .screen .container .sizePrimi .selection-wrap .padWrap .padSizePrimi .row .box.active {
+                        background: #fd0;
+                        color: white; }
                 html body .content .screen .container .sizePrimi .selection-wrap .padWrap .nav {
-                  right: 0; } }
-            html body .content .screen .container .sizePrimi.nBoy .selection-wrap .title .text {
-              border-bottom-color: #009DB8; }
-              html body .content .screen .container .sizePrimi.nBoy .selection-wrap .title .text a .fa {
-                background-color: #009DB8; }
-            html body .content .screen .container .sizePrimi.nBoy .selection-wrap .padWrap .image div {
-              color: #009DB8; }
-            html body .content .screen .container .sizePrimi.nBoy .selection-wrap .padWrap .padSizePrimi {
-              border-color: #009DB8; }
-              html body .content .screen .container .sizePrimi.nBoy .selection-wrap .padWrap .padSizePrimi .row .box:hover {
-                border-color: #009DB8; }
-              html body .content .screen .container .sizePrimi.nBoy .selection-wrap .padWrap .padSizePrimi .row .box.active {
-                background: #009DB8;
-                color: white; }
-            html body .content .screen .container .sizePrimi.nBoy .selection-wrap .padWrap .nav .sel:hover .fa {
-              color: #009DB8; }
-            html body .content .screen .container .sizePrimi.nGirl .selection-wrap .title .text {
-              border-bottom-color: #FF98AA; }
-              html body .content .screen .container .sizePrimi.nGirl .selection-wrap .title .text a .fa {
-                background-color: #FF98AA; }
-            html body .content .screen .container .sizePrimi.nGirl .selection-wrap .padWrap .image div {
-              color: #FF98AA; }
-            html body .content .screen .container .sizePrimi.nGirl .selection-wrap .padWrap .padSizePrimi {
-              border-color: #FF98AA; }
-              html body .content .screen .container .sizePrimi.nGirl .selection-wrap .padWrap .padSizePrimi .row .box:hover {
-                border-color: #FF98AA; }
-              html body .content .screen .container .sizePrimi.nGirl .selection-wrap .padWrap .padSizePrimi .row .box.active {
-                background: #FF98AA;
-                color: white; }
-            html body .content .screen .container .sizePrimi.nGirl .selection-wrap .padWrap .nav .sel:hover .fa {
-              color: #FF98AA; }
-            html body .content .screen .container .sizePrimi.girl .selection-wrap .title .text {
-              border-bottom-color: #FF0295; }
-              html body .content .screen .container .sizePrimi.girl .selection-wrap .title .text a .fa {
-                background-color: #FF0295; }
-            html body .content .screen .container .sizePrimi.girl .selection-wrap .padWrap .image div {
-              color: #FF0295; }
-            html body .content .screen .container .sizePrimi.girl .selection-wrap .padWrap .padSizePrimi {
-              border-color: #FF0295; }
-              html body .content .screen .container .sizePrimi.girl .selection-wrap .padWrap .padSizePrimi .row .box:hover {
-                border-color: #FF0295; }
-              html body .content .screen .container .sizePrimi.girl .selection-wrap .padWrap .padSizePrimi .row .box.active {
-                background: #FF0295;
-                color: white; }
-            html body .content .screen .container .sizePrimi.girl .selection-wrap .padWrap .nav .sel:hover .fa {
-              color: #FF0295; }
-            html body .content .screen .container .sizePrimi.bGirl .selection-wrap .title .text {
-              border-bottom-color: #9692D1; }
-              html body .content .screen .container .sizePrimi.bGirl .selection-wrap .title .text a .fa {
-                background-color: #9692D1; }
-            html body .content .screen .container .sizePrimi.bGirl .selection-wrap .padWrap .image div {
-              color: #9692D1; }
-            html body .content .screen .container .sizePrimi.bGirl .selection-wrap .padWrap .padSizePrimi {
-              border-color: #9692D1; }
-              html body .content .screen .container .sizePrimi.bGirl .selection-wrap .padWrap .padSizePrimi .row .box:hover {
-                border-color: #9692D1; }
-              html body .content .screen .container .sizePrimi.bGirl .selection-wrap .padWrap .padSizePrimi .row .box.active {
-                background: #9692D1;
-                color: white; }
-            html body .content .screen .container .sizePrimi.bGirl .selection-wrap .padWrap .nav .sel:hover .fa {
-              color: #9692D1; }
+                  display: none;
+                  z-index: 2;
+                  position: absolute;
+                  right: -3vw;
+                  bottom: 25%;
+                  width: 3.5vw;
+                  height: 3.5vw;
+                  border-radius: 50%;
+                  background: white; }
+                  html body .content .screen .container .sizePrimi .selection-wrap .padWrap .nav .sel {
+                    cursor: pointer;
+                    height: 3vh; }
+                    html body .content .screen .container .sizePrimi .selection-wrap .padWrap .nav .sel .fa {
+                      width: 100%;
+                      height: 100%;
+                      transition: all 0.3s ease;
+                      color: #fd0; }
+                    html body .content .screen .container .sizePrimi .selection-wrap .padWrap .nav .sel:hover .fa {
+                      color: white; }
+                  html body .content .screen .container .sizePrimi .selection-wrap .padWrap .nav.active {
+                    display: inherit; }
+                @media (max-width: 767px) {
+                  html body .content .screen .container .sizePrimi .selection-wrap .padWrap .nav {
+                    right: 0; } }
             html body .content .screen .container .sizePrimi.boy .selection-wrap .title .text {
               border-bottom-color: #FF4D0F; }
-              html body .content .screen .container .sizePrimi.boy .selection-wrap .title .text a .fa {
-                background-color: #FF4D0F; }
-            html body .content .screen .container .sizePrimi.boy .selection-wrap .padWrap .image div {
-              color: #FF4D0F; }
-            html body .content .screen .container .sizePrimi.boy .selection-wrap .padWrap .padSizePrimi {
-              border-color: #FF4D0F; }
-              html body .content .screen .container .sizePrimi.boy .selection-wrap .padWrap .padSizePrimi .row .box:hover {
+              html body .content .screen .container .sizePrimi.boy .selection-wrap .title .text a {
                 border-color: #FF4D0F; }
-              html body .content .screen .container .sizePrimi.boy .selection-wrap .padWrap .padSizePrimi .row .box.active {
-                background: #FF4D0F;
-                color: white; }
-            html body .content .screen .container .sizePrimi.boy .selection-wrap .padWrap .nav .sel:hover .fa {
+                html body .content .screen .container .sizePrimi.boy .selection-wrap .title .text a .fa {
+                  color: #FF4D0F; }
+            html body .content .screen .container .sizePrimi.boy .selection-wrap .padWrap .padSizePrimi .row .box.active, html body .content .screen .container .sizePrimi.boy .selection-wrap .padWrap .padSizePrimi .row .box:hover {
+              background: #FF4D0F;
+              color: white; }
+            html body .content .screen .container .sizePrimi.boy .selection-wrap .padWrap .nav .sel .fa {
               color: #FF4D0F; }
+            html body .content .screen .container .sizePrimi.boy .selection-wrap .padWrap .nav .sel:hover .fa {
+              color: #a82b00; }
+            html body .content .screen .container .sizePrimi.girl .selection-wrap .title .text {
+              border-bottom-color: #FF0295; }
+              html body .content .screen .container .sizePrimi.girl .selection-wrap .title .text a {
+                border-color: #FF0295; }
+                html body .content .screen .container .sizePrimi.girl .selection-wrap .title .text a .fa {
+                  color: #FF0295; }
+            html body .content .screen .container .sizePrimi.girl .selection-wrap .padWrap .padSizePrimi .row .box.active, html body .content .screen .container .sizePrimi.girl .selection-wrap .padWrap .padSizePrimi .row .box:hover {
+              background: #FF0295;
+              color: white; }
+            html body .content .screen .container .sizePrimi.girl .selection-wrap .padWrap .nav .sel .fa {
+              color: #FF0295; }
+            html body .content .screen .container .sizePrimi.girl .selection-wrap .padWrap .nav .sel:hover .fa {
+              color: #9b005a; }
             html body .content .screen .container .sizePrimi.bBoy .selection-wrap .title .text {
               border-bottom-color: #78BF01; }
-              html body .content .screen .container .sizePrimi.bBoy .selection-wrap .title .text a .fa {
-                background-color: #78BF01; }
-            html body .content .screen .container .sizePrimi.bBoy .selection-wrap .padWrap .image div {
-              color: #78BF01; }
-            html body .content .screen .container .sizePrimi.bBoy .selection-wrap .padWrap .padSizePrimi {
-              border-color: #78BF01; }
-              html body .content .screen .container .sizePrimi.bBoy .selection-wrap .padWrap .padSizePrimi .row .box:hover {
+              html body .content .screen .container .sizePrimi.bBoy .selection-wrap .title .text a {
                 border-color: #78BF01; }
-              html body .content .screen .container .sizePrimi.bBoy .selection-wrap .padWrap .padSizePrimi .row .box.active {
-                background: #78BF01;
-                color: white; }
-            html body .content .screen .container .sizePrimi.bBoy .selection-wrap .padWrap .nav .sel:hover .fa {
+                html body .content .screen .container .sizePrimi.bBoy .selection-wrap .title .text a .fa {
+                  color: #78BF01; }
+            html body .content .screen .container .sizePrimi.bBoy .selection-wrap .padWrap .padSizePrimi .row .box.active, html body .content .screen .container .sizePrimi.bBoy .selection-wrap .padWrap .padSizePrimi .row .box:hover {
+              background: #78BF01;
+              color: white; }
+            html body .content .screen .container .sizePrimi.bBoy .selection-wrap .padWrap .nav .sel .fa {
               color: #78BF01; }
+            html body .content .screen .container .sizePrimi.bBoy .selection-wrap .padWrap .nav .sel:hover .fa {
+              color: #385a00; }
+            html body .content .screen .container .sizePrimi.bGirl .selection-wrap .title .text {
+              border-bottom-color: #9692D1; }
+              html body .content .screen .container .sizePrimi.bGirl .selection-wrap .title .text a {
+                border-color: #9692D1; }
+                html body .content .screen .container .sizePrimi.bGirl .selection-wrap .title .text a .fa {
+                  color: #9692D1; }
+            html body .content .screen .container .sizePrimi.bGirl .selection-wrap .padWrap .padSizePrimi .row .box.active, html body .content .screen .container .sizePrimi.bGirl .selection-wrap .padWrap .padSizePrimi .row .box:hover {
+              background: #9692D1;
+              color: white; }
+            html body .content .screen .container .sizePrimi.bGirl .selection-wrap .padWrap .nav .sel .fa {
+              color: #9692D1; }
+            html body .content .screen .container .sizePrimi.bGirl .selection-wrap .padWrap .nav .sel:hover .fa {
+              color: #524bb2; }
+            html body .content .screen .container .sizePrimi.nBoy .selection-wrap .title .text {
+              border-bottom-color: #009DB8; }
+              html body .content .screen .container .sizePrimi.nBoy .selection-wrap .title .text a {
+                border-color: #009DB8; }
+                html body .content .screen .container .sizePrimi.nBoy .selection-wrap .title .text a .fa {
+                  color: #009DB8; }
+            html body .content .screen .container .sizePrimi.nBoy .selection-wrap .padWrap .padSizePrimi .row .box.active, html body .content .screen .container .sizePrimi.nBoy .selection-wrap .padWrap .padSizePrimi .row .box:hover {
+              background: #009DB8;
+              color: white; }
+            html body .content .screen .container .sizePrimi.nBoy .selection-wrap .padWrap .nav .sel .fa {
+              color: #009DB8; }
+            html body .content .screen .container .sizePrimi.nBoy .selection-wrap .padWrap .nav .sel:hover .fa {
+              color: #004652; }
+            html body .content .screen .container .sizePrimi.nGirl .selection-wrap .title .text {
+              border-bottom-color: #FF98AA; }
+              html body .content .screen .container .sizePrimi.nGirl .selection-wrap .title .text a {
+                border-color: #FF98AA; }
+                html body .content .screen .container .sizePrimi.nGirl .selection-wrap .title .text a .fa {
+                  color: #FF98AA; }
+            html body .content .screen .container .sizePrimi.nGirl .selection-wrap .padWrap .padSizePrimi .row .box.active, html body .content .screen .container .sizePrimi.nGirl .selection-wrap .padWrap .padSizePrimi .row .box:hover {
+              background: #FF98AA;
+              color: white; }
+            html body .content .screen .container .sizePrimi.nGirl .selection-wrap .padWrap .nav .sel .fa {
+              color: #FF98AA; }
+            html body .content .screen .container .sizePrimi.nGirl .selection-wrap .padWrap .nav .sel:hover .fa {
+              color: #ff3256; }
           @media (max-width: 767px) {
             html body .content .screen .container .sizePrimi {
               padding: 0; }

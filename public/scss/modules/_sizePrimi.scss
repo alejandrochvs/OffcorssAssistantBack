@@ -41,19 +41,18 @@
             }
         }
         .padWrap {
+            margin-bottom: 5vh;
+            margin-top: 2.5vh;
             .image {
-                height: 20vh;
-                div {
-                    transition: all 0.3s ease;
-                    height: 100%;
-                    color: $yellow;
-                    font-size: 15vh
+                margin-bottom: 2.5vh;
+                img {
+                    max-height: 10vh;
                 }
             }
             .padSizePrimi {
-                height: 30vh;
+                height: 32vh;
                 padding: 0;
-                border: solid 2px $yellow;
+                border-right: dashed 2px white;
                 transition: all 0.3s ease;
                 overflow: hidden;
                 .row {
@@ -66,12 +65,18 @@
                     .box {
                         cursor: pointer;
                         padding: 0;
-                        font-size: 18px;
-                        line-height: 7vh;
-                        border: solid 1px transparent;
+                        line-height: 10vh;
                         transition: all 0.3s ease;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        color: white;
+                        font-size: 24px;
+                        background: transparent;
+                        border-radius: 50px;
                         &:hover {
                             border-color: $yellow;
+                            background: white;
                         }
                         &.active {
                             background: $yellow;
@@ -84,21 +89,24 @@
                 display: none;
                 z-index: 2;
                 position: absolute;
-                right: -2vw;
-                bottom: 1vh;
-                width: 2vw;
-                height: 10vh;
+                right: -3vw;
+                bottom: 25%;
+                width: 3.5vw;
+                height: 3.5vw;
+                border-radius: 50%;
+                background: white;
                 .sel {
                     cursor: pointer;
+                    height: 3vh;
                     .fa {
                         width: 100%;
-                        height: 5vh;
+                        height: 100%;
                         transition: all 0.3s ease;
-                        color: inherit;
+                        color: $yellow;
                     }
                     &:hover {
                         .fa {
-                            color: $yellow;
+                            color: white;
                         }
                     }
                 }
@@ -113,33 +121,26 @@
             }
         }
     }
-    &.nBoy {
+    &.boy {
         .selection-wrap {
             .title {
                 .text {
-                    border-bottom-color: $nBoy;
+                    border-bottom-color: $boy;
                     a {
+                        border-color: $boy;
                         .fa {
-                            background-color: $nBoy;
+                            color: $boy;
                         }
                     }
                 }
             }
             .padWrap {
-                .image {
-                    div {
-                        color: $nBoy;
-                    }
-                }
-                .padSizePrimi {
-                    border-color: $nBoy;
+                .padSizePrimi{
                     .row {
                         .box {
+                            &.active,
                             &:hover {
-                                border-color: $nBoy;
-                            }
-                            &.active {
-                                background: $nBoy;
+                                background: $boy;
                                 color: white;
                             }
                         }
@@ -147,53 +148,12 @@
                 }
                 .nav {
                     .sel {
-                        &:hover {
-                            .fa {
-                                color: $nBoy;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    &.nGirl {
-        .selection-wrap {
-            .title {
-                .text {
-                    border-bottom-color: $nGirl;
-                    a {
                         .fa {
-                            background-color: $nGirl;
+                            color: $boy;
                         }
-                    }
-                }
-            }
-            .padWrap {
-                .image {
-                    div {
-                        color: $nGirl;
-                    }
-                }
-                .padSizePrimi {
-                    border-color: $nGirl;
-                    .row {
-                        .box {
-                            &:hover {
-                                border-color: $nGirl;
-                            }
-                            &.active {
-                                background: $nGirl;
-                                color: white;
-                            }
-                        }
-                    }
-                }
-                .nav {
-                    .sel {
                         &:hover {
                             .fa {
-                                color: $nGirl;
+                                color: darken($boy, 20%);
                             }
                         }
                     }
@@ -207,26 +167,19 @@
                 .text {
                     border-bottom-color: $girl;
                     a {
+                        border-color: $girl;
                         .fa {
-                            background-color: $girl;
+                            color: $girl;
                         }
                     }
                 }
             }
             .padWrap {
-                .image {
-                    div {
-                        color: $girl;
-                    }
-                }
-                .padSizePrimi {
-                    border-color: $girl;
+                .padSizePrimi{
                     .row {
                         .box {
+                            &.active,
                             &:hover {
-                                border-color: $girl;
-                            }
-                            &.active {
                                 background: $girl;
                                 color: white;
                             }
@@ -235,97 +188,12 @@
                 }
                 .nav {
                     .sel {
-                        &:hover {
-                            .fa {
-                                color: $girl;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    &.bGirl {
-        .selection-wrap {
-            .title {
-                .text {
-                    border-bottom-color: $bGirl;
-                    a {
                         .fa {
-                            background-color: $bGirl;
+                            color: $girl
                         }
-                    }
-                }
-            }
-            .padWrap {
-                .image {
-                    div {
-                        color: $bGirl;
-                    }
-                }
-                .padSizePrimi {
-                    border-color: $bGirl;
-                    .row {
-                        .box {
-                            &:hover {
-                                border-color: $bGirl;
-                            }
-                            &.active {
-                                background: $bGirl;
-                                color: white;
-                            }
-                        }
-                    }
-                }
-                .nav {
-                    .sel {
                         &:hover {
                             .fa {
-                                color: $bGirl;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    &.boy {
-        .selection-wrap {
-            .title {
-                .text {
-                    border-bottom-color: $boy;
-                    a {
-                        .fa {
-                            background-color: $boy;
-                        }
-                    }
-                }
-            }
-            .padWrap {
-                .image {
-                    div {
-                        color: $boy;
-                    }
-                }
-                .padSizePrimi {
-                    border-color: $boy;
-                    .row {
-                        .box {
-                            &:hover {
-                                border-color: $boy;
-                            }
-                            &.active {
-                                background: $boy;
-                                color: white;
-                            }
-                        }
-                    }
-                }
-                .nav {
-                    .sel {
-                        &:hover {
-                            .fa {
-                                color: $boy;
+                                color: darken($girl, 20%);
                             }
                         }
                     }
@@ -339,26 +207,19 @@
                 .text {
                     border-bottom-color: $bBoy;
                     a {
+                        border-color: $bBoy;
                         .fa {
-                            background-color: $bBoy;
+                            color: $bBoy;
                         }
                     }
                 }
             }
             .padWrap {
-                .image {
-                    div {
-                        color: $bBoy;
-                    }
-                }
-                .padSizePrimi {
-                    border-color: $bBoy;
+                .padSizePrimi{
                     .row {
                         .box {
+                            &.active,
                             &:hover {
-                                border-color: $bBoy;
-                            }
-                            &.active {
                                 background: $bBoy;
                                 color: white;
                             }
@@ -367,9 +228,132 @@
                 }
                 .nav {
                     .sel {
+                        .fa {
+                            color: $bBoy;
+                        }
                         &:hover {
                             .fa {
-                                color: $bBoy;
+                                color: darken($bBoy, 20%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.bGirl {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $bGirl;
+                    a {
+                        border-color: $bGirl;
+                        .fa {
+                            color: $bGirl;
+                        }
+                    }
+                }
+            }
+            .padWrap {
+                .padSizePrimi{
+                    .row {
+                        .box {
+                            &.active,
+                            &:hover {
+                                background: $bGirl;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+                .nav {
+                    .sel {
+                        .fa {
+                            color: $bGirl;
+                        }
+                        &:hover {
+                            .fa {
+                                color: darken($bGirl, 20%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.nBoy {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $nBoy;
+                    a {
+                        border-color: $nBoy;
+                        .fa {
+                            color: $nBoy;
+                        }
+                    }
+                }
+            }
+            .padWrap {
+                .padSizePrimi{
+                    .row {
+                        .box {
+                            &.active,
+                            &:hover {
+                                background: $nBoy;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+                .nav {
+                    .sel {
+                        .fa {
+                            color: $nBoy;
+                        }
+                        &:hover {
+                            .fa {
+                                color: darken($nBoy, 20%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.nGirl {
+        .selection-wrap {
+            .title {
+                .text {
+                    border-bottom-color: $nGirl;
+                    a {
+                        border-color: $nGirl;
+                        .fa {
+                            color: $nGirl;
+                        }
+                    }
+                }
+            }
+            .padWrap {
+                .padSizePrimi{
+                    .row {
+                        .box {
+                            &.active,
+                            &:hover {
+                                background: $nGirl;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+                .nav {
+                    .sel {
+                        .fa {
+                            color: $nGirl;
+                        }
+                        &:hover {
+                            .fa {
+                                color: darken($nGirl, 20%);
                             }
                         }
                     }
