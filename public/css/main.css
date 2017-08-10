@@ -445,14 +445,12 @@ html {
             padding: 5vh 0; }
             html body .content .screen .container .name .selection-wrap {
               text-align: center; }
-              html body .content .screen .container .name .selection-wrap .title {
-                margin-bottom: 5vh; }
-                html body .content .screen .container .name .selection-wrap .title .text {
-                  transition: all 0.3s ease;
-                  background: transparent;
-                  color: white;
-                  border-bottom: solid 3px #fd0;
-                  padding: 2%; }
+              html body .content .screen .container .name .selection-wrap .title .text {
+                transition: all 0.3s ease;
+                background: transparent;
+                color: white;
+                padding: 2%;
+                font-size: 50px; }
             html body .content .screen .container .name .nameInput input {
               outline: none;
               color: white;

@@ -3,13 +3,12 @@
     .selection-wrap {
         text-align: center;
         .title {
-            margin-bottom: 5vh;
             .text {
                 transition: all 0.3s ease;
                 background: transparent;
                 color: white;
-                border-bottom: solid 3px $yellow;
                 padding: 2%;
+                font-size: 50px;
             }
         }
     }
