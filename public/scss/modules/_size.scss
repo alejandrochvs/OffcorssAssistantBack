@@ -413,12 +413,15 @@
             .title {
                 margin-bottom: 0;
                 .text {
+                    font-size: 7vw;
                     a {
+                        font-size: 6vw;
                         top: 2px;
                     }
                 }
             }
             .padWrap {
+                padding-left: 0;
                 .image {
                     height: 10vh;
                     div {
@@ -426,19 +429,30 @@
                     }
                 }
                 .padSize {
-                    padding: 1vh 2vw;
+                    padding: 0;
                     height: 10vh;
+                    padding-right: 1vw;
                     .row {
                         padding: 0;
                         .box {
-                            border: solid 1px lightgray;
+                            border: solid 1px white;
+                            height: 99%;
+                            font-size: 22px;
+                            line-height: 9vh;
                         }
                     }
                 }
                 .nav {
-                    right: 0;
                     height: 50%;
                     bottom: 0;
+                    border-radius: 5px;
+                    right: -4vw;
+                    width: 7vw;
+                    .sel {
+                        &.up {
+                            height: 5vh;
+                        }
+                    }
                 }
             }
         }

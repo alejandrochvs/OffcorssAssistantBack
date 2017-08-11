@@ -129,6 +129,20 @@
 @media (max-width: 767px) {
     .gender {
         padding: 1vh 2vw;
-        .selection-wrap {}
+        .selection-wrap {
+            .title{
+                margin-top: 5vh;
+                .text{
+                    font-size: 2em;
+                }
+            }
+            .selections{
+                .background{
+                    .text{
+                        font-size: 4em;
+                    }
+                }
+            }
+        }
     }
 }

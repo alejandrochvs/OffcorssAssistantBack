@@ -16,7 +16,7 @@
     }
     .nameInput {
         font-family: FrontageCBold;
-        h1{
+        h1 {
             margin: 0;
         }
         input {
@@ -29,7 +29,7 @@
             font-weight: 100;
             border-bottom: dashed 2px white;
             &::placeholder {
-                color: rgba(white,0.9);
+                color: rgba(white, 0.9);
             }
             &:focus {
                 outline: none;
@@ -56,7 +56,7 @@
             height: 0vh;
             overflow: hidden;
             cursor: default;
-            div{
+            div {
                 background: transparent !important;
             }
         }
@@ -184,6 +184,25 @@
         .img {
             .image {
                 background-image: url('../IMG/Name/nGirl.png');
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .name {
+        .selection-wrap {
+            margin-top: 0;
+            .title {
+                .text {
+                    font-size: 2em;
+                }
+            }
+        }
+        .nameInput{
+            margin-top: 5vh;
+            input{
+                font-size: 9vw;
             }
         }
     }

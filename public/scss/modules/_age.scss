@@ -274,3 +274,24 @@
         }
     }
 }
+@media (max-width: 767px) {
+    .age {
+        padding: 0;
+        .selection-wrap {
+            margin-top: 0;
+            .title{
+                margin-top: 5vh;
+                .text{
+                    font-size: 2em;
+                }
+            }
+            .age-wrapper{
+                .background{
+                    .text{
+                        font-size: 4em;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -470,7 +470,13 @@ html {
               display: inherit; }
           @media (max-width: 767px) {
             html body .content .screen .container .gender {
-              padding: 1vh 2vw; } }
+              padding: 1vh 2vw; }
+              html body .content .screen .container .gender .selection-wrap .title {
+                margin-top: 5vh; }
+                html body .content .screen .container .gender .selection-wrap .title .text {
+                  font-size: 2em; }
+              html body .content .screen .container .gender .selection-wrap .selections .background .text {
+                font-size: 4em; } }
           html body .content .screen .container .name {
             padding: 5vh 0; }
             html body .content .screen .container .name .selection-wrap {
@@ -566,6 +572,15 @@ html {
               background: #FF98AA; }
             html body .content .screen .container .name.nGirl .img .image {
               background-image: url("../IMG/Name/nGirl.png"); }
+          @media (max-width: 767px) {
+            html body .content .screen .container .name .selection-wrap {
+              margin-top: 0; }
+              html body .content .screen .container .name .selection-wrap .title .text {
+                font-size: 2em; }
+            html body .content .screen .container .name .nameInput {
+              margin-top: 5vh; }
+              html body .content .screen .container .name .nameInput input {
+                font-size: 9vw; } }
           html body .content .screen .container .age {
             padding: 5vh 0; }
             html body .content .screen .container .age .selection-wrap {
@@ -707,6 +722,17 @@ html {
                 color: white; }
             html body .content .screen .container .age.nGirl .img .image {
               background-image: url("../IMG/Age/girl.jpg"); }
+          @media (max-width: 767px) {
+            html body .content .screen .container .age {
+              padding: 0; }
+              html body .content .screen .container .age .selection-wrap {
+                margin-top: 0; }
+                html body .content .screen .container .age .selection-wrap .title {
+                  margin-top: 5vh; }
+                  html body .content .screen .container .age .selection-wrap .title .text {
+                    font-size: 2em; }
+                html body .content .screen .container .age .selection-wrap .age-wrapper .background .text {
+                  font-size: 4em; } }
           html body .content .screen .container .sizes-guide {
             background: white;
             padding: 2%;
@@ -924,23 +950,36 @@ html {
               padding: 0; }
               html body .content .screen .container .size .selection-wrap .title {
                 margin-bottom: 0; }
-                html body .content .screen .container .size .selection-wrap .title .text a {
-                  top: 2px; }
-              html body .content .screen .container .size .selection-wrap .padWrap .image {
-                height: 10vh; }
-                html body .content .screen .container .size .selection-wrap .padWrap .image div {
-                  font-size: 9vh; }
-              html body .content .screen .container .size .selection-wrap .padWrap .padSize {
-                padding: 1vh 2vw;
-                height: 10vh; }
-                html body .content .screen .container .size .selection-wrap .padWrap .padSize .row {
-                  padding: 0; }
-                  html body .content .screen .container .size .selection-wrap .padWrap .padSize .row .box {
-                    border: solid 1px lightgray; }
-              html body .content .screen .container .size .selection-wrap .padWrap .nav {
-                right: 0;
-                height: 50%;
-                bottom: 0; } }
+                html body .content .screen .container .size .selection-wrap .title .text {
+                  font-size: 7vw; }
+                  html body .content .screen .container .size .selection-wrap .title .text a {
+                    font-size: 6vw;
+                    top: 2px; }
+              html body .content .screen .container .size .selection-wrap .padWrap {
+                padding-left: 0; }
+                html body .content .screen .container .size .selection-wrap .padWrap .image {
+                  height: 10vh; }
+                  html body .content .screen .container .size .selection-wrap .padWrap .image div {
+                    font-size: 9vh; }
+                html body .content .screen .container .size .selection-wrap .padWrap .padSize {
+                  padding: 0;
+                  height: 10vh;
+                  padding-right: 1vw; }
+                  html body .content .screen .container .size .selection-wrap .padWrap .padSize .row {
+                    padding: 0; }
+                    html body .content .screen .container .size .selection-wrap .padWrap .padSize .row .box {
+                      border: solid 1px white;
+                      height: 99%;
+                      font-size: 22px;
+                      line-height: 9vh; }
+                html body .content .screen .container .size .selection-wrap .padWrap .nav {
+                  height: 50%;
+                  bottom: 0;
+                  border-radius: 5px;
+                  right: -4vw;
+                  width: 7vw; }
+                  html body .content .screen .container .size .selection-wrap .padWrap .nav .sel.up {
+                    height: 5vh; } }
           html body .content .screen .container .sizePrimi {
             padding: 5vh 0; }
             html body .content .screen .container .sizePrimi .selection-wrap {
@@ -1126,7 +1165,9 @@ html {
                 html body .content .screen .container .sizePrimi .selection-wrap .title .text a {
                   top: 2px; } }
           html body .content .screen .container .occasion {
-            padding: 5vh 0; }
+            padding: 5vh 0;
+            overflow: scroll;
+            height: 100%; }
             html body .content .screen .container .occasion .selection-wrap {
               text-align: center; }
               html body .content .screen .container .occasion .selection-wrap .title {
@@ -1342,31 +1383,36 @@ html {
                 html body .content .screen .container .occasion.nGirl .occasionsBtn.disabled:hover {
                   color: #fffefe; }
           @media (max-width: 767px) {
-            html body .content .screen .container .occasion .occasions {
-              margin-top: -2vh; }
-              html body .content .screen .container .occasion .occasions .background .cont .img {
-                height: 15vh;
-                transition: all .3s ease; }
-              html body .content .screen .container .occasion .occasions .background .cont .title {
-                padding: 0;
-                height: 7vh;
-                transition: all .3s ease; }
-                html body .content .screen .container .occasion .occasions .background .cont .title h3 {
-                  transition: all .3s ease;
-                  line-height: 7vh;
-                  font-size: 18px; }
-              html body .content .screen .container .occasion .occasions .background .cont:hover, html body .content .screen .container .occasion .occasions .background .cont.active {
-                transform: scale(1); }
-                html body .content .screen .container .occasion .occasions .background .cont:hover .img, html body .content .screen .container .occasion .occasions .background .cont.active .img {
-                  height: 0vh; }
-                html body .content .screen .container .occasion .occasions .background .cont:hover .title, html body .content .screen .container .occasion .occasions .background .cont.active .title {
-                  height: 22vh;
+            html body .content .screen .container .occasion {
+              padding-top: 0; }
+              html body .content .screen .container .occasion .selection-wrap .title .text {
+                font-size: 1.75em; }
+              html body .content .screen .container .occasion .occasions {
+                margin-top: -2vh; }
+                html body .content .screen .container .occasion .occasions .background .cont .img {
+                  height: 15vh;
+                  transition: all .3s ease; }
+                html body .content .screen .container .occasion .occasions .background .cont .title {
+                  padding: 0;
+                  height: 7vh;
+                  transition: all .3s ease; }
+                  html body .content .screen .container .occasion .occasions .background .cont .title h3 {
+                    transition: all .3s ease;
+                    line-height: 7vh;
+                    font-size: 14px; }
+                html body .content .screen .container .occasion .occasions .background .cont:hover, html body .content .screen .container .occasion .occasions .background .cont.active {
                   transform: scale(1); }
-                  html body .content .screen .container .occasion .occasions .background .cont:hover .title h3, html body .content .screen .container .occasion .occasions .background .cont.active .title h3 {
-                    line-height: 24vh;
-                    font-size: 18px; }
-            html body .content .screen .container .occasion .occasionsBtn {
-              margin-top: 2vh; } }
+                  html body .content .screen .container .occasion .occasions .background .cont:hover .img, html body .content .screen .container .occasion .occasions .background .cont.active .img {
+                    height: 0vh; }
+                  html body .content .screen .container .occasion .occasions .background .cont:hover .title, html body .content .screen .container .occasion .occasions .background .cont.active .title {
+                    height: 22vh;
+                    transform: scale(1); }
+                    html body .content .screen .container .occasion .occasions .background .cont:hover .title h3, html body .content .screen .container .occasion .occasions .background .cont.active .title h3 {
+                      line-height: 24vh;
+                      font-size: 18px; }
+              html body .content .screen .container .occasion .occasionsBtn {
+                margin-top: 2vh;
+                line-height: 4vh; } }
           @media (min-height: 768px) and (orientation: portrait) {
             html body .content .screen .container .occasion .occasions .background .cont .img {
               height: 20vh; }
@@ -1400,7 +1446,9 @@ html {
                 height: 10vh;
                 line-height: 10vh; } }
           html body .content .screen .container .weather {
-            padding: 5vh 0; }
+            padding: 5vh 0;
+            height: 100%;
+            overflow: scroll; }
             html body .content .screen .container .weather .selection-wrap {
               text-align: center; }
               html body .content .screen .container .weather .selection-wrap .title {
@@ -1423,10 +1471,12 @@ html {
                 overflow: hidden;
                 padding: 0;
                 border-right: dashed 2px white; }
-                html body .content .screen .container .weather .weathers .background .cont .img img {
-                  height: 20vh;
-                  padding: 0;
-                  margin-top: 2vh; }
+                html body .content .screen .container .weather .weathers .background .cont .img {
+                  height: auto; }
+                  html body .content .screen .container .weather .weathers .background .cont .img img {
+                    height: 20vh;
+                    padding: 0;
+                    margin-top: 2vh; }
                 html body .content .screen .container .weather .weathers .background .cont .title {
                   margin-top: 5vh;
                   margin-bottom: 5vh;
@@ -1458,11 +1508,28 @@ html {
               border-bottom-color: #009DB8; }
             html body .content .screen .container .weather.nGirl .selection-wrap .title .text {
               border-bottom-color: #FF98AA; }
-            @media (max-width: 767px) {
-              html body .content .screen .container .weather .weathers .background .cont .img {
-                height: 5vh; }
-              html body .content .screen .container .weather .weathers .background .cont .title {
-                padding: 2%; } }
+          @media (max-width: 767px) {
+            html body .content .screen .container .weather {
+              padding: 0; }
+              html body .content .screen .container .weather .selection-wrap .title {
+                margin: 0; }
+                html body .content .screen .container .weather .selection-wrap .title .text {
+                  font-size: 2em;
+                  padding-bottom: 5%; }
+              html body .content .screen .container .weather .weathers .background .cont {
+                border-right: none;
+                border-bottom: dashed 2px white;
+                padding: 3% 0; }
+                html body .content .screen .container .weather .weathers .background .cont .img {
+                  height: auto; }
+                  html body .content .screen .container .weather .weathers .background .cont .img img {
+                    height: 15vh; }
+                html body .content .screen .container .weather .weathers .background .cont .title {
+                  padding: 2%; }
+                  html body .content .screen .container .weather .weathers .background .cont .title h3 {
+                    font-size: 7vh; }
+              html body .content .screen .container .weather .weathers .background:last-child .cont {
+                border: none; } }
           html body .content .screen .container .looks {
             height: 100%;
             z-index: 1;
@@ -2189,6 +2256,7 @@ html {
     opacity: 0; } }
           html body .content .screen .container .login {
             margin-top: 8vh;
+            font-family: 'Roboto condensed', sans-serif;
             background: rgba(255, 255, 255, 0.7);
             border-radius: 5px;
             padding: 3%; }
@@ -2198,8 +2266,7 @@ html {
               html body .content .screen .container .login .form-title h2 {
                 margin: 0;
                 margin-bottom: 3vh;
-                color: #666;
-                font-family: 'Roboto' , sans-serif; }
+                color: #666; }
             html body .content .screen .container .login input {
               margin-bottom: 2.5vh;
               border: none;
@@ -2227,6 +2294,7 @@ html {
               html body .content .screen .container .login .loginBtn:hover {
                 background: #e6c700; }
           html body .content .screen .container .register {
+            font-family: 'Roboto condensed', sans-serif;
             margin-top: 2vh;
             background: rgba(255, 255, 255, 0.7);
             border-radius: 5px;
@@ -2315,6 +2383,7 @@ html {
               html body .content .screen .container .terminal .terminal-row img {
                 max-width: 93%; }
           html body .content .screen .container .e-cards-container {
+            font-family: 'Roboto condensed', sans-serif;
             text-align: center;
             overflow: auto;
             height: 100%; }
@@ -2574,7 +2643,8 @@ html {
             text-align: center;
             overflow: auto;
             height: 100%;
-            padding-top: 10px; }
+            padding-top: 10px;
+            font-family: 'Roboto condensed', sans-serif; }
             html body .content .screen .container .customers-container .title h4 {
               margin: 5px 0; }
             html body .content .screen .container .customers-container .table-filter {
@@ -2872,6 +2942,7 @@ html {
             html body .content .screen .container .imgViewer.active {
               top: 0; }
           html body .content .screen .container .adminColors-container {
+            font-family: 'Roboto condensed', sans-serif;
             padding: 2vh 15px; }
             html body .content .screen .container .adminColors-container .colors-table {
               padding: 0;

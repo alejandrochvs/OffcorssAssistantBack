@@ -1,19 +1,19 @@
-.login{
+.login {
     margin-top: 8vh;
-    background: rgba(white,0.7);
+    font-family: 'Roboto condensed', sans-serif;
+    background: rgba(white, 0.7);
     border-radius: 5px;
     padding: 3%;
-    .form-title{
+    .form-title {
         padding: 2%;
         text-align: center;
-        h2{
+        h2 {
             margin: 0;
             margin-bottom: 3vh;
             color: #666;
-            font-family: 'Roboto' , sans-serif;
         }
     }
-    input{
+    input {
         margin-bottom: 2.5vh;
         border: none;
         padding: 2%;
@@ -21,14 +21,14 @@
         border-bottom: solid 2px transparent;
         transition: all 0.3s ease;
         color: #666;
-        &::placeholder{
+        &::placeholder {
             color: lightgray;
         }
-        &:focus{
+        &:focus {
             outline: none;
             border-bottom-color: $yellow;
         }
-        &:after{
+        &:after {
             content: "";
             display: block;
             height: 10px;
@@ -36,13 +36,13 @@
             background: red;
         }
     }
-    .loginBtn{
+    .loginBtn {
         margin-top: 2.5vh;
         background: $yellow;
         transition: all .2s ease;
         color: white;
-        &:hover{
-            background: darken($yellow,5%);
+        &:hover {
+            background: darken($yellow, 5%);
         }
     }
 }

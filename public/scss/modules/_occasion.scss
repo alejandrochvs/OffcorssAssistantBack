@@ -1,5 +1,7 @@
 .occasion {
     padding: 5vh 0;
+    overflow: scroll;
+    height: 100%;
     .selection-wrap {
         text-align: center;
         .title {
@@ -425,6 +427,14 @@
 
 @media (max-width: 767px) {
     .occasion {
+        padding-top: 0;
+        .selection-wrap{
+            .title{
+                .text{
+                    font-size: 1.75em;
+                }
+            }
+        }
         .occasions {
             margin-top: -2vh;
             .background {
@@ -440,7 +450,7 @@
                         h3 {
                             transition: all .3s ease;
                             line-height: 7vh;
-                            font-size: 18px;
+                            font-size: 14px;
                         }
                     }
                     &:hover,
@@ -463,6 +473,7 @@
         }
         .occasionsBtn {
             margin-top: 2vh;
+            line-height: 4vh;
         }
     }
 }

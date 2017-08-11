@@ -826,7 +826,7 @@ $(function () {
                         'background-image': 'url(../IMG/background.jpg)',
                         'background-size': 'initial'
                     });
-                    $('.head.title > .cont').html(headTitle4);
+                    $('.head.title > .cont').html(headTitle4 + ' - Inicio de sesión');
                     $('.head.title > .cont').attr('data-var', 'headTitle4');
                     var login = function (username, password) {
                         if (username !== "" && password !== "") {
@@ -877,7 +877,7 @@ $(function () {
                     });
                     currentIndex = 100;
                     localStorage.current = divs[0];
-                    $('.head.title > .cont').html(headTitle4);
+                    $('.head.title > .cont').html(headTitle4 + ' - REGISTRO');
                     $('.head.title > .cont').attr('data-var', 'headTitle4');
                     $('body > .header').removeClass('boy girl nBoy nGirl bBoy bGirl');
                     var register = function (username, email, password, passwordVer, name, last_name, gender, birthday) {
@@ -988,14 +988,16 @@ $(function () {
                         'background-image': 'url(../IMG/background.jpg)',
                         'background-size': 'initial'
                     });
-                    $('.head.title > .cont').html('E-CARDS');
+                    $('.head.title > .cont').html(headTitle4 + ' - E-CARDS');
 
                 } else if (current == 'customers') {
                     $('body > .content').css({
                         'background-image': 'url(../IMG/background.jpg)',
                         'background-size': 'initial'
                     });
-                    $('.head.title > .cont').html('CLIENTES');
+                    $('.head.title > .cont').html(headTitle4 + ' - CLIENTES');
+                } else if(current == 'adminColors') {
+                    $('.head.title > .cont').html(headTitle4 + ' - COLORES');
                 }
                 $('N').html(name);
                 if (admin && edit) {
