@@ -1705,6 +1705,7 @@ html {
               cursor: pointer; }
               html body .content .screen .container .personality .personWrap .person .fa-check {
                 position: absolute;
+                opacity: 1;
                 left: 2vw;
                 top: 3vh;
                 color: white;
@@ -1741,7 +1742,7 @@ html {
                 html body .content .screen .container .personality .personWrap .person.transparent .background .offset {
                   background: transparent; }
                 html body .content .screen .container .personality .personWrap .person.transparent .fa-check {
-                  color: transparent; }
+                  opacity: 0; }
               html body .content .screen .container .personality .personWrap .person:nth-child(1) .background {
                 background: url("../IMG/Personality/personalidad-1.jpg");
                 background-position: center;
@@ -1805,6 +1806,8 @@ html {
               border-color: #FF4D0F; }
               html body .content .screen .container .personality.boy .personWrap .person .background .title {
                 background-color: rgba(255, 77, 15, 0.8); }
+            html body .content .screen .container .personality.boy .personWrap .person .fa-check {
+              color: #FF4D0F; }
             html body .content .screen .container .personality.boy .continue h4 {
               background: #FF4D0F; }
             html body .content .screen .container .personality.girl .selection-wrap .title .text {
@@ -1813,6 +1816,8 @@ html {
               border-color: #FF0295; }
               html body .content .screen .container .personality.girl .personWrap .person .background .title {
                 background-color: #FF0295; }
+            html body .content .screen .container .personality.girl .personWrap .person .fa-check {
+              color: #FF0295; }
             html body .content .screen .container .personality.girl .continue h4 {
               background: #FF0295; }
             html body .content .screen .container .personality.bBoy .selection-wrap .title .text {
@@ -1821,6 +1826,8 @@ html {
               border-color: #78BF01; }
               html body .content .screen .container .personality.bBoy .personWrap .person .background .title {
                 background-color: #78BF01; }
+            html body .content .screen .container .personality.bBoy .personWrap .person .fa-check {
+              color: #78BF01; }
             html body .content .screen .container .personality.bBoy .continue h4 {
               background: #78BF01; }
             html body .content .screen .container .personality.bGirl .selection-wrap .title .text {
@@ -1829,6 +1836,8 @@ html {
               border-color: #9692D1; }
               html body .content .screen .container .personality.bGirl .personWrap .person .background .title {
                 background-color: #9692D1; }
+            html body .content .screen .container .personality.bGirl .personWrap .person .fa-check {
+              color: #9692D1; }
             html body .content .screen .container .personality.bGirl .continue h4 {
               background: #9692D1; }
             html body .content .screen .container .personality.nBoy .selection-wrap .title .text {
@@ -1837,6 +1846,8 @@ html {
               border-color: #009DB8; }
               html body .content .screen .container .personality.nBoy .personWrap .person .background .title {
                 background-color: #009DB8; }
+            html body .content .screen .container .personality.nBoy .personWrap .person .fa-check {
+              color: #009DB8; }
             html body .content .screen .container .personality.nBoy .continue h4 {
               background: #009DB8; }
             html body .content .screen .container .personality.nGirl .selection-wrap .title .text {
@@ -1845,6 +1856,8 @@ html {
               border-color: #FF98AA; }
               html body .content .screen .container .personality.nGirl .personWrap .person .background .title {
                 background-color: #FF98AA; }
+            html body .content .screen .container .personality.nGirl .personWrap .person .fa-check {
+              color: #FF98AA; }
             html body .content .screen .container .personality.nGirl .continue h4 {
               background: #FF98AA; }
           @media (max-width: 767px) {

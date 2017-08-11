@@ -26,6 +26,7 @@
             cursor: pointer;
             .fa-check {
                 position: absolute;
+                opacity: 1;
                 left: 2vw;
                 top: 3vh;
                 color: white;
@@ -42,7 +43,7 @@
                 border: none !important;
                 .offset {
                     height: 30vh;
-                    background: rgba(white,0.8);
+                    background: rgba(white, 0.8);
                     transition: all .3s ease;
                 }
                 .title {
@@ -64,13 +65,13 @@
             }
             &.transparent {
                 transform: scale(1);
-                .background{
-                    .offset{
+                .background {
+                    .offset {
                         background: transparent;
                     }
                 }
                 .fa-check {
-                    color: transparent;
+                    opacity: 0;
                 }
             }
             &:nth-child(1) {
@@ -187,6 +188,9 @@
                         background-color: rgba($boy, 0.8);
                     }
                 }
+                .fa-check {
+                    color: $boy;
+                }
             }
         }
         .continue {
@@ -210,6 +214,9 @@
                     .title {
                         background-color: $girl;
                     }
+                }
+                .fa-check {
+                    color: $girl;
                 }
             }
         }
@@ -235,6 +242,9 @@
                         background-color: $bBoy;
                     }
                 }
+                .fa-check {
+                        color: $bBoy;
+                    }
             }
         }
         .continue {
@@ -259,6 +269,9 @@
                         background-color: $bGirl;
                     }
                 }
+                .fa-check {
+                        color: $bGirl;
+                    }
             }
         }
         .continue {
@@ -283,6 +296,9 @@
                         background-color: $nBoy;
                     }
                 }
+                .fa-check {
+                        color: $nBoy;
+                    }
             }
         }
         .continue {
@@ -307,6 +323,9 @@
                         background-color: $nGirl;
                     }
                 }
+                .fa-check {
+                        color: $nGirl;
+                    }
             }
         }
         .continue {
