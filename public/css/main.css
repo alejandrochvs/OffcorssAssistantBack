@@ -2409,7 +2409,8 @@ html {
                 float: left; }
               html body .content .screen .container .terminal .terminal-row a {
                 color: white;
-                text-decoration: underline; }
+                text-decoration: underline;
+                cursor: pointer; }
                 html body .content .screen .container .terminal .terminal-row a:hover {
                   color: #fd0; }
               html body .content .screen .container .terminal .terminal-row .input {
