@@ -1177,10 +1177,16 @@ html {
           @media (max-width: 767px) {
             html body .content .screen .container .sizePrimi {
               padding: 0; }
-              html body .content .screen .container .sizePrimi .selection-wrap .title {
-                margin-bottom: 0; }
-                html body .content .screen .container .sizePrimi .selection-wrap .title .text a {
-                  top: 2px; } }
+              html body .content .screen .container .sizePrimi .selection-wrap {
+                padding-bottom: 5vh;
+                height: auto; }
+                html body .content .screen .container .sizePrimi .selection-wrap .title {
+                  margin-bottom: 0; }
+                  html body .content .screen .container .sizePrimi .selection-wrap .title .text {
+                    font-size: 7vw; }
+                    html body .content .screen .container .sizePrimi .selection-wrap .title .text a {
+                      font-size: 6vw;
+                      top: 2px; } }
           html body .content .screen .container .occasion {
             padding: 5vh 0;
             overflow: scroll;

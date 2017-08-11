@@ -422,7 +422,11 @@ $(function () {
                     $('.sizePrimi').addClass(currentClass);
                     $('.sizePrimi > .selection-wrap > .title > .text > a').append('<i class="fa fa-exclamation hidden-xs" aria-hidden="true"></i>')
                     $('.loader > .progress').css('width', '30%');
-                    $('.sizes-guide > .img').append('<img src="../IMG/Size/' + currentClass + '.jpg" class="col-xs-12" alt="">');
+                    if ($(window).width() < 768) {
+                        $('.sizes-guide > .img').append('<img src="../IMG/Size/' + currentClass + '-m.jpg" class="col-xs-12" alt="">');
+                    } else {
+                        $('.sizes-guide > .img').append('<img src="../IMG/Size/' + currentClass + '.jpg" class="col-xs-12" alt="">');
+                    }
                     $.ajax({
                         type: "POST",
                         url: '/db/sizes',

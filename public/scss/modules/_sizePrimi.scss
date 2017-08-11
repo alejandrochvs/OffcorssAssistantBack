@@ -135,7 +135,7 @@
                 }
             }
             .padWrap {
-                .padSizePrimi{
+                .padSizePrimi {
                     .row {
                         .box {
                             &.active,
@@ -175,7 +175,7 @@
                 }
             }
             .padWrap {
-                .padSizePrimi{
+                .padSizePrimi {
                     .row {
                         .box {
                             &.active,
@@ -215,7 +215,7 @@
                 }
             }
             .padWrap {
-                .padSizePrimi{
+                .padSizePrimi {
                     .row {
                         .box {
                             &.active,
@@ -255,7 +255,7 @@
                 }
             }
             .padWrap {
-                .padSizePrimi{
+                .padSizePrimi {
                     .row {
                         .box {
                             &.active,
@@ -295,7 +295,7 @@
                 }
             }
             .padWrap {
-                .padSizePrimi{
+                .padSizePrimi {
                     .row {
                         .box {
                             &.active,
@@ -335,7 +335,7 @@
                 }
             }
             .padWrap {
-                .padSizePrimi{
+                .padSizePrimi {
                     .row {
                         .box {
                             &.active,
@@ -367,10 +367,14 @@
     .sizePrimi {
         padding: 0;
         .selection-wrap {
+            padding-bottom: 5vh;
+            height: auto;
             .title {
                 margin-bottom: 0;
                 .text {
+                    font-size: 7vw;
                     a {
+                        font-size: 6vw;
                         top: 2px;
                     }
                 }
