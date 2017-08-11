@@ -731,6 +731,9 @@ html {
                   margin-top: 5vh; }
                   html body .content .screen .container .age .selection-wrap .title .text {
                     font-size: 2em; }
+                html body .content .screen .container .age .selection-wrap .age-wrapper .pad .row {
+                  width: 60vw;
+                  height: 60vw; }
                 html body .content .screen .container .age .selection-wrap .age-wrapper .background .text {
                   font-size: 4em; } }
           html body .content .screen .container .sizes-guide {
