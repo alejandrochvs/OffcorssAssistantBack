@@ -235,6 +235,19 @@ html {
           color: #73626E;
           font-weight: 700;
           font-family: FrontageCBold; }
+        html body .header .head.title .title-decor {
+          position: absolute;
+          height: 100px;
+          width: 200px;
+          background-image: url(../IMG/title-decor.svg);
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center; }
+          html body .header .head.title .title-decor.title-decor-left {
+            left: 0;
+            transform: rotate(180deg); }
+          html body .header .head.title .title-decor.title-decor-right {
+            right: 0; }
         html body .header .head .cont {
           z-index: 1;
           transition: all 0.3s ease; }

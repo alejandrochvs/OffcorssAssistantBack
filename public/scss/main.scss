@@ -45,6 +45,22 @@ html {
                         font-weight: 700;
                         font-family: FrontageCBold;
                     }
+                    .title-decor{
+                        position: absolute;
+                        height: 100px;
+                        width: 200px;
+                        background-image: url(../IMG/title-decor.svg);
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        &.title-decor-left{
+                            left: 0;
+                            transform: rotate(180deg);
+                        }
+                        &.title-decor-right{
+                            right: 0;
+                        }
+                    }
                 }
                 .cont {
                     z-index: 1;
