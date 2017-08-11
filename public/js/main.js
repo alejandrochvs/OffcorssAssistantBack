@@ -638,7 +638,7 @@ $(function () {
                             $($('.person')[personality[k]]).removeClass('transparent');
                         }
                         $('.continue').removeClass('transparent');
-                    }else{
+                    } else {
                         $('.continue').addClass('transparent');
                     }
                     $('.continue').addClass('transparent');
@@ -1009,6 +1009,11 @@ $(function () {
                     $('.head.title > .cont').html(headTitle4 + ' - CLIENTES');
                 } else if (current == 'adminColors') {
                     $('.head.title > .cont').html(headTitle4 + ' - COLORES');
+                } else if (current == '404') {
+                    $('.404-restore').click(function () {
+                        localStorage.clear();
+                        window.location.href = '/';
+                    })
                 }
                 $('N').html(name);
                 if (admin && edit) {
@@ -1239,9 +1244,6 @@ $(function () {
     if (status == 404) {
         if (current != '404') {
             next('404');
-            $('.404-restore').click(function(){
-                next('gender');
-            })
             $('.progress').removeClass('loading');
             return;
         }
