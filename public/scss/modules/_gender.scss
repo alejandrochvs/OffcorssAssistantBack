@@ -125,3 +125,10 @@
         }
     }
 }
+
+@media (max-width: 767px) {
+    .gender {
+        padding: 1vh 2vw;
+        .selection-wrap {}
+    }
+}

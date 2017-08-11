@@ -468,6 +468,9 @@ html {
               display: none; }
             html body .content .screen .container .gender.girl .img-girl .image {
               display: inherit; }
+          @media (max-width: 767px) {
+            html body .content .screen .container .gender {
+              padding: 1vh 2vw; } }
           html body .content .screen .container .name {
             padding: 5vh 0; }
             html body .content .screen .container .name .selection-wrap {
@@ -2991,6 +2994,9 @@ html {
     html body .header .head .cont.back i {
       top: 10%;
       padding: 0 18%; }
+    html body .header .head .cont a .fa-times {
+      padding: 0 8%;
+      top: -6%; }
   html body.admin {
     height: 100vh; } }
 @keyframes loading {
