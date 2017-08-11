@@ -79,7 +79,7 @@ db.once('open', function () {
         reference: Array
     });
     var e_cardModel = mongoose.model('e_cards', e_cardsSchema);
-    for (var i = 3; i < json.length; i++) {
+    for (var i = 0; i < json.length; i++) {
         var e_card = new e_cardModel({
             "url": json[i].url,
             "gender": json[i].gender,
@@ -101,3 +101,4 @@ db.once('open', function () {
     }
 
 });
+
