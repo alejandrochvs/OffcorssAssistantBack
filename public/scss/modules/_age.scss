@@ -1,5 +1,7 @@
 .age {
     padding: 5vh 0;
+    height: 100%;
+    overflow: scroll;
     .selection-wrap {
         margin-top: 7vh;
         text-align: center;
@@ -274,27 +276,31 @@
         }
     }
 }
+
 @media (max-width: 767px) {
     .age {
         padding: 0;
         .selection-wrap {
             margin-top: 0;
-            .title{
-                margin-top: 5vh;
-                .text{
+            .title {
+                .text {
                     font-size: 2em;
+                    border-bottom: solid 1px;
                 }
             }
-            .age-wrapper{
-                .pad{
-                    .row{
-                        width: 60vw;
-                        height: 60vw;
-                    }
-                }
-                .background{
-                    .text{
-                        font-size: 4em;
+        }
+        .age-wrapper {
+            .pad {
+                border: none;
+                margin-bottom: 5vh;
+                margin-top: 5vh;
+                .row {
+                    margin-left: 25vw;
+                    margin-bottom: 5vh;
+                    width: 45vw;
+                    height: 45vw;
+                    &:last-child {
+                        margin-left: 25vw;
                     }
                 }
             }
