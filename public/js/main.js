@@ -638,6 +638,8 @@ $(function () {
                             $($('.person')[personality[k]]).removeClass('transparent');
                         }
                         $('.continue').removeClass('transparent');
+                    }else{
+                        $('.continue').addClass('transparent');
                     }
                     $('.loader > .progress').css('width', '80%');
                     $('.personality').addClass(currentClass);
@@ -661,14 +663,14 @@ $(function () {
                             $(this).addClass('transparent');
                             personality.splice(personality.indexOf($(this).attr('data-personality')), 1);
                         }
-                        if ($('.person.transparent').length < 6) {
+                        if ($('.person.transparent').length < 5) {
                             $('.continue').removeClass('transparent');
                         } else {
                             $('.continue').addClass('transparent');
                         }
                     });
                     $('.continue').click(function () {
-                        if ($('.person.transparent').length < 6) {
+                        if ($('.person.transparent').length < 5) {
                             localStorage.personality = JSON.stringify(personality);
                             next(divs[9]);
                         }
