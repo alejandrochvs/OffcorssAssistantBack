@@ -641,6 +641,7 @@ $(function () {
                     }else{
                         $('.continue').addClass('transparent');
                     }
+                    $('.continue').addClass('transparent');
                     $('.loader > .progress').css('width', '80%');
                     $('.personality').addClass(currentClass);
                     $('.person').click(function () {
