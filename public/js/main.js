@@ -1239,7 +1239,9 @@ $(function () {
     if (status == 404) {
         if (current != '404') {
             next('404');
-            localStorage.current = 'gender';
+            $('.404-restore').click(function(){
+                next('gender');
+            })
             $('.progress').removeClass('loading');
             return;
         }
