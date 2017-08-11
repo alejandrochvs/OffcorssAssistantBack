@@ -130,6 +130,7 @@
     }
     .continue {
         margin-top: 5vh;
+        margin-bottom: 5vh;
         padding: 0;
         h4 {
             margin: 0;
@@ -384,6 +385,10 @@
         .selection-wrap {
             .title {
                 margin-bottom: 0;
+                .text{
+                    font-size: 2em;
+                    padding-bottom: 2vh;
+                }
             }
         }
         .personWrap {
@@ -395,8 +400,11 @@
                         height: 17.3vh;
                     }
                     .title {
+                        padding: 0;
                         h4 {
-                            font-size: 12px;
+                            font-size: 14px;
+                            padding: 0;
+                            line-height: 5vh;
                             font-weight: 600;
                         }
                     }

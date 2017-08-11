@@ -1677,7 +1677,8 @@ html {
           html body .content .screen .container .color {
             z-index: 1;
             padding: 5vh 0;
-            height: 100%; }
+            height: 100%;
+            overflow: scroll; }
             html body .content .screen .container .color .selection-wrap {
               text-align: center; }
               html body .content .screen .container .color .selection-wrap .title {
@@ -1690,10 +1691,10 @@ html {
                   padding: 2%;
                   font-size: 45px; }
             html body .content .screen .container .color .colors {
-              overflow: inherit;
-              height: 100%;
-              padding-bottom: 16vh;
-              padding-left: 5%; }
+              height: auto;
+              padding-bottom: 2vh;
+              padding-left: 5%;
+              padding-top: 3vh; }
               html body .content .screen .container .color .colors .color-wrap {
                 position: relative;
                 transition: all .3s ease;
@@ -1759,6 +1760,23 @@ html {
                 cursor: default;
                 background: transparent;
                 z-index: -1; }
+          @media (max-width: 767px) {
+            html body .content .screen .container .color {
+              padding-top: 0; }
+              html body .content .screen .container .color .selection-wrap {
+                padding-top: 0; }
+                html body .content .screen .container .color .selection-wrap .title .text {
+                  font-size: 2em;
+                  padding-bottom: 2vh; }
+              html body .content .screen .container .color .colors {
+                padding-bottom: 2vh;
+                height: auto;
+                padding-left: 8%; }
+                html body .content .screen .container .color .colors .color-wrap {
+                  height: 12.5vh;
+                  width: 12.5vh; }
+                  html body .content .screen .container .color .colors .color-wrap .tag {
+                    display: none; } }
           html body .content .screen .container .personality {
             padding: 0;
             height: 100%;
@@ -1839,6 +1857,7 @@ html {
                 transform: scale(1.1); }
             html body .content .screen .container .personality .continue {
               margin-top: 5vh;
+              margin-bottom: 5vh;
               padding: 0; }
               html body .content .screen .container .personality .continue h4 {
                 margin: 0;
@@ -1937,14 +1956,21 @@ html {
               padding: 0; }
               html body .content .screen .container .personality .selection-wrap .title {
                 margin-bottom: 0; }
+                html body .content .screen .container .personality .selection-wrap .title .text {
+                  font-size: 2em;
+                  padding-bottom: 2vh; }
               html body .content .screen .container .personality .personWrap .person {
                 padding: 2.5vh 2.2vw;
                 height: 25vh; }
                 html body .content .screen .container .personality .personWrap .person .background .offset {
                   height: 17.3vh; }
-                html body .content .screen .container .personality .personWrap .person .background .title h4 {
-                  font-size: 12px;
-                  font-weight: 600; } }
+                html body .content .screen .container .personality .personWrap .person .background .title {
+                  padding: 0; }
+                  html body .content .screen .container .personality .personWrap .person .background .title h4 {
+                    font-size: 14px;
+                    padding: 0;
+                    line-height: 5vh;
+                    font-weight: 600; } }
           html body .content .screen .container .result {
             padding: 5vh 0;
             height: 100%;

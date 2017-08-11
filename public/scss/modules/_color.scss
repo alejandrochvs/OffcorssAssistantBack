@@ -2,6 +2,7 @@
     z-index: 1;
     padding: 5vh 0;
     height: 100%;
+    overflow: scroll;
     .selection-wrap {
         text-align: center;
         .title {
@@ -17,10 +18,10 @@
         }
     }
     .colors {
-        overflow: inherit;
-        height: 100%;
-        padding-bottom: 16vh;
+        height: auto;
+        padding-bottom: 2vh;
         padding-left: 5%;
+        padding-top: 3vh;
         .color-wrap {
             position: relative;
             transition: all .3s ease;
@@ -137,6 +138,33 @@
             cursor: default;
             background: transparent;
             z-index: -1;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .color {
+        padding-top: 0;
+        .selection-wrap {
+            padding-top: 0;
+            .title {
+                .text {
+                    font-size: 2em;
+                    padding-bottom: 2vh;
+                }
+            }
+        }
+        .colors {
+            padding-bottom: 2vh;
+            height: auto;
+            padding-left: 8%;
+            .color-wrap {
+                height: 12.5vh;
+                width: 12.5vh;
+                .tag {
+                    display: none;
+                }
+            }
         }
     }
 }
