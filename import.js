@@ -9,37 +9,45 @@ for (var i = 0; i < 50; i++) {
     subChaptCell = worksheet['A' + (i + 3)];
     subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
     json[i].url = subChaptVal;
-    subChaptCell = worksheet['C' + (i + 3)];
+    subChaptCell = worksheet['G' + (i + 3)];
     subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
+    if( subChaptVal == 'Niño'){
+        subChaptVal = 'MASCULINO'
+    }else{
+        subChaptVal = 'FEMENINO'
+    }
     json[i].gender = subChaptVal;
-    subChaptCell = worksheet['D' + (i + 3)];
+    subChaptCell = worksheet['F' + (i + 3)];
     subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
+    if (subChaptVal == 'Newborn'){
+        subChaptVal = 'PRIMI (0-18M)'
+    }
     json[i].age = subChaptVal;
-    subChaptCell = worksheet['E' + (i + 3)];
+    subChaptCell = worksheet['H' + (i + 3)];
     subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
     if (subChaptCell != undefined) {
         json[i].occasion = subChaptVal.split(', ');
     }
-    subChaptCell = worksheet['F' + (i + 3)];
+    subChaptCell = worksheet['I' + (i + 3)];
     subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
     if (subChaptCell != undefined) {
         json[i].weather = subChaptVal.split(', ');
     }
-    subChaptCell = worksheet['G' + (i + 3)];
+    subChaptCell = worksheet['J' + (i + 3)];
     subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
     if (subChaptCell != undefined) {
         json[i].color = subChaptVal.split(', ');
     }
-    subChaptCell = worksheet['H' + (i + 3)];
+    subChaptCell = worksheet['K' + (i + 3)];
     subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
     if (subChaptCell != undefined) {
         json[i].type = subChaptVal.split(', ');
     }
-    subChaptCell = worksheet['I' + (i + 3)];
+    subChaptCell = worksheet['L' + (i + 3)];
     subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
     if (subChaptCell != undefined) {
         if (isNaN(subChaptVal)) {
-            json[i].reference = subChaptVal.split(',')
+            json[i].reference = subChaptVal.split(' ')
         } else {
             json[i].reference = [subChaptVal];
         }
