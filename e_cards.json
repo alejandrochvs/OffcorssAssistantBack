@@ -1,0 +1,121 @@
+[{
+    "url": "_DSC4711",
+    "gender": 4711,
+    "occasion": ["Julio"],
+    "weather": ["Newborn"],
+    "color": ["Niño"],
+    "type": ["Casual", "día a día"],
+    "reference": ["Frío", " templado"]
+}, {
+    "url": "_DSC4859",
+    "gender": 4859,
+    "occasion": ["Julio"],
+    "weather": ["Newborn"],
+    "color": ["Niño"],
+    "type": ["Casual", "día a día"],
+    "reference": ["Frío", " templado"]
+}, {
+    "url": "_DSC5377",
+    "gender": 5377,
+    "occasion": ["Julio"],
+    "weather": ["Baby"],
+    "color": ["Niño"],
+    "type": ["Casual", "día a día"],
+    "reference": ["Frío", " templado"]
+}, {
+    "url": "_DSC5470",
+    "gender": 5470,
+    "occasion": ["Julio"],
+    "weather": ["Baby"],
+    "color": ["Niño"],
+    "type": ["Casual", "día a día"],
+    "reference": ["Frío", " templado"]
+}, {
+    "url": "_DSC5581",
+    "gender": 5581,
+    "occasion": ["Julio"],
+    "weather": ["Baby"],
+    "color": ["Niña"],
+    "type": ["Casual", "día a día"],
+    "reference": ["Frío", " templado"]
+}, {
+    "url": "_DSC5773",
+    "gender": 5773,
+    "occasion": ["Julio"],
+    "weather": ["Girl"],
+    "color": ["Niña"],
+    "type": ["Casual", "día a día"],
+    "reference": ["Frío", " templado"]
+}, {
+    "url": "_DSC5773",
+    "gender": 5773,
+    "occasion": ["Julio"],
+    "weather": ["Boy"],
+    "color": ["Niño"],
+    "type": ["Casual", "día a día"],
+    "reference": ["Frío", " templado"]
+}, {
+    "url": "_DSC5948",
+    "gender": 5948,
+    "occasion": ["Julio"],
+    "weather": ["Baby"],
+    "color": ["Niña"],
+    "type": ["Casual", "día a día"],
+    "reference": ["Templado", " Cálido"]
+}, {
+    "url": "_DSC5948",
+    "gender": 5948,
+    "occasion": ["Julio"],
+    "weather": ["Baby"],
+    "color": ["Niño"],
+    "type": ["Casual", "día a día"],
+    "reference": ["Templado", " Cálido"]
+}, {
+    "url": "_DSC6050",
+    "gender": 6050,
+    "occasion": ["Julio"],
+    "weather": ["Baby"],
+    "color": ["Niña"],
+    "type": ["Casual", "día a día"],
+    "reference": ["Templado", " Cálido"]
+}, {
+    "url": "_DSC6332",
+    "gender": 6332,
+    "occasion": ["Julio"],
+    "weather": ["Boy"],
+    "color": ["Niño"],
+    "type": ["Casual", "día a día"],
+    "reference": ["Frío", " templado"]
+}, {
+    "url": "_DSC6426",
+    "gender": 6426,
+    "occasion": ["Julio"],
+    "weather": ["Boy"],
+    "color": ["Niño"],
+    "type": ["Casual", "día a día"],
+    "reference": ["Frío", " templado"]
+}, {
+    "url": "_DSC6483",
+    "gender": 6483,
+    "occasion": ["Julio"],
+    "weather": ["Girl"],
+    "color": ["Niña"],
+    "type": ["Casual", "día a día"],
+    "reference": ["Templado", " Cálido"]
+}, {
+    "url": "_DSC6691",
+    "gender": 6691,
+    "occasion": ["Julio"],
+    "weather": ["Newborn"],
+    "color": ["Niña"],
+    "type": ["Casual", "día a día"],
+    "reference": ["Frío", " templado"]
+}, {
+    "url": "_DSC6782",
+    "gender": 6782,
+    "occasion": ["Julio"],
+    "weather": ["Newborn"],
+    "color": ["Niña"],
+    "type": ["Casual", "día a día"],
+    "reference": ["Templado", " Cálido"]
+}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}]

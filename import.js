@@ -51,6 +51,7 @@ fs.writeFile('e_cards.json', JSON.stringify(json), 'utf-8', function (err) {
         return console.log(err);
     }
 });
+/*
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/assistant');
 var db = mongoose.connection;
@@ -89,3 +90,4 @@ db.once('open', function () {
     }
 
 });
+*/
