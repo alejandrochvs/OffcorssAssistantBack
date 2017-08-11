@@ -735,7 +735,7 @@ html {
                   font-size: 4em; } }
           html body .content .screen .container .sizes-guide {
             background: white;
-            padding: 2%;
+            padding: 0;
             border-radius: 5px;
             position: absolute;
             z-index: 3;
@@ -752,13 +752,16 @@ html {
               right: 1vw;
               top: 1vh;
               cursor: pointer;
-              transition: all .3s ease; }
+              transition: all .3s ease;
+              z-index: 2; }
               html body .content .screen .container .sizes-guide .fa-times:hover {
                 color: #fd0; }
             html body .content .screen .container .sizes-guide .img {
               height: 107%;
-              overflow: scroll; }
+              overflow: scroll;
+              padding: 0; }
               html body .content .screen .container .sizes-guide .img img {
+                padding: 0;
                 margin-bottom: 5vh; }
               html body .content .screen .container .sizes-guide .img ::-webkit-scrollbar {
                 width: 6px; }

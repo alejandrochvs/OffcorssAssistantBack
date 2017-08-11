@@ -333,7 +333,11 @@ $(function () {
                     $('.size').addClass(currentClass);
                     $('.size > .selection-wrap > .title > .text > a').append('<i class="fa fa-exclamation hidden-xs" aria-hidden="true"></i>')
                     $('.loader > .progress').css('width', '30%');
-                    $('.sizes-guide > .img').append('<img src="../IMG/Size/' + currentClass + '.jpg" class="col-xs-12" alt="">');
+                    if ($(window).width() < 768) {
+                        $('.sizes-guide > .img').append('<img src="../IMG/Size/' + currentClass + '-m.jpg" class="col-xs-12" alt="">');
+                    } else {
+                        $('.sizes-guide > .img').append('<img src="../IMG/Size/' + currentClass + '.jpg" class="col-xs-12" alt="">');
+                    }
                     $.ajax({
                         type: 'POST',
                         url: '/db/sizes',
@@ -566,7 +570,7 @@ $(function () {
                     }
                     $.post('/db/colors', function (res) {
                         for (var i = 0; i < res.length; i++) {
-                            $('div.colors').append('<div class="color-wrap"><div class="half left-half" style="background-color : ' + res[i].hex + '"></div><div class="half right-half" style="background-color : ' + shadeColor2(res[i].hex,0.15) + '"></div><div class="tag">' + res[i].color + '</div></div>')
+                            $('div.colors').append('<div class="color-wrap"><div class="half left-half" style="background-color : ' + res[i].hex + '"></div><div class="half right-half" style="background-color : ' + shadeColor2(res[i].hex, 0.15) + '"></div><div class="tag">' + res[i].color + '</div></div>')
                         }
                         $('.color-wrap').click(function () {
                             favColor = $(this).find('.tag').html();
@@ -996,7 +1000,7 @@ $(function () {
                         'background-size': 'initial'
                     });
                     $('.head.title > .cont').html(headTitle4 + ' - CLIENTES');
-                } else if(current == 'adminColors') {
+                } else if (current == 'adminColors') {
                     $('.head.title > .cont').html(headTitle4 + ' - COLORES');
                 }
                 $('N').html(name);
