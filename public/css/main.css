@@ -1979,6 +1979,8 @@ html {
               html body .content .screen .container .personality .personWrap .person {
                 padding: 2.5vh 2.2vw;
                 height: 25vh; }
+                html body .content .screen .container .personality .personWrap .person .fa-check {
+                  font-size: 16vw; }
                 html body .content .screen .container .personality .personWrap .person .background .offset {
                   height: 17.3vh; }
                 html body .content .screen .container .personality .personWrap .person .background .title {
