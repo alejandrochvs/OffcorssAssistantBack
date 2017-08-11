@@ -949,7 +949,8 @@ html {
             html body .content .screen .container .size {
               padding: 0; }
               html body .content .screen .container .size .selection-wrap {
-                padding-bottom: 5vh; }
+                padding-bottom: 5vh;
+                height: auto; }
                 html body .content .screen .container .size .selection-wrap .title {
                   margin-bottom: 0; }
                   html body .content .screen .container .size .selection-wrap .title .text {
