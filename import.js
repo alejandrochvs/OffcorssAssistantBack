@@ -2,9 +2,9 @@ var xlsx = require('xlsx');
 var fs = require('fs');
 var workbook = xlsx.readFile('./excel.xlsx');
 var json = []
-var worksheet = workbook.Sheets[workbook.SheetNames[0]];
+var worksheet = workbook.Sheets[workbook.SheetNames[1]];
 var subChaptCell, subChaptVal;
-for (var i = 0; i < 15; i++) {
+for (var i = 0; i < (18 - 2); i++) {
     json[i] = {};
     subChaptCell = worksheet['A' + (i + 3)];
     subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
@@ -51,7 +51,7 @@ for (var i = 0; i < 15; i++) {
     subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
     if (subChaptCell != undefined) {
         if (isNaN(subChaptVal)) {
-            json[i].reference = subChaptVal.split(' ')
+            json[i].reference = subChaptVal.split(',')
         } else {
             json[i].reference = [subChaptVal];
         }
