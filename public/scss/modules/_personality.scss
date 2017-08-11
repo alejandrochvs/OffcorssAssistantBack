@@ -1,5 +1,5 @@
 .personality {
-    padding: 5vh 0;
+    padding: 0;
     height: 100%;
     overflow: scroll;
     .selection-wrap {
@@ -7,6 +7,7 @@
         .title {
             margin-bottom: 5vh;
             .text {
+                margin-top: 0;
                 transition: all 0.3s ease;
                 color: white;
                 border-bottom: solid 1px $yellow;
@@ -17,7 +18,7 @@
     }
     .personWrap {
         .person {
-            padding: 1vh 0.5vw;
+            padding: 1vh 1vw;
             height: 40vh;
             background: transparent;
             overflow: hidden;
