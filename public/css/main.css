@@ -731,7 +731,8 @@ html {
                 margin-top: 0; }
                 html body .content .screen .container .age .selection-wrap .title .text {
                   font-size: 2em;
-                  border-bottom: solid 1px; }
+                  border-bottom: solid 2px;
+                  padding-bottom: 2vh; }
               html body .content .screen .container .age .age-wrapper .pad {
                 border: none;
                 margin-bottom: 5vh;
