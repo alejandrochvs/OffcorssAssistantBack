@@ -1,1 +1,241 @@
-[{"url":"_DSC4711","gender":"MASCULINO","age":"Newborn","occasion":["Casual","día a día"],"weather":["Frío","templado"],"color":["Azul","blanco"],"type":["Chaleco","jean","zapatos","camiseta"],"reference":["Chaleco","3113283\r\nBody","3111509\r\nZapatos","3110239\r\nJean","3106942"]},{"url":"_DSC4859","gender":"MASCULINO","age":"Newborn","occasion":["Casual","día a día"],"weather":["Frío","templado"],"color":["Azul","blanco","vinotinto"],"type":["Conjunto","zapatos"],"reference":["Conjunto","Camiseta","+","Sudadera","3112313\r\nZapatos","3110239"]},{"url":"_DSC5377","gender":"MASCULINO","age":"Baby","occasion":["Casual","día a día"],"weather":["Frío","templado"],"color":["Azul","naranja","índigo"],"type":["Camisa","jean","zapatos"],"reference":["Camisa","4104534\r\nJean","4126137\r\nZapatos","4110385\r\n"]},{"url":"_DSC5470","gender":"MASCULINO","age":"Baby","occasion":["Casual","día a día"],"weather":["Frío","templado"],"color":["Azul","naranja","índigo"],"type":["Camisa","jean","zapatos"],"reference":["Camisa","4104534\r\nJean","4126137\r\nZapatos","4110385"]},{"url":"_DSC5581","gender":"FEMENINO","age":"Baby","occasion":["Casual","día a día"],"weather":["Frío","templado"],"color":["Blanco","Indigo"],"type":["Chaleco","camisa","falda"],"reference":["Chaleco","4213622\r\nCamisa","4204362\r\nFalda","4207319"]},{"url":"_DSC5773","gender":"FEMENINO","age":"Girl","occasion":["Casual","día a día"],"weather":["Frío","templado"],"color":["Blanco","indigo","gris"],"type":["Jean","camisa","zapatos"],"reference":["Jean","5226714\r\nChaqueta","5253049\r\nCamisa","5204432\r\nZapatos","5210297","\r\n"]},{"url":"_DSC5773","gender":"MASCULINO","age":"Boy","occasion":["Casual","día a día"],"weather":["Frío","templado"],"color":["Azul","índigo"],"type":["Camisa","jean","zapatos"],"reference":["Camisa","5104660\r\nCamiseta","5133379\r\nJean","5126661\r\nZapatos","5110236"]},{"url":"_DSC5948","gender":"FEMENINO","age":"Baby","occasion":["Casual","día a día"],"weather":["Templado","Cálido"],"color":["indigo rosado","gris"],"type":["Enterizo","plasticas","bandana"],"reference":["Enterizo","4208138\r\nBotas","plasticas","4210436\r\nBandana","4214388\r\n"]},{"url":"_DSC5948","gender":"MASCULINO","age":"Baby","occasion":["Casual","día a día"],"weather":["Templado","Cálido"],"color":["indigo"],"type":["Camisa","camiseta","tenis"],"reference":["Camisa","4104535\r\nCamiseta","4123843\r\nTenis","4110385\r\n"]},{"url":"_DSC6050","gender":"FEMENINO","age":"Baby","occasion":["Casual","día a día"],"weather":["Templado","Cálido"],"color":["indigo"],"type":["Enterizo","enterizo","bandana"],"reference":["Enterizo","4208138\r\nBandana","4214388"]},{"url":"_DSC6332","gender":"MASCULINO","age":"Boy","occasion":["Casual","día a día"],"weather":["Frío","templado"],"color":["Azul","blanco","vinotinto"],"type":["Chaqueta","chaqueta","camiseta"],"reference":["Chaqueta","5113849\r\nCamiseta","5133378"]},{"url":"_DSC6426","gender":"MASCULINO","age":"Boy","occasion":["Casual","día a día"],"weather":["Frío","templado"],"color":["Azul","blanco","vinotinto"],"type":["Chaqueta","camiseta","bermuda"],"reference":["Chaqueta","5113849\r\nCamiseta","5133378\r\nBermuda","5105686"]},{"url":"_DSC6483","gender":"FEMENINO","age":"Girl","occasion":["Casual","día a día"],"weather":["Templado","Cálido"],"color":["morado","blanco","indigo"],"type":["Vestido","vestido","zapatos"],"reference":["Vestido","5201538\r\nZapatos","5110297"]},{"url":"_DSC6691","gender":"FEMENINO","age":"Newborn","occasion":["Casual","día a día"],"weather":["Frío","templado"],"color":["rosado","morado","blanco"],"type":["Jean","buzo","chaleco"],"reference":["Jean","3206434\r\nBuzo","3213284\r\nChaleco","3213283"]},{"url":"_DSC6782","gender":"FEMENINO","age":"Newborn","occasion":["Casual","día a día"],"weather":["Templado","Cálido"],"color":["blanco","morado"],"type":["Vestido","balaca","tenis"],"reference":["Vestido","con","Balaca","3212282\r\nTenis","3210255"]},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"},{"gender":"FEMENINO"}]
+[{
+    "url": "_DSC4711",
+    "gender": "MASCULINO",
+    "age": "PRIMI (0-18M)",
+    "occasion": ["Casual", "día a día"],
+    "weather": ["Frío", "templado"],
+    "color": ["Azul", "blanco"],
+    "type": ["Chaleco", "jean", "zapatos", "camiseta"],
+    "reference": ["Chaleco", "3113283\r\nBody", "3111509\r\nZapatos", "3110239\r\nJean", "3106942"]
+}, {
+    "url": "_DSC4859",
+    "gender": "MASCULINO",
+    "age": "PRIMI (0-18M)",
+    "occasion": ["Casual", "día a día"],
+    "weather": ["Frío", "templado"],
+    "color": ["Azul", "blanco", "vinotinto"],
+    "type": ["Conjunto", "zapatos"],
+    "reference": ["Conjunto", "Camiseta", "+", "Sudadera", "3112313\r\nZapatos", "3110239"]
+}, {
+    "url": "_DSC5377",
+    "gender": "MASCULINO",
+    "age": "BEBE (18M - 5 AÑOS)",
+    "occasion": ["Casual", "día a día"],
+    "weather": ["Frío", "templado"],
+    "color": ["Azul", "naranja", "índigo"],
+    "type": ["Camisa", "jean", "zapatos"],
+    "reference": ["Camisa", "4104534\r\nJean", "4126137\r\nZapatos", "4110385\r\n"]
+}, {
+    "url": "_DSC5470",
+    "gender": "MASCULINO",
+    "age": "BEBE (18M - 5 AÑOS)",
+    "occasion": ["Casual", "día a día"],
+    "weather": ["Frío", "templado"],
+    "color": ["Azul", "naranja", "índigo"],
+    "type": ["Camisa", "jean", "zapatos"],
+    "reference": ["Camisa", "4104534\r\nJean", "4126137\r\nZapatos", "4110385"]
+}, {
+    "url": "_DSC5581",
+    "gender": "FEMENINO",
+    "age": "BEBE (18M - 5 AÑOS)",
+    "occasion": ["Casual", "día a día"],
+    "weather": ["Frío", "templado"],
+    "color": ["Blanco", "Indigo"],
+    "type": ["Chaleco", "camisa", "falda"],
+    "reference": ["Chaleco", "4213622\r\nCamisa", "4204362\r\nFalda", "4207319"]
+}, {
+    "url": "_DSC5773",
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)",
+    "occasion": ["Casual", "día a día"],
+    "weather": ["Frío", "templado"],
+    "color": ["Blanco", "indigo", "gris"],
+    "type": ["Jean", "camisa", "zapatos"],
+    "reference": ["Jean", "5226714\r\nChaqueta", "5253049\r\nCamisa", "5204432\r\nZapatos", "5210297", "\r\n"]
+}, {
+    "url": "_DSC5773",
+    "gender": "MASCULINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)",
+    "occasion": ["Casual", "día a día"],
+    "weather": ["Frío", "templado"],
+    "color": ["Azul", "índigo"],
+    "type": ["Camisa", "jean", "zapatos"],
+    "reference": ["Camisa", "5104660\r\nCamiseta", "5133379\r\nJean", "5126661\r\nZapatos", "5110236"]
+}, {
+    "url": "_DSC5948",
+    "gender": "FEMENINO",
+    "age": "BEBE (18M - 5 AÑOS)",
+    "occasion": ["Casual", "día a día"],
+    "weather": ["Templado", "Cálido"],
+    "color": ["indigo rosado", "gris"],
+    "type": ["Enterizo", "plasticas", "bandana"],
+    "reference": ["Enterizo", "4208138\r\nBotas", "plasticas", "4210436\r\nBandana", "4214388\r\n"]
+}, {
+    "url": "_DSC5948",
+    "gender": "MASCULINO",
+    "age": "BEBE (18M - 5 AÑOS)",
+    "occasion": ["Casual", "día a día"],
+    "weather": ["Templado", "Cálido"],
+    "color": ["indigo"],
+    "type": ["Camisa", "camiseta", "tenis"],
+    "reference": ["Camisa", "4104535\r\nCamiseta", "4123843\r\nTenis", "4110385\r\n"]
+}, {
+    "url": "_DSC6050",
+    "gender": "FEMENINO",
+    "age": "BEBE (18M - 5 AÑOS)",
+    "occasion": ["Casual", "día a día"],
+    "weather": ["Templado", "Cálido"],
+    "color": ["indigo"],
+    "type": ["Enterizo", "enterizo", "bandana"],
+    "reference": ["Enterizo", "4208138\r\nBandana", "4214388"]
+}, {
+    "url": "_DSC6332",
+    "gender": "MASCULINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)",
+    "occasion": ["Casual", "día a día"],
+    "weather": ["Frío", "templado"],
+    "color": ["Azul", "blanco", "vinotinto"],
+    "type": ["Chaqueta", "chaqueta", "camiseta"],
+    "reference": ["Chaqueta", "5113849\r\nCamiseta", "5133378"]
+}, {
+    "url": "_DSC6426",
+    "gender": "MASCULINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)",
+    "occasion": ["Casual", "día a día"],
+    "weather": ["Frío", "templado"],
+    "color": ["Azul", "blanco", "vinotinto"],
+    "type": ["Chaqueta", "camiseta", "bermuda"],
+    "reference": ["Chaqueta", "5113849\r\nCamiseta", "5133378\r\nBermuda", "5105686"]
+}, {
+    "url": "_DSC6483",
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)",
+    "occasion": ["Casual", "día a día"],
+    "weather": ["Templado", "Cálido"],
+    "color": ["morado", "blanco", "indigo"],
+    "type": ["Vestido", "vestido", "zapatos"],
+    "reference": ["Vestido", "5201538\r\nZapatos", "5110297"]
+}, {
+    "url": "_DSC6691",
+    "gender": "FEMENINO",
+    "age": "PRIMI (0-18M)",
+    "occasion": ["Casual", "día a día"],
+    "weather": ["Frío", "templado"],
+    "color": ["rosado", "morado", "blanco"],
+    "type": ["Jean", "buzo", "chaleco"],
+    "reference": ["Jean", "3206434\r\nBuzo", "3213284\r\nChaleco", "3213283"]
+}, {
+    "url": "_DSC6782",
+    "gender": "FEMENINO",
+    "age": "PRIMI (0-18M)",
+    "occasion": ["Casual", "día a día"],
+    "weather": ["Templado", "Cálido"],
+    "color": ["blanco", "morado"],
+    "type": ["Vestido", "balaca", "tenis"],
+    "reference": ["Vestido", "con", "Balaca", "3212282\r\nTenis", "3210255"]
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}, {
+    "gender": "FEMENINO",
+    "age": "NIÑO (5 AÑOS - 13 AÑOS)"
+}]

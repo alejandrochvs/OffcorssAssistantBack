@@ -20,7 +20,11 @@ for (var i = 0; i < 50; i++) {
     subChaptCell = worksheet['F' + (i + 3)];
     subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
     if (subChaptVal == 'Newborn'){
-        subChaptVal = 'PRIMI (0-18M)'
+        subChaptVal = 'PRIMI (0-18M)';
+    }else if (subChaptVal == 'Baby'){
+        subChaptVal = 'BEBE (18M - 5 AÑOS)';
+    }else{
+        subChaptVal = 'NIÑO (5 AÑOS - 13 AÑOS)';
     }
     json[i].age = subChaptVal;
     subChaptCell = worksheet['H' + (i + 3)];
