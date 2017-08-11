@@ -1238,12 +1238,8 @@ $(function () {
     //Extras
     if (status == 404) {
         if (current != '404') {
-            if (localStorage.current) {
-                var tempCurrent = localStorage.current;
-            }
             next('404');
-            current = tempCurrent || 'gender';
-            localStorage.current = current;
+            localStorage.current = 'gender';
             $('.progress').removeClass('loading');
             return;
         }
