@@ -1709,14 +1709,19 @@ html {
                 top: 3vh;
                 color: white;
                 z-index: 2;
-                transition: all 0.3s ease; }
+                transition: all 0.3s ease;
+                font-size: 8vw;
+                left: 25%;
+                top: 25%; }
               html body .content .screen .container .personality .personWrap .person .background {
                 height: inherit;
                 padding: 0;
                 background: rgba(0, 0, 0, 0.5);
                 border: none !important; }
                 html body .content .screen .container .personality .personWrap .person .background .offset {
-                  height: 30vh; }
+                  height: 30vh;
+                  background: rgba(255, 255, 255, 0.8);
+                  transition: all .3s ease; }
                 html body .content .screen .container .personality .personWrap .person .background .title {
                   height: 10vh;
                   background: white !important; }
@@ -1733,6 +1738,8 @@ html {
                     font-size: 30px; }
               html body .content .screen .container .personality .personWrap .person.transparent {
                 transform: scale(1); }
+                html body .content .screen .container .personality .personWrap .person.transparent .background .offset {
+                  background: transparent; }
                 html body .content .screen .container .personality .personWrap .person.transparent .fa-check {
                   color: transparent; }
               html body .content .screen .container .personality .personWrap .person:nth-child(1) .background {
