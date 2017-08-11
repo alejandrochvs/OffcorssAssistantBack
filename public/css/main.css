@@ -236,9 +236,8 @@ html {
           font-weight: 700;
           font-family: FrontageCBold; }
         html body .header .head.title .title-decor {
-          position: absolute;
-          height: 100px;
-          width: 200px;
+          height: 50%;
+          top: 25%;
           background-image: url(../IMG/title-decor.svg);
           background-size: contain;
           background-repeat: no-repeat;
