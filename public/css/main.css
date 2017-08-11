@@ -273,7 +273,8 @@ html {
               position: relative;
               color: #73626E;
               transition: all 0.3s ease; }
-            html body .header .head .cont.back:hover i, html body .header .head .cont.back:hover span {
+            html body .header .head .cont.back:hover i,
+            html body .header .head .cont.back:hover span {
               color: #59caac; }
           html body .header .head .cont a {
             text-decoration: none;
@@ -2985,6 +2986,11 @@ html {
   html body .header .head.title .cont {
     padding: 0;
     font-size: 14px; }
+  html body .header .head .cont {
+    height: 100%; }
+    html body .header .head .cont.back i {
+      top: 10%;
+      padding: 0 18%; }
   html body.admin {
     height: 100vh; } }
 @keyframes loading {

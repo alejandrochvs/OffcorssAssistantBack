@@ -41,11 +41,11 @@ html {
                         overflow: hidden;
                         text-overflow: ellipsis;
                         white-space: nowrap;
-                        color:#73626E;
+                        color: #73626E;
                         font-weight: 700;
                         font-family: FrontageCBold;
                     }
-                    .title-decor{
+                    .title-decor {
                         padding: 0;
                         height: 50%;
                         top: 25%;
@@ -53,11 +53,11 @@ html {
                         background-size: contain;
                         background-repeat: no-repeat;
                         background-position: center;
-                        &.title-decor-left{
+                        &.title-decor-left {
                             left: 0;
                             transform: rotate(180deg);
                         }
-                        &.title-decor-right{
+                        &.title-decor-right {
                             right: 0;
                         }
                     }
@@ -89,8 +89,9 @@ html {
                             color: #73626E;
                             transition: all 0.3s ease;
                         }
-                        &:hover{
-                            i,span{
+                        &:hover {
+                            i,
+                            span {
                                 color: darken(#80D6BF, 10%);
                             }
                         }
@@ -385,15 +386,25 @@ html {
         }
     }
 }
+
 @media (max-width: 767px) {
-    html{
-        body{
-            .header{
-                .head{
-                    &.title{
-                        .cont{
+    html {
+        body {
+            .header {
+                .head {
+                    &.title {
+                        .cont {
                             padding: 0;
                             font-size: 14px;
+                        }
+                    }
+                    .cont {
+                        height: 100%;
+                        &.back {
+                            i {
+                                top: 10%;
+                                padding: 0 18%;
+                            }
                         }
                     }
                 }
@@ -404,6 +415,7 @@ html {
         }
     }
 }
+
 @keyframes loading {
     0% {
         left: -5%;
