@@ -8,7 +8,7 @@ var urlEncodedParser = bodyParser.urlencoded({
 });
 var path = require('path');
 var fs = require('fs');
-var port = process.env.PORT || 80;
+var port = process.env.PORT || 3000;
 // Router variables
 var dbRoute = require('./routes/db');
 var adminRoute = require('./routes/admin');
