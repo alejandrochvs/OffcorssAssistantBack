@@ -1936,6 +1936,26 @@ html {
               color: #FF98AA; }
             html body .content .screen .container .personality.nGirl .continue h4 {
               background: #FF98AA; }
+            html body .content .screen .container .personality.boy .personWrap .person:nth-child(1) .background, html body .content .screen .container .personality.bBoy .personWrap .person:nth-child(1) .background, html body .content .screen .container .personality.nBoy .personWrap .person:nth-child(1) .background {
+              background: url(../IMG/Personality/personalidad-m-1.jpg); }
+            html body .content .screen .container .personality.boy .personWrap .person:nth-child(2) .background, html body .content .screen .container .personality.bBoy .personWrap .person:nth-child(2) .background, html body .content .screen .container .personality.nBoy .personWrap .person:nth-child(2) .background {
+              background: url(../IMG/Personality/personalidad-m-2.jpg); }
+            html body .content .screen .container .personality.boy .personWrap .person:nth-child(3) .background, html body .content .screen .container .personality.bBoy .personWrap .person:nth-child(3) .background, html body .content .screen .container .personality.nBoy .personWrap .person:nth-child(3) .background {
+              background: url(../IMG/Personality/personalidad-m-3.jpg); }
+            html body .content .screen .container .personality.boy .personWrap .person:nth-child(4) .background, html body .content .screen .container .personality.bBoy .personWrap .person:nth-child(4) .background, html body .content .screen .container .personality.nBoy .personWrap .person:nth-child(4) .background {
+              background: url(../IMG/Personality/personalidad-m-4.jpg); }
+            html body .content .screen .container .personality.boy .personWrap .person:nth-child(5) .background, html body .content .screen .container .personality.bBoy .personWrap .person:nth-child(5) .background, html body .content .screen .container .personality.nBoy .personWrap .person:nth-child(5) .background {
+              background: url(../IMG/Personality/personalidad-m-5.jpg); }
+            html body .content .screen .container .personality.girl .personWrap .person:nth-child(1) .background, html body .content .screen .container .personality.bGirl .personWrap .person:nth-child(1) .background, html body .content .screen .container .personality.nGirl .personWrap .person:nth-child(1) .background {
+              background: url(../IMG/Personality/personalidad-m-1.jpg); }
+            html body .content .screen .container .personality.girl .personWrap .person:nth-child(2) .background, html body .content .screen .container .personality.bGirl .personWrap .person:nth-child(2) .background, html body .content .screen .container .personality.nGirl .personWrap .person:nth-child(2) .background {
+              background: url(../IMG/Personality/personalidad-m-2.jpg); }
+            html body .content .screen .container .personality.girl .personWrap .person:nth-child(3) .background, html body .content .screen .container .personality.bGirl .personWrap .person:nth-child(3) .background, html body .content .screen .container .personality.nGirl .personWrap .person:nth-child(3) .background {
+              background: url(../IMG/Personality/personalidad-m-3.jpg); }
+            html body .content .screen .container .personality.girl .personWrap .person:nth-child(4) .background, html body .content .screen .container .personality.bGirl .personWrap .person:nth-child(4) .background, html body .content .screen .container .personality.nGirl .personWrap .person:nth-child(4) .background {
+              background: url(../IMG/Personality/personalidad-m-4.jpg); }
+            html body .content .screen .container .personality.girl .personWrap .person:nth-child(5) .background, html body .content .screen .container .personality.bGirl .personWrap .person:nth-child(5) .background, html body .content .screen .container .personality.nGirl .personWrap .person:nth-child(5) .background {
+              background: url(../IMG/Personality/personalidad-m-5.jpg); }
           @media (max-width: 767px) {
             html body .content .screen .container .personality {
               padding: 0; }

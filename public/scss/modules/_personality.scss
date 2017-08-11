@@ -244,8 +244,8 @@
                     }
                 }
                 .fa-check {
-                        color: $bBoy;
-                    }
+                    color: $bBoy;
+                }
             }
         }
         .continue {
@@ -271,8 +271,8 @@
                     }
                 }
                 .fa-check {
-                        color: $bGirl;
-                    }
+                    color: $bGirl;
+                }
             }
         }
         .continue {
@@ -298,8 +298,8 @@
                     }
                 }
                 .fa-check {
-                        color: $nBoy;
-                    }
+                    color: $nBoy;
+                }
             }
         }
         .continue {
@@ -325,13 +325,79 @@
                     }
                 }
                 .fa-check {
-                        color: $nGirl;
-                    }
+                    color: $nGirl;
+                }
             }
         }
         .continue {
             h4 {
                 background: $nGirl;
+            }
+        }
+    }
+    &.boy,
+    &.bBoy,
+    &.nBoy {
+        .personWrap {
+            .person {
+                &:nth-child(1) {
+                    .background {
+                        background: url(../IMG/Personality/personalidad-m-1.jpg);
+                    }
+                }
+                &:nth-child(2) {
+                    .background {
+                        background: url(../IMG/Personality/personalidad-m-2.jpg);
+                    }
+                }
+                &:nth-child(3) {
+                    .background {
+                        background: url(../IMG/Personality/personalidad-m-3.jpg);
+                    }
+                }
+                &:nth-child(4) {
+                    .background {
+                        background: url(../IMG/Personality/personalidad-m-4.jpg);
+                    }
+                }
+                &:nth-child(5) {
+                    .background {
+                        background: url(../IMG/Personality/personalidad-m-5.jpg);
+                    }
+                }
+            }
+        }
+    }
+    &.girl,
+    &.bGirl,
+    &.nGirl {
+        .personWrap {
+            .person {
+                &:nth-child(1) {
+                    .background {
+                        background: url(../IMG/Personality/personalidad-m-1.jpg);
+                    }
+                }
+                &:nth-child(2) {
+                    .background {
+                        background: url(../IMG/Personality/personalidad-m-2.jpg);
+                    }
+                }
+                &:nth-child(3) {
+                    .background {
+                        background: url(../IMG/Personality/personalidad-m-3.jpg);
+                    }
+                }
+                &:nth-child(4) {
+                    .background {
+                        background: url(../IMG/Personality/personalidad-m-4.jpg);
+                    }
+                }
+                &:nth-child(5) {
+                    .background {
+                        background: url(../IMG/Personality/personalidad-m-5.jpg);
+                    }
+                }
             }
         }
     }
