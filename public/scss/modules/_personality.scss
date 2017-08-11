@@ -42,6 +42,9 @@
                 padding: 0;
                 background: rgba(black, 0.5);
                 border: none !important;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
                 .offset {
                     height: 30vh;
                     background: rgba(white, 0.8);
@@ -77,10 +80,6 @@
             }
             &:nth-child(1) {
                 .background {
-                    background: url('../IMG/Personality/personalidad-1.jpg');
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: cover;
                     .title {
                         h4 {
                             color: #73626E;
@@ -90,10 +89,6 @@
             }
             &:nth-child(2) {
                 .background {
-                    background: url('../IMG/Personality/personalidad-2.jpg');
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: cover;
                     .title {
                         h4 {
                             color: #80D6BF;
@@ -103,10 +98,6 @@
             }
             &:nth-child(3) {
                 .background {
-                    background: url('../IMG/Personality/personalidad-3.jpg');
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: cover;
                     .title {
                         h4 {
                             color: #73626E;
@@ -116,10 +107,6 @@
             }
             &:nth-child(4) {
                 .background {
-                    background: url('../IMG/Personality/personalidad-4.jpg');
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: cover;
                     .title {
                         h4 {
                             color: #80D6BF;
@@ -129,23 +116,11 @@
             }
             &:nth-child(5) {
                 .background {
-                    background: url('../IMG/Personality/personalidad-5.jpg');
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: cover;
                     .title {
                         h4 {
                             color: #73626E;
                         }
                     }
-                }
-            }
-            &:nth-child(6) {
-                .background {
-                    background: url('../IMG/Personality/raton.jpg');
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: cover;
                 }
             }
             &:hover {
@@ -342,27 +317,27 @@
             .person {
                 &:nth-child(1) {
                     .background {
-                        background: url(../IMG/Personality/personalidad-m-1.jpg);
+                        background-image: url(../IMG/Personality/personalidad-m-1.jpg);
                     }
                 }
                 &:nth-child(2) {
                     .background {
-                        background: url(../IMG/Personality/personalidad-m-2.jpg);
+                        background-image: url(../IMG/Personality/personalidad-m-2.jpg);
                     }
                 }
                 &:nth-child(3) {
                     .background {
-                        background: url(../IMG/Personality/personalidad-m-3.jpg);
+                        background-image: url(../IMG/Personality/personalidad-m-3.jpg);
                     }
                 }
                 &:nth-child(4) {
                     .background {
-                        background: url(../IMG/Personality/personalidad-m-4.jpg);
+                        background-image: url(../IMG/Personality/personalidad-m-4.jpg);
                     }
                 }
                 &:nth-child(5) {
                     .background {
-                        background: url(../IMG/Personality/personalidad-m-5.jpg);
+                        background-image: url(../IMG/Personality/personalidad-m-5.jpg);
                     }
                 }
             }
@@ -375,27 +350,27 @@
             .person {
                 &:nth-child(1) {
                     .background {
-                        background: url(../IMG/Personality/personalidad-m-1.jpg);
+                        background-image: url(../IMG/Personality/personalidad-f-1.jpg);
                     }
                 }
                 &:nth-child(2) {
                     .background {
-                        background: url(../IMG/Personality/personalidad-m-2.jpg);
+                        background-image: url(../IMG/Personality/personalidad-f-2.jpg);
                     }
                 }
                 &:nth-child(3) {
                     .background {
-                        background: url(../IMG/Personality/personalidad-m-3.jpg);
+                        background-image: url(../IMG/Personality/personalidad-f-3.jpg);
                     }
                 }
                 &:nth-child(4) {
                     .background {
-                        background: url(../IMG/Personality/personalidad-m-4.jpg);
+                        background-image: url(../IMG/Personality/personalidad-f-4.jpg);
                     }
                 }
                 &:nth-child(5) {
                     .background {
-                        background: url(../IMG/Personality/personalidad-m-5.jpg);
+                        background-image: url(../IMG/Personality/personalidad-f-5.jpg);
                     }
                 }
             }
