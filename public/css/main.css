@@ -948,38 +948,40 @@ html {
           @media (max-width: 767px) {
             html body .content .screen .container .size {
               padding: 0; }
-              html body .content .screen .container .size .selection-wrap .title {
-                margin-bottom: 0; }
-                html body .content .screen .container .size .selection-wrap .title .text {
-                  font-size: 7vw; }
-                  html body .content .screen .container .size .selection-wrap .title .text a {
-                    font-size: 6vw;
-                    top: 2px; }
-              html body .content .screen .container .size .selection-wrap .padWrap {
-                padding-left: 0; }
-                html body .content .screen .container .size .selection-wrap .padWrap .image {
-                  height: 10vh; }
-                  html body .content .screen .container .size .selection-wrap .padWrap .image div {
-                    font-size: 9vh; }
-                html body .content .screen .container .size .selection-wrap .padWrap .padSize {
-                  padding: 0;
-                  height: 10vh;
-                  padding-right: 1vw; }
-                  html body .content .screen .container .size .selection-wrap .padWrap .padSize .row {
-                    padding: 0; }
-                    html body .content .screen .container .size .selection-wrap .padWrap .padSize .row .box {
-                      border: solid 1px white;
-                      height: 99%;
-                      font-size: 22px;
-                      line-height: 9vh; }
-                html body .content .screen .container .size .selection-wrap .padWrap .nav {
-                  height: 50%;
-                  bottom: 0;
-                  border-radius: 5px;
-                  right: -4vw;
-                  width: 7vw; }
-                  html body .content .screen .container .size .selection-wrap .padWrap .nav .sel.up {
-                    height: 5vh; } }
+              html body .content .screen .container .size .selection-wrap {
+                padding-bottom: 5vh; }
+                html body .content .screen .container .size .selection-wrap .title {
+                  margin-bottom: 0; }
+                  html body .content .screen .container .size .selection-wrap .title .text {
+                    font-size: 7vw; }
+                    html body .content .screen .container .size .selection-wrap .title .text a {
+                      font-size: 6vw;
+                      top: 2px; }
+                html body .content .screen .container .size .selection-wrap .padWrap {
+                  padding-left: 0; }
+                  html body .content .screen .container .size .selection-wrap .padWrap .image {
+                    height: 10vh; }
+                    html body .content .screen .container .size .selection-wrap .padWrap .image div {
+                      font-size: 9vh; }
+                  html body .content .screen .container .size .selection-wrap .padWrap .padSize {
+                    padding: 0;
+                    height: 10vh;
+                    padding-right: 1vw; }
+                    html body .content .screen .container .size .selection-wrap .padWrap .padSize .row {
+                      padding: 0; }
+                      html body .content .screen .container .size .selection-wrap .padWrap .padSize .row .box {
+                        border: solid 1px white;
+                        height: 99%;
+                        font-size: 22px;
+                        line-height: 9vh; }
+                  html body .content .screen .container .size .selection-wrap .padWrap .nav {
+                    height: 50%;
+                    bottom: 0;
+                    border-radius: 5px;
+                    right: -4vw;
+                    width: 7vw; }
+                    html body .content .screen .container .size .selection-wrap .padWrap .nav .sel.up {
+                      height: 5vh; } }
           html body .content .screen .container .sizePrimi {
             padding: 5vh 0; }
             html body .content .screen .container .sizePrimi .selection-wrap {
