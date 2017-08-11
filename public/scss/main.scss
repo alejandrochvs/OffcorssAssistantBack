@@ -383,14 +383,27 @@ html {
                 }
             }
         }
-        @media (max-width: 767px) {
+    }
+}
+@media (max-width: 767px) {
+    html{
+        body{
+            .header{
+                .head{
+                    &.title{
+                        .cont{
+                            padding: 0;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
             &.admin {
                 height: 100vh;
             }
         }
     }
 }
-
 @keyframes loading {
     0% {
         left: -5%;

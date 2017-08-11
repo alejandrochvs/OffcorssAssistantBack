@@ -2980,10 +2980,13 @@ html {
     html body.edit .colors .color-wrap:hover .select {
       border-top-width: 3vh;
       background: white; }
-    @media (max-width: 767px) {
-      html body.admin {
-        height: 100vh; } }
 
+@media (max-width: 767px) {
+  html body .header .head.title .cont {
+    padding: 0;
+    font-size: 14px; }
+  html body.admin {
+    height: 100vh; } }
 @keyframes loading {
   0% {
     left: -5%;
