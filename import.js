@@ -4,11 +4,11 @@ var workbook = xlsx.readFile('./excel.xlsx');
 var json = []
 var worksheet = workbook.Sheets[workbook.SheetNames[0]];
 var subChaptCell, subChaptVal;
-for (var i = 0; i < 50; i++) {
+for (var i = 0; i < 15; i++) {
     json[i] = {};
     subChaptCell = worksheet['A' + (i + 3)];
     subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
-    json[i].url = subChaptVal;
+    json[i].url = subChaptVal + '.jpg';
     subChaptCell = worksheet['G' + (i + 3)];
     subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
     if( subChaptVal == 'Niño'){
@@ -63,7 +63,6 @@ fs.writeFile('e_cards.json', JSON.stringify(json), 'utf-8', function (err) {
         return console.log(err);
     }
 });
-/*
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/assistant');
 var db = mongoose.connection;
@@ -102,4 +101,3 @@ db.once('open', function () {
     }
 
 });
-*/
