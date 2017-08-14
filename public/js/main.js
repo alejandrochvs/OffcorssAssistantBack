@@ -819,7 +819,7 @@ $(function () {
                                             }
                                             $.ajax({
                                                 type: 'GET',
-                                                url: 'https://webapp.contentobps.com/hermeco/hermeco_ventas.php?data=' + data.phone + '/asistente',
+                                                url: 'https://webapp.contentobps.com/hermeco/hermeco_ventas.php?data=' + data.phone + '/asistentevirtual',
                                                 dataType: 'jsonp',
                                                 crossDomain: true,
                                                 success: function (res) {
