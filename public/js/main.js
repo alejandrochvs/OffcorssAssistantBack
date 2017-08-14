@@ -497,7 +497,7 @@ $(function () {
                         $('.background[data-occasion="PLAYA"]').css('display', 'none');
                         $($('.background')[1]).removeClass('col-md-offset-2');
                         $($('.background')[1]).addClass('col-md-offset-3');
-                        $($('.background')[4]).find('.img').css('background-image','url(../IMG/occasions/ocasiones-5.jpg)');
+                        $($('.background')[4]).find('.cont').css('background-image','url(../IMG/occasions/ocasiones-5.jpg)');
                         $('.occasions > .visible-xs').remove();
                     }
                     if (occasion) {
