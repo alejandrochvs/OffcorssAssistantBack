@@ -2091,10 +2091,11 @@ html {
               height: 80px;
               background: #4a9500;
               position: fixed;
-              right: 3vw;
-              top: 45%;
-              border-radius: 50%;
+              top: 80%;
+              width: 100%;
+              border-radius: 0%;
               color: white;
+              bottom: 0;
               cursor: pointer;
               transition: all .3s ease;
               z-index: 4; }
