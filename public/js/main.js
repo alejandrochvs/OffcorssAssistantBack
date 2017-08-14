@@ -929,6 +929,7 @@ $(function () {
                                 }
                             });
                         } else {
+                            $('.progress').removeClass('loading');
                             if (!validateEmail(email)) {
                                 $('#email').css('border-bottom', 'solid 2px red');
                                 console.log('Wrong e-mail.')
@@ -962,7 +963,6 @@ $(function () {
                                 $('#last_name').css('border-bottom', 'solid 2px transparent');
                             }
                             console.log('Fill everything.');
-                            $('.progress').addClass('loading');
                         }
                     };
                     $('.registerBtn').click(function () {
