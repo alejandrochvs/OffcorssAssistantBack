@@ -496,7 +496,8 @@ $(function () {
                         console.log(true);
                         $('.background[data-occasion="PLAYA"]').css('display', 'none');
                         $($('.background')[1]).removeClass('col-md-offset-2');
-                        $($('.background')[1]).addClass('col-md-offset-4');
+                        $($('.background')[1]).addClass('col-md-offset-3');
+                        $('.occasions > .visible-xs').remove();
                     }
                     if (occasion) {
                         if (occasion.length > 0) {
