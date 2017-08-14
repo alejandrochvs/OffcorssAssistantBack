@@ -619,8 +619,7 @@ $(function () {
                         }
                     });
                     $('.looks').addClass(currentClass);
-                }
-                else if (current === divs[8]) {
+                } else if (current === divs[8]) {
                     $('body > .content').css({
                         'background-image': 'url(../IMG/fondo-3.jpg)',
                         'background-size': 'cover'
@@ -684,8 +683,7 @@ $(function () {
                         $('.person:nth-child(4) > .background > .title > h4').html(personalityNameF4);
                         $('.person:nth-child(5) > .background > .title > h4').html(personalityNameF5);
                     }
-                }
-                else if (current === divs[9]) {
+                } else if (current === divs[9]) {
                     $('body > .content').css({
                         'background-image': 'url(../IMG/fondo-3.jpg)',
                         'background-size': 'cover'
@@ -813,20 +811,19 @@ $(function () {
                                                     placement: 'top'
                                                 });
                                                 $('.call-modal > .input > input').tooltip('show');
-                                            }
-                                            else {
+                                            } else {
                                                 $('.input > input').unbind();
                                                 $('.call-modal > .input').removeClass('wrong');
                                                 $('.call-modal > .input > input').tooltip('hide');
                                                 $('.call-modal').addClass('success');
                                             }
                                             $.ajax({
-                                                type : 'GET',
-                                                url : 'https://webapp.contentobps.com/hermeco/hermeco_ventas.php?data=' + data.phone + '/asistente',
-                                                success : function(res){
-                                                    if ( res == 'OK'){
-                                                        console.log(data.phone);
-                                                    }
+                                                type: 'GET',
+                                                url: 'https://webapp.contentobps.com/hermeco/hermeco_ventas.php?data=' + data.phone + '/asistente',
+                                                dataType: 'jsonp',
+                                                crossDomain: true,
+                                                success: function (res) {
+                                                    console.log(res);
                                                     $('.progress').removeClass('loading');
                                                 }
                                             });
@@ -845,8 +842,7 @@ $(function () {
                             });
                         }
                     });
-                }
-                else if (current === 'login') {
+                } else if (current === 'login') {
                     $('body > .content').css({
                         'background-image': 'url(../IMG/background.jpg)',
                         'background-size': 'initial'
