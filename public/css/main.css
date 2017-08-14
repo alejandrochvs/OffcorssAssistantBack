@@ -2266,7 +2266,7 @@ html {
                   html body .content .screen .container .result .callcenter .text {
                     position: absolute;
                     font-size: 25px;
-                    top: 15%;
+                    top: 5%;
                     left: 3%;
                     z-index: 4;
                     text-align: center; }

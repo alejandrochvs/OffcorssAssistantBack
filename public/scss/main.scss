@@ -138,6 +138,11 @@ html {
                         padding: 0 1%;
                         position: relative;
                     }
+                    &:hover{
+                        .exit-app{
+                            
+                        }
+                    }
                 }
                 &.transparent {
                     cursor: default;
