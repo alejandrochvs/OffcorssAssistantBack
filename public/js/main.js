@@ -497,7 +497,7 @@ $(function () {
                         $('.background[data-occasion="PLAYA"]').css('display', 'none');
                         $($('.background')[1]).removeClass('col-md-offset-2');
                         $($('.background')[1]).addClass('col-md-offset-3');
-                        $($('.background')[4]).find('.cont').css('background-image','url(../IMG/occasions/ocasiones-5.jpg)');
+                        $($('.background')[4]).find('.cont').css('background-image', 'url(../IMG/occasions/ocasiones-5.jpg)');
                         $('.occasions > .visible-xs').remove();
                     }
                     if (occasion) {
@@ -1259,7 +1259,7 @@ $(function () {
         }
 
     }
-    if (localStorage.current) {
+    /*if (localStorage.current) {
         current = localStorage.current;
         gender = localStorage.gender;
         name = localStorage.name;
@@ -1291,21 +1291,22 @@ $(function () {
         }
         next(current);
         $('.progress').removeClass('loading');
-    } else {
-        if (admin) {
-            if (localStorage.admin) {
-                loadAdmin();
-                current = divs[0];
-            } else {
-                currentIndex = -10;
-                current = 'login';
-            }
-        } else {
+    } */
+    //    else {
+    if (admin) {
+        if (localStorage.admin) {
+            loadAdmin();
             current = divs[0];
+        } else {
+            currentIndex = -10;
+            current = 'login';
         }
-        next(current);
-        $('.progress').removeClass('loading');
+    } else {
+        current = divs[0];
     }
+    next(current);
+    $('.progress').removeClass('loading');
+    //    }
     $('#delete-me').remove();
     $('.back').click(function () {
         if (current === divs[5]) {

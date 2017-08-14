@@ -112,7 +112,6 @@ db.once('open', function () {
 
     });
     router.post('/e-cards/match', function (req, res) {
-        console.log(req.body.occasion[0]);
         eCards.find({
             gender: req.body.gender,
             age: req.body.age,
