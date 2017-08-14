@@ -716,28 +716,12 @@ $(function () {
                     }
                     data.color = favColor;
                     $('.progress').addClass('loading');
-                    if (admin) {
-                        switch (Math.floor(Math.random() * 3)) {
-                            case 0:
-                                data.age = "BEBE (18M - 5 AÑOS)";
-                                break;
-                            case 1:
-                                data.age = 'PRIMI (0-18M)';
-                                break;
-                            case 2:
-                                data.age = 'NIÑO (5 AÑOS - 13 AÑOS)';
-                                break;
-                        }
-                        switch (Math.floor(Math.random() * 2)) {
-                            case 0:
-                                data.gender = "FEMENINO";
-                                break;
-                            case 1:
-                                data.gender = "MASCULINO";
-                                break;
-                        }
-                    }
                     data.occasion = occasion;
+                    if (admin) {
+                        data.age = "BEBE (18M - 5 AÑOS)";
+                        data.gender = "FEMENINO";
+                        data.occasion = ['OCASIÓN ESPECIAL'];
+                    }
                     console.log(data);
                     $.ajax({
                         type: "POST",

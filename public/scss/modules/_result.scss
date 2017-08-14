@@ -3,7 +3,7 @@
     height: 100%;
     overflow: scroll;
     overflow-x: hidden;
-    ::-webkit-scrollbar {
+     ::-webkit-scrollbar {
         display: inherit;
     }
     .call-modal {
@@ -187,22 +187,22 @@
     }
     .result-wrapper {
         padding: 0;
-    }
-    .resultIMG {
-        padding: 0;
-        transition: all .3s ease;
         margin-bottom: 80px;
-        img {
-            cursor: pointer;
-            -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-            -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-            box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-            transition: all .3s ease;
+        .resultIMG {
             padding: 0;
-            &:hover {
-                -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
-                -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
-                box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+            transition: all .3s ease;
+            img {
+                cursor: pointer;
+                -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                transition: all .3s ease;
+                padding: 0;
+                &:hover {
+                    -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+                    -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+                    box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+                }
             }
         }
     }

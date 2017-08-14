@@ -11,9 +11,6 @@
 @font-face {
   font-family: FrontageC;
   src: url("../fonts/offcorss/Juri Zaech - FrontageCondensed-Regular.otf"); }
-::-webkit-scrollbar {
-  display: none; }
-
 html {
   overflow-x: hidden; }
   html #editing {
@@ -211,6 +208,8 @@ html {
               height: 100%; }
               html body .ui .ui-section.hide-admin.admin-hidden .ui-option i {
                 line-height: 50px; }
+    html body ::-webkit-scrollbar {
+      display: none; }
     html body .header {
       margin: 0;
       background: white;
@@ -284,6 +283,13 @@ html {
                 background: #80D6BF;
                 border-color: white;
                 color: white; }
+          html body .header .head .cont.exit:hover a {
+            color: #80D6BF;
+            cursor: pointer; }
+            html body .header .head .cont.exit:hover a i {
+              background: #80D6BF;
+              border-color: white;
+              color: white; }
           html body .header .head .cont a {
             text-decoration: none;
             color: #73626E;
@@ -294,17 +300,10 @@ html {
               position: relative;
               color: #fd0;
               transition: all 0.3s ease; }
-              html body .header .head .cont a i:hover {
-                color: #e6c700; }
-                html body .header .head .cont a i:hover.fa-times {
-                  color: #59caac;
-                  border-color: #59caac; }
           html body .header .head .cont .exit-app {
             transition: all .3s ease;
             top: 0px;
             margin-right: 10px; }
-            html body .header .head .cont .exit-app:hover {
-              color: #93dcc9; }
           html body .header .head .cont .fa-times {
             color: #80D6BF;
             font-size: 28px;
@@ -1203,6 +1202,8 @@ html {
             padding: 5vh 0;
             overflow: scroll;
             height: 100%; }
+            html body .content .screen .container .occasion ::-webkit-scrollbar {
+              display: inherit; }
             html body .content .screen .container .occasion .selection-wrap {
               text-align: center; }
               html body .content .screen .container .occasion .selection-wrap .title {
@@ -2156,22 +2157,22 @@ html {
                 background: #fd0;
                 color: white; }
             html body .content .screen .container .result .result-wrapper {
-              padding: 0; }
-            html body .content .screen .container .result .resultIMG {
               padding: 0;
-              transition: all .3s ease;
               margin-bottom: 80px; }
-              html body .content .screen .container .result .resultIMG img {
-                cursor: pointer;
-                -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-                -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-                box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-                transition: all .3s ease;
-                padding: 0; }
-                html body .content .screen .container .result .resultIMG img:hover {
-                  -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
-                  -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
-                  box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4); }
+              html body .content .screen .container .result .result-wrapper .resultIMG {
+                padding: 0;
+                transition: all .3s ease; }
+                html body .content .screen .container .result .result-wrapper .resultIMG img {
+                  cursor: pointer;
+                  -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                  -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                  box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                  transition: all .3s ease;
+                  padding: 0; }
+                  html body .content .screen .container .result .result-wrapper .resultIMG img:hover {
+                    -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+                    -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+                    box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4); }
             html body .content .screen .container .result.boy .call-modal .title {
               background: #6B85AB; }
             html body .content .screen .container .result.boy .call-modal .input input {
