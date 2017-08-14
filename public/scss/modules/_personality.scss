@@ -148,6 +148,10 @@
                 user-select: none;
             }
         }
+        &:hover{
+            opacity: 0.5;
+            transform: scale(1.1);
+        }
     }
     &.boy {
         .selection-wrap {

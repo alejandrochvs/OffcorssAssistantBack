@@ -1310,7 +1310,9 @@ html {
               line-height: 5vh;
               padding: 0; }
               html body .content .screen .container .occasion .occasionsBtn:hover {
-                color: #e6c700; }
+                color: #e6c700;
+                opacity: 0.5;
+                transform: scale(1.1); }
               html body .content .screen .container .occasion .occasionsBtn.disabled {
                 height: 0vh;
                 overflow: hidden;
@@ -1892,6 +1894,9 @@ html {
                 color: transparent;
                 cursor: default;
                 user-select: none; }
+              html body .content .screen .container .personality .continue:hover {
+                opacity: 0.5;
+                transform: scale(1.1); }
             html body .content .screen .container .personality.boy .selection-wrap .title .text {
               border-bottom-color: #6B85AB; }
             html body .content .screen .container .personality.boy .personWrap .person .background {
