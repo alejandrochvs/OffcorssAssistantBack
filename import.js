@@ -8,50 +8,38 @@ for (var i = 0; i < (52 - 2); i++) {
     json[i] = {};
     subChaptCell = worksheet['A' + (i + 3)];
     subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
-    json[i].url = subChaptVal + '.jpg';
-    subChaptCell = worksheet['G' + (i + 3)];
+    json[i].url = subChaptVal;
+    subChaptCell = worksheet['C' + (i + 3)];
     subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
-    if( subChaptVal == 'Niño'){
-        subChaptVal = 'MASCULINO'
-    }else{
-        subChaptVal = 'FEMENINO'
-    }
     json[i].gender = subChaptVal;
-    subChaptCell = worksheet['F' + (i + 3)];
+    subChaptCell = worksheet['D' + (i + 3)];
     subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
-    if (subChaptVal == 'Newborn'){
-        subChaptVal = 'PRIMI (0-18M)';
-    }else if (subChaptVal == 'Baby'){
-        subChaptVal = 'BEBE (18M - 5 AÑOS)';
-    }else{
-        subChaptVal = 'NIÑO (5 AÑOS - 13 AÑOS)';
-    }
     json[i].age = subChaptVal;
-    subChaptCell = worksheet['H' + (i + 3)];
+    subChaptCell = worksheet['E' + (i + 3)];
     subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
     if (subChaptCell != undefined) {
         json[i].occasion = subChaptVal.split(', ');
     }
-    subChaptCell = worksheet['I' + (i + 3)];
+    subChaptCell = worksheet['F' + (i + 3)];
     subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
     if (subChaptCell != undefined) {
         json[i].weather = subChaptVal.split(', ');
     }
-    subChaptCell = worksheet['J' + (i + 3)];
+    subChaptCell = worksheet['G' + (i + 3)];
     subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
     if (subChaptCell != undefined) {
         json[i].color = subChaptVal.split(', ');
     }
-    subChaptCell = worksheet['K' + (i + 3)];
+    subChaptCell = worksheet['H' + (i + 3)];
     subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
     if (subChaptCell != undefined) {
         json[i].type = subChaptVal.split(', ');
     }
-    subChaptCell = worksheet['L' + (i + 3)];
+    subChaptCell = worksheet['I' + (i + 3)];
     subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
     if (subChaptCell != undefined) {
         if (isNaN(subChaptVal)) {
-            json[i].reference = subChaptVal.split(' ')
+            json[i].reference = subChaptVal.split(',')
         } else {
             json[i].reference = [subChaptVal];
         }
