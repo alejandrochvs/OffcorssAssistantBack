@@ -2129,6 +2129,11 @@ html {
                   background: #4a9500; }
               html body .content .screen .container .result .callcenter:hover {
                 background: #57af00; }
+              html body .content .screen .container .result .callcenter .text {
+                position: absolute;
+                font-size: 45px;
+                z-index: 4;
+                text-align: center; }
             html body .content .screen .container .result .selection-wrap {
               text-align: center; }
               html body .content .screen .container .result .selection-wrap .title {

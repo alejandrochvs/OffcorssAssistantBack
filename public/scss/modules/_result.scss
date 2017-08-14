@@ -147,6 +147,12 @@
         &:hover {
             background: lighten(#4a9500, 5%);
         }
+        .text {
+            position: absolute;
+            font-size: 45px;
+            z-index: 4;
+            text-align: center;
+        }
     }
     .selection-wrap {
         text-align: center;
