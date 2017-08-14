@@ -326,7 +326,9 @@
             }
         })
         loadCustomers(currentFilter, currentPage);
-        setInterval(loadCustomers(currentFilter, currentPage),1000);
+        setInterval(function(){
+            loadCustomers(currentFilter, currentPage);
+        },1000);
     })
 
 </script>
