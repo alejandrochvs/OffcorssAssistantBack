@@ -823,7 +823,6 @@ $(function () {
                                                 dataType: 'jsonp',
                                                 crossDomain: true,
                                                 success: function (res) {
-                                                    console.log(res);
                                                     $('.progress').removeClass('loading');
                                                 }
                                             });
