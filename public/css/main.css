@@ -11,9 +11,6 @@
 @font-face {
   font-family: FrontageC;
   src: url("../fonts/offcorss/Juri Zaech - FrontageCondensed-Regular.otf"); }
-::-webkit-scrollbar {
-  display: none; }
-
 html {
   overflow-x: hidden; }
   html #editing {
@@ -211,6 +208,8 @@ html {
               height: 100%; }
               html body .ui .ui-section.hide-admin.admin-hidden .ui-option i {
                 line-height: 50px; }
+    html body ::-webkit-scrollbar {
+      display: none; }
     html body .header {
       margin: 0;
       background: white;
@@ -235,6 +234,8 @@ html {
           color: #73626E;
           font-weight: 700;
           font-family: FrontageCBold; }
+        html body .header .head.title .cont[data-var="headTitle3"] {
+          font-size: 20px; }
         html body .header .head.title .title-decor {
           padding: 0;
           height: 50%;
@@ -275,7 +276,20 @@ html {
               transition: all 0.3s ease; }
             html body .header .head .cont.back:hover i,
             html body .header .head .cont.back:hover span {
+              transform: scale(1.1);
               color: #59caac; }
+              html body .header .head .cont.back:hover i.fa,
+              html body .header .head .cont.back:hover span.fa {
+                background: #80D6BF;
+                border-color: white;
+                color: white; }
+          html body .header .head .cont.exit:hover a {
+            color: #80D6BF;
+            cursor: pointer; }
+            html body .header .head .cont.exit:hover a i {
+              background: #80D6BF;
+              border-color: white;
+              color: white; }
           html body .header .head .cont a {
             text-decoration: none;
             color: #73626E;
@@ -286,17 +300,10 @@ html {
               position: relative;
               color: #fd0;
               transition: all 0.3s ease; }
-              html body .header .head .cont a i:hover {
-                color: #e6c700; }
-                html body .header .head .cont a i:hover.fa-times {
-                  color: #59caac;
-                  border-color: #59caac; }
           html body .header .head .cont .exit-app {
             transition: all .3s ease;
             top: 0px;
             margin-right: 10px; }
-            html body .header .head .cont .exit-app:hover {
-              color: #93dcc9; }
           html body .header .head .cont .fa-times {
             color: #80D6BF;
             font-size: 28px;
@@ -428,12 +435,14 @@ html {
                       color: #6B85AB;
                       border-right: dashed 1.5px white; }
                       html body .content .screen .container .gender .selection-wrap .selections .background .text.boySel:hover {
-                        border-bottom: solid 3px #6B85AB; }
+                        border-bottom: solid 3px #6B85AB;
+                        opacity: 0.5; }
                     html body .content .screen .container .gender .selection-wrap .selections .background .text.girlSel {
                       color: #FF0295;
                       border-left: dashed 1.5px white; }
                       html body .content .screen .container .gender .selection-wrap .selections .background .text.girlSel:hover {
-                        border-bottom: solid 3px #FF0295; }
+                        border-bottom: solid 3px #FF0295;
+                        opacity: 0.5; }
             html body .content .screen .container .gender .img-boy {
               height: 60vh; }
               html body .content .screen .container .gender .img-boy .image {
@@ -520,6 +529,9 @@ html {
                   text-align: center;
                   margin: 0;
                   line-height: 6vh; }
+                html body .content .screen .container .name .continue div:hover {
+                  opacity: 0.5;
+                  transform: scale(1.1); }
               html body .content .screen .container .name .continue.btn-hidden {
                 height: 0vh;
                 overflow: hidden;
@@ -853,12 +865,10 @@ html {
                       font-size: 24px;
                       background: transparent;
                       border-radius: 50px; }
-                      html body .content .screen .container .size .selection-wrap .padWrap .padSize .row .box:hover {
+                      html body .content .screen .container .size .selection-wrap .padWrap .padSize .row .box:hover, html body .content .screen .container .size .selection-wrap .padWrap .padSize .row .box.active {
                         border-color: #fd0;
-                        background: white; }
-                      html body .content .screen .container .size .selection-wrap .padWrap .padSize .row .box.active {
-                        background: #fd0;
-                        color: white; }
+                        background: white;
+                        transform: scale(1.1); }
                 html body .content .screen .container .size .selection-wrap .padWrap .nav {
                   display: none;
                   z-index: 2;
@@ -1067,7 +1077,8 @@ html {
                       border-radius: 50px; }
                       html body .content .screen .container .sizePrimi .selection-wrap .padWrap .padSizePrimi .row .box:hover {
                         border-color: #fd0;
-                        background: white; }
+                        background: white;
+                        transform: scale(1.1); }
                       html body .content .screen .container .sizePrimi .selection-wrap .padWrap .padSizePrimi .row .box.active {
                         background: #fd0;
                         color: white; }
@@ -1191,6 +1202,8 @@ html {
             padding: 5vh 0;
             overflow: scroll;
             height: 100%; }
+            html body .content .screen .container .occasion ::-webkit-scrollbar {
+              display: inherit; }
             html body .content .screen .container .occasion .selection-wrap {
               text-align: center; }
               html body .content .screen .container .occasion .selection-wrap .title {
@@ -1306,7 +1319,9 @@ html {
               line-height: 5vh;
               padding: 0; }
               html body .content .screen .container .occasion .occasionsBtn:hover {
-                color: #e6c700; }
+                color: #e6c700;
+                opacity: 0.5;
+                transform: scale(1.1); }
               html body .content .screen .container .occasion .occasionsBtn.disabled {
                 height: 0vh;
                 overflow: hidden;
@@ -1875,7 +1890,8 @@ html {
             html body .content .screen .container .personality .continue {
               margin-top: 5vh;
               margin-bottom: 5vh;
-              padding: 0; }
+              padding: 0;
+              transition: all .3s ease; }
               html body .content .screen .container .personality .continue h4 {
                 margin: 0;
                 background: #fd0;
@@ -1888,6 +1904,9 @@ html {
                 color: transparent;
                 cursor: default;
                 user-select: none; }
+              html body .content .screen .container .personality .continue:hover {
+                opacity: 0.5;
+                transform: scale(1.1); }
             html body .content .screen .container .personality.boy .selection-wrap .title .text {
               border-bottom-color: #6B85AB; }
             html body .content .screen .container .personality.boy .personWrap .person .background {
@@ -1995,6 +2014,8 @@ html {
             height: 100%;
             overflow: scroll;
             overflow-x: hidden; }
+            html body .content .screen .container .result ::-webkit-scrollbar {
+              display: inherit; }
             html body .content .screen .container .result .call-modal {
               background: white;
               padding: 0;
@@ -2071,14 +2092,14 @@ html {
                   html body .content .screen .container .result .call-modal.active.success .success-content h2 {
                     color: whitesmoke; }
             html body .content .screen .container .result .callcenter {
-              width: 80px;
               height: 80px;
               background: #4a9500;
               position: fixed;
-              right: 3vw;
-              top: 45%;
-              border-radius: 50%;
+              top: 80%;
+              width: 100%;
+              border-radius: 0%;
               color: white;
+              bottom: 0;
               cursor: pointer;
               transition: all .3s ease;
               z-index: 4; }
@@ -2091,12 +2112,12 @@ html {
                 position: absolute;
                 width: 100%;
                 height: 100%;
-                border-radius: 50%;
+                border-radius: 0%;
                 top: 0; }
                 html body .content .screen .container .result .callcenter .wave-wrapper .wave {
                   height: 100%;
                   width: 100%;
-                  border-radius: 50%;
+                  border-radius: 5%;
                   position: absolute;
                   z-index: 3;
                   transition: all .3s ease; }
@@ -2111,6 +2132,13 @@ html {
                   background: #4a9500; }
               html body .content .screen .container .result .callcenter:hover {
                 background: #57af00; }
+              html body .content .screen .container .result .callcenter .text {
+                position: absolute;
+                font-size: 45px;
+                z-index: 4;
+                text-align: center;
+                position: absolute;
+                top: 0; }
             html body .content .screen .container .result .selection-wrap {
               text-align: center; }
               html body .content .screen .container .result .selection-wrap .title {
@@ -2129,21 +2157,22 @@ html {
                 background: #fd0;
                 color: white; }
             html body .content .screen .container .result .result-wrapper {
-              padding: 0; }
-            html body .content .screen .container .result .resultIMG {
               padding: 0;
-              transition: all .3s ease; }
-              html body .content .screen .container .result .resultIMG img {
-                cursor: pointer;
-                -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-                -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-                box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
-                transition: all .3s ease;
-                padding: 0; }
-                html body .content .screen .container .result .resultIMG img:hover {
-                  -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
-                  -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
-                  box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4); }
+              margin-bottom: 80px; }
+              html body .content .screen .container .result .result-wrapper .resultIMG {
+                padding: 0;
+                transition: all .3s ease; }
+                html body .content .screen .container .result .result-wrapper .resultIMG img {
+                  cursor: pointer;
+                  -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                  -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                  box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                  transition: all .3s ease;
+                  padding: 0; }
+                  html body .content .screen .container .result .result-wrapper .resultIMG img:hover {
+                    -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+                    -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+                    box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4); }
             html body .content .screen .container .result.boy .call-modal .title {
               background: #6B85AB; }
             html body .content .screen .container .result.boy .call-modal .input input {
@@ -2250,7 +2279,7 @@ html {
                   html body .content .screen .container .result .callcenter .text {
                     position: absolute;
                     font-size: 25px;
-                    top: 15%;
+                    top: 5%;
                     left: 3%;
                     z-index: 4;
                     text-align: center; }

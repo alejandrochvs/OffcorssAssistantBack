@@ -491,6 +491,15 @@ $(function () {
                     $($('.occasions > .background > .cont > .title > h3')[5]).html(occasionName6);
                     $('.occasion > .occasionsBtn').html(occasionBtn);
                     $('.loader > .progress').css('width', '40%');
+                    console.log(currentClass);
+                    if (currentClass == 'nBoy' || currentClass == 'nGirl') {
+                        console.log(true);
+                        $('.background[data-occasion="PLAYA"]').css('display', 'none');
+                        $($('.background')[1]).removeClass('col-md-offset-2');
+                        $($('.background')[1]).addClass('col-md-offset-3');
+                        $($('.background')[4]).find('.cont').css('background-image', 'url(../IMG/occasions/ocasiones-5.jpg)');
+                        $('.occasions > .visible-xs').remove();
+                    }
                     if (occasion) {
                         if (occasion.length > 0) {
                             var i;
@@ -707,32 +716,19 @@ $(function () {
                     }
                     data.color = favColor;
                     $('.progress').addClass('loading');
+                    data.occasion = occasion;
                     if (admin) {
-                        switch (Math.floor(Math.random() * 3)) {
-                            case 0:
-                                data.age = "BEBE (18M - 5 AÑOS)";
-                                break;
-                            case 1:
-                                data.age = 'PRIMI (0-18M)';
-                                break;
-                            case 2:
-                                data.age = 'NIÑO (5 AÑOS - 13 AÑOS)';
-                                break;
-                        }
-                        switch (Math.floor(Math.random() * 2)) {
-                            case 0:
-                                data.gender = "FEMENINO";
-                                break;
-                            case 1:
-                                data.gender = "MASCULINO";
-                                break;
-                        }
+                        data.age = "BEBE (18M - 5 AÑOS)";
+                        data.gender = "FEMENINO";
+                        data.occasion = ['OCASIÓN ESPECIAL'];
                     }
+                    console.log(data);
                     $.ajax({
                         type: "POST",
                         url: "db/e-cards/match",
                         data: data,
                         success: function (res) {
+                            console.log(res);
                             var randIndex = Math.floor(Math.random() * res.length);
                             var randIndex2 = randIndex + 1;
                             var randIndex3 = randIndex2 + 1;
@@ -742,9 +738,9 @@ $(function () {
                             if (randIndex3 > res.length - 1) {
                                 randIndex3 = randIndex3 - res.length;
                             }
-                            $($('.resultIMG')[0]).append('<img class="col-xs-10 col-xs-offset-1" src="IMG/ecards/' + res[randIndex].url + '"/>');
-                            $($('.resultIMG')[1]).append('<img class="col-xs-10 col-xs-offset-1" src="IMG/ecards/' + res[randIndex2].url + '"/>');
-                            $($('.resultIMG')[2]).append('<img class="col-xs-10 col-xs-offset-1" src="IMG/ecards/' + res[randIndex3].url + '"/>');
+                            $($('.resultIMG')[0]).append('<img class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3" src="IMG/ecards/' + res[randIndex].url + '"/>');
+                            //                            $($('.resultIMG')[1]).append('<img class="col-xs-10 col-xs-offset-1" src="IMG/ecards/' + res[randIndex2].url + '"/>');
+                            //                            $($('.resultIMG')[2]).append('<img class="col-xs-10 col-xs-offset-1" src="IMG/ecards/' + res[randIndex3].url + '"/>');
                             var dragging = false;
                             $('.resultIMG').mousedown(function () {
                                 var mouseDownTimer = setInterval(function () {
@@ -766,12 +762,11 @@ $(function () {
                             })
                             $('.result > .selection-wrap').remove();
                             $('.progress').removeClass('loading');
-                            $('.result-wrapper').slick({
+                            /*$('.result-wrapper').slick({
                                 centerMode: true,
                                 centerPadding: '60px',
-                                slidesToShow: 2,
-                                slidesToScroll: 1,
-                                autoplay: true,
+                                slidesToShow: 1,
+                                slidesToScroll: 0,
                                 autoplaySpeed: 2000,
                                 responsive: [{
                                     breakpoint: 768,
@@ -782,7 +777,7 @@ $(function () {
                                         slidesToScroll: 1
                                     }
                                 }]
-                            });
+                            });*/
                             data.bottomSize = bottomSize;
                             data.topSize = topSize;
                             data.shoeSize = shoeSize;
@@ -803,20 +798,19 @@ $(function () {
                                         type: 'POST',
                                         data: data,
                                         success: function (res) {
-                                            if (res == 'User already exists.') {
-                                                $('.call-modal > .input > input').addClass('wrong');
-                                                $('.call-modal > .input > input').tooltip({
-                                                    title: 'El teléfono ya está registrado.',
-                                                    trigger: 'manual',
-                                                    placement: 'top'
-                                                });
-                                                $('.call-modal > .input > input').tooltip('show');
-                                            } else {
-                                                $('.input > input').unbind();
-                                                $('.call-modal > .input').removeClass('wrong');
-                                                $('.call-modal > .input > input').tooltip('hide');
-                                                $('.call-modal').addClass('success');
-                                            }
+                                            $('.input > input').unbind();
+                                            $('.call-modal > .input').removeClass('wrong');
+                                            $('.call-modal > .input > input').tooltip('hide');
+                                            $('.call-modal').addClass('success');
+                                            $.ajax({
+                                                type: 'GET',
+                                                url: 'https://webapp.contentobps.com/hermeco/hermeco_ventas.php?data=' + data.phone + '/asistentevirtual',
+                                                dataType: 'jsonp',
+                                                crossDomain: true,
+                                                success: function (res) {
+                                                    $('.progress').removeClass('loading');
+                                                }
+                                            });
                                             $('.progress').removeClass('loading');
                                         }
                                     });
@@ -1249,7 +1243,7 @@ $(function () {
         }
 
     }
-    if (localStorage.current) {
+    /*if (localStorage.current) {
         current = localStorage.current;
         gender = localStorage.gender;
         name = localStorage.name;
@@ -1281,21 +1275,22 @@ $(function () {
         }
         next(current);
         $('.progress').removeClass('loading');
-    } else {
-        if (admin) {
-            if (localStorage.admin) {
-                loadAdmin();
-                current = divs[0];
-            } else {
-                currentIndex = -10;
-                current = 'login';
-            }
-        } else {
+    } */
+    //    else {
+    if (admin) {
+        if (localStorage.admin) {
+            loadAdmin();
             current = divs[0];
+        } else {
+            currentIndex = -10;
+            current = 'login';
         }
-        next(current);
-        $('.progress').removeClass('loading');
+    } else {
+        current = divs[0];
     }
+    next(current);
+    $('.progress').removeClass('loading');
+    //    }
     $('#delete-me').remove();
     $('.back').click(function () {
         if (current === divs[5]) {

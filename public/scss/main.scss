@@ -1,9 +1,5 @@
 @import 'modules/variables';
 @import 'modules/fonts';
-::-webkit-scrollbar {
-    display: none;
-}
-
 html {
     overflow-x: hidden;
     #editing {
@@ -19,6 +15,9 @@ html {
         overflow: hidden;
         @import 'modules/admin';
         transition: all .4s ease;
+          ::-webkit-scrollbar {
+             display: none;
+         }
         .header {
             margin: 0;
             background: white;
@@ -44,6 +43,9 @@ html {
                         color: #73626E;
                         font-weight: 700;
                         font-family: FrontageCBold;
+                    }
+                    .cont[data-var="headTitle3"] {
+                        font-size: 20px;
                     }
                     .title-decor {
                         padding: 0;
@@ -92,7 +94,26 @@ html {
                         &:hover {
                             i,
                             span {
+                                transform: scale(1.1);
                                 color: darken(#80D6BF, 10%);
+                                &.fa {
+                                    background: #80D6BF;
+                                    border-color: white;
+                                    color: white;
+                                }
+                            }
+                        }
+                    }
+                    &.exit {
+                        &:hover{
+                            a{
+                                color: #80D6BF;
+                                cursor: pointer;
+                                i{
+                                    background: #80D6BF;
+                                    border-color: white;
+                                    color: white;
+                                }
                             }
                         }
                     }
@@ -106,22 +127,12 @@ html {
                             position: relative;
                             color: $yellow;
                             transition: all 0.3s ease;
-                            &:hover {
-                                color: darken($yellow, 5%);
-                                &.fa-times {
-                                    color: darken(#80D6BF, 10%);
-                                    border-color: darken(#80D6BF, 10%);
-                                }
-                            }
                         }
                     }
                     .exit-app {
                         transition: all .3s ease;
                         top: 0px;
                         margin-right: 10px;
-                        &:hover {
-                            color: lighten(#80D6BF, 5%);
-                        }
                     }
                     .fa-times {
                         color: #80D6BF;
@@ -131,6 +142,9 @@ html {
                         border-radius: 5px;
                         padding: 0 1%;
                         position: relative;
+                    }
+                    &:hover {
+                        .exit-app {}
                     }
                 }
                 &.transparent {

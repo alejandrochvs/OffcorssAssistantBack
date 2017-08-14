@@ -42,7 +42,6 @@ var customersSchema = new Schema({
         required: true
     },
     phone: {
-        unique: true,
         type: String,
         required: true
     },

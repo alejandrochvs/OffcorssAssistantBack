@@ -114,7 +114,8 @@ db.once('open', function () {
     router.post('/e-cards/match', function (req, res) {
         eCards.find({
             gender: req.body.gender,
-            age: req.body.age
+            age: req.body.age,
+            occasion : req.body.occasion[0]
         }).exec(function (err, found) {
             if (err) {
                 return res.send(err);
@@ -328,7 +329,7 @@ db.once('open', function () {
             var data = {
                 count: count
             };
-            customers.find(query).sort(sort).limit(25).skip(Number(req.body.offset)).exec(function (err, docs) {
+            customers.find(query).sort([[sort, -1]]).limit(25).skip(Number(req.body.offset)).exec(function (err, docs) {
                 if (err) {
                     return res.send(err);
                 }

@@ -125,13 +125,10 @@
                         font-size: 24px;
                         background: transparent;
                         border-radius: 50px;
-                        &:hover {
+                        &:hover,&.active {
                             border-color: $yellow;
                             background: white;
-                        }
-                        &.active {
-                            background: $yellow;
-                            color: white;
+                            transform: scale(1.1);
                         }
                     }
                 }
