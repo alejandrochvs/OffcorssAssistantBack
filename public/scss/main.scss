@@ -45,6 +45,9 @@ html {
                         font-weight: 700;
                         font-family: FrontageCBold;
                     }
+                    .cont[data-var="headTitle3"] {
+                        font-size: 20px;
+                    }
                     .title-decor {
                         padding: 0;
                         height: 50%;
@@ -94,7 +97,7 @@ html {
                             span {
                                 transform: scale(1.1);
                                 color: darken(#80D6BF, 10%);
-                                &.fa{
+                                &.fa {
                                     background: #80D6BF;
                                     border-color: white;
                                     color: white;
@@ -138,10 +141,8 @@ html {
                         padding: 0 1%;
                         position: relative;
                     }
-                    &:hover{
-                        .exit-app{
-                            
-                        }
+                    &:hover {
+                        .exit-app {}
                     }
                 }
                 &.transparent {
