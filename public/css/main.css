@@ -428,12 +428,14 @@ html {
                       color: #6B85AB;
                       border-right: dashed 1.5px white; }
                       html body .content .screen .container .gender .selection-wrap .selections .background .text.boySel:hover {
-                        border-bottom: solid 3px #6B85AB; }
+                        border-bottom: solid 3px #6B85AB;
+                        opacity: 0.5; }
                     html body .content .screen .container .gender .selection-wrap .selections .background .text.girlSel {
                       color: #FF0295;
                       border-left: dashed 1.5px white; }
                       html body .content .screen .container .gender .selection-wrap .selections .background .text.girlSel:hover {
-                        border-bottom: solid 3px #FF0295; }
+                        border-bottom: solid 3px #FF0295;
+                        opacity: 0.5; }
             html body .content .screen .container .gender .img-boy {
               height: 60vh; }
               html body .content .screen .container .gender .img-boy .image {
@@ -520,6 +522,9 @@ html {
                   text-align: center;
                   margin: 0;
                   line-height: 6vh; }
+                html body .content .screen .container .name .continue div:hover {
+                  opacity: 0.5;
+                  transform: scale(1.1); }
               html body .content .screen .container .name .continue.btn-hidden {
                 height: 0vh;
                 overflow: hidden;
@@ -853,12 +858,10 @@ html {
                       font-size: 24px;
                       background: transparent;
                       border-radius: 50px; }
-                      html body .content .screen .container .size .selection-wrap .padWrap .padSize .row .box:hover {
+                      html body .content .screen .container .size .selection-wrap .padWrap .padSize .row .box:hover, html body .content .screen .container .size .selection-wrap .padWrap .padSize .row .box.active {
                         border-color: #fd0;
-                        background: white; }
-                      html body .content .screen .container .size .selection-wrap .padWrap .padSize .row .box.active {
-                        background: #fd0;
-                        color: white; }
+                        background: white;
+                        transform: scale(1.1); }
                 html body .content .screen .container .size .selection-wrap .padWrap .nav {
                   display: none;
                   z-index: 2;
@@ -1067,7 +1070,8 @@ html {
                       border-radius: 50px; }
                       html body .content .screen .container .sizePrimi .selection-wrap .padWrap .padSizePrimi .row .box:hover {
                         border-color: #fd0;
-                        background: white; }
+                        background: white;
+                        transform: scale(1.1); }
                       html body .content .screen .container .sizePrimi .selection-wrap .padWrap .padSizePrimi .row .box.active {
                         background: #fd0;
                         color: white; }

@@ -37,6 +37,7 @@
                         border-right: dashed 1.5px white;
                         &:hover {
                             border-bottom: solid 3px $boy;
+                            opacity: 0.5;
                         }
                     }
                     &.girlSel {
@@ -44,6 +45,7 @@
                         border-left: dashed 1.5px white;
                         &:hover {
                             border-bottom: solid 3px $girl;
+                            opacity: 0.5;
                         }
                     }
                 }
