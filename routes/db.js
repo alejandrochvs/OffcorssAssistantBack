@@ -328,7 +328,7 @@ db.once('open', function () {
             var data = {
                 count: count
             };
-            customers.find(query).sort(sort).limit(25).skip(Number(req.body.offset)).exec(function (err, docs) {
+            customers.find(query).sort([[sort, -1]]).limit(25).skip(Number(req.body.offset)).exec(function (err, docs) {
                 if (err) {
                     return res.send(err);
                 }
