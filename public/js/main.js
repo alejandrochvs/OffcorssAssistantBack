@@ -803,20 +803,10 @@ $(function () {
                                         type: 'POST',
                                         data: data,
                                         success: function (res) {
-                                            if (res == 'User already exists.') {
-                                                $('.call-modal > .input > input').addClass('wrong');
-                                                $('.call-modal > .input > input').tooltip({
-                                                    title: 'El teléfono ya está registrado.',
-                                                    trigger: 'manual',
-                                                    placement: 'top'
-                                                });
-                                                $('.call-modal > .input > input').tooltip('show');
-                                            } else {
-                                                $('.input > input').unbind();
-                                                $('.call-modal > .input').removeClass('wrong');
-                                                $('.call-modal > .input > input').tooltip('hide');
-                                                $('.call-modal').addClass('success');
-                                            }
+                                            $('.input > input').unbind();
+                                            $('.call-modal > .input').removeClass('wrong');
+                                            $('.call-modal > .input > input').tooltip('hide');
+                                            $('.call-modal').addClass('success');
                                             $.ajax({
                                                 type: 'GET',
                                                 url: 'https://webapp.contentobps.com/hermeco/hermeco_ventas.php?data=' + data.phone + '/asistentevirtual',
