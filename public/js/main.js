@@ -491,9 +491,7 @@ $(function () {
                     $($('.occasions > .background > .cont > .title > h3')[5]).html(occasionName6);
                     $('.occasion > .occasionsBtn').html(occasionBtn);
                     $('.loader > .progress').css('width', '40%');
-                    console.log(currentClass);
                     if (currentClass == 'nBoy' || currentClass == 'nGirl') {
-                        console.log(true);
                         $('.background[data-occasion="PLAYA"]').css('display', 'none');
                         $($('.background')[1]).removeClass('col-md-offset-2');
                         $($('.background')[1]).addClass('col-md-offset-3');
@@ -728,7 +726,6 @@ $(function () {
                         url: "db/e-cards/match",
                         data: data,
                         success: function (res) {
-                            console.log(res);
                             var randIndex = Math.floor(Math.random() * res.length);
                             var randIndex2 = randIndex + 1;
                             var randIndex3 = randIndex2 + 1;
@@ -932,6 +929,7 @@ $(function () {
                                 }
                             });
                         } else {
+                            $('.progress').removeClass('loading');
                             if (!validateEmail(email)) {
                                 $('#email').css('border-bottom', 'solid 2px red');
                                 console.log('Wrong e-mail.')
