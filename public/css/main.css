@@ -275,7 +275,13 @@ html {
               transition: all 0.3s ease; }
             html body .header .head .cont.back:hover i,
             html body .header .head .cont.back:hover span {
+              transform: scale(1.1);
               color: #59caac; }
+              html body .header .head .cont.back:hover i.fa,
+              html body .header .head .cont.back:hover span.fa {
+                background: #80D6BF;
+                border-color: white;
+                color: white; }
           html body .header .head .cont a {
             text-decoration: none;
             color: #73626E;
@@ -1881,7 +1887,8 @@ html {
             html body .content .screen .container .personality .continue {
               margin-top: 5vh;
               margin-bottom: 5vh;
-              padding: 0; }
+              padding: 0;
+              transition: all .3s ease; }
               html body .content .screen .container .personality .continue h4 {
                 margin: 0;
                 background: #fd0;

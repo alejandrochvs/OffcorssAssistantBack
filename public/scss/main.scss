@@ -92,7 +92,13 @@ html {
                         &:hover {
                             i,
                             span {
+                                transform: scale(1.1);
                                 color: darken(#80D6BF, 10%);
+                                &.fa{
+                                    background: #80D6BF;
+                                    border-color: white;
+                                    color: white;
+                                }
                             }
                         }
                     }
