@@ -491,6 +491,13 @@ $(function () {
                     $($('.occasions > .background > .cont > .title > h3')[5]).html(occasionName6);
                     $('.occasion > .occasionsBtn').html(occasionBtn);
                     $('.loader > .progress').css('width', '40%');
+                    console.log(currentClass);
+                    if (currentClass == 'nBoy' || currentClass == 'nGirl') {
+                        console.log(true);
+                        $('.background[data-occasion="PLAYA"]').css('display', 'none');
+                        $($('.background')[1]).removeClass('col-md-offset-2');
+                        $($('.background')[1]).addClass('col-md-offset-4');
+                    }
                     if (occasion) {
                         if (occasion.length > 0) {
                             var i;
@@ -728,11 +735,14 @@ $(function () {
                                 break;
                         }
                     }
+                    data.occasion = occasion;
+                    console.log(data);
                     $.ajax({
                         type: "POST",
                         url: "db/e-cards/match",
                         data: data,
                         success: function (res) {
+                            console.log(res);
                             var randIndex = Math.floor(Math.random() * res.length);
                             var randIndex2 = randIndex + 1;
                             var randIndex3 = randIndex2 + 1;
@@ -742,9 +752,9 @@ $(function () {
                             if (randIndex3 > res.length - 1) {
                                 randIndex3 = randIndex3 - res.length;
                             }
-                            $($('.resultIMG')[0]).append('<img class="col-xs-10 col-xs-offset-1" src="IMG/ecards/' + res[randIndex].url + '"/>');
-                            $($('.resultIMG')[1]).append('<img class="col-xs-10 col-xs-offset-1" src="IMG/ecards/' + res[randIndex2].url + '"/>');
-                            $($('.resultIMG')[2]).append('<img class="col-xs-10 col-xs-offset-1" src="IMG/ecards/' + res[randIndex3].url + '"/>');
+                            $($('.resultIMG')[0]).append('<img class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3" src="IMG/ecards/' + res[randIndex].url + '"/>');
+                            //                            $($('.resultIMG')[1]).append('<img class="col-xs-10 col-xs-offset-1" src="IMG/ecards/' + res[randIndex2].url + '"/>');
+                            //                            $($('.resultIMG')[2]).append('<img class="col-xs-10 col-xs-offset-1" src="IMG/ecards/' + res[randIndex3].url + '"/>');
                             var dragging = false;
                             $('.resultIMG').mousedown(function () {
                                 var mouseDownTimer = setInterval(function () {
@@ -766,12 +776,11 @@ $(function () {
                             })
                             $('.result > .selection-wrap').remove();
                             $('.progress').removeClass('loading');
-                            $('.result-wrapper').slick({
+                            /*$('.result-wrapper').slick({
                                 centerMode: true,
                                 centerPadding: '60px',
-                                slidesToShow: 2,
-                                slidesToScroll: 1,
-                                autoplay: true,
+                                slidesToShow: 1,
+                                slidesToScroll: 0,
                                 autoplaySpeed: 2000,
                                 responsive: [{
                                     breakpoint: 768,
@@ -782,7 +791,7 @@ $(function () {
                                         slidesToScroll: 1
                                     }
                                 }]
-                            });
+                            });*/
                             data.bottomSize = bottomSize;
                             data.topSize = topSize;
                             data.shoeSize = shoeSize;

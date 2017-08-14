@@ -3,6 +3,9 @@
     height: 100%;
     overflow: scroll;
     overflow-x: hidden;
+    ::-webkit-scrollbar {
+        display: inherit;
+    }
     .call-modal {
         background: white;
         padding: 0;

@@ -2013,6 +2013,8 @@ html {
             height: 100%;
             overflow: scroll;
             overflow-x: hidden; }
+            html body .content .screen .container .result ::-webkit-scrollbar {
+              display: inherit; }
             html body .content .screen .container .result .call-modal {
               background: white;
               padding: 0;
