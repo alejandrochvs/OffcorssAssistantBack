@@ -355,7 +355,7 @@ html {
         transition: all .6s ease;
         color: white;
         top: -1vh;
-        z-index: 1;
+        z-index: 2;
         text-align: center; }
         html body .content .warning-wrapper div {
           background: orangered; }

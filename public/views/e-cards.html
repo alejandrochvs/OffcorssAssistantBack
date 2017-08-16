@@ -585,12 +585,10 @@
                         url: 'db/e-cards/upload',
                         data: objToPost,
                         success: function(res) {
-                            $('.e-cards-table > div.active > .e-card-desc > .fa-eye').click();
-                            $('.e-cards-table > div.active > .e-card-desc > .fa-ban').click();
-                            if ($('.table-page').last().hasClass('active')) {
-                                $('.table-page').first().click();
-                                $('.table-page').last().click();
-                            }
+                            $('.e-cards-table > .table-body > div.active > .e-card-desc > .fa-eye').click();
+                            $('.e-cards-table > .table-body > div.active > .e-card-desc > .fa-ban').click();
+                            currentPage = pages;
+                            requestECards(currentPage);
                             $('.progress').removeClass('loading');
                         }
                     })
