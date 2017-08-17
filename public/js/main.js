@@ -720,7 +720,6 @@ $(function () {
                         data.gender = "FEMENINO";
                         data.occasion = ['OCASIÓN ESPECIAL'];
                     }
-                    console.log(data);
                     $.ajax({
                         type: "POST",
                         url: "db/e-cards/match",
@@ -801,7 +800,7 @@ $(function () {
                                             $('.call-modal').addClass('success');
                                             $.ajax({
                                                 type: 'GET',
-                                                url: 'https://webapp.contentobps.com/hermeco/hermeco_ventas.php?data=' + data.phone + '/asistentevirtual',
+                                                url: 'https://webapp.contentobps.com/hermeco/hermeco_ventas_2.php?data=' + data.phone + '-AsistenteVirtual',
                                                 dataType: 'jsonp',
                                                 crossDomain: true,
                                                 success: function (res) {
