@@ -6,35 +6,59 @@ var worksheet = workbook.Sheets[workbook.SheetNames[0]];
 var subChaptCell, subChaptVal;
 for (var i = 0; i < (52 - 2); i++) {
     json[i] = {};
-    subChaptCell = worksheet['A' + (i + 3)];
+    
+    // URL
+    
+    subChaptCell = worksheet['G' + (i + 3)];
     subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
     json[i].url = subChaptVal;
-    subChaptCell = worksheet['C' + (i + 3)];
+    
+    // Gender
+    
+    subChaptCell = worksheet['B' + (i + 3)];
     subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
     json[i].gender = subChaptVal;
-    subChaptCell = worksheet['D' + (i + 3)];
+    
+    // Age
+    
+    subChaptCell = worksheet['A' + (i + 3)];
     subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
     json[i].age = subChaptVal;
-    subChaptCell = worksheet['E' + (i + 3)];
+    
+    // Occasions
+    
+    subChaptCell = worksheet['C' + (i + 3)];
     subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
     if (subChaptCell != undefined) {
         json[i].occasion = subChaptVal.split(', ');
     }
-    subChaptCell = worksheet['F' + (i + 3)];
+    
+    // Weather
+    
+    subChaptCell = worksheet['E' + (i + 3)];
     subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
     if (subChaptCell != undefined) {
         json[i].weather = subChaptVal.split(', ');
     }
-    subChaptCell = worksheet['G' + (i + 3)];
+    
+    // Color
+    
+    /*subChaptCell = worksheet['G' + (i + 3)];
     subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
     if (subChaptCell != undefined) {
         json[i].color = subChaptVal.split(', ');
-    }
-    subChaptCell = worksheet['H' + (i + 3)];
-    subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
-    if (subChaptCell != undefined) {
-        json[i].type = subChaptVal.split(', ');
-    }
+    }*/
+    
+    // Type
+    
+//    subChaptCell = worksheet['H' + (i + 3)];
+//    subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
+//    if (subChaptCell != undefined) {
+//        json[i].type = subChaptVal.split(', ');
+//    }
+    
+    // References
+    
     subChaptCell = worksheet['I' + (i + 3)];
     subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
     if (subChaptCell != undefined) {
@@ -44,8 +68,10 @@ for (var i = 0; i < (52 - 2); i++) {
             json[i].reference = [subChaptVal];
         }
     }
-
 }
+
+// DB load
+
 fs.writeFile('e_cards.json', JSON.stringify(json), 'utf-8', function (err) {
     if (err) {
         return console.log(err);
@@ -63,7 +89,7 @@ db.once('open', function () {
         occasion: Array,
         weather: Array,
         color: Array,
-        type: Array,
+//        type: Array,
         reference: Array
     });
     var e_cardModel = mongoose.model('e_cards', e_cardsSchema);
