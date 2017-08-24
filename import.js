@@ -51,15 +51,15 @@ for (var i = 0; i < (52 - 2); i++) {
     
     // Type
     
-//    subChaptCell = worksheet['H' + (i + 3)];
-//    subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
-//    if (subChaptCell != undefined) {
-//        json[i].type = subChaptVal.split(', ');
-//    }
+    /*subChaptCell = worksheet['H' + (i + 3)];
+    subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
+    if (subChaptCell != undefined) {
+        json[i].type = subChaptVal.split(', ');
+    }*/
     
     // References
     
-    subChaptCell = worksheet['I' + (i + 3)];
+    subChaptCell = worksheet['H' + (i + 3)];
     subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
     if (subChaptCell != undefined) {
         if (isNaN(subChaptVal)) {
