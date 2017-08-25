@@ -6,7 +6,7 @@ var path = require('path');
 var mongoose = require('mongoose');
 var mongoURL = process.env.MONGODB_URI ||
     process.env.MONGOHQ_URL ||
-    'mongodb://localhost/assistant';
+    'mongodb://alejandrochvs:Sanrafael1@localhost:27017/assistant?authSource=admin';
 mongoose.Promise = global.Promise;
 mongoose.connect(mongoURL);
 var db = mongoose.connection;

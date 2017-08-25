@@ -1,5 +1,7 @@
 .name {
     padding: 5vh 0;
+    height: 100%;
+    overflow: auto;
     .selection-wrap {
         text-align: center;
         margin-top: 15vh;
@@ -51,7 +53,7 @@
                 margin: 0;
                 line-height: 6vh;
             }
-            &:hover{
+            &:hover {
                 opacity: 0.5;
                 transform: scale(1.1);
             }
@@ -195,8 +197,9 @@
 
 @media (max-width: 767px) {
     .name {
-        .img{
+        .img {
             margin-top: 5vh;
+            position: relative;
         }
         .selection-wrap {
             margin-top: 0;
@@ -206,10 +209,19 @@
                 }
             }
         }
-        .nameInput{
-            margin-top: 5vh;
-            input{
+        .nameInput {
+            margin-top: 0vh;
+            input {
                 font-size: 9vw;
+            }
+        }
+        .continue {
+            height: 6vh;
+            div {
+                height: 100%;
+                h3 {
+                    line-height: 5vh;
+                }
             }
         }
     }

@@ -347,7 +347,8 @@ html {
       z-index: 0;
       background-image: url("../IMG/background.jpg");
       padding: 0;
-      background-position: center; }
+      background-position: center;
+      transition: all .3s ease; }
       html body .content .warning-wrapper {
         padding: 0;
         max-height: 0vh;
@@ -401,7 +402,8 @@ html {
           padding: 0; }
           html body .content .screen .container .gender {
             padding: 5vh 5vw;
-            height: 100%; }
+            height: 100%;
+            overflow: auto; }
             html body .content .screen .container .gender .selection-wrap {
               text-align: center;
               height: 50%;
@@ -480,14 +482,23 @@ html {
           @media (max-width: 767px) {
             html body .content .screen .container .gender {
               padding: 1vh 2vw; }
-              html body .content .screen .container .gender .selection-wrap .title {
-                margin-top: 5vh; }
-                html body .content .screen .container .gender .selection-wrap .title .text {
-                  font-size: 2em; }
-              html body .content .screen .container .gender .selection-wrap .selections .background .text {
-                font-size: 4em; } }
+              html body .content .screen .container .gender .selection-wrap {
+                height: auto; }
+                html body .content .screen .container .gender .selection-wrap .title {
+                  margin-top: 5vh; }
+                  html body .content .screen .container .gender .selection-wrap .title .text {
+                    font-size: 1.5em; }
+                html body .content .screen .container .gender .selection-wrap .selections .background .text {
+                  font-size: 4em;
+                  margin-top: 0; }
+              html body .content .screen .container .gender .img-boy,
+              html body .content .screen .container .gender .img-girl {
+                height: 35vh;
+                padding: 0; } }
           html body .content .screen .container .name {
-            padding: 5vh 0; }
+            padding: 5vh 0;
+            height: 100%;
+            overflow: auto; }
             html body .content .screen .container .name .selection-wrap {
               text-align: center;
               margin-top: 15vh; }
@@ -586,15 +597,22 @@ html {
               background-image: url("../IMG/Name/nGirl.png"); }
           @media (max-width: 767px) {
             html body .content .screen .container .name .img {
-              margin-top: 5vh; }
+              margin-top: 5vh;
+              position: relative; }
             html body .content .screen .container .name .selection-wrap {
               margin-top: 0; }
               html body .content .screen .container .name .selection-wrap .title .text {
                 font-size: 2em; }
             html body .content .screen .container .name .nameInput {
-              margin-top: 5vh; }
+              margin-top: 0vh; }
               html body .content .screen .container .name .nameInput input {
-                font-size: 9vw; } }
+                font-size: 9vw; }
+            html body .content .screen .container .name .continue {
+              height: 6vh; }
+              html body .content .screen .container .name .continue div {
+                height: 100%; }
+                html body .content .screen .container .name .continue div h3 {
+                  line-height: 5vh; } }
           html body .content .screen .container .age {
             padding: 5vh 0;
             height: 100%;
@@ -744,20 +762,26 @@ html {
               html body .content .screen .container .age .selection-wrap {
                 margin-top: 0; }
                 html body .content .screen .container .age .selection-wrap .title .text {
-                  font-size: 2em;
+                  font-size: 1.5em;
                   border-bottom: solid 2px;
                   padding-bottom: 2vh; }
               html body .content .screen .container .age .age-wrapper .pad {
-                border: none;
-                margin-bottom: 5vh;
-                margin-top: 5vh; }
+                margin-top: 5vh;
+                padding-bottom: 5vh; }
                 html body .content .screen .container .age .age-wrapper .pad .row {
-                  margin-left: 25vw;
-                  margin-bottom: 5vh;
-                  width: 45vw;
-                  height: 45vw; }
-                  html body .content .screen .container .age .age-wrapper .pad .row:last-child {
-                    margin-left: 25vw; } }
+                  width: 24vw;
+                  height: 24vw; }
+                  html body .content .screen .container .age .age-wrapper .pad .row h3 {
+                    top: 30%;
+                    font-size: 11px; }
+                    html body .content .screen .container .age .age-wrapper .pad .row h3 b {
+                      font-size: 18px;
+                      top: -80%; }
+              html body .content .screen .container .age .img {
+                position: relative;
+                top: 0;
+                margin-bottom: 5vh;
+                margin-top: 5vh; } }
           html body .content .screen .container .sizes-guide {
             background: white;
             padding: 0;
@@ -1554,12 +1578,12 @@ html {
               html body .content .screen .container .weather .selection-wrap .title {
                 margin: 0; }
                 html body .content .screen .container .weather .selection-wrap .title .text {
-                  font-size: 2em;
+                  font-size: 1.8em;
                   padding-bottom: 5%; }
               html body .content .screen .container .weather .weathers .background .cont {
                 border-right: none;
                 border-bottom: dashed 2px white;
-                padding: 3% 0; }
+                padding: 0; }
                 html body .content .screen .container .weather .weathers .background .cont .img {
                   height: auto; }
                   html body .content .screen .container .weather .weathers .background .cont .img img {
@@ -1567,7 +1591,7 @@ html {
                 html body .content .screen .container .weather .weathers .background .cont .title {
                   padding: 2%; }
                   html body .content .screen .container .weather .weathers .background .cont .title h3 {
-                    font-size: 7vh; }
+                    font-size: 6vh; }
               html body .content .screen .container .weather .weathers .background:last-child .cont {
                 border: none; } }
           html body .content .screen .container .looks {

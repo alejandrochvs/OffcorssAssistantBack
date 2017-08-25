@@ -1240,7 +1240,7 @@ $(function () {
         }
 
     }
-    /*if (localStorage.current) {
+    if (localStorage.current) {
         current = localStorage.current;
         gender = localStorage.gender;
         name = localStorage.name;
@@ -1272,8 +1272,8 @@ $(function () {
         }
         next(current);
         $('.progress').removeClass('loading');
-    } */
-    //    else {
+    } 
+        else {
     if (admin) {
         if (localStorage.admin) {
             loadAdmin();
@@ -1287,7 +1287,7 @@ $(function () {
     }
     next(current);
     $('.progress').removeClass('loading');
-    //    }
+        }
     $('#delete-me').remove();
     $('.back').click(function () {
         if (current === divs[5]) {

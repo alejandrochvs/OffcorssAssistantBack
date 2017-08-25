@@ -196,6 +196,7 @@ html {
             background-image: url('../IMG/background.jpg');
             padding: 0;
             background-position: center;
+            transition: all .3s ease;
             .warning-wrapper {
                 padding: 0;
                 max-height: 0vh;

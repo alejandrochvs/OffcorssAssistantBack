@@ -1,6 +1,7 @@
 .gender {
     padding: 5vh 5vw;
     height: 100%;
+    overflow: auto;
     .selection-wrap {
         text-align: center;
         height: 50%;
@@ -132,19 +133,26 @@
     .gender {
         padding: 1vh 2vw;
         .selection-wrap {
-            .title{
+            height: auto;
+            .title {
                 margin-top: 5vh;
-                .text{
-                    font-size: 2em;
+                .text {
+                    font-size: 1.5em;
                 }
             }
-            .selections{
-                .background{
-                    .text{
+            .selections {
+                .background {
+                    .text {
                         font-size: 4em;
+                        margin-top: 0;
                     }
                 }
             }
+        }
+        .img-boy,
+        .img-girl {
+            height: 35vh;
+            padding: 0;
         }
     }
 }
