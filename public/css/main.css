@@ -585,6 +585,8 @@ html {
             html body .content .screen .container .name.nGirl .img .image {
               background-image: url("../IMG/Name/nGirl.png"); }
           @media (max-width: 767px) {
+            html body .content .screen .container .name .img {
+              margin-top: 5vh; }
             html body .content .screen .container .name .selection-wrap {
               margin-top: 0; }
               html body .content .screen .container .name .selection-wrap .title .text {
