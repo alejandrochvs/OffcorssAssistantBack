@@ -353,7 +353,7 @@ $(function () {
                                     j;
                                 for (j = 0; j < list[i].length; j++) {
                                     if (counter === 3) {
-                                        $($('.padSize')[i]).append('<div class="col-xs-4 col-sm-12 row"></div>');
+                                        $($('.padSize')[i]).append('<div class="col-xs-12 row"></div>');
                                         counter = 0;
                                     }
                                     $($('.padSize')[i]).find('.row').last().append('<div data-select=' + i + ' class="col-xs-4 box">' + list[i][j] + '</div>');
@@ -402,6 +402,7 @@ $(function () {
                                     if ($('.padSize > .row .active').length === 3) {
                                         next(divs[5]);
                                     }
+                                    $('.padNext').click();
                                 }
                             });
                             if (shoeSize && topSize && bottomSize) {
@@ -483,20 +484,18 @@ $(function () {
                     $('.header > .title > .cont').html(headTitle2);
                     $('.header > .title > .cont').attr('data-var', 'headTitle2');
                     $('.occasion > .selection-wrap > .title > .text-editable').html(occasionsTitle);
-                    $('.occasions > .background:nth-child(1) > .cont > .title > h3').html(occasionName1);
-                    $('.occasions > .background:nth-child(2) > .cont > .title > h3').html(occasionName2);
-                    $('.occasions > .background:nth-child(3) > .cont > .title > h3').html(occasionName3);
-                    $($('.occasions > .background > .cont > .title > h3')[3]).html(occasionName4);
-                    $($('.occasions > .background > .cont > .title > h3')[4]).html(occasionName5);
-                    $($('.occasions > .background > .cont > .title > h3')[5]).html(occasionName6);
+                    $('.occasions > .background:nth-child(2) > .cont > .title > h3').html(occasionName1);
+                    $('.occasions > .background:nth-child(3) > .cont > .title > h3').html(occasionName2);
+                    $('.occasions > .background:nth-child(4) > .cont > .title > h3').html(occasionName3);
+                    $('.occasions > .background:nth-child(5) > .cont > .title > h3').html(occasionName4);
+                    $('.occasions > .background:nth-child(6) > .cont > .title > h3').html(occasionName5);
+                    $('.occasions > .background:nth-child(7) > .cont > .title > h3').html(occasionName6);
                     $('.occasion > .occasionsBtn').html(occasionBtn);
                     $('.loader > .progress').css('width', '40%');
                     if (currentClass == 'nBoy' || currentClass == 'nGirl') {
-                        $('.background[data-occasion="PLAYA"]').css('display', 'none');
-                        $($('.background')[1]).removeClass('col-md-offset-2');
-                        $($('.background')[1]).addClass('col-md-offset-3');
-                        $($('.background')[4]).find('.cont').css('background-image', 'url(../IMG/occasions/ocasiones-5.jpg)');
-                        $('.occasions > .visible-xs').remove();
+                        $('.background[data-occasion="PLAYA"]').addClass('hidden');
+                        $($('.background')[3]).find('.cont').css('background-image', 'url(../IMG/occasions/ocasiones-5.jpg)');
+                        $('.occasions > .background:nth-child(3').removeClass('col-md-offset-2').addClass('col-md-offset-3')
                     }
                     if (occasion) {
                         if (occasion.length > 0) {
@@ -522,14 +521,8 @@ $(function () {
                         $(this).find('.cont').toggleClass('active');
                     });
                     if (currentClass === 'nBoy' || currentClass === 'nGirl') {
-                        $('.background:nth-child(1)').css('display', 'none');
-                        $($('.occasions > .background')[5]).css('display', 'none');
-                        $($('.occasions > .background')[2]).addClass('col-xs-offset-0');
-                        if ($(window).width() < 767) {
-                            $($('.occasions > .background')[3]).addClass('col-xs-offset-2');
-                        }
-                        $('.background:nth-child(2)').toggleClass('col-xs-offset-2');
-                        $('.background:nth-child(3)').toggleClass('col-xs-offset-2 col-md-offset-0');
+                        $('.background:nth-child(1)').addClass('hidden');
+                        $($('.occasions > .background')[5]).addClass('hidden');
                     }
                     $('.occasionsBtn').click(function () {
                         if (occasion.length > 0) {
@@ -563,10 +556,6 @@ $(function () {
                     $('.header > .title > .cont').html(headTitle2);
                     $('.header > .title > .cont').attr('data-var', 'headTitle2');
                     $('.color > .selection-wrap > .title > .text-editable').html(colorTitle);
-                    $('.colors > .color-wrap:nth-child(1) > .select').html(colorName1);
-                    $('.colors > .color-wrap:nth-child(2) > .select').html(colorName2);
-                    $('.colors > .color-wrap:nth-child(3) > .select').html(colorName3);
-                    $('.colors > .color-wrap:nth-child(4) > .select').html(colorName4);
                     $('.loader > .progress').css('width', '70%');
                     $('.color').addClass(currentClass);
 
@@ -584,10 +573,22 @@ $(function () {
                             $('div.colors').append('<div class="color-wrap"><div class="half left-half" style="background-color : ' + res[i].hex + '"></div><div class="half right-half" style="background-color : ' + shadeColor2(res[i].hex, 0.15) + '"></div><div class="tag">' + res[i].color + '</div></div>')
                         }
                         $('.color-wrap').click(function () {
+                            $('.color-wrap.active').removeClass('active');
+                            $(this).addClass('active');
                             favColor = $(this).find('.tag').html();
+                            $('.color-display').find('.tag').html(favColor);
+                            $('.color-display').find('.left-half').css('background-color', $(this).find('.left-half').css('background-color'));
+                            $('.color-display').find('.right-half').css('background-color', $(this).find('.right-half').css('background-color'));
+                            $('.colorsContinue').addClass('active');
                             localStorage.setItem('favColor', favColor);
-                            next(divs[8]);
+
                         });
+                        $('.colorsContinue').click(function () {
+                            if ($(this).hasClass('active')) {
+                                next(divs[8]);
+                            }
+                        });
+                        $('.color-wrap:nth-child(1)').click();
                     });
                 } else if (current === "looks") {
                     $('body > .content').css({
@@ -634,11 +635,11 @@ $(function () {
                     $('.header > .title > .cont').html(headTitle2);
                     $('.header > .title > .cont').attr('data-var', 'headTitle2');
                     $('.personality > .selection-wrap > .title > .text-editable').html(personalityTitle);
-                    $('.personWrap > .person:nth-child(1) > .background > .title > h4').html(personalityName1);
-                    $('.personWrap > .person:nth-child(2) > .background > .title > h4').html(personalityName2);
-                    $('.personWrap > .person:nth-child(3) > .background > .title > h4').html(personalityName3);
-                    $('.personWrap > .person:nth-child(4) > .background > .title > h4').html(personalityName4);
-                    $('.personWrap > .person:nth-child(5) > .background > .title > h4').html(personalityName5);
+                    $('.personWrap > .person:nth-child(2) > .background > .title > h4').html(personalityName1);
+                    $('.personWrap > .person:nth-child(3) > .background > .title > h4').html(personalityName2);
+                    $('.personWrap > .person:nth-child(4) > .background > .title > h4').html(personalityName3);
+                    $('.personWrap > .person:nth-child(5) > .background > .title > h4').html(personalityName4);
+                    $('.personWrap > .person:nth-child(6) > .background > .title > h4').html(personalityName5);
                     if (personality.length > 0) {
                         var k;
                         for (k = 0; k < personality.length; k++) {
@@ -684,11 +685,11 @@ $(function () {
                         }
                     });
                     if (gender === 'F') {
-                        $('.person:nth-child(1) > .background > .title > h4').html(personalityNameF1);
-                        $('.person:nth-child(2) > .background > .title > h4').html(personalityNameF2);
-                        $('.person:nth-child(3) > .background > .title > h4').html(personalityNameF3);
-                        $('.person:nth-child(4) > .background > .title > h4').html(personalityNameF4);
-                        $('.person:nth-child(5) > .background > .title > h4').html(personalityNameF5);
+                        $('.person:nth-child(2) > .background > .title > h4').html(personalityNameF1);
+                        $('.person:nth-child(3) > .background > .title > h4').html(personalityNameF2);
+                        $('.person:nth-child(4) > .background > .title > h4').html(personalityNameF3);
+                        $('.person:nth-child(5) > .background > .title > h4').html(personalityNameF4);
+                        $('.person:nth-child(6) > .background > .title > h4').html(personalityNameF5);
                     }
                 } else if (current === divs[9]) {
                     $('body > .content').css({
@@ -1272,22 +1273,21 @@ $(function () {
         }
         next(current);
         $('.progress').removeClass('loading');
-    } 
-        else {
-    if (admin) {
-        if (localStorage.admin) {
-            loadAdmin();
-            current = divs[0];
-        } else {
-            currentIndex = -10;
-            current = 'login';
-        }
     } else {
-        current = divs[0];
-    }
-    next(current);
-    $('.progress').removeClass('loading');
+        if (admin) {
+            if (localStorage.admin) {
+                loadAdmin();
+                current = divs[0];
+            } else {
+                currentIndex = -10;
+                current = 'login';
+            }
+        } else {
+            current = divs[0];
         }
+        next(current);
+        $('.progress').removeClass('loading');
+    }
     $('#delete-me').remove();
     $('.back').click(function () {
         if (current === divs[5]) {

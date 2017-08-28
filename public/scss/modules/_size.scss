@@ -125,7 +125,8 @@
                         font-size: 24px;
                         background: transparent;
                         border-radius: 50px;
-                        &:hover,&.active {
+                        &:hover,
+                        &.active {
                             border-color: $yellow;
                             background: white;
                             transform: scale(1.1);
@@ -161,6 +162,28 @@
                 &.active {
                     display: inherit;
                 }
+            }
+        }
+        .padPrev{
+            position: absolute;
+            color: white;
+            font-size: 50px;
+            left: 5%;
+            text-align: center;
+            top: 35%;
+            i{
+                transition : all .3s ease;
+            }
+        }
+        .padNext{
+            position: absolute;
+            color: white;
+            font-size: 50px;
+            right: 5%;
+            text-align: center;
+            top: 35%;
+            i{
+                transition : all .3s ease;
             }
         }
     }
@@ -199,6 +222,13 @@
                                 color: darken($boy, 20%);
                             }
                         }
+                    }
+                }
+            }
+            .padNext,.padPrev{
+                &:hover{
+                    i{
+                        color: $boy;
                     }
                 }
             }
@@ -242,6 +272,13 @@
                     }
                 }
             }
+            .padNext,.padPrev{
+                &:hover{
+                    i{
+                        color: $girl;
+                    }
+                }
+            }
         }
     }
     &.bBoy {
@@ -279,6 +316,13 @@
                                 color: darken($bBoy, 20%);
                             }
                         }
+                    }
+                }
+            }
+            .padNext,.padPrev{
+                &:hover{
+                    i{
+                        color: $bBoy;
                     }
                 }
             }
@@ -322,6 +366,13 @@
                     }
                 }
             }
+            .padNext,.padPrev{
+                &:hover{
+                    i{
+                        color: $bGirl;
+                    }
+                }
+            }
         }
     }
     &.nBoy {
@@ -359,6 +410,13 @@
                                 color: darken($nBoy, 20%);
                             }
                         }
+                    }
+                }
+            }
+            .padNext,.padPrev{
+                &:hover{
+                    i{
+                        color: $nBoy;
                     }
                 }
             }
@@ -402,6 +460,13 @@
                     }
                 }
             }
+            .padNext,.padPrev{
+                &:hover{
+                    i{
+                        color: $nGirl;
+                    }
+                }
+            }
         }
     }
 }
@@ -415,46 +480,37 @@
             .title {
                 margin-bottom: 0;
                 .text {
-                    font-size: 7vw;
+                    font-size: 6vw;
                     a {
-                        font-size: 6vw;
+                        font-size: 5vw;
                         top: 2px;
                     }
                 }
             }
             .padWrap {
                 padding-left: 0;
+                display: none;
                 .image {
                     height: 10vh;
                     div {
                         font-size: 9vh;
                     }
                 }
-                .padSize {
-                    padding: 0;
-                    height: 10vh;
-                    padding-right: 1vw;
-                    .row {
-                        padding: 0;
-                        .box {
-                            border: solid 1px white;
-                            height: 99%;
-                            font-size: 22px;
-                            line-height: 9vh;
-                        }
-                    }
-                }
                 .nav {
-                    height: 50%;
+                    height: 25%;
                     bottom: 0;
                     border-radius: 5px;
-                    right: -4vw;
+                    right: -3.5vw;
+                    top: 50%;
                     width: 7vw;
                     .sel {
                         &.up {
                             height: 5vh;
                         }
                     }
+                }
+                &.active{
+                    display: inherit;
                 }
             }
         }

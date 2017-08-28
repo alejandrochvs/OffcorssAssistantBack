@@ -133,10 +133,14 @@
         margin-bottom: 5vh;
         padding: 0;
         transition: all .3s ease;
+        border-radius: 8px;
+        overflow: hidden;
+        font-family: FrontageCBold, sans-serif;
         h4 {
             margin: 0;
             background: $yellow;
             color: white;
+            font-size: 24px; 
             padding: 4%;
             cursor: pointer;
             transition: all .3s ease;
@@ -174,6 +178,20 @@
                     color: $boy;
                 }
             }
+            .prevPerson{
+                &:hover{
+                    i{
+                        color: $boy;
+                    }
+                }
+            }
+            .nextPerson{
+                &:hover{
+                    i{
+                        color: $boy;
+                    }
+                }
+            }
         }
         .continue {
             h4 {
@@ -199,6 +217,20 @@
                 }
                 .fa-check {
                     color: $girl;
+                }
+            }
+            .prevPerson{
+                &:hover{
+                    i{
+                        color: $girl;
+                    }
+                }
+            }
+            .nextPerson{
+                &:hover{
+                    i{
+                        color: $girl;
+                    }
                 }
             }
         }
@@ -228,6 +260,20 @@
                     color: $bBoy;
                 }
             }
+            .prevPerson{
+                &:hover{
+                    i{
+                        color: $bBoy;
+                    }
+                }
+            }
+            .nextPerson{
+                &:hover{
+                    i{
+                        color: $bBoy;
+                    }
+                }
+            }
         }
         .continue {
             h4 {
@@ -253,6 +299,20 @@
                 }
                 .fa-check {
                     color: $bGirl;
+                }
+            }
+            .prevPerson{
+                &:hover{
+                    i{
+                        color: $bGirl;
+                    }
+                }
+            }
+            .nextPerson{
+                &:hover{
+                    i{
+                        color: $bGirl;
+                    }
                 }
             }
         }
@@ -282,6 +342,20 @@
                     color: $nBoy;
                 }
             }
+            .prevPerson{
+                &:hover{
+                    i{
+                        color: $nBoy;
+                    }
+                }
+            }
+            .nextPerson{
+                &:hover{
+                    i{
+                        color: $nBoy;
+                    }
+                }
+            }
         }
         .continue {
             h4 {
@@ -309,6 +383,20 @@
                     color: $nGirl;
                 }
             }
+            .prevPerson{
+                &:hover{
+                    i{
+                        color: $nGirl;
+                    }
+                }
+            }
+            .nextPerson{
+                &:hover{
+                    i{
+                        color: $nGirl;
+                    }
+                }
+            }
         }
         .continue {
             h4 {
@@ -321,27 +409,27 @@
     &.nBoy {
         .personWrap {
             .person {
-                &:nth-child(1) {
+                &:nth-child(2) {
                     .background {
                         background-image: url(../IMG/Personality/personalidad-m-1.jpg);
                     }
                 }
-                &:nth-child(2) {
+                &:nth-child(3) {
                     .background {
                         background-image: url(../IMG/Personality/personalidad-m-2.jpg);
                     }
                 }
-                &:nth-child(3) {
+                &:nth-child(4) {
                     .background {
                         background-image: url(../IMG/Personality/personalidad-m-3.jpg);
                     }
                 }
-                &:nth-child(4) {
+                &:nth-child(5) {
                     .background {
                         background-image: url(../IMG/Personality/personalidad-m-4.jpg);
                     }
                 }
-                &:nth-child(5) {
+                &:nth-child(6) {
                     .background {
                         background-image: url(../IMG/Personality/personalidad-m-5.jpg);
                     }
@@ -354,27 +442,27 @@
     &.nGirl {
         .personWrap {
             .person {
-                &:nth-child(1) {
+                &:nth-child(2) {
                     .background {
                         background-image: url(../IMG/Personality/personalidad-f-1.jpg);
                     }
                 }
-                &:nth-child(2) {
+                &:nth-child(3) {
                     .background {
                         background-image: url(../IMG/Personality/personalidad-f-2.jpg);
                     }
                 }
-                &:nth-child(3) {
+                &:nth-child(4) {
                     .background {
                         background-image: url(../IMG/Personality/personalidad-f-3.jpg);
                     }
                 }
-                &:nth-child(4) {
+                &:nth-child(5) {
                     .background {
                         background-image: url(../IMG/Personality/personalidad-f-4.jpg);
                     }
                 }
-                &:nth-child(5) {
+                &:nth-child(6) {
                     .background {
                         background-image: url(../IMG/Personality/personalidad-f-5.jpg);
                     }
@@ -397,26 +485,78 @@
             }
         }
         .personWrap {
+            height: 55vh;
+            padding: 0;
+            .prevPerson{
+                transition : all .3s ease;
+                position: absolute;
+                width : 20%;
+                height: 35%;
+                background: transparent;
+                left: 0;
+                color : white;
+                font-size : 60px;
+                top : 25%;
+                z-index : 0;
+                i{
+                    transition: all .3s ease;
+                }
+                &:hover{
+                    transform: scale(1.25);
+                }
+            }
             .person {
+                z-index: 1;
+                position: absolute;
                 padding: 2.5vh 2.2vw;
-                height: 25vh;
+                height: 51vh;
+                display: none;
                 .fa-check{
-                    font-size: 16vw;
+                    font-size: 40vw;
                 }
                 .background {
                     .offset {
-                        height: 17.3vh;
+                        height: 40vh;
                     }
                     .title {
                         padding: 0;
+                        height: 9vh;
                         h4 {
                             font-size: 14px;
                             padding: 0;
-                            line-height: 5vh;
+                            line-height: 8vh;
                             font-weight: 600;
                         }
                     }
                 }
+                &.active{
+                    display: inherit;
+                }
+            }
+            .nextPerson{
+                transition : all .3s ease;
+                position: absolute;
+                width : 20%;
+                height: 35%;
+                background: transparent;
+                right: 0;
+                color : white;
+                font-size : 60px;
+                top : 25%;
+                z-index : 0;
+                i{
+                    transition: all .3s ease;
+                }
+                &:hover{
+                    transform: scale(1.25);
+                }
+            }
+        }
+        .continue{
+            margin-top: 2vh;
+            border-radius: 8px;
+            h4{
+                font-size: 18px;
             }
         }
     }

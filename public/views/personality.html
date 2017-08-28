@@ -4,7 +4,10 @@
             <h4 class="col-xs-12 col-sm-8 col-sm-offset-2 text text-editable" data-var="personalityTitle">¿Qué hace especial a <k>NOMBRE</k>?</h4> </div>
     </div>
     <div class="col-xs-12 personWrap">
-        <div data-personality="personalityName1" class="col-xs-4 col-xs-offset-2 col-sm-2 col-sm-offset-1 person transparent">
+       <div class="prevPerson visible-xs">
+           <i class="fa fa-angle-left"></i>
+       </div>
+        <div data-personality="personalityName1" class="col-xs-8 col-xs-offset-2 col-sm-2 col-sm-offset-1 person transparent active">
            <i class="fa fa-check fa-3x"></i>
             <div class="background col-xs-12">
                 <div class="offset col-xs-12"></div>
@@ -12,7 +15,7 @@
                     <h4 clas="text-editable" data-var="personalityName1">Activo</h4> </div>
             </div>
         </div>
-        <div data-personality="personalityName2" class="col-xs-4 col-sm-2 person transparent">
+        <div data-personality="personalityName2" class="col-xs-8 col-xs-offset-2 col-sm-2 col-sm-offset-0 person transparent">
            <i class="fa fa-check fa-3x"></i>
             <div class="background col-xs-12">
                 <div class="offset col-xs-12"></div>
@@ -20,7 +23,7 @@
                     <h4 clas="text-editable" data-var="personalityName2">Deportivo</h4> </div>
             </div>
         </div>
-        <div data-personality="personalityName3" class="col-xs-4 col-sm-2 person transparent">
+        <div data-personality="personalityName3" class="col-xs-8 col-xs-offset-2 col-sm-2 col-sm-offset-0 person transparent">
            <i class="fa fa-check fa-3x"></i>
             <div class="background col-xs-12">
                 <div class="offset col-xs-12"></div>
@@ -28,7 +31,7 @@
                     <h4 clas="text-editable" data-var="personalityName3">Artístico</h4> </div>
             </div>
         </div>
-        <div data-personality="personalityName4" class="col-xs-4 col-sm-2 person transparent">
+        <div data-personality="personalityName4" class="col-xs-8 col-xs-offset-2 col-sm-2 col-sm-offset-0 person transparent">
            <i class="fa fa-check fa-3x"></i>
             <div class="background col-xs-12">
                 <div class="offset col-xs-12"></div>
@@ -36,7 +39,7 @@
                     <h4 clas="text-editable" data-var="personalityName4">Cool</h4> </div>
             </div>
         </div>
-        <div data-personality="personalityName5" class="col-xs-4 col-sm-2 person transparent">
+        <div data-personality="personalityName5" class="col-xs-8 col-xs-offset-2 col-sm-2 col-sm-offset-0 person transparent">
            <i class="fa fa-check fa-3x"></i>
             <div class="background col-xs-12">
                 <div class="offset col-xs-12"></div>
@@ -44,7 +47,35 @@
                     <h4 clas="text-editable" data-var="personalityName5">Inteligente</h4> </div>
             </div>
         </div>
+        <div class="nextPerson visible-xs">
+            <i class="fa fa-angle-right"></i>
+        </div>
     </div>
-    <div class="continue transparent col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+    <div class="continue transparent col-xs-6 col-xs-offset-3 col-sm-2 col-sm-offset-5">
         <h4 clas="text-editable" data-var="personalityBtn">Continuar</h4> </div>
 </div>
+<script>
+    $(function(){
+        var personIndex = 0;
+        var slidePerson = function(index){
+            $('.person.active').removeClass('active');
+            $($('.person')[index]).addClass('active');
+        }
+        $('.nextPerson').click(function(){
+            if (personIndex < $('.person').length - 1){
+                personIndex++;
+            }else{
+                personIndex = 0;
+            }
+            slidePerson(personIndex);
+        });
+        $('.prevPerson').click(function(){
+            if (personIndex > 0){
+                personIndex--;
+            }else{
+                personIndex = $('.person').length - 1;
+            }
+            slidePerson(personIndex);
+        });
+    })
+</script>

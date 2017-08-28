@@ -535,7 +535,8 @@ html {
               html body .content .screen .container .name .continue div {
                 transition: all 0.3s ease;
                 background: #fd0;
-                color: white; }
+                color: white;
+                border-radius: 10px; }
                 html body .content .screen .container .name .continue div h3 {
                   text-align: center;
                   margin: 0;
@@ -917,6 +918,24 @@ html {
                       color: white; }
                   html body .content .screen .container .size .selection-wrap .padWrap .nav.active {
                     display: inherit; }
+              html body .content .screen .container .size .selection-wrap .padPrev {
+                position: absolute;
+                color: white;
+                font-size: 50px;
+                left: 5%;
+                text-align: center;
+                top: 35%; }
+                html body .content .screen .container .size .selection-wrap .padPrev i {
+                  transition: all .3s ease; }
+              html body .content .screen .container .size .selection-wrap .padNext {
+                position: absolute;
+                color: white;
+                font-size: 50px;
+                right: 5%;
+                text-align: center;
+                top: 35%; }
+                html body .content .screen .container .size .selection-wrap .padNext i {
+                  transition: all .3s ease; }
             html body .content .screen .container .size.boy .selection-wrap .title .text {
               border-bottom-color: #6B85AB; }
               html body .content .screen .container .size.boy .selection-wrap .title .text a {
@@ -930,6 +949,8 @@ html {
               color: #6B85AB; }
             html body .content .screen .container .size.boy .selection-wrap .padWrap .nav .sel:hover .fa {
               color: #405370; }
+            html body .content .screen .container .size.boy .selection-wrap .padNext:hover i, html body .content .screen .container .size.boy .selection-wrap .padPrev:hover i {
+              color: #6B85AB; }
             html body .content .screen .container .size.girl .selection-wrap .title .text {
               border-bottom-color: #FF0295; }
               html body .content .screen .container .size.girl .selection-wrap .title .text a {
@@ -943,6 +964,8 @@ html {
               color: #FF0295; }
             html body .content .screen .container .size.girl .selection-wrap .padWrap .nav .sel:hover .fa {
               color: #9b005a; }
+            html body .content .screen .container .size.girl .selection-wrap .padNext:hover i, html body .content .screen .container .size.girl .selection-wrap .padPrev:hover i {
+              color: #FF0295; }
             html body .content .screen .container .size.bBoy .selection-wrap .title .text {
               border-bottom-color: #78BF01; }
               html body .content .screen .container .size.bBoy .selection-wrap .title .text a {
@@ -956,6 +979,8 @@ html {
               color: #78BF01; }
             html body .content .screen .container .size.bBoy .selection-wrap .padWrap .nav .sel:hover .fa {
               color: #385a00; }
+            html body .content .screen .container .size.bBoy .selection-wrap .padNext:hover i, html body .content .screen .container .size.bBoy .selection-wrap .padPrev:hover i {
+              color: #78BF01; }
             html body .content .screen .container .size.bGirl .selection-wrap .title .text {
               border-bottom-color: #9692D1; }
               html body .content .screen .container .size.bGirl .selection-wrap .title .text a {
@@ -969,6 +994,8 @@ html {
               color: #9692D1; }
             html body .content .screen .container .size.bGirl .selection-wrap .padWrap .nav .sel:hover .fa {
               color: #524bb2; }
+            html body .content .screen .container .size.bGirl .selection-wrap .padNext:hover i, html body .content .screen .container .size.bGirl .selection-wrap .padPrev:hover i {
+              color: #9692D1; }
             html body .content .screen .container .size.nBoy .selection-wrap .title .text {
               border-bottom-color: #009DB8; }
               html body .content .screen .container .size.nBoy .selection-wrap .title .text a {
@@ -982,6 +1009,8 @@ html {
               color: #009DB8; }
             html body .content .screen .container .size.nBoy .selection-wrap .padWrap .nav .sel:hover .fa {
               color: #004652; }
+            html body .content .screen .container .size.nBoy .selection-wrap .padNext:hover i, html body .content .screen .container .size.nBoy .selection-wrap .padPrev:hover i {
+              color: #009DB8; }
             html body .content .screen .container .size.nGirl .selection-wrap .title .text {
               border-bottom-color: #FF98AA; }
               html body .content .screen .container .size.nGirl .selection-wrap .title .text a {
@@ -995,6 +1024,8 @@ html {
               color: #FF98AA; }
             html body .content .screen .container .size.nGirl .selection-wrap .padWrap .nav .sel:hover .fa {
               color: #ff3256; }
+            html body .content .screen .container .size.nGirl .selection-wrap .padNext:hover i, html body .content .screen .container .size.nGirl .selection-wrap .padPrev:hover i {
+              color: #FF98AA; }
           @media (max-width: 767px) {
             html body .content .screen .container .size {
               padding: 0; }
@@ -1004,35 +1035,28 @@ html {
                 html body .content .screen .container .size .selection-wrap .title {
                   margin-bottom: 0; }
                   html body .content .screen .container .size .selection-wrap .title .text {
-                    font-size: 7vw; }
+                    font-size: 6vw; }
                     html body .content .screen .container .size .selection-wrap .title .text a {
-                      font-size: 6vw;
+                      font-size: 5vw;
                       top: 2px; }
                 html body .content .screen .container .size .selection-wrap .padWrap {
-                  padding-left: 0; }
+                  padding-left: 0;
+                  display: none; }
                   html body .content .screen .container .size .selection-wrap .padWrap .image {
                     height: 10vh; }
                     html body .content .screen .container .size .selection-wrap .padWrap .image div {
                       font-size: 9vh; }
-                  html body .content .screen .container .size .selection-wrap .padWrap .padSize {
-                    padding: 0;
-                    height: 10vh;
-                    padding-right: 1vw; }
-                    html body .content .screen .container .size .selection-wrap .padWrap .padSize .row {
-                      padding: 0; }
-                      html body .content .screen .container .size .selection-wrap .padWrap .padSize .row .box {
-                        border: solid 1px white;
-                        height: 99%;
-                        font-size: 22px;
-                        line-height: 9vh; }
                   html body .content .screen .container .size .selection-wrap .padWrap .nav {
-                    height: 50%;
+                    height: 25%;
                     bottom: 0;
                     border-radius: 5px;
-                    right: -4vw;
+                    right: -3.5vw;
+                    top: 50%;
                     width: 7vw; }
                     html body .content .screen .container .size .selection-wrap .padWrap .nav .sel.up {
-                      height: 5vh; } }
+                      height: 5vh; }
+                  html body .content .screen .container .size .selection-wrap .padWrap.active {
+                    display: inherit; } }
           html body .content .screen .container .sizePrimi {
             padding: 5vh 0; }
             html body .content .screen .container .sizePrimi .selection-wrap {
@@ -1071,7 +1095,7 @@ html {
                   color: #fd0; }
               html body .content .screen .container .sizePrimi .selection-wrap .padWrap {
                 margin-bottom: 5vh;
-                margin-top: 2.5vh; }
+                margin-top: 4.5vh; }
                 html body .content .screen .container .sizePrimi .selection-wrap .padWrap .image {
                   margin-bottom: 2.5vh; }
                   html body .content .screen .container .sizePrimi .selection-wrap .padWrap .image img {
@@ -1227,6 +1251,7 @@ html {
           html body .content .screen .container .occasion {
             padding: 5vh 0;
             overflow: scroll;
+            overflow-x: hidden;
             height: 100%; }
             html body .content .screen .container .occasion ::-webkit-scrollbar {
               display: inherit; }
@@ -1247,7 +1272,7 @@ html {
                 cursor: pointer;
                 transition: all 0.3s ease;
                 padding: 0;
-                background: tansparent;
+                background: transparent;
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
@@ -1283,13 +1308,13 @@ html {
                   html body .content .screen .container .occasion .occasions .background .cont .title h3 {
                     color: #333;
                     transition: all .3s ease;
-                    line-height: 8vh;
+                    line-height: 6vh;
                     overflow: hidden;
                     text-overflow: ellipsis;
                     white-space: nowrap;
                     text-align: center;
                     margin: 0;
-                    font-size: 16px;
+                    font-size: 14px;
                     color: white; }
                 html body .content .screen .container .occasion .occasions .background .cont:hover, html body .content .screen .container .occasion .occasions .background .cont.active {
                   transform: scale(1); }
@@ -1316,17 +1341,17 @@ html {
                 background-image: url(../IMG/occasions/ocasiones-3.jpg); }
                 html body .content .screen .container .occasion .occasions .background:nth-child(3) .cont .title h3 {
                   color: #464C51; }
-              html body .content .screen .container .occasion .occasions .background:nth-child(5) .cont {
+              html body .content .screen .container .occasion .occasions .background:nth-child(4) .cont {
                 background-image: url(../IMG/occasions/ocasiones-4.jpg); }
-                html body .content .screen .container .occasion .occasions .background:nth-child(5) .cont .title h3 {
+                html body .content .screen .container .occasion .occasions .background:nth-child(4) .cont .title h3 {
                   color: #3AB2BC; }
-              html body .content .screen .container .occasion .occasions .background:nth-child(6) .cont {
+              html body .content .screen .container .occasion .occasions .background:nth-child(5) .cont {
                 background-image: url(../IMG/occasions/ocasiones-5.jpg); }
-                html body .content .screen .container .occasion .occasions .background:nth-child(6) .cont .title h3 {
+                html body .content .screen .container .occasion .occasions .background:nth-child(5) .cont .title h3 {
                   color: #A79E98; }
-              html body .content .screen .container .occasion .occasions .background:nth-child(7) .cont {
+              html body .content .screen .container .occasion .occasions .background:nth-child(6) .cont {
                 background-image: url(../IMG/occasions/ocasiones-6.jpg); }
-                html body .content .screen .container .occasion .occasions .background:nth-child(7) .cont .title h3 {
+                html body .content .screen .container .occasion .occasions .background:nth-child(6) .cont .title h3 {
                   color: #5A6069; }
               html body .content .screen .container .occasion .occasions .background .cont.active img {
                 opacity: 1; }
@@ -1334,8 +1359,10 @@ html {
                 color: white; }
               html body .content .screen .container .occasion .occasions .background .cont.active .title h3 {
                 color: white; }
+            html body .content .screen .container .occasion .occasions i {
+              transition: all .3s ease; }
             html body .content .screen .container .occasion .occasionsBtn {
-              border-radius: 2px;
+              border-radius: 10px;
               background: white;
               transition: all .3s ease;
               color: #fd0;
@@ -1343,7 +1370,9 @@ html {
               cursor: pointer;
               height: 5vh;
               line-height: 5vh;
-              padding: 0; }
+              padding: 0;
+              font-family: FrontageCBold, sans-serif;
+              font-size: 22px; }
               html body .content .screen .container .occasion .occasionsBtn:hover {
                 color: #e6c700;
                 opacity: 0.5;
@@ -1362,6 +1391,10 @@ html {
               background: rgba(107, 133, 171, 0.9); }
             html body .content .screen .container .occasion.boy .occasions .background .cont.active .title {
               background: rgba(107, 133, 171, 0.9); }
+            html body .content .screen .container .occasion.boy .occasions .nextOccasion:hover i {
+              color: #6B85AB; }
+            html body .content .screen .container .occasion.boy .occasions .prevOccasion:hover i {
+              color: #6B85AB; }
             html body .content .screen .container .occasion.boy .occasionsBtn {
               color: #6B85AB; }
               html body .content .screen .container .occasion.boy .occasionsBtn:hover {
@@ -1377,6 +1410,10 @@ html {
               background: rgba(255, 2, 149, 0.9); }
             html body .content .screen .container .occasion.girl .occasions .background .cont.active .title {
               background: rgba(255, 2, 149, 0.9); }
+            html body .content .screen .container .occasion.girl .occasions .nextOccasion:hover i {
+              color: #FF0295; }
+            html body .content .screen .container .occasion.girl .occasions .prevOccasion:hover i {
+              color: #FF0295; }
             html body .content .screen .container .occasion.girl .occasionsBtn {
               color: #FF0295; }
               html body .content .screen .container .occasion.girl .occasionsBtn:hover {
@@ -1392,6 +1429,10 @@ html {
               background: rgba(120, 191, 1, 0.9); }
             html body .content .screen .container .occasion.bBoy .occasions .background .cont.active .title {
               background: rgba(120, 191, 1, 0.9); }
+            html body .content .screen .container .occasion.bBoy .occasions .nextOccasion:hover i {
+              color: #78BF01; }
+            html body .content .screen .container .occasion.bBoy .occasions .prevOccasion:hover i {
+              color: #78BF01; }
             html body .content .screen .container .occasion.bBoy .occasionsBtn {
               color: #78BF01; }
               html body .content .screen .container .occasion.bBoy .occasionsBtn:hover {
@@ -1407,6 +1448,10 @@ html {
               background: rgba(150, 146, 209, 0.9); }
             html body .content .screen .container .occasion.bGirl .occasions .background .cont.active .title {
               background: rgba(150, 146, 209, 0.9); }
+            html body .content .screen .container .occasion.bGirl .occasions .nextOccasion:hover i {
+              color: #9692D1; }
+            html body .content .screen .container .occasion.bGirl .occasions .prevOccasion:hover i {
+              color: #9692D1; }
             html body .content .screen .container .occasion.bGirl .occasionsBtn {
               color: #9692D1; }
               html body .content .screen .container .occasion.bGirl .occasionsBtn:hover {
@@ -1422,6 +1467,10 @@ html {
               background: rgba(0, 157, 184, 0.9); }
             html body .content .screen .container .occasion.nBoy .occasions .background .cont.active .title {
               background: rgba(0, 157, 184, 0.9); }
+            html body .content .screen .container .occasion.nBoy .occasions .nextOccasion:hover i {
+              color: #009DB8; }
+            html body .content .screen .container .occasion.nBoy .occasions .prevOccasion:hover i {
+              color: #009DB8; }
             html body .content .screen .container .occasion.nBoy .occasionsBtn {
               color: #009DB8; }
               html body .content .screen .container .occasion.nBoy .occasionsBtn:hover {
@@ -1437,6 +1486,10 @@ html {
               background: rgba(255, 152, 170, 0.9); }
             html body .content .screen .container .occasion.nGirl .occasions .background .cont.active .title {
               background: rgba(255, 152, 170, 0.9); }
+            html body .content .screen .container .occasion.nGirl .occasions .nextOccasion:hover i {
+              color: #FF98AA; }
+            html body .content .screen .container .occasion.nGirl .occasions .prevOccasion:hover i {
+              color: #FF98AA; }
             html body .content .screen .container .occasion.nGirl .occasionsBtn {
               color: #FF98AA; }
               html body .content .screen .container .occasion.nGirl .occasionsBtn:hover {
@@ -1452,31 +1505,80 @@ html {
               html body .content .screen .container .occasion .selection-wrap .title .text {
                 font-size: 1.75em; }
               html body .content .screen .container .occasion .occasions {
-                margin-top: -2vh; }
-                html body .content .screen .container .occasion .occasions .background .cont .img {
-                  height: 15vh;
-                  transition: all .3s ease; }
-                html body .content .screen .container .occasion .occasions .background .cont .title {
-                  padding: 0;
-                  height: 7vh;
-                  transition: all .3s ease; }
-                  html body .content .screen .container .occasion .occasions .background .cont .title h3 {
-                    transition: all .3s ease;
-                    line-height: 7vh;
-                    font-size: 14px; }
-                html body .content .screen .container .occasion .occasions .background .cont:hover, html body .content .screen .container .occasion .occasions .background .cont.active {
-                  transform: scale(1); }
-                  html body .content .screen .container .occasion .occasions .background .cont:hover .img, html body .content .screen .container .occasion .occasions .background .cont.active .img {
-                    height: 0vh; }
-                  html body .content .screen .container .occasion .occasions .background .cont:hover .title, html body .content .screen .container .occasion .occasions .background .cont.active .title {
-                    height: 22vh;
+                height: 52.5vh;
+                margin-top: -2vh;
+                padding: 0;
+                text-align: center; }
+                html body .content .screen .container .occasion .occasions .prevOccasion {
+                  transition: all .3s ease;
+                  position: absolute;
+                  width: 20%;
+                  height: 35%;
+                  background: transparent;
+                  left: 0;
+                  color: white;
+                  font-size: 60px;
+                  top: 25%;
+                  z-index: 0; }
+                  html body .content .screen .container .occasion .occasions .prevOccasion i {
+                    transition: all .3s ease; }
+                  html body .content .screen .container .occasion .occasions .prevOccasion:hover {
+                    transform: scale(1.25); }
+                html body .content .screen .container .occasion .occasions .nextOccasion {
+                  transition: all .3s ease;
+                  position: absolute;
+                  width: 20%;
+                  height: 35%;
+                  background: transparent;
+                  right: 0;
+                  color: white;
+                  font-size: 60px;
+                  top: 25%;
+                  z-index: 0; }
+                  html body .content .screen .container .occasion .occasions .nextOccasion i {
+                    transition: all .3s ease; }
+                  html body .content .screen .container .occasion .occasions .nextOccasion:hover {
+                    transform: scale(1.25); }
+                html body .content .screen .container .occasion .occasions .background {
+                  position: absolute;
+                  display: none; }
+                  html body .content .screen .container .occasion .occasions .background .cont .img {
+                    height: 40vh;
+                    transition: all .3s ease; }
+                  html body .content .screen .container .occasion .occasions .background .cont img {
+                    width: 25%;
+                    left: 38%;
+                    top: inherit;
+                    bottom: 5%; }
+                  html body .content .screen .container .occasion .occasions .background .cont .title {
+                    padding: 0;
+                    height: 9vh;
+                    transition: all .3s ease; }
+                    html body .content .screen .container .occasion .occasions .background .cont .title h3 {
+                      transition: all .3s ease;
+                      line-height: 9vh;
+                      font-size: 20px; }
+                  html body .content .screen .container .occasion .occasions .background .cont:hover, html body .content .screen .container .occasion .occasions .background .cont.active {
                     transform: scale(1); }
-                    html body .content .screen .container .occasion .occasions .background .cont:hover .title h3, html body .content .screen .container .occasion .occasions .background .cont.active .title h3 {
-                      line-height: 24vh;
-                      font-size: 18px; }
+                    html body .content .screen .container .occasion .occasions .background .cont:hover .img, html body .content .screen .container .occasion .occasions .background .cont.active .img {
+                      height: 0vh; }
+                    html body .content .screen .container .occasion .occasions .background .cont:hover .title, html body .content .screen .container .occasion .occasions .background .cont.active .title {
+                      height: 44vh;
+                      transform: scale(1); }
+                      html body .content .screen .container .occasion .occasions .background .cont:hover .title .occasion-desc, html body .content .screen .container .occasion .occasions .background .cont.active .title .occasion-desc {
+                        top: 20%;
+                        font-size: 16px;
+                        padding: 0 5%; }
+                      html body .content .screen .container .occasion .occasions .background .cont:hover .title h3, html body .content .screen .container .occasion .occasions .background .cont.active .title h3 {
+                        line-height: 10vh;
+                        font-size: 30px; }
+                  html body .content .screen .container .occasion .occasions .background.active {
+                    display: inherit; }
               html body .content .screen .container .occasion .occasionsBtn {
+                border-radius: 8px;
                 margin-top: 2vh;
-                line-height: 4vh; } }
+                line-height: 4vh;
+                font-size: 16px; } }
           @media (min-height: 768px) and (orientation: portrait) {
             html body .content .screen .container .occasion .occasions .background .cont .img {
               height: 20vh; }
@@ -1734,7 +1836,7 @@ html {
               bottom: 3vh; } }
           html body .content .screen .container .color {
             z-index: 1;
-            padding: 5vh 0;
+            padding: 0;
             height: 100%;
             overflow: scroll; }
             html body .content .screen .container .color .selection-wrap {
@@ -1793,31 +1895,67 @@ html {
                   bottom: 0;
                   width: 70%;
                   transition: all .3s ease; }
-                html body .content .screen .container .color .colors .color-wrap:hover {
-                  transform: scale(1.1); }
-                  html body .content .screen .container .color .colors .color-wrap:hover .half {
+                html body .content .screen .container .color .colors .color-wrap:hover, html body .content .screen .container .color .colors .color-wrap:active, html body .content .screen .container .color .colors .color-wrap:focus, html body .content .screen .container .color .colors .color-wrap.active {
+                  border-color: #fd0; }
+                  html body .content .screen .container .color .colors .color-wrap:hover .half, html body .content .screen .container .color .colors .color-wrap:active .half, html body .content .screen .container .color .colors .color-wrap:focus .half, html body .content .screen .container .color .colors .color-wrap.active .half {
                     transform: rotate(0deg); }
-                  html body .content .screen .container .color .colors .color-wrap:hover .right-half {
+                  html body .content .screen .container .color .colors .color-wrap:hover .right-half, html body .content .screen .container .color .colors .color-wrap:active .right-half, html body .content .screen .container .color .colors .color-wrap:focus .right-half, html body .content .screen .container .color .colors .color-wrap.active .right-half {
                     left: -20%; }
+            html body .content .screen .container .color .colorsContinue {
+              opacity: 0;
+              color: white;
+              text-align: center;
+              padding: 0;
+              line-height: 5vh;
+              border-radius: 10px;
+              font-size: 20px;
+              font-family: FrontageCBold, sans-serif;
+              transition: all .3s ease;
+              max-height: 0;
+              overflow: hidden;
+              cursor: default; }
+              html body .content .screen .container .color .colorsContinue.active {
+                opacity: 1;
+                max-height: 6vh;
+                cursor: pointer; }
+                html body .content .screen .container .color .colorsContinue.active:hover {
+                  transform: scale(1.1); }
             html body .content .screen .container .color.boy .selection-wrap .title .text {
               border-bottom-color: #6B85AB; }
+            html body .content .screen .container .color.boy .colors .color-wrap:hover, html body .content .screen .container .color.boy .colors .color-wrap:focus, html body .content .screen .container .color.boy .colors .color-wrap:active, html body .content .screen .container .color.boy .colors .color-wrap.active {
+              border-color: #6B85AB; }
+            html body .content .screen .container .color.boy .colorsContinue {
+              background: #6B85AB; }
             html body .content .screen .container .color.girl .selection-wrap .title .text {
               border-bottom-color: #FF0295; }
+            html body .content .screen .container .color.girl .colors .color-wrap:hover, html body .content .screen .container .color.girl .colors .color-wrap:focus, html body .content .screen .container .color.girl .colors .color-wrap:active, html body .content .screen .container .color.girl .colors .color-wrap.active {
+              border-color: #FF0295; }
+            html body .content .screen .container .color.girl .colorsContinue {
+              background: #FF0295; }
             html body .content .screen .container .color.bBoy .selection-wrap .title .text {
               border-bottom-color: #78BF01; }
+            html body .content .screen .container .color.bBoy .colors .color-wrap:hover, html body .content .screen .container .color.bBoy .colors .color-wrap:focus, html body .content .screen .container .color.bBoy .colors .color-wrap:active, html body .content .screen .container .color.bBoy .colors .color-wrap.active {
+              border-color: #78BF01; }
+            html body .content .screen .container .color.bBoy .colorsContinue {
+              background: #78BF01; }
             html body .content .screen .container .color.bGirl .selection-wrap .title .text {
               border-bottom-color: #9692D1; }
+            html body .content .screen .container .color.bGirl .colors .color-wrap:hover, html body .content .screen .container .color.bGirl .colors .color-wrap:focus, html body .content .screen .container .color.bGirl .colors .color-wrap:active, html body .content .screen .container .color.bGirl .colors .color-wrap.active {
+              border-color: #9692D1; }
+            html body .content .screen .container .color.bGirl .colorsContinue {
+              background: #9692D1; }
             html body .content .screen .container .color.nBoy .selection-wrap .title .text {
               border-bottom-color: #009DB8; }
+            html body .content .screen .container .color.nBoy .colors .color-wrap:hover, html body .content .screen .container .color.nBoy .colors .color-wrap:focus, html body .content .screen .container .color.nBoy .colors .color-wrap:active, html body .content .screen .container .color.nBoy .colors .color-wrap.active {
+              border-color: #009DB8; }
+            html body .content .screen .container .color.nBoy .colorsContinue {
+              background: #009DB8; }
             html body .content .screen .container .color.nGirl .selection-wrap .title .text {
               border-bottom-color: #FF98AA; }
-            html body .content .screen .container .color .continue.transparent {
-              z-index: -1; }
-              html body .content .screen .container .color .continue.transparent h3 {
-                color: transparent;
-                cursor: default;
-                background: transparent;
-                z-index: -1; }
+            html body .content .screen .container .color.nGirl .colors .color-wrap:hover, html body .content .screen .container .color.nGirl .colors .color-wrap:focus, html body .content .screen .container .color.nGirl .colors .color-wrap:active, html body .content .screen .container .color.nGirl .colors .color-wrap.active {
+              border-color: #FF98AA; }
+            html body .content .screen .container .color.nGirl .colorsContinue {
+              background: #FF98AA; }
           @media (max-width: 767px) {
             html body .content .screen .container .color {
               padding-top: 0; }
@@ -1826,15 +1964,65 @@ html {
                 html body .content .screen .container .color .selection-wrap .title .text {
                   font-size: 2em;
                   padding-bottom: 2vh; }
+              html body .content .screen .container .color .color-display {
+                position: relative;
+                transition: all .3s ease;
+                height: 33vw;
+                width: 33vw;
+                margin-left: 34vw;
+                background: transparent;
+                border-radius: 50%;
+                display: inline-block;
+                border: solid 5px white;
+                padding: 0;
+                overflow: hidden;
+                cursor: pointer;
+                margin-bottom: 1vh;
+                left: -0.1vw; }
+                html body .content .screen .container .color .color-display .tag {
+                  position: relative;
+                  line-height: 28vw;
+                  font-size: 22px;
+                  text-align: center;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  left: 0%;
+                  width: 100%;
+                  text-shadow: -0.5px 0 white, 0 0.5px white, 0.5px 0 white, 0 -0.5px white; }
+                html body .content .screen .container .color .color-display .half {
+                  position: absolute;
+                  height: 160%;
+                  transform: rotate(45deg); }
+                html body .content .screen .container .color .color-display .left-half {
+                  background: #f2d200;
+                  left: -10%;
+                  top: -10%;
+                  width: 120%; }
+                html body .content .screen .container .color .color-display .right-half {
+                  background: #ffdd00;
+                  left: 0%;
+                  bottom: 0;
+                  width: 70%;
+                  transition: all .3s ease; }
+                html body .content .screen .container .color .color-display:hover .half {
+                  transform: rotate(0deg); }
+                html body .content .screen .container .color .color-display:hover .right-half {
+                  left: -20%; }
               html body .content .screen .container .color .colors {
                 padding-bottom: 2vh;
                 height: auto;
                 padding-left: 8%; }
                 html body .content .screen .container .color .colors .color-wrap {
-                  height: 12.5vh;
-                  width: 12.5vh; }
+                  height: 7vh;
+                  width: 7vh;
+                  top: -0.6vw; }
                   html body .content .screen .container .color .colors .color-wrap .tag {
-                    display: none; } }
+                    display: none; }
+              html body .content .screen .container .color .colorsContinue {
+                line-height: 6vh;
+                border-radius: 8px;
+                font-size: 18px; } }
           html body .content .screen .container .personality {
             padding: 0;
             height: 100%;
@@ -1917,11 +2105,15 @@ html {
               margin-top: 5vh;
               margin-bottom: 5vh;
               padding: 0;
-              transition: all .3s ease; }
+              transition: all .3s ease;
+              border-radius: 8px;
+              overflow: hidden;
+              font-family: FrontageCBold, sans-serif; }
               html body .content .screen .container .personality .continue h4 {
                 margin: 0;
                 background: #fd0;
                 color: white;
+                font-size: 24px;
                 padding: 4%;
                 cursor: pointer;
                 transition: all .3s ease; }
@@ -1941,6 +2133,10 @@ html {
                 background-color: rgba(107, 133, 171, 0.8); }
             html body .content .screen .container .personality.boy .personWrap .person .fa-check {
               color: #6B85AB; }
+            html body .content .screen .container .personality.boy .personWrap .prevPerson:hover i {
+              color: #6B85AB; }
+            html body .content .screen .container .personality.boy .personWrap .nextPerson:hover i {
+              color: #6B85AB; }
             html body .content .screen .container .personality.boy .continue h4 {
               background: #6B85AB; }
             html body .content .screen .container .personality.girl .selection-wrap .title .text {
@@ -1950,6 +2146,10 @@ html {
               html body .content .screen .container .personality.girl .personWrap .person .background .title {
                 background-color: #FF0295; }
             html body .content .screen .container .personality.girl .personWrap .person .fa-check {
+              color: #FF0295; }
+            html body .content .screen .container .personality.girl .personWrap .prevPerson:hover i {
+              color: #FF0295; }
+            html body .content .screen .container .personality.girl .personWrap .nextPerson:hover i {
               color: #FF0295; }
             html body .content .screen .container .personality.girl .continue h4 {
               background: #FF0295; }
@@ -1961,6 +2161,10 @@ html {
                 background-color: #78BF01; }
             html body .content .screen .container .personality.bBoy .personWrap .person .fa-check {
               color: #78BF01; }
+            html body .content .screen .container .personality.bBoy .personWrap .prevPerson:hover i {
+              color: #78BF01; }
+            html body .content .screen .container .personality.bBoy .personWrap .nextPerson:hover i {
+              color: #78BF01; }
             html body .content .screen .container .personality.bBoy .continue h4 {
               background: #78BF01; }
             html body .content .screen .container .personality.bGirl .selection-wrap .title .text {
@@ -1970,6 +2174,10 @@ html {
               html body .content .screen .container .personality.bGirl .personWrap .person .background .title {
                 background-color: #9692D1; }
             html body .content .screen .container .personality.bGirl .personWrap .person .fa-check {
+              color: #9692D1; }
+            html body .content .screen .container .personality.bGirl .personWrap .prevPerson:hover i {
+              color: #9692D1; }
+            html body .content .screen .container .personality.bGirl .personWrap .nextPerson:hover i {
               color: #9692D1; }
             html body .content .screen .container .personality.bGirl .continue h4 {
               background: #9692D1; }
@@ -1981,6 +2189,10 @@ html {
                 background-color: #009DB8; }
             html body .content .screen .container .personality.nBoy .personWrap .person .fa-check {
               color: #009DB8; }
+            html body .content .screen .container .personality.nBoy .personWrap .prevPerson:hover i {
+              color: #009DB8; }
+            html body .content .screen .container .personality.nBoy .personWrap .nextPerson:hover i {
+              color: #009DB8; }
             html body .content .screen .container .personality.nBoy .continue h4 {
               background: #009DB8; }
             html body .content .screen .container .personality.nGirl .selection-wrap .title .text {
@@ -1991,27 +2203,31 @@ html {
                 background-color: #FF98AA; }
             html body .content .screen .container .personality.nGirl .personWrap .person .fa-check {
               color: #FF98AA; }
+            html body .content .screen .container .personality.nGirl .personWrap .prevPerson:hover i {
+              color: #FF98AA; }
+            html body .content .screen .container .personality.nGirl .personWrap .nextPerson:hover i {
+              color: #FF98AA; }
             html body .content .screen .container .personality.nGirl .continue h4 {
               background: #FF98AA; }
-            html body .content .screen .container .personality.boy .personWrap .person:nth-child(1) .background, html body .content .screen .container .personality.bBoy .personWrap .person:nth-child(1) .background, html body .content .screen .container .personality.nBoy .personWrap .person:nth-child(1) .background {
-              background-image: url(../IMG/Personality/personalidad-m-1.jpg); }
             html body .content .screen .container .personality.boy .personWrap .person:nth-child(2) .background, html body .content .screen .container .personality.bBoy .personWrap .person:nth-child(2) .background, html body .content .screen .container .personality.nBoy .personWrap .person:nth-child(2) .background {
-              background-image: url(../IMG/Personality/personalidad-m-2.jpg); }
+              background-image: url(../IMG/Personality/personalidad-m-1.jpg); }
             html body .content .screen .container .personality.boy .personWrap .person:nth-child(3) .background, html body .content .screen .container .personality.bBoy .personWrap .person:nth-child(3) .background, html body .content .screen .container .personality.nBoy .personWrap .person:nth-child(3) .background {
-              background-image: url(../IMG/Personality/personalidad-m-3.jpg); }
+              background-image: url(../IMG/Personality/personalidad-m-2.jpg); }
             html body .content .screen .container .personality.boy .personWrap .person:nth-child(4) .background, html body .content .screen .container .personality.bBoy .personWrap .person:nth-child(4) .background, html body .content .screen .container .personality.nBoy .personWrap .person:nth-child(4) .background {
-              background-image: url(../IMG/Personality/personalidad-m-4.jpg); }
+              background-image: url(../IMG/Personality/personalidad-m-3.jpg); }
             html body .content .screen .container .personality.boy .personWrap .person:nth-child(5) .background, html body .content .screen .container .personality.bBoy .personWrap .person:nth-child(5) .background, html body .content .screen .container .personality.nBoy .personWrap .person:nth-child(5) .background {
+              background-image: url(../IMG/Personality/personalidad-m-4.jpg); }
+            html body .content .screen .container .personality.boy .personWrap .person:nth-child(6) .background, html body .content .screen .container .personality.bBoy .personWrap .person:nth-child(6) .background, html body .content .screen .container .personality.nBoy .personWrap .person:nth-child(6) .background {
               background-image: url(../IMG/Personality/personalidad-m-5.jpg); }
-            html body .content .screen .container .personality.girl .personWrap .person:nth-child(1) .background, html body .content .screen .container .personality.bGirl .personWrap .person:nth-child(1) .background, html body .content .screen .container .personality.nGirl .personWrap .person:nth-child(1) .background {
-              background-image: url(../IMG/Personality/personalidad-f-1.jpg); }
             html body .content .screen .container .personality.girl .personWrap .person:nth-child(2) .background, html body .content .screen .container .personality.bGirl .personWrap .person:nth-child(2) .background, html body .content .screen .container .personality.nGirl .personWrap .person:nth-child(2) .background {
-              background-image: url(../IMG/Personality/personalidad-f-2.jpg); }
+              background-image: url(../IMG/Personality/personalidad-f-1.jpg); }
             html body .content .screen .container .personality.girl .personWrap .person:nth-child(3) .background, html body .content .screen .container .personality.bGirl .personWrap .person:nth-child(3) .background, html body .content .screen .container .personality.nGirl .personWrap .person:nth-child(3) .background {
-              background-image: url(../IMG/Personality/personalidad-f-3.jpg); }
+              background-image: url(../IMG/Personality/personalidad-f-2.jpg); }
             html body .content .screen .container .personality.girl .personWrap .person:nth-child(4) .background, html body .content .screen .container .personality.bGirl .personWrap .person:nth-child(4) .background, html body .content .screen .container .personality.nGirl .personWrap .person:nth-child(4) .background {
-              background-image: url(../IMG/Personality/personalidad-f-4.jpg); }
+              background-image: url(../IMG/Personality/personalidad-f-3.jpg); }
             html body .content .screen .container .personality.girl .personWrap .person:nth-child(5) .background, html body .content .screen .container .personality.bGirl .personWrap .person:nth-child(5) .background, html body .content .screen .container .personality.nGirl .personWrap .person:nth-child(5) .background {
+              background-image: url(../IMG/Personality/personalidad-f-4.jpg); }
+            html body .content .screen .container .personality.girl .personWrap .person:nth-child(6) .background, html body .content .screen .container .personality.bGirl .personWrap .person:nth-child(6) .background, html body .content .screen .container .personality.nGirl .personWrap .person:nth-child(6) .background {
               background-image: url(../IMG/Personality/personalidad-f-5.jpg); }
           @media (max-width: 767px) {
             html body .content .screen .container .personality {
@@ -2021,20 +2237,64 @@ html {
                 html body .content .screen .container .personality .selection-wrap .title .text {
                   font-size: 2em;
                   padding-bottom: 2vh; }
-              html body .content .screen .container .personality .personWrap .person {
-                padding: 2.5vh 2.2vw;
-                height: 25vh; }
-                html body .content .screen .container .personality .personWrap .person .fa-check {
-                  font-size: 16vw; }
-                html body .content .screen .container .personality .personWrap .person .background .offset {
-                  height: 17.3vh; }
-                html body .content .screen .container .personality .personWrap .person .background .title {
-                  padding: 0; }
-                  html body .content .screen .container .personality .personWrap .person .background .title h4 {
-                    font-size: 14px;
+              html body .content .screen .container .personality .personWrap {
+                height: 55vh;
+                padding: 0; }
+                html body .content .screen .container .personality .personWrap .prevPerson {
+                  transition: all .3s ease;
+                  position: absolute;
+                  width: 20%;
+                  height: 35%;
+                  background: transparent;
+                  left: 0;
+                  color: white;
+                  font-size: 60px;
+                  top: 25%;
+                  z-index: 0; }
+                  html body .content .screen .container .personality .personWrap .prevPerson i {
+                    transition: all .3s ease; }
+                  html body .content .screen .container .personality .personWrap .prevPerson:hover {
+                    transform: scale(1.25); }
+                html body .content .screen .container .personality .personWrap .person {
+                  z-index: 1;
+                  position: absolute;
+                  padding: 2.5vh 2.2vw;
+                  height: 51vh;
+                  display: none; }
+                  html body .content .screen .container .personality .personWrap .person .fa-check {
+                    font-size: 40vw; }
+                  html body .content .screen .container .personality .personWrap .person .background .offset {
+                    height: 40vh; }
+                  html body .content .screen .container .personality .personWrap .person .background .title {
                     padding: 0;
-                    line-height: 5vh;
-                    font-weight: 600; } }
+                    height: 9vh; }
+                    html body .content .screen .container .personality .personWrap .person .background .title h4 {
+                      font-size: 14px;
+                      padding: 0;
+                      line-height: 8vh;
+                      font-weight: 600; }
+                  html body .content .screen .container .personality .personWrap .person.active {
+                    display: inherit; }
+                html body .content .screen .container .personality .personWrap .nextPerson {
+                  transition: all .3s ease;
+                  position: absolute;
+                  width: 20%;
+                  height: 35%;
+                  background: transparent;
+                  right: 0;
+                  color: white;
+                  font-size: 60px;
+                  top: 25%;
+                  z-index: 0; }
+                  html body .content .screen .container .personality .personWrap .nextPerson i {
+                    transition: all .3s ease; }
+                  html body .content .screen .container .personality .personWrap .nextPerson:hover {
+                    transform: scale(1.25); }
+              html body .content .screen .container .personality .continue {
+                margin-top: 2vh;
+                border-radius: 8px; }
+                html body .content .screen .container .personality .continue h4 {
+                  font-size: 18px; } }
           html body .content .screen .container .result {
             padding: 5vh 0;
             height: 100%;
