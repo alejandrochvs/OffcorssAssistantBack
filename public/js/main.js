@@ -507,6 +507,7 @@ $(function () {
                         }
                     }
                     $('.occasion').addClass(currentClass);
+                    $('.background')[0].remove();
                     $('.background').click(function () {
                         var tempOccasion = $(this).attr('data-occasion');
                         if (occasion.indexOf(tempOccasion) >= 0) {

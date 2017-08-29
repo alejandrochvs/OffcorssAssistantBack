@@ -24,21 +24,31 @@
         }
     }
     .img {
-        height: 107%;
+        height: 100%;
         overflow: scroll;
         padding: 0;
         img {
             padding: 0;
-            margin-bottom: 5vh;
         }
-         ::-webkit-scrollbar {
-            width: 6px;
-        }
-         ::-webkit-scrollbar-track {
-            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-        }
-         ::-webkit-scrollbar-thumb {
-            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+    .scroll-bar {
+        display: block;
+        width: 10px;
+        background: whitesmoke;
+        z-index: 5;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        .scroll-percent{
+            width: 100%;
+            border-radius: 2px;
+            height: 10px;
+            display: block;
+            background: transparent;
+            transition: all .3s ease;
+            top: 0;
+            position: absolute;
         }
     }
     &.active {
@@ -164,26 +174,26 @@
                 }
             }
         }
-        .padPrev{
+        .padPrev {
             position: absolute;
             color: white;
             font-size: 50px;
             left: 5%;
             text-align: center;
             top: 35%;
-            i{
-                transition : all .3s ease;
+            i {
+                transition: all .3s ease;
             }
         }
-        .padNext{
+        .padNext {
             position: absolute;
             color: white;
             font-size: 50px;
             right: 5%;
             text-align: center;
             top: 35%;
-            i{
-                transition : all .3s ease;
+            i {
+                transition: all .3s ease;
             }
         }
     }
@@ -225,9 +235,10 @@
                     }
                 }
             }
-            .padNext,.padPrev{
-                &:hover{
-                    i{
+            .padNext,
+            .padPrev {
+                &:hover {
+                    i {
                         color: $boy;
                     }
                 }
@@ -272,9 +283,10 @@
                     }
                 }
             }
-            .padNext,.padPrev{
-                &:hover{
-                    i{
+            .padNext,
+            .padPrev {
+                &:hover {
+                    i {
                         color: $girl;
                     }
                 }
@@ -319,9 +331,10 @@
                     }
                 }
             }
-            .padNext,.padPrev{
-                &:hover{
-                    i{
+            .padNext,
+            .padPrev {
+                &:hover {
+                    i {
                         color: $bBoy;
                     }
                 }
@@ -366,9 +379,10 @@
                     }
                 }
             }
-            .padNext,.padPrev{
-                &:hover{
-                    i{
+            .padNext,
+            .padPrev {
+                &:hover {
+                    i {
                         color: $bGirl;
                     }
                 }
@@ -413,9 +427,10 @@
                     }
                 }
             }
-            .padNext,.padPrev{
-                &:hover{
-                    i{
+            .padNext,
+            .padPrev {
+                &:hover {
+                    i {
                         color: $nBoy;
                     }
                 }
@@ -460,9 +475,10 @@
                     }
                 }
             }
-            .padNext,.padPrev{
-                &:hover{
-                    i{
+            .padNext,
+            .padPrev {
+                &:hover {
+                    i {
                         color: $nGirl;
                     }
                 }
@@ -509,7 +525,7 @@
                         }
                     }
                 }
-                &.active{
+                &.active {
                     display: inherit;
                 }
             }

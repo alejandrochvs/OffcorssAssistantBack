@@ -3,6 +3,9 @@
         <i class="fa fa-times fa-2x"></i>
         <div class="col-xs-12 img">
         </div>
+        <div class="scroll-bar">
+            <div class="scroll-percent"></div>
+        </div>
     </div>
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 selection-wrap">
         <div class="col-xs-12 title">
@@ -28,11 +31,28 @@
 </div>
 <script>
     $(function() {
+        var scrollFunction = function() {
+            var contHeight = $('.sizes-guide > .img').height();
+            var contentHeight = $('.sizes-guide > .img > img').height();
+            console.log (`Container ${contHeight} - Content ${contentHeight}`);
+            if (contentHeight - contHeight < 0) {
+                $('.scroll-bar > .scroll-percent').css('height', '100%');
+            } else {
+                var scrollPercent = contHeight / contentHeight * 100;
+                $('.scroll-bar > .scroll-percent').css('height', scrollPercent + '%');
+                $('.sizes-guide > .img').scroll(function() {
+                    $('.scroll-bar > .scroll-percent').css('height', $(this).scrollTop() / contentHeight * 100 + scrollPercent + '%');
+                })
+            }
+        }
         $('.sizePrimi > .selection-wrap > .title > .text').click(function() {
+            scrollFunction();
+            $('.scroll-percent').css('background-color', $('.loader > .progress').css('background-color'));
             $('.sizes-guide').addClass('active');
         });
         $('.sizes-guide > .fa-times').click(function() {
             $('.sizes-guide').removeClass('active');
+            $('.sizes-guide > .img').unbind('scroll');
         });
     })
 

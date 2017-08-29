@@ -84,8 +84,7 @@
         opacity: 0;
         color: white;
         text-align: center;
-        padding: 0;
-        line-height: 5vh;
+        line-height: 7vh;
         border-radius: 10px;
         font-size: 20px;
         font-family: FrontageCBold, sans-serif;
@@ -93,9 +92,10 @@
         max-height: 0;
         overflow: hidden;
         cursor: default;
+        margin-bottom: 5vh;
         &.active {
             opacity: 1;
-            max-height: 6vh;
+            max-height: 7vh;
             cursor: pointer;
             &:hover {
                 transform: scale(1.1);

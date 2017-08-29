@@ -807,18 +807,29 @@ html {
               html body .content .screen .container .sizes-guide .fa-times:hover {
                 color: #fd0; }
             html body .content .screen .container .sizes-guide .img {
-              height: 107%;
+              height: 100%;
               overflow: scroll;
               padding: 0; }
               html body .content .screen .container .sizes-guide .img img {
-                padding: 0;
-                margin-bottom: 5vh; }
-              html body .content .screen .container .sizes-guide .img ::-webkit-scrollbar {
-                width: 6px; }
-              html body .content .screen .container .sizes-guide .img ::-webkit-scrollbar-track {
-                -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); }
-              html body .content .screen .container .sizes-guide .img ::-webkit-scrollbar-thumb {
-                -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); }
+                padding: 0; }
+            html body .content .screen .container .sizes-guide .scroll-bar {
+              display: block;
+              width: 10px;
+              background: whitesmoke;
+              z-index: 5;
+              position: absolute;
+              right: 0;
+              top: 0;
+              height: 100%; }
+              html body .content .screen .container .sizes-guide .scroll-bar .scroll-percent {
+                width: 100%;
+                border-radius: 2px;
+                height: 10px;
+                display: block;
+                background: transparent;
+                transition: all .3s ease;
+                top: 0;
+                position: absolute; }
             html body .content .screen .container .sizes-guide.active {
               top: 5%; }
           html body .content .screen .container .size {
@@ -949,7 +960,8 @@ html {
               color: #6B85AB; }
             html body .content .screen .container .size.boy .selection-wrap .padWrap .nav .sel:hover .fa {
               color: #405370; }
-            html body .content .screen .container .size.boy .selection-wrap .padNext:hover i, html body .content .screen .container .size.boy .selection-wrap .padPrev:hover i {
+            html body .content .screen .container .size.boy .selection-wrap .padNext:hover i,
+            html body .content .screen .container .size.boy .selection-wrap .padPrev:hover i {
               color: #6B85AB; }
             html body .content .screen .container .size.girl .selection-wrap .title .text {
               border-bottom-color: #FF0295; }
@@ -964,7 +976,8 @@ html {
               color: #FF0295; }
             html body .content .screen .container .size.girl .selection-wrap .padWrap .nav .sel:hover .fa {
               color: #9b005a; }
-            html body .content .screen .container .size.girl .selection-wrap .padNext:hover i, html body .content .screen .container .size.girl .selection-wrap .padPrev:hover i {
+            html body .content .screen .container .size.girl .selection-wrap .padNext:hover i,
+            html body .content .screen .container .size.girl .selection-wrap .padPrev:hover i {
               color: #FF0295; }
             html body .content .screen .container .size.bBoy .selection-wrap .title .text {
               border-bottom-color: #78BF01; }
@@ -979,7 +992,8 @@ html {
               color: #78BF01; }
             html body .content .screen .container .size.bBoy .selection-wrap .padWrap .nav .sel:hover .fa {
               color: #385a00; }
-            html body .content .screen .container .size.bBoy .selection-wrap .padNext:hover i, html body .content .screen .container .size.bBoy .selection-wrap .padPrev:hover i {
+            html body .content .screen .container .size.bBoy .selection-wrap .padNext:hover i,
+            html body .content .screen .container .size.bBoy .selection-wrap .padPrev:hover i {
               color: #78BF01; }
             html body .content .screen .container .size.bGirl .selection-wrap .title .text {
               border-bottom-color: #9692D1; }
@@ -994,7 +1008,8 @@ html {
               color: #9692D1; }
             html body .content .screen .container .size.bGirl .selection-wrap .padWrap .nav .sel:hover .fa {
               color: #524bb2; }
-            html body .content .screen .container .size.bGirl .selection-wrap .padNext:hover i, html body .content .screen .container .size.bGirl .selection-wrap .padPrev:hover i {
+            html body .content .screen .container .size.bGirl .selection-wrap .padNext:hover i,
+            html body .content .screen .container .size.bGirl .selection-wrap .padPrev:hover i {
               color: #9692D1; }
             html body .content .screen .container .size.nBoy .selection-wrap .title .text {
               border-bottom-color: #009DB8; }
@@ -1009,7 +1024,8 @@ html {
               color: #009DB8; }
             html body .content .screen .container .size.nBoy .selection-wrap .padWrap .nav .sel:hover .fa {
               color: #004652; }
-            html body .content .screen .container .size.nBoy .selection-wrap .padNext:hover i, html body .content .screen .container .size.nBoy .selection-wrap .padPrev:hover i {
+            html body .content .screen .container .size.nBoy .selection-wrap .padNext:hover i,
+            html body .content .screen .container .size.nBoy .selection-wrap .padPrev:hover i {
               color: #009DB8; }
             html body .content .screen .container .size.nGirl .selection-wrap .title .text {
               border-bottom-color: #FF98AA; }
@@ -1024,7 +1040,8 @@ html {
               color: #FF98AA; }
             html body .content .screen .container .size.nGirl .selection-wrap .padWrap .nav .sel:hover .fa {
               color: #ff3256; }
-            html body .content .screen .container .size.nGirl .selection-wrap .padNext:hover i, html body .content .screen .container .size.nGirl .selection-wrap .padPrev:hover i {
+            html body .content .screen .container .size.nGirl .selection-wrap .padNext:hover i,
+            html body .content .screen .container .size.nGirl .selection-wrap .padPrev:hover i {
               color: #FF98AA; }
           @media (max-width: 767px) {
             html body .content .screen .container .size {
@@ -1368,8 +1385,8 @@ html {
               color: #fd0;
               padding: 1%;
               cursor: pointer;
-              height: 5vh;
-              line-height: 5vh;
+              height: 7vh;
+              line-height: 7vh;
               padding: 0;
               font-family: FrontageCBold, sans-serif;
               font-size: 22px; }
@@ -1905,18 +1922,18 @@ html {
               opacity: 0;
               color: white;
               text-align: center;
-              padding: 0;
-              line-height: 5vh;
+              line-height: 7vh;
               border-radius: 10px;
               font-size: 20px;
               font-family: FrontageCBold, sans-serif;
               transition: all .3s ease;
               max-height: 0;
               overflow: hidden;
-              cursor: default; }
+              cursor: default;
+              margin-bottom: 5vh; }
               html body .content .screen .container .color .colorsContinue.active {
                 opacity: 1;
-                max-height: 6vh;
+                max-height: 7vh;
                 cursor: pointer; }
                 html body .content .screen .container .color .colorsContinue.active:hover {
                   transform: scale(1.1); }
@@ -2037,7 +2054,10 @@ html {
                   color: white;
                   border-bottom: solid 1px #fd0;
                   padding: 2%;
-                  font-size: 50px; }
+                  font-size: 50px;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis; }
             html body .content .screen .container .personality .personWrap .person {
               padding: 1vh 1vw;
               height: 40vh;
