@@ -799,13 +799,13 @@ html {
             height: 90%; }
             html body .content .screen .container .sizes-guide .fa-times {
               position: absolute;
-              left: 1vw;
+              right: 20px;
               top: 1vh;
               cursor: pointer;
               transition: all .3s ease;
               z-index: 2; }
               html body .content .screen .container .sizes-guide .fa-times:hover {
-                color: #fd0; }
+                color: lightcoral; }
             html body .content .screen .container .sizes-guide .img {
               height: 100%;
               overflow: scroll;

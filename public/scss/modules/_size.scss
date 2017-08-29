@@ -14,13 +14,13 @@
     height: 90%;
     .fa-times {
         position: absolute;
-        left: 1vw;
+        right: 20px;
         top: 1vh;
         cursor: pointer;
         transition: all .3s ease;
         z-index: 2;
         &:hover {
-            color: $yellow;
+            color: lightcoral;
         }
     }
     .img {
