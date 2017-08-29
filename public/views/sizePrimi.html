@@ -34,7 +34,6 @@
         var scrollFunction = function() {
             var contHeight = $('.sizes-guide > .img').height();
             var contentHeight = $('.sizes-guide > .img > img').height();
-            console.log (`Container ${contHeight} - Content ${contentHeight}`);
             if (contentHeight - contHeight < 0) {
                 $('.scroll-bar > .scroll-percent').css('height', '100%');
             } else {
