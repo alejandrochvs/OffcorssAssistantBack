@@ -816,7 +816,7 @@ html {
               display: block;
               width: 10px;
               background: whitesmoke;
-              z-index: 5;
+              z-index: 1;
               position: absolute;
               right: 0;
               top: 0;
