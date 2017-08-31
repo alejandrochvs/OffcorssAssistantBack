@@ -49,6 +49,9 @@
             overflow: auto;
             height: 63vh;
             padding: 0;
+            &::-webkit-scrollbar {
+                display: none;
+            }
             .e-card-item,
             .e-card-new {
                 overflow: hidden;

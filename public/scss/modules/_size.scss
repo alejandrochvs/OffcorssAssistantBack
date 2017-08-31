@@ -26,6 +26,10 @@
     .img {
         height: 100%;
         overflow: scroll;
+        overflow-x: hidden;
+        &::-webkit-scrollbar {
+            display: none;
+        }
         padding: 0;
         img {
             padding: 0;
@@ -60,7 +64,11 @@
 }
 
 .size {
-    overflow: scroll;
+    overflow: auto;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+        display: none;
+    }
     padding: 2.5vh 0;
     height: 100%;
     .selection-wrap {

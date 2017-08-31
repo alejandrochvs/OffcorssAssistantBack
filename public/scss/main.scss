@@ -15,9 +15,9 @@ html {
         overflow: hidden;
         @import 'modules/admin';
         transition: all .4s ease;
-          ::-webkit-scrollbar {
-             display: none;
-         }
+        &::-webkit-scrollbar {
+            display: none;
+        }
         .header {
             margin: 0;
             background: white;
@@ -105,11 +105,11 @@ html {
                         }
                     }
                     &.exit {
-                        &:hover{
-                            a{
+                        &:hover {
+                            a {
                                 color: #80D6BF;
                                 cursor: pointer;
-                                i{
+                                i {
                                     background: #80D6BF;
                                     border-color: white;
                                     color: white;

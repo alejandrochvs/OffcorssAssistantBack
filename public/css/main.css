@@ -208,7 +208,7 @@ html {
               height: 100%; }
               html body .ui .ui-section.hide-admin.admin-hidden .ui-option i {
                 line-height: 50px; }
-    html body ::-webkit-scrollbar {
+    html body::-webkit-scrollbar {
       display: none; }
     html body .header {
       margin: 0;
@@ -403,7 +403,10 @@ html {
           html body .content .screen .container .gender {
             padding: 5vh 5vw;
             height: 100%;
-            overflow: auto; }
+            overflow: auto;
+            overflow-y: hidden; }
+            html body .content .screen .container .gender::-webkit-scrollbar {
+              display: none; }
             html body .content .screen .container .gender .selection-wrap {
               text-align: center;
               height: 50%;
@@ -498,7 +501,10 @@ html {
           html body .content .screen .container .name {
             padding: 5vh 0;
             height: 100%;
-            overflow: auto; }
+            overflow: auto;
+            overflow-x: hidden; }
+            html body .content .screen .container .name::-webkit-scrollbar {
+              display: none; }
             html body .content .screen .container .name .selection-wrap {
               text-align: center;
               margin-top: 15vh; }
@@ -617,7 +623,10 @@ html {
           html body .content .screen .container .age {
             padding: 5vh 0;
             height: 100%;
-            overflow: scroll; }
+            overflow: auto;
+            overflow-x: hidden; }
+            html body .content .screen .container .age::-webkit-scrollbar {
+              display: none; }
             html body .content .screen .container .age .selection-wrap {
               margin-top: 7vh;
               text-align: center; }
@@ -809,7 +818,10 @@ html {
             html body .content .screen .container .sizes-guide .img {
               height: 100%;
               overflow: scroll;
+              overflow-x: hidden;
               padding: 0; }
+              html body .content .screen .container .sizes-guide .img::-webkit-scrollbar {
+                display: none; }
               html body .content .screen .container .sizes-guide .img img {
                 padding: 0; }
             html body .content .screen .container .sizes-guide .scroll-bar {
@@ -836,9 +848,12 @@ html {
             html body .content .screen .container .sizes-guide.active {
               top: 5%; }
           html body .content .screen .container .size {
-            overflow: scroll;
+            overflow: auto;
+            overflow-x: hidden;
             padding: 2.5vh 0;
             height: 100%; }
+            html body .content .screen .container .size::-webkit-scrollbar {
+              display: none; }
             html body .content .screen .container .size .selection-wrap {
               height: 100%;
               text-align: center; }
@@ -1078,7 +1093,11 @@ html {
                   html body .content .screen .container .size .selection-wrap .padWrap.active {
                     display: inherit; } }
           html body .content .screen .container .sizePrimi {
+            overflow: auto;
+            overflow-x: hidden;
             padding: 5vh 0; }
+            html body .content .screen .container .sizePrimi::-webkit-scrollbar {
+              display: none; }
             html body .content .screen .container .sizePrimi .selection-wrap {
               text-align: center; }
               html body .content .screen .container .sizePrimi .selection-wrap .title .text {
@@ -1270,11 +1289,11 @@ html {
                       top: 2px; } }
           html body .content .screen .container .occasion {
             padding: 5vh 0;
-            overflow: scroll;
-            overflow-x: hidden;
-            height: 100%; }
-            html body .content .screen .container .occasion ::-webkit-scrollbar {
-              display: inherit; }
+            height: 100%;
+            overflow: auto;
+            overflow-x: hidden; }
+            html body .content .screen .container .occasion::-webkit-scrollbar {
+              display: none; }
             html body .content .screen .container .occasion .selection-wrap {
               text-align: center; }
               html body .content .screen .container .occasion .selection-wrap .title {
@@ -1635,7 +1654,10 @@ html {
           html body .content .screen .container .weather {
             padding: 5vh 0;
             height: 100%;
-            overflow: scroll; }
+            overflow: auto;
+            overflow-x: hidden; }
+            html body .content .screen .container .weather::-webkit-scrollbar {
+              display: none; }
             html body .content .screen .container .weather .selection-wrap {
               text-align: center; }
               html body .content .screen .container .weather .selection-wrap .title {
@@ -1859,7 +1881,10 @@ html {
             z-index: 1;
             padding: 0;
             height: 100%;
-            overflow: scroll; }
+            overflow: auto;
+            overflow-x: hidden; }
+            html body .content .screen .container .color::-webkit-scrollbar {
+              display: none; }
             html body .content .screen .container .color .selection-wrap {
               text-align: center; }
               html body .content .screen .container .color .selection-wrap .title {
@@ -2047,7 +2072,10 @@ html {
           html body .content .screen .container .personality {
             padding: 0;
             height: 100%;
-            overflow: scroll; }
+            overflow: auto;
+            overflow-x: hidden; }
+            html body .content .screen .container .personality::-webkit-scrollbar {
+              display: none; }
             html body .content .screen .container .personality .selection-wrap {
               text-align: center; }
               html body .content .screen .container .personality .selection-wrap .title {
@@ -2322,7 +2350,7 @@ html {
           html body .content .screen .container .result {
             padding: 5vh 0;
             height: 100%;
-            overflow: scroll;
+            overflow: auto;
             overflow-x: hidden; }
             html body .content .screen .container .result ::-webkit-scrollbar {
               display: inherit; }
@@ -2812,6 +2840,8 @@ html {
                 overflow: auto;
                 height: 63vh;
                 padding: 0; }
+                html body .content .screen .container .e-cards-container .e-cards-table .table-body::-webkit-scrollbar {
+                  display: none; }
                 html body .content .screen .container .e-cards-container .e-cards-table .table-body .e-card-item,
                 html body .content .screen .container .e-cards-container .e-cards-table .table-body .e-card-new {
                   overflow: hidden;
@@ -3131,7 +3161,10 @@ html {
               html body .content .screen .container .customers-container .customers-table .table-body {
                 padding: 0;
                 height: 55vh;
-                overflow: auto; }
+                overflow: auto;
+                overflow-x: hidden; }
+                html body .content .screen .container .customers-container .customers-table .table-body::-webkit-scrollbar {
+                  display: none; }
                 html body .content .screen .container .customers-container .customers-table .table-body .not-found {
                   line-height: 7vh;
                   display: none; }
@@ -3346,6 +3379,7 @@ html {
                 box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1); }
               html body .content .screen .container .adminColors-container .colors-table .table-body {
                 overflow: scroll;
+                overflow-x: hidden;
                 padding: 0;
                 height: 70vh; }
                 html body .content .screen .container .adminColors-container .colors-table .table-body .color-wrap {

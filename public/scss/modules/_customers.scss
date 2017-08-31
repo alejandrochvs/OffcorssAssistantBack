@@ -127,10 +127,14 @@
             padding: 0;
             height: 55vh;
             overflow: auto;
-            .not-found{
+            overflow-x: hidden;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            .not-found {
                 line-height: 7vh;
                 display: none;
-                &.active{
+                &.active {
                     display: inherit;
                 }
             }

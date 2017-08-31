@@ -1,4 +1,9 @@
 .sizePrimi {
+    overflow: auto;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+        display: none;
+    }
     padding: 5vh 0;
     .selection-wrap {
         text-align: center;

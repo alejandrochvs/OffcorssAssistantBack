@@ -1,7 +1,11 @@
 .personality {
     padding: 0;
     height: 100%;
-    overflow: scroll;
+    overflow: auto;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+        display: none;
+    }
     .selection-wrap {
         text-align: center;
         .title {
@@ -143,7 +147,7 @@
             margin: 0;
             background: $yellow;
             color: white;
-            font-size: 24px; 
+            font-size: 24px;
             padding: 4%;
             cursor: pointer;
             transition: all .3s ease;
@@ -156,7 +160,7 @@
                 user-select: none;
             }
         }
-        &:hover{
+        &:hover {
             opacity: 0.5;
             transform: scale(1.1);
         }
@@ -181,16 +185,16 @@
                     color: $boy;
                 }
             }
-            .prevPerson{
-                &:hover{
-                    i{
+            .prevPerson {
+                &:hover {
+                    i {
                         color: $boy;
                     }
                 }
             }
-            .nextPerson{
-                &:hover{
-                    i{
+            .nextPerson {
+                &:hover {
+                    i {
                         color: $boy;
                     }
                 }
@@ -222,16 +226,16 @@
                     color: $girl;
                 }
             }
-            .prevPerson{
-                &:hover{
-                    i{
+            .prevPerson {
+                &:hover {
+                    i {
                         color: $girl;
                     }
                 }
             }
-            .nextPerson{
-                &:hover{
-                    i{
+            .nextPerson {
+                &:hover {
+                    i {
                         color: $girl;
                     }
                 }
@@ -263,16 +267,16 @@
                     color: $bBoy;
                 }
             }
-            .prevPerson{
-                &:hover{
-                    i{
+            .prevPerson {
+                &:hover {
+                    i {
                         color: $bBoy;
                     }
                 }
             }
-            .nextPerson{
-                &:hover{
-                    i{
+            .nextPerson {
+                &:hover {
+                    i {
                         color: $bBoy;
                     }
                 }
@@ -304,16 +308,16 @@
                     color: $bGirl;
                 }
             }
-            .prevPerson{
-                &:hover{
-                    i{
+            .prevPerson {
+                &:hover {
+                    i {
                         color: $bGirl;
                     }
                 }
             }
-            .nextPerson{
-                &:hover{
-                    i{
+            .nextPerson {
+                &:hover {
+                    i {
                         color: $bGirl;
                     }
                 }
@@ -345,16 +349,16 @@
                     color: $nBoy;
                 }
             }
-            .prevPerson{
-                &:hover{
-                    i{
+            .prevPerson {
+                &:hover {
+                    i {
                         color: $nBoy;
                     }
                 }
             }
-            .nextPerson{
-                &:hover{
-                    i{
+            .nextPerson {
+                &:hover {
+                    i {
                         color: $nBoy;
                     }
                 }
@@ -386,16 +390,16 @@
                     color: $nGirl;
                 }
             }
-            .prevPerson{
-                &:hover{
-                    i{
+            .prevPerson {
+                &:hover {
+                    i {
                         color: $nGirl;
                     }
                 }
             }
-            .nextPerson{
-                &:hover{
-                    i{
+            .nextPerson {
+                &:hover {
+                    i {
                         color: $nGirl;
                     }
                 }
@@ -481,7 +485,7 @@
         .selection-wrap {
             .title {
                 margin-bottom: 0;
-                .text{
+                .text {
                     font-size: 2em;
                     padding-bottom: 2vh;
                 }
@@ -490,21 +494,21 @@
         .personWrap {
             height: 55vh;
             padding: 0;
-            .prevPerson{
-                transition : all .3s ease;
+            .prevPerson {
+                transition: all .3s ease;
                 position: absolute;
-                width : 20%;
+                width: 20%;
                 height: 35%;
                 background: transparent;
                 left: 0;
-                color : white;
-                font-size : 60px;
-                top : 25%;
-                z-index : 0;
-                i{
+                color: white;
+                font-size: 60px;
+                top: 25%;
+                z-index: 0;
+                i {
                     transition: all .3s ease;
                 }
-                &:hover{
+                &:hover {
                     transform: scale(1.25);
                 }
             }
@@ -514,7 +518,7 @@
                 padding: 2.5vh 2.2vw;
                 height: 51vh;
                 display: none;
-                .fa-check{
+                .fa-check {
                     font-size: 40vw;
                 }
                 .background {
@@ -532,33 +536,33 @@
                         }
                     }
                 }
-                &.active{
+                &.active {
                     display: inherit;
                 }
             }
-            .nextPerson{
-                transition : all .3s ease;
+            .nextPerson {
+                transition: all .3s ease;
                 position: absolute;
-                width : 20%;
+                width: 20%;
                 height: 35%;
                 background: transparent;
                 right: 0;
-                color : white;
-                font-size : 60px;
-                top : 25%;
-                z-index : 0;
-                i{
+                color: white;
+                font-size: 60px;
+                top: 25%;
+                z-index: 0;
+                i {
                     transition: all .3s ease;
                 }
-                &:hover{
+                &:hover {
                     transform: scale(1.25);
                 }
             }
         }
-        .continue{
+        .continue {
             margin-top: 2vh;
             border-radius: 8px;
-            h4{
+            h4 {
                 font-size: 18px;
             }
         }
