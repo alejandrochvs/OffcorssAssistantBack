@@ -5,7 +5,7 @@ var router = express.Router();
 var multer = require('multer');
 var storage = multer.diskStorage({
     destination: function (req, file, callback) {
-        callback(null, path.join(__dirname,'../public/IMG/ecards'));
+        callback(null, path.join(__dirname, '../public/IMG/ecards'));
     },
     filename: function (req, file, callback) {
         callback(null, file.originalname);
@@ -17,9 +17,10 @@ var upload = multer({
 router.post('/img', function (req, res) {
     upload(req, res, function (err) {
         if (err) {
-            return console.log(err);
+            res.send(err);
+        } else {
+            res.end(req.file.originalname);
         }
-        res.end(req.file.originalname);
     });
 });
 module.exports = router;
