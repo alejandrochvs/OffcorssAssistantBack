@@ -4,7 +4,9 @@ var workbook = xlsx.readFile('./excel.xlsx');
 var json = []
 var worksheet = workbook.Sheets[workbook.SheetNames[0]];
 var subChaptCell, subChaptVal;
-for (var i = 0; i < (52 - 2); i++) {
+var first = 0;
+var last = 52;
+for (var i = first; i < (last - 2); i++) {
     json[i] = {};
     
     // URL
