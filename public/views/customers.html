@@ -106,7 +106,6 @@
         var innerHeight;
         var tableHeight = $('.customers-table > .table-body').height();
         var appendCustomers = function(object, count, page) {
-            console.log(object);
             $('.customer-item').remove();
             pages = Math.ceil(count / 25);
             $('.customers-nav > .current-page-wrapper > .current-page').val(currentPage);
@@ -275,7 +274,6 @@
                 url: '/db/e-cards/getReferences',
                 data: data,
                 success: function(res) {
-                    console.log(res);
                     $('.references >').remove();
                     for (var i = 0; i < res.url.length; i++) {
                         $('.references').append('<h4 class="col-xs-12">' + res.url[i].path + '</h4>');
