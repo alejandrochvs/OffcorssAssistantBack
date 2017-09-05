@@ -114,10 +114,10 @@ db.once('open', function () {
 
     });
     router.post('/e-cards/match', function (req, res) {
-        eCards.find({
+        eCards.findOne({
             gender: req.body.gender,
             age: req.body.age,
-            occasion: req.body.occasion[0]
+            occasion: { $in : req.body.occasion}
         }).exec(function (err, found) {
             if (err) {
                 res.send(err);
@@ -182,10 +182,10 @@ db.once('open', function () {
         })
     });
     router.post('/e-cards/delete', function (req, res) {
-        var toDelete = req.body.url;
+        var toDelete = req.body.id;
         var fileToDelete = path.join('./public/IMG/ecards/' + toDelete);
         eCards.findOneAndRemove({
-            url: toDelete
+            _id: toDelete
         }, function (err) {
             if (err) {
                 res.send(err);
@@ -200,13 +200,11 @@ db.once('open', function () {
         });
     });
     router.post('/e-cards/getReferences', function (req, res) {
-        eCards.findOne({
-            url: req.body.url
-        }, function (err, docs) {
+        eCards.findById(req.body.id, function (err, doc) {
             if (err) {
                 res.send(err);
             } else {
-                res.send(docs.reference);
+                res.send(doc);
             }
         });
     });

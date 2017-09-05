@@ -1,21 +1,21 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var eCardsSchema = new Schema({
-    url: {
-        type: String,
-        unique: true
-    },
+    url: [
+        {
+            path: {
+                type: String
+            },
+            reference: {
+                type: String
+            }
+        }
+    ],
     gender: {
         type: String,
     },
     age: {
         type: String,
-    },
-    reference: {
-        type: Array,
-    },
-    type: {
-        type: Array,
     },
     color: {
         type: Array,
@@ -26,6 +26,5 @@ var eCardsSchema = new Schema({
     occasion: {
         type: Array,
     }
-    
 });
 module.exports = mongoose.model('e_cards', eCardsSchema);

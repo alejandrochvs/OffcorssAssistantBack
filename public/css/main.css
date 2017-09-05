@@ -3303,7 +3303,7 @@ html {
             position: absolute;
             transition: all .3s ease;
             text-align: center;
-            overflow: scroll;
+            overflow: auto;
             opacity: 1;
             cursor: pointer;
             top: 100%; }
@@ -3325,15 +3325,36 @@ html {
               left: 5%;
               text-align: center;
               border-radius: 5px;
-              cursor: default; }
+              cursor: default;
+              height: 90%;
+              overflow: hidden; }
               html body .content .screen .container .imgViewer .reference-list .title {
                 text-transform: uppercase;
                 padding: 4%; }
                 html body .content .screen .container .imgViewer .reference-list .title h2 {
-                  font-weight: 100; }
+                  font-weight: 100;
+                  padding-bottom: 2vh;
+                  border-bottom: solid 1px #fd0; }
               html body .content .screen .container .imgViewer .reference-list .references {
                 padding: 0;
-                list-style-type: none; }
+                list-style-type: none;
+                height: 75%;
+                overflow: auto;
+                overflow-x: hidden; }
+                html body .content .screen .container .imgViewer .reference-list .references::-webkit-scrollbar {
+                  display: none; }
+                html body .content .screen .container .imgViewer .reference-list .references h4 {
+                  background: #fd0;
+                  margin-top: 0;
+                  padding: 2.5%;
+                  cursor: pointer;
+                  transition: all .3s ease; }
+                  html body .content .screen .container .imgViewer .reference-list .references h4:hover {
+                    background: #ccb100;
+                    transform: scale(1.1); }
+                html body .content .screen .container .imgViewer .reference-list .references ul {
+                  padding: 0;
+                  margin-bottom: 1vh; }
                 html body .content .screen .container .imgViewer .reference-list .references a {
                   color: #e6c700;
                   transition: all .3s ease; }

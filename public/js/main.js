@@ -701,127 +701,128 @@ $(function () {
                     $('.header > .title > .cont').attr('data-var', 'headTitle3');
                     $('.loader > .progress').css('width', '100%');
                     $('.result').addClass(currentClass);
-                    var data = {}
-                    if (gender == "F") {
-                        data.gender = "FEMENINO";
-                    } else {
-                        data.gender = "MASCULINO";
-                    }
-                    if (age == 1) {
-                        data.age = 'PRIMI (0-18M)';
-                    } else if (age == 3) {
-                        data.age = 'BEBE (18M - 5 AÑOS)';
-                    } else if (age == 7) {
-                        data.age = 'NIÑO (5 AÑOS - 13 AÑOS)';
-                    }
-                    data.color = favColor;
                     $('.progress').addClass('loading');
+                    var data = {}
+                    data.color = favColor;
                     data.occasion = occasion;
-                    if (admin) {
-                        data.age = "BEBE (18M - 5 AÑOS)";
-                        data.gender = "FEMENINO";
-                        data.occasion = ['OCASIÓN ESPECIAL'];
+                    if (age == 1) {
+                        data.age = 'NEWBORN'
+                    } else if (age == 3) {
+                        data.age = 'BABY'
+                    } else {
+                        data.age = 'NIÑA/NIÑO'
                     }
+                    if (gender == 'M') {
+                        data.gender = 'BOY';
+                    } else {
+                        data.gender = 'GIRL'
+                    }
+                    if (admin) {
+                        data.age = "BABY";
+                        data.gender = "GIRL";
+                        data.occasion = ['BÁSICOS'];
+                    }
+                    console.log(data);
                     $.ajax({
                         type: "POST",
                         url: "db/e-cards/match",
                         data: data,
                         success: function (res) {
-                            var randIndex = Math.floor(Math.random() * res.length);
-                            var randIndex2 = randIndex + 1;
-                            var randIndex3 = randIndex2 + 1;
-                            if (randIndex2 > res.length - 1) {
-                                randIndex2 = randIndex2 - res.length;
-                            }
-                            if (randIndex3 > res.length - 1) {
-                                randIndex3 = randIndex3 - res.length;
-                            }
-                            $($('.resultIMG')[0]).append('<img class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3" src="IMG/ecards/' + res[randIndex].url + '"/>');
-                            //                            $($('.resultIMG')[1]).append('<img class="col-xs-10 col-xs-offset-1" src="IMG/ecards/' + res[randIndex2].url + '"/>');
-                            //                            $($('.resultIMG')[2]).append('<img class="col-xs-10 col-xs-offset-1" src="IMG/ecards/' + res[randIndex3].url + '"/>');
-                            var dragging = false;
-                            $('.resultIMG').mousedown(function () {
-                                var mouseDownTimer = setInterval(function () {
-                                    dragging = true;
-                                }, 100);
-                                $(this).mouseup(function () {
-                                    clearInterval(mouseDownTimer);
-                                    if (dragging == false) {
-                                        $('.callcenter').click();
-                                    }
-                                    dragging = false;
-                                    $(this).unbind('mouseup');
-                                });
-                            });
-                            $('.input > input').keyup(function (e) {
-                                if (e.keyCode == 13) {
-                                    $('.call-modal > .button').click();
+                            if (typeof res == 'object') {
+                                for (var i = 0; i < res.url.length; i++) {
+                                    $('.result-wrapper').append('<div class="resultIMG"><img class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3" src="IMG/ecards/' + res.url[i].path + '"/></div>');
                                 }
-                            })
-                            $('.result > .selection-wrap').remove();
-                            $('.progress').removeClass('loading');
-                            /*$('.result-wrapper').slick({
-                                centerMode: true,
-                                centerPadding: '60px',
-                                slidesToShow: 1,
-                                slidesToScroll: 0,
-                                autoplaySpeed: 2000,
-                                responsive: [{
-                                    breakpoint: 768,
-                                    settings: {
-                                        centerMode: true,
-                                        centerPadding: '40px',
-                                        slidesToShow: 1,
-                                        slidesToScroll: 1
-                                    }
-                                }]
-                            });*/
-                            data.bottomSize = bottomSize;
-                            data.topSize = topSize;
-                            data.shoeSize = shoeSize;
-                            data.occasion = occasion;
-                            data.weather = weather;
-                            data.personality = personality;
-                            data.e_card = [res[randIndex].url, res[randIndex2].url, res[randIndex3].url];
-                            data.name = name;
-                            $('.call-modal > .button').click(function () {
-                                data.phone = $('.call-modal > .input > input').val();
-                                var regex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-                                if (data.phone.match(regex)) {
-                                    var regexToConv = /^[2-9]\d{2}[2-9]\d{2}\d{4}$/;
-                                    data.phone = data.phone.replace(/\D/g, "");
-                                    $('.progress').addClass('loading');
-                                    $.ajax({
-                                        url: '/db/customers/register',
-                                        type: 'POST',
-                                        data: data,
-                                        success: function (res) {
-                                            $('.input > input').unbind();
-                                            $('.call-modal > .input').removeClass('wrong');
-                                            $('.call-modal > .input > input').tooltip('hide');
-                                            $('.call-modal').addClass('success');
-                                            $.ajax({
-                                                type: 'GET',
-                                                url: 'https://webapp.contentobps.com/hermeco/hermeco_ventas_2.php?data=' + data.phone + '-AsistenteVirtual',
-                                                dataType: 'jsonp',
-                                                crossDomain: true,
-                                                success: function (res) {
-                                                    $('.progress').removeClass('loading');
-                                                }
-                                            });
-                                            $('.progress').removeClass('loading');
+                                var dragging = false;
+                                $('.resultIMG').mousedown(function () {
+                                    var mouseDownTimer = setInterval(function () {
+                                        dragging = true;
+                                    }, 100);
+                                    $(this).mouseup(function () {
+                                        clearInterval(mouseDownTimer);
+                                        if (dragging == false) {
+                                            $('.callcenter').click();
                                         }
+                                        dragging = false;
+                                        $(this).unbind('mouseup');
                                     });
-                                } else {
-                                    $('.call-modal > .input > input').addClass('wrong');
-                                    $('.call-modal > .input > input').tooltip({
-                                        title: 'Formato incorrecto.',
-                                        trigger: 'manual',
-                                        placement: 'top'
-                                    });
-                                    $('.call-modal > .input > input').tooltip('show');
-                                }
-                            });
+                                });
+                                $('.input > input').keyup(function (e) {
+                                    if (e.keyCode == 13) {
+                                        $('.call-modal > .button').click();
+                                    }
+                                })
+                                $('.result > .selection-wrap').remove();
+                                $('.progress').removeClass('loading');
+                                $('.result-wrapper').slick({
+                                    centerMode: true,
+                                    centerPadding: '20vw',
+                                    slidesToShow: 1,
+                                    slidesToScroll: 0,
+                                    autoplaySpeed: 2000,
+                                    autoplay : true,
+                                    infinite : true,
+                                    responsive: [{
+                                        breakpoint: 768,
+                                        settings: {
+                                            centerMode: true,
+                                            centerPadding: '40px',
+                                            slidesToShow: 1,
+                                            slidesToScroll: 1
+                                        }
+                                }]
+                                });
+                                data.bottomSize = bottomSize;
+                                data.topSize = topSize;
+                                data.shoeSize = shoeSize;
+                                data.occasion = occasion;
+                                data.weather = weather;
+                                data.personality = personality;
+                                data.e_card = res._id;
+                                data.name = name;
+                                $('.call-modal > .button').click(function () {
+                                    data.phone = $('.call-modal > .input > input').val();
+                                    var regex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+                                    if (data.phone.match(regex)) {
+                                        var regexToConv = /^[2-9]\d{2}[2-9]\d{2}\d{4}$/;
+                                        data.phone = data.phone.replace(/\D/g, "");
+                                        $('.progress').addClass('loading');
+                                        $.ajax({
+                                            url: '/db/customers/register',
+                                            type: 'POST',
+                                            data: data,
+                                            success: function (res) {
+                                                $('.input > input').unbind();
+                                                $('.call-modal > .input').removeClass('wrong');
+                                                $('.call-modal > .input > input').tooltip('hide');
+                                                $('.call-modal').addClass('success');
+                                                $.ajax({
+                                                    type: 'GET',
+                                                    url: 'https://webapp.contentobps.com/hermeco/hermeco_ventas_2.php?data=' + data.phone + '-AsistenteVirtual',
+                                                    dataType: 'jsonp',
+                                                    crossDomain: true,
+                                                    success: function (res) {
+                                                        $('.progress').removeClass('loading');
+                                                    }
+                                                });
+                                                $('.progress').removeClass('loading');
+                                            }
+                                        });
+                                    } else {
+                                        $('.call-modal > .input > input').addClass('wrong');
+                                        $('.call-modal > .input > input').tooltip({
+                                            title: 'Formato incorrecto.',
+                                            trigger: 'manual',
+                                            placement: 'top'
+                                        });
+                                        $('.call-modal > .input > input').tooltip('show');
+                                    }
+                                });
+                            }
+                            else{
+                                $('.result-wrapper').html('<h1 class="col-xs-12 text-center">No encontramos ninguna e-card.</h1>');
+                            }
+                            $('.loader > .progress').removeClass('loading');
+
                         }
                     });
                 } else if (current === 'login') {

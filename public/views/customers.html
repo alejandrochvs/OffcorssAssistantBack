@@ -106,6 +106,7 @@
         var innerHeight;
         var tableHeight = $('.customers-table > .table-body').height();
         var appendCustomers = function(object, count, page) {
+            console.log(object);
             $('.customer-item').remove();
             pages = Math.ceil(count / 25);
             $('.customers-nav > .current-page-wrapper > .current-page').val(currentPage);
@@ -118,8 +119,21 @@
             $('.customers-table > .table-body > .not-found.active').removeClass('active');
 
             for (var i = 0; i < object.length; i++) {
-                $('.table-body').append('<div class="col-xs-12 customer-item"></div>');
-                $('.table-body > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-img"><img class="col-xs-12" src="../IMG/ecards/' + object[i].e_card[0] + '"/><img class="col-xs-12" src="../IMG/ecards/' + object[i].e_card[1] + '"/><img class="col-xs-12" src="../IMG/ecards/' + object[i].e_card[2] + '"/></div>');
+                $('.table-body').append('<div class="col-xs-12 customer-item" data-e_card="' + object[i].e_card + '"></div>');
+                $('.table-body > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-img"></div>');
+                (function(index) {
+                    $.ajax({
+                        type: 'POST',
+                        url: 'db/e-cards/getReferences',
+                        data: {
+                            id: object[i].e_card
+                        },
+                        success: function(res) {
+                            $($('.customer-item')[index]).find('.customer-img').append('<img class="col-xs-12" src="../IMG/ecards/' + res.url[0].path + '"/>');
+
+                        }
+                    })
+                })($('.customer-item:last-child').index() - 1)
                 $('.customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-name"><div class="col-xs-12">' + object[i].name + '</div></div>');
                 $('.customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-gender"><div class="col-xs-12">' + object[i].gender + '</div></div>');
                 $('.customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-age"><div class="col-xs-12">' + object[i].age + '</div></div>');
@@ -144,34 +158,6 @@
                     $('.customer-item:last-child > .customer-desc:last-child').append('<div class="col-xs-12">' + object[i].occasion[j] + '</div>');
                 }
             }
-            $('.customer-item > .customer-img').slick({
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplay: true,
-                arrows: false,
-                centerMode: true,
-                centerPadding: '0px',
-                adaptiveHeight: true,
-                infinite: true,
-                initialSlide: 1,
-                autoplaySpeed: 100
-            });
-            var slickInterval = setInterval(function() {
-                $('.table-body > .customer-item > .customer-img').slick('unslick');
-                $('.table-body > .customer-item > .customer-img').slick({
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    autoplay: true,
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '0px',
-                    adaptiveHeight: true,
-                    infinite: true,
-                    initialSlide: 1,
-                    autoplaySpeed: 2000
-                });
-                clearInterval(slickInterval);
-            }, 300)
             $('.customer-item').click(function() {
                 if (!$(this).hasClass('active')) {
                     $('.customer-item.active').click();
@@ -195,10 +181,10 @@
                 innerHeight = ((object.length - 1) * ($('.customer-item').height() - 1)) + $(this).height();
                 updateScroll(innerHeight);
             })
-            $('.customer-item > .customer-img > .slick-list > .slick-track > img').click(function() {
-                if ($(this).parent().parent().parent().parent().hasClass('active')) {
-                    loadImgToViewer($(this).attr('src'));
-                    $(this).parent().parent().parent().parent().click();
+            $('.customer-item > .customer-img ').click(function() {
+                if ($(this).parent().hasClass('active')) {
+                    loadImgToViewer($(this).parent().attr('data-e_card'));
+                    $(this).parent().click();
                 }
             });
 
@@ -279,24 +265,32 @@
                 $(this).removeClass('active');
             }
         });
-        var loadImgToViewer = function(url) {
-            var dataUrl = url.split('/');
-            dataUrl = dataUrl[dataUrl.length - 1];
+        var loadImgToViewer = function(id) {
             var data = {
-                url: dataUrl
+                id: id
             }
             $('.loader > .progress').addClass('loading');
             $.ajax({
                 type: "POST",
                 url: '/db/e-cards/getReferences',
                 data: data,
-                success: function(refRes) {
-                    $('.references > a').remove();
-                    for (var i = 0; i < refRes.length; i++) {
-                        $('.references').append('<a href="http://www.offcorss.com/' + refRes[i] + '" target="_blank"><li class="reference">' + refRes[i] + '</li></a>')
+                success: function(res) {
+                    console.log(res);
+                    $('.references >').remove();
+                    for (var i = 0; i < res.url.length; i++) {
+                        $('.references').append('<h4 class="col-xs-12">' + res.url[i].path + '</h4>');
+                        $('.references').append('<ul class="col-xs-12 reference-' + i + '"></ul>');
+                        for (var j = 0; j < res.url[i].reference.split(', ').length; j++) {
+                            $('.reference-' + i).append('<a class="col-xs-12" target="_blank" href="http://www.offcorss.com/' + res.url[i].reference.split(', ')[j] + '">' + res.url[i].reference.split(', ')[j] + '</a>');
+                        }
                     }
+                    $('.references > h4').click(function() {
+                        $('.references > h4.active').removeClass('active');
+                        $(this).addClass('active');
+                        $('.imgViewer > img').attr('src', '/img/ecards/' + $(this).html());
+                    })
+                    $($('.references > h4')[0]).click();
                     $('.imgViewer').toggleClass('active');
-                    $('.imgViewer > img').attr('src', url);
                     $('.loader > .progress').removeClass('loading');
                 }
             })
