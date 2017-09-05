@@ -722,6 +722,7 @@ $(function () {
                         data.gender = "GIRL";
                         data.occasion = ['BÁSICOS'];
                     }
+                    console.log(data);
                     $.ajax({
                         type: "POST",
                         url: "db/e-cards/match",
