@@ -114,10 +114,12 @@ db.once('open', function () {
 
     });
     router.post('/e-cards/match', function (req, res) {
-        eCards.findOne({
+        eCards.find({
             gender: req.body.gender,
             age: req.body.age,
-            occasion: { $in : req.body.occasion}
+            occasion: { $in : req.body.occasion},
+            weather: { $in : req.body.weather}
+            
         }).exec(function (err, found) {
             if (err) {
                 res.send(err);

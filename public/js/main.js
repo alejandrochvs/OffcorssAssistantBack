@@ -494,7 +494,7 @@ $(function () {
                     $('.loader > .progress').css('width', '40%');
                     if (currentClass == 'nBoy' || currentClass == 'nGirl') {
                         $('.background[data-occasion="PLAYA"]').addClass('hidden');
-                        $($('.background')[3]).find('.cont').css('background-image', 'url(../IMG/occasions/ocasiones-5.jpg)');
+                        $($('.background')[3]).find('.cont').css('background-image', 'url(../IMG/occasions/ocasiones-4.jpg)');
                         $('.occasions > .background:nth-child(3').removeClass('col-md-offset-2').addClass('col-md-offset-3')
                     }
                     if (occasion) {
@@ -710,17 +710,19 @@ $(function () {
                     } else if (age == 3) {
                         data.age = 'BABY'
                     } else {
-                        data.age = 'NIÑA/NIÑO'
+                        data.age = 'NIÑA-NIÑO'
                     }
                     if (gender == 'M') {
                         data.gender = 'BOY';
                     } else {
                         data.gender = 'GIRL'
                     }
+                    data.weather = [weather];
                     if (admin) {
                         data.age = "BABY";
-                        data.gender = "GIRL";
-                        data.occasion = ['BÁSICOS'];
+                        data.gender = "BOY";
+                        data.occasion = ['DÍA A DÍA','CASUAL','DEPORTIVA','TIME TO SLEEP','OCASIÓN ESPECIAL'];
+                        data.weather = ['TEMPLADO','FRÍO','CALIENTE'];
                     }
                     console.log(data);
                     $.ajax({
@@ -728,6 +730,9 @@ $(function () {
                         url: "db/e-cards/match",
                         data: data,
                         success: function (res) {
+                            console.log(res);
+                            var randIndex = Math.floor(Math.random() * res.length);
+                            res = res[randIndex];
                             if (typeof res == 'object') {
                                 for (var i = 0; i < res.url.length; i++) {
                                     $('.result-wrapper').append('<div class="resultIMG"><img class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3" src="IMG/ecards/' + res.url[i].path + '"/></div>');
@@ -759,8 +764,8 @@ $(function () {
                                     slidesToShow: 1,
                                     slidesToScroll: 0,
                                     autoplaySpeed: 2000,
-                                    autoplay : true,
-                                    infinite : true,
+                                    autoplay: true,
+                                    infinite: true,
                                     responsive: [{
                                         breakpoint: 768,
                                         settings: {
@@ -817,9 +822,8 @@ $(function () {
                                         $('.call-modal > .input > input').tooltip('show');
                                     }
                                 });
-                            }
-                            else{
-                                $('.result-wrapper').html('<h1 class="col-xs-12 text-center">No encontramos ninguna e-card.</h1>');
+                            } else {
+                                $('.result-wrapper').html('<h1 class="col-xs-6 col-xs-offset-3 text-center">Hola, encontramos el look perfecto para ' + name + ' ya sabemos cuales son tus gustos y hay un asesor esperando para ayudarte con la compra. Dale click al botón de <br><b>"ir a comprar"</b> y te llamaremos.</h1>');
                             }
                             $('.loader > .progress').removeClass('loading');
 
@@ -1243,7 +1247,7 @@ $(function () {
         }
 
     }
-    if (localStorage.current) {
+    /*if (localStorage.current) {
         current = localStorage.current;
         gender = localStorage.gender;
         name = localStorage.name;
@@ -1275,21 +1279,22 @@ $(function () {
         }
         next(current);
         $('.progress').removeClass('loading');
-    } else {
-        if (admin) {
-            if (localStorage.admin) {
-                loadAdmin();
-                current = divs[0];
-            } else {
-                currentIndex = -10;
-                current = 'login';
-            }
-        } else {
+    }*/
+    //    else {
+    if (admin) {
+        if (localStorage.admin) {
+            loadAdmin();
             current = divs[0];
+        } else {
+            currentIndex = -10;
+            current = 'login';
         }
-        next(current);
-        $('.progress').removeClass('loading');
+    } else {
+        current = divs[0];
     }
+    next(current);
+    $('.progress').removeClass('loading');
+    //    }
     $('#delete-me').remove();
     $('.back').click(function () {
         if (current === divs[5]) {
@@ -1333,3 +1338,17 @@ $(function () {
         localStorage.clear();
     });
 });
+
+var CO = ['CASUAL', 'DEPORTIVA', 'DIA A DIA', 'OCASION ESPECIAL', 'TIME TO SLEEP', 'VACACIONES EN LA PLAYA'];
+var currentOC = {
+    boy: {
+        newborn: [CO[5], CO[2], CO[4]],
+        baby: [CO[1],CO[2],CO[0],CO[5]],
+        nino : [CO[1],CO[2],CO[0],CO[5]]
+    },
+    girl : {
+        newborn: [CO[5], CO[2], CO[4]],
+        baby : [CO[1],CO[2],CO[0],CO[5]],
+        nino : [CO[1],CO[2],CO[0],CO[5]]
+    }
+}
