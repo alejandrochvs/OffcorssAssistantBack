@@ -16,7 +16,8 @@ html {
   html #editing {
     text-align: center;
     height: 50%;
-    top: 25%; }
+    top: 25%;
+    background: transparent; }
   html body {
     user-select: none;
     font-family: FrontageC;
@@ -1368,36 +1369,12 @@ html {
                     html body .content .screen .container .occasion .occasions .background .cont:hover .title h3, html body .content .screen .container .occasion .occasions .background .cont.active .title h3 {
                       line-height: 50vh;
                       font-size: 12px; }
-              html body .content .screen .container .occasion .occasions .background:nth-child(1) .cont {
-                background-image: url(../IMG/occasions/ocasiones-1.jpg); }
-                html body .content .screen .container .occasion .occasions .background:nth-child(1) .cont .title h3 {
-                  color: #F2A055; }
-              html body .content .screen .container .occasion .occasions .background:nth-child(2) .cont {
-                background-image: url(../IMG/occasions/ocasiones-2.jpg); }
-                html body .content .screen .container .occasion .occasions .background:nth-child(2) .cont .title h3 {
-                  color: #75AE9B; }
-              html body .content .screen .container .occasion .occasions .background:nth-child(3) .cont {
-                background-image: url(../IMG/occasions/ocasiones-3.jpg); }
-                html body .content .screen .container .occasion .occasions .background:nth-child(3) .cont .title h3 {
-                  color: #464C51; }
-              html body .content .screen .container .occasion .occasions .background:nth-child(4) .cont {
-                background-image: url(../IMG/occasions/ocasiones-4.jpg); }
-                html body .content .screen .container .occasion .occasions .background:nth-child(4) .cont .title h3 {
-                  color: #3AB2BC; }
-              html body .content .screen .container .occasion .occasions .background:nth-child(5) .cont {
-                background-image: url(../IMG/occasions/ocasiones-5.jpg); }
-                html body .content .screen .container .occasion .occasions .background:nth-child(5) .cont .title h3 {
-                  color: #A79E98; }
-              html body .content .screen .container .occasion .occasions .background:nth-child(6) .cont {
-                background-image: url(../IMG/occasions/ocasiones-6.jpg); }
-                html body .content .screen .container .occasion .occasions .background:nth-child(6) .cont .title h3 {
-                  color: #5A6069; }
-              html body .content .screen .container .occasion .occasions .background .cont.active img {
-                opacity: 1; }
-              html body .content .screen .container .occasion .occasions .background .cont.active .title .occasion-desc {
-                color: white; }
-              html body .content .screen .container .occasion .occasions .background .cont.active .title h3 {
-                color: white; }
+                html body .content .screen .container .occasion .occasions .background .cont.active img {
+                  opacity: 1; }
+                html body .content .screen .container .occasion .occasions .background .cont.active .title .occasion-desc {
+                  color: white; }
+                html body .content .screen .container .occasion .occasions .background .cont.active .title h3 {
+                  color: white !important; }
             html body .content .screen .container .occasion .occasions i {
               transition: all .3s ease; }
             html body .content .screen .container .occasion .occasionsBtn {

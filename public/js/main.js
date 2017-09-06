@@ -477,6 +477,7 @@ $(function () {
                         }
                     });
                 } else if (current === divs[5]) {
+                    occasion = [];
                     $('body > .content').css({
                         'background-image': 'url(../IMG/fondo-2.jpg)',
                         'background-size': 'cover'
@@ -491,7 +492,6 @@ $(function () {
                         title_var: 'occasionName3',
                         desc: 'Encuentra prendas únicas para crear tus looks ideales, llenos de detalles, texturas y moda.',
                         img: 'ocasiones-m-2.jpg',
-
                         query: 'CASUAL',
                         color: '#75AE9B'
           }, {
@@ -499,7 +499,6 @@ $(function () {
                         title_var: 'occasionName6',
                         desc: 'Practica tus deportes favoritos con le tecnología y comodidad de nuestras prendas de OC Sports.',
                         img: 'ocasiones-m-6.jpg',
-
                         query: 'DEPORTIVA',
                         color: '#464C51'
 }, {
@@ -508,13 +507,12 @@ $(function () {
                         desc: 'Prendas versátiles y fáciles de combinar, indispensables para llenar todos tus días de diversión y comodidad.',
                         img: 'ocasiones-m-3.jpg',
                         query: 'DÍA A DÍA',
-                        color: '#3AB2BC'
+                        color: '#5A6069'
 }, {
                         title: occasionName5,
                         title_var: 'occasionName5',
                         desc: 'Capturamos la magia de los momentos especiales, y la convertimos en una colección llena de detalles, actitud formal, diversión y comodidad.',
                         img: 'ocasiones-m-5.jpg',
-
                         query: 'OCASIONES ESPECIALES',
                         color: '#A79E98'
 }, {
@@ -529,9 +527,8 @@ $(function () {
                         title_var: 'occasionName4',
                         desc: 'Sonidos, texturas y colores para estimular a tu bebé con las prendas de ABC Early Learning..',
                         img: 'ocasiones-m-4.jpg',
-
                         query: 'VACIONES EN LA PLAYA',
-                        color: '#5A6069'
+                        color: '#3AB2BC'
 }];
                     var currentOC = {
                         boy: {
@@ -554,36 +551,37 @@ $(function () {
                             for (var r = 0; r < currentOC.boy.newborn.length; r++) {
                                 renderOccasionDiv(currentOC.boy.newborn[r])
                             }
-                            $($('.background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.boy.newborn.length * 2)) / 2);
+                            $($('.occasions > .background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.boy.newborn.length * 2)) / 2);
                         } else if (age == 3) {
                             for (var r = 0; r < currentOC.boy.baby.length; r++) {
                                 renderOccasionDiv(currentOC.boy.baby[r], 12 / currentOC.boy.baby.length)
                             }
-                            $($('.background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.boy.baby.length * 2)) / 2);
+                            $($('.occasions > .background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.boy.baby.length * 2)) / 2);
                         } else if (age == 7) {
                             for (var r = 0; r < currentOC.boy.nino.length; r++) {
                                 renderOccasionDiv(currentOC.boy.nino[r], 12 / currentOC.boy.nino.length)
                             }
-                            $($('.background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.boy.nino.length * 2)) / 2);
+                            $($('.occasions > .background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.boy.nino.length * 2)) / 2);
                         }
                     } else {
                         if (age == 1) {
                             for (var r = 0; r < currentOC.girl.newborn.length; r++) {
                                 renderOccasionDiv(currentOC.girl.newborn[r], 12 / currentOC.girl.newborn.length)
                             }
-                            $($('.background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.girl.newborn.length * 2)) / 2);
+                            $($('.occasions > .background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.girl.newborn.length * 2)) / 2);
                         } else if (age == 3) {
                             for (var r = 0; r < currentOC.girl.baby.length; r++) {
                                 renderOccasionDiv(currentOC.girl.baby[r], 12 / currentOC.girl.baby.length)
                             }
-                            $($('.background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.girl.baby.length * 2)) / 2);
+                            $($('.occasions > .background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.girl.baby.length * 2)) / 2);
                         } else if (age == 7) {
                             for (var r = 0; r < currentOC.girl.nino.length; r++) {
                                 renderOccasionDiv(currentOC.girl.nino[r], 12 / currentOC.girl.nino.length)
                             }
-                            $($('.background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.girl.nino.length * 2)) / 2);
+                            $($('.occasions > .background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.girl.nino.length * 2)) / 2);
                         }
                     }
+                    $($('.occasions > .background')[0]).addClass('active');
                     $('.occasion').addClass(currentClass);
                     $('.background').click(function () {
                         var tempOccasion = $(this).attr('data-occasion');
@@ -664,43 +662,6 @@ $(function () {
                         });
                         $('.color-wrap:nth-child(1)').click();
                     });
-                } else if (current === "looks") {
-                    $('body > .content').css({
-                        'background-image': 'url(../IMG/fondo-2.jpg)',
-                        'background-size': 'cover'
-                    });
-                    $('.header > .title > .cont').html(headTitle2);
-                    $('.header > .title > .cont').attr('data-var', 'headTitle2');
-                    if (looks.length > 0) {
-                        var j;
-                        $('.continueLooks').removeClass('transparent');
-                        for (j = 0; j < looks.length; j++) {
-                            $($('.looksWrap > .background')[looks[j]]).addClass('active');
-                            $($('.looksWrap > .background')[looks[j]]).find('.fa').addClass('fa-heart').removeClass('fa-heart-o');
-                        }
-                    }
-                    $('.loader > .progress').css('width', '60%');
-                    $('.background').click(function () {
-                        $(this).toggleClass('active');
-                        $($(this).find('.fa')[0]).toggleClass('fa-heart fa-heart-o');
-                        if ($(this).hasClass('active')) {
-                            looks.push($(this).attr('data-look'));
-                        } else {
-                            looks.splice(looks.indexOf($(this).attr('data-look')), 1);
-                        }
-                        if ($('.looks > .looksWrap > .active').length > 0) {
-                            $('.continueLooks').removeClass('transparent');
-                        } else {
-                            $('.continueLooks').addClass('transparent');
-                        }
-                    });
-                    $('.looks > .continueLooks').click(function () {
-                        if (!($(this).hasClass('transparent'))) {
-                            localStorage.setItem('looks', JSON.stringify(looks));
-                            next(divs[8]);
-                        }
-                    });
-                    $('.looks').addClass(currentClass);
                 } else if (current === divs[8]) {
                     $('body > .content').css({
                         'background-image': 'url(../IMG/fondo-3.jpg)',

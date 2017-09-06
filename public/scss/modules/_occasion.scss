@@ -97,8 +97,6 @@
                         }
                     }
                 }
-            }
-            .cont {
                 &.active {
                     img {
                         opacity: 1;
@@ -108,7 +106,7 @@
                             color: white;
                         }
                         h3 {
-                            color: white;
+                            color: white !important;
                         }
                     }
                 }
