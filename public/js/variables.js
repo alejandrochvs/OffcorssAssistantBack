@@ -13,7 +13,7 @@ var ageTitle = '¿Cuántos años tiene <n>Isaac</n>?';
 var sizeTitle = '¿Qué talla es <n>Alejo</n> en superiores inferiores y zapatos?<br><a>GUIA DE TALLAS<i class="fa fa-exclamation hidden-xs" aria-hidden="true"></i><i class="fa fa-exclamation hidden-xs" aria-hidden="true"></i></a>';
 var sizePrimiTitle = '¿Cuál es la talla de <n></n>?<br><a>GUIA DE TALLAS</a>';
 var occasionsTitle = '¿Para qué ocasión necesita <n></n> su look?';
-var occasionName1 = 'ESTIMULACIÓN';
+var occasionName1 = 'TIME TO SLEEP';
 var occasionName2 = 'BÁSICOS DÍA A DÍA';
 var occasionName3 = 'MODA';
 var occasionName4 = 'VACACIONES EN LA PLAYA';

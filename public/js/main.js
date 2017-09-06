@@ -484,30 +484,107 @@ $(function () {
                     $('.header > .title > .cont').html(headTitle2);
                     $('.header > .title > .cont').attr('data-var', 'headTitle2');
                     $('.occasion > .selection-wrap > .title > .text-editable').html(occasionsTitle);
-                    $('.occasions > .background:nth-child(2) > .cont > .title > h3').html(occasionName1);
-                    $('.occasions > .background:nth-child(3) > .cont > .title > h3').html(occasionName2);
-                    $('.occasions > .background:nth-child(4) > .cont > .title > h3').html(occasionName3);
-                    $('.occasions > .background:nth-child(5) > .cont > .title > h3').html(occasionName4);
-                    $('.occasions > .background:nth-child(6) > .cont > .title > h3').html(occasionName5);
-                    $('.occasions > .background:nth-child(7) > .cont > .title > h3').html(occasionName6);
                     $('.occasion > .occasionsBtn').html(occasionBtn);
                     $('.loader > .progress').css('width', '40%');
-                    if (currentClass == 'nBoy' || currentClass == 'nGirl') {
-                        $('.background[data-occasion="PLAYA"]').addClass('hidden');
-                        $($('.background')[3]).find('.cont').css('background-image', 'url(../IMG/occasions/ocasiones-4.jpg)');
-                        $('.occasions > .background:nth-child(3').removeClass('col-md-offset-2').addClass('col-md-offset-3')
+                    var CO = [{
+                        title: occasionName3,
+                        title_var: 'occasionName3',
+                        desc: 'Encuentra prendas únicas para crear tus looks ideales, llenos de detalles, texturas y moda.',
+                        img: 'ocasiones-m-2.jpg',
+
+                        query: 'CASUAL',
+                        color: '#75AE9B'
+          }, {
+                        title: occasionName6,
+                        title_var: 'occasionName6',
+                        desc: 'Practica tus deportes favoritos con le tecnología y comodidad de nuestras prendas de OC Sports.',
+                        img: 'ocasiones-m-6.jpg',
+
+                        query: 'DEPORTIVA',
+                        color: '#464C51'
+}, {
+                        title: occasionName2,
+                        title_var: 'occasionName2',
+                        desc: 'Prendas versátiles y fáciles de combinar, indispensables para llenar todos tus días de diversión y comodidad.',
+                        img: 'ocasiones-m-3.jpg',
+                        query: 'DÍA A DÍA',
+                        color: '#3AB2BC'
+}, {
+                        title: occasionName5,
+                        title_var: 'occasionName5',
+                        desc: 'Capturamos la magia de los momentos especiales, y la convertimos en una colección llena de detalles, actitud formal, diversión y comodidad.',
+                        img: 'ocasiones-m-5.jpg',
+
+                        query: 'OCASIONES ESPECIALES',
+                        color: '#A79E98'
+}, {
+                        title: occasionName1,
+                        title_var: 'occasionName1',
+                        desc: 'Sonidos, texturas y colores para estimular a tu bebé con las prendas de ABC Early Learning..',
+                        img: 'ocasiones-m-1.jpg',
+                        query: 'TIME TO SLEEP',
+                        color: '#5A6069'
+}, {
+                        title: occasionName4,
+                        title_var: 'occasionName4',
+                        desc: 'Sonidos, texturas y colores para estimular a tu bebé con las prendas de ABC Early Learning..',
+                        img: 'ocasiones-m-4.jpg',
+
+                        query: 'VACIONES EN LA PLAYA',
+                        color: '#5A6069'
+}];
+                    var currentOC = {
+                        boy: {
+                            newborn: [CO[5], CO[2], CO[4]],
+                            baby: [CO[1], CO[2], CO[0], CO[5]],
+                            nino: [CO[1], CO[2], CO[0], CO[5]]
+                        },
+                        girl: {
+                            newborn: [CO[5], CO[2], CO[4]],
+                            baby: [CO[1], CO[2], CO[0], CO[5]],
+                            nino: [CO[1], CO[2], CO[0], CO[5]]
+                        }
                     }
-                    if (occasion) {
-                        if (occasion.length > 0) {
-                            var i;
-                            for (i = 0; i < occasion.length; i++) {
-                                $('[data-occasion="' + occasion[i] + '"]').find('.cont').addClass('active');
-                                $('.occasionsBtn').removeClass('disabled');
+                    var renderOccasionDiv = function (occasion) {
+                        var occasionDiv = '<div data-occasion="' + occasion.query + '" class="col-xs-8 col-xs-offset-2 col-md-2 col-md-offset-0 background"><div class="col-xs-12 cont" style="background-image : url(../IMG/occasions/' + occasion.img + ')"><img src="../IMG/occasions/check.svg" alt=""><div class="col-xs-12 img"></div><div class="col-xs-12 title"><div class="col-xs-12 occasion-desc">' + occasion.desc + '</div><h3 class="text-editable" data-var="' + occasion.title_var + '" style="color : ' + occasion.color + '">' + occasion.title + '</h3></div></div></div>';
+                        $('.occasions').append(occasionDiv);
+                    }
+                    if (gender == 'M') {
+                        if (age == 1) {
+                            for (var r = 0; r < currentOC.boy.newborn.length; r++) {
+                                renderOccasionDiv(currentOC.boy.newborn[r])
                             }
+                            $($('.background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.boy.newborn.length * 2)) / 2);
+                        } else if (age == 3) {
+                            for (var r = 0; r < currentOC.boy.baby.length; r++) {
+                                renderOccasionDiv(currentOC.boy.baby[r], 12 / currentOC.boy.baby.length)
+                            }
+                            $($('.background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.boy.baby.length * 2)) / 2);
+                        } else if (age == 7) {
+                            for (var r = 0; r < currentOC.boy.nino.length; r++) {
+                                renderOccasionDiv(currentOC.boy.nino[r], 12 / currentOC.boy.nino.length)
+                            }
+                            $($('.background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.boy.nino.length * 2)) / 2);
+                        }
+                    } else {
+                        if (age == 1) {
+                            for (var r = 0; r < currentOC.girl.newborn.length; r++) {
+                                renderOccasionDiv(currentOC.girl.newborn[r], 12 / currentOC.girl.newborn.length)
+                            }
+                            $($('.background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.girl.newborn.length * 2)) / 2);
+                        } else if (age == 3) {
+                            for (var r = 0; r < currentOC.girl.baby.length; r++) {
+                                renderOccasionDiv(currentOC.girl.baby[r], 12 / currentOC.girl.baby.length)
+                            }
+                            $($('.background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.girl.baby.length * 2)) / 2);
+                        } else if (age == 7) {
+                            for (var r = 0; r < currentOC.girl.nino.length; r++) {
+                                renderOccasionDiv(currentOC.girl.nino[r], 12 / currentOC.girl.nino.length)
+                            }
+                            $($('.background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.girl.nino.length * 2)) / 2);
                         }
                     }
                     $('.occasion').addClass(currentClass);
-                    $('.background')[0].remove();
                     $('.background').click(function () {
                         var tempOccasion = $(this).attr('data-occasion');
                         if (occasion.indexOf(tempOccasion) >= 0) {
@@ -521,10 +598,6 @@ $(function () {
                         }
                         $(this).find('.cont').toggleClass('active');
                     });
-                    if (currentClass === 'nBoy' || currentClass === 'nGirl') {
-                        $('.background:nth-child(1)').addClass('hidden');
-                        $($('.occasions > .background')[5]).addClass('hidden');
-                    }
                     $('.occasionsBtn').click(function () {
                         if (occasion.length > 0) {
                             localStorage.occasion = JSON.stringify(occasion);
@@ -721,8 +794,8 @@ $(function () {
                     if (admin) {
                         data.age = "BABY";
                         data.gender = "BOY";
-                        data.occasion = ['DÍA A DÍA','CASUAL','DEPORTIVA','TIME TO SLEEP','OCASIÓN ESPECIAL'];
-                        data.weather = ['TEMPLADO','FRÍO','CALIENTE'];
+                        data.occasion = ['DÍA A DÍA', 'CASUAL', 'DEPORTIVA', 'TIME TO SLEEP', 'OCASIÓN ESPECIAL'];
+                        data.weather = ['TEMPLADO', 'FRÍO', 'CALIENTE'];
                     }
                     console.log(data);
                     $.ajax({
@@ -1338,17 +1411,3 @@ $(function () {
         localStorage.clear();
     });
 });
-
-var CO = ['CASUAL', 'DEPORTIVA', 'DIA A DIA', 'OCASION ESPECIAL', 'TIME TO SLEEP', 'VACACIONES EN LA PLAYA'];
-var currentOC = {
-    boy: {
-        newborn: [CO[5], CO[2], CO[4]],
-        baby: [CO[1],CO[2],CO[0],CO[5]],
-        nino : [CO[1],CO[2],CO[0],CO[5]]
-    },
-    girl : {
-        newborn: [CO[5], CO[2], CO[4]],
-        baby : [CO[1],CO[2],CO[0],CO[5]],
-        nino : [CO[1],CO[2],CO[0],CO[5]]
-    }
-}
