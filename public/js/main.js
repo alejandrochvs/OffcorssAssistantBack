@@ -497,7 +497,7 @@ $(function () {
           }, {
                         title: occasionName6,
                         title_var: 'occasionName6',
-                        desc: 'Practica tus deportes favoritos con le tecnología y comodidad de nuestras prendas de OC Sports.',
+                        desc: 'Practica tus deportes favoritos con la tecnología y comodidad de nuestras prendas de OC Sports.',
                         img: 'ocasiones-m-6.jpg',
                         query: 'DEPORTIVA',
                         color: '#464C51'
@@ -518,14 +518,14 @@ $(function () {
 }, {
                         title: occasionName1,
                         title_var: 'occasionName1',
-                        desc: 'Sonidos, texturas y colores para estimular a tu bebé con las prendas de ABC Early Learning..',
+                        desc: 'Enamorate de nuestras pijamas',
                         img: 'ocasiones-m-1.jpg',
                         query: 'TIME TO SLEEP',
                         color: '#5A6069'
 }, {
                         title: occasionName4,
                         title_var: 'occasionName4',
-                        desc: 'Sonidos, texturas y colores para estimular a tu bebé con las prendas de ABC Early Learning..',
+                        desc: 'Días de Sol = a Diversión al máximo',
                         img: 'ocasiones-m-4.jpg',
                         query: 'VACIONES EN LA PLAYA',
                         color: '#3AB2BC'
