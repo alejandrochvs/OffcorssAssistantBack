@@ -66,6 +66,11 @@
             background-origin: content-box;
             background-size: contain;
             background-repeat: no-repeat;
+            transition : all .3s ease;
+            cursor : pointer;
+            &:hover{
+                transform : scale(1.1);
+            }
         }
     }
     .img-girl {
@@ -77,6 +82,11 @@
             background-origin: content-box;
             background-size: contain;
             background-repeat: no-repeat;
+            transition : all .3s ease;
+            cursor : pointer;
+            &:hover{
+                transform : scale(1.1);
+            }
         }
     }
     &.boy {

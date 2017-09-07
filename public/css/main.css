@@ -457,7 +457,11 @@ html {
                 background-position: center;
                 background-origin: content-box;
                 background-size: contain;
-                background-repeat: no-repeat; }
+                background-repeat: no-repeat;
+                transition: all .3s ease;
+                cursor: pointer; }
+                html body .content .screen .container .gender .img-boy .image:hover {
+                  transform: scale(1.1); }
             html body .content .screen .container .gender .img-girl {
               height: 60vh; }
               html body .content .screen .container .gender .img-girl .image {
@@ -466,7 +470,11 @@ html {
                 background-position: center;
                 background-origin: content-box;
                 background-size: contain;
-                background-repeat: no-repeat; }
+                background-repeat: no-repeat;
+                transition: all .3s ease;
+                cursor: pointer; }
+                html body .content .screen .container .gender .img-girl .image:hover {
+                  transform: scale(1.1); }
             html body .content .screen .container .gender.boy .selection-wrap .title .text {
               border-bottom-color: #6B85AB; }
             html body .content .screen .container .gender.boy .selection-wrap .selections .background .boySel {

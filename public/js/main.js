@@ -71,11 +71,12 @@ $(function () {
                 var temp = $(this);
                 var tempParent = $(this).parent();
                 var text = temp.html();
-                var changed;
+                var changed = false;
                 $(this).css('display', 'none');
-                tempParent.prepend('<input id="editing" class="' + temp.attr('class') + '"type="text"/>');
+                tempParent.prepend('<textarea id="editing" class="' + temp.attr('class') + '"type="text"/>');
                 $('#editing').val(text).focus().keyup(function (e) {
                     var key = e.keyCode || e.which;
+                    console.log($('#editing').html());
                     if (key === 13) {
                         if ($('#editing').val() !== '') {
                             if ($('#editing').val() !== text) {
@@ -83,7 +84,7 @@ $(function () {
                             } else {
                                 changed = false;
                             }
-                            text = $('#editing').val();
+                            text = $('#editing').val().replace(/\r?\n/g,"\\n");
                             $('#editing').focusout();
                         } else {
                             changed = false;
@@ -187,6 +188,12 @@ $(function () {
                         localStorage.setItem('currentClass', currentClass);
                         next(divs[1]);
                     });
+                    $('.img-boy > .image').click(function(){
+                        $('.boySel').click();
+                    });
+                    $('.img-girl > .image').click(function(){
+                        $('.girlSel').click();
+                    })
                 } else if (current === divs[1]) {
                     $('body > .content').css({
                         'background-image': 'url(../IMG/fondo-1.jpg)',
@@ -490,42 +497,48 @@ $(function () {
                     var CO = [{
                         title: occasionName3,
                         title_var: 'occasionName3',
-                        desc: 'Encuentra prendas únicas para crear tus looks ideales, llenos de detalles, texturas y moda.',
+                        desc_var: 'occasionDesc3',
+                        desc: occasionDesc3,
                         img: 'ocasiones-m-2.jpg',
                         query: 'CASUAL',
                         color: '#75AE9B'
           }, {
                         title: occasionName6,
                         title_var: 'occasionName6',
-                        desc: 'Practica tus deportes favoritos con le tecnología y comodidad de nuestras prendas de OC Sports.',
+                        desc_var: 'occasionDesc6',
+                        desc: occasionDesc6,
                         img: 'ocasiones-m-6.jpg',
                         query: 'DEPORTIVA',
                         color: '#464C51'
 }, {
                         title: occasionName2,
                         title_var: 'occasionName2',
-                        desc: 'Prendas versátiles y fáciles de combinar, indispensables para llenar todos tus días de diversión y comodidad.',
+                        desc_var: 'occasionDesc2',
+                        desc: occasionDesc2,
                         img: 'ocasiones-m-3.jpg',
                         query: 'DÍA A DÍA',
                         color: '#5A6069'
 }, {
                         title: occasionName5,
                         title_var: 'occasionName5',
-                        desc: 'Capturamos la magia de los momentos especiales, y la convertimos en una colección llena de detalles, actitud formal, diversión y comodidad.',
+                        desc_var: 'occasionDesc5',
+                        desc: occasionDesc5,
                         img: 'ocasiones-m-5.jpg',
                         query: 'OCASIONES ESPECIALES',
                         color: '#A79E98'
 }, {
                         title: occasionName1,
                         title_var: 'occasionName1',
-                        desc: 'Sonidos, texturas y colores para estimular a tu bebé con las prendas de ABC Early Learning..',
+                        desc_var: 'occasionDesc1',
+                        desc: occasionDesc1,
                         img: 'ocasiones-m-1.jpg',
                         query: 'TIME TO SLEEP',
                         color: '#5A6069'
 }, {
                         title: occasionName4,
                         title_var: 'occasionName4',
-                        desc: 'Sonidos, texturas y colores para estimular a tu bebé con las prendas de ABC Early Learning..',
+                        desc_var: 'occasionDesc4',
+                        desc: occasionDesc4,
                         img: 'ocasiones-m-4.jpg',
                         query: 'VACIONES EN LA PLAYA',
                         color: '#3AB2BC'
@@ -543,7 +556,7 @@ $(function () {
                         }
                     }
                     var renderOccasionDiv = function (occasion) {
-                        var occasionDiv = '<div data-occasion="' + occasion.query + '" class="col-xs-8 col-xs-offset-2 col-md-2 col-md-offset-0 background"><div class="col-xs-12 cont" style="background-image : url(../IMG/occasions/' + occasion.img + ')"><img src="../IMG/occasions/check.svg" alt=""><div class="col-xs-12 img"></div><div class="col-xs-12 title"><div class="col-xs-12 occasion-desc">' + occasion.desc + '</div><h3 class="text-editable" data-var="' + occasion.title_var + '" style="color : ' + occasion.color + '">' + occasion.title + '</h3></div></div></div>';
+                        var occasionDiv = '<div data-occasion="' + occasion.query + '" class="col-xs-8 col-xs-offset-2 col-md-2 col-md-offset-0 background"><div class="col-xs-12 cont" style="background-image : url(../IMG/occasions/' + occasion.img + ')"><img src="../IMG/occasions/check.svg" alt=""><div class="col-xs-12 img"></div><div class="col-xs-12 title"><div class="col-xs-12 occasion-desc text-editable" data-var="' + occasion.desc_var + '">' + occasion.desc + '</div><h3 class="text-editable" data-var="' + occasion.title_var + '" style="color : ' + occasion.color + '">' + occasion.title + '</h3></div></div></div>';
                         $('.occasions').append(occasionDiv);
                     }
                     if (gender == 'M') {
@@ -564,17 +577,17 @@ $(function () {
                             $($('.occasions > .background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.boy.nino.length * 2)) / 2);
                         }
                     } else {
-                        if (age == 1) {
+                        if (age >= 0 && age < 3) {
                             for (var r = 0; r < currentOC.girl.newborn.length; r++) {
                                 renderOccasionDiv(currentOC.girl.newborn[r], 12 / currentOC.girl.newborn.length)
                             }
                             $($('.occasions > .background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.girl.newborn.length * 2)) / 2);
-                        } else if (age == 3) {
+                        } else if (age >= 3 && age < 5) {
                             for (var r = 0; r < currentOC.girl.baby.length; r++) {
                                 renderOccasionDiv(currentOC.girl.baby[r], 12 / currentOC.girl.baby.length)
                             }
                             $($('.occasions > .background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.girl.baby.length * 2)) / 2);
-                        } else if (age == 7) {
+                        } else if (age >= 5) {
                             for (var r = 0; r < currentOC.girl.nino.length; r++) {
                                 renderOccasionDiv(currentOC.girl.nino[r], 12 / currentOC.girl.nino.length)
                             }
