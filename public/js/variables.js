@@ -20,7 +20,7 @@ var occasionDesc2 = 'Prendas versátiles y fáciles de combinar, indispensables 
 var occasionName3 = 'MODA ';
 var occasionDesc3 = 'Encuentra prendas únicas para crear tus looks ideales, llenos de detalles, texturas y moda ';
 var occasionName4 = 'VACACIONES EN LA PLAYA ';
-var occasionDesc4 = 'Días de Sol = a Diversión al máximo ';
+var occasionDesc4 = 'Días de sol igual a diversión al máximo.';
 var occasionName5 = 'OCASIONES ESPECIALES ';
 var occasionDesc5 = 'Capturamos la magia de los momentos especiales, y la convertimos en una colección llena de detalles, actitud formal, diversión y comodidad.';
 var occasionName6 = 'PARA HACER DEPORTE ';

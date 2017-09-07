@@ -73,10 +73,10 @@ $(function () {
                 var text = temp.html();
                 var changed = false;
                 $(this).css('display', 'none');
-                tempParent.prepend('<textarea id="editing" class="' + temp.attr('class') + '"type="text"/>');
+                tempParent.prepend('<input id="editing" class="' + temp.attr('class') + '"type="text"/>');
                 $('#editing').val(text).focus().keyup(function (e) {
                     var key = e.keyCode || e.which;
-                    console.log($('#editing').html());
+                    console.log($(this).val());
                     if (key === 13) {
                         if ($('#editing').val() !== '') {
                             if ($('#editing').val() !== text) {
@@ -84,7 +84,7 @@ $(function () {
                             } else {
                                 changed = false;
                             }
-                            text = $('#editing').val().replace(/\r?\n/g,"\\n");
+                            text = $('#editing').val();
                             $('#editing').focusout();
                         } else {
                             changed = false;
