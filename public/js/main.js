@@ -490,34 +490,39 @@ $(function () {
                     var CO = [{
                         title: occasionName3,
                         title_var: 'occasionName3',
-                        desc: 'Encuentra prendas únicas para crear tus looks ideales, llenos de detalles, texturas y moda.',
+                        desc_var: 'occasionDesc3',
+                        desc: occasionDesc3,
                         img: 'ocasiones-m-2.jpg',
                         query: 'CASUAL',
                         color: '#75AE9B'
           }, {
                         title: occasionName6,
                         title_var: 'occasionName6',
-                        desc: 'Practica tus deportes favoritos con la tecnología y comodidad de nuestras prendas de OC Sports.',
+                        desc_var: 'occasionDesc6',
+                        desc: occasionDesc6,
                         img: 'ocasiones-m-6.jpg',
                         query: 'DEPORTIVA',
                         color: '#464C51'
 }, {
                         title: occasionName2,
                         title_var: 'occasionName2',
-                        desc: 'Prendas versátiles y fáciles de combinar, indispensables para llenar todos tus días de diversión y comodidad.',
+                        desc_var: 'occasionDesc2',
+                        desc: occasionDesc2,
                         img: 'ocasiones-m-3.jpg',
                         query: 'DÍA A DÍA',
                         color: '#5A6069'
 }, {
                         title: occasionName5,
                         title_var: 'occasionName5',
-                        desc: 'Capturamos la magia de los momentos especiales, y la convertimos en una colección llena de detalles, actitud formal, diversión y comodidad.',
+                        desc_var: 'occasionDesc5',
+                        desc: occasionDesc5,
                         img: 'ocasiones-m-5.jpg',
                         query: 'OCASIONES ESPECIALES',
                         color: '#A79E98'
 }, {
                         title: occasionName1,
                         title_var: 'occasionName1',
+                        desc_var: 'occasionDesc1',
                         desc: 'Enamorate de nuestras pijamas.',
                         img: 'ocasiones-m-1.jpg',
                         query: 'TIME TO SLEEP',
@@ -525,6 +530,7 @@ $(function () {
 }, {
                         title: occasionName4,
                         title_var: 'occasionName4',
+                        desc_var: 'occasionDesc4',
                         desc: 'Días de Sol = a Diversión al máximo',
                         img: 'ocasiones-m-4.jpg',
                         query: 'VACIONES EN LA PLAYA',
