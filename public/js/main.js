@@ -518,7 +518,7 @@ $(function () {
 }, {
                         title: occasionName1,
                         title_var: 'occasionName1',
-                        desc: 'Enamorate de nuestras pijamas',
+                        desc: 'Enamorate de nuestras pijamas.',
                         img: 'ocasiones-m-1.jpg',
                         query: 'TIME TO SLEEP',
                         color: '#5A6069'
