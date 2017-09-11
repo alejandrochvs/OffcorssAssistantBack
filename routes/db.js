@@ -201,6 +201,15 @@ db.once('open', function () {
             });
         });
     });
+    router.post('/e-cards/deleteAll',function(req,res){
+        eCards.remove({},function(err){
+            if (err){
+                res.send(err);
+            }else{
+                res.send('Las e-cards se han borrado.');
+            }
+        })
+    })
     router.post('/e-cards/getReferences', function (req, res) {
         eCards.findById(req.body.id, function (err, doc) {
             if (err) {

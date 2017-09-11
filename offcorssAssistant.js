@@ -13,6 +13,7 @@ var port = process.env.PORT || 3000;
 var dbRoute = require('./routes/db');
 var adminRoute = require('./routes/admin');
 var postRoute = require('./routes/post');
+var gitRoute = require('./routes/git');
 // App
 app.set('view engine', 'jade');
 app.use(express.static(path.join(__dirname, '/public')));
@@ -25,6 +26,7 @@ app.get('/', function (req, res) {
 app.use('/db', urlEncodedParser, dbRoute);
 app.use('/admin', urlEncodedParser, adminRoute);
 app.use('/post', urlEncodedParser, postRoute);
+app.use('/git',urlEncodedParser, gitRoute);
 app.get('/', function (req, res) {
     res.render('index', {
         admin: false,

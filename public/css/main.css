@@ -3404,6 +3404,45 @@ html {
                       color: lightgreen; }
                     html body .content .screen .container .adminColors-container .colors-table .table-body .color-wrap .color-status:hover {
                       background: whitesmoke; }
+            html body .content .screen .container .adminColors-container .git {
+              height: 75vh;
+              padding: 2%;
+              background: white;
+              overflow: auto;
+              overflow-x: hidden;
+              -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+              -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+              box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+              border-radius: 5px; }
+              html body .content .screen .container .adminColors-container .git .status {
+                margin-top: 2vh; }
+                html body .content .screen .container .adminColors-container .git .status p {
+                  text-overflow: ellipsis;
+                  overflow: hidden; }
+            html body .content .screen .container .adminColors-container .load-div {
+              -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+              -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+              box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+              border-radius: 5px;
+              background: white;
+              height: 75vh;
+              padding: 2%;
+              transition: all .3s ease; }
+              html body .content .screen .container .adminColors-container .load-div .btn {
+                margin-top: 2vh; }
+              html body .content .screen .container .adminColors-container .load-div .load {
+                background: lightgreen;
+                cursor: pointer;
+                color: white;
+                height: 20vh;
+                line-height: 20vh;
+                font-size: 5vw;
+                border-radius: 5px;
+                transition: all .3s ease; }
+                html body .content .screen .container .adminColors-container .load-div .load .fa {
+                  transition: all .3s ease; }
+                html body .content .screen .container .adminColors-container .load-div .load:hover .fa {
+                  transform: scale(1.1); }
     html body .footer {
       background: white;
       margin: 0;
