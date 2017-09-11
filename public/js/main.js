@@ -1053,7 +1053,7 @@ $(function () {
                     });
                     $('.head.title > .cont').html(headTitle4 + ' - CLIENTES');
                 } else if (current == 'adminColors') {
-                    $('.head.title > .cont').html(headTitle4 + ' - COLORES');
+                    $('.head.title > .cont').html(headTitle4 + ' - CENTRO DE CONTROL');
                 } else if (current == '404') {
                     $('.404-restore').click(function () {
                         localStorage.clear();
@@ -1123,9 +1123,9 @@ $(function () {
                             }
                         });
                     }
-                    $('.user-settings').prepend('<li class="colors-go"> <h5>Colores</h5> </li>');
-                    $('.user-settings').prepend('<li class="e-cards"> <h5>E-cards</h5> </li>');
                     $('.user-settings').prepend('<li class="customers"> <h5>Clientes</h5> </li>');
+                    $('.user-settings').prepend('<li class="e-cards"> <h5>E-cards</h5> </li>');
+                    $('.user-settings').prepend('<li class="colors-go"> <h5>Centro de control</h5> </li>');
                     $('.customers').click(function () {
                         if (current !== 'customers') {
                             next('customers');
