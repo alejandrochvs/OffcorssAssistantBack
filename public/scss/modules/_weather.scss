@@ -1,7 +1,11 @@
 .weather {
     padding: 5vh 0;
     height: 100%;
-    overflow: scroll;
+    overflow: auto;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+        display: none;
+    }
     .selection-wrap {
         text-align: center;
         .title {
@@ -131,7 +135,7 @@
             .title {
                 margin: 0;
                 .text {
-                    font-size: 2em;
+                    font-size: 1.8em;
                     padding-bottom: 5%;
                 }
             }
@@ -141,7 +145,7 @@
                 .cont {
                     border-right: none;
                     border-bottom: dashed 2px white;
-                    padding: 3% 0;
+                    padding: 0;
                     .img {
                         height: auto;
                         img {
@@ -151,7 +155,7 @@
                     .title {
                         padding: 2%;
                         h3 {
-                            font-size: 7vh;
+                            font-size: 6vh;
                         }
                     }
                 }

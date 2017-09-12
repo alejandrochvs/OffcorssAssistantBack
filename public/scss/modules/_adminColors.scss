@@ -20,6 +20,7 @@
         }
         .table-body {
             overflow: scroll;
+            overflow-x: hidden;
             padding: 0;
             height: 70vh;
             .color-wrap {
@@ -27,21 +28,76 @@
                 border: solid 1px whitesmoke;
                 z-index: 1;
                 white-space: nowrap;
-                .color-prev{
+                .color-prev {
                     height: 5vh;
                 }
-                .color-status{
+                .color-status {
                     cursor: pointer;
                     transition: all .3s ease;
-                    .fa-times{
+                    .fa-times {
                         color: lightcoral;
                     }
-                    .fa-check{
+                    .fa-check {
                         color: lightgreen;
                     }
-                    &:hover{
+                    &:hover {
                         background: whitesmoke;
                     }
+                }
+            }
+        }
+    }
+    .git {
+        height: 75vh;
+        padding: 2%;
+        background: white;
+        overflow: auto;
+        overflow-x: hidden;
+        -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        .status {
+            margin-top: 2vh;
+            p {
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+        }
+    }
+    .load-div {
+        -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        background: white;
+        height: 75vh;
+        padding: 2%;
+        transition: all .3s ease;
+        .btn{
+            margin-top: 2vh;
+            .controlBtnLoader{
+                display: block;
+                width: 10px;
+                height: 10px;
+                background: red;
+            }
+        }
+        .load {
+            background: lightgreen;
+            cursor: pointer;
+            color: white;
+            height: 20vh;
+            line-height: 20vh;
+            font-size: 5vw;
+            border-radius: 5px;
+            transition: all .3s ease;
+            .fa{
+                transition: all .3s ease;
+            }
+            &:hover{
+                .fa{
+                    transform: scale(1.1);
                 }
             }
         }

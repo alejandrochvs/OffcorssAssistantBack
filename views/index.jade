@@ -1,9 +1,17 @@
 doctype html
 html(lang='en')
     head
+        // Google Tag Manager
+        script.
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-WVMX7WG');
+        // End Google Tag Manager
         meta(charset='UTF-8')
         meta(name='viewport', content='width=device-width, initial-scale=1')
-        title Offcorss Assistant
+        title Jack
         link(rel='icon', href='favicon.ico', type='image/x-icon')
         link(rel='shortcut icon', href='favicon.ico', type='image/x-icon')
         link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
@@ -12,7 +20,19 @@ html(lang='en')
         link(rel='stylesheet', href='css/slick.css')
         link(rel='stylesheet', href='css/slick-theme.css')
         link(rel='stylesheet', href='css/main.css')
+        script.
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+          ga('create', 'UA-106123915-1', 'auto');
+          ga('send', 'pageview');
+
     body
+        // Google Tag Manager (noscript)
+        noscript
+          iframe(src='https://www.googletagmanager.com/ns.html?id=GTM-WVMX7WG', height='0', width='0', style='display:none;visibility:hidden')
+        // End Google Tag Manager (noscript)
         .col-xs-12.header
             .col-xs-3.head.transparent
                 .col-xs-12.cont.back
@@ -20,7 +40,7 @@ html(lang='en')
                     span.hidden-xs VOLVER
             .col-xs-6.head.title
                 .title-decor.title-decor-left.col-xs-1.hidden-xs
-                .col-xs-12.col-sm-10.cont.text-editable(data-var='headTitle0') BUSCA TU ESTILO
+                .col-xs-12.col-sm-10.cont.text-editable.hidden-xs(data-var='headTitle0') BUSCA TU ESTILO
                 .title-decor.title-decor-right.col-xs-1.hidden-xs
             .col-xs-3.head
                 .col-xs-12.cont.exit

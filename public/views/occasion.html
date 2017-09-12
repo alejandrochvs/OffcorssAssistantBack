@@ -6,73 +6,45 @@
         </div>
     </div>
     <div class="col-xs-12 occasions">
-        <div data-occasion="ABS" class="col-xs-4 col-md-2 background hidden">
-            <div class="col-xs-12 cont">
-                <img src="../IMG/occasions/check.svg" alt="">
-                <div class="col-xs-12 img"></div>
-                <div class="col-xs-12 title">
-                    <div class="col-xs-12 occasion-desc hidden-xs">Sonidos, texturas y colores para estimular a tu bebé con las prendas de ABC Early Learning.
-                    </div>
-                    <h3 class="text-editable" data-var="occasionName1">ESTIMULACIÓN</h3>
-                </div>
-            </div>
+        <div class="prevOccasion visible-xs">
+            <i class="fa fa-angle-left"></i>
         </div>
-        <div data-occasion="DÍA A DÍA" class="col-xs-4 col-md-2 col-md-offset-2 col-xs-offset-2 background">
-            <div class="col-xs-12 cont">
-                <img src="../IMG/occasions/check.svg" alt="">
-                <div class="col-xs-12 img"></div>
-                <div class="col-xs-12 title">
-                    <div class="col-xs-12 occasion-desc hidden-xs">Prendas versátiles y fáciles de combinar, indispensables para llenar todos tus días de diversión y comodidad.
-                    </div>
-                    <h3 class="text-editable" data-var="occasionName2">DÍA A DÍA</h3>
-                </div>
-            </div>
-        </div>
-        <div data-occasion="MODA" class="col-xs-4 col-md-2 background">
-            <div class="col-xs-12 cont">
-                <img src="../IMG/occasions/check.svg" alt="">
-                <div class="col-xs-12 img"></div>
-                <div class="col-xs-12 title">
-                    <div class="col-xs-12 occasion-desc hidden-xs">Encuentra prendas únicas para crear tus looks ideales, llenos de detalles, texturas y moda.
-                    </div>
-                    <h3 class="text-editable" data-var="occasionName3">CASUAL</h3>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-12 visible-xs"></div>
-        <div data-occasion="PLAYA" class="col-xs-4 col-md-2 col-xs-offset-2 col-md-offset-0 background">
-            <div class="col-xs-12 cont">
-                <img src="../IMG/occasions/check.svg" alt="">
-                <div class="col-xs-12 img"></div>
-                <div class="col-xs-12 title">
-                    <div class="col-xs-12 occasion-desc hidden-xs">Para vivir días de verano llenos de diversión y color.
-                    </div>
-                    <h3 class="text-editable" data-var="occasionName4">VACACIONES EN LA PLAYA</h3>
-                </div>
-            </div>
-        </div>
-        <div data-occasion="OCASIÓN ESPECIAL" class="col-xs-4 col-md-2 background">
-            <div class="col-xs-12 cont">
-                <img src="../IMG/occasions/check.svg" alt="">
-                <div class="col-xs-12 img"></div>
-                <div class="col-xs-12 title">
-                    <div class="col-xs-12 occasion-desc hidden-xs">Capturamos la magia de los momentos especiales, y la convertimos en una colección llena de detalles, actitud formal, diversión y comodidad.
-                    </div>
-                    <h3 class="text-editable" data-var="occasionName5">OCASIONES ESPECIALES</h3>
-                </div>
-            </div>
-        </div>
-        <div data-occasion="OG-SPORT" class="col-xs-4 col-md-2 background hidden">
-            <div class="col-xs-12 cont">
-                <img src="../IMG/occasions/check.svg" alt="">
-                <div class="col-xs-12 img"></div>
-                <div class="col-xs-12 title">
-                    <div class="col-xs-12 occasion-desc hidden-xs">Practica tus deportes favoritos con le tecnología y comodidad de nuestras prendas de OC Sports
-                    </div>
-                    <h3 class="text-editable" data-var="occasionName6">PARA HACER DEPORTE</h3>
-                </div>
-            </div>
+        <div class="nextOccasion visible-xs">
+            <i class="fa fa-angle-right"></i>
         </div>
     </div>
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-2 col-md-offset-5 occasionsBtn text-center disabled text-editable" data-var="occasionBtn">CONTINUAR</div>
+    <div class="col-xs-4 col-xs-offset-4 col-sm-10 col-sm-offset-1 col-md-2 col-md-offset-5 occasionsBtn text-center disabled text-editable" data-var="occasionBtn">CONTINUAR</div>
 </div>
+<script>
+    $(function() {
+        var occasionIndex = 1;
+        var slideOccasion = function(index) {
+            $('.background.active').removeClass('active');
+            $($('.background')[index]).addClass('active');
+        }
+        
+        $('.nextOccasion').click(function() {
+            if (occasionIndex < $('.background').length - 1) {
+                occasionIndex++;
+            } else {
+                occasionIndex = 0;
+            }
+            slideOccasion(occasionIndex);
+            if($('.background.active').hasClass('hidden')){
+                $('.nextOccasion').click();
+            }
+        });
+        $('.prevOccasion').click(function() {
+            if (occasionIndex > 0) {
+                occasionIndex--;
+            } else {
+                occasionIndex = $('.background').length - 1;
+            }
+            slideOccasion(occasionIndex);
+            if($('.background.active').hasClass('hidden')){
+                $('.prevOccasion').click();
+            }
+        });
+    })
+
+</script>

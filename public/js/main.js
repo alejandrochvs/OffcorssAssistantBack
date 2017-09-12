@@ -71,11 +71,12 @@ $(function () {
                 var temp = $(this);
                 var tempParent = $(this).parent();
                 var text = temp.html();
-                var changed;
+                var changed = false;
                 $(this).css('display', 'none');
                 tempParent.prepend('<input id="editing" class="' + temp.attr('class') + '"type="text"/>');
                 $('#editing').val(text).focus().keyup(function (e) {
                     var key = e.keyCode || e.which;
+                    console.log($(this).val());
                     if (key === 13) {
                         if ($('#editing').val() !== '') {
                             if ($('#editing').val() !== text) {
@@ -187,6 +188,12 @@ $(function () {
                         localStorage.setItem('currentClass', currentClass);
                         next(divs[1]);
                     });
+                    $('.img-boy > .image').click(function(){
+                        $('.boySel').click();
+                    });
+                    $('.img-girl > .image').click(function(){
+                        $('.girlSel').click();
+                    })
                 } else if (current === divs[1]) {
                     $('body > .content').css({
                         'background-image': 'url(../IMG/fondo-1.jpg)',
@@ -353,7 +360,7 @@ $(function () {
                                     j;
                                 for (j = 0; j < list[i].length; j++) {
                                     if (counter === 3) {
-                                        $($('.padSize')[i]).append('<div class="col-xs-4 col-sm-12 row"></div>');
+                                        $($('.padSize')[i]).append('<div class="col-xs-12 row"></div>');
                                         counter = 0;
                                     }
                                     $($('.padSize')[i]).find('.row').last().append('<div data-select=' + i + ' class="col-xs-4 box">' + list[i][j] + '</div>');
@@ -402,6 +409,7 @@ $(function () {
                                     if ($('.padSize > .row .active').length === 3) {
                                         next(divs[5]);
                                     }
+                                    $('.padNext').click();
                                 }
                             });
                             if (shoeSize && topSize && bottomSize) {
@@ -476,6 +484,7 @@ $(function () {
                         }
                     });
                 } else if (current === divs[5]) {
+                    occasion = [];
                     $('body > .content').css({
                         'background-image': 'url(../IMG/fondo-2.jpg)',
                         'background-size': 'cover'
@@ -483,30 +492,109 @@ $(function () {
                     $('.header > .title > .cont').html(headTitle2);
                     $('.header > .title > .cont').attr('data-var', 'headTitle2');
                     $('.occasion > .selection-wrap > .title > .text-editable').html(occasionsTitle);
-                    $('.occasions > .background:nth-child(1) > .cont > .title > h3').html(occasionName1);
-                    $('.occasions > .background:nth-child(2) > .cont > .title > h3').html(occasionName2);
-                    $('.occasions > .background:nth-child(3) > .cont > .title > h3').html(occasionName3);
-                    $($('.occasions > .background > .cont > .title > h3')[3]).html(occasionName4);
-                    $($('.occasions > .background > .cont > .title > h3')[4]).html(occasionName5);
-                    $($('.occasions > .background > .cont > .title > h3')[5]).html(occasionName6);
                     $('.occasion > .occasionsBtn').html(occasionBtn);
                     $('.loader > .progress').css('width', '40%');
-                    if (currentClass == 'nBoy' || currentClass == 'nGirl') {
-                        $('.background[data-occasion="PLAYA"]').css('display', 'none');
-                        $($('.background')[1]).removeClass('col-md-offset-2');
-                        $($('.background')[1]).addClass('col-md-offset-3');
-                        $($('.background')[4]).find('.cont').css('background-image', 'url(../IMG/occasions/ocasiones-5.jpg)');
-                        $('.occasions > .visible-xs').remove();
-                    }
-                    if (occasion) {
-                        if (occasion.length > 0) {
-                            var i;
-                            for (i = 0; i < occasion.length; i++) {
-                                $('[data-occasion="' + occasion[i] + '"]').find('.cont').addClass('active');
-                                $('.occasionsBtn').removeClass('disabled');
-                            }
+                    var CO = [{
+                        title: occasionName3,
+                        title_var: 'occasionName3',
+                        desc_var: 'occasionDesc3',
+                        desc: occasionDesc3,
+                        img: 'ocasiones-m-2.jpg',
+                        query: 'CASUAL',
+                        color: '#75AE9B'
+          }, {
+                        title: occasionName6,
+                        title_var: 'occasionName6',
+                        desc_var: 'occasionDesc6',
+                        desc: occasionDesc6,
+                        img: 'ocasiones-m-6.jpg',
+                        query: 'DEPORTIVA',
+                        color: '#464C51'
+}, {
+                        title: occasionName2,
+                        title_var: 'occasionName2',
+                        desc_var: 'occasionDesc2',
+                        desc: occasionDesc2,
+                        img: 'ocasiones-m-3.jpg',
+                        query: 'DÍA A DÍA',
+                        color: '#5A6069'
+}, {
+                        title: occasionName5,
+                        title_var: 'occasionName5',
+                        desc_var: 'occasionDesc5',
+                        desc: occasionDesc5,
+                        img: 'ocasiones-m-5.jpg',
+                        query: 'OCASIONES ESPECIALES',
+                        color: '#A79E98'
+}, {
+                        title: occasionName1,
+                        title_var: 'occasionName1',
+                        desc_var: 'occasionDesc1',
+                        desc: occasionDesc1,
+                        img: 'ocasiones-m-1.jpg',
+                        query: 'TIME TO SLEEP',
+                        color: '#5A6069'
+}, {
+                        title: occasionName4,
+                        title_var: 'occasionName4',
+                        desc_var: 'occasionDesc4',
+                        desc: occasionDesc4,
+                        img: 'ocasiones-m-4.jpg',
+                        query: 'VACIONES EN LA PLAYA',
+                        color: '#3AB2BC'
+}];
+                    var currentOC = {
+                        boy: {
+                            newborn: [CO[5], CO[2], CO[4]],
+                            baby: [CO[1], CO[2], CO[0], CO[5]],
+                            nino: [CO[1], CO[2], CO[0], CO[5]]
+                        },
+                        girl: {
+                            newborn: [CO[5], CO[2], CO[4]],
+                            baby: [CO[1], CO[2], CO[0], CO[5]],
+                            nino: [CO[1], CO[2], CO[0], CO[5]]
                         }
                     }
+                    var renderOccasionDiv = function (occasion) {
+                        var occasionDiv = '<div data-occasion="' + occasion.query + '" class="col-xs-8 col-xs-offset-2 col-md-2 col-md-offset-0 background"><div class="col-xs-12 cont" style="background-image : url(../IMG/occasions/' + occasion.img + ')"><img src="../IMG/occasions/check.svg" alt=""><div class="col-xs-12 img"></div><div class="col-xs-12 title"><div class="col-xs-12 occasion-desc text-editable" data-var="' + occasion.desc_var + '">' + occasion.desc + '</div><h3 class="text-editable" data-var="' + occasion.title_var + '" style="color : ' + occasion.color + '">' + occasion.title + '</h3></div></div></div>';
+                        $('.occasions').append(occasionDiv);
+                    }
+                    if (gender == 'M') {
+                        if (age == 1) {
+                            for (var r = 0; r < currentOC.boy.newborn.length; r++) {
+                                renderOccasionDiv(currentOC.boy.newborn[r])
+                            }
+                            $($('.occasions > .background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.boy.newborn.length * 2)) / 2);
+                        } else if (age == 3) {
+                            for (var r = 0; r < currentOC.boy.baby.length; r++) {
+                                renderOccasionDiv(currentOC.boy.baby[r], 12 / currentOC.boy.baby.length)
+                            }
+                            $($('.occasions > .background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.boy.baby.length * 2)) / 2);
+                        } else if (age == 7) {
+                            for (var r = 0; r < currentOC.boy.nino.length; r++) {
+                                renderOccasionDiv(currentOC.boy.nino[r], 12 / currentOC.boy.nino.length)
+                            }
+                            $($('.occasions > .background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.boy.nino.length * 2)) / 2);
+                        }
+                    } else {
+                        if (age >= 0 && age < 3) {
+                            for (var r = 0; r < currentOC.girl.newborn.length; r++) {
+                                renderOccasionDiv(currentOC.girl.newborn[r], 12 / currentOC.girl.newborn.length)
+                            }
+                            $($('.occasions > .background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.girl.newborn.length * 2)) / 2);
+                        } else if (age >= 3 && age < 5) {
+                            for (var r = 0; r < currentOC.girl.baby.length; r++) {
+                                renderOccasionDiv(currentOC.girl.baby[r], 12 / currentOC.girl.baby.length)
+                            }
+                            $($('.occasions > .background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.girl.baby.length * 2)) / 2);
+                        } else if (age >= 5) {
+                            for (var r = 0; r < currentOC.girl.nino.length; r++) {
+                                renderOccasionDiv(currentOC.girl.nino[r], 12 / currentOC.girl.nino.length)
+                            }
+                            $($('.occasions > .background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.girl.nino.length * 2)) / 2);
+                        }
+                    }
+                    $($('.occasions > .background')[0]).addClass('active');
                     $('.occasion').addClass(currentClass);
                     $('.background').click(function () {
                         var tempOccasion = $(this).attr('data-occasion');
@@ -521,16 +609,6 @@ $(function () {
                         }
                         $(this).find('.cont').toggleClass('active');
                     });
-                    if (currentClass === 'nBoy' || currentClass === 'nGirl') {
-                        $('.background:nth-child(1)').css('display', 'none');
-                        $($('.occasions > .background')[5]).css('display', 'none');
-                        $($('.occasions > .background')[2]).addClass('col-xs-offset-0');
-                        if ($(window).width() < 767) {
-                            $($('.occasions > .background')[3]).addClass('col-xs-offset-2');
-                        }
-                        $('.background:nth-child(2)').toggleClass('col-xs-offset-2');
-                        $('.background:nth-child(3)').toggleClass('col-xs-offset-2 col-md-offset-0');
-                    }
                     $('.occasionsBtn').click(function () {
                         if (occasion.length > 0) {
                             localStorage.occasion = JSON.stringify(occasion);
@@ -563,10 +641,6 @@ $(function () {
                     $('.header > .title > .cont').html(headTitle2);
                     $('.header > .title > .cont').attr('data-var', 'headTitle2');
                     $('.color > .selection-wrap > .title > .text-editable').html(colorTitle);
-                    $('.colors > .color-wrap:nth-child(1) > .select').html(colorName1);
-                    $('.colors > .color-wrap:nth-child(2) > .select').html(colorName2);
-                    $('.colors > .color-wrap:nth-child(3) > .select').html(colorName3);
-                    $('.colors > .color-wrap:nth-child(4) > .select').html(colorName4);
                     $('.loader > .progress').css('width', '70%');
                     $('.color').addClass(currentClass);
 
@@ -584,48 +658,23 @@ $(function () {
                             $('div.colors').append('<div class="color-wrap"><div class="half left-half" style="background-color : ' + res[i].hex + '"></div><div class="half right-half" style="background-color : ' + shadeColor2(res[i].hex, 0.15) + '"></div><div class="tag">' + res[i].color + '</div></div>')
                         }
                         $('.color-wrap').click(function () {
+                            $('.color-wrap.active').removeClass('active');
+                            $(this).addClass('active');
                             favColor = $(this).find('.tag').html();
+                            $('.color-display').find('.tag').html(favColor);
+                            $('.color-display').find('.left-half').css('background-color', $(this).find('.left-half').css('background-color'));
+                            $('.color-display').find('.right-half').css('background-color', $(this).find('.right-half').css('background-color'));
+                            $('.colorsContinue').addClass('active');
                             localStorage.setItem('favColor', favColor);
-                            next(divs[8]);
+
                         });
+                        $('.colorsContinue').click(function () {
+                            if ($(this).hasClass('active')) {
+                                next(divs[8]);
+                            }
+                        });
+                        $('.color-wrap:nth-child(1)').click();
                     });
-                } else if (current === "looks") {
-                    $('body > .content').css({
-                        'background-image': 'url(../IMG/fondo-2.jpg)',
-                        'background-size': 'cover'
-                    });
-                    $('.header > .title > .cont').html(headTitle2);
-                    $('.header > .title > .cont').attr('data-var', 'headTitle2');
-                    if (looks.length > 0) {
-                        var j;
-                        $('.continueLooks').removeClass('transparent');
-                        for (j = 0; j < looks.length; j++) {
-                            $($('.looksWrap > .background')[looks[j]]).addClass('active');
-                            $($('.looksWrap > .background')[looks[j]]).find('.fa').addClass('fa-heart').removeClass('fa-heart-o');
-                        }
-                    }
-                    $('.loader > .progress').css('width', '60%');
-                    $('.background').click(function () {
-                        $(this).toggleClass('active');
-                        $($(this).find('.fa')[0]).toggleClass('fa-heart fa-heart-o');
-                        if ($(this).hasClass('active')) {
-                            looks.push($(this).attr('data-look'));
-                        } else {
-                            looks.splice(looks.indexOf($(this).attr('data-look')), 1);
-                        }
-                        if ($('.looks > .looksWrap > .active').length > 0) {
-                            $('.continueLooks').removeClass('transparent');
-                        } else {
-                            $('.continueLooks').addClass('transparent');
-                        }
-                    });
-                    $('.looks > .continueLooks').click(function () {
-                        if (!($(this).hasClass('transparent'))) {
-                            localStorage.setItem('looks', JSON.stringify(looks));
-                            next(divs[8]);
-                        }
-                    });
-                    $('.looks').addClass(currentClass);
                 } else if (current === divs[8]) {
                     $('body > .content').css({
                         'background-image': 'url(../IMG/fondo-3.jpg)',
@@ -634,11 +683,11 @@ $(function () {
                     $('.header > .title > .cont').html(headTitle2);
                     $('.header > .title > .cont').attr('data-var', 'headTitle2');
                     $('.personality > .selection-wrap > .title > .text-editable').html(personalityTitle);
-                    $('.personWrap > .person:nth-child(1) > .background > .title > h4').html(personalityName1);
-                    $('.personWrap > .person:nth-child(2) > .background > .title > h4').html(personalityName2);
-                    $('.personWrap > .person:nth-child(3) > .background > .title > h4').html(personalityName3);
-                    $('.personWrap > .person:nth-child(4) > .background > .title > h4').html(personalityName4);
-                    $('.personWrap > .person:nth-child(5) > .background > .title > h4').html(personalityName5);
+                    $('.personWrap > .person:nth-child(2) > .background > .title > h4').html(personalityName1);
+                    $('.personWrap > .person:nth-child(3) > .background > .title > h4').html(personalityName2);
+                    $('.personWrap > .person:nth-child(4) > .background > .title > h4').html(personalityName3);
+                    $('.personWrap > .person:nth-child(5) > .background > .title > h4').html(personalityName4);
+                    $('.personWrap > .person:nth-child(6) > .background > .title > h4').html(personalityName5);
                     if (personality.length > 0) {
                         var k;
                         for (k = 0; k < personality.length; k++) {
@@ -684,11 +733,11 @@ $(function () {
                         }
                     });
                     if (gender === 'F') {
-                        $('.person:nth-child(1) > .background > .title > h4').html(personalityNameF1);
-                        $('.person:nth-child(2) > .background > .title > h4').html(personalityNameF2);
-                        $('.person:nth-child(3) > .background > .title > h4').html(personalityNameF3);
-                        $('.person:nth-child(4) > .background > .title > h4').html(personalityNameF4);
-                        $('.person:nth-child(5) > .background > .title > h4').html(personalityNameF5);
+                        $('.person:nth-child(2) > .background > .title > h4').html(personalityNameF1);
+                        $('.person:nth-child(3) > .background > .title > h4').html(personalityNameF2);
+                        $('.person:nth-child(4) > .background > .title > h4').html(personalityNameF3);
+                        $('.person:nth-child(5) > .background > .title > h4').html(personalityNameF4);
+                        $('.person:nth-child(6) > .background > .title > h4').html(personalityNameF5);
                     }
                 } else if (current === divs[9]) {
                     $('body > .content').css({
@@ -699,26 +748,28 @@ $(function () {
                     $('.header > .title > .cont').attr('data-var', 'headTitle3');
                     $('.loader > .progress').css('width', '100%');
                     $('.result').addClass(currentClass);
-                    var data = {}
-                    if (gender == "F") {
-                        data.gender = "FEMENINO";
-                    } else {
-                        data.gender = "MASCULINO";
-                    }
-                    if (age == 1) {
-                        data.age = 'PRIMI (0-18M)';
-                    } else if (age == 3) {
-                        data.age = 'BEBE (18M - 5 AÑOS)';
-                    } else if (age == 7) {
-                        data.age = 'NIÑO (5 AÑOS - 13 AÑOS)';
-                    }
-                    data.color = favColor;
                     $('.progress').addClass('loading');
+                    var data = {}
+                    data.color = favColor;
                     data.occasion = occasion;
+                    if (age == 1) {
+                        data.age = 'NEWBORN'
+                    } else if (age == 3) {
+                        data.age = 'BABY'
+                    } else {
+                        data.age = 'NIÑA-NIÑO'
+                    }
+                    if (gender == 'M') {
+                        data.gender = 'BOY';
+                    } else {
+                        data.gender = 'GIRL'
+                    }
+                    data.weather = [weather];
                     if (admin) {
-                        data.age = "BEBE (18M - 5 AÑOS)";
-                        data.gender = "FEMENINO";
-                        data.occasion = ['OCASIÓN ESPECIAL'];
+                        data.age = "BABY";
+                        data.gender = "BOY";
+                        data.occasion = ['DÍA A DÍA', 'CASUAL', 'DEPORTIVA', 'TIME TO SLEEP', 'OCASIÓN ESPECIAL'];
+                        data.weather = ['TEMPLADO', 'FRÍO', 'CALIENTE'];
                     }
                     console.log(data);
                     $.ajax({
@@ -726,101 +777,103 @@ $(function () {
                         url: "db/e-cards/match",
                         data: data,
                         success: function (res) {
+                            console.log(res);
                             var randIndex = Math.floor(Math.random() * res.length);
-                            var randIndex2 = randIndex + 1;
-                            var randIndex3 = randIndex2 + 1;
-                            if (randIndex2 > res.length - 1) {
-                                randIndex2 = randIndex2 - res.length;
-                            }
-                            if (randIndex3 > res.length - 1) {
-                                randIndex3 = randIndex3 - res.length;
-                            }
-                            $($('.resultIMG')[0]).append('<img class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3" src="IMG/ecards/' + res[randIndex].url + '"/>');
-                            //                            $($('.resultIMG')[1]).append('<img class="col-xs-10 col-xs-offset-1" src="IMG/ecards/' + res[randIndex2].url + '"/>');
-                            //                            $($('.resultIMG')[2]).append('<img class="col-xs-10 col-xs-offset-1" src="IMG/ecards/' + res[randIndex3].url + '"/>');
-                            var dragging = false;
-                            $('.resultIMG').mousedown(function () {
-                                var mouseDownTimer = setInterval(function () {
-                                    dragging = true;
-                                }, 100);
-                                $(this).mouseup(function () {
-                                    clearInterval(mouseDownTimer);
-                                    if (dragging == false) {
-                                        $('.callcenter').click();
-                                    }
-                                    dragging = false;
-                                    $(this).unbind('mouseup');
-                                });
-                            });
-                            $('.input > input').keyup(function (e) {
-                                if (e.keyCode == 13) {
-                                    $('.call-modal > .button').click();
+                            res = res[randIndex];
+                            if (typeof res == 'object') {
+                                for (var i = 0; i < res.url.length; i++) {
+                                    $('.result-wrapper').append('<div class="resultIMG"><img class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3" src="IMG/ecards/' + res.url[i].path + '"/></div>');
                                 }
-                            })
-                            $('.result > .selection-wrap').remove();
-                            $('.progress').removeClass('loading');
-                            /*$('.result-wrapper').slick({
-                                centerMode: true,
-                                centerPadding: '60px',
-                                slidesToShow: 1,
-                                slidesToScroll: 0,
-                                autoplaySpeed: 2000,
-                                responsive: [{
-                                    breakpoint: 768,
-                                    settings: {
-                                        centerMode: true,
-                                        centerPadding: '40px',
-                                        slidesToShow: 1,
-                                        slidesToScroll: 1
-                                    }
-                                }]
-                            });*/
-                            data.bottomSize = bottomSize;
-                            data.topSize = topSize;
-                            data.shoeSize = shoeSize;
-                            data.occasion = occasion;
-                            data.weather = weather;
-                            data.personality = personality;
-                            data.e_card = [res[randIndex].url, res[randIndex2].url, res[randIndex3].url];
-                            data.name = name;
-                            $('.call-modal > .button').click(function () {
-                                data.phone = $('.call-modal > .input > input').val();
-                                var regex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-                                if (data.phone.match(regex)) {
-                                    var regexToConv = /^[2-9]\d{2}[2-9]\d{2}\d{4}$/;
-                                    data.phone = data.phone.replace(/\D/g, "");
-                                    $('.progress').addClass('loading');
-                                    $.ajax({
-                                        url: '/db/customers/register',
-                                        type: 'POST',
-                                        data: data,
-                                        success: function (res) {
-                                            $('.input > input').unbind();
-                                            $('.call-modal > .input').removeClass('wrong');
-                                            $('.call-modal > .input > input').tooltip('hide');
-                                            $('.call-modal').addClass('success');
-                                            $.ajax({
-                                                type: 'GET',
-                                                url: 'https://webapp.contentobps.com/hermeco/hermeco_ventas.php?data=' + data.phone + '/asistentevirtual',
-                                                dataType: 'jsonp',
-                                                crossDomain: true,
-                                                success: function (res) {
-                                                    $('.progress').removeClass('loading');
-                                                }
-                                            });
-                                            $('.progress').removeClass('loading');
+                                var dragging = false;
+                                $('.resultIMG').mousedown(function () {
+                                    var mouseDownTimer = setInterval(function () {
+                                        dragging = true;
+                                    }, 100);
+                                    $(this).mouseup(function () {
+                                        clearInterval(mouseDownTimer);
+                                        if (dragging == false) {
+                                            $('.callcenter').click();
                                         }
+                                        dragging = false;
+                                        $(this).unbind('mouseup');
                                     });
-                                } else {
-                                    $('.call-modal > .input > input').addClass('wrong');
-                                    $('.call-modal > .input > input').tooltip({
-                                        title: 'Formato incorrecto.',
-                                        trigger: 'manual',
-                                        placement: 'top'
-                                    });
-                                    $('.call-modal > .input > input').tooltip('show');
-                                }
-                            });
+                                });
+                                $('.input > input').keyup(function (e) {
+                                    if (e.keyCode == 13) {
+                                        $('.call-modal > .button').click();
+                                    }
+                                })
+                                $('.result > .selection-wrap').remove();
+                                $('.progress').removeClass('loading');
+                                $('.result-wrapper').slick({
+                                    centerMode: true,
+                                    centerPadding: '20vw',
+                                    slidesToShow: 1,
+                                    slidesToScroll: 0,
+                                    autoplaySpeed: 2000,
+                                    autoplay: true,
+                                    infinite: true,
+                                    responsive: [{
+                                        breakpoint: 768,
+                                        settings: {
+                                            centerMode: true,
+                                            centerPadding: '40px',
+                                            slidesToShow: 1,
+                                            slidesToScroll: 1
+                                        }
+                                }]
+                                });
+                                data.bottomSize = bottomSize;
+                                data.topSize = topSize;
+                                data.shoeSize = shoeSize;
+                                data.occasion = occasion;
+                                data.weather = weather;
+                                data.personality = personality;
+                                data.e_card = res._id;
+                                data.name = name;
+                                $('.call-modal > .button').click(function () {
+                                    data.phone = $('.call-modal > .input > input').val();
+                                    var regex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+                                    if (data.phone.match(regex)) {
+                                        var regexToConv = /^[2-9]\d{2}[2-9]\d{2}\d{4}$/;
+                                        data.phone = data.phone.replace(/\D/g, "");
+                                        $('.progress').addClass('loading');
+                                        $.ajax({
+                                            url: '/db/customers/register',
+                                            type: 'POST',
+                                            data: data,
+                                            success: function (res) {
+                                                $('.input > input').unbind();
+                                                $('.call-modal > .input').removeClass('wrong');
+                                                $('.call-modal > .input > input').tooltip('hide');
+                                                $('.call-modal').addClass('success');
+                                                $.ajax({
+                                                    type: 'GET',
+                                                    url: 'https://webapp.contentobps.com/hermeco/hermeco_ventas_2.php?data=' + data.phone + '-AsistenteVirtual',
+                                                    dataType: 'jsonp',
+                                                    crossDomain: true,
+                                                    success: function (res) {
+                                                        $('.progress').removeClass('loading');
+                                                    }
+                                                });
+                                                $('.progress').removeClass('loading');
+                                            }
+                                        });
+                                    } else {
+                                        $('.call-modal > .input > input').addClass('wrong');
+                                        $('.call-modal > .input > input').tooltip({
+                                            title: 'Formato incorrecto.',
+                                            trigger: 'manual',
+                                            placement: 'top'
+                                        });
+                                        $('.call-modal > .input > input').tooltip('show');
+                                    }
+                                });
+                            } else {
+                                $('.result-wrapper').html('<h1 class="col-xs-6 col-xs-offset-3 text-center">Hola, encontramos el look perfecto para ' + name + ' ya sabemos cuales son tus gustos y hay un asesor esperando para ayudarte con la compra. Dale click al botón de <br><b>"ir a comprar"</b> y te llamaremos.</h1>');
+                            }
+                            $('.loader > .progress').removeClass('loading');
+
                         }
                     });
                 } else if (current === 'login') {
@@ -1000,7 +1053,7 @@ $(function () {
                     });
                     $('.head.title > .cont').html(headTitle4 + ' - CLIENTES');
                 } else if (current == 'adminColors') {
-                    $('.head.title > .cont').html(headTitle4 + ' - COLORES');
+                    $('.head.title > .cont').html(headTitle4 + ' - CENTRO DE CONTROL');
                 } else if (current == '404') {
                     $('.404-restore').click(function () {
                         localStorage.clear();
@@ -1070,9 +1123,9 @@ $(function () {
                             }
                         });
                     }
-                    $('.user-settings').prepend('<li class="colors-go"> <h5>Colores</h5> </li>');
-                    $('.user-settings').prepend('<li class="e-cards"> <h5>E-cards</h5> </li>');
                     $('.user-settings').prepend('<li class="customers"> <h5>Clientes</h5> </li>');
+                    $('.user-settings').prepend('<li class="e-cards"> <h5>E-cards</h5> </li>');
+                    $('.user-settings').prepend('<li class="colors-go"> <h5>Centro de control</h5> </li>');
                     $('.customers').click(function () {
                         if (current !== 'customers') {
                             next('customers');
@@ -1273,7 +1326,7 @@ $(function () {
         }
         next(current);
         $('.progress').removeClass('loading');
-    } */
+    }*/
     //    else {
     if (admin) {
         if (localStorage.admin) {

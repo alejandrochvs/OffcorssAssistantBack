@@ -1,7 +1,7 @@
 .result {
     padding: 5vh 0;
     height: 100%;
-    overflow: scroll;
+    overflow: auto;
     overflow-x: hidden;
      ::-webkit-scrollbar {
         display: inherit;

@@ -3,6 +3,9 @@
         <i class="fa fa-times fa-2x"></i>
         <div class="col-xs-12 img">
         </div>
+        <div class="scroll-bar">
+            <div class="scroll-percent"></div>
+        </div>
     </div>
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 selection-wrap">
         <div class="col-xs-12 title">
@@ -11,7 +14,10 @@
                 <N>MARTÍN</N> en superiores, inferiores y calzado?
             </h4>
         </div>
-        <div class="col-xs-12 col-sm-4 padWrap top">
+        <div class="padPrev visible-xs">
+            <i class="fa fa-angle-left"></i>
+        </div>
+        <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 padWrap top active">
             <div class="col-xs-12 image top">
                 <img src="../IMG/Size/top.svg" alt="" />
             </div>
@@ -25,7 +31,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-4 padWrap bottom">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 padWrap bottom">
             <div class="col-xs-12 image bottom">
                 <img src="../IMG/Size/bottom.svg" alt="" />
             </div>
@@ -40,7 +46,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-4 padWrap shoes">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 padWrap shoes">
             <div class="col-xs-12 image shoes">
                 <img src="../IMG/Size/shoes.svg" alt="" />
             </div>
@@ -54,16 +60,57 @@
                 </div>
             </div>
         </div>
+        <div class="padNext visible-xs">
+            <i class="fa fa-angle-right"></i>
+        </div>
+
     </div>
 </div>
 <script>
     $(function() {
+        var scrollFunction = function() {
+            var contHeight = $('.sizes-guide > .img').height();
+            var contentHeight = $('.sizes-guide > .img > img').height();
+            if (contentHeight - contHeight < 0) {
+                $('.scroll-bar > .scroll-percent').css('height', '100%');
+            } else {
+                var scrollPercent = contHeight / contentHeight * 100;
+                $('.scroll-bar > .scroll-percent').css('height', scrollPercent + '%');
+                $('.sizes-guide > .img').scroll(function() {
+                    $('.scroll-bar > .scroll-percent').css('height', $(this).scrollTop() / contentHeight * 100 + scrollPercent + '%');
+                })
+            }
+        }
         $('.size > .selection-wrap > .title > .text').click(function() {
+            scrollFunction();
+            $('.scroll-percent').css('background-color', $('.loader > .progress').css('background-color'));
             $('.sizes-guide').addClass('active');
         });
         $('.sizes-guide > .fa-times').click(function() {
             $('.sizes-guide').removeClass('active');
         });
+        var currentPad = 0;
+        var slidePad = function(index) {
+            $('.padWrap.active').removeClass('active');
+            $($('.padWrap')[index]).addClass('active');
+        }
+        $('.padPrev').click(function() {
+            if (currentPad > 0) {
+                currentPad--;
+            } else {
+                currentPad = $('.padWrap').length - 1;
+            }
+            slidePad(currentPad);
+        });
+        $('.padNext').click(function() {
+            if (currentPad < $('.padWrap').length - 1) {
+                currentPad++;
+            } else {
+                currentPad = 0;
+            }
+            slidePad(currentPad);
+        });
+
     })
 
 </script>

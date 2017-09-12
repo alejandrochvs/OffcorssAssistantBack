@@ -1,9 +1,10 @@
 .occasion {
     padding: 5vh 0;
-    overflow: scroll;
     height: 100%;
-     ::-webkit-scrollbar {
-        display: inherit;
+    overflow: auto;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+        display: none;
     }
     .selection-wrap {
         text-align: center;
@@ -26,7 +27,7 @@
                 cursor: pointer;
                 transition: all 0.3s ease;
                 padding: 0;
-                background: tansparent;
+                background: transparent;
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
@@ -67,13 +68,13 @@
                     h3 {
                         color: #333;
                         transition: all .3s ease;
-                        line-height: 8vh;
+                        line-height: 6vh;
                         overflow: hidden;
                         text-overflow: ellipsis;
                         white-space: nowrap;
                         text-align: center;
                         margin: 0;
-                        font-size: 16px;
+                        font-size: 14px;
                         color: white;
                     }
                 }
@@ -96,68 +97,6 @@
                         }
                     }
                 }
-            }
-            &:nth-child(1) {
-                .cont {
-                    background-image: url(../IMG/occasions/ocasiones-1.jpg);
-                    .title {
-                        h3 {
-                            color: #F2A055;
-                        }
-                    }
-                }
-            }
-            &:nth-child(2) {
-                .cont {
-                    background-image: url(../IMG/occasions/ocasiones-2.jpg);
-                    .title {
-                        h3 {
-                            color: #75AE9B;
-                        }
-                    }
-                }
-            }
-            &:nth-child(3) {
-                .cont {
-                    background-image: url(../IMG/occasions/ocasiones-3.jpg);
-                    .title {
-                        h3 {
-                            color: #464C51;
-                        }
-                    }
-                }
-            }
-            &:nth-child(5) {
-                .cont {
-                    background-image: url(../IMG/occasions/ocasiones-4.jpg);
-                    .title {
-                        h3 {
-                            color: #3AB2BC;
-                        }
-                    }
-                }
-            }
-            &:nth-child(6) {
-                .cont {
-                    background-image: url(../IMG/occasions/ocasiones-5.jpg);
-                    .title {
-                        h3 {
-                            color: #A79E98;
-                        }
-                    }
-                }
-            }
-            &:nth-child(7) {
-                .cont {
-                    background-image: url(../IMG/occasions/ocasiones-6.jpg);
-                    .title {
-                        h3 {
-                            color: #5A6069;
-                        }
-                    }
-                }
-            }
-            .cont {
                 &.active {
                     img {
                         opacity: 1;
@@ -167,23 +106,28 @@
                             color: white;
                         }
                         h3 {
-                            color: white;
+                            color: white !important;
                         }
                     }
                 }
             }
         }
+        i {
+            transition: all .3s ease;
+        }
     }
     .occasionsBtn {
-        border-radius: 2px;
+        border-radius: 10px;
         background: white;
         transition: all .3s ease;
         color: $yellow;
         padding: 1%;
         cursor: pointer;
-        height: 5vh;
-        line-height: 5vh;
+        height: 7vh;
+        line-height: 7vh;
         padding: 0;
+        font-family: FrontageCBold, sans-serif;
+        font-size: 22px;
         &:hover {
             color: darken($yellow, 5%);
             opacity: 0.5;
@@ -220,6 +164,20 @@
                         .title {
                             background: rgba($occasionColor, $opacity);
                         }
+                    }
+                }
+            }
+            .nextOccasion {
+                &:hover {
+                    i {
+                        color: $boy;
+                    }
+                }
+            }
+            .prevOccasion {
+                &:hover {
+                    i {
+                        color: $boy;
                     }
                 }
             }
@@ -261,6 +219,20 @@
                     }
                 }
             }
+            .nextOccasion {
+                &:hover {
+                    i {
+                        color: $girl;
+                    }
+                }
+            }
+            .prevOccasion {
+                &:hover {
+                    i {
+                        color: $girl;
+                    }
+                }
+            }
         }
         .occasionsBtn {
             color: $girl;
@@ -296,6 +268,20 @@
                         .title {
                             background: rgba($occasionColor, $opacity);
                         }
+                    }
+                }
+            }
+            .nextOccasion {
+                &:hover {
+                    i {
+                        color: $bBoy;
+                    }
+                }
+            }
+            .prevOccasion {
+                &:hover {
+                    i {
+                        color: $bBoy;
                     }
                 }
             }
@@ -337,6 +323,20 @@
                     }
                 }
             }
+            .nextOccasion {
+                &:hover {
+                    i {
+                        color: $bGirl;
+                    }
+                }
+            }
+            .prevOccasion {
+                &:hover {
+                    i {
+                        color: $bGirl;
+                    }
+                }
+            }
         }
         .occasionsBtn {
             color: $bGirl;
@@ -372,6 +372,20 @@
                         .title {
                             background: rgba($occasionColor, $opacity);
                         }
+                    }
+                }
+            }
+            .nextOccasion {
+                &:hover {
+                    i {
+                        color: $nBoy;
+                    }
+                }
+            }
+            .prevOccasion {
+                &:hover {
+                    i {
+                        color: $nBoy;
                     }
                 }
             }
@@ -413,6 +427,20 @@
                     }
                 }
             }
+            .nextOccasion {
+                &:hover {
+                    i {
+                        color: $nGirl;
+                    }
+                }
+            }
+            .prevOccasion {
+                &:hover {
+                    i {
+                        color: $nGirl;
+                    }
+                }
+            }
         }
         .occasionsBtn {
             color: $nGirl;
@@ -441,21 +469,68 @@
             }
         }
         .occasions {
+            height: 52.5vh;
             margin-top: -2vh;
+            padding: 0;
+            text-align: center;
+            .prevOccasion {
+                transition: all .3s ease;
+                position: absolute;
+                width: 20%;
+                height: 35%;
+                background: transparent;
+                left: 0;
+                color: white;
+                font-size: 60px;
+                top: 25%;
+                z-index: 0;
+                i {
+                    transition: all .3s ease;
+                }
+                &:hover {
+                    transform: scale(1.25);
+                }
+            }
+            .nextOccasion {
+                transition: all .3s ease;
+                position: absolute;
+                width: 20%;
+                height: 35%;
+                background: transparent;
+                right: 0;
+                color: white;
+                font-size: 60px;
+                top: 25%;
+                z-index: 0;
+                i {
+                    transition: all .3s ease;
+                }
+                &:hover {
+                    transform: scale(1.25);
+                }
+            }
             .background {
+                position: absolute;
+                display: none;
                 .cont {
                     .img {
-                        height: 15vh;
+                        height: 40vh;
                         transition: all .3s ease;
+                    }
+                    img {
+                        width: 25%;
+                        left: 38%;
+                        top: inherit;
+                        bottom: 5%;
                     }
                     .title {
                         padding: 0;
-                        height: 7vh;
+                        height: 9vh;
                         transition: all .3s ease;
                         h3 {
                             transition: all .3s ease;
-                            line-height: 7vh;
-                            font-size: 14px;
+                            line-height: 9vh;
+                            font-size: 20px;
                         }
                     }
                     &:hover,
@@ -465,20 +540,31 @@
                             height: 0vh;
                         }
                         .title {
-                            height: 22vh;
+                            height: 44vh;
                             transform: scale(1);
+                            .occasion-desc {
+                                top: 20%;
+                                font-size: 16px;
+                                padding: 0 5%;
+                            }
                             h3 {
-                                line-height: 24vh;
-                                font-size: 18px;
+                                line-height: 10vh;
+                                font-size: 30px;
                             }
                         }
                     }
                 }
+                &.active {
+                    display: inherit;
+                }
             }
         }
         .occasionsBtn {
-            margin-top: 2vh;
-            line-height: 4vh;
+            border-radius: 8px;
+            margin-top: 0vh;
+            max-height: 5vh;
+            line-height: 5vh;
+            font-size: 16px;
         }
     }
 }

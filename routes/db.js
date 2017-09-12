@@ -6,7 +6,7 @@ var path = require('path');
 var mongoose = require('mongoose');
 var mongoURL = process.env.MONGODB_URI ||
     process.env.MONGOHQ_URL ||
-    'mongodb://localhost/assistant';
+    'mongodb://alejandrochvs:Sanrafael1@localhost:27017/assistant?authSource=admin';
 mongoose.Promise = global.Promise;
 mongoose.connect(mongoURL);
 var db = mongoose.connection;
@@ -55,12 +55,13 @@ db.once('open', function () {
         user.password = encrypt(user.password);
         user.save(function (err, user) {
             if (err && err.code !== 11000) {
-                return res.send(err);
+                res.send(err);
+            } else if (err && err.code === 11000) {
+                res.send('User already exists.');
+            } else {
+                res.send('Success');
             }
-            if (err && err.code === 11000) {
-                return res.send('User already exists.');
-            }
-            res.send('Success');
+
         });
     });
     router.post('/users/login', function (req, res) {
@@ -103,10 +104,11 @@ db.once('open', function () {
             };
             eCards.find().limit(Number(req.body.perPage)).skip(Number(req.body.offset)).exec(function (err, docs) {
                 if (err) {
-                    return console.log(err);
+                    res.send(err);
+                } else {
+                    data.docs = docs;
+                    res.send(data);
                 }
-                data.docs = docs;
-                res.send(data);
             });
         });
 
@@ -115,12 +117,15 @@ db.once('open', function () {
         eCards.find({
             gender: req.body.gender,
             age: req.body.age,
-            occasion : req.body.occasion[0]
+            occasion: { $in : req.body.occasion},
+            weather: { $in : req.body.weather}
+            
         }).exec(function (err, found) {
             if (err) {
-                return res.send(err);
+                res.send(err);
+            } else {
+                res.send(found);
             }
-            res.send(found);
         })
     });
     router.post('/e-cards/upload', function (req, res) {
@@ -172,45 +177,56 @@ db.once('open', function () {
         }
         eCard.save(function (err, saved) {
             if (err) {
-                return res.send(err);
+                res.send(err);
+            } else {
+                res.send('success.');
             }
-            res.send('success.')
         })
     });
     router.post('/e-cards/delete', function (req, res) {
-        var toDelete = req.body.url;
+        var toDelete = req.body.id;
         var fileToDelete = path.join('./public/IMG/ecards/' + toDelete);
         eCards.findOneAndRemove({
-            url: toDelete
+            _id: toDelete
         }, function (err) {
             if (err) {
-                console.log(res.send(err));
+                res.send(err);
             }
             fs.unlink(fileToDelete, function (err) {
                 if (err) {
-                    return console.log(err);
+                    res.send(err);
+                } else {
+                    res.send('Deleted');
                 }
-                res.send('Deleted');
             });
         });
     });
-    router.post('/e-cards/getReferences', function (req, res) {
-        eCards.findOne({
-            url: req.body.url
-        }, function (err, docs) {
-            if (err) {
-                return console.log(err);
+    router.post('/e-cards/deleteAll',function(req,res){
+        eCards.remove({},function(err){
+            if (err){
+                res.send(err);
+            }else{
+                res.send('Las e-cards se han borrado.');
             }
-            res.send(docs.reference);
+        })
+    })
+    router.post('/e-cards/getReferences', function (req, res) {
+        eCards.findById(req.body.id, function (err, doc) {
+            if (err) {
+                res.send(err);
+            } else {
+                res.send(doc);
+            }
         });
     });
     var ages = require('./ages_model.js');
     router.post('/ages', function (req, res) {
         ages.find({}, function (err, docs) {
             if (err) {
-                return res.send(err);
+                res.send(err);
+            } else {
+                res.send(docs);
             }
-            res.send(docs);
         })
     });
     var colors = require('./colors_model.js');
@@ -221,17 +237,21 @@ db.once('open', function () {
         } else {
             request.status = false;
         }
-        colors.findOne({hex: request.hex}, function (err, color) {
+        colors.findOne({
+            hex: request.hex
+        }, function (err, color) {
             if (err) {
-                return res.send(err);
+                res.send(err);
+            } else {
+                color.active = request.status;
+                color.save(function (err, colorSaved) {
+                    if (err) {
+                        res.send(err);
+                    } else {
+                        res.send(colorSaved);
+                    }
+                })
             }
-            color.active = request.status;
-            color.save(function(err,colorSaved){
-                if (err){
-                    return res.send(err);
-                }
-                res.send(colorSaved);
-            })
         });
     })
     router.post('/colors', function (req, res) {
@@ -245,45 +265,50 @@ db.once('open', function () {
             }
         }, function (err, docs) {
             if (err) {
-                return res.send(err);
+                res.send(err);
+            } else {
+                res.send(docs);
             }
-            res.send(docs);
         })
     });
     var genders = require('./genders_model.js');
     router.post('/genders', function (req, res) {
         genders.find({}, function (err, docs) {
             if (err) {
-                return res.send(err);
+                res.send(err);
+            } else {
+                res.send(docs);
             }
-            res.send(docs);
         })
     });
     var occasions = require('./occasions_model.js');
     router.post('/occasions', function (req, res) {
         occasions.find({}, function (err, docs) {
             if (err) {
-                return res.send(err);
+                res.send(err);
+            } else {
+                res.send(docs);
             }
-            res.send(docs);
         })
     });
     var types = require('./types_model.js');
     router.post('/types', function (req, res) {
         types.find({}, function (err, docs) {
             if (err) {
-                return res.send(err);
+                res.send(err);
+            } else {
+                res.send(docs);
             }
-            res.send(docs);
         })
     });
     var weathers = require('./weathers_model.js');
     router.post('/weathers', function (req, res) {
         weathers.find({}, function (err, docs) {
             if (err) {
-                return res.send(err);
+                res.send(err);
+            } else {
+                res.send(docs);
             }
-            res.send(docs);
         })
     });
     var customers = require('./customers_model.js');
@@ -306,13 +331,12 @@ db.once('open', function () {
         var customertoDb = new customers(customer);
         customertoDb.save(function (err, customer) {
             if (err && err.code !== 11000) {
-                console.log(err);
-                return res.send(err);
+                res.send(err);
+            } else if (err && err.code === 11000) {
+                res.send('User already exists.');
+            } else {
+                res.sendStatus('OK');
             }
-            if (err && err.code === 11000) {
-                return res.send('User already exists.');
-            }
-            res.sendStatus('OK');
         });
     });
     router.post('/customers', function (req, res) {
@@ -324,18 +348,20 @@ db.once('open', function () {
         }
         customers.find(query).count({}).exec(function (err, count) {
             if (err) {
-                return res.send(err);
+                res.send(err);
+            } else {
+                var data = {
+                    count: count
+                };
+                customers.find(query).sort([[sort, -1]]).limit(25).skip(Number(req.body.offset)).exec(function (err, docs) {
+                    if (err) {
+                        res.send(err);
+                    } else {
+                        data.docs = docs;
+                        res.send(data);
+                    }
+                });
             }
-            var data = {
-                count: count
-            };
-            customers.find(query).sort([[sort, -1]]).limit(25).skip(Number(req.body.offset)).exec(function (err, docs) {
-                if (err) {
-                    return res.send(err);
-                }
-                data.docs = docs;
-                res.send(data);
-            });
         });
 
     });

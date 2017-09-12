@@ -1,4 +1,9 @@
 .sizePrimi {
+    overflow: auto;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+        display: none;
+    }
     padding: 5vh 0;
     .selection-wrap {
         text-align: center;
@@ -42,7 +47,7 @@
         }
         .padWrap {
             margin-bottom: 5vh;
-            margin-top: 2.5vh;
+            margin-top: 4.5vh;
             .image {
                 margin-bottom: 2.5vh;
                 img {

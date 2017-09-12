@@ -16,7 +16,8 @@ html {
   html #editing {
     text-align: center;
     height: 50%;
-    top: 25%; }
+    top: 25%;
+    background: transparent; }
   html body {
     user-select: none;
     font-family: FrontageC;
@@ -208,7 +209,7 @@ html {
               height: 100%; }
               html body .ui .ui-section.hide-admin.admin-hidden .ui-option i {
                 line-height: 50px; }
-    html body ::-webkit-scrollbar {
+    html body::-webkit-scrollbar {
       display: none; }
     html body .header {
       margin: 0;
@@ -347,7 +348,8 @@ html {
       z-index: 0;
       background-image: url("../IMG/background.jpg");
       padding: 0;
-      background-position: center; }
+      background-position: center;
+      transition: all .3s ease; }
       html body .content .warning-wrapper {
         padding: 0;
         max-height: 0vh;
@@ -355,7 +357,7 @@ html {
         transition: all .6s ease;
         color: white;
         top: -1vh;
-        z-index: 1;
+        z-index: 2;
         text-align: center; }
         html body .content .warning-wrapper div {
           background: orangered; }
@@ -401,7 +403,11 @@ html {
           padding: 0; }
           html body .content .screen .container .gender {
             padding: 5vh 5vw;
-            height: 100%; }
+            height: 100%;
+            overflow: auto;
+            overflow-y: hidden; }
+            html body .content .screen .container .gender::-webkit-scrollbar {
+              display: none; }
             html body .content .screen .container .gender .selection-wrap {
               text-align: center;
               height: 50%;
@@ -451,7 +457,11 @@ html {
                 background-position: center;
                 background-origin: content-box;
                 background-size: contain;
-                background-repeat: no-repeat; }
+                background-repeat: no-repeat;
+                transition: all .3s ease;
+                cursor: pointer; }
+                html body .content .screen .container .gender .img-boy .image:hover {
+                  transform: scale(1.1); }
             html body .content .screen .container .gender .img-girl {
               height: 60vh; }
               html body .content .screen .container .gender .img-girl .image {
@@ -460,7 +470,11 @@ html {
                 background-position: center;
                 background-origin: content-box;
                 background-size: contain;
-                background-repeat: no-repeat; }
+                background-repeat: no-repeat;
+                transition: all .3s ease;
+                cursor: pointer; }
+                html body .content .screen .container .gender .img-girl .image:hover {
+                  transform: scale(1.1); }
             html body .content .screen .container .gender.boy .selection-wrap .title .text {
               border-bottom-color: #6B85AB; }
             html body .content .screen .container .gender.boy .selection-wrap .selections .background .boySel {
@@ -480,14 +494,26 @@ html {
           @media (max-width: 767px) {
             html body .content .screen .container .gender {
               padding: 1vh 2vw; }
-              html body .content .screen .container .gender .selection-wrap .title {
-                margin-top: 5vh; }
-                html body .content .screen .container .gender .selection-wrap .title .text {
-                  font-size: 2em; }
-              html body .content .screen .container .gender .selection-wrap .selections .background .text {
-                font-size: 4em; } }
+              html body .content .screen .container .gender .selection-wrap {
+                height: auto; }
+                html body .content .screen .container .gender .selection-wrap .title {
+                  margin-top: 5vh; }
+                  html body .content .screen .container .gender .selection-wrap .title .text {
+                    font-size: 1.5em; }
+                html body .content .screen .container .gender .selection-wrap .selections .background .text {
+                  font-size: 4em;
+                  margin-top: 0; }
+              html body .content .screen .container .gender .img-boy,
+              html body .content .screen .container .gender .img-girl {
+                height: 35vh;
+                padding: 0; } }
           html body .content .screen .container .name {
-            padding: 5vh 0; }
+            padding: 5vh 0;
+            height: 100%;
+            overflow: auto;
+            overflow-x: hidden; }
+            html body .content .screen .container .name::-webkit-scrollbar {
+              display: none; }
             html body .content .screen .container .name .selection-wrap {
               text-align: center;
               margin-top: 15vh; }
@@ -524,7 +550,8 @@ html {
               html body .content .screen .container .name .continue div {
                 transition: all 0.3s ease;
                 background: #fd0;
-                color: white; }
+                color: white;
+                border-radius: 10px; }
                 html body .content .screen .container .name .continue div h3 {
                   text-align: center;
                   margin: 0;
@@ -585,18 +612,30 @@ html {
             html body .content .screen .container .name.nGirl .img .image {
               background-image: url("../IMG/Name/nGirl.png"); }
           @media (max-width: 767px) {
+            html body .content .screen .container .name .img {
+              margin-top: 5vh;
+              position: relative; }
             html body .content .screen .container .name .selection-wrap {
               margin-top: 0; }
               html body .content .screen .container .name .selection-wrap .title .text {
                 font-size: 2em; }
             html body .content .screen .container .name .nameInput {
-              margin-top: 5vh; }
+              margin-top: 0vh; }
               html body .content .screen .container .name .nameInput input {
-                font-size: 9vw; } }
+                font-size: 9vw; }
+            html body .content .screen .container .name .continue {
+              height: 6vh; }
+              html body .content .screen .container .name .continue div {
+                height: 100%; }
+                html body .content .screen .container .name .continue div h3 {
+                  line-height: 5vh; } }
           html body .content .screen .container .age {
             padding: 5vh 0;
             height: 100%;
-            overflow: scroll; }
+            overflow: auto;
+            overflow-x: hidden; }
+            html body .content .screen .container .age::-webkit-scrollbar {
+              display: none; }
             html body .content .screen .container .age .selection-wrap {
               margin-top: 7vh;
               text-align: center; }
@@ -742,20 +781,26 @@ html {
               html body .content .screen .container .age .selection-wrap {
                 margin-top: 0; }
                 html body .content .screen .container .age .selection-wrap .title .text {
-                  font-size: 2em;
+                  font-size: 1.5em;
                   border-bottom: solid 2px;
                   padding-bottom: 2vh; }
               html body .content .screen .container .age .age-wrapper .pad {
-                border: none;
-                margin-bottom: 5vh;
-                margin-top: 5vh; }
+                margin-top: 5vh;
+                padding-bottom: 5vh; }
                 html body .content .screen .container .age .age-wrapper .pad .row {
-                  margin-left: 25vw;
-                  margin-bottom: 5vh;
-                  width: 45vw;
-                  height: 45vw; }
-                  html body .content .screen .container .age .age-wrapper .pad .row:last-child {
-                    margin-left: 25vw; } }
+                  width: 24vw;
+                  height: 24vw; }
+                  html body .content .screen .container .age .age-wrapper .pad .row h3 {
+                    top: 30%;
+                    font-size: 11px; }
+                    html body .content .screen .container .age .age-wrapper .pad .row h3 b {
+                      font-size: 18px;
+                      top: -80%; }
+              html body .content .screen .container .age .img {
+                position: relative;
+                top: 0;
+                margin-bottom: 5vh;
+                margin-top: 5vh; } }
           html body .content .screen .container .sizes-guide {
             background: white;
             padding: 0;
@@ -772,32 +817,52 @@ html {
             height: 90%; }
             html body .content .screen .container .sizes-guide .fa-times {
               position: absolute;
-              right: 1vw;
+              right: 20px;
               top: 1vh;
               cursor: pointer;
               transition: all .3s ease;
               z-index: 2; }
               html body .content .screen .container .sizes-guide .fa-times:hover {
-                color: #fd0; }
+                color: lightcoral; }
             html body .content .screen .container .sizes-guide .img {
-              height: 107%;
+              height: 100%;
               overflow: scroll;
+              overflow-x: hidden;
               padding: 0; }
+              html body .content .screen .container .sizes-guide .img::-webkit-scrollbar {
+                display: none; }
               html body .content .screen .container .sizes-guide .img img {
-                padding: 0;
-                margin-bottom: 5vh; }
-              html body .content .screen .container .sizes-guide .img ::-webkit-scrollbar {
-                width: 6px; }
-              html body .content .screen .container .sizes-guide .img ::-webkit-scrollbar-track {
-                -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); }
-              html body .content .screen .container .sizes-guide .img ::-webkit-scrollbar-thumb {
-                -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); }
+                padding: 0; }
+            html body .content .screen .container .sizes-guide .scroll-bar {
+              display: block;
+              width: 10px;
+              background: whitesmoke;
+              z-index: 1;
+              position: absolute;
+              right: 0;
+              top: 0;
+              height: 100%;
+              -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+              -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+              box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4); }
+              html body .content .screen .container .sizes-guide .scroll-bar .scroll-percent {
+                width: 100%;
+                border-radius: 0px;
+                height: 10px;
+                display: block;
+                background: transparent;
+                transition: all .3s ease;
+                top: 0;
+                position: absolute; }
             html body .content .screen .container .sizes-guide.active {
               top: 5%; }
           html body .content .screen .container .size {
-            overflow: scroll;
+            overflow: auto;
+            overflow-x: hidden;
             padding: 2.5vh 0;
             height: 100%; }
+            html body .content .screen .container .size::-webkit-scrollbar {
+              display: none; }
             html body .content .screen .container .size .selection-wrap {
               height: 100%;
               text-align: center; }
@@ -891,6 +956,24 @@ html {
                       color: white; }
                   html body .content .screen .container .size .selection-wrap .padWrap .nav.active {
                     display: inherit; }
+              html body .content .screen .container .size .selection-wrap .padPrev {
+                position: absolute;
+                color: white;
+                font-size: 50px;
+                left: 5%;
+                text-align: center;
+                top: 35%; }
+                html body .content .screen .container .size .selection-wrap .padPrev i {
+                  transition: all .3s ease; }
+              html body .content .screen .container .size .selection-wrap .padNext {
+                position: absolute;
+                color: white;
+                font-size: 50px;
+                right: 5%;
+                text-align: center;
+                top: 35%; }
+                html body .content .screen .container .size .selection-wrap .padNext i {
+                  transition: all .3s ease; }
             html body .content .screen .container .size.boy .selection-wrap .title .text {
               border-bottom-color: #6B85AB; }
               html body .content .screen .container .size.boy .selection-wrap .title .text a {
@@ -904,6 +987,9 @@ html {
               color: #6B85AB; }
             html body .content .screen .container .size.boy .selection-wrap .padWrap .nav .sel:hover .fa {
               color: #405370; }
+            html body .content .screen .container .size.boy .selection-wrap .padNext:hover i,
+            html body .content .screen .container .size.boy .selection-wrap .padPrev:hover i {
+              color: #6B85AB; }
             html body .content .screen .container .size.girl .selection-wrap .title .text {
               border-bottom-color: #FF0295; }
               html body .content .screen .container .size.girl .selection-wrap .title .text a {
@@ -917,6 +1003,9 @@ html {
               color: #FF0295; }
             html body .content .screen .container .size.girl .selection-wrap .padWrap .nav .sel:hover .fa {
               color: #9b005a; }
+            html body .content .screen .container .size.girl .selection-wrap .padNext:hover i,
+            html body .content .screen .container .size.girl .selection-wrap .padPrev:hover i {
+              color: #FF0295; }
             html body .content .screen .container .size.bBoy .selection-wrap .title .text {
               border-bottom-color: #78BF01; }
               html body .content .screen .container .size.bBoy .selection-wrap .title .text a {
@@ -930,6 +1019,9 @@ html {
               color: #78BF01; }
             html body .content .screen .container .size.bBoy .selection-wrap .padWrap .nav .sel:hover .fa {
               color: #385a00; }
+            html body .content .screen .container .size.bBoy .selection-wrap .padNext:hover i,
+            html body .content .screen .container .size.bBoy .selection-wrap .padPrev:hover i {
+              color: #78BF01; }
             html body .content .screen .container .size.bGirl .selection-wrap .title .text {
               border-bottom-color: #9692D1; }
               html body .content .screen .container .size.bGirl .selection-wrap .title .text a {
@@ -943,6 +1035,9 @@ html {
               color: #9692D1; }
             html body .content .screen .container .size.bGirl .selection-wrap .padWrap .nav .sel:hover .fa {
               color: #524bb2; }
+            html body .content .screen .container .size.bGirl .selection-wrap .padNext:hover i,
+            html body .content .screen .container .size.bGirl .selection-wrap .padPrev:hover i {
+              color: #9692D1; }
             html body .content .screen .container .size.nBoy .selection-wrap .title .text {
               border-bottom-color: #009DB8; }
               html body .content .screen .container .size.nBoy .selection-wrap .title .text a {
@@ -956,6 +1051,9 @@ html {
               color: #009DB8; }
             html body .content .screen .container .size.nBoy .selection-wrap .padWrap .nav .sel:hover .fa {
               color: #004652; }
+            html body .content .screen .container .size.nBoy .selection-wrap .padNext:hover i,
+            html body .content .screen .container .size.nBoy .selection-wrap .padPrev:hover i {
+              color: #009DB8; }
             html body .content .screen .container .size.nGirl .selection-wrap .title .text {
               border-bottom-color: #FF98AA; }
               html body .content .screen .container .size.nGirl .selection-wrap .title .text a {
@@ -969,6 +1067,9 @@ html {
               color: #FF98AA; }
             html body .content .screen .container .size.nGirl .selection-wrap .padWrap .nav .sel:hover .fa {
               color: #ff3256; }
+            html body .content .screen .container .size.nGirl .selection-wrap .padNext:hover i,
+            html body .content .screen .container .size.nGirl .selection-wrap .padPrev:hover i {
+              color: #FF98AA; }
           @media (max-width: 767px) {
             html body .content .screen .container .size {
               padding: 0; }
@@ -978,37 +1079,34 @@ html {
                 html body .content .screen .container .size .selection-wrap .title {
                   margin-bottom: 0; }
                   html body .content .screen .container .size .selection-wrap .title .text {
-                    font-size: 7vw; }
+                    font-size: 6vw; }
                     html body .content .screen .container .size .selection-wrap .title .text a {
-                      font-size: 6vw;
+                      font-size: 5vw;
                       top: 2px; }
                 html body .content .screen .container .size .selection-wrap .padWrap {
-                  padding-left: 0; }
+                  padding-left: 0;
+                  display: none; }
                   html body .content .screen .container .size .selection-wrap .padWrap .image {
                     height: 10vh; }
                     html body .content .screen .container .size .selection-wrap .padWrap .image div {
                       font-size: 9vh; }
-                  html body .content .screen .container .size .selection-wrap .padWrap .padSize {
-                    padding: 0;
-                    height: 10vh;
-                    padding-right: 1vw; }
-                    html body .content .screen .container .size .selection-wrap .padWrap .padSize .row {
-                      padding: 0; }
-                      html body .content .screen .container .size .selection-wrap .padWrap .padSize .row .box {
-                        border: solid 1px white;
-                        height: 99%;
-                        font-size: 22px;
-                        line-height: 9vh; }
                   html body .content .screen .container .size .selection-wrap .padWrap .nav {
-                    height: 50%;
+                    height: 25%;
                     bottom: 0;
                     border-radius: 5px;
-                    right: -4vw;
+                    right: -3.5vw;
+                    top: 50%;
                     width: 7vw; }
                     html body .content .screen .container .size .selection-wrap .padWrap .nav .sel.up {
-                      height: 5vh; } }
+                      height: 5vh; }
+                  html body .content .screen .container .size .selection-wrap .padWrap.active {
+                    display: inherit; } }
           html body .content .screen .container .sizePrimi {
+            overflow: auto;
+            overflow-x: hidden;
             padding: 5vh 0; }
+            html body .content .screen .container .sizePrimi::-webkit-scrollbar {
+              display: none; }
             html body .content .screen .container .sizePrimi .selection-wrap {
               text-align: center; }
               html body .content .screen .container .sizePrimi .selection-wrap .title .text {
@@ -1045,7 +1143,7 @@ html {
                   color: #fd0; }
               html body .content .screen .container .sizePrimi .selection-wrap .padWrap {
                 margin-bottom: 5vh;
-                margin-top: 2.5vh; }
+                margin-top: 4.5vh; }
                 html body .content .screen .container .sizePrimi .selection-wrap .padWrap .image {
                   margin-bottom: 2.5vh; }
                   html body .content .screen .container .sizePrimi .selection-wrap .padWrap .image img {
@@ -1200,10 +1298,11 @@ html {
                       top: 2px; } }
           html body .content .screen .container .occasion {
             padding: 5vh 0;
-            overflow: scroll;
-            height: 100%; }
-            html body .content .screen .container .occasion ::-webkit-scrollbar {
-              display: inherit; }
+            height: 100%;
+            overflow: auto;
+            overflow-x: hidden; }
+            html body .content .screen .container .occasion::-webkit-scrollbar {
+              display: none; }
             html body .content .screen .container .occasion .selection-wrap {
               text-align: center; }
               html body .content .screen .container .occasion .selection-wrap .title {
@@ -1221,7 +1320,7 @@ html {
                 cursor: pointer;
                 transition: all 0.3s ease;
                 padding: 0;
-                background: tansparent;
+                background: transparent;
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
@@ -1257,13 +1356,13 @@ html {
                   html body .content .screen .container .occasion .occasions .background .cont .title h3 {
                     color: #333;
                     transition: all .3s ease;
-                    line-height: 8vh;
+                    line-height: 6vh;
                     overflow: hidden;
                     text-overflow: ellipsis;
                     white-space: nowrap;
                     text-align: center;
                     margin: 0;
-                    font-size: 16px;
+                    font-size: 14px;
                     color: white; }
                 html body .content .screen .container .occasion .occasions .background .cont:hover, html body .content .screen .container .occasion .occasions .background .cont.active {
                   transform: scale(1); }
@@ -1278,46 +1377,26 @@ html {
                     html body .content .screen .container .occasion .occasions .background .cont:hover .title h3, html body .content .screen .container .occasion .occasions .background .cont.active .title h3 {
                       line-height: 50vh;
                       font-size: 12px; }
-              html body .content .screen .container .occasion .occasions .background:nth-child(1) .cont {
-                background-image: url(../IMG/occasions/ocasiones-1.jpg); }
-                html body .content .screen .container .occasion .occasions .background:nth-child(1) .cont .title h3 {
-                  color: #F2A055; }
-              html body .content .screen .container .occasion .occasions .background:nth-child(2) .cont {
-                background-image: url(../IMG/occasions/ocasiones-2.jpg); }
-                html body .content .screen .container .occasion .occasions .background:nth-child(2) .cont .title h3 {
-                  color: #75AE9B; }
-              html body .content .screen .container .occasion .occasions .background:nth-child(3) .cont {
-                background-image: url(../IMG/occasions/ocasiones-3.jpg); }
-                html body .content .screen .container .occasion .occasions .background:nth-child(3) .cont .title h3 {
-                  color: #464C51; }
-              html body .content .screen .container .occasion .occasions .background:nth-child(5) .cont {
-                background-image: url(../IMG/occasions/ocasiones-4.jpg); }
-                html body .content .screen .container .occasion .occasions .background:nth-child(5) .cont .title h3 {
-                  color: #3AB2BC; }
-              html body .content .screen .container .occasion .occasions .background:nth-child(6) .cont {
-                background-image: url(../IMG/occasions/ocasiones-5.jpg); }
-                html body .content .screen .container .occasion .occasions .background:nth-child(6) .cont .title h3 {
-                  color: #A79E98; }
-              html body .content .screen .container .occasion .occasions .background:nth-child(7) .cont {
-                background-image: url(../IMG/occasions/ocasiones-6.jpg); }
-                html body .content .screen .container .occasion .occasions .background:nth-child(7) .cont .title h3 {
-                  color: #5A6069; }
-              html body .content .screen .container .occasion .occasions .background .cont.active img {
-                opacity: 1; }
-              html body .content .screen .container .occasion .occasions .background .cont.active .title .occasion-desc {
-                color: white; }
-              html body .content .screen .container .occasion .occasions .background .cont.active .title h3 {
-                color: white; }
+                html body .content .screen .container .occasion .occasions .background .cont.active img {
+                  opacity: 1; }
+                html body .content .screen .container .occasion .occasions .background .cont.active .title .occasion-desc {
+                  color: white; }
+                html body .content .screen .container .occasion .occasions .background .cont.active .title h3 {
+                  color: white !important; }
+            html body .content .screen .container .occasion .occasions i {
+              transition: all .3s ease; }
             html body .content .screen .container .occasion .occasionsBtn {
-              border-radius: 2px;
+              border-radius: 10px;
               background: white;
               transition: all .3s ease;
               color: #fd0;
               padding: 1%;
               cursor: pointer;
-              height: 5vh;
-              line-height: 5vh;
-              padding: 0; }
+              height: 7vh;
+              line-height: 7vh;
+              padding: 0;
+              font-family: FrontageCBold, sans-serif;
+              font-size: 22px; }
               html body .content .screen .container .occasion .occasionsBtn:hover {
                 color: #e6c700;
                 opacity: 0.5;
@@ -1336,6 +1415,10 @@ html {
               background: rgba(107, 133, 171, 0.9); }
             html body .content .screen .container .occasion.boy .occasions .background .cont.active .title {
               background: rgba(107, 133, 171, 0.9); }
+            html body .content .screen .container .occasion.boy .occasions .nextOccasion:hover i {
+              color: #6B85AB; }
+            html body .content .screen .container .occasion.boy .occasions .prevOccasion:hover i {
+              color: #6B85AB; }
             html body .content .screen .container .occasion.boy .occasionsBtn {
               color: #6B85AB; }
               html body .content .screen .container .occasion.boy .occasionsBtn:hover {
@@ -1351,6 +1434,10 @@ html {
               background: rgba(255, 2, 149, 0.9); }
             html body .content .screen .container .occasion.girl .occasions .background .cont.active .title {
               background: rgba(255, 2, 149, 0.9); }
+            html body .content .screen .container .occasion.girl .occasions .nextOccasion:hover i {
+              color: #FF0295; }
+            html body .content .screen .container .occasion.girl .occasions .prevOccasion:hover i {
+              color: #FF0295; }
             html body .content .screen .container .occasion.girl .occasionsBtn {
               color: #FF0295; }
               html body .content .screen .container .occasion.girl .occasionsBtn:hover {
@@ -1366,6 +1453,10 @@ html {
               background: rgba(120, 191, 1, 0.9); }
             html body .content .screen .container .occasion.bBoy .occasions .background .cont.active .title {
               background: rgba(120, 191, 1, 0.9); }
+            html body .content .screen .container .occasion.bBoy .occasions .nextOccasion:hover i {
+              color: #78BF01; }
+            html body .content .screen .container .occasion.bBoy .occasions .prevOccasion:hover i {
+              color: #78BF01; }
             html body .content .screen .container .occasion.bBoy .occasionsBtn {
               color: #78BF01; }
               html body .content .screen .container .occasion.bBoy .occasionsBtn:hover {
@@ -1381,6 +1472,10 @@ html {
               background: rgba(150, 146, 209, 0.9); }
             html body .content .screen .container .occasion.bGirl .occasions .background .cont.active .title {
               background: rgba(150, 146, 209, 0.9); }
+            html body .content .screen .container .occasion.bGirl .occasions .nextOccasion:hover i {
+              color: #9692D1; }
+            html body .content .screen .container .occasion.bGirl .occasions .prevOccasion:hover i {
+              color: #9692D1; }
             html body .content .screen .container .occasion.bGirl .occasionsBtn {
               color: #9692D1; }
               html body .content .screen .container .occasion.bGirl .occasionsBtn:hover {
@@ -1396,6 +1491,10 @@ html {
               background: rgba(0, 157, 184, 0.9); }
             html body .content .screen .container .occasion.nBoy .occasions .background .cont.active .title {
               background: rgba(0, 157, 184, 0.9); }
+            html body .content .screen .container .occasion.nBoy .occasions .nextOccasion:hover i {
+              color: #009DB8; }
+            html body .content .screen .container .occasion.nBoy .occasions .prevOccasion:hover i {
+              color: #009DB8; }
             html body .content .screen .container .occasion.nBoy .occasionsBtn {
               color: #009DB8; }
               html body .content .screen .container .occasion.nBoy .occasionsBtn:hover {
@@ -1411,6 +1510,10 @@ html {
               background: rgba(255, 152, 170, 0.9); }
             html body .content .screen .container .occasion.nGirl .occasions .background .cont.active .title {
               background: rgba(255, 152, 170, 0.9); }
+            html body .content .screen .container .occasion.nGirl .occasions .nextOccasion:hover i {
+              color: #FF98AA; }
+            html body .content .screen .container .occasion.nGirl .occasions .prevOccasion:hover i {
+              color: #FF98AA; }
             html body .content .screen .container .occasion.nGirl .occasionsBtn {
               color: #FF98AA; }
               html body .content .screen .container .occasion.nGirl .occasionsBtn:hover {
@@ -1426,31 +1529,81 @@ html {
               html body .content .screen .container .occasion .selection-wrap .title .text {
                 font-size: 1.75em; }
               html body .content .screen .container .occasion .occasions {
-                margin-top: -2vh; }
-                html body .content .screen .container .occasion .occasions .background .cont .img {
-                  height: 15vh;
-                  transition: all .3s ease; }
-                html body .content .screen .container .occasion .occasions .background .cont .title {
-                  padding: 0;
-                  height: 7vh;
-                  transition: all .3s ease; }
-                  html body .content .screen .container .occasion .occasions .background .cont .title h3 {
-                    transition: all .3s ease;
-                    line-height: 7vh;
-                    font-size: 14px; }
-                html body .content .screen .container .occasion .occasions .background .cont:hover, html body .content .screen .container .occasion .occasions .background .cont.active {
-                  transform: scale(1); }
-                  html body .content .screen .container .occasion .occasions .background .cont:hover .img, html body .content .screen .container .occasion .occasions .background .cont.active .img {
-                    height: 0vh; }
-                  html body .content .screen .container .occasion .occasions .background .cont:hover .title, html body .content .screen .container .occasion .occasions .background .cont.active .title {
-                    height: 22vh;
+                height: 52.5vh;
+                margin-top: -2vh;
+                padding: 0;
+                text-align: center; }
+                html body .content .screen .container .occasion .occasions .prevOccasion {
+                  transition: all .3s ease;
+                  position: absolute;
+                  width: 20%;
+                  height: 35%;
+                  background: transparent;
+                  left: 0;
+                  color: white;
+                  font-size: 60px;
+                  top: 25%;
+                  z-index: 0; }
+                  html body .content .screen .container .occasion .occasions .prevOccasion i {
+                    transition: all .3s ease; }
+                  html body .content .screen .container .occasion .occasions .prevOccasion:hover {
+                    transform: scale(1.25); }
+                html body .content .screen .container .occasion .occasions .nextOccasion {
+                  transition: all .3s ease;
+                  position: absolute;
+                  width: 20%;
+                  height: 35%;
+                  background: transparent;
+                  right: 0;
+                  color: white;
+                  font-size: 60px;
+                  top: 25%;
+                  z-index: 0; }
+                  html body .content .screen .container .occasion .occasions .nextOccasion i {
+                    transition: all .3s ease; }
+                  html body .content .screen .container .occasion .occasions .nextOccasion:hover {
+                    transform: scale(1.25); }
+                html body .content .screen .container .occasion .occasions .background {
+                  position: absolute;
+                  display: none; }
+                  html body .content .screen .container .occasion .occasions .background .cont .img {
+                    height: 40vh;
+                    transition: all .3s ease; }
+                  html body .content .screen .container .occasion .occasions .background .cont img {
+                    width: 25%;
+                    left: 38%;
+                    top: inherit;
+                    bottom: 5%; }
+                  html body .content .screen .container .occasion .occasions .background .cont .title {
+                    padding: 0;
+                    height: 9vh;
+                    transition: all .3s ease; }
+                    html body .content .screen .container .occasion .occasions .background .cont .title h3 {
+                      transition: all .3s ease;
+                      line-height: 9vh;
+                      font-size: 20px; }
+                  html body .content .screen .container .occasion .occasions .background .cont:hover, html body .content .screen .container .occasion .occasions .background .cont.active {
                     transform: scale(1); }
-                    html body .content .screen .container .occasion .occasions .background .cont:hover .title h3, html body .content .screen .container .occasion .occasions .background .cont.active .title h3 {
-                      line-height: 24vh;
-                      font-size: 18px; }
+                    html body .content .screen .container .occasion .occasions .background .cont:hover .img, html body .content .screen .container .occasion .occasions .background .cont.active .img {
+                      height: 0vh; }
+                    html body .content .screen .container .occasion .occasions .background .cont:hover .title, html body .content .screen .container .occasion .occasions .background .cont.active .title {
+                      height: 44vh;
+                      transform: scale(1); }
+                      html body .content .screen .container .occasion .occasions .background .cont:hover .title .occasion-desc, html body .content .screen .container .occasion .occasions .background .cont.active .title .occasion-desc {
+                        top: 20%;
+                        font-size: 16px;
+                        padding: 0 5%; }
+                      html body .content .screen .container .occasion .occasions .background .cont:hover .title h3, html body .content .screen .container .occasion .occasions .background .cont.active .title h3 {
+                        line-height: 10vh;
+                        font-size: 30px; }
+                  html body .content .screen .container .occasion .occasions .background.active {
+                    display: inherit; }
               html body .content .screen .container .occasion .occasionsBtn {
-                margin-top: 2vh;
-                line-height: 4vh; } }
+                border-radius: 8px;
+                margin-top: 0vh;
+                max-height: 5vh;
+                line-height: 5vh;
+                font-size: 16px; } }
           @media (min-height: 768px) and (orientation: portrait) {
             html body .content .screen .container .occasion .occasions .background .cont .img {
               height: 20vh; }
@@ -1486,7 +1639,10 @@ html {
           html body .content .screen .container .weather {
             padding: 5vh 0;
             height: 100%;
-            overflow: scroll; }
+            overflow: auto;
+            overflow-x: hidden; }
+            html body .content .screen .container .weather::-webkit-scrollbar {
+              display: none; }
             html body .content .screen .container .weather .selection-wrap {
               text-align: center; }
               html body .content .screen .container .weather .selection-wrap .title {
@@ -1552,12 +1708,12 @@ html {
               html body .content .screen .container .weather .selection-wrap .title {
                 margin: 0; }
                 html body .content .screen .container .weather .selection-wrap .title .text {
-                  font-size: 2em;
+                  font-size: 1.8em;
                   padding-bottom: 5%; }
               html body .content .screen .container .weather .weathers .background .cont {
                 border-right: none;
                 border-bottom: dashed 2px white;
-                padding: 3% 0; }
+                padding: 0; }
                 html body .content .screen .container .weather .weathers .background .cont .img {
                   height: auto; }
                   html body .content .screen .container .weather .weathers .background .cont .img img {
@@ -1565,7 +1721,7 @@ html {
                 html body .content .screen .container .weather .weathers .background .cont .title {
                   padding: 2%; }
                   html body .content .screen .container .weather .weathers .background .cont .title h3 {
-                    font-size: 7vh; }
+                    font-size: 6vh; }
               html body .content .screen .container .weather .weathers .background:last-child .cont {
                 border: none; } }
           html body .content .screen .container .looks {
@@ -1708,9 +1864,12 @@ html {
               bottom: 3vh; } }
           html body .content .screen .container .color {
             z-index: 1;
-            padding: 5vh 0;
+            padding: 0;
             height: 100%;
-            overflow: scroll; }
+            overflow: auto;
+            overflow-x: hidden; }
+            html body .content .screen .container .color::-webkit-scrollbar {
+              display: none; }
             html body .content .screen .container .color .selection-wrap {
               text-align: center; }
               html body .content .screen .container .color .selection-wrap .title {
@@ -1767,31 +1926,67 @@ html {
                   bottom: 0;
                   width: 70%;
                   transition: all .3s ease; }
-                html body .content .screen .container .color .colors .color-wrap:hover {
-                  transform: scale(1.1); }
-                  html body .content .screen .container .color .colors .color-wrap:hover .half {
+                html body .content .screen .container .color .colors .color-wrap:hover, html body .content .screen .container .color .colors .color-wrap:active, html body .content .screen .container .color .colors .color-wrap:focus, html body .content .screen .container .color .colors .color-wrap.active {
+                  border-color: #fd0; }
+                  html body .content .screen .container .color .colors .color-wrap:hover .half, html body .content .screen .container .color .colors .color-wrap:active .half, html body .content .screen .container .color .colors .color-wrap:focus .half, html body .content .screen .container .color .colors .color-wrap.active .half {
                     transform: rotate(0deg); }
-                  html body .content .screen .container .color .colors .color-wrap:hover .right-half {
+                  html body .content .screen .container .color .colors .color-wrap:hover .right-half, html body .content .screen .container .color .colors .color-wrap:active .right-half, html body .content .screen .container .color .colors .color-wrap:focus .right-half, html body .content .screen .container .color .colors .color-wrap.active .right-half {
                     left: -20%; }
+            html body .content .screen .container .color .colorsContinue {
+              opacity: 0;
+              color: white;
+              text-align: center;
+              line-height: 7vh;
+              border-radius: 10px;
+              font-size: 20px;
+              font-family: FrontageCBold, sans-serif;
+              transition: all .3s ease;
+              max-height: 0;
+              overflow: hidden;
+              cursor: default;
+              margin-bottom: 5vh; }
+              html body .content .screen .container .color .colorsContinue.active {
+                opacity: 1;
+                max-height: 7vh;
+                cursor: pointer; }
+                html body .content .screen .container .color .colorsContinue.active:hover {
+                  transform: scale(1.1); }
             html body .content .screen .container .color.boy .selection-wrap .title .text {
               border-bottom-color: #6B85AB; }
+            html body .content .screen .container .color.boy .colors .color-wrap:hover, html body .content .screen .container .color.boy .colors .color-wrap:focus, html body .content .screen .container .color.boy .colors .color-wrap:active, html body .content .screen .container .color.boy .colors .color-wrap.active {
+              border-color: #6B85AB; }
+            html body .content .screen .container .color.boy .colorsContinue {
+              background: #6B85AB; }
             html body .content .screen .container .color.girl .selection-wrap .title .text {
               border-bottom-color: #FF0295; }
+            html body .content .screen .container .color.girl .colors .color-wrap:hover, html body .content .screen .container .color.girl .colors .color-wrap:focus, html body .content .screen .container .color.girl .colors .color-wrap:active, html body .content .screen .container .color.girl .colors .color-wrap.active {
+              border-color: #FF0295; }
+            html body .content .screen .container .color.girl .colorsContinue {
+              background: #FF0295; }
             html body .content .screen .container .color.bBoy .selection-wrap .title .text {
               border-bottom-color: #78BF01; }
+            html body .content .screen .container .color.bBoy .colors .color-wrap:hover, html body .content .screen .container .color.bBoy .colors .color-wrap:focus, html body .content .screen .container .color.bBoy .colors .color-wrap:active, html body .content .screen .container .color.bBoy .colors .color-wrap.active {
+              border-color: #78BF01; }
+            html body .content .screen .container .color.bBoy .colorsContinue {
+              background: #78BF01; }
             html body .content .screen .container .color.bGirl .selection-wrap .title .text {
               border-bottom-color: #9692D1; }
+            html body .content .screen .container .color.bGirl .colors .color-wrap:hover, html body .content .screen .container .color.bGirl .colors .color-wrap:focus, html body .content .screen .container .color.bGirl .colors .color-wrap:active, html body .content .screen .container .color.bGirl .colors .color-wrap.active {
+              border-color: #9692D1; }
+            html body .content .screen .container .color.bGirl .colorsContinue {
+              background: #9692D1; }
             html body .content .screen .container .color.nBoy .selection-wrap .title .text {
               border-bottom-color: #009DB8; }
+            html body .content .screen .container .color.nBoy .colors .color-wrap:hover, html body .content .screen .container .color.nBoy .colors .color-wrap:focus, html body .content .screen .container .color.nBoy .colors .color-wrap:active, html body .content .screen .container .color.nBoy .colors .color-wrap.active {
+              border-color: #009DB8; }
+            html body .content .screen .container .color.nBoy .colorsContinue {
+              background: #009DB8; }
             html body .content .screen .container .color.nGirl .selection-wrap .title .text {
               border-bottom-color: #FF98AA; }
-            html body .content .screen .container .color .continue.transparent {
-              z-index: -1; }
-              html body .content .screen .container .color .continue.transparent h3 {
-                color: transparent;
-                cursor: default;
-                background: transparent;
-                z-index: -1; }
+            html body .content .screen .container .color.nGirl .colors .color-wrap:hover, html body .content .screen .container .color.nGirl .colors .color-wrap:focus, html body .content .screen .container .color.nGirl .colors .color-wrap:active, html body .content .screen .container .color.nGirl .colors .color-wrap.active {
+              border-color: #FF98AA; }
+            html body .content .screen .container .color.nGirl .colorsContinue {
+              background: #FF98AA; }
           @media (max-width: 767px) {
             html body .content .screen .container .color {
               padding-top: 0; }
@@ -1800,19 +1995,72 @@ html {
                 html body .content .screen .container .color .selection-wrap .title .text {
                   font-size: 2em;
                   padding-bottom: 2vh; }
+              html body .content .screen .container .color .color-display {
+                position: relative;
+                transition: all .3s ease;
+                height: 33vw;
+                width: 33vw;
+                margin-left: 34vw;
+                background: transparent;
+                border-radius: 50%;
+                display: inline-block;
+                border: solid 5px white;
+                padding: 0;
+                overflow: hidden;
+                cursor: pointer;
+                margin-bottom: 1vh;
+                left: -0.1vw; }
+                html body .content .screen .container .color .color-display .tag {
+                  position: relative;
+                  line-height: 28vw;
+                  font-size: 22px;
+                  text-align: center;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  left: 0%;
+                  width: 100%;
+                  text-shadow: -0.5px 0 white, 0 0.5px white, 0.5px 0 white, 0 -0.5px white; }
+                html body .content .screen .container .color .color-display .half {
+                  position: absolute;
+                  height: 160%;
+                  transform: rotate(45deg); }
+                html body .content .screen .container .color .color-display .left-half {
+                  background: #f2d200;
+                  left: -10%;
+                  top: -10%;
+                  width: 120%; }
+                html body .content .screen .container .color .color-display .right-half {
+                  background: #ffdd00;
+                  left: 0%;
+                  bottom: 0;
+                  width: 70%;
+                  transition: all .3s ease; }
+                html body .content .screen .container .color .color-display:hover .half {
+                  transform: rotate(0deg); }
+                html body .content .screen .container .color .color-display:hover .right-half {
+                  left: -20%; }
               html body .content .screen .container .color .colors {
                 padding-bottom: 2vh;
                 height: auto;
                 padding-left: 8%; }
                 html body .content .screen .container .color .colors .color-wrap {
-                  height: 12.5vh;
-                  width: 12.5vh; }
+                  height: 7vh;
+                  width: 7vh;
+                  top: -0.6vw; }
                   html body .content .screen .container .color .colors .color-wrap .tag {
-                    display: none; } }
+                    display: none; }
+              html body .content .screen .container .color .colorsContinue {
+                line-height: 6vh;
+                border-radius: 8px;
+                font-size: 18px; } }
           html body .content .screen .container .personality {
             padding: 0;
             height: 100%;
-            overflow: scroll; }
+            overflow: auto;
+            overflow-x: hidden; }
+            html body .content .screen .container .personality::-webkit-scrollbar {
+              display: none; }
             html body .content .screen .container .personality .selection-wrap {
               text-align: center; }
               html body .content .screen .container .personality .selection-wrap .title {
@@ -1823,7 +2071,10 @@ html {
                   color: white;
                   border-bottom: solid 1px #fd0;
                   padding: 2%;
-                  font-size: 50px; }
+                  font-size: 50px;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis; }
             html body .content .screen .container .personality .personWrap .person {
               padding: 1vh 1vw;
               height: 40vh;
@@ -1891,11 +2142,15 @@ html {
               margin-top: 5vh;
               margin-bottom: 5vh;
               padding: 0;
-              transition: all .3s ease; }
+              transition: all .3s ease;
+              border-radius: 8px;
+              overflow: hidden;
+              font-family: FrontageCBold, sans-serif; }
               html body .content .screen .container .personality .continue h4 {
                 margin: 0;
                 background: #fd0;
                 color: white;
+                font-size: 24px;
                 padding: 4%;
                 cursor: pointer;
                 transition: all .3s ease; }
@@ -1915,6 +2170,10 @@ html {
                 background-color: rgba(107, 133, 171, 0.8); }
             html body .content .screen .container .personality.boy .personWrap .person .fa-check {
               color: #6B85AB; }
+            html body .content .screen .container .personality.boy .personWrap .prevPerson:hover i {
+              color: #6B85AB; }
+            html body .content .screen .container .personality.boy .personWrap .nextPerson:hover i {
+              color: #6B85AB; }
             html body .content .screen .container .personality.boy .continue h4 {
               background: #6B85AB; }
             html body .content .screen .container .personality.girl .selection-wrap .title .text {
@@ -1924,6 +2183,10 @@ html {
               html body .content .screen .container .personality.girl .personWrap .person .background .title {
                 background-color: #FF0295; }
             html body .content .screen .container .personality.girl .personWrap .person .fa-check {
+              color: #FF0295; }
+            html body .content .screen .container .personality.girl .personWrap .prevPerson:hover i {
+              color: #FF0295; }
+            html body .content .screen .container .personality.girl .personWrap .nextPerson:hover i {
               color: #FF0295; }
             html body .content .screen .container .personality.girl .continue h4 {
               background: #FF0295; }
@@ -1935,6 +2198,10 @@ html {
                 background-color: #78BF01; }
             html body .content .screen .container .personality.bBoy .personWrap .person .fa-check {
               color: #78BF01; }
+            html body .content .screen .container .personality.bBoy .personWrap .prevPerson:hover i {
+              color: #78BF01; }
+            html body .content .screen .container .personality.bBoy .personWrap .nextPerson:hover i {
+              color: #78BF01; }
             html body .content .screen .container .personality.bBoy .continue h4 {
               background: #78BF01; }
             html body .content .screen .container .personality.bGirl .selection-wrap .title .text {
@@ -1944,6 +2211,10 @@ html {
               html body .content .screen .container .personality.bGirl .personWrap .person .background .title {
                 background-color: #9692D1; }
             html body .content .screen .container .personality.bGirl .personWrap .person .fa-check {
+              color: #9692D1; }
+            html body .content .screen .container .personality.bGirl .personWrap .prevPerson:hover i {
+              color: #9692D1; }
+            html body .content .screen .container .personality.bGirl .personWrap .nextPerson:hover i {
               color: #9692D1; }
             html body .content .screen .container .personality.bGirl .continue h4 {
               background: #9692D1; }
@@ -1955,6 +2226,10 @@ html {
                 background-color: #009DB8; }
             html body .content .screen .container .personality.nBoy .personWrap .person .fa-check {
               color: #009DB8; }
+            html body .content .screen .container .personality.nBoy .personWrap .prevPerson:hover i {
+              color: #009DB8; }
+            html body .content .screen .container .personality.nBoy .personWrap .nextPerson:hover i {
+              color: #009DB8; }
             html body .content .screen .container .personality.nBoy .continue h4 {
               background: #009DB8; }
             html body .content .screen .container .personality.nGirl .selection-wrap .title .text {
@@ -1965,27 +2240,31 @@ html {
                 background-color: #FF98AA; }
             html body .content .screen .container .personality.nGirl .personWrap .person .fa-check {
               color: #FF98AA; }
+            html body .content .screen .container .personality.nGirl .personWrap .prevPerson:hover i {
+              color: #FF98AA; }
+            html body .content .screen .container .personality.nGirl .personWrap .nextPerson:hover i {
+              color: #FF98AA; }
             html body .content .screen .container .personality.nGirl .continue h4 {
               background: #FF98AA; }
-            html body .content .screen .container .personality.boy .personWrap .person:nth-child(1) .background, html body .content .screen .container .personality.bBoy .personWrap .person:nth-child(1) .background, html body .content .screen .container .personality.nBoy .personWrap .person:nth-child(1) .background {
-              background-image: url(../IMG/Personality/personalidad-m-1.jpg); }
             html body .content .screen .container .personality.boy .personWrap .person:nth-child(2) .background, html body .content .screen .container .personality.bBoy .personWrap .person:nth-child(2) .background, html body .content .screen .container .personality.nBoy .personWrap .person:nth-child(2) .background {
-              background-image: url(../IMG/Personality/personalidad-m-2.jpg); }
+              background-image: url(../IMG/Personality/personalidad-m-1.jpg); }
             html body .content .screen .container .personality.boy .personWrap .person:nth-child(3) .background, html body .content .screen .container .personality.bBoy .personWrap .person:nth-child(3) .background, html body .content .screen .container .personality.nBoy .personWrap .person:nth-child(3) .background {
-              background-image: url(../IMG/Personality/personalidad-m-3.jpg); }
+              background-image: url(../IMG/Personality/personalidad-m-2.jpg); }
             html body .content .screen .container .personality.boy .personWrap .person:nth-child(4) .background, html body .content .screen .container .personality.bBoy .personWrap .person:nth-child(4) .background, html body .content .screen .container .personality.nBoy .personWrap .person:nth-child(4) .background {
-              background-image: url(../IMG/Personality/personalidad-m-4.jpg); }
+              background-image: url(../IMG/Personality/personalidad-m-3.jpg); }
             html body .content .screen .container .personality.boy .personWrap .person:nth-child(5) .background, html body .content .screen .container .personality.bBoy .personWrap .person:nth-child(5) .background, html body .content .screen .container .personality.nBoy .personWrap .person:nth-child(5) .background {
+              background-image: url(../IMG/Personality/personalidad-m-4.jpg); }
+            html body .content .screen .container .personality.boy .personWrap .person:nth-child(6) .background, html body .content .screen .container .personality.bBoy .personWrap .person:nth-child(6) .background, html body .content .screen .container .personality.nBoy .personWrap .person:nth-child(6) .background {
               background-image: url(../IMG/Personality/personalidad-m-5.jpg); }
-            html body .content .screen .container .personality.girl .personWrap .person:nth-child(1) .background, html body .content .screen .container .personality.bGirl .personWrap .person:nth-child(1) .background, html body .content .screen .container .personality.nGirl .personWrap .person:nth-child(1) .background {
-              background-image: url(../IMG/Personality/personalidad-f-1.jpg); }
             html body .content .screen .container .personality.girl .personWrap .person:nth-child(2) .background, html body .content .screen .container .personality.bGirl .personWrap .person:nth-child(2) .background, html body .content .screen .container .personality.nGirl .personWrap .person:nth-child(2) .background {
-              background-image: url(../IMG/Personality/personalidad-f-2.jpg); }
+              background-image: url(../IMG/Personality/personalidad-f-1.jpg); }
             html body .content .screen .container .personality.girl .personWrap .person:nth-child(3) .background, html body .content .screen .container .personality.bGirl .personWrap .person:nth-child(3) .background, html body .content .screen .container .personality.nGirl .personWrap .person:nth-child(3) .background {
-              background-image: url(../IMG/Personality/personalidad-f-3.jpg); }
+              background-image: url(../IMG/Personality/personalidad-f-2.jpg); }
             html body .content .screen .container .personality.girl .personWrap .person:nth-child(4) .background, html body .content .screen .container .personality.bGirl .personWrap .person:nth-child(4) .background, html body .content .screen .container .personality.nGirl .personWrap .person:nth-child(4) .background {
-              background-image: url(../IMG/Personality/personalidad-f-4.jpg); }
+              background-image: url(../IMG/Personality/personalidad-f-3.jpg); }
             html body .content .screen .container .personality.girl .personWrap .person:nth-child(5) .background, html body .content .screen .container .personality.bGirl .personWrap .person:nth-child(5) .background, html body .content .screen .container .personality.nGirl .personWrap .person:nth-child(5) .background {
+              background-image: url(../IMG/Personality/personalidad-f-4.jpg); }
+            html body .content .screen .container .personality.girl .personWrap .person:nth-child(6) .background, html body .content .screen .container .personality.bGirl .personWrap .person:nth-child(6) .background, html body .content .screen .container .personality.nGirl .personWrap .person:nth-child(6) .background {
               background-image: url(../IMG/Personality/personalidad-f-5.jpg); }
           @media (max-width: 767px) {
             html body .content .screen .container .personality {
@@ -1995,24 +2274,68 @@ html {
                 html body .content .screen .container .personality .selection-wrap .title .text {
                   font-size: 2em;
                   padding-bottom: 2vh; }
-              html body .content .screen .container .personality .personWrap .person {
-                padding: 2.5vh 2.2vw;
-                height: 25vh; }
-                html body .content .screen .container .personality .personWrap .person .fa-check {
-                  font-size: 16vw; }
-                html body .content .screen .container .personality .personWrap .person .background .offset {
-                  height: 17.3vh; }
-                html body .content .screen .container .personality .personWrap .person .background .title {
-                  padding: 0; }
-                  html body .content .screen .container .personality .personWrap .person .background .title h4 {
-                    font-size: 14px;
+              html body .content .screen .container .personality .personWrap {
+                height: 55vh;
+                padding: 0; }
+                html body .content .screen .container .personality .personWrap .prevPerson {
+                  transition: all .3s ease;
+                  position: absolute;
+                  width: 20%;
+                  height: 35%;
+                  background: transparent;
+                  left: 0;
+                  color: white;
+                  font-size: 60px;
+                  top: 25%;
+                  z-index: 0; }
+                  html body .content .screen .container .personality .personWrap .prevPerson i {
+                    transition: all .3s ease; }
+                  html body .content .screen .container .personality .personWrap .prevPerson:hover {
+                    transform: scale(1.25); }
+                html body .content .screen .container .personality .personWrap .person {
+                  z-index: 1;
+                  position: absolute;
+                  padding: 2.5vh 2.2vw;
+                  height: 51vh;
+                  display: none; }
+                  html body .content .screen .container .personality .personWrap .person .fa-check {
+                    font-size: 40vw; }
+                  html body .content .screen .container .personality .personWrap .person .background .offset {
+                    height: 40vh; }
+                  html body .content .screen .container .personality .personWrap .person .background .title {
                     padding: 0;
-                    line-height: 5vh;
-                    font-weight: 600; } }
+                    height: 9vh; }
+                    html body .content .screen .container .personality .personWrap .person .background .title h4 {
+                      font-size: 14px;
+                      padding: 0;
+                      line-height: 8vh;
+                      font-weight: 600; }
+                  html body .content .screen .container .personality .personWrap .person.active {
+                    display: inherit; }
+                html body .content .screen .container .personality .personWrap .nextPerson {
+                  transition: all .3s ease;
+                  position: absolute;
+                  width: 20%;
+                  height: 35%;
+                  background: transparent;
+                  right: 0;
+                  color: white;
+                  font-size: 60px;
+                  top: 25%;
+                  z-index: 0; }
+                  html body .content .screen .container .personality .personWrap .nextPerson i {
+                    transition: all .3s ease; }
+                  html body .content .screen .container .personality .personWrap .nextPerson:hover {
+                    transform: scale(1.25); }
+              html body .content .screen .container .personality .continue {
+                margin-top: 2vh;
+                border-radius: 8px; }
+                html body .content .screen .container .personality .continue h4 {
+                  font-size: 18px; } }
           html body .content .screen .container .result {
             padding: 5vh 0;
             height: 100%;
-            overflow: scroll;
+            overflow: auto;
             overflow-x: hidden; }
             html body .content .screen .container .result ::-webkit-scrollbar {
               display: inherit; }
@@ -2502,6 +2825,8 @@ html {
                 overflow: auto;
                 height: 63vh;
                 padding: 0; }
+                html body .content .screen .container .e-cards-container .e-cards-table .table-body::-webkit-scrollbar {
+                  display: none; }
                 html body .content .screen .container .e-cards-container .e-cards-table .table-body .e-card-item,
                 html body .content .screen .container .e-cards-container .e-cards-table .table-body .e-card-new {
                   overflow: hidden;
@@ -2821,7 +3146,10 @@ html {
               html body .content .screen .container .customers-container .customers-table .table-body {
                 padding: 0;
                 height: 55vh;
-                overflow: auto; }
+                overflow: auto;
+                overflow-x: hidden; }
+                html body .content .screen .container .customers-container .customers-table .table-body::-webkit-scrollbar {
+                  display: none; }
                 html body .content .screen .container .customers-container .customers-table .table-body .not-found {
                   line-height: 7vh;
                   display: none; }
@@ -2960,7 +3288,7 @@ html {
             position: absolute;
             transition: all .3s ease;
             text-align: center;
-            overflow: scroll;
+            overflow: auto;
             opacity: 1;
             cursor: pointer;
             top: 100%; }
@@ -2982,15 +3310,36 @@ html {
               left: 5%;
               text-align: center;
               border-radius: 5px;
-              cursor: default; }
+              cursor: default;
+              height: 90%;
+              overflow: hidden; }
               html body .content .screen .container .imgViewer .reference-list .title {
                 text-transform: uppercase;
                 padding: 4%; }
                 html body .content .screen .container .imgViewer .reference-list .title h2 {
-                  font-weight: 100; }
+                  font-weight: 100;
+                  padding-bottom: 2vh;
+                  border-bottom: solid 1px #fd0; }
               html body .content .screen .container .imgViewer .reference-list .references {
                 padding: 0;
-                list-style-type: none; }
+                list-style-type: none;
+                height: 75%;
+                overflow: auto;
+                overflow-x: hidden; }
+                html body .content .screen .container .imgViewer .reference-list .references::-webkit-scrollbar {
+                  display: none; }
+                html body .content .screen .container .imgViewer .reference-list .references h4 {
+                  background: #fd0;
+                  margin-top: 0;
+                  padding: 2.5%;
+                  cursor: pointer;
+                  transition: all .3s ease; }
+                  html body .content .screen .container .imgViewer .reference-list .references h4:hover {
+                    background: #ccb100;
+                    transform: scale(1.1); }
+                html body .content .screen .container .imgViewer .reference-list .references ul {
+                  padding: 0;
+                  margin-bottom: 1vh; }
                 html body .content .screen .container .imgViewer .reference-list .references a {
                   color: #e6c700;
                   transition: all .3s ease; }
@@ -3036,6 +3385,7 @@ html {
                 box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.1); }
               html body .content .screen .container .adminColors-container .colors-table .table-body {
                 overflow: scroll;
+                overflow-x: hidden;
                 padding: 0;
                 height: 70vh; }
                 html body .content .screen .container .adminColors-container .colors-table .table-body .color-wrap {
@@ -3054,6 +3404,50 @@ html {
                       color: lightgreen; }
                     html body .content .screen .container .adminColors-container .colors-table .table-body .color-wrap .color-status:hover {
                       background: whitesmoke; }
+            html body .content .screen .container .adminColors-container .git {
+              height: 75vh;
+              padding: 2%;
+              background: white;
+              overflow: auto;
+              overflow-x: hidden;
+              -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+              -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+              box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+              border-radius: 5px; }
+              html body .content .screen .container .adminColors-container .git .status {
+                margin-top: 2vh; }
+                html body .content .screen .container .adminColors-container .git .status p {
+                  text-overflow: ellipsis;
+                  overflow: hidden; }
+            html body .content .screen .container .adminColors-container .load-div {
+              -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+              -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+              box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+              border-radius: 5px;
+              background: white;
+              height: 75vh;
+              padding: 2%;
+              transition: all .3s ease; }
+              html body .content .screen .container .adminColors-container .load-div .btn {
+                margin-top: 2vh; }
+                html body .content .screen .container .adminColors-container .load-div .btn .controlBtnLoader {
+                  display: block;
+                  width: 10px;
+                  height: 10px;
+                  background: red; }
+              html body .content .screen .container .adminColors-container .load-div .load {
+                background: lightgreen;
+                cursor: pointer;
+                color: white;
+                height: 20vh;
+                line-height: 20vh;
+                font-size: 5vw;
+                border-radius: 5px;
+                transition: all .3s ease; }
+                html body .content .screen .container .adminColors-container .load-div .load .fa {
+                  transition: all .3s ease; }
+                html body .content .screen .container .adminColors-container .load-div .load:hover .fa {
+                  transform: scale(1.1); }
     html body .footer {
       background: white;
       margin: 0;
