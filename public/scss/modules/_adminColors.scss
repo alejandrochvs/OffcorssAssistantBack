@@ -48,7 +48,8 @@
         }
     }
     .git {
-        height: 75vh;
+        height: auto;
+        margin-bottom: 2vh;
         padding: 2%;
         background: white;
         overflow: auto;
@@ -71,12 +72,42 @@
         box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
         border-radius: 5px;
         background: white;
-        height: 75vh;
+        height: auto;
         padding: 2%;
         transition: all .3s ease;
-        .btn{
+        overflow: hidden;
+        @keyframes loadDivLoading {
+            0% {
+                left: -10%;
+                width: 10%;
+            }
+            50%{
+                width: 25%;
+            }
+            75%{
+                width: 50%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+        .load-div-loader {
+            position: absolute;
+            display: block;
+            height: 10px;
+            width: 10px;
+            background: transparent;
+            top: 0;
+            left: -10%;
+            transition: all .3s ease;
+            &.loading {
+                background: $yellow;
+                animation: loadDivLoading 3s ease infinite;
+            }
+        }
+        .btn {
             margin-top: 2vh;
-            .controlBtnLoader{
+            .controlBtnLoader {
                 display: block;
                 width: 10px;
                 height: 10px;
@@ -92,11 +123,11 @@
             font-size: 5vw;
             border-radius: 5px;
             transition: all .3s ease;
-            .fa{
+            .fa {
                 transition: all .3s ease;
             }
-            &:hover{
-                .fa{
+            &:hover {
+                .fa {
                     transform: scale(1.1);
                 }
             }
