@@ -76,6 +76,12 @@
         transition: all .3s ease;
         .btn{
             margin-top: 2vh;
+            .controlBtnLoader{
+                display: block;
+                width: 10px;
+                height: 10px;
+                background: red;
+            }
         }
         .load {
             background: lightgreen;

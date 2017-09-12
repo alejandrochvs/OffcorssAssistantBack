@@ -3430,6 +3430,11 @@ html {
               transition: all .3s ease; }
               html body .content .screen .container .adminColors-container .load-div .btn {
                 margin-top: 2vh; }
+                html body .content .screen .container .adminColors-container .load-div .btn .controlBtnLoader {
+                  display: block;
+                  width: 10px;
+                  height: 10px;
+                  background: red; }
               html body .content .screen .container .adminColors-container .load-div .load {
                 background: lightgreen;
                 cursor: pointer;
