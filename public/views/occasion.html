@@ -22,7 +22,7 @@
             $('.background.active').removeClass('active');
             $($('.background')[index]).addClass('active');
         }
-        
+
         $('.nextOccasion').click(function() {
             if (occasionIndex < $('.background').length - 1) {
                 occasionIndex++;
@@ -30,7 +30,7 @@
                 occasionIndex = 0;
             }
             slideOccasion(occasionIndex);
-            if($('.background.active').hasClass('hidden')){
+            if ($('.background.active').hasClass('hidden')) {
                 $('.nextOccasion').click();
             }
         });
@@ -41,7 +41,7 @@
                 occasionIndex = $('.background').length - 1;
             }
             slideOccasion(occasionIndex);
-            if($('.background.active').hasClass('hidden')){
+            if ($('.background.active').hasClass('hidden')) {
                 $('.prevOccasion').click();
             }
         });

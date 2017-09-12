@@ -188,10 +188,10 @@ $(function () {
                         localStorage.setItem('currentClass', currentClass);
                         next(divs[1]);
                     });
-                    $('.img-boy > .image').click(function(){
+                    $('.img-boy > .image').click(function () {
                         $('.boySel').click();
                     });
-                    $('.img-girl > .image').click(function(){
+                    $('.img-girl > .image').click(function () {
                         $('.girlSel').click();
                     })
                 } else if (current === divs[1]) {
@@ -494,106 +494,37 @@ $(function () {
                     $('.occasion > .selection-wrap > .title > .text-editable').html(occasionsTitle);
                     $('.occasion > .occasionsBtn').html(occasionBtn);
                     $('.loader > .progress').css('width', '40%');
-                    var CO = [{
-                        title: occasionName3,
-                        title_var: 'occasionName3',
-                        desc_var: 'occasionDesc3',
-                        desc: occasionDesc3,
-                        img: 'ocasiones-m-2.jpg',
-                        query: 'CASUAL',
-                        color: '#75AE9B'
-          }, {
-                        title: occasionName6,
-                        title_var: 'occasionName6',
-                        desc_var: 'occasionDesc6',
-                        desc: occasionDesc6,
-                        img: 'ocasiones-m-6.jpg',
-                        query: 'DEPORTIVA',
-                        color: '#464C51'
-}, {
-                        title: occasionName2,
-                        title_var: 'occasionName2',
-                        desc_var: 'occasionDesc2',
-                        desc: occasionDesc2,
-                        img: 'ocasiones-m-3.jpg',
-                        query: 'DÍA A DÍA',
-                        color: '#5A6069'
-}, {
-                        title: occasionName5,
-                        title_var: 'occasionName5',
-                        desc_var: 'occasionDesc5',
-                        desc: occasionDesc5,
-                        img: 'ocasiones-m-5.jpg',
-                        query: 'OCASIONES ESPECIALES',
-                        color: '#A79E98'
-}, {
-                        title: occasionName1,
-                        title_var: 'occasionName1',
-                        desc_var: 'occasionDesc1',
-                        desc: occasionDesc1,
-                        img: 'ocasiones-m-1.jpg',
-                        query: 'TIME TO SLEEP',
-                        color: '#5A6069'
-}, {
-                        title: occasionName4,
-                        title_var: 'occasionName4',
-                        desc_var: 'occasionDesc4',
-                        desc: occasionDesc4,
-                        img: 'ocasiones-m-4.jpg',
-                        query: 'VACIONES EN LA PLAYA',
-                        color: '#3AB2BC'
-}];
-                    var currentOC = {
-                        boy: {
-                            newborn: [CO[5], CO[2], CO[4]],
-                            baby: [CO[1], CO[2], CO[0], CO[5]],
-                            nino: [CO[1], CO[2], CO[0], CO[5]]
-                        },
-                        girl: {
-                            newborn: [CO[5], CO[2], CO[4]],
-                            baby: [CO[1], CO[2], CO[0], CO[5]],
-                            nino: [CO[1], CO[2], CO[0], CO[5]]
-                        }
+                    var tempAge, tempGender;
+                    if (age => 5) {
+                        tempAge = 'boy'
+                    } else if (age <= 1) {
+                        tempAge = 'newborn'
+                    } else if (age > 1 && age < 5) {
+                        tempAge = 'baby'
                     }
-                    var renderOccasionDiv = function (occasion) {
-                        var occasionDiv = '<div data-occasion="' + occasion.query + '" class="col-xs-8 col-xs-offset-2 col-md-2 col-md-offset-0 background"><div class="col-xs-12 cont" style="background-image : url(../IMG/occasions/' + occasion.img + ')"><img src="../IMG/occasions/check.svg" alt=""><div class="col-xs-12 img"></div><div class="col-xs-12 title"><div class="col-xs-12 occasion-desc text-editable" data-var="' + occasion.desc_var + '">' + occasion.desc + '</div><h3 class="text-editable" data-var="' + occasion.title_var + '" style="color : ' + occasion.color + '">' + occasion.title + '</h3></div></div></div>';
-                        $('.occasions').append(occasionDiv);
-                    }
-                    if (gender == 'M') {
-                        if (age == 1) {
-                            for (var r = 0; r < currentOC.boy.newborn.length; r++) {
-                                renderOccasionDiv(currentOC.boy.newborn[r])
-                            }
-                            $($('.occasions > .background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.boy.newborn.length * 2)) / 2);
-                        } else if (age == 3) {
-                            for (var r = 0; r < currentOC.boy.baby.length; r++) {
-                                renderOccasionDiv(currentOC.boy.baby[r], 12 / currentOC.boy.baby.length)
-                            }
-                            $($('.occasions > .background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.boy.baby.length * 2)) / 2);
-                        } else if (age == 7) {
-                            for (var r = 0; r < currentOC.boy.nino.length; r++) {
-                                renderOccasionDiv(currentOC.boy.nino[r], 12 / currentOC.boy.nino.length)
-                            }
-                            $($('.occasions > .background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.boy.nino.length * 2)) / 2);
-                        }
+                    if (gender == "F") {
+                        tempGender = 'girl';
                     } else {
-                        if (age >= 0 && age < 3) {
-                            for (var r = 0; r < currentOC.girl.newborn.length; r++) {
-                                renderOccasionDiv(currentOC.girl.newborn[r], 12 / currentOC.girl.newborn.length)
-                            }
-                            $($('.occasions > .background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.girl.newborn.length * 2)) / 2);
-                        } else if (age >= 3 && age < 5) {
-                            for (var r = 0; r < currentOC.girl.baby.length; r++) {
-                                renderOccasionDiv(currentOC.girl.baby[r], 12 / currentOC.girl.baby.length)
-                            }
-                            $($('.occasions > .background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.girl.baby.length * 2)) / 2);
-                        } else if (age >= 5) {
-                            for (var r = 0; r < currentOC.girl.nino.length; r++) {
-                                renderOccasionDiv(currentOC.girl.nino[r], 12 / currentOC.girl.nino.length)
-                            }
-                            $($('.occasions > .background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (currentOC.girl.nino.length * 2)) / 2);
-                        }
+                        tempGender = 'boy';
                     }
+                    $.ajax({
+                        type: 'POST',
+                        url: '/db/occasions',
+                        data: {
+                            gender: tempGender,
+                            age: tempAge
+                        },
+                        success: function (res) {
+                            var renderOccasionDiv = function (occasion) {
+                                var occasionDiv = '<div data-occasion="' + occasion.query + '" class="col-xs-8 col-xs-offset-2 col-md-2 col-md-offset-0 background"><div class="col-xs-12 cont" style="background-image : url(../IMG/occasions/' + occasion.img + ')"><img src="../IMG/occasions/check.svg" alt=""><div class="col-xs-12 img"></div><div class="col-xs-12 title"><div class="col-xs-12 occasion-desc">' + occasion.desc + '</div><h3 style="color : ' + occasion.color + '">' + occasion.title + '</h3></div></div></div>';
+                                $('.occasions').append(occasionDiv);
+                            }
+                            for (var i = 0;i < res.length; i++){
+                                renderOccasionDiv(res[i]);
+                            }
+                            $($('.occasions > .background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (res.length * 2))/2);
+                        }
+                    })
                     $($('.occasions > .background')[0]).addClass('active');
                     $('.occasion').addClass(currentClass);
                     $('.background').click(function () {

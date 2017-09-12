@@ -112,6 +112,7 @@
             type: 'POST',
             url: '/git/status',
             success: function(res) {
+                console.log(res);
                 var res = res.split('\n');
                 $('.status').html('<p class="col-xs-12\">' + res[1] + '</p>');
                 $('.status').removeClass('alert-warning alert-success alert-danger');
