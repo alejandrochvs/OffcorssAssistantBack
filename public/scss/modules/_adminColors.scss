@@ -47,6 +47,118 @@
             }
         }
     }
+    .occasions-table {
+        -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+        background: white;
+        border-radius: 5px;
+        text-align: center;
+        padding: 0;
+        padding-top: 0;
+        overflow: hidden;
+        height: auto;
+        .occasion-gender {
+            padding: 0;
+            h2 {
+                background: white;
+                border-bottom: solid 1px darken(whitesmoke,5%);
+                cursor: pointer;
+                margin: 0;
+                -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                z-index: 0;
+                padding: 1%;
+                font-weight: 100;
+            }
+            ul {
+                list-style: none;
+                transition: all .3s ease;
+                overflow: hidden;
+                background: white;
+                max-height: 0;
+                opacity: 0;
+                z-index: 1;
+                padding: 0;
+                li {
+                    background: white;
+                    z-index: 1;
+                    line-height: 5vh;
+                    color: white;
+                    font-weight: 500;
+                    font-size: 22px;
+                    cursor: pointer;
+                    transition: all .3s ease;
+                    border-left: solid 1vw;
+                }
+                &.active {
+                    max-height: 16vh;
+                    opacity: 1;
+                }
+            }
+            &:nth-child(1){
+                ul{
+                    li{
+                        &:nth-child(1){
+                            color: $nBoy;
+                            border-color: $nBoy;
+                            &:hover{
+                                background : $nBoy;
+                                color : white;
+                            }
+                        }
+                        &:nth-child(2){
+                            color: $bBoy;
+                            border-color: $bBoy;
+                            &:hover{
+                                background : $bBoy;
+                                color : white;
+                            }
+                        }
+                        &:nth-child(3){
+                            color: $boy;
+                            border-color: $boy;
+                            &:hover{
+                                background : $boy;
+                                color : white;
+                            }
+                        }
+                    }
+                }
+            }
+            &:nth-child(2){
+                ul{
+                    li{
+                        &:nth-child(1){
+                            color: $nGirl;
+                            border-color: $nGirl;
+                            &:hover{
+                                color : white;
+                                background : $nGirl;
+                            }
+                        }
+                        &:nth-child(2){
+                            color: $bGirl;
+                            border-color: $bGirl;
+                            &:hover{
+                                color : white;
+                                background : $bGirl;
+                            }
+                        }
+                        &:nth-child(3){
+                            color: $girl;
+                            border-color: $girl;
+                            &:hover{
+                                color : white;
+                                background : $girl;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     .git {
         height: auto;
         margin-bottom: 2vh;
@@ -81,10 +193,10 @@
                 left: -10%;
                 width: 10%;
             }
-            50%{
+            50% {
                 width: 25%;
             }
-            75%{
+            75% {
                 width: 50%;
             }
             100% {

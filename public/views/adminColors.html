@@ -38,10 +38,23 @@
         </div>
     </div>
     <div class="col-xs-4">
+        <h1>Ocasiones</h1>
         <div class="col-xs-12 occasions-table">
-            <div class="col-xs-12 table-header text-center">
-                <div class="col-xs-12 occasion-name">Nino</div>
-                <div class="col-xs-12 occasion-hex">Nina</div>
+            <div class="col-xs-12 occasion-gender">
+                <h2>Masculino</h2>
+                <ul class="col-xs-12">
+                    <li>Newborn</li>
+                    <li>Baby</li>
+                    <li>Nino</li>
+                </ul>
+            </div>
+            <div class="col-xs-12 occasion-gender">
+                <h2>Femenino</h2>
+                <ul class="col-xs-12">
+                    <li>Newborn</li>
+                    <li>Baby</li>
+                    <li>Nina</li>
+                </ul>
             </div>
         </div>
     </div>
@@ -164,7 +177,7 @@
                             url: '/git/loadCards',
                             success: function(res) {
                                 console.log(res);
-                                $('.load-div-loader').addClass('loading');
+                                $('.load-div-loader').removeClass('loading');
                             }
                         })
                     }
@@ -177,6 +190,9 @@
         if (!$('.load-div-loader').hasClass('loading')) {
             $('#loadFile').submit();
         }
+    });
+    $('.occasion-gender > h2').click(function() {
+        $(this).parent().find('ul').toggleClass('active');
     })
 
 </script>
