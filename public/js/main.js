@@ -494,6 +494,7 @@ $(function () {
                     $('.occasion > .selection-wrap > .title > .text-editable').html(occasionsTitle);
                     $('.occasion > .occasionsBtn').html(occasionBtn);
                     $('.loader > .progress').css('width', '40%');
+                    $('.occasion').addClass(currentClass);
                     var tempAge, tempGender;
                     if (age => 5) {
                         tempAge = 'boy'
@@ -519,33 +520,33 @@ $(function () {
                                 var occasionDiv = '<div data-occasion="' + occasion.query + '" class="col-xs-8 col-xs-offset-2 col-md-2 col-md-offset-0 background"><div class="col-xs-12 cont" style="background-image : url(../IMG/occasions/' + occasion.img + ')"><img src="../IMG/occasions/check.svg" alt=""><div class="col-xs-12 img"></div><div class="col-xs-12 title"><div class="col-xs-12 occasion-desc">' + occasion.desc + '</div><h3 style="color : ' + occasion.color + '">' + occasion.title + '</h3></div></div></div>';
                                 $('.occasions').append(occasionDiv);
                             }
-                            for (var i = 0;i < res.length; i++){
+                            for (var i = 0; i < res.length; i++) {
                                 renderOccasionDiv(res[i]);
                             }
-                            $($('.occasions > .background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (res.length * 2))/2);
+                            $($('.occasions > .background')[0]).removeClass('col-md-offset-0').addClass('col-md-offset-' + (12 - (res.length * 2)) / 2);
+                            $('.background').click(function () {
+                                var tempOccasion = $(this).attr('data-occasion');
+                                if (occasion.indexOf(tempOccasion) >= 0) {
+                                    occasion.splice(occasion.indexOf(tempOccasion), 1);
+                                    if (occasion.length === 0) {
+                                        $('.occasionsBtn').addClass('disabled');
+                                    }
+                                } else {
+                                    occasion.push(tempOccasion);
+                                    $('.occasionsBtn').removeClass('disabled');
+                                }
+                                $(this).find('.cont').toggleClass('active');
+                            });
+                            $('.occasionsBtn').click(function () {
+                                if (occasion.length > 0) {
+                                    localStorage.occasion = JSON.stringify(occasion);
+                                    next(divs[6]);
+                                }
+                            });
+                            $($('.occasions > .background')[0]).addClass('active');
                         }
-                    })
-                    $($('.occasions > .background')[0]).addClass('active');
-                    $('.occasion').addClass(currentClass);
-                    $('.background').click(function () {
-                        var tempOccasion = $(this).attr('data-occasion');
-                        if (occasion.indexOf(tempOccasion) >= 0) {
-                            occasion.splice(occasion.indexOf(tempOccasion), 1);
-                            if (occasion.length === 0) {
-                                $('.occasionsBtn').addClass('disabled');
-                            }
-                        } else {
-                            occasion.push(tempOccasion);
-                            $('.occasionsBtn').removeClass('disabled');
-                        }
-                        $(this).find('.cont').toggleClass('active');
                     });
-                    $('.occasionsBtn').click(function () {
-                        if (occasion.length > 0) {
-                            localStorage.occasion = JSON.stringify(occasion);
-                            next(divs[6]);
-                        }
-                    });
+
                 } else if (current === divs[6]) {
                     $('body > .content').css({
                         'background-image': 'url(../IMG/fondo-2.jpg)',
@@ -992,6 +993,13 @@ $(function () {
                     })
                 }
                 $('N').html(name);
+                // Testing DOM unload
+                /*$('.prev > .container >').hide('slow',function(){
+                    $('.prev > .container >').remove();
+                });
+                $('.next > .container >').hide('slow',function(){
+                    $('.next > .container >').remove();
+                });*/
                 if (admin && edit) {
                     $('.header').find('*').unbind();
                     $('.content').find('*').unbind();

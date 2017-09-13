@@ -511,7 +511,8 @@ html {
             padding: 5vh 0;
             height: 100%;
             overflow: auto;
-            overflow-x: hidden; }
+            overflow-x: hidden;
+            transition: all .3s ease; }
             html body .content .screen .container .name::-webkit-scrollbar {
               display: none; }
             html body .content .screen .container .name .selection-wrap {
@@ -3410,11 +3411,12 @@ html {
               box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
               background: white;
               border-radius: 5px;
-              text-align: center;
               padding: 0;
               padding-top: 0;
-              overflow: hidden;
-              height: auto; }
+              overflow: auto;
+              max-height: 65vh;
+              height: auto;
+              text-align: center; }
               html body .content .screen .container .adminColors-container .occasions-table .occasion-gender {
                 padding: 0; }
                 html body .content .screen .container .adminColors-container .occasions-table .occasion-gender h2 {
@@ -3427,8 +3429,10 @@ html {
                   box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
                   z-index: 0;
                   padding: 1%;
-                  font-weight: 100; }
-                html body .content .screen .container .adminColors-container .occasions-table .occasion-gender ul {
+                  font-weight: 100;
+                  line-height: 5vh;
+                  font-size: 22px; }
+                html body .content .screen .container .adminColors-container .occasions-table .occasion-gender ul.first-occasion-ul {
                   list-style: none;
                   transition: all .3s ease;
                   overflow: hidden;
@@ -3437,55 +3441,112 @@ html {
                   opacity: 0;
                   z-index: 1;
                   padding: 0; }
-                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender ul li {
+                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender ul.first-occasion-ul li.first-level {
                     background: white;
                     z-index: 1;
-                    line-height: 5vh;
-                    color: white;
-                    font-weight: 500;
-                    font-size: 22px;
                     cursor: pointer;
                     transition: all .3s ease;
                     border-left: solid 1vw; }
-                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender ul.active {
-                    max-height: 16vh;
+                    html body .content .screen .container .adminColors-container .occasions-table .occasion-gender ul.first-occasion-ul li.first-level h3 {
+                      color: white;
+                      font-weight: 500;
+                      font-size: 20px;
+                      margin: 0;
+                      line-height: 4vh;
+                      transition: all .3s ease; }
+                    html body .content .screen .container .adminColors-container .occasions-table .occasion-gender ul.first-occasion-ul li.first-level ul.second-occasion-ul {
+                      padding: 0;
+                      max-height: 0vh;
+                      transition: all .3s ease;
+                      overflow: hidden;
+                      list-style-type: none; }
+                      html body .content .screen .container .adminColors-container .occasions-table .occasion-gender ul.first-occasion-ul li.first-level ul.second-occasion-ul li.second-level {
+                        background: white;
+                        line-height: 3vh;
+                        font-size: 18px;
+                        border-left: solid 1vw;
+                        transition: all .3s ease; }
+                        html body .content .screen .container .adminColors-container .occasions-table .occasion-gender ul.first-occasion-ul li.first-level ul.second-occasion-ul li.second-level:hover {
+                          color: white; }
+                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender ul.first-occasion-ul.active {
+                    max-height: 142vh;
                     opacity: 1; }
-                html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul li:nth-child(1) {
-                  color: #009DB8;
+                    html body .content .screen .container .adminColors-container .occasions-table .occasion-gender ul.first-occasion-ul.active li.first-level {
+                      max-height: auto; }
+                      html body .content .screen .container .adminColors-container .occasions-table .occasion-gender ul.first-occasion-ul.active li.first-level ul.second-occasion-ul.active {
+                        max-height: 25vh; }
+                html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(1) {
                   border-color: #009DB8; }
-                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul li:nth-child(1):hover {
-                    background: #009DB8;
-                    color: white; }
-                html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul li:nth-child(2) {
-                  color: #78BF01;
+                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(1) h3 {
+                    color: #009DB8; }
+                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(1) ul.second-occasion-ul li.second-level {
+                    border-color: #00879f; }
+                    html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(1) ul.second-occasion-ul li.second-level:hover {
+                      background: #00879f; }
+                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(1):hover {
+                    background: #009DB8; }
+                    html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(1):hover h3 {
+                      color: white; }
+                html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(2) {
                   border-color: #78BF01; }
-                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul li:nth-child(2):hover {
-                    background: #78BF01;
-                    color: white; }
-                html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul li:nth-child(3) {
-                  color: #6B85AB;
+                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(2) h3 {
+                    color: #78BF01; }
+                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(2) ul.second-occasion-ul li.second-level {
+                    border-color: #68a601; }
+                    html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(2) ul.second-occasion-ul li.second-level:hover {
+                      background: #68a601; }
+                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(2):hover {
+                    background: #78BF01; }
+                    html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(2):hover h3 {
+                      color: white; }
+                html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(3) {
                   border-color: #6B85AB; }
-                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul li:nth-child(3):hover {
-                    background: #6B85AB;
-                    color: white; }
-                html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul li:nth-child(1) {
-                  color: #FF98AA;
+                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(3) h3 {
+                    color: #6B85AB; }
+                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(3) ul.second-occasion-ul li.second-level {
+                    border-color: #5b78a1; }
+                    html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(3) ul.second-occasion-ul li.second-level:hover {
+                      background: #5b78a1; }
+                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(3):hover {
+                    background: #6B85AB; }
+                    html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(3):hover h3 {
+                      color: white; }
+                html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(1) {
                   border-color: #FF98AA; }
-                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul li:nth-child(1):hover {
-                    color: white;
+                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(1) h3 {
+                    color: #FF98AA; }
+                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(1) ul.second-occasion-ul li.second-level {
+                    border-color: #ff7f95; }
+                    html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(1) ul.second-occasion-ul li.second-level:hover {
+                      background: #ff7f95; }
+                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(1):hover {
                     background: #FF98AA; }
-                html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul li:nth-child(2) {
-                  color: #9692D1;
+                    html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(1):hover h3 {
+                      color: white; }
+                html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(2) {
                   border-color: #9692D1; }
-                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul li:nth-child(2):hover {
-                    color: white;
+                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(2) h3 {
+                    color: #9692D1; }
+                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(2) ul.second-occasion-ul li.second-level {
+                    border-color: #8580c9; }
+                    html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(2) ul.second-occasion-ul li.second-level:hover {
+                      background: #8580c9; }
+                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(2):hover {
                     background: #9692D1; }
-                html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul li:nth-child(3) {
-                  color: #FF0295;
+                    html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(2):hover h3 {
+                      color: white; }
+                html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(3) {
                   border-color: #FF0295; }
-                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul li:nth-child(3):hover {
-                    color: white;
+                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(3) h3 {
+                    color: #FF0295; }
+                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(3) ul.second-occasion-ul li.second-level {
+                    border-color: #e80087; }
+                    html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(3) ul.second-occasion-ul li.second-level:hover {
+                      background: #e80087; }
+                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(3):hover {
                     background: #FF0295; }
+                    html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(3):hover h3 {
+                      color: white; }
             html body .content .screen .container .adminColors-container .git {
               height: auto;
               margin-bottom: 2vh;

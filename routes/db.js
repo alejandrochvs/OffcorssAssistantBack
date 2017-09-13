@@ -308,6 +308,15 @@ db.once('open', function () {
             }
         })
     });
+    router.post('/occasionsArr',function(req,res){
+        occasionsArr.findOne({},function(err,doc){
+            if (err){
+                res.send(err);
+            }else{
+                res.send(doc.arr);
+            }
+        })
+    })
     var types = require('./types_model.js');
     router.post('/types', function (req, res) {
         types.find({}, function (err, docs) {
