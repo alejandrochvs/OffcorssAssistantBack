@@ -225,11 +225,40 @@
         type: 'POST',
         url: 'db/occasionsArr',
         success: function(res) {
-            console.log(res);
             for (var i = 0; i < res.length; i++) {
-                $('.occasion-gender > .first-occasion-ul > .first-level > .second-occasion-ul').append('<li class="second-level">' + res[i].title + '</li>')
+                $('.occasion-gender > .first-occasion-ul > .first-level > .second-occasion-ul').append('<li class="second-level">' + res[i].title + '</li>');
             }
+            $.ajax({
+                type: 'POST',
+                url: '/db/occassionsInd',
+                data: {
+                    gender: 'boy',
+                    age: 'newborn'
+                },
+                success: function(res) {
+                    // First row
+                    for (var i = 0; i < res.boy.newborn.length; i++){
+                        $($('.occasion-gender:nth-child(1) > .first-occasion-ul > .first-level:nth-child(1) > .second-occasion-ul > li.second-level')[res.boy.baby[i]]).addClass('active');
+                    }
+                    for (var i = 0; i < res.boy.baby.length; i++){
+                        $($('.occasion-gender:nth-child(1) > .first-occasion-ul > .first-level:nth-child(2) > .second-occasion-ul > li.second-level')[res.boy.baby[i]]).addClass('active');
+                    }
+                    for (var i = 0; i < res.boy.boy.length; i++){
+                        $($('.occasion-gender:nth-child(1) > .first-occasion-ul > .first-level:nth-child(3) > .second-occasion-ul > li.second-level')[res.boy.boy[i]]).addClass('active');
+                    }
+                    // Second row
+                    for (var i = 0; i < res.girl.newborn.length; i++){
+                        $($('.occasion-gender:nth-child(2) > .first-occasion-ul > .first-level:nth-child(1) > .second-occasion-ul > li.second-level')[res.boy.baby[i]]).addClass('active');
+                    }
+                    for (var i = 0; i < res.girl.baby.length; i++){
+                        $($('.occasion-gender:nth-child(2) > .first-occasion-ul > .first-level:nth-child(2) > .second-occasion-ul > li.second-level')[res.boy.baby[i]]).addClass('active');
+                    }
+                    for (var i = 0; i < res.girl.boy.length; i++){
+                        $($('.occasion-gender:nth-child(2) > .first-occasion-ul > .first-level:nth-child(3) > .second-occasion-ul > li.second-level')[res.boy.boy[i]]).addClass('active');
+                    }
+                }
+            });
         }
-    })
+    });
 
 </script>

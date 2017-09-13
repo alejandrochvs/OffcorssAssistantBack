@@ -3465,9 +3465,15 @@ html {
                         line-height: 3vh;
                         font-size: 18px;
                         border-left: solid 1vw;
+                        border-color: orangered;
                         transition: all .3s ease; }
                         html body .content .screen .container .adminColors-container .occasions-table .occasion-gender ul.first-occasion-ul li.first-level ul.second-occasion-ul li.second-level:hover {
-                          color: white; }
+                          color: white;
+                          background: orangered; }
+                        html body .content .screen .container .adminColors-container .occasions-table .occasion-gender ul.first-occasion-ul li.first-level ul.second-occasion-ul li.second-level.active {
+                          border-color: lightgreen; }
+                          html body .content .screen .container .adminColors-container .occasions-table .occasion-gender ul.first-occasion-ul li.first-level ul.second-occasion-ul li.second-level.active:hover {
+                            background: lightgreen; }
                   html body .content .screen .container .adminColors-container .occasions-table .occasion-gender ul.first-occasion-ul.active {
                     max-height: 142vh;
                     opacity: 1; }
@@ -3479,10 +3485,6 @@ html {
                   border-color: #009DB8; }
                   html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(1) h3 {
                     color: #009DB8; }
-                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(1) ul.second-occasion-ul li.second-level {
-                    border-color: #00879f; }
-                    html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(1) ul.second-occasion-ul li.second-level:hover {
-                      background: #00879f; }
                   html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(1):hover {
                     background: #009DB8; }
                     html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(1):hover h3 {
@@ -3491,10 +3493,6 @@ html {
                   border-color: #78BF01; }
                   html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(2) h3 {
                     color: #78BF01; }
-                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(2) ul.second-occasion-ul li.second-level {
-                    border-color: #68a601; }
-                    html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(2) ul.second-occasion-ul li.second-level:hover {
-                      background: #68a601; }
                   html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(2):hover {
                     background: #78BF01; }
                     html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(2):hover h3 {
@@ -3503,10 +3501,6 @@ html {
                   border-color: #6B85AB; }
                   html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(3) h3 {
                     color: #6B85AB; }
-                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(3) ul.second-occasion-ul li.second-level {
-                    border-color: #5b78a1; }
-                    html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(3) ul.second-occasion-ul li.second-level:hover {
-                      background: #5b78a1; }
                   html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(3):hover {
                     background: #6B85AB; }
                     html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(1) ul.first-occasion-ul li.first-level:nth-child(3):hover h3 {
@@ -3515,10 +3509,6 @@ html {
                   border-color: #FF98AA; }
                   html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(1) h3 {
                     color: #FF98AA; }
-                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(1) ul.second-occasion-ul li.second-level {
-                    border-color: #ff7f95; }
-                    html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(1) ul.second-occasion-ul li.second-level:hover {
-                      background: #ff7f95; }
                   html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(1):hover {
                     background: #FF98AA; }
                     html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(1):hover h3 {
@@ -3527,10 +3517,6 @@ html {
                   border-color: #9692D1; }
                   html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(2) h3 {
                     color: #9692D1; }
-                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(2) ul.second-occasion-ul li.second-level {
-                    border-color: #8580c9; }
-                    html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(2) ul.second-occasion-ul li.second-level:hover {
-                      background: #8580c9; }
                   html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(2):hover {
                     background: #9692D1; }
                     html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(2):hover h3 {
@@ -3539,10 +3525,6 @@ html {
                   border-color: #FF0295; }
                   html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(3) h3 {
                     color: #FF0295; }
-                  html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(3) ul.second-occasion-ul li.second-level {
-                    border-color: #e80087; }
-                    html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(3) ul.second-occasion-ul li.second-level:hover {
-                      background: #e80087; }
                   html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(3):hover {
                     background: #FF0295; }
                     html body .content .screen .container .adminColors-container .occasions-table .occasion-gender:nth-child(2) ul.first-occasion-ul li.first-level:nth-child(3):hover h3 {

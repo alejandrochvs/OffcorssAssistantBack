@@ -308,12 +308,21 @@ db.once('open', function () {
             }
         })
     });
-    router.post('/occasionsArr',function(req,res){
-        occasionsArr.findOne({},function(err,doc){
-            if (err){
+    router.post('/occasionsArr', function (req, res) {
+        occasionsArr.findOne({}, function (err, doc) {
+            if (err) {
                 res.send(err);
-            }else{
+            } else {
                 res.send(doc.arr);
+            }
+        })
+    });
+    router.post('/occassionsInd', function (req, res) {
+        occasions.findOne({}, function (err, doc) {
+            if (err) {
+                res.send(err);
+            } else {
+                res.send(doc);
             }
         })
     })

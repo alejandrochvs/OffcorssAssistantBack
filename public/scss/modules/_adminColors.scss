@@ -109,9 +109,17 @@
                             line-height: 3vh;
                             font-size: 18px;
                             border-left: solid 1vw;
+                            border-color: orangered;
                             transition: all .3s ease;
                             &:hover {
                                 color: white;
+                                background: orangered;
+                            }
+                            &.active{
+                                border-color : lightgreen;
+                                &:hover{
+                                    background: lightgreen;
+                                }
                             }
                         }
                     }
@@ -135,14 +143,6 @@
                             h3 {
                                 color: $nBoy;
                             }
-                            ul.second-occasion-ul{
-                                li.second-level{
-                                    border-color: darken($nBoy,5%);
-                                    &:hover{
-                                        background: darken($nBoy,5%);
-                                    }
-                                }
-                            }
                             &:hover {
                                 background: $nBoy;
                                 h3 {
@@ -155,14 +155,6 @@
                             h3 {
                                 color: $bBoy;
                             }
-                            ul.second-occasion-ul{
-                                li.second-level{
-                                    border-color: darken($bBoy,5%);
-                                    &:hover{
-                                        background: darken($bBoy,5%);
-                                    }
-                                }
-                            }
                             &:hover {
                                 background: $bBoy;
                                 h3 {
@@ -174,14 +166,6 @@
                             border-color: $boy;
                             h3 {
                                 color: $boy;
-                            }
-                            ul.second-occasion-ul{
-                                li.second-level{
-                                    border-color: darken($boy,5%);
-                                    &:hover{
-                                        background: darken($boy,5%);
-                                    }
-                                }
                             }
                             &:hover {
                                 background: $boy;
@@ -201,14 +185,6 @@
                             h3 {
                                 color: $nGirl;
                             }
-                            ul.second-occasion-ul{
-                                li.second-level{
-                                    border-color: darken($nGirl,5%);
-                                    &:hover{
-                                        background: darken($nGirl,5%);
-                                    }
-                                }
-                            }
                             &:hover {
                                 background: $nGirl;
                                 h3 {
@@ -221,14 +197,6 @@
                             h3 {
                                 color: $bGirl;
                             }
-                            ul.second-occasion-ul{
-                                li.second-level{
-                                    border-color: darken($bGirl,5%);
-                                    &:hover{
-                                        background: darken($bGirl,5%);
-                                    }
-                                }
-                            }
                             &:hover {
                                 background: $bGirl;
                                 h3 {
@@ -240,14 +208,6 @@
                             border-color: $girl;
                             h3 {
                                 color: $girl;
-                            }
-                            ul.second-occasion-ul{
-                                li.second-level{
-                                    border-color: darken($girl,5%);
-                                    &:hover{
-                                        background: darken($girl,5%);
-                                    }
-                                }
                             }
                             &:hover {
                                 background: $girl;
