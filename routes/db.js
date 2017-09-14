@@ -1,8 +1,13 @@
+// Router initialize
+
 var express = require('express');
 var app = express();
 var router = express.Router();
 var fs = require('fs');
 var path = require('path');
+
+// DB initialize
+
 var mongoose = require('mongoose');
 var mongoURL = process.env.MONGODB_URI ||
     process.env.MONGOHQ_URL ||
@@ -12,7 +17,9 @@ mongoose.connect(mongoURL);
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
-    //Sizes
+
+    // Sizes section
+
     var sizes = require('./sizes_model.js');
     router.post('/sizes', function (req, res) {
         var query = req.body.category;
@@ -25,8 +32,11 @@ db.once('open', function () {
             res.json(docs);
         })
     });
-    //Users
-    var users = require('./user_model.js');
+
+    // Users section
+
+    // Crypto set
+
     var crypto = require('crypto'),
         algorithm = 'aes-256-ctr',
         password = '2ba8f2b30e434b431e46e008d8f0';
@@ -44,6 +54,8 @@ db.once('open', function () {
         dec += decipher.final('utf8');
         return dec;
     }
+
+    var users = require('./user_model.js');
     router.post('/users/register', function (req, res) {
         var query = req.body;
         var user = new users(query);
@@ -95,7 +107,9 @@ db.once('open', function () {
             }
         });
     });
-    //e-cards
+
+    // e-cards section
+
     var eCards = require('./e-cards_model.js');
     router.post('/e-cards', function (req, res) {
         eCards.find().count({}, function (err, count) {
@@ -223,6 +237,9 @@ db.once('open', function () {
             }
         });
     });
+
+    // Ages section
+
     var ages = require('./ages_model.js');
     router.post('/ages', function (req, res) {
         ages.find({}, function (err, docs) {
@@ -233,6 +250,9 @@ db.once('open', function () {
             }
         })
     });
+
+    // Colors section
+
     var colors = require('./colors_model.js');
     router.post('/colors/toggle', function (req, res) {
         var request = req.body;
@@ -275,6 +295,9 @@ db.once('open', function () {
             }
         })
     });
+
+    // Genders section
+
     var genders = require('./genders_model.js');
     router.post('/genders', function (req, res) {
         genders.find({}, function (err, docs) {
@@ -285,6 +308,9 @@ db.once('open', function () {
             }
         })
     });
+
+    // Occasions section
+
     var occasions = require('./occasions_model.js');
     var occasionsArr = require('./occasionsArr_model.js');
     router.post('/occasions', function (req, res) {
@@ -325,17 +351,29 @@ db.once('open', function () {
                 res.send(doc);
             }
         })
-    })
-    var types = require('./types_model.js');
-    router.post('/types', function (req, res) {
-        types.find({}, function (err, docs) {
-            if (err) {
-                res.send(err);
-            } else {
-                res.send(docs);
-            }
-        })
     });
+    router.post('/occasionPush', function (req, res) {
+
+    });
+    router.post('/occasionPull', function (req, res) {
+        occasions.update(req.body.obj, {
+                $pullAll: {
+                    boy: {
+                        newborn: [req.body.toPull]
+                    }
+                }
+            },
+            function (err, doc) {
+                if (err) {
+                    res.send(err);
+                } else {
+                    res.send(doc);
+                }
+            })
+    });
+
+    // Weathers section
+
     var weathers = require('./weathers_model.js');
     router.post('/weathers', function (req, res) {
         weathers.find({}, function (err, docs) {
@@ -346,6 +384,9 @@ db.once('open', function () {
             }
         })
     });
+
+    // Customers section
+
     var customers = require('./customers_model.js');
     router.post('/customers/register', function (req, res) {
         var reqCustomer = req.body;
@@ -400,6 +441,15 @@ db.once('open', function () {
         });
 
     });
+    router.post('/deleteCustomers',function(req,res){
+        customers.remove({},function(err){
+            if (err){
+                res.send(err);
+            }else{
+                res.send('Removed customers');
+            }
+        })
+    })
 });
 
 module.exports = router;
