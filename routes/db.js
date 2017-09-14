@@ -342,10 +342,10 @@ db.once('open', function () {
                     });
                     e_cardsToDb.push(e_card);
                 }
-                eCards.collection.insert(e_cardsToDb,function(insErr,docs){
-                    if (insErr){
+                eCards.collection.insert(e_cardsToDb, function (insErr, docs) {
+                    if (insErr) {
                         res.send(insErr);
-                    }else{
+                    } else {
                         res.send(docs);
                     }
                 })
@@ -468,24 +468,61 @@ db.once('open', function () {
             }
         })
     });
-    router.post('/occasionPush', function (req, res) {
-
-    });
-    router.post('/occasionPull', function (req, res) {
-        occasions.update(req.body.obj, {
-                $pullAll: {
-                    boy: {
-                        newborn: [req.body.toPull]
+    router.post('/occasionToggle', function (req, res) {
+        occasions.findOne({}, function (err, doc) {
+            if (err) {
+                res.send(err);
+            } {
+                if (req.body.gender == 'boy') {
+                    if (req.body.age == 'newborn') {
+                        if (doc.boy.newborn.indexOf(req.body.toggle) < 0) {
+                            doc.boy.newborn.push(req.body.toggle);
+                        } else {
+                            doc.boy.newborn.splice(doc.boy.newborn.indexOf(req.body.toggle), 1);
+                        }
+                    } else if (req.body.age == 'baby') {
+                        if (doc.boy.baby.indexOf(req.body.toggle) < 0) {
+                            doc.boy.baby.push(req.body.toggle);
+                        } else {
+                            doc.boy.baby.splice(doc.boy.baby.indexOf(req.body.toggle), 1);
+                        }
+                    } else {
+                        if (doc.boy.boy.indexOf(req.body.toggle) < 0) {
+                            doc.boy.boy.push(req.body.toggle);
+                        } else {
+                            doc.boy.boy.splice(doc.boy.boy.indexOf(req.body.toggle), 1);
+                        }
+                    }
+                } else {
+                    if (req.body.age == 'newborn') {
+                        if (doc.girl.newborn.indexOf(req.body.toggle) < 0) {
+                            doc.girl.newborn.push(req.body.toggle);
+                        } else {
+                            doc.girl.newborn.splice(doc.girl.newborn.indexOf(req.body.toggle), 1);
+                        }
+                    } else if (req.body.age == 'baby') {
+                        if (doc.girl.baby.indexOf(req.body.toggle) < 0) {
+                            doc.girl.baby.push(req.body.toggle);
+                        } else {
+                            doc.girl.baby.splice(doc.girl.baby.indexOf(req.body.toggle), 1);
+                        }
+                    } else {
+                        if (doc.girl.boy.indexOf(req.body.toggle) < 0) {
+                            doc.girl.boy.push(req.body.toggle);
+                        } else {
+                            doc.girl.boy.splice(doc.girl.boy.indexOf(req.body.toggle), 1);
+                        }
                     }
                 }
-            },
-            function (err, doc) {
-                if (err) {
-                    res.send(err);
-                } else {
-                    res.send(doc);
-                }
-            })
+                doc.save(function(err,saved){
+                    if (err){
+                        res.send(err);
+                    }else{
+                        res.send(saved);
+                    }
+                })
+            }
+        })
     });
 
     // Weathers section

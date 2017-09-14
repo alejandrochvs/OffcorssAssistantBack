@@ -776,7 +776,7 @@ $(function () {
                                                 $('.call-modal > .input').removeClass('wrong');
                                                 $('.call-modal > .input > input').tooltip('hide');
                                                 $('.call-modal').addClass('success');
-                                                /*$.ajax({
+                                                $.ajax({
                                                     type: 'GET',
                                                     url: 'https://webapp.contentobps.com/hermeco/hermeco_ventas_2.php?data=' + data.phone + '-AsistenteVirtual',
                                                     dataType: 'jsonp',
@@ -784,7 +784,7 @@ $(function () {
                                                     success: function (res) {
                                                         $('.progress').removeClass('loading');
                                                     }
-                                                });*/
+                                                });
                                                 $('.progress').removeClass('loading');
                                             }
                                         });

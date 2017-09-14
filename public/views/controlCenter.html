@@ -200,7 +200,8 @@
                             success: function(res) {
                                 $('.load-div-loader').removeClass('loading');
                                 $('#loadAjax').html('Carga exitosa');
-                            },err : function(err){
+                            },
+                            err: function(err) {
                                 $('.load-div-loader').removeClass('loading');
                                 console.log(err);
                                 $('#loadAjax').html('Error en la carga');
@@ -259,13 +260,14 @@
                         $($('.occasion-gender:nth-child(2) > .first-occasion-ul > .first-level:nth-child(3) > .second-occasion-ul > li.second-level')[res.girl.boy[i]]).addClass('active');
                     }
                     $('.second-occasion-ul > .second-level').click(function() {
+                        var tempThis = $(this);
                         var secLevInd = $(this).index();
                         var firstLevInd = $(this).parent().parent().index();
                         var genderLev = $(this).parent().parent().parent().parent().index();
                         if (genderLev == 0) {
-                            genderLev = 'girl';
-                        } else {
                             genderLev = 'boy';
+                        } else {
+                            genderLev = 'girl';
                         }
                         if (firstLevInd == 0) {
                             firstLevInd = 'newborn';
@@ -275,31 +277,18 @@
                             firstLevInd = 'boy';
                         }
                         var exObj = {};
-                        exObj[genderLev] = {};
-                        exObj[genderLev][firstLevInd] = [];
-                        var ocStatus = $(this).hasClass('active');
-                        if (ocStatus) {
-                            $.ajax({
-                                type: 'POST',
-                                url: '/db/occasionPull',
-                                data: {
-                                    obj : exObj,
-                                    toPull : secLevInd
-                                },
-                                success: function(res) {
-                                    console.log(res);
-                                }
-                            });
-                        } else {
-                            $.ajax({
-                                type: 'POST',
-                                url: '/db/occasionPush',
-                                data: exObj,
-                                success: function(res) {
-                                    console.log(res);
-                                }
-                            });
-                        }
+                        $.ajax({
+                            type: 'POST',
+                            url: '/db/occasionToggle',
+                            data: {
+                                gender: genderLev,
+                                age: firstLevInd,
+                                toggle: secLevInd
+                            },
+                            success: function(res) {
+                                tempThis.toggleClass('active');
+                            }
+                        });
                     })
                 }
             });
