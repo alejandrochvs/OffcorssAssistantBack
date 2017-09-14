@@ -32,7 +32,6 @@ router.post('/pull', function (req, res) {
     });
 });
 router.post('/excel', function (req, res) {
-    console.log('Uploading...');
     upload(req, res, function (err) {
         if (err) {
             res.send(err);

@@ -47,6 +47,180 @@
             }
         }
     }
+    .occasions-table {
+        -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+        background: white;
+        border-radius: 5px;
+        padding: 0;
+        padding-top: 0;
+        overflow: auto;
+        max-height: 65vh;
+        height: auto;
+        text-align: center;
+        .occasion-gender {
+            padding: 0;
+            h2 {
+                background: white;
+                border-bottom: solid 1px darken(whitesmoke, 5%);
+                cursor: pointer;
+                margin: 0;
+                -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+                z-index: 0;
+                padding: 1%;
+                font-weight: 100;
+                line-height: 5vh;
+                font-size: 22px;
+            }
+            ul.first-occasion-ul {
+                list-style: none;
+                transition: all .3s ease;
+                overflow: hidden;
+                background: white;
+                max-height: 0;
+                opacity: 0;
+                z-index: 1;
+                padding: 0;
+                li.first-level {
+                    background: white;
+                    z-index: 1;
+                    cursor: pointer;
+                    transition: all .3s ease;
+                    border-left: solid 1vw;
+                    h3 {
+                        color: white;
+                        font-weight: 500;
+                        font-size: 20px;
+                        margin: 0;
+                        line-height: 4vh;
+                        transition: all .3s ease;
+                    }
+                    ul.second-occasion-ul {
+                        padding: 0;
+                        max-height: 0vh;
+                        transition: all .3s ease;
+                        overflow: hidden;
+                        list-style-type: none;
+                        li.second-level {
+                            background: white;
+                            line-height: 3vh;
+                            font-size: 18px;
+                            border-left: solid 1vw;
+                            border-color: orangered;
+                            transition: all .3s ease;
+                            &:hover {
+                                color: white;
+                                background: orangered;
+                            }
+                            &.active{
+                                border-color : lightgreen;
+                                &:hover{
+                                    background: lightgreen;
+                                }
+                            }
+                        }
+                    }
+                }
+                &.active {
+                    max-height: 142vh;
+                    opacity: 1;
+                    li.first-level {
+                        max-height: auto;
+                        ul.second-occasion-ul.active {
+                            max-height: 25vh;
+                        }
+                    }
+                }
+            }
+            &:nth-child(1) {
+                ul.first-occasion-ul {
+                    li.first-level {
+                        &:nth-child(1) {
+                            border-color: $nBoy;
+                            h3 {
+                                color: $nBoy;
+                            }
+                            &:hover {
+                                background: $nBoy;
+                                h3 {
+                                    color: white;
+                                }
+                            }
+                        }
+                        &:nth-child(2) {
+                            border-color: $bBoy;
+                            h3 {
+                                color: $bBoy;
+                            }
+                            &:hover {
+                                background: $bBoy;
+                                h3 {
+                                    color: white;
+                                }
+                            }
+                        }
+                        &:nth-child(3) {
+                            border-color: $boy;
+                            h3 {
+                                color: $boy;
+                            }
+                            &:hover {
+                                background: $boy;
+                                h3 {
+                                    color: white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &:nth-child(2) {
+                ul.first-occasion-ul {
+                    li.first-level {
+                        &:nth-child(1) {
+                            border-color: $nGirl;
+                            h3 {
+                                color: $nGirl;
+                            }
+                            &:hover {
+                                background: $nGirl;
+                                h3 {
+                                    color: white;
+                                }
+                            }
+                        }
+                        &:nth-child(2) {
+                            border-color: $bGirl;
+                            h3 {
+                                color: $bGirl;
+                            }
+                            &:hover {
+                                background: $bGirl;
+                                h3 {
+                                    color: white;
+                                }
+                            }
+                        }
+                        &:nth-child(3) {
+                            border-color: $girl;
+                            h3 {
+                                color: $girl;
+                            }
+                            &:hover {
+                                background: $girl;
+                                h3 {
+                                    color: white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     .git {
         height: auto;
         margin-bottom: 2vh;
@@ -81,10 +255,10 @@
                 left: -10%;
                 width: 10%;
             }
-            50%{
+            50% {
                 width: 25%;
             }
-            75%{
+            75% {
                 width: 50%;
             }
             100% {

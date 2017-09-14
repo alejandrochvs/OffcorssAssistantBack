@@ -117,9 +117,13 @@ db.once('open', function () {
         eCards.find({
             gender: req.body.gender,
             age: req.body.age,
-            occasion: { $in : req.body.occasion},
-            weather: { $in : req.body.weather}
-            
+            occasion: {
+                $in: req.body.occasion
+            },
+            weather: {
+                $in: req.body.weather
+            }
+
         }).exec(function (err, found) {
             if (err) {
                 res.send(err);
@@ -201,11 +205,11 @@ db.once('open', function () {
             });
         });
     });
-    router.post('/e-cards/deleteAll',function(req,res){
-        eCards.remove({},function(err){
-            if (err){
+    router.post('/e-cards/deleteAll', function (req, res) {
+        eCards.remove({}, function (err) {
+            if (err) {
                 res.send(err);
-            }else{
+            } else {
                 res.send('Las e-cards se han borrado.');
             }
         })
@@ -282,15 +286,46 @@ db.once('open', function () {
         })
     });
     var occasions = require('./occasions_model.js');
+    var occasionsArr = require('./occasionsArr_model.js');
     router.post('/occasions', function (req, res) {
-        occasions.find({}, function (err, docs) {
+        occasions.findOne({}, function (err, docs) {
             if (err) {
                 res.send(err);
             } else {
-                res.send(docs);
+                occasionsArr.findOne({}, function (err, doc) {
+                    if (err) {
+                        res.send(err);
+                    } else {
+                        var tempAns = docs[req.body.gender];
+                        tempAns = tempAns[req.body.age];
+                        var tempArrAns = [];
+                        for (var i = 0; i < tempAns.length; i++) {
+                            tempArrAns.push(doc.arr[tempAns[i]]);
+                        }
+                        res.send(tempArrAns);
+                    }
+                })
             }
         })
     });
+    router.post('/occasionsArr', function (req, res) {
+        occasionsArr.findOne({}, function (err, doc) {
+            if (err) {
+                res.send(err);
+            } else {
+                res.send(doc.arr);
+            }
+        })
+    });
+    router.post('/occassionsInd', function (req, res) {
+        occasions.findOne({}, function (err, doc) {
+            if (err) {
+                res.send(err);
+            } else {
+                res.send(doc);
+            }
+        })
+    })
     var types = require('./types_model.js');
     router.post('/types', function (req, res) {
         types.find({}, function (err, docs) {
