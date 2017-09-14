@@ -56,6 +56,19 @@
             }
         }
     }
+    .getCustomersExcel{
+        a{
+            button{
+                background: lighten(#0a6332,10%);
+                color: white;
+                outline: none;
+                transition: all .3s ease;
+                &:hover{
+                    background: #0a6332;
+                }
+            }
+        }
+    }
     .customers-nav {
         text-align: center;
         background: white;

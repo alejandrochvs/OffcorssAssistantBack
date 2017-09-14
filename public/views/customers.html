@@ -24,7 +24,10 @@
         <input id="filter" type="text" class="col-xs-12 col-sm-6" placeholder="Filtrar...">
     </div>
     <div class="col-xs-2 deleteCustBtn">
-        <button class="btn btn-default col-xs-12">Borrar clientes</button>
+        <button class="btn btn-default col-xs-12"><i class="fa fa-trash" aria-hidden="true"></i> Borrar clientes</button>
+    </div>
+    <div class="col-xs-2 getCustomersExcel">
+        <a href="/db/getCustomersExcel"><button class="btn btn-default col-xs-12"><i class="fa fa-file-excel-o" aria-hidden="true"></i> Extraer clientes</button></a>
     </div>
     <div class="col-xs-2 pull-right customers-nav">
         <i class="fa fa-angle-double-left col-xs-1"></i>
@@ -41,7 +44,7 @@
     </div>
     <div class="col-xs-12 customers-table">
         <div class="col-xs-12 table-header">
-           <div class="col-xs-2 customer-title" data-sort="date">
+            <div class="col-xs-2 customer-title" data-sort="date">
                 <h4>Fecha | Hora</h4>
             </div>
             <div class="col-xs-1 customer-title" data-sort="e_card">
@@ -319,12 +322,12 @@
             }
         })
         loadCustomers(currentFilter, currentPage);
-        $('.deleteCustBtn > button').click(function(){
+        $('.deleteCustBtn > button').click(function() {
             $.ajax({
-                type : 'POST',
-                url : '/db/deleteCustomers',
-                success : function(){
-                    loadCustomers(currentFilter,currentPage);
+                type: 'POST',
+                url: '/db/deleteCustomers',
+                success: function() {
+                    loadCustomers(currentFilter, currentPage);
                 }
             })
         });

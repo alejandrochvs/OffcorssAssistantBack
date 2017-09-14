@@ -5,6 +5,11 @@ var app = express();
 var router = express.Router();
 var fs = require('fs');
 var path = require('path');
+var mime = require('mime');
+
+// XLSX initialize
+
+var xlsx = require('xlsx');
 
 // DB initialize
 
@@ -441,12 +446,43 @@ db.once('open', function () {
         });
 
     });
-    router.post('/deleteCustomers',function(req,res){
-        customers.remove({},function(err){
-            if (err){
+    router.post('/deleteCustomers', function (req, res) {
+        customers.remove({}, function (err) {
+            if (err) {
                 res.send(err);
-            }else{
+            } else {
                 res.send('Removed customers');
+            }
+        })
+    });
+    router.get('/getCustomersExcel', function (req, res) {
+        customers.find({}, function (err, docs) {
+            if (err) {
+                res.send(err);
+            } else {
+                var wb = {
+                    SheetNames: [],
+                    Sheets: {}
+                };
+                var ws_name = "Clientes";
+                var ws_data = [
+                    ["Fecha - Hora", "E-card", "Nombre", "Género", "Edad", "Tallas (Superior , Inferior , Calzado)", "Teléfono", 'Personalidad', 'Color', 'Clima', 'Ocasión']
+                ];
+                for (var i = 0; i < docs.length; i++) {
+                    var cDoc = docs[i];
+                    ws_data.push([cDoc.date, cDoc.e_card, cDoc.name, cDoc.gender, cDoc.age, cDoc.size_top + ' , ' + cDoc.size_bottom + ' , ' + cDoc.size_shoe, cDoc.phone, cDoc.personality.join(','), cDoc.color.join(','), cDoc.weather.join(','), cDoc.occasion.join(',')]);
+                }
+                var ws = xlsx.utils.aoa_to_sheet(ws_data);
+                wb.SheetNames.push(ws_name);
+                wb.Sheets[ws_name] = ws;
+                xlsx.writeFile(wb, 'customers.xlsx');
+                var file = path.join(__dirname, '../customers.xlsx');
+                var filename = path.basename(file);
+                var mimetype = mime.lookup(file);
+                res.setHeader('Content-disposition', 'attachment; filename=' + filename);
+                res.setHeader('Content-type', mimetype);
+                var filestream = fs.createReadStream(file);
+                filestream.pipe(res);
             }
         })
     })

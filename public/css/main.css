@@ -3086,6 +3086,13 @@ html {
               outline: none; }
               html body .content .screen .container .customers-container .deleteCustBtn button:hover {
                 background: #a91414; }
+            html body .content .screen .container .customers-container .getCustomersExcel a button {
+              background: #0f9149;
+              color: white;
+              outline: none;
+              transition: all .3s ease; }
+              html body .content .screen .container .customers-container .getCustomersExcel a button:hover {
+                background: #0a6332; }
             html body .content .screen .container .customers-container .customers-nav {
               text-align: center;
               background: white;
