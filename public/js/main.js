@@ -76,7 +76,6 @@ $(function () {
                 tempParent.prepend('<input id="editing" class="' + temp.attr('class') + '"type="text"/>');
                 $('#editing').val(text).focus().keyup(function (e) {
                     var key = e.keyCode || e.which;
-                    console.log($(this).val());
                     if (key === 13) {
                         if ($('#editing').val() !== '') {
                             if ($('#editing').val() !== text) {
@@ -496,12 +495,12 @@ $(function () {
                     $('.loader > .progress').css('width', '40%');
                     $('.occasion').addClass(currentClass);
                     var tempAge, tempGender;
-                    if (age => 5) {
-                        tempAge = 'boy'
+                    if (age >= 5) {
+                        tempAge = 'boy';
                     } else if (age <= 1) {
-                        tempAge = 'newborn'
+                        tempAge = 'newborn';
                     } else if (age > 1 && age < 5) {
-                        tempAge = 'baby'
+                        tempAge = 'baby';
                     }
                     if (gender == "F") {
                         tempGender = 'girl';
@@ -703,13 +702,11 @@ $(function () {
                         data.occasion = ['DÍA A DÍA', 'CASUAL', 'DEPORTIVA', 'TIME TO SLEEP', 'OCASIÓN ESPECIAL'];
                         data.weather = ['TEMPLADO', 'FRÍO', 'CALIENTE'];
                     }
-                    console.log(data);
                     $.ajax({
                         type: "POST",
                         url: "db/e-cards/match",
                         data: data,
                         success: function (res) {
-                            console.log(res);
                             var randIndex = Math.floor(Math.random() * res.length);
                             res = res[randIndex];
                             if (typeof res == 'object') {

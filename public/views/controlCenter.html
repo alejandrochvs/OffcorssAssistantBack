@@ -182,7 +182,6 @@
         $('#loadAjax').html('Cargar "' + $('#loadFile > input').val().split('\\').reverse()[0] + '"');
     });
     $('#loadFile').submit(function() {
-        console.log('Loading excel file...');
         $('.load-div-loader').addClass('loading');
         $(this).ajaxSubmit({
             error: function(xhr) {
@@ -195,13 +194,16 @@
                     type: 'POST',
                     url: '/db/e-cards/deleteAll',
                     success: function(res) {
-                        console.log(res);
                         $.ajax({
                             type: 'POST',
-                            url: '/git/loadCards',
+                            url: '/db/e-cards/load',
                             success: function(res) {
-                                console.log(res);
                                 $('.load-div-loader').removeClass('loading');
+                                $('#loadAjax').html('Carga exitosa');
+                            },err : function(err){
+                                $('.load-div-loader').removeClass('loading');
+                                console.log(err);
+                                $('#loadAjax').html('Error en la carga');
                             }
                         })
                     }
@@ -238,7 +240,7 @@
                 success: function(res) {
                     // First row
                     for (var i = 0; i < res.boy.newborn.length; i++) {
-                        $($('.occasion-gender:nth-child(1) > .first-occasion-ul > .first-level:nth-child(1) > .second-occasion-ul > li.second-level')[res.boy.baby[i]]).addClass('active');
+                        $($('.occasion-gender:nth-child(1) > .first-occasion-ul > .first-level:nth-child(1) > .second-occasion-ul > li.second-level')[res.boy.newborn[i]]).addClass('active');
                     }
                     for (var i = 0; i < res.boy.baby.length; i++) {
                         $($('.occasion-gender:nth-child(1) > .first-occasion-ul > .first-level:nth-child(2) > .second-occasion-ul > li.second-level')[res.boy.baby[i]]).addClass('active');
@@ -248,13 +250,13 @@
                     }
                     // Second row
                     for (var i = 0; i < res.girl.newborn.length; i++) {
-                        $($('.occasion-gender:nth-child(2) > .first-occasion-ul > .first-level:nth-child(1) > .second-occasion-ul > li.second-level')[res.boy.baby[i]]).addClass('active');
+                        $($('.occasion-gender:nth-child(2) > .first-occasion-ul > .first-level:nth-child(1) > .second-occasion-ul > li.second-level')[res.girl.newborn[i]]).addClass('active');
                     }
                     for (var i = 0; i < res.girl.baby.length; i++) {
-                        $($('.occasion-gender:nth-child(2) > .first-occasion-ul > .first-level:nth-child(2) > .second-occasion-ul > li.second-level')[res.boy.baby[i]]).addClass('active');
+                        $($('.occasion-gender:nth-child(2) > .first-occasion-ul > .first-level:nth-child(2) > .second-occasion-ul > li.second-level')[res.girl.baby[i]]).addClass('active');
                     }
                     for (var i = 0; i < res.girl.boy.length; i++) {
-                        $($('.occasion-gender:nth-child(2) > .first-occasion-ul > .first-level:nth-child(3) > .second-occasion-ul > li.second-level')[res.boy.boy[i]]).addClass('active');
+                        $($('.occasion-gender:nth-child(2) > .first-occasion-ul > .first-level:nth-child(3) > .second-occasion-ul > li.second-level')[res.girl.boy[i]]).addClass('active');
                     }
                     $('.second-occasion-ul > .second-level').click(function() {
                         var secLevInd = $(this).index();

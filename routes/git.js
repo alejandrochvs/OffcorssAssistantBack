@@ -9,7 +9,7 @@ var storage = multer.diskStorage({
         callback(null, path.join(__dirname, '../'));
     },
     filename: function (req, file, callback) {
-        callback(null, 'excel.xlsx');
+        callback(null, 'e-cards.xlsx');
     }
 });
 var upload = multer({
@@ -38,12 +38,6 @@ router.post('/excel', function (req, res) {
         } else {
             res.send(req.file.originalname);
         }
-    });
-});
-router.post('/loadCards', function (req, res) {
-    var cmd = 'node import.js';
-    exec(cmd, function (err, stdout, stderr) {
-        res.send('Loaded e-cards.');
     });
 });
 module.exports = router;

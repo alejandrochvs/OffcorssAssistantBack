@@ -1,6 +1,8 @@
 var xlsx = require('xlsx');
 var fs = require('fs');
-var workbook = xlsx.readFile('./excel.xlsx');
+
+
+var workbook = xlsx.readFile('./e-cards.xlsx');
 var json = []
 var worksheet = workbook.Sheets[workbook.SheetNames[0]];
 var subChaptCell, subChaptVal;

@@ -242,6 +242,117 @@ db.once('open', function () {
             }
         });
     });
+    router.post('/e-cards/load', function (req, res) {
+        var workbook = xlsx.readFile('./e-cards.xlsx');
+        var json = []
+        var worksheet = workbook.Sheets[workbook.SheetNames[0]];
+        var subChaptCell, subChaptVal;
+        var first = 0;
+        var last = 115;
+        var cols = [{
+            url: 'H',
+            ref: 'K'
+        }, {
+            url: 'J',
+            ref: 'K'
+        }, {
+            url: 'M',
+            ref: 'N'
+        }, {
+            url: 'P',
+            ref: 'Q'
+        }];
+        var counter = 0;
+        for (var i = first; i < (last - 2); i++) {
+            if (worksheet[cols[0].url + (i + 3)] != undefined) {
+                json.push({});
+                var j = 0;
+                json[json.length - 1].url = [];
+                while ((j < cols.length) && (worksheet[cols[j].url + (i + 3)] != undefined)) {
+                    json[json.length - 1].url[j] = {};
+                    // URL
+                    subChaptCell = worksheet[cols[j].url + (i + 3)];
+                    subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
+                    json[json.length - 1].url[j].path = subChaptVal + '.jpg';
+
+                    // References
+
+                    subChaptCell = worksheet[cols[j].ref + (i + 3)];
+                    subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
+                    if (subChaptCell != undefined) {
+                        if (isNaN(subChaptVal)) {
+                            json[json.length - 1].url[j].reference = subChaptVal.split(',')
+                        } else {
+                            json[json.length - 1].url[j].reference = [subChaptVal];
+                        }
+                    }
+
+                    j++;
+                }
+                // Gender
+
+                subChaptCell = worksheet['B' + (i + 3)];
+                subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
+                json[json.length - 1].gender = subChaptVal;
+
+                // Age
+
+                subChaptCell = worksheet['A' + (i + 3)];
+                subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
+                if (subChaptVal == 'NINA' || subChaptVal == 'NINO') {
+                    subChaptVal = 'NIÑA-NIÑO';
+                }
+                json[json.length - 1].age = subChaptVal;
+
+                // Occasions
+
+                subChaptCell = worksheet['D' + (i + 3)];
+                subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
+                if (subChaptCell != undefined) {
+                    json[json.length - 1].occasion = subChaptVal.split(', ');
+                }
+
+                // Weather
+
+                subChaptCell = worksheet['E' + (i + 3)];
+                subChaptVal = (subChaptCell ? subChaptCell.v : undefined);
+                if (subChaptCell != undefined) {
+                    if (subChaptVal.split(', ') == 'NO MOSTRAR CLIMA') {
+                        json[json.length - 1].weather = ["FRÍO", "TEMPLADO", "CALIENTE"];
+                    } else {
+                        json[json.length - 1].weather = subChaptVal.split(', ');
+                    }
+                }
+            }
+        }
+
+        // Save JSON
+        fs.writeFile(path.join(__dirname, '../e_cards.json'), JSON.stringify(json), 'utf-8', function (err) {
+            if (err) {
+                res.send(err);
+            } else {
+                var e_cardsToDb = [];
+                for (var i = 0; i < json.length; i++) {
+                    var e_card = new eCards({
+                        "url": json[i].url,
+                        "gender": json[i].gender,
+                        "age": json[i].age,
+                        "occasion": json[i].occasion,
+                        "weather": json[i].weather,
+                    });
+                    e_cardsToDb.push(e_card);
+                }
+                eCards.collection.insert(e_cardsToDb,function(insErr,docs){
+                    if (insErr){
+                        res.send(insErr);
+                    }else{
+                        res.send(docs);
+                    }
+                })
+
+            }
+        });
+    });
 
     // Ages section
 
