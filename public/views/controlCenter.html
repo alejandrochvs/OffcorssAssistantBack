@@ -226,7 +226,7 @@
         url: 'db/occasionsArr',
         success: function(res) {
             for (var i = 0; i < res.length; i++) {
-                $('.occasion-gender > .first-occasion-ul > .first-level > .second-occasion-ul').append('<li class="second-level">' + res[i].title + '</li>');
+                $('.occasion-gender > .first-occasion-ul > .first-level > .second-occasion-ul').append('<li class="second-level">' + res[i].title.toLowerCase() + '</li>');
             }
             $.ajax({
                 type: 'POST',
@@ -237,25 +237,68 @@
                 },
                 success: function(res) {
                     // First row
-                    for (var i = 0; i < res.boy.newborn.length; i++){
+                    for (var i = 0; i < res.boy.newborn.length; i++) {
                         $($('.occasion-gender:nth-child(1) > .first-occasion-ul > .first-level:nth-child(1) > .second-occasion-ul > li.second-level')[res.boy.baby[i]]).addClass('active');
                     }
-                    for (var i = 0; i < res.boy.baby.length; i++){
+                    for (var i = 0; i < res.boy.baby.length; i++) {
                         $($('.occasion-gender:nth-child(1) > .first-occasion-ul > .first-level:nth-child(2) > .second-occasion-ul > li.second-level')[res.boy.baby[i]]).addClass('active');
                     }
-                    for (var i = 0; i < res.boy.boy.length; i++){
+                    for (var i = 0; i < res.boy.boy.length; i++) {
                         $($('.occasion-gender:nth-child(1) > .first-occasion-ul > .first-level:nth-child(3) > .second-occasion-ul > li.second-level')[res.boy.boy[i]]).addClass('active');
                     }
                     // Second row
-                    for (var i = 0; i < res.girl.newborn.length; i++){
+                    for (var i = 0; i < res.girl.newborn.length; i++) {
                         $($('.occasion-gender:nth-child(2) > .first-occasion-ul > .first-level:nth-child(1) > .second-occasion-ul > li.second-level')[res.boy.baby[i]]).addClass('active');
                     }
-                    for (var i = 0; i < res.girl.baby.length; i++){
+                    for (var i = 0; i < res.girl.baby.length; i++) {
                         $($('.occasion-gender:nth-child(2) > .first-occasion-ul > .first-level:nth-child(2) > .second-occasion-ul > li.second-level')[res.boy.baby[i]]).addClass('active');
                     }
-                    for (var i = 0; i < res.girl.boy.length; i++){
+                    for (var i = 0; i < res.girl.boy.length; i++) {
                         $($('.occasion-gender:nth-child(2) > .first-occasion-ul > .first-level:nth-child(3) > .second-occasion-ul > li.second-level')[res.boy.boy[i]]).addClass('active');
                     }
+                    $('.second-occasion-ul > .second-level').click(function() {
+                        var secLevInd = $(this).index();
+                        var firstLevInd = $(this).parent().parent().index();
+                        var genderLev = $(this).parent().parent().parent().parent().index();
+                        if (genderLev == 0) {
+                            genderLev = 'girl';
+                        } else {
+                            genderLev = 'boy';
+                        }
+                        if (firstLevInd == 0) {
+                            firstLevInd = 'newborn';
+                        } else if (firstLevInd == 1) {
+                            firstLevInd = 'baby';
+                        } else {
+                            firstLevInd = 'boy';
+                        }
+                        var exObj = {};
+                        exObj[genderLev] = {};
+                        exObj[genderLev][firstLevInd] = [];
+                        var ocStatus = $(this).hasClass('active');
+                        if (ocStatus) {
+                            $.ajax({
+                                type: 'POST',
+                                url: '/db/occasionPull',
+                                data: {
+                                    obj : exObj,
+                                    toPull : secLevInd
+                                },
+                                success: function(res) {
+                                    console.log(res);
+                                }
+                            });
+                        } else {
+                            $.ajax({
+                                type: 'POST',
+                                url: '/db/occasionPush',
+                                data: exObj,
+                                success: function(res) {
+                                    console.log(res);
+                                }
+                            });
+                        }
+                    })
                 }
             });
         }

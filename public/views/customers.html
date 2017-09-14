@@ -23,7 +23,10 @@
       </select>
         <input id="filter" type="text" class="col-xs-12 col-sm-6" placeholder="Filtrar...">
     </div>
-    <div class="col-xs-2 col-xs-offset-8 customers-nav">
+    <div class="col-xs-2 deleteCustBtn">
+        <button class="btn btn-default col-xs-12">Borrar clientes</button>
+    </div>
+    <div class="col-xs-2 pull-right customers-nav">
         <i class="fa fa-angle-double-left col-xs-1"></i>
         <i class="fa fa-angle-left col-xs-1"></i>
         <div class="current-page-wrapper col-xs-8">
@@ -38,6 +41,9 @@
     </div>
     <div class="col-xs-12 customers-table">
         <div class="col-xs-12 table-header">
+           <div class="col-xs-2 customer-title" data-sort="date">
+                <h4>Fecha | Hora</h4>
+            </div>
             <div class="col-xs-1 customer-title" data-sort="e_card">
                 <h4 style="white-space: nowrap;text-overflow: ellipsis;overflow: hidden;" title="E-card / Referencias">E-card / Referencias</h4>
             </div>
@@ -51,13 +57,7 @@
                 <h4>Edad</h4>
             </div>
             <div class="col-xs-1 customer-title" data-sort="size_top">
-                <h4>Superior</h4>
-            </div>
-            <div class="col-xs-1 customer-title" data-sort="size_bottom">
-                <h4>Inferior</h4>
-            </div>
-            <div class="col-xs-1 customer-title" data-sort="size_shoe">
-                <h4>Zapatos</h4>
+                <h4>Tallas</h4>
             </div>
             <div class="col-xs-1 customer-title" data-sort="phone">
                 <h4>Teléfono</h4>
@@ -98,6 +98,7 @@
         'background-size': 'initial'
     });
     $(function() {
+        moment.locale('ES');
         var currentPage = 1;
         var pages;
         var currentFilter = 'date';
@@ -119,6 +120,8 @@
 
             for (var i = 0; i < object.length; i++) {
                 $('.table-body').append('<div class="col-xs-12 customer-item" data-e_card="' + object[i].e_card + '"></div>');
+                $('.customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-date"><div class="col-xs-12">' + moment(object[i].date).format('DD/MM/YYYY') + '</div></div>');
+                $('.customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-date"><div class="col-xs-12">' + moment(object[i].date).format('h:mm a') + '</div></div>');
                 $('.table-body > .customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-img"></div>');
                 (function(index) {
                     $.ajax({
@@ -136,9 +139,7 @@
                 $('.customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-name"><div class="col-xs-12">' + object[i].name + '</div></div>');
                 $('.customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-gender"><div class="col-xs-12">' + object[i].gender + '</div></div>');
                 $('.customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-age"><div class="col-xs-12">' + object[i].age + '</div></div>');
-                $('.customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-top"><div class="col-xs-12">' + object[i].size_top + '</div></div>');
-                $('.customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-bottom"><div class="col-xs-12">' + object[i].size_bottom + '</div></div>');
-                $('.customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-shoe"><div class="col-xs-12">' + object[i].size_shoe + '</div></div>');
+                $('.customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-size"><div class="col-xs-12">' + object[i].size_top + ' - ' + object[i].size_bottom + ' - ' + object[i].size_shoe + '</div></div>');
                 $('.customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-phone"><div class="col-xs-12">' + object[i].phone + '</div></div>');
                 $('.customer-item:last-child').append('<div class="col-xs-1 customer-desc customer-personality"></div>');
                 for (var j = 0; j < object[i].personality.length; j++) {
@@ -318,6 +319,15 @@
             }
         })
         loadCustomers(currentFilter, currentPage);
+        $('.deleteCustBtn > button').click(function(){
+            $.ajax({
+                type : 'POST',
+                url : '/db/deleteCustomers',
+                success : function(){
+                    loadCustomers(currentFilter,currentPage);
+                }
+            })
+        });
     })
 
 </script>

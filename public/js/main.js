@@ -24,7 +24,7 @@ $(function () {
         current,
         next,
         loadAdmin,
-        previous;
+        previous, access_level;
     //Functions
     var requestStringChange = function (toFind, toChange) {
             toChange = "'" + toChange + "'";
@@ -779,7 +779,7 @@ $(function () {
                                                 $('.call-modal > .input').removeClass('wrong');
                                                 $('.call-modal > .input > input').tooltip('hide');
                                                 $('.call-modal').addClass('success');
-                                                $.ajax({
+                                                /*$.ajax({
                                                     type: 'GET',
                                                     url: 'https://webapp.contentobps.com/hermeco/hermeco_ventas_2.php?data=' + data.phone + '-AsistenteVirtual',
                                                     dataType: 'jsonp',
@@ -787,7 +787,7 @@ $(function () {
                                                     success: function (res) {
                                                         $('.progress').removeClass('loading');
                                                     }
-                                                });
+                                                });*/
                                                 $('.progress').removeClass('loading');
                                             }
                                         });
@@ -984,7 +984,10 @@ $(function () {
                         'background-size': 'initial'
                     });
                     $('.head.title > .cont').html(headTitle4 + ' - CLIENTES');
-                } else if (current == 'adminColors') {
+                    if (access_level != 'admin') {
+                        $('.deleteCustBtn').remove();
+                    }
+                } else if (current == 'controlCenter') {
                     $('.head.title > .cont').html(headTitle4 + ' - CENTRO DE CONTROL');
                 } else if (current == '404') {
                     $('.404-restore').click(function () {
@@ -1037,8 +1040,7 @@ $(function () {
         }
     };
     loadAdmin = function () {
-        var access_level,
-            tempLocalStorage = JSON.parse(localStorage.admin);
+        var tempLocalStorage = JSON.parse(localStorage.admin);
         var data = {
             username: tempLocalStorage.username,
             password: tempLocalStorage.token
@@ -1064,7 +1066,7 @@ $(function () {
                     }
                     $('.user-settings').prepend('<li class="customers"> <h5>Clientes</h5> </li>');
                     $('.user-settings').prepend('<li class="e-cards"> <h5>E-cards</h5> </li>');
-                    $('.user-settings').prepend('<li class="colors-go"> <h5>Centro de control</h5> </li>');
+                    $('.user-settings').prepend('<li class="control-center"> <h5>Centro de control</h5> </li>');
                     $('.customers').click(function () {
                         if (current !== 'customers') {
                             next('customers');
@@ -1075,9 +1077,9 @@ $(function () {
                             next('e-cards');
                         }
                     });
-                    $('.colors-go').click(function () {
-                        if (current !== 'adminColors') {
-                            next('adminColors');
+                    $('.control-center').click(function () {
+                        if (current !== 'controlCenter') {
+                            next('controlCenter');
                         }
                     });
                     $('.log-out').click(function () {
@@ -1219,6 +1221,7 @@ $(function () {
                     $('.admin-color').remove();
                     $('.color-hidden').remove();
                     $('.toggle-edit-mode').remove();
+                    $('.control-center').remove();
                     $('.ui-section:nth-child(5) > .ui-option').html('Modo call-center');
                 }
             }
@@ -1231,7 +1234,6 @@ $(function () {
             $('.progress').removeClass('loading');
             return;
         }
-
     }
     /*if (localStorage.current) {
         current = localStorage.current;

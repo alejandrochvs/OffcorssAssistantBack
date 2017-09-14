@@ -144,9 +144,6 @@ html {
                         padding: 0 1%;
                         position: relative;
                     }
-                    &:hover {
-                        .exit-app {}
-                    }
                 }
                 &.transparent {
                     cursor: default;
@@ -279,7 +276,7 @@ html {
                     @import 'modules/404';
                     @import 'modules/e-cards';
                     @import 'modules/customers';
-                    @import 'modules/adminColors';
+                    @import 'modules/controlCenter';
                 }
             }
         }

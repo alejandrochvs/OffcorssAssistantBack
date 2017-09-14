@@ -3077,6 +3077,15 @@ html {
                 transition: all .3s ease; }
                 html body .content .screen .container .customers-container .table-filter input:focus {
                   border-radius: 5px; }
+            html body .content .screen .container .customers-container .deleteCustBtn button {
+              background: lightcoral;
+              color: white;
+              border-color: #d71919;
+              font-weight: 500;
+              transition: all .2s ease;
+              outline: none; }
+              html body .content .screen .container .customers-container .deleteCustBtn button:hover {
+                background: #a91414; }
             html body .content .screen .container .customers-container .customers-nav {
               text-align: center;
               background: white;
@@ -3463,10 +3472,11 @@ html {
                       html body .content .screen .container .adminColors-container .occasions-table .occasion-gender ul.first-occasion-ul li.first-level ul.second-occasion-ul li.second-level {
                         background: white;
                         line-height: 3vh;
-                        font-size: 18px;
+                        font-size: 16px;
                         border-left: solid 1vw;
                         border-color: orangered;
-                        transition: all .3s ease; }
+                        transition: all .3s ease;
+                        text-transform: capitalize; }
                         html body .content .screen .container .adminColors-container .occasions-table .occasion-gender ul.first-occasion-ul li.first-level ul.second-occasion-ul li.second-level:hover {
                           color: white;
                           background: orangered; }

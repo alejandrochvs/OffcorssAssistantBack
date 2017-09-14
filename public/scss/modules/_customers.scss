@@ -43,6 +43,19 @@
             }
         }
     }
+    .deleteCustBtn{
+        button{
+            background: lightcoral;
+            color: white;
+            border-color: darken(lightcoral,25%);
+            font-weight: 500;
+            transition: all .2s ease;
+            outline: none;
+            &:hover{
+                background: darken(lightcoral,35%);
+            }
+        }
+    }
     .customers-nav {
         text-align: center;
         background: white;

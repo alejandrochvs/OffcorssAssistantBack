@@ -107,10 +107,11 @@
                         li.second-level {
                             background: white;
                             line-height: 3vh;
-                            font-size: 18px;
+                            font-size: 16px;
                             border-left: solid 1vw;
                             border-color: orangered;
                             transition: all .3s ease;
+                            text-transform: capitalize;
                             &:hover {
                                 color: white;
                                 background: orangered;
