@@ -516,7 +516,16 @@ $(function () {
                         },
                         success: function (res) {
                             var renderOccasionDiv = function (occasion) {
-                                var occasionDiv = '<div data-occasion="' + occasion.query + '" class="col-xs-8 col-xs-offset-2 col-md-2 col-md-offset-0 background"><div class="col-xs-12 cont" style="background-image : url(../IMG/occasions/' + occasion.img + ')"><img src="../IMG/occasions/check.svg" alt=""><div class="col-xs-12 img"></div><div class="col-xs-12 title"><div class="col-xs-12 occasion-desc">' + occasion.desc + '</div><h3 style="color : ' + occasion.color + '">' + occasion.title + '</h3></div></div></div>';
+                                var tempImg = occasion.img;
+                                if (gender == 'F'){
+                                    tempImg = tempImg.split('-');
+                                    tempImg[1] = 'f';
+                                    tempImg = tempImg.join('-');
+                                }
+                                var occasionDiv = '<div data-occasion="' + occasion.query + '" class="col-xs-8' +
+                                    ' col-xs-offset-2 col-md-2 col-md-offset-0 background"><div class="col-xs-12' +
+                                    ' cont" style="background-image : url(../IMG/occasions/' + tempImg + ')"><img' +
+                                    ' src="../IMG/occasions/check.svg" alt=""><div class="col-xs-12 img"></div><div class="col-xs-12 title"><div class="col-xs-12 occasion-desc">' + occasion.desc + '</div><h3 style="color : ' + occasion.color + '">' + occasion.title + '</h3></div></div></div>';
                                 $('.occasions').append(occasionDiv);
                             }
                             for (var i = 0; i < res.length; i++) {
