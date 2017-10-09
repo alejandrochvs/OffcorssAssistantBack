@@ -1,0 +1,330 @@
+@import "../../scss-imports/variables";
+@import "../../scss-imports/mixins";
+.color {
+  z-index: 1;
+  padding: 0;
+  height: 100%;
+  overflow: auto;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .selection-wrap {
+    text-align: center;
+    .title {
+      margin-bottom: 1vh;
+      .text {
+        transition: all 0.3s ease;
+        background: transparent;
+        color: white;
+        border-bottom: solid 1px $yellow;
+        padding: 2%;
+        font-size: 45px;
+      }
+    }
+  }
+  .colors {
+    height: auto;
+    padding-bottom: 2vh;
+    padding-left: 5%;
+    padding-top: 3vh;
+    .color-wrap {
+      position: relative;
+      transition: all .3s ease;
+      height: 7.5vw;
+      width: 7.5vw;
+      background: transparent;
+      border-radius: 50%;
+      display: inline-block;
+      border: solid 5px white;
+      padding: 0;
+      overflow: hidden;
+      cursor: pointer;
+      margin-right: 2vw;
+      margin-bottom: 2.5vh;
+      .tag {
+        position: absolute;
+        line-height: 6.5vw;
+        font-size: 16px;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        left: 2%;
+        width: 90%;
+        text-shadow: -0.5px 0 white, 0 0.5px white, 0.5px 0 white, 0 -0.5px white;
+      }
+      .half {
+        position: absolute;
+        height: 160%;
+        transform: rotate(45deg);
+      }
+      .left-half {
+        background: darken($yellow, 2.5%);
+        left: -10%;
+        top: -10%;
+        width: 120%;
+      }
+      .right-half {
+        background: darken($yellow, 0%);
+        left: 0%;
+        bottom: 0;
+        width: 70%;
+        transition: all .3s ease;
+      }
+      &:hover,
+      &:active,
+      &:focus,
+      &.active {
+        border-color: $yellow;
+        .half {
+          transform: rotate(0deg);
+        }
+        .right-half {
+          left: -20%;
+        }
+      }
+    }
+  }
+  .colorsContinue {
+    opacity: 0;
+    color: white;
+    text-align: center;
+    line-height: 7vh;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: FrontageCBold, sans-serif;
+    transition: all .3s ease;
+    max-height: 0;
+    overflow: hidden;
+    cursor: default;
+    margin-bottom: 5vh;
+    &.active {
+      opacity: 1;
+      max-height: 7vh;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  &.boy {
+    .selection-wrap {
+      .title {
+        .text {
+          border-bottom-color: $boy;
+        }
+      }
+    }
+    .colors {
+      .color-wrap {
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          border-color: $boy;
+        }
+      }
+    }
+    .colorsContinue {
+      background: $boy;
+    }
+  }
+  &.girl {
+    .selection-wrap {
+      .title {
+        .text {
+          border-bottom-color: $girl;
+        }
+      }
+    }
+    .colors {
+      .color-wrap {
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          border-color: $girl;
+        }
+      }
+    }
+    .colorsContinue {
+      background: $girl;
+    }
+  }
+  &.bBoy {
+    .selection-wrap {
+      .title {
+        .text {
+          border-bottom-color: $bBoy;
+        }
+      }
+    }
+    .colors {
+      .color-wrap {
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          border-color: $bBoy;
+        }
+      }
+    }
+    .colorsContinue {
+      background: $bBoy;
+    }
+  }
+  &.bGirl {
+    .selection-wrap {
+      .title {
+        .text {
+          border-bottom-color: $bGirl;
+        }
+      }
+    }
+    .colors {
+      .color-wrap {
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          border-color: $bGirl;
+        }
+      }
+    }
+    .colorsContinue {
+      background: $bGirl;
+    }
+  }
+  &.nBoy {
+    .selection-wrap {
+      .title {
+        .text {
+          border-bottom-color: $nBoy;
+        }
+      }
+    }
+    .colors {
+      .color-wrap {
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          border-color: $nBoy;
+        }
+      }
+    }
+    .colorsContinue {
+      background: $nBoy;
+    }
+  }
+  &.nGirl {
+    .selection-wrap {
+      .title {
+        .text {
+          border-bottom-color: $nGirl;
+        }
+      }
+    }
+    .colors {
+      .color-wrap {
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          border-color: $nGirl;
+        }
+      }
+    }
+    .colorsContinue {
+      background: $nGirl;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .color {
+    padding-top: 0;
+    .selection-wrap {
+      padding-top: 0;
+      .title {
+        .text {
+          font-size: 2em;
+          padding-bottom: 2vh;
+        }
+      }
+    }
+    .color-display {
+      position: relative;
+      transition: all .3s ease;
+      height: 33vw;
+      width: 33vw;
+      margin-left: 34vw;
+      background: transparent;
+      border-radius: 50%;
+      display: inline-block;
+      border: solid 5px white;
+      padding: 0;
+      overflow: hidden;
+      cursor: pointer;
+      margin-bottom: 1vh;
+      left: -0.1vw;
+      .tag {
+        position: relative;
+        line-height: 28vw;
+        font-size: 22px;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        left: 0%;
+        width: 100%;
+        text-shadow: -0.5px 0 white, 0 0.5px white, 0.5px 0 white, 0 -0.5px white;
+      }
+      .half {
+        position: absolute;
+        height: 160%;
+        transform: rotate(45deg);
+      }
+      .left-half {
+        background: darken($yellow, 2.5%);
+        left: -10%;
+        top: -10%;
+        width: 120%;
+      }
+      .right-half {
+        background: darken($yellow, 0%);
+        left: 0%;
+        bottom: 0;
+        width: 70%;
+        transition: all .3s ease;
+      }
+      &:hover {
+        .half {
+          transform: rotate(0deg);
+        }
+        .right-half {
+          left: -20%;
+        }
+      }
+    }
+    .colors {
+      padding-bottom: 2vh;
+      height: auto;
+      padding-left: 8%;
+      .color-wrap {
+        height: 7vh;
+        width: 7vh;
+        top: -0.6vw;
+        .tag {
+          display: none;
+        }
+      }
+    }
+    .colorsContinue {
+      line-height: 6vh;
+      border-radius: 8px;
+      font-size: 18px;
+    }
+  }
+}

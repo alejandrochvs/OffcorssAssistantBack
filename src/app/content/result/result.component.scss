@@ -1,0 +1,497 @@
+@import "../../scss-imports/variables";
+@import "../../scss-imports/mixins";
+.result {
+  padding: 5vh 0;
+  height: 100%;
+  overflow: auto;
+  overflow-x: hidden;
+  ::-webkit-scrollbar {
+    display: inherit;
+  }
+  .call-modal {
+    background: white;
+    padding: 0;
+    border-radius: 5px;
+    position: fixed;
+    z-index: 3;
+    top: -100%;
+    overflow: hidden;
+    transition: all .3s ease;
+    -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+    height: auto;
+    .fa-times {
+      position: absolute;
+      right: 10px;
+      z-index: 1;
+      color: white;
+      top: 1vh;
+      cursor: pointer;
+      transition: all .3s ease;
+      &:hover {
+        color: darken(#4a9500, 10%) !important;
+      }
+    }
+    .title {
+      background: #4a9500 !important;
+      color: white;
+      padding: 2%;
+      h4 {
+        font-size: 2em;
+      }
+    }
+    .input {
+      padding: 4% 0px;
+      margin-bottom: 1vh;
+      input {
+        border: none;
+        outline: none;
+        border-bottom: solid 2px #4a9500 !important;
+        padding: 2%;
+        transition: all .3s ease;
+        &.wrong {
+          border-bottom-color: orangered !important;
+        }
+      }
+    }
+    .button {
+      cursor: pointer;
+      border: solid 2px #4a9500 !important;
+      border-radius: 5px;
+      color: #4a9500 !important;
+      text-align: center;
+      padding: 3%;
+      transition: all .3s ease;
+      background: transparent;
+      margin-bottom: 3vh;
+      &:hover {
+        background: #4a9500 !important;
+        color: white !important;
+      }
+    }
+    .success-content {
+      background: transparent;
+      color: transparent;
+      height: 100%;
+      position: absolute;
+      right: -101%;
+      top: 0;
+      transition: all .3s ease;
+      h1 {
+        text-align: center;
+      }
+    }
+    &.active {
+      top: 15%;
+      z-index: 5;
+      &.success {
+        .success-content {
+          color: white;
+          background: #4a9500 !important;
+          right: 0;
+          -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+          -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+          h2 {
+            color: whitesmoke;
+          }
+        }
+      }
+    }
+  }
+  .callcenter {
+    height: 80px;
+    background: #4a9500;
+    position: fixed;
+    top: 80%;
+    width: 100%;
+    border-radius: 0%;
+    color: white;
+    bottom: 0;
+    cursor: pointer;
+    transition: all .3s ease;
+    z-index: 4;
+    .fa-phone {
+      top: 15%;
+      position: relative;
+      left: 22%;
+      z-index: 4;
+    }
+    .wave-wrapper {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 0%;
+      top: 0;
+      .wave {
+        height: 100%;
+        width: 100%;
+        border-radius: 5%;
+        position: absolute;
+        z-index: 3;
+        transition: all .3s ease;
+      }
+      &.active {
+        .wave {
+          &.wave-1 {
+            animation: pulse 1.3s ease infinite alternate;
+            background: #4a9500;
+          }
+          &.wave-2 {
+            animation: pulse1 1.5s ease infinite alternate;
+            background: #4a9500;
+          }
+          &.wave-3 {
+            animation: pulse2 1s ease infinite alternate;
+            background: #4a9500;
+          }
+        }
+      }
+    }
+    &:hover {
+      background: lighten(#4a9500, 5%);
+    }
+    .text {
+      position: absolute;
+      font-size: 45px;
+      z-index: 4;
+      text-align: center;
+      position: absolute;
+      top: 0;
+    }
+  }
+  .selection-wrap {
+    text-align: center;
+    .title {
+      margin-bottom: 5vh;
+      .text {
+        transition: all 0.3s ease;
+        background: white;
+        border-bottom: solid 3px $yellow;
+        padding: 2%;
+      }
+    }
+    .nameInput {
+      input {
+        border: none;
+        border-bottom: solid 1px black;
+        background-color: transparent;
+      }
+    }
+    .continue {
+      div {
+        transition: all 0.3s ease;
+        background: $yellow;
+        color: white;
+      }
+    }
+  }
+  .result-wrapper {
+    padding: 0;
+    margin-bottom: 80px;
+    .resultIMG {
+      padding: 0;
+      transition: all .3s ease;
+      img {
+        cursor: pointer;
+        -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+        transition: all .3s ease;
+        padding: 0;
+        &:hover {
+          -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+          -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+        }
+      }
+    }
+  }
+  &.boy {
+    .call-modal {
+      .title {
+        background: $boy;
+      }
+      .input {
+        input {
+          border-color: $boy;
+        }
+      }
+      .button {
+        color: $boy;
+        border-color: $boy;
+        &:hover {
+          background: $boy;
+          color: white;
+        }
+      }
+      .fa-times {
+        &:hover {
+          color: darken($boy, 10%);
+        }
+      }
+      &.active {
+        &.success {
+          .success-content {
+            background: $boy;
+          }
+        }
+      }
+    }
+  }
+  &.girl {
+    .call-modal {
+      .title {
+        background: $girl;
+      }
+      .input {
+        input {
+          border-color: $girl;
+        }
+      }
+      .button {
+        color: $girl;
+        border-color: $girl;
+        &:hover {
+          background: $girl;
+          color: white;
+        }
+      }
+      .fa-times {
+        &:hover {
+          color: darken($girl, 10%);
+        }
+      }
+      &.active {
+        &.success {
+          .success-content {
+            background: $girl;
+          }
+        }
+      }
+    }
+  }
+  &.bBoy {
+    .call-modal {
+      .title {
+        background: $bBoy;
+      }
+      .input {
+        input {
+          border-color: $bBoy;
+        }
+      }
+      .button {
+        color: $bBoy;
+        border-color: $bBoy;
+        &:hover {
+          background: $bBoy;
+          color: white;
+        }
+      }
+      .fa-times {
+        &:hover {
+          color: darken($bBoy, 10%);
+        }
+      }
+      &.active {
+        &.success {
+          .success-content {
+            background: $bBoy;
+          }
+        }
+      }
+    }
+  }
+  &.bGirl {
+    .call-modal {
+      .title {
+        background: $bGirl;
+      }
+      .input {
+        input {
+          border-color: $bGirl;
+        }
+      }
+      .button {
+        color: $bGirl;
+        border-color: $bGirl;
+        &:hover {
+          background: $bGirl;
+          color: white;
+        }
+      }
+      .fa-times {
+        &:hover {
+          color: darken($bGirl, 10%);
+        }
+      }
+      &.active {
+        &.success {
+          .success-content {
+            background: $bGirl;
+          }
+        }
+      }
+    }
+  }
+  &.nBoy {
+    .call-modal {
+      .title {
+        background: $nBoy;
+      }
+      .input {
+        input {
+          border-color: $nBoy;
+        }
+      }
+      .button {
+        color: $nBoy;
+        border-color: $nBoy;
+        &:hover {
+          background: $nBoy;
+          color: white;
+        }
+      }
+      .fa-times {
+        &:hover {
+          color: darken($nBoy, 10%);
+        }
+      }
+      &.active {
+        &.success {
+          .success-content {
+            background: $nBoy;
+          }
+        }
+      }
+    }
+  }
+  &.nGirl {
+    .call-modal {
+      .title {
+        background: $nGirl;
+      }
+      .input {
+        input {
+          border-color: $nGirl;
+        }
+      }
+      .button {
+        color: $nGirl;
+        border-color: $nGirl;
+        &:hover {
+          background: $nGirl;
+          color: white;
+        }
+      }
+      .fa-times {
+        &:hover {
+          color: darken($nGirl, 10%);
+        }
+      }
+      &.active {
+        &.success {
+          .success-content {
+            background: $nGirl;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    padding: 0;
+    .callcenter {
+      width: 100%;
+      border-radius: 0;
+      top: 0vh;
+      height: 8%;
+      right: 0;
+      margin-bottom: 5vh;
+      position: relative;
+      .fa-phone {
+        left: 5%;
+        font-size: 40px;
+        line-height: 90%;
+      }
+      .wave-wrapper {
+        border-radius: 0;
+        .wave {
+          border-radius: 0;
+        }
+      }
+      .text {
+        position: absolute;
+        font-size: 25px;
+        top: 5%;
+        left: 3%;
+        z-index: 4;
+        text-align: center;
+      }
+    }
+    .resultIMG {
+      margin-bottom: 12%;
+    }
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+  @keyframes pulse1 {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.7);
+      opacity: 0;
+    }
+  }
+  @keyframes pulse2 {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
+  @keyframes pulseM {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2.5);
+      opacity: 0;
+    }
+  }
+  @keyframes pulse1M {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2.25);
+      opacity: 0;
+    }
+  }
+  @keyframes pulse2M {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+}

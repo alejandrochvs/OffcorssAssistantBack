@@ -1,0 +1,35 @@
+<div class="col-12 age" [ngClass]="data.current_class">
+  <div class="col-12 col-md-7 offset-sm-2 selection-wrap">
+    <div class="col-12 title">
+      <h4 data-var="ageTitle" class="col-12 text text-editable">&#xBF;Cu&#xE1;ntos a&#xF1;os tiene
+        {{data.name}}?</h4>
+    </div>
+  </div>
+  <div class="col-12 col-md-7 offset-sm-2 age-wrapper">
+    <div class="col-12 pad row">
+      <div class="col pad-row primi" (click)="updateAge('newborn')"
+           [ngClass]="{nGirl: data.gender == 'girl',nBoy: data.gender == 'boy'}"
+           routerLink="/size">
+        <h3><b>0-18 meses</b><br> NEWBORN</h3>
+      </div>
+      <div class="col pad-row baby" (click)="updateAge('baby')"
+           [ngClass]="{bGirl: data.gender == 'girl',bBoy: data.gender == 'boy'}"
+           routerLink="/size">
+        <h3><b>1 &#x2013; 5 a&#xF1;os</b><br> BABY</h3>
+      </div>
+      <div class="col pad-row kid" (click)="updateAge('boy')"
+           [ngClass]="{girl: data.gender == 'girl',boy: data.gender == 'boy'}"
+           routerLink="/size">
+        <h3><b>5 &#x2013; 13 a&#xF1;os</b><br> NI&#xD1;OS</h3>
+      </div>
+    </div>
+    <div class="col-12 container">
+      <div class="col-12 col-md-4 primi">
+        <div class="title"></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-3 img">
+    <div class="col-12 image"></div>
+  </div>
+</div>

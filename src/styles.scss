@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+@import "app/scss-imports/variables";
+@import "app/scss-imports/mixins";
+@font-face {
+  font-family: FrontageCBold;
+  src: url('./app/fonts/offcorss/Juri Zaech - Frontage Condensed Bold.otf');
+}
+@font-face {
+  font-family: FrontageCBottom;
+  src: url('./app/fonts/offcorss/Juri Zaech - FrontageCondensed-Bottom.otf');
+}
+@font-face {
+  font-family: FrontageCN;
+  src: url('./app/fonts/offcorss/Juri Zaech - FrontageCondensed-Neon.otf');
+}
+@font-face {
+  font-family: FrontageC;
+  src: url('./app/fonts/offcorss/Juri Zaech - FrontageCondensed-Regular.otf');
+}
+body{
+  overflow: hidden;
+  height: 100vh;
+  width:100vw;
+  font-family: FrontageC;
+  .row{
+    margin:0;
+  }
+  .container-fluid{
+    padding : 0;
+  }
+}

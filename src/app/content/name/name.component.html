@@ -1,0 +1,27 @@
+<div class="col-12 name row" [ngClass]="data.current_class">
+  <div class="col-12 col-sm-6 offset-sm-2 selection-wrap">
+    <div class="col-12 title">
+      <h4 class="col-12 text text-editable" data-var="nameTitle">Cuéntanos cómo se llama.</h4>
+    </div>
+  </div>
+  <div class="col-12 col-sm-6 offset-sm-2 nameInput">
+    <h1><input class="col-12" type="text" placeholder="Escribe su nombre" maxlength="20" [(ngModel)]="data.name" ></h1>
+  </div>
+  <div class="col-10 offset-1 col-sm-4 offset-sm-4 col-md-2 offset-md-5 continue">
+    <div class="col-12" routerLink="/age" (click)="updateName()">
+      <h3 class="text-editable" data-var="nameBtn">Continuar</h3>
+    </div>
+  </div>
+  <div class="col-12 col-sm-4 img">
+    <div class="col-12 image"></div>
+  </div>
+</div>
+<script>
+  $(function() {
+    var random = Math.floor(Math.random() * 2);
+    if (random == 1) {
+      $('.name > .selection-wrap > .title > h4').html('Cuéntanos como se llama.');
+    }
+  })
+
+</script>

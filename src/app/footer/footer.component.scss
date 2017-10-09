@@ -1,0 +1,16 @@
+@import "../scss-imports/variables";
+@import "../scss-imports/mixins";
+.footer{
+  height:10vh;
+  background: white;
+  @include box-shadow(0.3);
+  padding: 1.5vh 0;
+  .brand{
+    background: url("img/Logo-01.png");
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-repeat:no-repeat;
+    background-position: center;
+    height:100%;
+  }
+}

@@ -1,0 +1,19 @@
+<div class="row gender">
+  <div class="col-12 col-sm-6 push-sm-3 selection-wrap">
+    <div class="row title">
+      <h4 class="col-12 text text-editable" data-var="genderTitle">¡HOLA! ESTÁS BUSCANDO EL LOOK PERFECTO PARA... </h4>
+    </div>
+    <div class="selections" routerLink="/name">
+      <div class="row background">
+        <div class="col text boySel text-editable" data-var="genderBoy" (click)="updateGender('boy')">Niño</div>
+        <div class="col text girlSel text-editable" data-var="genderGirl" (click)="updateGender('girl')">Niña</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-6 col-sm-3 pull-sm-6 img-boy">
+    <div class="col-12 image"></div>
+  </div>
+  <div class="col-6 col-sm-3 img-girl">
+    <div class="col-12 image"></div>
+  </div>
+</div>

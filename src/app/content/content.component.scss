@@ -1,0 +1,8 @@
+@import "../scss-imports/variables";
+@import "../scss-imports/mixins";
+.content{
+  height:80vh;
+  background: url("./img/fondo-1.jpg");
+  background-size: cover;
+  background-position: center;
+}

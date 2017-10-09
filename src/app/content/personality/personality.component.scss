@@ -1,0 +1,572 @@
+@import "../../scss-imports/variables";
+@import "../../scss-imports/mixins";
+.personality {
+  padding: 0;
+  height: 100%;
+  overflow: auto;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .selection-wrap {
+    text-align: center;
+    .title {
+      margin-bottom: 5vh;
+      .text {
+        margin-top: 0;
+        transition: all 0.3s ease;
+        color: white;
+        border-bottom: solid 1px $yellow;
+        padding: 2%;
+        font-size: 50px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+  .personWrap {
+    .person {
+      padding: 1vh 1vw;
+      height: 40vh;
+      background: transparent;
+      overflow: hidden;
+      transition: all .3s ease;
+      transform: scale(1.1);
+      cursor: pointer;
+      .fa-check {
+        position: absolute;
+        opacity: 1;
+        left: 2vw;
+        top: 3vh;
+        color: white;
+        z-index: 2;
+        transition: all 0.3s ease;
+        font-size: 8vw;
+        left: 25%;
+        top: 25%;
+      }
+      .background {
+        height: inherit;
+        padding: 0;
+        background: rgba(black, 0.5);
+        border: none !important;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        .offset {
+          height: 30vh;
+          background: rgba(white, 0.8);
+          transition: all .3s ease;
+        }
+        .title {
+          height: 10vh;
+          background: white !important;
+          h4 {
+            line-height: 8vh;
+            text-transform: uppercase;
+            margin: 0;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            font-weight: 100;
+            color: #333;
+            font-family: FrontageCBold;
+            font-size: 30px;
+          }
+        }
+      }
+      &.transparent {
+        transform: scale(1);
+        .background {
+          .offset {
+            background: transparent;
+          }
+        }
+        .fa-check {
+          opacity: 0;
+        }
+      }
+      &:nth-child(1) {
+        .background {
+          .title {
+            h4 {
+              color: #73626E;
+            }
+          }
+        }
+      }
+      &:nth-child(2) {
+        .background {
+          .title {
+            h4 {
+              color: #80D6BF;
+            }
+          }
+        }
+      }
+      &:nth-child(3) {
+        .background {
+          .title {
+            h4 {
+              color: #73626E;
+            }
+          }
+        }
+      }
+      &:nth-child(4) {
+        .background {
+          .title {
+            h4 {
+              color: #80D6BF;
+            }
+          }
+        }
+      }
+      &:nth-child(5) {
+        .background {
+          .title {
+            h4 {
+              color: #73626E;
+            }
+          }
+        }
+      }
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  .continue {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    padding: 0;
+    transition: all .3s ease;
+    border-radius: 8px;
+    overflow: hidden;
+    font-family: FrontageCBold, sans-serif;
+    h4 {
+      margin: 0;
+      background: $yellow;
+      color: white;
+      font-size: 24px;
+      padding: 4%;
+      cursor: pointer;
+      transition: all .3s ease;
+    }
+    &.transparent {
+      h4 {
+        background: transparent !important;
+        color: transparent;
+        cursor: default;
+        user-select: none;
+      }
+    }
+    &:hover {
+      opacity: 0.5;
+      transform: scale(1.1);
+    }
+  }
+  &.boy {
+    .selection-wrap {
+      .title {
+        .text {
+          border-bottom-color: $boy;
+        }
+      }
+    }
+    .personWrap {
+      .person {
+        .background {
+          border-color: $boy;
+          .title {
+            background-color: rgba($boy, 0.8);
+          }
+        }
+        .fa-check {
+          color: $boy;
+        }
+      }
+      .prevPerson {
+        &:hover {
+          i {
+            color: $boy;
+          }
+        }
+      }
+      .nextPerson {
+        &:hover {
+          i {
+            color: $boy;
+          }
+        }
+      }
+    }
+    .continue {
+      h4 {
+        background: $boy;
+      }
+    }
+  }
+  &.girl {
+    .selection-wrap {
+      .title {
+        .text {
+          border-bottom-color: $girl;
+        }
+      }
+    }
+    .personWrap {
+      .person {
+        .background {
+          border-color: $girl;
+          .title {
+            background-color: $girl;
+          }
+        }
+        .fa-check {
+          color: $girl;
+        }
+      }
+      .prevPerson {
+        &:hover {
+          i {
+            color: $girl;
+          }
+        }
+      }
+      .nextPerson {
+        &:hover {
+          i {
+            color: $girl;
+          }
+        }
+      }
+    }
+    .continue {
+      h4 {
+        background: $girl;
+      }
+    }
+  }
+  &.bBoy {
+    .selection-wrap {
+      .title {
+        .text {
+          border-bottom-color: $bBoy;
+        }
+      }
+    }
+    .personWrap {
+      .person {
+        .background {
+          border-color: $bBoy;
+          .title {
+            background-color: $bBoy;
+          }
+        }
+        .fa-check {
+          color: $bBoy;
+        }
+      }
+      .prevPerson {
+        &:hover {
+          i {
+            color: $bBoy;
+          }
+        }
+      }
+      .nextPerson {
+        &:hover {
+          i {
+            color: $bBoy;
+          }
+        }
+      }
+    }
+    .continue {
+      h4 {
+        background: $bBoy;
+      }
+    }
+  }
+  &.bGirl {
+    .selection-wrap {
+      .title {
+        .text {
+          border-bottom-color: $bGirl;
+        }
+      }
+    }
+    .personWrap {
+      .person {
+        .background {
+          border-color: $bGirl;
+          .title {
+            background-color: $bGirl;
+          }
+        }
+        .fa-check {
+          color: $bGirl;
+        }
+      }
+      .prevPerson {
+        &:hover {
+          i {
+            color: $bGirl;
+          }
+        }
+      }
+      .nextPerson {
+        &:hover {
+          i {
+            color: $bGirl;
+          }
+        }
+      }
+    }
+    .continue {
+      h4 {
+        background: $bGirl;
+      }
+    }
+  }
+  &.nBoy {
+    .selection-wrap {
+      .title {
+        .text {
+          border-bottom-color: $nBoy;
+        }
+      }
+    }
+    .personWrap {
+      .person {
+        .background {
+          border-color: $nBoy;
+          .title {
+            background-color: $nBoy;
+          }
+        }
+        .fa-check {
+          color: $nBoy;
+        }
+      }
+      .prevPerson {
+        &:hover {
+          i {
+            color: $nBoy;
+          }
+        }
+      }
+      .nextPerson {
+        &:hover {
+          i {
+            color: $nBoy;
+          }
+        }
+      }
+    }
+    .continue {
+      h4 {
+        background: $nBoy;
+      }
+    }
+  }
+  &.nGirl {
+    .selection-wrap {
+      .title {
+        .text {
+          border-bottom-color: $nGirl;
+        }
+      }
+    }
+    .personWrap {
+      .person {
+        .background {
+          border-color: $nGirl;
+          .title {
+            background-color: $nGirl;
+          }
+        }
+        .fa-check {
+          color: $nGirl;
+        }
+      }
+      .prevPerson {
+        &:hover {
+          i {
+            color: $nGirl;
+          }
+        }
+      }
+      .nextPerson {
+        &:hover {
+          i {
+            color: $nGirl;
+          }
+        }
+      }
+    }
+    .continue {
+      h4 {
+        background: $nGirl;
+      }
+    }
+  }
+  &.boy,
+  &.bBoy,
+  &.nBoy {
+    .personWrap {
+      .person {
+        &:nth-child(2) {
+          .background {
+            background-image: url(./img//personalidad-m-1.jpg);
+          }
+        }
+        &:nth-child(3) {
+          .background {
+            background-image: url(./img//personalidad-m-2.jpg);
+          }
+        }
+        &:nth-child(4) {
+          .background {
+            background-image: url(./img//personalidad-m-3.jpg);
+          }
+        }
+        &:nth-child(5) {
+          .background {
+            background-image: url(./img//personalidad-m-4.jpg);
+          }
+        }
+        &:nth-child(6) {
+          .background {
+            background-image: url(./img//personalidad-m-5.jpg);
+          }
+        }
+      }
+    }
+  }
+  &.girl,
+  &.bGirl,
+  &.nGirl {
+    .personWrap {
+      .person {
+        &:nth-child(2) {
+          .background {
+            background-image: url(./img//personalidad-f-1.jpg);
+          }
+        }
+        &:nth-child(3) {
+          .background {
+            background-image: url(./img//personalidad-f-2.jpg);
+          }
+        }
+        &:nth-child(4) {
+          .background {
+            background-image: url(./img//personalidad-f-3.jpg);
+          }
+        }
+        &:nth-child(5) {
+          .background {
+            background-image: url(./img//personalidad-f-4.jpg);
+          }
+        }
+        &:nth-child(6) {
+          .background {
+            background-image: url(./img//personalidad-f-5.jpg);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:767px) {
+  .personality {
+    padding: 0;
+    .selection-wrap {
+      .title {
+        margin-bottom: 0;
+        .text {
+          font-size: 2em;
+          padding-bottom: 2vh;
+        }
+      }
+    }
+    .personWrap {
+      height: 55vh;
+      padding: 0;
+      .prevPerson {
+        transition: all .3s ease;
+        position: absolute;
+        width: 20%;
+        height: 35%;
+        background: transparent;
+        left: 0;
+        color: white;
+        font-size: 60px;
+        top: 25%;
+        z-index: 0;
+        i {
+          transition: all .3s ease;
+        }
+        &:hover {
+          transform: scale(1.25);
+        }
+      }
+      .person {
+        z-index: 1;
+        position: absolute;
+        padding: 2.5vh 2.2vw;
+        height: 51vh;
+        display: none;
+        .fa-check {
+          font-size: 40vw;
+        }
+        .background {
+          .offset {
+            height: 40vh;
+          }
+          .title {
+            padding: 0;
+            height: 9vh;
+            h4 {
+              font-size: 14px;
+              padding: 0;
+              line-height: 8vh;
+              font-weight: 600;
+            }
+          }
+        }
+        &.active {
+          display: inherit;
+        }
+      }
+      .nextPerson {
+        transition: all .3s ease;
+        position: absolute;
+        width: 20%;
+        height: 35%;
+        background: transparent;
+        right: 0;
+        color: white;
+        font-size: 60px;
+        top: 25%;
+        z-index: 0;
+        i {
+          transition: all .3s ease;
+        }
+        &:hover {
+          transform: scale(1.25);
+        }
+      }
+    }
+    .continue {
+      margin-top: 2vh;
+      border-radius: 8px;
+      h4 {
+        font-size: 18px;
+      }
+    }
+  }
+}

@@ -1,0 +1,174 @@
+@import "../../scss-imports/variables";
+@import "../../scss-imports/mixins";
+.gender {
+  padding: 5vh 5vw;
+  height: 100%;
+  overflow: auto;
+  overflow-y: hidden;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .selection-wrap {
+    text-align: center;
+    height: 50%;
+    padding: 0;
+    .title {
+      margin-top: 10vh;
+      .text {
+        background: transparent;
+        color: white;
+        padding: 2%;
+        font-size: 40px;
+        transition: all 0.3s ease;
+        font-weight: 300;
+      }
+    }
+    .selections {
+      padding: 0;
+      .background {
+        padding: 0;
+        .text {
+          padding: 0;
+          background: transparent;
+          color: white;
+          padding: 4%;
+          border-bottom: solid 3px transparent;
+          transition: all 0.3s ease;
+          cursor: pointer;
+          text-transform: uppercase;
+          text-shadow: -3px 3px 0px rgba(255, 255, 255, 1);
+          font-size: 6em;
+          font-weight: 800;
+          &.boySel {
+            color: $boy;
+            border-right: dashed 1.5px white;
+            &:hover {
+              border-bottom: solid 3px $boy;
+              opacity: 0.5;
+            }
+          }
+          &.girlSel {
+            color: $girl;
+            border-left: dashed 1.5px white;
+            &:hover {
+              border-bottom: solid 3px $girl;
+              opacity: 0.5;
+            }
+          }
+        }
+      }
+    }
+  }
+  .img-boy {
+    height: 60vh;
+    .image {
+      background-image: url('./img/boy.jpg');
+      height: 100%;
+      background-position: center;
+      background-origin: content-box;
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition : all .3s ease;
+      cursor : pointer;
+      &:hover{
+        transform : scale(1.1);
+      }
+    }
+  }
+  .img-girl {
+    height: 60vh;
+    .image {
+      background-image: url('./img/girl.jpg');
+      height: 100%;
+      background-position: center;
+      background-origin: content-box;
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition : all .3s ease;
+      cursor : pointer;
+      &:hover{
+        transform : scale(1.1);
+      }
+    }
+  }
+  &.boy {
+    .selection-wrap {
+      .title {
+        .text {
+          border-bottom-color: $boy;
+        }
+      }
+      .selections {
+        .background {
+          .boySel {
+            border-bottom-color: $boy;
+          }
+        }
+      }
+    }
+    .img-boy {
+      .image {
+        display: inherit;
+      }
+    }
+    .img-girl {
+      .image {
+        display: none;
+      }
+    }
+  }
+  &.girl {
+    .selection-wrap {
+      .title {
+        .text {
+          border-bottom-color: $girl;
+        }
+      }
+      .selections {
+        .background {
+          .girlSel {
+            border-bottom-color: $girl;
+          }
+        }
+      }
+    }
+    .img-boy {
+      .image {
+        display: none;
+      }
+    }
+    .img-girl {
+      .image {
+        display: inherit;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .gender {
+    padding: 1vh 2vw;
+    .selection-wrap {
+      height: auto;
+      .title {
+        margin-top: 5vh;
+        .text {
+          font-size: 1.5em;
+        }
+      }
+      .selections {
+        .background {
+          .text {
+            font-size: 4em;
+            margin-top: 0;
+          }
+        }
+      }
+    }
+    .img-boy,
+    .img-girl {
+      height: 35vh;
+      padding: 0;
+    }
+  }
+}

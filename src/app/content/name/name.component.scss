@@ -1,0 +1,236 @@
+@import "../../scss-imports/variables";
+@import "../../scss-imports/mixins";
+.name {
+  padding: 5vh 0;
+  height: 100%;
+  overflow: auto;
+  overflow-x: hidden;
+  transition: all .3s ease;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .selection-wrap {
+    text-align: center;
+    margin-top: 15vh;
+    .title {
+      .text {
+        transition: all 0.3s ease;
+        background: transparent;
+        color: white;
+        padding: 2%;
+        font-weight: 300;
+        font-size: 3vw;
+      }
+    }
+  }
+  .nameInput {
+    font-family: FrontageCBold;
+    h1 {
+      margin: 0;
+    }
+    input {
+      padding-bottom: 5%;
+      outline: none;
+      color: white;
+      border: none;
+      background-color: transparent;
+      font-size: 5vw;
+      font-weight: 100;
+      border-bottom: dashed 2px white;
+      &::placeholder {
+        color: rgba(white, 0.9);
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  .continue {
+    overflow: hidden;
+    cursor: pointer;
+    margin-top: 5vh;
+    height: 10vh;
+    transition: all .3s ease;
+    div {
+      transition: all 0.3s ease;
+      background: $yellow;
+      color: white;
+      border-radius: 10px;
+      h3 {
+        text-align: center;
+        margin: 0;
+        line-height: 6vh;
+      }
+      &:hover {
+        opacity: 0.5;
+        transform: scale(1.1);
+      }
+    }
+    &.btn-hidden {
+      height: 0vh;
+      overflow: hidden;
+      cursor: default;
+      div {
+        background: transparent !important;
+      }
+    }
+  }
+  .img {
+    height: 60vh;
+    position: absolute;
+    right: 0;
+    .image {
+      height: 100%;
+      background-position: center;
+      background-origin: content-box;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+  &.boy {
+    .selection-wrap {
+      .title {
+        .text {
+          border-bottom-color: $boy;
+        }
+      }
+    }
+    .continue {
+      div {
+        background: $boy;
+      }
+    }
+    .img {
+      .image {
+        background-image: url('./img/boy.jpg');
+      }
+    }
+  }
+  &.girl {
+    .selection-wrap {
+      .title {
+        .text {
+          border-bottom-color: $girl;
+        }
+      }
+    }
+    .continue {
+      div {
+        background: $girl;
+      }
+    }
+    .img {
+      .image {
+        background-image: url('./img/girl.jpg');
+      }
+    }
+  }
+  &.bBoy {
+    .selection-wrap {
+      .title {
+        .text {
+          border-bottom-color: $bBoy;
+        }
+      }
+    }
+    .continue {
+      div {
+        background: $bBoy;
+      }
+    }
+    .img {
+      .image {
+        background-image: url('./img/bBoy.jpg');
+      }
+    }
+  }
+  &.bGirl {
+    .selection-wrap {
+      .title {
+        .text {
+          border-bottom-color: $bGirl;
+        }
+      }
+    }
+    .continue {
+      div {
+        background: $bGirl;
+      }
+    }
+    .img {
+      .image {
+        background-image: url('./img/bGirl.jpg');
+      }
+    }
+  }
+  &.nBoy {
+    .selection-wrap {
+      .title {
+        .text {
+          border-bottom-color: $nBoy;
+        }
+      }
+    }
+    .continue {
+      div {
+        background: $nBoy;
+      }
+    }
+    .img {
+      .image {
+        background-image: url('./img/nBoy.jpg');
+      }
+    }
+  }
+  &.nGirl {
+    .selection-wrap {
+      .title {
+        .text {
+          border-bottom-color: $nGirl;
+        }
+      }
+    }
+    .continue {
+      div {
+        background: $nGirl;
+      }
+    }
+    .img {
+      .image {
+        background-image: url('./img/nGirl.jpg');
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .name {
+    .img {
+      margin-top: 5vh;
+      position: relative;
+    }
+    .selection-wrap {
+      margin-top: 0;
+      .title {
+        .text {
+          font-size: 2em;
+        }
+      }
+    }
+    .nameInput {
+      margin-top: 0vh;
+      input {
+        font-size: 9vw;
+      }
+    }
+    .continue {
+      height: 6vh;
+      div {
+        height: 100%;
+        h3 {
+          line-height: 5vh;
+        }
+      }
+    }
+  }
+}

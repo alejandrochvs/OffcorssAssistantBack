@@ -1,0 +1,548 @@
+@import "../../scss-imports/variables";
+@import "../../scss-imports/mixins";
+.sizes-guide {
+  background: white;
+  padding: 0;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 3;
+  top: -100%;
+  overflow: hidden;
+  transition: all .3s ease;
+  padding-top: 0;
+  -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+  height: 90%;
+  .fa-times {
+    position: absolute;
+    right: 20px;
+    top: 1vh;
+    cursor: pointer;
+    transition: all .3s ease;
+    z-index: 2;
+    &:hover {
+      color: lightcoral;
+    }
+  }
+  .img {
+    height: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    padding: 0;
+    img {
+      padding: 0;
+    }
+  }
+  .scroll-bar {
+    display: block;
+    width: 10px;
+    background: whitesmoke;
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.4);
+    .scroll-percent {
+      width: 100%;
+      border-radius: 0px;
+      height: 10px;
+      display: block;
+      background: transparent;
+      transition: all .3s ease;
+      top: 0;
+      position: absolute;
+    }
+  }
+  &.active {
+    top: 5%;
+  }
+}
+
+.size {
+  overflow: auto;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  padding: 2.5vh 0;
+  height: 100%;
+  .selection-wrap {
+    height: 100%;
+    text-align: center;
+    .title {
+      .text {
+        transition: all 0.3s ease;
+        background: transparent;
+        padding: 2%;
+        padding-top: 0;
+        color: white;
+        cursor: pointer;
+        font-size: 35px;
+        a {
+          text-decoration: none;
+          color: white;
+          border-bottom: solid 2px $yellow;
+          transition: all .3s ease;
+          padding-bottom: 5px;
+          padding-right: 10px;
+          padding-left: 10px;
+          top: 10px;
+          position: relative;
+          font-size: 36px;
+          font-family: FrontageCBold;
+          &:hover {
+            border-color: white !important;
+          }
+        }
+        .fa {
+          position: absolute;
+          right: -20%;
+          background: white;
+          border-radius: 50%;
+          height: 3.5vw;
+          width: 3.5vw;
+          line-height: 50px;
+          font-size: 34px;
+          color: $yellow;
+        }
+      }
+    }
+    .padWrap {
+      margin-bottom: 5vh;
+      margin-top: 2.5vh;
+      .image {
+        margin-bottom: 2.5vh;
+        img {
+          max-height: 10vh;
+        }
+      }
+      .padSize {
+        height: 32vh;
+        padding: 0;
+        border-right: dashed 2px white;
+        transition: all 0.3s ease;
+        overflow: hidden;
+        .row {
+          z-index: 1;
+          transition: all 0.3s ease;
+          height: 10vh;
+          margin: 0;
+          padding: 1vh 2vw;
+          top: 0;
+          .box {
+            cursor: pointer;
+            padding: 0;
+            line-height: 10vh;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            color: white;
+            font-size: 24px;
+            background: transparent;
+            border-radius: 50px;
+            &:hover,
+            &.active {
+              border-color: $yellow;
+              background: white;
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
+      .nav {
+        display: none;
+        z-index: 2;
+        position: absolute;
+        right: -3vw;
+        bottom: 25%;
+        width: 3.5vw;
+        height: 3.5vw;
+        border-radius: 50%;
+        background: white;
+        .sel {
+          cursor: pointer;
+          height: 3vh;
+          .fa {
+            width: 100%;
+            height: 100%;
+            transition: all 0.3s ease;
+            color: $yellow;
+          }
+          &:hover {
+            .fa {
+              color: white;
+            }
+          }
+        }
+        &.active {
+          display: inherit;
+        }
+      }
+    }
+    .padPrev {
+      position: absolute;
+      color: white;
+      font-size: 50px;
+      left: 5%;
+      text-align: center;
+      top: 35%;
+      i {
+        transition: all .3s ease;
+      }
+    }
+    .padNext {
+      position: absolute;
+      color: white;
+      font-size: 50px;
+      right: 5%;
+      text-align: center;
+      top: 35%;
+      i {
+        transition: all .3s ease;
+      }
+    }
+  }
+  &.boy {
+    .selection-wrap {
+      .title {
+        .text {
+          border-bottom-color: $boy;
+          a {
+            border-color: $boy;
+            .fa {
+              color: $boy;
+            }
+          }
+        }
+      }
+      .padWrap {
+        .padSize {
+          .row {
+            .box {
+              &.active,
+              &:hover {
+                background: $boy;
+                color: white;
+              }
+            }
+          }
+        }
+        .nav {
+          .sel {
+            .fa {
+              color: $boy;
+            }
+            &:hover {
+              .fa {
+                color: darken($boy, 20%);
+              }
+            }
+          }
+        }
+      }
+      .padNext,
+      .padPrev {
+        &:hover {
+          i {
+            color: $boy;
+          }
+        }
+      }
+    }
+  }
+  &.girl {
+    .selection-wrap {
+      .title {
+        .text {
+          border-bottom-color: $girl;
+          a {
+            border-color: $girl;
+            .fa {
+              color: $girl;
+            }
+          }
+        }
+      }
+      .padWrap {
+        .padSize {
+          .row {
+            .box {
+              &.active,
+              &:hover {
+                background: $girl;
+                color: white;
+              }
+            }
+          }
+        }
+        .nav {
+          .sel {
+            .fa {
+              color: $girl
+            }
+            &:hover {
+              .fa {
+                color: darken($girl, 20%);
+              }
+            }
+          }
+        }
+      }
+      .padNext,
+      .padPrev {
+        &:hover {
+          i {
+            color: $girl;
+          }
+        }
+      }
+    }
+  }
+  &.bBoy {
+    .selection-wrap {
+      .title {
+        .text {
+          border-bottom-color: $bBoy;
+          a {
+            border-color: $bBoy;
+            .fa {
+              color: $bBoy;
+            }
+          }
+        }
+      }
+      .padWrap {
+        .padSize {
+          .row {
+            .box {
+              &.active,
+              &:hover {
+                background: $bBoy;
+                color: white;
+              }
+            }
+          }
+        }
+        .nav {
+          .sel {
+            .fa {
+              color: $bBoy;
+            }
+            &:hover {
+              .fa {
+                color: darken($bBoy, 20%);
+              }
+            }
+          }
+        }
+      }
+      .padNext,
+      .padPrev {
+        &:hover {
+          i {
+            color: $bBoy;
+          }
+        }
+      }
+    }
+  }
+  &.bGirl {
+    .selection-wrap {
+      .title {
+        .text {
+          border-bottom-color: $bGirl;
+          a {
+            border-color: $bGirl;
+            .fa {
+              color: $bGirl;
+            }
+          }
+        }
+      }
+      .padWrap {
+        .padSize {
+          .row {
+            .box {
+              &.active,
+              &:hover {
+                background: $bGirl;
+                color: white;
+              }
+            }
+          }
+        }
+        .nav {
+          .sel {
+            .fa {
+              color: $bGirl;
+            }
+            &:hover {
+              .fa {
+                color: darken($bGirl, 20%);
+              }
+            }
+          }
+        }
+      }
+      .padNext,
+      .padPrev {
+        &:hover {
+          i {
+            color: $bGirl;
+          }
+        }
+      }
+    }
+  }
+  &.nBoy {
+    .selection-wrap {
+      .title {
+        .text {
+          border-bottom-color: $nBoy;
+          a {
+            border-color: $nBoy;
+            .fa {
+              color: $nBoy;
+            }
+          }
+        }
+      }
+      .padWrap {
+        .padSize {
+          .row {
+            .box {
+              &.active,
+              &:hover {
+                background: $nBoy;
+                color: white;
+              }
+            }
+          }
+        }
+        .nav {
+          .sel {
+            .fa {
+              color: $nBoy;
+            }
+            &:hover {
+              .fa {
+                color: darken($nBoy, 20%);
+              }
+            }
+          }
+        }
+      }
+      .padNext,
+      .padPrev {
+        &:hover {
+          i {
+            color: $nBoy;
+          }
+        }
+      }
+    }
+  }
+  &.nGirl {
+    .selection-wrap {
+      .title {
+        .text {
+          border-bottom-color: $nGirl;
+          a {
+            border-color: $nGirl;
+            .fa {
+              color: $nGirl;
+            }
+          }
+        }
+      }
+      .padWrap {
+        .padSize {
+          .row {
+            .box {
+              &.active,
+              &:hover {
+                background: $nGirl;
+                color: white;
+              }
+            }
+          }
+        }
+        .nav {
+          .sel {
+            .fa {
+              color: $nGirl;
+            }
+            &:hover {
+              .fa {
+                color: darken($nGirl, 20%);
+              }
+            }
+          }
+        }
+      }
+      .padNext,
+      .padPrev {
+        &:hover {
+          i {
+            color: $nGirl;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .size {
+    padding: 0;
+    .selection-wrap {
+      padding-bottom: 5vh;
+      height: auto;
+      .title {
+        margin-bottom: 0;
+        .text {
+          font-size: 6vw;
+          a {
+            font-size: 5vw;
+            top: 2px;
+          }
+        }
+      }
+      .padWrap {
+        padding-left: 0;
+        display: none;
+        .image {
+          height: 10vh;
+          div {
+            font-size: 9vh;
+          }
+        }
+        .nav {
+          height: 25%;
+          bottom: 0;
+          border-radius: 5px;
+          right: -3.5vw;
+          top: 50%;
+          width: 7vw;
+          .sel {
+            &.up {
+              height: 5vh;
+            }
+          }
+        }
+        &.active {
+          display: inherit;
+        }
+      }
+    }
+  }
+}
+
