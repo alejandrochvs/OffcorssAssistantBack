@@ -22,6 +22,7 @@ $(function () {
         occasion = [],
         personality = [],
         current,
+        persistency = false,
         next,
         loadAdmin,
         previous, access_level;
@@ -110,7 +111,8 @@ $(function () {
                     $('.loader').removeClass('active bGirl nGirl girl boy bBoy nBoy');
                     $('.loader').addClass(currentClass);
                     $('.header').addClass(currentClass);
-                } else {
+                }
+                else {
                     $('.header > .head:nth-child(1)').addClass('transparent');
                     $('.loader').removeClass('boy girl nBoy nGirl bBoy bGirl');
                     $('body > .header').removeClass('boy girl nBoy nGirl bBoy bGirl');
@@ -193,7 +195,8 @@ $(function () {
                     $('.img-girl > .image').click(function () {
                         $('.girlSel').click();
                     })
-                } else if (current === divs[1]) {
+                }
+                else if (current === divs[1]) {
                     $('body > .content').css({
                         'background-image': 'url(../IMG/fondo-1.jpg)',
                         'background-size': 'cover'
@@ -229,7 +232,8 @@ $(function () {
                             next(divs[2]);
                         }
                     });
-                } else if (current === divs[2]) {
+                }
+                else if (current === divs[2]) {
                     $('body > .content').css({
                         'background-image': 'url(../IMG/fondo-1.jpg)',
                         'background-size': 'cover'
@@ -327,7 +331,8 @@ $(function () {
                             }
                         }
                     })
-                } else if (current === divs[3]) {
+                }
+                else if (current === divs[3]) {
                     $('body > .content').css({
                         'background-image': 'url(../IMG/fondo-2.jpg)',
                         'background-size': 'cover'
@@ -417,7 +422,8 @@ $(function () {
                             }
                         }
                     });
-                } else if (current === divs[4]) {
+                }
+                else if (current === divs[4]) {
                     $('body > .content').css({
                         'background-image': 'url(../IMG/fondo-2.jpg)',
                         'background-size': 'cover'
@@ -482,7 +488,8 @@ $(function () {
                             });
                         }
                     });
-                } else if (current === divs[5]) {
+                }
+                else if (current === divs[5]) {
                     occasion = [];
                     $('body > .content').css({
                         'background-image': 'url(../IMG/fondo-2.jpg)',
@@ -517,7 +524,7 @@ $(function () {
                         success: function (res) {
                             var renderOccasionDiv = function (occasion) {
                                 var tempImg = occasion.img;
-                                if (gender == 'F'){
+                                if (gender == 'F') {
                                     tempImg = tempImg.split('-');
                                     tempImg[1] = 'f';
                                     tempImg = tempImg.join('-');
@@ -555,7 +562,8 @@ $(function () {
                         }
                     });
 
-                } else if (current === divs[6]) {
+                }
+                else if (current === divs[6]) {
                     $('body > .content').css({
                         'background-image': 'url(../IMG/fondo-2.jpg)',
                         'background-size': 'cover'
@@ -573,7 +581,8 @@ $(function () {
                         localStorage.setItem(divs[6], weather);
                         next(divs[7]);
                     });
-                } else if (current === divs[7]) {
+                }
+                else if (current === divs[7]) {
                     $('body > .content').css({
                         'background-image': 'url(../IMG/fondo-2.jpg)',
                         'background-size': 'cover'
@@ -593,6 +602,7 @@ $(function () {
                             B = f & 0x0000FF;
                         return "#" + (0x1000000 + (Math.round((t - R) * p) + R) * 0x10000 + (Math.round((t - G) * p) + G) * 0x100 + (Math.round((t - B) * p) + B)).toString(16).slice(1);
                     }
+
                     $.post('/db/colors', function (res) {
                         for (var i = 0; i < res.length; i++) {
                             $('div.colors').append('<div class="color-wrap"><div class="half left-half" style="background-color : ' + res[i].hex + '"></div><div class="half right-half" style="background-color : ' + shadeColor2(res[i].hex, 0.15) + '"></div><div class="tag">' + res[i].color + '</div></div>')
@@ -615,7 +625,8 @@ $(function () {
                         });
                         $('.color-wrap:nth-child(1)').click();
                     });
-                } else if (current === divs[8]) {
+                }
+                else if (current === divs[8]) {
                     $('body > .content').css({
                         'background-image': 'url(../IMG/fondo-3.jpg)',
                         'background-size': 'cover'
@@ -679,7 +690,8 @@ $(function () {
                         $('.person:nth-child(5) > .background > .title > h4').html(personalityNameF4);
                         $('.person:nth-child(6) > .background > .title > h4').html(personalityNameF5);
                     }
-                } else if (current === divs[9]) {
+                }
+                else if (current === divs[9]) {
                     $('body > .content').css({
                         'background-image': 'url(../IMG/fondo-3.jpg)',
                         'background-size': 'cover'
@@ -759,7 +771,7 @@ $(function () {
                                             slidesToShow: 1,
                                             slidesToScroll: 1
                                         }
-                                }]
+                                    }]
                                 });
                                 data.bottomSize = bottomSize;
                                 data.topSize = topSize;
@@ -814,7 +826,8 @@ $(function () {
 
                         }
                     });
-                } else if (current === 'login') {
+                }
+                else if (current === 'login') {
                     $('body > .content').css({
                         'background-image': 'url(../IMG/background.jpg)',
                         'background-size': 'initial'
@@ -863,7 +876,8 @@ $(function () {
                     });
                     localStorage.current = 'gender';
 
-                } else if (current === 'register') {
+                }
+                else if (current === 'register') {
                     $('body > .content').css({
                         'background-image': 'url(../IMG/background.jpg)',
                         'background-size': 'initial'
@@ -977,14 +991,16 @@ $(function () {
                             $('.registerBtn').click();
                         }
                     });
-                } else if (current === 'e-cards') {
+                }
+                else if (current === 'e-cards') {
                     $('body > .content').css({
                         'background-image': 'url(../IMG/background.jpg)',
                         'background-size': 'initial'
                     });
                     $('.head.title > .cont').html(headTitle4 + ' - E-CARDS');
 
-                } else if (current == 'customers') {
+                }
+                else if (current == 'customers') {
                     $('body > .content').css({
                         'background-image': 'url(../IMG/background.jpg)',
                         'background-size': 'initial'
@@ -993,9 +1009,11 @@ $(function () {
                     if (access_level != 'admin') {
                         $('.deleteCustBtn').remove();
                     }
-                } else if (current == 'controlCenter') {
+                }
+                else if (current == 'controlCenter') {
                     $('.head.title > .cont').html(headTitle4 + ' - CENTRO DE CONTROL');
-                } else if (current == '404') {
+                }
+                else if (current == '404') {
                     $('.404-restore').click(function () {
                         localStorage.clear();
                         window.location.href = '/';
@@ -1241,7 +1259,7 @@ $(function () {
             return;
         }
     }
-    /*if (localStorage.current) {
+    if (localStorage.current && persistency) {
         current = localStorage.current;
         gender = localStorage.gender;
         name = localStorage.name;
@@ -1273,22 +1291,22 @@ $(function () {
         }
         next(current);
         $('.progress').removeClass('loading');
-    }*/
-    //    else {
-    if (admin) {
-        if (localStorage.admin) {
-            loadAdmin();
-            current = divs[0];
-        } else {
-            currentIndex = -10;
-            current = 'login';
-        }
-    } else {
-        current = divs[0];
     }
-    next(current);
-    $('.progress').removeClass('loading');
-    //    }
+    else {
+        if (admin) {
+            if (localStorage.admin) {
+                loadAdmin();
+                current = divs[0];
+            } else {
+                currentIndex = -10;
+                current = 'login';
+            }
+        } else {
+            current = divs[0];
+        }
+        next(current);
+        $('.progress').removeClass('loading');
+    }
     $('#delete-me').remove();
     $('.back').click(function () {
         if (current === divs[5]) {
